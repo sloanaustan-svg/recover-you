@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    // Default: deny analytics until user accepts
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+
+    gtag('config', 'G-6968KR6JY9', {
+      'anonymize_ip': true
+    });
+  </script>
+  <title>What Is Trauma? Understanding the Brain & Body’s Response | Recover-You</title>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
+  <meta content="Austan Sloan | Recover-You" name="author">
+  <meta content="Trauma isn't just a memory; it's a physiological shift. Learn how overwhelming stress rewires the nervous system and why healing requires safety, not willpower." name="description">
+  <meta content="what is trauma, neuroscience of trauma, nervous system regulation, C-PTSD, survival response, trauma recovery Alberta, Recover-You, brain-based healing" name="keywords">
+  <meta content="What Is Trauma? Beyond the Event to the Biology" property="og:title">
+  <meta content="Stop treating trauma as a character flaw. Understand the mechanics of the survival response and how your brain and body actually heal." property="og:description">
+  <meta content="images/what-is-trauma-hero.png" property="og:image">
+  <meta content="article" property="og:type">
+  <meta content="https://recover-you.ca/what-is-trauma.html" property="og:url">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="What Is Trauma? | Recover-You" name="twitter:title">
+  <meta content="A survivor-led, science-backed guide to how trauma changes the brain and the body." name="twitter:description">
+  <meta content="images/what-is-trauma-hero.png" name="twitter:image">
+  <link href="https://recover-you.ca/what-is-trauma.html" rel="canonical">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
+  <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="css/bootsnav.css" rel="stylesheet" type="text/css">
+  <link href="css/font-icons.min.css" rel="stylesheet" type="text/css">
+  <link href="css/theme-vendors.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  <script type="application/ld+json">
+       {
+         "@context": "https://schema.org",
+         "@type": "Article",
+         "headline": "What Is Trauma? Beyond the Event",
+         "description": "An explanation of trauma as a physiological nervous system response rather than just a psychological event.",
+         "image": "images/what-is-trauma-hero.png",
+         "author": {
+           "@type": "Person",
+           "name": "Austan Sloan"
+         },
+         "publisher": {
+           "@type": "Organization",
+           "name": "Recover-You",
+           "url": "https://recover-you.ca"
+         },
+         "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https://recover-you.ca/what-is-trauma.html"
+         },
+         "inLanguage": "en"
+       }
+  </script>
+  <style>
+          
+            /* ---- Scoped design tokens (local, not global) ---- */
+            .ry-trauma{
+              --ry-body: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+              --ry-display: "Poppins", var(--ry-body);
+              --ry-pink: #ff2f6e;
+              --ry-ink: #1b1b1b;
+              --ry-ink-2: #333;
+              --ry-ink-3: #666;
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+              font-feature-settings: "liga","kern","calt";
+              font-kerning: normal;
+            }
+
+            /* Editorial links + citations (scoped, no underline style) */
+            .ry-trauma p a,
+            .ry-trauma li a {
+              color: var(--ry-pink);
+              text-decoration: none;
+              transition: color 0.25s ease;
+            }
+
+            .ry-trauma p a:hover,
+            .ry-trauma li a:hover {
+              color: #d91d5a; /* slightly darker pink on hover */
+              text-decoration: none;
+            }
+
+            .ry-trauma p a:hover,
+            .ry-trauma li a:hover {
+              text-decoration: underline;
+              text-underline-offset: 3px;
+              text-decoration-thickness: 1.25px;
+              text-decoration-color: var(--ry-pink);
+            }
+            /* ===== Kicker quote (“I am in danger…”) ===== */
+            .ry-trauma .ry-kicker-quote{
+              position:relative; display:flex; align-items:baseline; gap:14px;
+              padding-left: clamp(44px,5vw,64px);
+              margin: clamp(6px,1.2vw,10px) 0 clamp(10px,1.8vw,16px);
+            }
+            .ry-trauma .ry-kicker-icon{
+              position:absolute; left:0; top:50%; transform:translateY(-50%);
+              color:var(--ry-pink); font-weight:700; line-height:1;
+              font-size: clamp(40px,4.7vw,56px); opacity:.9;
+            }
+            .ry-trauma .ry-kicker-text{
+              font-family:var(--ry-display); font-weight:500;
+              font-size: clamp(20px,2.3vw,28px);
+              letter-spacing:.01em; color:#e73367; font-style:italic;
+            }
+            .ry-trauma .ry-kicker-quote-marks{ opacity:.5; }
+
+            /* ===== Explainer block (blockquote) ===== */
+            .ry-trauma .ry-explainer{
+              margin:22px 0 10px; border-radius:8px;
+              border-left:3px solid var(--ry-pink);
+              background:linear-gradient(90deg, rgba(255,47,110,.055), rgba(255,47,110,.02));
+              padding: clamp(18px,2.2vw,26px);
+            }
+            .ry-trauma .ry-explainer-title{
+              font-family:var(--ry-display); font-weight:600;
+              font-size: clamp(20px,2.1vw,24px); line-height:1.25; margin:0 0 .4em;
+            }
+            .ry-trauma .ry-explainer p{
+              font-size: clamp(15.5px,1.1vw,17px);
+              line-height:1.85; color:var(--ry-ink-2); margin:0 0 .9em;
+            }
+            .ry-trauma .ry-explainer strong{ font-weight:700; color:var(--ry-ink); }
+            .ry-trauma .ry-explainer strong em{
+              font-style:italic; font-weight:700;
+              text-decoration:underline; text-underline-offset:3px;
+              text-decoration-thickness:1.5px; text-decoration-color:rgba(255,47,110,.45);
+            }
+
+            /* ===== Transition headline ===== */
+            .ry-trauma .ry-transition{
+              font-family:var(--ry-display); font-weight:600;
+              font-size: clamp(19px,2vw,23px); line-height:1.3;
+              margin: clamp(18px,2.2vw,26px) 0 clamp(6px,1.2vw,10px);
+            }
+            .ry-trauma .ry-transition strong{ font-weight:800; letter-spacing:.005em; }
+
+            /* ===== Follow-on paragraphs ===== */
+            .ry-trauma .ry-transition + p,
+            .ry-trauma .ry-transition + p + p{
+              font-size: clamp(15.5px,1.1vw,17px);
+              line-height:1.9; color:var(--ry-ink-2);
+            }
+            .ry-trauma .ry-transition em{ color:var(--ry-ink); }
+
+            /* ===== Personal note card ===== */
+            .ry-trauma .ry-note{
+              background:#f9f9f9; border:1px solid rgba(0,0,0,.06);
+              border-radius:10px; box-shadow:0 10px 26px rgba(0,0,0,.06);
+              padding: clamp(14px,2vw,18px) clamp(14px,2.4vw,22px);
+              margin:18px 0 12px;
+            }
+            .ry-trauma .ry-note p{
+              font-size: clamp(14.5px,1.05vw,16px);
+              line-height:1.85; color:#555; font-style:italic;
+            }
+
+            /* ===== Image: split/cover variant ===== */
+            .ry-trauma .ry-split-photo{ background-position:center; background-size:cover; }
+            .ry-trauma .ry-photo-overlay{
+              position:absolute; inset:0;
+              background: radial-gradient(40% 55% at 30% 60%, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.6) 100%);
+              pointer-events:none;
+            }
+            .ry-trauma .ry-photo-caption{
+              position:absolute; left:0; right:0; bottom:0;
+              padding:10px 16px; color:#fff; font-size:14px; font-style:italic;
+              background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 100%);
+            }
+
+            /* ===== Image: tilted “documentary still” variant ===== */
+            .ry-trauma .ry-tilt-photo{
+              display:flex; justify-content:center; align-items:center;
+              background: radial-gradient(circle at 50% 45%, rgba(255,255,255,.06) 0%, rgba(0,0,0,.9) 100%);
+              padding:40px;
+            }
+            .ry-trauma .ry-photo-frame{
+              position:relative; transform:rotate(-1.8deg);
+              overflow:hidden; border-radius:8px;
+              border:3px solid rgba(255,255,255,.08);
+              box-shadow:0 10px 35px rgba(0,0,0,.45);
+              transition:all .6s ease; max-width:90%;
+            }
+            .ry-trauma .ry-photo-frame:hover{
+              transform:rotate(0deg) scale(1.02);
+              border-color:rgba(255,255,255,.2);
+              box-shadow:0 14px 40px rgba(0,0,0,.55);
+            }
+            .ry-trauma .ry-tilt-img{
+              width:100%; height:auto; display:block;
+              filter:brightness(.9) contrast(1.05);
+              transition:filter .4s ease;
+            }
+            .ry-trauma .ry-photo-frame:hover .ry-tilt-img{
+              filter:brightness(1) contrast(1.15);
+            }
+            /* (re-use the same caption class safely within namespace) */
+
+            /* ===== Dark pane (right column) ===== */
+            .ry-trauma .ry-dark-pane p{ line-height:1.9; font-weight:300; }
+            .ry-trauma .ry-eyebrow{
+              text-transform:uppercase; font-size:12px; letter-spacing:.16em;
+              margin-bottom:6px; opacity:.85;
+            }
+
+            /* ===== Image cards used later on this page ===== */
+            .ry-trauma .image-card{
+              border-radius:16px; overflow:hidden;
+              box-shadow:0 10px 30px rgba(0,0,0,.25);
+              transition:transform .4s ease, box-shadow .4s ease;
+            }
+            .ry-trauma .image-card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.35); }
+            .ry-trauma .rounded-shadow-img{ display:block; width:100%; height:auto; border-radius:16px; }
+
+            /* ===== Responsive tweaks ===== */
+            @media (max-width: 991.98px){
+              .ry-trauma .ry-kicker-quote{ padding-left:44px; }
+              .ry-trauma .ry-kicker-icon{ font-size:42px; }
+              .ry-trauma .ry-kicker-text{ font-size:22px; }
+            }
+            .trauma-text-box {
+              background: rgba(255, 255, 255, 0.80); /* white with 80% opacity */
+              border-radius: 12px;
+              padding: 40px;
+              box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+              backdrop-filter: blur(6px);
+            }
+          .ry-spectrum-block {
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+          }
+          .ry-spectrum-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+          }
+          /* === Trauma memory 3-panel section === */
+          .trauma-memory-section {
+            position: relative;
+            padding: 95px 0;
+            overflow: hidden;
+          }
+
+          .trauma-memory-section::before,
+          .trauma-memory-section::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          .trauma-memory-section::before {
+            top: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0));
+          }
+
+          .trauma-memory-section::after {
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.18), rgba(0,0,0,0));
+          }
+
+          .trauma-memory-section .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;  
+          }
+
+          .trauma-memory-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.75fr) minmax(0, 1.15fr);
+            gap: 30px;
+            align-items: start;
+          }
+
+          .trauma-memory-card,
+          .trauma-memory-image-card {
+            position: relative;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(255,255,255,0.24);
+            border-radius: 16px;
+            box-shadow:
+              0 16px 36px rgba(0,0,0,0.14),
+              0 3px 10px rgba(0,0,0,0.06);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            overflow: hidden;
+          }
+
+          .trauma-memory-card {
+            padding: 34px 32px;
+          }
+
+          .trauma-memory-image-card {
+            padding: 26px 22px 22px;
+            text-align: center;
+          }
+
+          .trauma-memory-card::before,
+          .trauma-memory-image-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 28px;
+            width: 46px;
+            height: 3px;
+            background: #ff3d67;
+            border-radius: 0 0 2px 2px;
+          }
+
+          .trauma-memory-card h2,
+          .trauma-memory-card h5,
+          .trauma-memory-card h6 {
+            margin-top: 0;
+          }
+
+          .trauma-memory-card p:last-child {
+            margin-bottom: 0;
+          }
+
+          .trauma-memory-list {
+            list-style: none;
+            padding: 0;
+            margin: 22px 0;
+          }
+
+          .trauma-memory-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            line-height: 1.75;
+          }
+
+          .trauma-memory-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #ff3d67;
+            font-size: 13px;
+          }
+
+          .trauma-memory-image-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+          }
+
+          .trauma-memory-image-wrap img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.14));
+          }
+
+          .trauma-memory-caption {
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(43,43,43,0.76);
+          }
+
+          .trauma-memory-image-card--offset {
+            transform: translateY(18px);
+          }
+
+          @media (max-width: 991.98px) {
+            .trauma-memory-section {
+              padding: 110px 0;
+            }
+
+            .trauma-memory-grid {
+              grid-template-columns: 1fr;
+              gap: 24px;
+            }
+
+            .trauma-memory-card,
+            .trauma-memory-image-card {
+              padding: 26px 24px;
+            }
+
+            .trauma-memory-image-card--offset {
+              transform: none;
+            }
+
+            .trauma-memory-image-wrap img {
+              max-width: 320px;
+            }
+          }
+  </style>
+</head>
+<body class="ry-trauma">
+  <div aria-hidden="true" id="reading-progress">
+    <div id="reading-progress-fill"></div>
+  </div><!-- start header -->
+  <header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
+      <div class="container-fluid nav-header-container">
+        <div class="col-auto ps-0">
+          <a class="logo" href="index.html" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+        </div>
+        <div class="col accordion-menu pe-0 pe-md-3">
+          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
+              <li>
+                <a href="index.html" title="Home">Home</a>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-this-site-exists.html">Why This Site Exists</a>
+                  </li>
+                  <li>
+                    <a href="about-me.html">About Me</a>
+                  </li>
+                  <li>
+                    <a href="start-here.html">Start Here</a>
+                  </li>
+                  <li>
+                    <a href="faq.html">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="what-is-trauma.html">What Is Trauma</a>
+                      </li>
+                      <li>
+                        <a href="attachment.html">Attachment Styles</a>
+                      </li>
+                      <li>
+                        <a href="toxic-stress.html">Toxic Stress</a>
+                      </li>
+                      <li>
+                        <a href="shame-grief-false-self.html">Shame, Grief &amp; The False Self</a>
+                      </li>
+                      <li>
+                        <a href="cptsd-behaviours.html">CPTSD Patterns</a>
+                      </li>
+                      <li>
+                        <a href="aces-high.html">ACEs &amp; Risk</a>
+                      </li>
+                      <li>
+                        <a href="dunedin-study.html">The Dunedin Study</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="brain-on-fire.html">Brain on Fire</a>
+                      </li>
+                      <li>
+                        <a href="when-sobriety-feels-worse.html">When Sobriety Feels Worse</a>
+                      </li>
+                      <li>
+                        <a href="neuroplasticity.html">Neuroplasticity</a>
+                      </li>
+                      <li>
+                        <a href="critical-window.html">Critical Windows</a>
+                      </li>
+                      <li>
+                        <a href="epigenetics.html">Epigenetics</a>
+                      </li>
+                      <li>
+                        <a href="dohad.html">DOHaD: Developmental Origins</a>
+                      </li>
+                      <li>
+                        <a href="metabolism.html">Metabolism</a>
+                      </li>
+                      <li>
+                        <a href="the-hijacked-engine.html">The Hijacked Engine</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="the-reckoning.html">The Reckoning: What the Research Shows</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-traditional-treatment-falls-short.html">Why Traditional Treatment Falls Short</a>
+                  </li>
+                  <li>
+                    <a href="problem-with-aa.html">Limits of the AA Model</a>
+                  </li>
+                  <li>
+                    <a href="misdiagnosed.html">When Trauma Is Misdiagnosed</a>
+                  </li>
+                  <li>
+                    <a href="disease-of-addiction.html">The “Disease of Addiction” Debate</a>
+                  </li>
+                  <li>
+                    <a href="dsm-explained.html">DSM vs ICD (Diagnosis Explained)</a>
+                  </li>
+                  <li>
+                    <a href="better-model-of-care.html">What Better Care Requires</a>
+                  </li>
+                  <li>
+                    <a href="trauma-avoidant.html">When Trauma Is Avoided</a>
+                  </li>
+                  <li>
+                    <a href="compassionate-care.html">Compassionate Care: A Critique</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="cbt.html">CBT</a>
+                      </li>
+                      <li>
+                        <a href="dbt.html">DBT</a>
+                      </li>
+                      <li>
+                        <a href="life-traps.html">Life Traps (Schema Therapy)</a>
+                      </li>
+                      <li>
+                        <a href="healing-trauma.html">Healing Trauma (Post-Traumatic Growth)</a>
+                      </li>
+                      <li>
+                        <a href="types-of-therapy.html">Therapy Types</a>
+                      </li>
+                      <li>
+                        <a href="role-of-therapy.html">The Role of Therapy</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="chart-your-life.html">Chart Your Life</a>
+                      </li>
+                      <li>
+                        <a href="distorted-thinking.html">Distorted Thinking</a>
+                      </li>
+                      <li>
+                        <a href="regulation-tools.html">Regulation Tools</a>
+                      </li>
+                      <li>
+                        <a href="reality-test.html">Reality Testing</a>
+                      </li>
+                      <li>
+                        <a href="relationships.html">Relationships in Recovery</a>
+                      </li>
+                      <li>
+                        <a href="connection.html">Connection</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="identity-values-and-beliefs.html">Identity, Values &amp; Beliefs</a>
+                      </li>
+                      <li>
+                        <a href="spirituality.html">Spirituality</a>
+                      </li>
+                      <li>
+                        <a href="the-resilience-lie.html">The Resilience Lie</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="resources.html">Resources</a>
+                      </li>
+                      <li>
+                        <a href="tfr-model.html">Trauma-Focused Recovery Model (TFR Model)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="contact.html" title="Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-auto pe-0"></div>
+      </div>
+    </nav><!-- end navigation -->
+  </header><!-- end header -->
+  <!-- start page title section -->
+  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/trauma-bg2.webp');">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
+          <!-- start page title -->
+          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">What Trauma Really Is</h1>
+          <h6 class="text-light-gray alt-font font-weight-600">Trauma is a survival solution that endures in a body that forgot or never learned what it means to feel safe.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="down-section text-center">
+      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
+    </div>
+  </section><!-- end page title section -->
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="ticker">
+            <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-white" id="why">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 wow animate__fadeIn">
+          <div class="margin-25px-bottom">
+            <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
+              <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>28 min read</span>
+            </div>
+            <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">//</span> Trauma's Quid Pro Quo: <strong>Survive Now, Pay Later</strong></h5>
+            <blockquote class="border-color-deep-pink margin-25px-bottom">
+              <h6 class="alt-font no-margin-bottom"><strong class="text-deep-pink">"I am in danger and I can't stop it."</strong></h6>
+            </blockquote>
+            <p class="text-medium">Trauma isn't just something that happened to you. It's a deal your nervous system made under duress — in the moment when something was too big, too fast, or too much, and your brain had no other move. The terms were simple: <strong>"Get me through this now. We'll deal with the cost later."</strong> Like a high-interest loan taken out at the worst possible moment. It makes complete sense when you're drowning. The problem is the interest never stops compounding.</p>
+            <p class="text-medium">And it works. That's what doesn't get said often enough — the trade actually works. It keeps you alive. It carries you through what might otherwise break you entirely. But survival has a price tag, and it gets collected slowly: anxiety, hypervigilance, disconnection, a nervous system that never received the signal that the danger passed. Without deliberate healing, those symptoms don't fade with time. They just keep running in the background, quietly shaping everything.</p>
+            <p class="text-medium">Trauma doesn't resolve because you ignored it long enough. It doesn't dissolve because time passed or because you willed yourself to move on. If adequate support is absent during those times of adversity, what isn't processed doesn't disappear — it waits. And eventually the system that once protected you starts demanding something different. Not punishment. Resolution. Until it gets that, it keeps doing the only thing it knows: sending signals. <strong>Symptoms aren't malfunction. <em>They're communication.</em></strong></p>
+          </div>
+          <blockquote class="border-left border-2 border-color-deep-pink padding-25px-left margin-60px-top margin-50px-bottom ry-quote">
+            <p class="text-medium">"Equally powerful as the desire to deny atrocities is the conviction that denial does not work. Folk wisdom is filled with ghosts who refuse to rest in their graves until their stories are told. Murder will out. Remembering and telling the truth about terrible events are prerequisites both for the restoration of the social order and for the healing of individual victims."</p>
+            <p class="text-small opacity-7 margin-10px-top">— Judith Herman, <em>Trauma and Recovery</em></p>
+          </blockquote>
+          <blockquote class="ry-explainer margin-40px-bottom">
+            <p><strong>Trauma isn't defined only by what happened to you; <em>it's defined by what happened inside you.</em></strong> It's the moment your system becomes overwhelmed — when you can't fight, can't flee, and can't stop what's happening. Not the event alone, but the internal experience of helplessness in the face of it.</p>
+            <p>And not all trauma arrives with visible damage. Sometimes it's the absence — growing up unseen, unheard, chronically dismissed, never quite safe. When safety, consistency, or belonging go unmet for long enough, the body registers danger anyway. Emotional neglect and early disconnection can shape the nervous system just as completely as overt threat. The body doesn't distinguish between types of harm. It just keeps score.</p>
+            <p>This is why trauma isn't only about memory. It's about adaptation — how the brain and body reorganize themselves to survive, and how that same wiring can eventually be rewritten.</p>
+          </blockquote>
+          <h5 class="alt-font text-extra-dark-gray ry-transition">The cost of that deal <strong>doesn't just disappear.</strong></h5>
+          <p class="text-medium">It imprints into the nervous system and rewires how you experience everything that comes after. A brain built to protect you reorganizes itself around survival. It stops asking <em>"Am I safe?"</em> and starts assuming <em>"I'm not."</em> From there, the body keeps responding as if the emergency never ended — bracing, scanning, reacting to threats that aren't there anymore. Survival stops being a response and becomes the default setting. Even when the danger is long gone. Especially then.</p>
+          <div class="ry-note">
+            <p>For me, this wasn't theory. It was Tuesday. I grew up in poverty, surrounded by addiction, never knowing which version of my caregivers would be present when I entered the room. Their moods could shift completely between morning and night — and not in ways that were safe to misread. "Walking on eggshells" doesn't cover it. It was more like walking on shattered glass, barefoot, in the dark.</p>
+            <p>Every move had to be calculated, because getting it wrong didn't just mean being noticed — it meant getting hurt. So I learned to go quiet. To make myself small enough to disappear into the corners and call it survival. That's what living inside chronic trauma actually feels like — not one wound, but a nervous system that was shaped, slowly and completely, by never once being allowed to fully exhale.</p>
+          </div>
+          <blockquote class="border-left-deep-pink padding-30px-left text-large text-extra-dark-gray alt-font margin-40px-top">
+              Trauma adaptations are survival solutions that endure in a body that either forgot how to feel safe or never learned it in the first place.<br>
+              <em class="text-medium">- Recover-You</em>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section><!-- BIOLOGY OF TRAUMA SPLIT SECTION -->
+  <section class="p-0 wow animate__fadeIn bg-light-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInLeft" data-wow-duration="900ms" style="background-image: url('images/webp/childhood-trauma-brain-2.webp');"></div>
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lg md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInRight" data-wow-duration="900ms">
+          <h6 class="alt-font text-deep-pink margin-5px-bottom" style="font-size:14px; letter-spacing:0.08em; text-transform:uppercase;">Trauma and the Brain</h6>
+          <h2 class="alt-font text-extra-dark-gray" style="font-size:28px; line-height:1.3; margin-bottom:18px; font-weight:600;">The Biology of Trauma</h2>
+          <p class="text-extra-dark-gray">Traumatic experiences aren't only psychological — they're physiological. The body doesn't distinguish between physical harm and relational harm at the level of the survival response. A broken bone and a broken bond activate overlapping systems in the brain that govern fear, pain, and the fundamental question the nervous system never stops asking: <em>am I safe right now?</em></p>
+          <p class="text-extra-dark-gray">When the answer is consistently no — or when the question can't be answered reliably — the brain adapts. It reorganizes around the threat. Over time, that reorganization reshapes neural function, disrupts hormone balance, dysregulates the immune system, and rewires the default assumptions the nervous system makes about the world. This isn't damage in the way a broken bone is damage. It's adaptation — precise, functional, and costly.</p>
+          <ul class="p-0 list-style-3 w-80 lg-w-100">
+            <li class="text-extra-dark-gray"><strong>Amygdala hyperactivation:</strong> the alarm system gets stuck on high — scanning for threat even in environments that are objectively safe, because it no longer trusts the absence of danger as evidence of safety.</li>
+            <li class="text-extra-dark-gray"><strong>Hippocampal impairment:</strong> memory storage becomes fragmented — events lose their time-stamp and context, which is why trauma can feel present long after it's technically past.</li>
+            <li class="text-extra-dark-gray"><strong>Prefrontal cortex under-functioning:</strong> the reasoning brain loses ground to the reactive brain — impulse regulation weakens, and the pause between trigger and response gets shorter or disappears entirely.</li>
+            <li class="text-extra-dark-gray"><strong>HPA axis dysregulation:</strong> chronic stress-hormone activation produces inflammation, immune disruption, and long-term health consequences that show up in clinics decades after the original exposure — often with no one connecting them to their source.</li>
+          </ul>
+          <p class="text-extra-dark-gray">These aren't separate symptoms. They're a coordinated response — a nervous system that received the message that the world is dangerous and restructured itself accordingly. The restructuring was correct, given the information available. The problem is it doesn't automatically undo when the circumstances change. It holds its position until something deliberately teaches it otherwise.</p>
+        </div>
+      </div>
+    </div>
+  </section><!-- THREE ARCHITECTURES SECTION -->
+  <section class="wow animate__fadeIn bg-white ry-arch-section">
+    <style>
+       .ry-arch-section .ry-arch-title { line-height:1.15; margin-bottom:18px; }
+       .ry-arch-section .ry-arch-title .ry-title-hook { display:block; font-size:1.35em; font-weight:700; letter-spacing:-0.2px; }
+       .ry-arch-section .ry-arch-title .ry-title-frame { display:block; margin-top:6px; font-size:0.92em; font-weight:600; opacity:0.92; }
+       .ry-arch-section .ry-intro { line-height:1.85; max-width:820px; margin-left:auto; margin-right:auto; margin-bottom:18px; }
+       .ry-arch-section .ry-rail { max-width:760px; margin-left:auto; margin-right:auto; margin-top:6px; padding-top:14px; border-top:1px solid rgba(0,0,0,0.08); opacity:0.85; line-height:1.7; }
+       .ry-arch-section .ry-card { padding:26px 24px; border-radius:10px; position:relative; transition:transform .22s ease, box-shadow .22s ease; box-shadow:0 10px 26px rgba(0,0,0,0.08); will-change:transform, box-shadow; }
+       @keyframes ryFloat { 0% { transform:translateY(0); } 50% { transform:translateY(-4px); } 100% { transform:translateY(0); } }
+       @media (hover:hover) and (pointer:fine) {
+         .ry-arch-section .ry-card { animation:ryFloat 5.5s ease-in-out infinite; }
+         .ry-arch-section .ry-card:hover { transform:translateY(-10px); box-shadow:0 18px 45px rgba(0,0,0,0.14); }
+       }
+       .ry-arch-section .ry-card h6 { margin-bottom:8px; letter-spacing:-0.2px; }
+       .ry-arch-section .ry-dx { font-size:11.5px; letter-spacing:1.2px; opacity:0.9; margin-bottom:14px; }
+       .ry-arch-section .ry-desc { line-height:1.75; margin-bottom:16px; }
+       .ry-arch-section .ry-impact { border-top:1px solid rgba(0,0,0,0.10); padding-top:14px; margin-top:14px; line-height:1.65; }
+       .ry-arch-section .ry-card-row { margin-top:12px; row-gap:22px; }
+       .ry-arch-section blockquote { line-height:1.75; }
+       @media (max-width:991px) {
+         .ry-arch-section .ry-arch-title .ry-title-hook { font-size:1.2em; }
+         .ry-arch-section .ry-arch-title .ry-title-frame { font-size:0.95em; }
+         .ry-arch-section .ry-intro { padding-left:10px; padding-right:10px; }
+       }
+    </style>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center margin-40px-bottom">
+          <div class="bg-light-gray alt-font ry-card" style="max-width:920px; margin:0 auto;">
+            <h5 class="alt-font text-extra-dark-gray font-weight-600 ry-arch-title mb-0"><span class="ry-title-hook"><span class="text-deep-pink">//</span> You Didn't Just "Have a Bad Day"</span> <span class="ry-title-frame">The Three Architectures of Trauma</span></h5>
+            <p class="text-medium mx-auto alt-font ry-intro" style="margin-top:16px;">Most people never learn that trauma follows recognizable <strong>patterns</strong> — and that understanding those patterns changes everything about how you interpret your own history. The common assumption is that trauma requires a "Big T" event: war, assault, disaster. But trauma is defined by its <strong>impact on the nervous system</strong>, not the size of the event that caused it. That reframe is what finally allowed me to make sense of my own story. I hope it does the same for yours.</p>
+            <p class="text-small mx-auto alt-font text-extra-dark-gray ry-rail mb-0">These three lenses aren't rigid diagnoses — they're practical frameworks for understanding why different kinds of adversity leave different kinds of marks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row ry-card-row">
+        <div class="col-md-4 sm-margin-30px-bottom">
+          <div class="bg-light-gray h-100 alt-font ry-card">
+            <h6 class="text-extra-dark-gray font-weight-600">1. The Rupture</h6><span class="text-uppercase font-weight-600 text-deep-pink d-block ry-dx">PTSD (Single Event)</span>
+            <p class="ry-desc">A single overwhelming event — accident, assault, sudden loss. The key distinction: you had a stable sense of self and safety <em>before</em> it happened.</p>
+            <p class="text-small lh-initial ry-impact"><strong>The Impact:</strong> A sharp "Before and After." The brain knows safety exists. It just can't find its way back.</p>
+          </div>
+        </div>
+        <div class="col-md-4 sm-margin-30px-bottom">
+          <div class="bg-light-gray h-100 alt-font ry-card">
+            <h6 class="text-extra-dark-gray font-weight-600">2. The Captivity</h6><span class="text-uppercase font-weight-600 text-deep-pink d-block ry-dx">C-PTSD (Complex Trauma)</span>
+            <p class="ry-desc">Chronic, repeated trauma in conditions where escape wasn't possible — childhood abuse, domestic violence, prolonged captivity. Recognized in the <strong>ICD-11.</strong></p>
+            <p class="text-small lh-initial ry-impact"><strong>The Impact:</strong> Dissolves self-worth and emotional regulation. You don't just feel scared — you feel <em>fundamentally and defectively wrong.</em></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-light-gray h-100 alt-font ry-card">
+            <h6 class="text-extra-dark-gray font-weight-600">3. The Blueprint</h6><span class="text-uppercase font-weight-600 text-deep-pink d-block ry-dx">Developmental Trauma (DTD)</span>
+            <p class="ry-desc">Trauma that occurred while the brain was physically building its architecture. Not an event superimposed on a stable self — but trauma stitched into the baseline view of reality.</p>
+            <p class="text-small lh-initial ry-impact"><strong>The Impact:</strong> There is no "before." Your nervous system was wired for survival, not connection, from day one.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center margin-50px-top">
+        <div class="col-lg-10">
+          <blockquote class="border-left-deep-pink padding-30px-left text-medium text-extra-dark-gray alt-font">
+            <strong>A Critical Note on "Nothing":</strong><br>
+            Trauma isn't only what happened to you — it's also what <em>didn't.</em> The chronic absence of safety, attunement, and affection teaches the nervous system the same lesson as physical violence: <strong>"You are not safe here."</strong> The body adapts accordingly. Neglect leaves no visible marks. The nervous system doesn't distinguish.<br>
+            <br>
+            Learn more: <a href="toxic-stress.html">Toxic Stress</a>
+          </blockquote>
+        </div>
+      </div>
+      <div class="row justify-content-center margin-30px-top">
+        <div class="col-lg-10">
+          <div class="bg-light-gray padding-20px-all border-radius-6px text-center sm-padding-15px-all alt-font">
+            <span class="text-extra-dark-gray font-weight-600 d-block margin-5px-bottom">A Note on Terminology</span>
+            <p class="text-small m-0" style="line-height:1.75; max-width:860px; margin-left:auto; margin-right:auto;">Diagnostic manuals move considerably slower than the science. Developmental Trauma Disorder (DTD) is not yet formally recognized — but it is included here because it explains patterns that existing labels consistently fail to capture.<br>
+            <br>
+            Across this site, these experiences are often discussed under the broader umbrella of <strong>C-PTSD.</strong> But much of this work speaks specifically to the long-term impact of <em>early</em> trauma — and how those early adaptations predict later outcomes in ways the standard diagnostic picture doesn't fully account for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- CAR CRASH VIGNETTE -->
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col position-relative md-h-550px sm-h-350px ry-tilt-photo wow animate__slideInLeft" data-wow-duration="900ms">
+          <div class="ry-photo-frame">
+            <img alt="Aftermath of near-fatal car crash at night" class="ry-tilt-img" src="images/webp/car-accident.webp">
+            <div class="ry-photo-caption">
+              <em>Aftermath of the collision — my door open, airbag deployed.</em>
+            </div>
+          </div>
+        </div>
+        <div class="col ry-dark-pane last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInRight" data-wow-duration="900ms">
+          <h5 class="alt-font text-white-2"><span class="text-deep-pink">//</span> Example: <strong class="text-white-2">Near-Fatal Collision</strong></h5>
+          <p class="text-light-gray">One of my clearest "Big T" traumas happened in my mid-twenties. A drunk driver ran a red light and T-boned our car at high speed — that's the actual photo. The impact landed just behind my door. I was hospitalized with multiple fractures that required surgery and a recovery I didn't see the end of for months.</p>
+          <p class="text-light-gray">The physical injuries eventually closed. <strong>The invisible ones had different plans:</strong></p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3 alt-font text-light-gray">
+              <li>Riding as a passenger became <strong class="text-white-2">almost impossible.</strong> The anxiety wasn't discomfort — it was physical, immediate, and completely disproportionate to any actual threat.</li>
+              <li>Minor near-misses while driving — the kind other people shrug off — could derail the rest of my day from the <em>sheer physiological surge</em> they triggered.</li>
+              <li>Long trips as a passenger meant <strong>hypervigilance and sleeplessness</strong> — a fixed certainty that something catastrophic would happen the moment I stopped watching.</li>
+              <li>Recurring dreams of <em>not surviving a crash</em> became a reliable feature of my nights.</li>
+            </ul>
+          </div>
+          <p class="text-light-gray text-medium">Over time I arrived at a belief I held as fact: <em>my death would come from a car accident.</em> Not a fear. A conclusion.</p>
+          <div class="ry-eyebrow text-deep-pink alt-font padding-40px-top">
+            Pre-existing Baseline
+          </div>
+          <h5 class="alt-font text-white-2">Here's the key difference.</h5>
+          <p class="text-light-gray">As intense as those symptoms were, they were still <strong>bounded.</strong> They lived in a specific domain — vehicles, travel, the threat of collision — and didn't bleed into every other corner of my life. More importantly, I had a reference point. A clear memory of who I was and how I functioned <em>before</em> that night — something solid to measure the damage against. That reference point is exactly what developmental trauma removes. There is no before to return to. The wiring was never laid differently. That's the dividing line between <strong>a trauma that happened to a self</strong> and <strong>a trauma that built one.</strong></p>
+          <h5 class="alt-font text-white-2 padding-30px-top"><strong>Learn More</strong></h5>
+          <ul class="p-0 list-style-9">
+            <li><strong class="text-deep-pink">Learn more: <span class="text-medium"><a class="text-light-gray" href="https://www.nctsn.org/what-is-child-trauma/trauma-types/complex-trauma" rel="noopener" target="_blank">Complex Trauma — NCTSN</a></span></strong></li>
+            <li><strong class="text-deep-pink">Learn more: <span class="text-medium"><a class="text-light-gray" href="https://icd.who.int/browse11/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f585833559" rel="noopener" target="_blank">C-PTSD (6B41) — WHO (ICD-11)</a></span></strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section><!-- IMPLICIT VS EXPLICIT MEMORY -->
+  <section class="wow animate__fadeIn parallax trauma-memory-section"
+           data-parallax-background-ratio="0.5"
+           style="background-image:url('images/webp/spectrum-bg.webp');">
+    <div class="container">
+
+          <div class="trauma-memory-grid">
+
+            <!-- LEFT CARD -->
+            <div class="trauma-memory-card">
+              <h2 class="text-extra-dark-gray alt-font">Trauma Lives in the Body:</h2>
+              <h5 class="alt-font text-extra-dark-gray"><strong>Implicit</strong> vs. <strong>Explicit</strong> Memory</h5>
+
+              <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">
+                One of the most disorienting features of trauma is that it doesn't always live in words — or even in memory, in any conventional sense.
+              </p>
+
+              <ul class="trauma-memory-list text-extra-dark-gray">
+                <li><strong class="text-extra-dark-gray">Explicit memory</strong> is what you can recall as a narrative — what happened, when, in what sequence, and who was there.</li>
+                <li><strong class="text-extra-dark-gray">Implicit memory</strong> is stored in the body — in sensations, automatic reactions, and emotional states that fire without a story attached.</li>
+              </ul>
+
+              <p class="text-extra-dark-gray">
+                This is why you can feel flooded, panicked, or triggered with no clear memory to point to. A new manager who uses the same tone of voice as a critical parent. A smell that belongs to a room you haven't entered in twenty years. A texture, a sound, a quality of light. The body registers the match before the conscious mind has any idea what it's responding to. That's not irrationality. That's the nervous system doing its job with information stored below the reach of language. Trauma is often <em>felt</em> before it's thought.
+              </p>
+            </div>
+
+            <!-- CENTER IMAGE -->
+            <div class="trauma-memory-image-card trauma-memory-image-card--offset">
+              <div class="trauma-memory-image-wrap">
+                <img src="images/amygdala-fmri.png" alt="fMRI-style brain image showing amygdala activation">
+              </div>
+              <div class="trauma-memory-caption alt-font">
+                Trauma-related activation can be felt before it is consciously understood.
+              </div>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="trauma-memory-card">
+              <h5 class="alt-font text-extra-dark-gray">How the Brain Stores — and Rewrites — Traumatic Memory</h5>
+
+              <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">
+                When trauma occurs, the brain's normal memory-filing system breaks down. The amygdala — the alarm system — seizes control, while the hippocampus, which ordinarily gives events a time stamp and context, goes partially offline.
+              </p>
+
+              <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">
+                The result is a memory that never gets properly organized into sequence: instead of a coherent autobiographical narrative, you're left with fragments — flashes of imagery, body sensations, raw emotion — stripped of the temporal context that would mark them as past.
+              </p>
+
+              <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">
+                This is why trauma can feel like it's happening <em>now</em> rather than something that happened <em>then.</em> The memory wasn't filed incorrectly — it was never integrated into the autobiographical system that tells you, quietly and reliably, <em>this is in the past, and I survived it.</em>
+              </p>
+
+              <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">
+                Therapies like <strong>EMDR</strong> and <strong>ART</strong> work by revisiting the memory while the nervous system is regulated — calm enough to process rather than just react — allowing the brain to reintegrate what was previously fragmented. The memory remains, but it loses its grip on the present. That's not forgetting. That's <strong>integration</strong>.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white wow animate__fadeIn">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-center fit-videos wow animate__fadeInLeft">
+          <p class="text-medium alt-font text-extra-dark-gray margin-20px-bottom">Tim Fletcher — The Basics of Complex Trauma (Part 1)</p><a class="position-relative d-block rounded-3 overflow-hidden shadow-lg" href="https://www.youtube.com/watch?v=6IxEwPMqB-c" rel="noopener" style="text-decoration:none;" target="_blank"><img alt="Watch: Tim Fletcher – The Basics of Complex Trauma (Part 1)" class="w-100 rounded-3" src="https://img.youtube.com/vi/6IxEwPMqB-c/hqdefault.jpg"> <span class="position-absolute top-50 start-50 translate-middle bg-deep-pink text-white rounded-circle" style="width:72px; height:72px; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px rgba(0,0,0,.25);"><i class="fas fa-play"></i></span> <span class="position-absolute bottom-0 start-0 w-100 py-2 px-3" style="background:rgba(0,0,0,.55); color:#fff; font-weight:500;">Watch on YouTube</span></a>
+          <p class="text-small text-uppercase letter-spacing-1 margin-10px-top text-extra-medium-gray"><em>One of the first things I watched that actually explained what <strong>complex trauma</strong> is — and why it doesn't behave like anything else.</em></p>
+        </div>
+        <div class="col-lg-6 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">Understanding the Layers</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">Why this video <strong>landed</strong> when others didn't</h5>
+          <p>By the time I found this talk, I had heard a great deal about addiction and almost nothing about what was driving it. Fletcher was the first person who explained complex trauma in a way that didn't feel like it was describing someone else. Not dramatized, not softened — just named, precisely, with every example landing somewhere familiar.</p>
+          <p>I finished it feeling oriented rather than overwhelmed — like someone had handed me a map of territory I had been lost in for decades, and the map was accurate. That experience of being accurately described is one of the most underrated moments in recovery. It doesn't fix anything. But it changes the relationship to the damage in a way that almost nothing else can.</p>
+          <blockquote class="border-color-deep-pink">
+            <p>Fletcher notes that roughly 90% of people struggling with addiction have histories of complex trauma — and that figure is considered conservative. That statistic didn't surprise me. It explained me.</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section><!-- end section -->
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/car-accident2.webp')">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <div class="bg-white padding-nine-all text-center rounded">
+            <div class="alt-font text-deep-pink margin-15px-bottom text-uppercase text-small">
+              CLARIFICATION
+            </div>
+            <h5 class="font-weight-600 alt-font text-extra-dark-gray">A Note on C-PTSD Classification:</h5>
+            <p><strong>Complex PTSD (C-PTSD) is not a fringe concept.</strong><br><br> It was formally recognized in 2022 with the ICD-11 — the World Health Organization’s global diagnostic standard. The challenge is that North America’s DSM-5 still does not include it. As a result, many people living with C-PTSD are often placed into other diagnostic categories such as ADHD, depression, or anxiety — all of which risk missing the full depth and origin of what’s actually happening.<br><br> The outcome is predictable: misdiagnosis, mismatched treatment, and survivors left without the care they truly need. Many clinicians and researchers argue that C-PTSD is far more common than most realize — and far more invisible than it should be.</p><!-- BUTTON -->
+             <a class="btn btn-large btn-deep-pink margin-20px-top w-100 text-center" href="dsm-explained.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h5 class="alt-font text-extra-dark-gray">Why It's <span class="text-deep-pink">Normal</span> <strong>Not to Know</strong>: Recognizing Childhood Trauma</h5>
+          <p class="text-medium line-height-28 sm-line-height-26">If you grew up in chaos, it rarely feels chaotic. It feels like reality. That's one of the most insidious parts of childhood trauma: you don't always realize it happened. Sometimes it goes further than that — it convinces you nothing happened at all. No clear memory to hold onto. Just a vague unease, like a shape you can sense in the dark but cannot name.</p>
+          <blockquote class="border-color-deep-pink text-center margin-40px-tb">
+            <h5 class="alt-font text-extra-dark-gray d-inline-block"><u>This isn't denial. It's the <strong class="text-deep-pink">absence of contrast.</strong></u></h5>
+          </blockquote>
+          <div class="row align-items-start margin-40px-top margin-40px-bottom">
+            <!-- Image -->
+            <div class="col-lg-5 margin-20px-bottom">
+              <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A child standing uneasily in a calm, safe environment" class="img-fluid border-radius-6" src="images/webp/contrast-safe-room.webp"></div>
+            </div><!-- Text -->
+            <div class="col-lg-7">
+              <p>Psychological trauma is often quiet. No broken objects. No dramatic scenes. Just a steady absence of what makes us feel human: being accepted, being comforted, being seen, being believed, <em>being loved.</em> Without that contrast, the nervous system learns to treat ordinary life as something uncertain or unsafe.</p>
+              <p>When dysfunction is your baseline, healthy environments don't feel warm or safe. They feel wrong. Artificial. <em>Suspicious.</em> <strong>For a long time I couldn't identify what was missing because I had never known anything different. <em class="text-deep-pink">I had to build the contrast myself.</em></strong> Through learning, through healing, through choosing differently — one deliberate decision at a time. Only then could I see how deep the patterns actually ran.</p>
+              <div class="bg-light-gray padding-15px-all border-radius-6px margin-25px-top alt-font" style="max-width:860px; margin-left:auto; margin-right:auto;">
+                <p class="text-small m-0 text-extra-dark-gray" style="line-height:1.7; opacity:0.9;"><strong class="text-deep-pink">// Guardrail:</strong> This isn't proof that trauma happened, and it's not a reason to go hunting for memories. It's a way to explain how an unsafe baseline can feel "normal" when you have nothing safe to compare it to.</p>
+              </div>
+            </div>
+          </div>
+          <blockquote class="border-color-deep-pink">
+            <p>Think of the old analogy: a frog in slowly heating water. The temperature rises so gradually it never registers as danger. It just keeps adapting — until it can't. That's what growing up inside trauma often feels like. <strong>Pain doesn't make you wince when pain is all you've known.</strong></p>
+          </blockquote>
+          <div class="row align-items-start margin-40px-top margin-40px-bottom">
+            <!-- Text Content -->
+            <div class="col-lg-7">
+              <p>Every treatment program I attended handed me some version of the same message: <em>"Addiction is killing you. You need better habits. You need to change."</em> None of that was news. I had been telling myself the same thing for years, with considerably more self-loathing. <strong class="text-deep-pink">What no one ever explained was <em>why I felt so relentlessly compelled to destroy myself</em></strong> despite knowing exactly what it was costing me. The answers I got back were always the same: <em>poor choices, weak character, lack of discipline.</em> A résumé of moral failure dressed up as diagnosis.</p>
+              <p>The truth was simpler and more human than any of that. My nervous system wasn't defective. It was adaptive. It was doing precisely what it had been trained to do — and doing it well, by its own logic. Only when I understood that could I stop trying to <em>fix</em> something that was never broken and start learning how to actually re-pattern it. Healing didn't begin the day I stopped using. It began the day I stopped treating my survival strategies like character defects — and started learning what <em>intentional safety</em> actually feels like in a body that had never known it.</p>
+            </div><!-- Frog Image -->
+            <div class="col-lg-5 margin-20px-bottom">
+              <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A sweating cartoon frog sitting in hot water saying 'This is totally normal'" class="img-fluid border-radius-6" src="images/webp/frog-normal.webp"></div>
+            </div>
+          </div>
+          <p>And here's the question that almost never gets asked: if pain feels like home to a child, what does that child grow into? How does someone learn to navigate a world they never felt safe in — let alone learn to trust it, or themselves, again?</p>
+          <blockquote class="border-color-deep-pink">
+            <p>I wasn't born traumatized. I didn't arrive broken or defective or beyond repair. I adapted — plain and simple — to the environment I was handed before I was old enough to know I had any other option. I shaped myself around what surrounded me, by instinct, by trial, by the imperative to survive one more day. By that same logic — the same capacity for adaptation that kept me alive — I can unlearn it.<br>
+            <br>
+            <strong>I can heal. And so can you.</strong></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/complex-trauma-child.webp');"></div>
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft alt-font">
+          <h5 class="alt-font text-light-gray">The Roots of the Wound: <strong>Common Causes</strong> of Complex Trauma</h5>
+          <p class="text-light-gray text-medium">Complex trauma does not always come from what was done to you. <em>It often comes from what was <strong>not</strong> done for you — and what was never present when it should have been:</em></p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li><strong class="text-light-gray">Emotional, physical, or sexual abuse</strong></li>
+              <li><strong class="text-light-gray">Neglect or abandonment</strong></li>
+              <li><strong class="text-light-gray">Growing up without affection, safety, or validation</strong></li>
+              <li><strong class="text-light-gray">Feeling like you didn't belong — the outsider in the place that was supposed to be home</strong></li>
+              <li><strong class="text-light-gray">Living amid dishonesty, manipulation, or betrayal by people who were supposed to be trustworthy</strong></li>
+              <li><strong class="text-light-gray">The absence of consistent boundaries, structure, or reliable care</strong></li>
+              <li><strong class="text-light-gray">Adoption or early separation from caregivers — a loss that happened before you had language to name it or a self stable enough to grieve it</strong></li>
+            </ul>
+            <p class="text-small text-medium-gray margin-10px-top">Early neglect and inconsistent caregiving disrupt the brain's attachment and regulation systems at the precise moment they are being built.</p>
+          </div>
+          <p class="text-light-gray">Adoption and early separation occupy a particular category — because the loss occurs before language, before conscious memory, before there is any cognitive framework to contain it. The body registers the break in connection even when the mind has no record of it ever occurring. That disconnection doesn't disappear with time. It waits.</p>
+          <p class="text-light-gray">These wounds are rarely loud or dramatic. They are quiet, cumulative injuries that accumulate across years of ordinary days — each one individually survivable, collectively shaping something permanent. They don't arrive with a timestamp or a visible scar. They seep. And what they seep into is a child's developing sense of what they are worth and what they can expect from the world. The message, repeated often enough in enough different forms, becomes indistinguishable from truth: <strong class="text-white-2">"You don't matter."</strong></p>
+          <p class="text-light-gray">What begins as neglect or betrayal doesn't stay there. It gets incorporated into the nervous system's operating assumptions. The child adapts — bending themselves to fit an unsafe world, becoming whoever they need to be to reduce the threat of further harm. Not because they chose it. Because it was the only option available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft alt-font">
+          <h5 class="alt-font text-light-gray"><strong>Protective</strong> and <strong>Healing</strong> Factors</h5>
+          <p class="text-light-gray">Not everyone exposed to trauma develops PTSD or C-PTSD. The difference is rarely about strength of character or willingness to recover. It's about what was present — or absent — alongside the adversity:</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3 text-light-gray">
+              <li><strong class="text-deep-pink">Secure relationships:</strong> a caregiver, friend, or therapist who provides genuine safety and attunement — someone who stays when things get hard.</li>
+              <li><strong class="text-deep-pink">Making meaning:</strong> being helped to process and contextualize what happened — so the event becomes part of a story rather than a recurring interruption of the present.</li>
+              <li><strong class="text-deep-pink">Stable environments:</strong> sustained safety that gives the nervous system enough consistent evidence to begin standing down.</li>
+            </ul>
+          </div>
+          <p class="text-light-gray">The Harvard Study of Adult Development — the longest running investigation into happiness and longevity — points to the same conclusion the trauma research does: the single strongest predictor of wellbeing is the quality of close relationships. Safety and connection don't just soften the effects of trauma. They are among the primary mechanisms through which healing actually occurs. The research on this is not ambiguous.</p>
+          <h5 class="alt-font text-light-gray padding-30px-top"><strong>Learn More</strong></h5>
+          <ul class="p-0 list-style-9">
+            <li><strong class="text-deep-pink">Learn more: <span class="text-medium"><a href="https://www.samhsa.gov/mental-health/trauma-violence/trauma-informed-approaches-programs?" target="_blank">SAMHSA Trauma-Informed Care Framework</a></span></strong></li>
+            <li><strong class="text-deep-pink">Learn more: <span class="text-medium"><a href="https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life" target="_blank">Harvard Study of Adult Development</a></span></strong></li>
+          </ul>
+        </div>
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/comfort.webp');"></div>
+      </div>
+    </div>
+  </section><!-- start blog content section -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft">
+          <div class="image-card"><img alt="Brain overwhelmed" class="w-100 rounded-shadow-img" src="images/brain-overwhelm.png"></div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">Survival Blueprint</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">How Children Adapt to Chronic Trauma</h5>
+          <blockquote class="border-color-deep-pink">
+            <p>What choice does a child have when danger can't be escaped or solved?</p>
+          </blockquote>
+          <p class="text-medium">They adapt. They survive.</p>
+          <p>In unsafe environments, children unconsciously assemble survival rules — not through reasoning but through accumulated experience of what reduces threat and what makes it worse. When safety and attunement are scarce or unreliable, they learn the available strategies: freeze, flight, fight, and especially <em>fawn</em> — the art of becoming whoever the room needs in order to earn something resembling connection or simply avoid further harm.</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3 alt-font">
+              <li><strong>"I won't get hurt again."</strong></li>
+              <li><strong>"I'll find a way to get love that doesn't hurt."</strong></li>
+            </ul>
+          </div>
+          <p>These rules become blueprints. They keep a child alive. They also exact a cost that won't show up on any invoice until years later — often in ways that look nothing like their origin.</p>
+          <p>Operating from the survival brain rather than the reasoning brain, these adaptations override natural development. Instead of building a stable sense of self, the child constructs an identity organized around protection:</p>
+          <div class="margin-30px-tb strong">
+            <ul class="p-0 list-style-3 alt-font">
+              <li><strong>Emotional numbing or suppression</strong></li>
+              <li><strong>Disconnection from the body and its signals</strong></li>
+              <li><strong>Only permitting "safe" emotional states — neutrality, flatness, nothing that might draw attention</strong></li>
+              <li><strong>Self-sabotage or deeply internalized guilt that has no specific origin it can point to</strong></li>
+            </ul>
+          </div>
+          <p>In relationships, the blueprint sounds like: <em>"I'll leave you before you leave me."</em> Intimacy registers as exposure. Trust feels like a setup. We crave closeness and panic the moment it arrives. <strong>It is not a fear of being alone — it is a fear of being close and then betrayed by the person who was supposed to be safe.</strong></p>
+          <p>For me, the safest option as a child was to go unseen. Flying under the radar wasn't strategy — it was survival. Getting noticed usually meant getting hurt. And sometimes it didn't even matter what I did. I could tell the truth, lie, follow the rules, or break them. The abuse would come anyway — without warning, without logic, without any consistent relationship to my behavior. So I stayed out of the house whenever I could. When I couldn't, I hid.</p>
+          <p>But fear that deep doesn't dissolve. It mutates. My temperament became volatile — lashing out, breaking things, turning the pressure inward when there was nowhere else for it to go. That was how I discharged what I didn't yet have the language or the tools to carry. When overwhelmed, I shut down and waited it out alone — isolation being the only environment that felt like I had any control over the variables.</p>
+          <p>In context, those adaptations were necessary. They worked. They kept me alive. <strong>But they came at the cost of something I didn't notice losing until I had already been losing it for years: the erosion of any stable sense of who I actually was.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" style="background-image:url('images/webp/spectrum-bg.webp');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 ry-spectrum-block" style="background:rgba(255,255,255,0.6); padding:50px 60px; border-radius:14px; box-shadow:0 12px 35px rgba(0,0,0,0.12); backdrop-filter:blur(6px); position:relative; overflow:hidden;">
+          <div style="content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,192,203,0.08) 100%); pointer-events:none;"></div>
+          <div style="position:relative; z-index:2;">
+            <h2 class="alt-font text-extra-dark-gray" style="font-size:32px; line-height:1.2; margin-bottom:10px; font-weight:600;"><span class="text-deep-pink">//</span> The Survival Spectrum</h2>
+            <h5 class="alt-font text-extra-dark-gray" style="margin-bottom:25px; font-size:18px; line-height:1.5;">How a child adapts in an environment of <strong>fear</strong> or <strong>unpredictability</strong></h5>
+            <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray">When you grow up in fear, the nervous system doesn't simply settle once the immediate threat passes. For many of us, the threat never fully passed. The body learned to stay on high alert — not as a choice, but as a conclusion: <em>this is what the world requires.</em></p>
+            <p class="text-extra-dark-gray">What looks like dysfunction from the outside is strategy from the inside. These are not flaws. They are responses — intelligent, context-specific, and exactly right for the environment that produced them. You didn't select them. Your nervous system did, on your behalf, before you had any say in the matter.</p>
+            <p class="text-extra-dark-gray">Each of these patterns is the nervous system executing the program it was given. They made sense once. The problem isn't that they existed — it's that they've continued running in conditions they were never designed for.</p>
+            <p class="text-extra-dark-gray">Many of these patterns began as answers to needs that were never reliably met — for safety, for touch, for honesty, for belonging. Healing begins when the body accumulates enough evidence that those needs can finally be met without the cost that meeting them once required.</p>
+            <p class="text-extra-dark-gray">The shift that happens when you see these patterns clearly for the first time is significant. Not character defects. Not moral weakness. Not proof of what you are. Survival code — written under conditions that demanded it, by a system that was doing the only thing available to it. That reframe doesn't erase the patterns. But it changes the relationship to them entirely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray ry-trauma-patterns">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-lg-2">
+        <!-- LEFT IMAGE -->
+        <div class="col cover-background md-h-500px sm-h-350px wow animate__fadeIn" style="background-image:url('images/webp/fight-flight.webp');">
+          <div class="sm-h-400px"></div>
+        </div><!-- RIGHT CONTENT -->
+        <div class="col padding-five-tb padding-five-half-lr lg-padding-50px-tb md-padding-70px-tb md-padding-15px-lr wow animate__fadeIn">
+          <div class="row justify-content-center m-0">
+            <div class="col-12 col-md-12 col-sm-8 sm-no-padding-lr text-center text-md-start">
+              <h4 class="alt-font text-white-2 text-center text-lg-start md-w-70 mx-auto mx-lg-0 ry-title">Trauma Response Patterns</h4>
+            </div>
+          </div>
+          <div class="row justify-content-center m-0">
+            <div class="col-12">
+              <div class="ry-grid">
+                <!-- FREEZE -->
+                <article class="ry-card">
+                  <header class="ry-kicker">
+                    FREEZE
+                  </header>
+                  <p class="ry-copy">The freeze response is about shutting down to feel safe. Emotions are numbed, vulnerability is locked away, and detachment becomes the default. It is not indifference. It is disconnection. The body learns that stillness and silence are the safest bets.</p>
+                </article><!-- FIGHT -->
+                <article class="ry-card">
+                  <header class="ry-kicker">
+                    FIGHT
+                  </header>
+                  <p class="ry-copy">Fight mode turns anger into armor. When it cannot be expressed outward, it turns inward as self-harm, self-loathing, or corrosive shame. It shows up as volatility, a quick temper, or a relentless need to assert control when the world feels threatening. Conflict, even when destructive, becomes familiar ground.</p>
+                </article><!-- FLIGHT -->
+                <article class="ry-card">
+                  <header class="ry-kicker">
+                    FLIGHT
+                  </header>
+                  <p class="ry-copy">Flight is the instinct to escape before the danger lands. It shows up as bolting emotionally, mentally, or physically. The mind races, catastrophizes, and spirals into worst-case scenarios. Productivity, perfectionism, or even humor can all become ways to outrun pain that feels too overwhelming to face.</p>
+                </article><!-- FAWN -->
+                <article class="ry-card">
+                  <header class="ry-kicker">
+                    FAWN
+                  </header>
+                  <p class="ry-copy">Fawn is the quietest form of survival. It is the instinct to please, appease, and dissolve into what others need. It looks like anticipating moods, smoothing over conflict, or keeping the peace at the expense of your own needs. Connection feels conditional, so safety is earned through self-erasure.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+            /* ===== Trauma Patterns – scoped ===== */
+            .ry-trauma-patterns {
+              --ry-text: #d6d6d6;
+              --ry-muted: #a9a9a9;
+              --ry-pink: #ff2f6e; /* matches your deep pink */
+              --ry-card-bg: rgba(255,255,255,0.02);
+              --ry-stroke: rgba(255,255,255,0.08);
+            }
+
+            .ry-trauma-patterns .ry-title {
+              letter-spacing: .2px;
+              line-height: 1.2;
+              margin-bottom: 32px;
+              position: relative;
+            }
+            .ry-trauma-patterns .ry-title:after{
+              content:"";
+              display:block;
+              width:80px;
+              height:3px;
+              background: var(--ry-pink);
+              margin: 18px 0 0;
+              opacity:.8;
+            }
+
+            .ry-trauma-patterns .ry-grid{
+              display:grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 26px 32px;
+            }
+            @media (max-width: 991.98px){
+              .ry-trauma-patterns .ry-grid{ grid-template-columns: 1fr; gap:22px; }
+            }
+
+            .ry-trauma-patterns .ry-card{
+              position: relative;
+              padding: 22px 22px 22px 22px;
+              border-radius: 16px;
+              background: var(--ry-card-bg);
+              outline: 1px solid var(--ry-stroke);
+              box-shadow: 0 8px 24px rgba(0,0,0,.25);
+              transition: transform .25s ease, box-shadow .25s ease, outline-color .25s ease;
+            }
+            .ry-trauma-patterns .ry-card:hover{
+              transform: translateY(-2px);
+              box-shadow: 0 12px 28px rgba(0,0,0,.35);
+              outline-color: rgba(255,47,110,.18);
+            }
+
+            .ry-trauma-patterns .ry-kicker{
+              font-family: inherit; /* keeps your alt-font if inherited */
+              font-weight: 700;
+              color: var(--ry-pink);
+              letter-spacing: .8px;
+              font-size: 14px;
+              line-height: 1;
+              text-transform: uppercase;
+              display:inline-block;
+              padding-bottom: 10px;
+              border-bottom: 2px solid rgba(255,47,110,.35);
+              margin-bottom: 12px;
+            }
+
+            .ry-trauma-patterns .ry-copy{
+              color: var(--ry-text);
+              font-size: 16.5px;
+              line-height: 1.8;
+              margin: 0;
+              -webkit-font-smoothing: antialiased;
+            }
+            @media (min-width:1200px){
+              .ry-trauma-patterns .ry-copy{ font-size: 17px; }
+            }
+
+            /* subtle column rhythm alignment for multi-line items */
+            .ry-trauma-patterns .ry-card:nth-child(odd){ margin-top: 2px; }
+            .ry-trauma-patterns .ry-card:nth-child(even){ margin-top: 12px; }
+
+            /* accessibility: improve contrast for extra-dark bg */
+            .ry-trauma-patterns .ry-copy strong,
+            .ry-trauma-patterns .ry-copy em{ color:#fff; }
+
+    </style>
+  </section>
+  <section class="wow animate__fadeIn bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="Cycle of trauma to addiction" class="w-100" src="images/trauma-relief-cycle.png"></div>
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Cruel Irony of Survival</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">When Relief Becomes Another Danger</h5>
+          <p>When early life teaches you that comfort is neither safe nor reliable, the body doesn't stop needing it. It just stops expecting it from people — and starts looking elsewhere. Substances can feel like the answer. At first, they are: they regulate what trauma dysregulated, quiet the alarm that has been running continuously, and deliver something the nervous system has been searching for without knowing what it was looking for. And then the trap closes.</p>
+          <div class="margin-25px-tb">
+            <ul class="p-0 list-style-3 alt-font text-extra-dark-gray">
+              <li><strong>Early trauma</strong> → the nervous system learns to brace permanently, scanning for the next impact before the last one has landed.</li>
+              <li><strong>Need for soothing</strong> → relief stops being a preference and becomes urgent, non-negotiable, biological.</li>
+              <li><strong>Substance relief</strong> → the alarm finally quiets — briefly, expensively, and on terms it will change without notice.</li>
+              <li><strong>Identity erosion</strong> → shame and secrecy accumulate, self-doubt becomes the baseline, the gap between who you are and who you present widens past the point of comfort.</li>
+              <li><strong>Addiction lifestyle</strong> → new harms, new unsafe people, new contexts that produce the same damage through different mechanisms.</li>
+              <li><strong>More trauma</strong> → betrayal, violence, near-death experiences — the original wound compounded by everything the attempt at relief required.</li>
+            </ul>
+          </div>
+          <p>The cycle compounds itself: trauma sets the stage, addiction writes new chapters, and the chapters become harder to distinguish from the original story. That's why it can feel impossible to know where to start — because what you're trying to repair isn't confined to a single event or a single system. It's physiological, relational, and written across years of surviving what shouldn't have had to be survived.</p>
+          <blockquote class="border-color-deep-pink">
+            <p class="mb-0"><strong>Where do you start?</strong> Anywhere the body registers the slightest hint of safety. That sensation — however small, however brief — is the doorway. Healing begins the moment the nervous system encounters something genuinely different from the past and survives it. Survives it intact. That's the new data it needed.</p>
+          </blockquote>
+          <p>For some people that moment arrives through one consistent relationship — someone who stays when the evidence suggests they won't. For others it comes from learning how to breathe deliberately, or from finally understanding the science behind their own reactions, or from the specific and underrated experience of being believed by someone who had no reason to doubt them. The entry point doesn't matter. What matters is that the body encounters a new pattern — and registers it as real rather than as a temporary exception.</p>
+          <p>Recovery isn't willpower, and it isn't perfection. It's the slow, deliberate process of teaching a nervous system that was built for survival that safety is possible, that connection doesn't inevitably end in damage, and that relief can arrive without an invoice attached. When those lessons accumulate enough evidence, the old strategies begin to lose their grip — not all at once, not on a schedule, but reliably.</p>
+          <p>This isn't moral failure. It's conditioning. And the same brain that learned to endure can learn something else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft">
+          <div class="image-card"><img alt="Empty child's chair symbolizing loss" class="w-100 rounded-shadow-img" src="images/webp/child-chair.webp"></div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Tragic Lesson:</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">"I Must Be the Problem"</h5>
+          <p>Pain is supposed to be a signal that something is wrong in the world around you. But when you are a child and the pain continues — when nothing changes, when no one comes, when it keeps happening — the available explanations narrow to one. The world can't be the problem. The world is all there is. So:</p>
+          <blockquote class="border-color-deep-pink">
+            <p>"It must be me."</p>
+          </blockquote>
+          <p>So you adapt. You try everything available to a child: you become invisible. You become perfect. You become funny, easy, useful, agreeable. You shape-shift continuously, hoping that the right version of yourself will finally be the one that earns love — or at minimum, avoids harm. But when nothing works, the conclusion stops being situational and becomes structural. Not "I did something wrong" — but <em>"I am wrong."</em></p>
+          <p>This is how toxic shame takes root. It doesn't knock. It doesn't announce itself. It simply moves in — quietly, thoroughly — and begins rearranging the furniture.</p>
+          <p>And the specific cruelty of it is that you may not even experience it as words. Shame doesn't always arrive as a voice. It arrives as a flinch when someone raises their voice across the room. As an over-explanation offered before anyone has asked a question. As an apology for taking up space. As the persistent, sourceless certainty that your needs are a burden and your presence is an imposition. You are not consciously telling yourself <em>"I am the problem."</em> You are simply living as though it has already been proven — and organizing your entire life around managing the consequences of a verdict that was never actually delivered.</p>
+          <p>This is the silent architecture of internalized shame. It doesn't need words to run the show. It just needs enough repetition to stop feeling like a belief and start feeling like the truth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="extra-big-section parallax wow animate__fadeIn empowering-section" data-parallax-background-ratio="0.5" style="background-image: url('images/webp/mountains.webp')">
+    <div class="opacity-full-dark bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-11 text-left">
+          <span class="text-deep-pink alt-font text-small text-uppercase letter-spacing-2 d-inline-block sm-margin-10px-bottom">Your Story Matters</span>
+          <h5 class="text-light-gray alt-font margin-30px-bottom sm-margin-20px-bottom">Empowering Understanding</h5>
+          <blockquote class="border-color-deep-pink empowering-quote">
+            <p class="text-white-2 mb-0">"Understanding trauma isn't about proving anyone wrong or assigning blame. It's about finally telling the truth to yourself about how you got here."</p>
+          </blockquote>
+          <div class="empowering-accent">
+            <p class="text-white-2">This kind of work stirs things up. It surfaces memories you didn't expect, grief you thought you had finished with, and questions you aren't sure you want answered. That's not a sign something is going wrong. That's the work beginning in earnest.</p>
+            <p class="text-white-2">Along the way, many people feel a strong pull to <em>set the record straight</em> — with parents, relatives, caregivers, or anyone who played a harmful role in their history. Sometimes those conversations are healing, particularly when the other person is genuinely willing to listen, take responsibility, and make repair. But often they aren't. People become defensive, deny what happened, minimize it, or insist you are remembering incorrectly. When that happens, it doesn't mean your reality is wrong. It means they are not able — or not willing — to face it. Those are not the same thing, and the distinction matters.</p>
+            <p class="text-white-2"><strong>Your healing cannot be contingent on someone else admitting what they did.</strong> For some survivors, those conversations are genuinely unsafe. For others, they're simply impossible: people die, go silent, or remain so entrenched in their own version that no amount of clarity on your part will reach them. If their acknowledgment becomes a requirement for your progress, <em>your healing gets held hostage by someone else's willingness to be honest.</em> That is an unreasonable price. You have already paid enough.</p>
+            <p class="text-white-2">Some of the people who hurt you will never name what they did. They may never own it, acknowledge it, or even privately admit it to themselves. That is not yours to carry. What is yours are your memories, your body, your patterns, and your absolute right to believe your own experience.</p>
+            <p class="text-white-2">The more clearly you understand how those patterns formed, the more capacity you have to interrupt them — whether or not anyone who was present ever agrees with your account of what happened. Your story does not require their signature to be true.</p>
+            <p class="text-white-2">There may come a time when an opportunity arises to hold someone accountable in a way that is real and possible. If that day comes, I hope you have the clarity and the strength to do what you believe needs to be done. But accountability from others cannot be the threshold your healing has to cross. The moment it becomes a requirement, your recovery moves outside your own control — and you have spent enough of your life at the mercy of other people's choices.</p>
+            <p class="text-white-2">This work is not indulgent. It is not self-pity dressed up as therapy. It is an act of rigorous self-compassion — the courage to look honestly at the map of your past, not to live there, but to finally understand why you kept arriving at the same destinations. On your terms. With or without the participation of the people who were there when it started.</p>
+            <p class="text-deep-pink empowering-end text-medium">Healing begins with understanding. And understanding begins the moment you give yourself permission to believe your own experience — even if no one who was there ever does.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+       .empowering-section .opacity-full-dark {
+         background: linear-gradient(
+           rgba(10, 10, 10, 0.95),
+           rgba(5, 5, 5, 0.9)
+         );
+       }
+       .empowering-section p,
+       .empowering-section h5,
+       .empowering-section span,
+       .empowering-section blockquote {
+         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+       }
+       .empowering-quote {
+         font-size: 1.25rem;
+         line-height: 1.7;
+         margin: 35px 0 25px;
+       }
+       .empowering-accent {
+         border-left: 2px solid rgba(255, 47, 110, 0.45);
+         padding-left: 26px;
+         margin-top: 10px;
+       }
+       .empowering-accent p {
+         margin-bottom: 22px;
+         line-height: 1.7;
+       }
+       .empowering-end {
+         border-top: 1px solid rgba(255, 255, 255, 0.16);
+         padding-top: 22px;
+         margin-top: 35px;
+       }
+    </style>
+  </section>
+  <section class="wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="text-deep-pink">Disclaimer</h2>
+          <h5 class="alt-font text-extra-dark-gray">This content is here to inform, <strong>not diagnose.</strong> If something feels too heavy, step away. <strong>Write it down.</strong> Breathe. <strong>Return when you're ready.</strong></h5>
+          <blockquote class="border-color-deep-pink">
+            <p>Understanding how you got here doesn't require you to hold all of it at once. Read in pieces if that's what the day allows. What you're doing — choosing to look honestly at what shaped you, rather than away from it — is not small. Most people never do it. They manage the symptoms, explain away the patterns, and call the distance they keep from themselves by more comfortable names.<br>
+            <br>
+            If any part of this has landed — if something named what you've been carrying without knowing how to carry it — then something has already shifted. Not fixed. Not finished. But different from before you started reading. <strong>That difference is where everything else begins.</strong></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- 🎛️ playback speed control -->
+  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
+    <video id="learnMoreBg" autoplay muted loop playsinline class="learn-more-bg">
+      <source src="video/learn-more-bg.mp4" type="video/mp4">
+    </video>
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
+          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
+          <p class="learn-more-subtitle">Follow the next step in order, or branch out into related topics.</p>
+        </div>
+      </div>
+      <div class="learn-more-divider mx-auto"></div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
+          <a class="learn-card is-next category-trauma" href="attachment.html">
+            <span class="learn-card-label">Up Next</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Your First Blueprint</div>
+            <p>Early bonds wire how you experience safety, love, and connection forever.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.2s">
+          <a class="learn-card" href="toxic-stress.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Toxic Stress</div>
+            <p>How chronic adversity rewires the developing brain from the inside out.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.3s">
+          <a class="learn-card" href="cptsd-behaviours.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Trauma in Plain Sight</div>
+            <p>How C-PTSD really appears — in thoughts, habits, relationships, daily life.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.4s">
+          <a class="learn-card" href="brain-on-fire.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Brain on Fire</div>
+            <p>How trauma and addiction hijack the brain — and why willpower can't fix it.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray" id="sources">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
+            <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <ol class="list-style-9 text-small text-medium-gray">
+
+              <!-- ── DEFINING TRAUMA: FOUNDATIONAL CLINICAL FRAMEWORKS ── -->
+
+              <li id="ref-herman-1992">
+                Herman, J. L. (1992). <strong>Trauma and Recovery: The Aftermath of Violence — from Domestic Abuse to Political Terror.</strong>
+                Basic Books. The landmark clinical text that established the modern framework for understanding trauma — distinguishing single-incident PTSD from the complex syndrome arising from prolonged, repeated interpersonal adversity, and proposing the three-stage recovery model that remains the organizing framework for trauma-informed care globally. The foundational argument that trauma is not a character weakness but a set of physiological and psychological adaptations to overwhelming experience.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/542700.Trauma_and_Recovery" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <li id="ref-icd11-ptsd">
+                World Health Organization. (2019). <strong>ICD-11: International Classification of Diseases, 11th Revision — 6B40: Post-Traumatic Stress Disorder and 6B41: Complex PTSD.</strong>
+                The formal diagnostic recognition of both PTSD and C-PTSD as distinct conditions — establishing that trauma is not a single category but a spectrum of responses, and that prolonged developmental trauma produces a syndrome with distinct features requiring distinct treatment. The ICD-11's inclusion of C-PTSD validated decades of clinical observation.
+                <a class="text-deep-pink" href="https://icd.who.int/browse/2025-01/mms/en#2070699808" rel="noopener" target="_blank">View ICD-11 Entry</a>
+              </li>
+
+              <li id="ref-samhsa-2014">
+                SAMHSA. (2014). <strong>SAMHSA's Concept of Trauma and Guidance for a Trauma-Informed Approach.</strong>
+                HHS Publication No. (SMA) 14-4884. Foundational federal policy document defining trauma in public health terms and establishing the Six Key Principles of a Trauma-Informed Approach. Explicitly states that trauma is a risk factor for nearly all behavioral health and substance use disorders, providing institutional grounding for the site's core framework.
+                <a class="text-deep-pink" href="https://www.nctsn.org/sites/default/files/resources/resource-guide/samhsa_trauma.pdf" rel="noopener" target="_blank">Download PDF</a>
+              </li>
+
+              <!-- ── THE NEUROBIOLOGY OF TRAUMA: BRAIN & NERVOUS SYSTEM ── -->
+
+              <li id="ref-vdk-2014">
+                Van der Kolk, B. A. (2014). <strong>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</strong>
+                Viking. The seminal synthesis of trauma neuroscience — documenting how traumatic experience is stored not as narrative memory but as somatic and sensory imprints in the nervous system, and why this explains why insight alone does not produce healing. Covers the amygdala, hippocampus, prefrontal cortex, and autonomic nervous system in accessible clinical terms.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/18693771-the-body-keeps-the-score" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <li id="ref-porges-2011">
+                Porges, S. W. (2011). <strong>The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation.</strong>
+                Norton. Documents the autonomic nervous system's three-tiered hierarchy of threat response — social engagement, fight/flight, and freeze/shutdown — providing the neurophysiological framework for understanding why trauma survivors cycle through hyperarousal, numbing, and dissociation, and why safety is a biological prerequisite for healing rather than a therapeutic nicety.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/9939396-the-polyvagal-theory" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <li id="ref-bremner-2006">
+                Bremner, J. D. (2006). <strong>Traumatic stress: effects on the brain.</strong>
+                <em>Dialogues in Clinical Neuroscience, 8</em>(4), 445–461. Key review documenting how chronic stress and trauma produce measurable structural changes in the prefrontal cortex (reduced volume and activity), amygdala (heightened threat reactivity), and hippocampus (glucocorticoid-driven atrophy) — the three brain regions most directly implicated in the symptoms this page describes as trauma responses rather than character defects.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View on PubMed</a>
+              </li>
+
+              <li id="ref-mcewen-2007">
+                McEwen, B. S. (2007). <strong>Physiology and neurobiology of stress and adaptation: central role of the brain.</strong>
+                <em>Physiological Reviews, 87</em>(3), 873–904. Comprehensive review establishing how chronic stress dysregulates the HPA axis and reshapes brain architecture through sustained glucocorticoid exposure — providing the physiological mechanism behind this page's explanation of why prolonged threat changes not just behavior but biology.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17615391/" rel="noopener" target="_blank">View on PubMed</a>
+              </li>
+
+              <li id="ref-shin-liberzon-2010">
+                Shin, L. M., &amp; Liberzon, I. (2010). <strong>The neurocircuitry of fear, stress, and anxiety disorders.</strong>
+                <em>Neuropsychopharmacology, 35</em>(1), 169–191. Comprehensive neuroimaging review documenting amygdala hyperreactivity in PTSD — showing how trauma sensitizes the brain's threat-detection system, lowering the threshold for fear responses and explaining why trauma survivors react to ordinary triggers with a nervous system still braced for the original threat.
+                <a class="text-deep-pink" href="https://doi.org/10.1038/npp.2009.83" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <!-- ── DEVELOPMENTAL TRAUMA: ACEs AND EARLY ADVERSITY ── -->
+
+              <li id="ref-felitti-1998">
+                Felitti, V. J., Anda, R. F., et al. (1998). <strong>Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults.</strong>
+                <em>American Journal of Preventive Medicine, 14</em>(4), 245–258. The original ACE Study — establishing through more than 17,000 participants the dose–response relationship between early adversity and adult physical health, mental health, and behavioral outcomes. The empirical foundation for the site's argument that trauma is not rare, not always dramatic, and not something people simply recover from without support.
+                <a class="text-deep-pink" href="https://doi.org/10.1016/S0749-3797(98)00017-8" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <li id="ref-shonkoff-2012">
+                Shonkoff, J. P., et al. (2012). <strong>The lifelong effects of early childhood adversity and toxic stress.</strong>
+                <em>Pediatrics, 129</em>(1), e232–e246. Seminal AAP policy statement distinguishing positive, tolerable, and toxic stress — and documenting how prolonged activation of stress response systems without adequate adult buffering disrupts brain architecture, immune function, and cardiovascular health in ways that persist across the lifespan. Provides the developmental science behind this page's framing of trauma as biological, not merely psychological.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/22201156/" rel="noopener" target="_blank">View on PubMed</a>
+              </li>
+
+              <li id="ref-teicher-samson-2016">
+                Teicher, M. H., &amp; Samson, J. A. (2016). <strong>Annual research review: enduring neurobiological effects of childhood abuse and neglect.</strong>
+                <em>Journal of Child Psychology and Psychiatry, 57</em>(3), 241–266. Landmark review synthesizing neuroimaging evidence linking specific types of early adversity to distinct, measurable changes in brain structure and function — establishing that childhood maltreatment is not a psychological risk factor but a neurobiological one, with consequences that show up on an MRI decades later.
+                <a class="text-deep-pink" href="https://doi.org/10.1111/jcpp.12507" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <!-- ── TRAUMA AND THE BODY: SOMATIC DIMENSION ── -->
+
+              <li id="ref-levine-1997">
+                Levine, P. A. (1997). <strong>Waking the Tiger: Healing Trauma.</strong>
+                North Atlantic Books. Foundational somatic trauma text introducing the concept of trauma as a survival response stored in the body rather than the mind — explaining the freeze response, the role of incomplete defensive activation, and why somatic approaches are often necessary for recovery that purely cognitive methods cannot reach.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/384924.Waking_the_Tiger" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <li id="ref-rothschild-2000">
+                Rothschild, B. (2000). <strong>The Body Remembers: The Psychophysiology of Trauma and Trauma Treatment.</strong>
+                Norton. Integrates psychophysiology with clinical practice — explaining how traumatic experience is encoded in the nervous system and body memory, and providing the conceptual bridge between the neuroscience of threat response and practical trauma treatment that prioritizes physiological stabilization.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/35329.The_Body_Remembers" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <!-- ── TRAUMA & ADDICTION: THE SELF-MEDICATION LINK ── -->
+
+              <li id="ref-khantzian-1997">
+                Khantzian, E. J. (1997). <strong>The self-medication hypothesis of substance use disorders: a reconsideration and recent applications.</strong>
+                <em>Harvard Review of Psychiatry, 4</em>(5), 231–244. Updated formulation of the self-medication hypothesis — arguing that substance use in trauma survivors is motivated primarily by the need to relieve painful affect that the nervous system cannot otherwise regulate. Directly connects this page's definition of trauma to the site's broader argument about addiction as adaptation.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/9385000/" rel="noopener" target="_blank">View on PubMed</a>
+              </li>
+
+              <li id="ref-mate-2008">
+                Maté, G. (2008). <strong>In the Realm of Hungry Ghosts: Close Encounters with Addiction.</strong>
+                Knopf Canada. Ground-level clinical and human argument that addiction is most accurately understood as a response to the unbearable pain of unprocessed trauma — making the case, person by person, that the question is never "why the addiction" but always "why the pain."
+                <a class="text-deep-pink" href="https://drgabormate.com/book/in-the-realm-of-hungry-ghosts/" rel="noopener" target="_blank">View on Dr. Maté's Site</a>
+              </li>
+
+              <!-- ── TRAUMA PREVALENCE & PUBLIC HEALTH ── -->
+
+              <li id="ref-kessler-1995">
+                Kessler, R. C., Sonnega, A., Bromet, E., Hughes, M., &amp; Nelson, C. B. (1995). <strong>Posttraumatic stress disorder in the National Comorbidity Survey.</strong>
+                <em>Archives of General Psychiatry, 52</em>(12), 1048–1060. Landmark epidemiological study establishing population-level PTSD prevalence — finding that roughly 60% of men and 51% of women in the United States reported at least one traumatic event in their lifetime, and that PTSD was far more common than previously recognized. Provides the epidemiological foundation for framing trauma as a public health issue, not a rare clinical presentation.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/7492257/" rel="noopener" target="_blank">View on PubMed</a>
+              </li>
+
+            </ol>
+            <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These sources span the clinical definition of trauma, its neurobiological mechanisms, its developmental origins, its somatic dimension, and its relationship to addiction — grounding this page's core argument that trauma is a physiological adaptation to overwhelming experience rather than a psychological weakness. They are for educational context, not medical advice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ticker">
+                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- start services section -->
+
+    <!-- ========== NEW FOOTER & PRIVACY ========== -->
+    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+      <div class="container">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__left alt-font text-small font-weight-500">
+            <a href="contact.html">GET IN TOUCH</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="open-privacy-policy">Privacy Policy</a>
+          </div>
+
+          <div class="site-footer__center">
+            <a href="index.html">
+              <img
+                alt="Recover You logo white"
+                class="footer-logo"
+                data-at2x="images/logo-white@2x.png"
+                src="images/logo-white.png"
+              >
+            </a>
+          </div>
+
+          <div class="site-footer__right alt-font text-small font-weight-500">
+            Not medical advice.<br>
+            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+          </div>
+
+        </div>
+      </div>
+    </footer><!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
+     <!-- javascript -->
+     
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script> 
+    <script src="js/bootsnav.js" type="text/javascript">
+    </script> 
+    <script src="js/jquery.nav.js" type="text/javascript">
+    </script> 
+    <script src="js/hamburger-menu.js" type="text/javascript">
+    </script> 
+    <script src="js/theme-vendors.min.js" type="text/javascript">
+    </script> <!-- setting -->
+     
+    <script src="js/main.js" type="text/javascript">
+    </script>
+
+
+
+    
+    <script>
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+
+      if (!progress || !fill) return;
+
+      /* 
+        Reusable rules:
+        1) If a section has id="page-hero", use that
+        2) otherwise use the first .parallax section
+        3) if no hero exists, start from top of page
+      */
+      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight
+        );
+      }
+
+      function updateReadingProgress() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+
+        let startPoint = 0;
+
+        if (hero) {
+          startPoint = hero.offsetTop + hero.offsetHeight;
+        }
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+
+          if (totalReadableDistance <= 0) {
+            fill.style.width = '100%';
+            return;
+          }
+
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', updateReadingProgress);
+      window.addEventListener('resize', updateReadingProgress);
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    })();
+    </script>
+
+
+    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
+    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+      <div class="privacy-modal__backdrop" data-close-policy></div>
+
+      <div
+        class="privacy-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-modal-title"
+      >
+        <div class="privacy-modal__header">
+          <h3 id="privacy-modal-title">Privacy Policy</h3>
+          <button
+            type="button"
+            class="privacy-modal__close"
+            aria-label="Close privacy policy"
+            data-close-policy
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="privacy-modal__body">
+          <p><strong>Last updated:</strong> March 2026</p>
+
+          <p>
+            If you reach out through the contact form, I'll collect your name, email, and 
+            message — nothing more. That information is used only to get back to you. It's 
+            not shared, sold, or used for anything else.
+          </p>
+
+          <p>
+            This site uses two analytics tools to help me understand how people find and 
+            use it. Google Analytics is only active if you choose to allow analytics cookies. 
+            Netlify Web Analytics runs quietly in the background using general server data — 
+            no cookies, no individual tracking.
+          </p>
+
+          <p>
+            A few third-party services help keep the site running — things like hosting and 
+            the contact form. Some of these are based outside Canada, so your information 
+            may be processed there. I've chosen providers I trust, but I want you to know.
+          </p>
+
+          <p>
+            Please don't share anything urgent or crisis-related through the contact form — 
+            it's not monitored in real time. If you're in immediate distress, please reach 
+            out to a crisis line or emergency services.
+          </p>
+
+          <p>
+            Questions about this policy, or want to see or correct something I have about 
+            you? You can reach me through the contact page — I'm happy to help.
+          </p>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const modal = document.getElementById('privacy-modal');
+        const openBtn = document.getElementById('open-privacy-policy');
+        const closeBtns = document.querySelectorAll('[data-close-policy]');
+
+        if (!modal || !openBtn) return;
+
+        function openPolicy(e) {
+          e.preventDefault();
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('policy-modal-open');
+        }
+
+        function closePolicy() {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('policy-modal-open');
+        }
+
+        openBtn.addEventListener('click', openPolicy);
+
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', closePolicy);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            closePolicy();
+          }
+        });
+      })();
+    </script>
+      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">
+        <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CONSENT_KEY = 'ry_cookie_consent';
+      const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+      const DECLINE_DAYS = 180;
+
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const declineBtn = document.getElementById('cookie-decline');
+
+      function grantAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+
+      function denyAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+
+      function showBanner() {
+        if (banner) banner.style.display = 'block';
+      }
+
+      function hideBanner() {
+        if (banner) banner.style.display = 'none';
+      }
+
+      function setDeclineExpiry(days) {
+        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
+      }
+
+      function clearDeclineExpiry() {
+        localStorage.removeItem(CONSENT_EXPIRY_KEY);
+      }
+
+      function isDeclineExpired() {
+        const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
+        if (!expiry) return true;
+        return Date.now() > Number(expiry);
+      }
+
+      function applyConsentState() {
+        const consent = localStorage.getItem(CONSENT_KEY);
+
+        if (consent === 'accepted') {
+          grantAnalytics();
+          hideBanner();
+          return;
+        }
+
+        if (consent === 'declined') {
+          denyAnalytics();
+
+          if (isDeclineExpired()) {
+            localStorage.removeItem(CONSENT_KEY);
+            localStorage.removeItem(CONSENT_EXPIRY_KEY);
+            showBanner();
+          } else {
+            hideBanner();
+          }
+          return;
+        }
+
+        denyAnalytics();
+        showBanner();
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'accepted');
+          clearDeclineExpiry();
+          grantAnalytics();
+          hideBanner();
+        });
+      }
+
+      if (declineBtn) {
+        declineBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'declined');
+          setDeclineExpiry(DECLINE_DAYS);
+          denyAnalytics();
+          hideBanner();
+        });
+      }
+
+      applyConsentState();
+    })();
+  </script>
+  </body>
+</html>

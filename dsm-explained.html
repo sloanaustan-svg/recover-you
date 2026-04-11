@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    // Default: deny analytics until user accepts
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+
+    gtag('config', 'G-6968KR6JY9', {
+      'anonymize_ip': true
+    });
+  </script>
+  <title>DSM vs ICD: Navigating the Diagnosis Gap | Recover-You</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+      <meta name="author" content="Austan Sloan | Recover-You">
+      <meta name="description" content="Is your diagnosis missing the full picture? Explore the gap between the DSM-5 and ICD-11, why C-PTSD was left out, and why a label is a starting point, not a destiny.">
+      <meta name="keywords" content="DSM-5 vs ICD-11, C-PTSD diagnosis, mental health classification, complex trauma, diagnosis gap, ICD-11 C-PTSD, trauma-informed care Alberta, Recover-You, Austan Sloan">
+
+      <meta property="og:title" content="DSM vs ICD: Why Your Diagnosis Might Be Incomplete">
+      <meta property="og:description" content="Discover why the medical world is divided on C-PTSD. Learn the difference between the DSM and ICD-11, and how to use your diagnosis as a tool for healing rather than a cage.">
+      <meta property="og:image" content="images/og-dsm-icd.jpg">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="https://recover-you.ca/dsm-explained.html">
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="The Gap in Diagnosis: DSM vs ICD | Recover-You">
+      <meta name="twitter:description" content="A survivor-led look at the systems used to label trauma—and why those labels often fall short.">
+      <meta name="twitter:image" content="images/og-dsm-icd.jpg">
+
+      <link rel="canonical" href="https://recover-you.ca/dsm-explained.html">
+
+      <link href="favicon.ico" rel="icon" type="image/x-icon">
+      <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+      <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
+      <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
+      <link href="apple-touch-icon.png" rel="apple-touch-icon">
+      <link href="favicon.svg" rel="icon" type="image/svg+xml">
+
+      <link rel="stylesheet" href="css/bootsnav.css" type="text/css">
+      <link rel="stylesheet" href="css/font-icons.min.css" type="text/css">
+      <link rel="stylesheet" href="css/theme-vendors.min.css" type="text/css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <link rel="stylesheet" href="css/responsive.css" type="text/css">
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "DSM vs ICD: Understanding the Diagnosis Gap in Trauma Recovery",
+        "description": "An analysis of the differences between the DSM-5 and ICD-11 diagnostic systems, focusing on the inclusion and exclusion of Complex PTSD.",
+        "image": "images/og-dsm-icd.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Austan Sloan"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Recover-You",
+          "url": "https://recover-you.ca"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://recover-you.ca/dsm-explained.html"
+        },
+        "inLanguage": "en",
+        "about": [
+          { "@type": "Thing", "name": "Diagnostic and Statistical Manual of Mental Disorders" },
+          { "@type": "Thing", "name": "International Classification of Diseases" },
+          { "@type": "Thing", "name": "Complex PTSD" }
+        ]
+      }
+      </script>
+  <style>
+       .ry-card{border-radius:14px;box-shadow:0 18px 45px rgba(0,0,0,.15)}
+       .ry-pad{padding:42px}
+       .ry-pad-sm{padding:26px}
+       .ry-kicker{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+       .ry-panel{border-radius:10px;padding:26px;height:100%}
+       .ry-panel-dark{background:#1b1b1b;color:#ddd}
+       .ry-panel-light{background:#fff;color:#222}
+       .ry-chip{display:inline-block;padding:6px 12px;border-radius:999px;background:#efefef;font-size:.8rem;margin:.25rem .35rem .25rem 0}
+       /* grid for the three tiles */
+       .ry-tiles{display:grid;grid-template-columns:repeat(3,minmax(260px,1fr));gap:24px}
+       @media (max-width: 991.98px){.ry-pad{padding:28px}.ry-pad-sm{padding:20px}.ry-tiles{grid-template-columns:1fr}}
+       .ry-chip {
+         display:inline-block;
+         padding:8px 16px;                     /* a bit larger */
+         border-radius:999px;
+         background:#2d2d2d;                   /* darker gray base */
+         color:#fff;                           /* white text for contrast */
+         font-size:.9rem;                      /* larger text */
+         font-weight:600;
+         letter-spacing:.03em;
+         margin:.3rem .4rem .3rem 0;
+         box-shadow:0 3px 6px rgba(0,0,0,.25); /* subtle lift */
+         border:1px solid rgba(255,255,255,.2);/* faint edge for definition */
+         transition:all .2s ease;
+       }
+       .ry-chip:hover {
+         background:#e83e8c;                   /* your deep pink accent on hover */
+         color:#fff;
+         transform:translateY(-2px);
+       }
+
+       .overlay-dark {
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.85) 100%);
+         z-index: 1;
+       }
+
+       .text-shadow {
+         text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+       }
+
+       .bg-black-transparent {
+         background: rgba(0,0,0,0.45);
+         backdrop-filter: blur(4px);
+       }
+
+       .box-shadow-soft {
+         box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+       }
+
+       .border-radius-8 {
+         border-radius: 8px;
+       }
+
+  </style>
+</head>
+<body>
+  <div aria-hidden="true" id="reading-progress">
+    <div id="reading-progress-fill"></div>
+  </div><!-- start header -->
+  <header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
+      <div class="container-fluid nav-header-container">
+        <div class="col-auto ps-0">
+          <a class="logo" href="index.html" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+        </div>
+        <div class="col accordion-menu pe-0 pe-md-3">
+          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
+              <li>
+                <a href="index.html" title="Home">Home</a>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-this-site-exists.html">Why This Site Exists</a>
+                  </li>
+                  <li>
+                    <a href="about-me.html">About Me</a>
+                  </li>
+                  <li>
+                    <a href="start-here.html">Start Here</a>
+                  </li>
+                  <li>
+                    <a href="faq.html">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="what-is-trauma.html">What Is Trauma</a>
+                      </li>
+                      <li>
+                        <a href="attachment.html">Attachment Styles</a>
+                      </li>
+                      <li>
+                        <a href="toxic-stress.html">Toxic Stress</a>
+                      </li>
+                      <li>
+                        <a href="shame-grief-false-self.html">Shame, Grief &amp; The False Self</a>
+                      </li>
+                      <li>
+                        <a href="cptsd-behaviours.html">CPTSD Patterns</a>
+                      </li>
+                      <li>
+                        <a href="aces-high.html">ACEs &amp; Risk</a>
+                      </li>
+                      <li>
+                        <a href="dunedin-study.html">The Dunedin Study</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="brain-on-fire.html">Brain on Fire</a>
+                      </li>
+                      <li>
+                        <a href="when-sobriety-feels-worse.html">When Sobriety Feels Worse</a>
+                      </li>
+                      <li>
+                        <a href="neuroplasticity.html">Neuroplasticity</a>
+                      </li>
+                      <li>
+                        <a href="critical-window.html">Critical Windows</a>
+                      </li>
+                      <li>
+                        <a href="epigenetics.html">Epigenetics</a>
+                      </li>
+                      <li>
+                        <a href="dohad.html">DOHaD: Developmental Origins</a>
+                      </li>
+                      <li>
+                        <a href="metabolism.html">Metabolism</a>
+                      </li>
+                      <li>
+                        <a href="the-hijacked-engine.html">The Hijacked Engine</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="the-reckoning.html">The Reckoning: What the Research Shows</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-traditional-treatment-falls-short.html">Why Traditional Treatment Falls Short</a>
+                  </li>
+                  <li>
+                    <a href="problem-with-aa.html">Limits of the AA Model</a>
+                  </li>
+                  <li>
+                    <a href="misdiagnosed.html">When Trauma Is Misdiagnosed</a>
+                  </li>
+                  <li>
+                    <a href="disease-of-addiction.html">The “Disease of Addiction” Debate</a>
+                  </li>
+                  <li>
+                    <a href="dsm-explained.html">DSM vs ICD (Diagnosis Explained)</a>
+                  </li>
+                  <li>
+                    <a href="better-model-of-care.html">What Better Care Requires</a>
+                  </li>
+                  <li>
+                    <a href="trauma-avoidant.html">When Trauma Is Avoided</a>
+                  </li>
+                  <li>
+                    <a href="compassionate-care.html">Compassionate Care: A Critique</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="cbt.html">CBT</a>
+                      </li>
+                      <li>
+                        <a href="dbt.html">DBT</a>
+                      </li>
+                      <li>
+                        <a href="life-traps.html">Life Traps (Schema Therapy)</a>
+                      </li>
+                      <li>
+                        <a href="healing-trauma.html">Healing Trauma (Post-Traumatic Growth)</a>
+                      </li>
+                      <li>
+                        <a href="types-of-therapy.html">Therapy Types</a>
+                      </li>
+                      <li>
+                        <a href="role-of-therapy.html">The Role of Therapy</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="chart-your-life.html">Chart Your Life</a>
+                      </li>
+                      <li>
+                        <a href="distorted-thinking.html">Distorted Thinking</a>
+                      </li>
+                      <li>
+                        <a href="regulation-tools.html">Regulation Tools</a>
+                      </li>
+                      <li>
+                        <a href="reality-test.html">Reality Testing</a>
+                      </li>
+                      <li>
+                        <a href="relationships.html">Relationships in Recovery</a>
+                      </li>
+                      <li>
+                        <a href="connection.html">Connection</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="identity-values-and-beliefs.html">Identity, Values &amp; Beliefs</a>
+                      </li>
+                      <li>
+                        <a href="spirituality.html">Spirituality</a>
+                      </li>
+                      <li>
+                        <a href="the-resilience-lie.html">The Resilience Lie</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="resources.html">Resources</a>
+                      </li>
+                      <li>
+                        <a href="tfr-model.html">Trauma-Focused Recovery Model (TFR Model)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="contact.html" title="Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-auto pe-0"></div>
+      </div>
+    </nav><!-- end navigation -->
+  </header><!-- end header -->
+  <!-- start page title section -->
+  <section class="parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/dsm-hero.webp');">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large wow animate__fadeIn">
+          <!-- start page title -->
+          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">The Diagnostic Divide</h1>
+          <h6 class="text-light-gray alt-font font-weight-600">Why the DSM missed C-PTSD — and how the ICD finally caught up.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="down-section text-center">
+      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-white" id="why">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom"
+               style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
+            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i>
+            <span>15 min read</span>
+          </div>
+          <div class="alt-font text-deep-pink text-uppercase letter-spacing-1 margin-10px-bottom">
+            <span class="text-deep-pink">//</span> Understanding the Systems Behind the Labels
+          </div>
+          <h3 class="alt-font text-extra-dark-gray font-weight-600 line-height-40 letter-spacing-minus-1 margin-20px-bottom">In a World of Mental Health Labels<br>
+            <span class="text-deep-pink">Why C-PTSD Changed Everything</span></h3>
+          <div class="separator-line-horrizontal-medium-light bg-deep-pink margin-25px-bottom" style="width:70px;"></div>
+
+          <p class="text-large text-extra-dark-gray line-height-32 margin-25px-bottom"><em>There's a particular irony in the fact that I'm the one writing this.</em></p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">I've spent most of my life on the receiving end of these manuals — collecting diagnoses the way some people collect parking tickets. ADHD here. Generalized Anxiety there. Alcohol and substance use somewhere in the middle. Each one handed to me by someone who had presumably read the relevant pages with far more clinical composure than I ever could. I wasn't reading the DSM. The opposite had been true. For all my life, it had been effectively reading and interpreting me.</p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">So the fact that I've now spent genuine time pulling apart two international diagnostic frameworks — comparing their structures, tracing their disagreements, reading the footnotes — is not something I would have predicted. But here we are. And being clinically overwhelmed by something for most of your life doesn't strip you of the right to eventually look at it clearly. If anything, <em>it earns you one.</em></p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">Reading my diagnoses used to feel like reading a Chinese horoscope about myself — half of it eerily accurate, the other half a confident swing and a miss. I'd catch myself trying to make the descriptions fit, convincing myself <em>"yep, that must be me,"</em> even when it didn't register with me at all. Nothing explained the identity collapse, the chronic guilt, the emotional whiplash, or why recovery felt like something you performed.</p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">Then I found Judith Herman's work — immense validation from start to finish. The experience was something like reading a lottery ticket number by number, growing more excited as each one matched. Except this lottery ticket offered no money. In a lot of ways, it offered something better: a framework for finally understanding yourself.</p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">But validation and frustration arrived together. To read Herman — and van der Kolk, who was pushing the same case — is to realize how long this understanding existed before it reached you. And then to learn that the DSM rejected their proposals. <em>Twice.</em> That the people who named your experience most accurately spent decades being told by the official record that the evidence wasn't sufficient. Their frustration and mine turned out to rhyme.</p>
+
+          <p class="text-medium text-dark-gray line-height-30 margin-25px-bottom">What follows is what I found when I started pulling on that thread.</p>
+
+          <div class="border-radius-10px shadow-sm margin-40px-top" style="background: #f4f4f4; padding: 36px 40px; border-left: 5px solid #e83e8c;">
+            <p class="text-medium line-height-30 text-extra-dark-gray alt-font margin-0">In Alberta and most of North America, the DSM-5 still governs official diagnosis. But the <strong>ICD-11</strong> — the global standard — now recognizes <strong>C-PTSD</strong> as its own distinct condition. That shift matters more than it might sound. It means the problem was never you, your symptoms, or your story. It's that the system took decades to catch up to what survivors already knew.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image -->
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100" src="images/dsm-icd-books.png"></div><!-- Text -->
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block"><span class="text-deep-pink">//</span> A Tale of Two Manuals</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">DSM vs. ICD</h5>
+          <blockquote class="border-color-deep-pink">
+            <p>Both manuals exist to standardize diagnosis. When it comes to complex trauma, they arrived at very different conclusions.</p>
+          </blockquote>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li><strong class="text-deep-pink">DSM (U.S.-based):</strong> Produced by the American Psychiatric Association. It governs North American diagnosis and insurance billing — which means whatever the DSM recognizes or ignores doesn't just shape academic debate. It shapes whether people get the right treatment.</li>
+              <li><strong class="text-deep-pink">ICD (Global):</strong> Published by the World Health Organization. It covers all medical and mental health conditions and is used by governments and public health systems worldwide — including, increasingly, by Canadian clinicians working outside strict billing constraints.</li>
+            </ul>
+          </div>
+          <p><strong class="text-deep-pink">How they diverged around trauma:</strong></p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li><strong>Early editions:</strong> Both treated PTSD as a response to a single, discrete traumatic event — combat, disaster, assault. There was no framework for trauma that was chronic, relational, or developmental. If your damage accumulated slowly over years, the manuals didn't have a box for you.</li>
+              <li><strong>DSM-5 (2013):</strong> Expanded PTSD criteria and added a dissociative subtype — genuine progress. But it still rejected both DESNOS and Developmental Trauma Disorder. In practice, that meant complex-trauma survivors continued collecting multiple separate diagnoses rather than one accurate one. The picture was there. Nobody connected the dots.</li>
+              <li><strong>ICD-11 (2022):</strong> Formally recognized <span class="text-deep-pink"><strong>Complex PTSD (C-PTSD)</strong></span> as its own distinct diagnosis — not a subtype of PTSD, not a personality disorder, but a condition that reflects what long-term, repeated, interpersonal trauma actually does to a person.</li>
+            </ul>
+          </div>
+          <p class="text-medium text-dark-gray">The global system caught up to what trauma clinicians and survivors had understood for decades. The North American system is still working on it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="big-section bg-white wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-10">
+          <span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small d-block margin-20px-bottom"><span class="text-deep-pink">//</span> A Fair Look at the DSM</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">The DSM Isn't Wrong — It's Just Not Built for the Whole Story</h5>
+          <p class="text-medium line-height-30">The DSM isn't the villain here. It does exactly what it was designed to do: <strong>describe symptoms clearly enough that clinicians, researchers, and systems are all working from the same page.</strong> In that respect, it earns its name — it is a <em>diagnostic</em> manual. A very good one, for what it was built to handle.</p>
+          <p class="text-medium line-height-30">The problem isn't that it's broken. The problem is that <strong>people aren't machines.</strong> If you bring your car to a mechanic after blowing the same tire on the same curb for the second time this year, they'll replace the tire, maybe a tie rod, and send you on your way. Your mechanic isn't handing you a pamphlet for driving classes. Nor are they asking why you keep clipping that curb. Nobody looks at the pattern. The part got fixed. The reason it keeps failing didn't come up.</p>
+          <blockquote class="border-color-deep-pink">
+            <p>The DSM correctly identifies the part that failed.<br>
+            It was never designed to ask <em>why</em> it keeps failing.</p>
+          </blockquote>
+          <p class="text-medium line-height-30">That's the limitation for trauma survivors. <strong>Symptoms can be catalogued — but the story that produced them often goes unspoken.</strong> Anxiety, depression, substance use, emotional volatility, attention problems — all can be "correctly" diagnosed using DSM criteria while the actual driver — chronic relational trauma — goes completely unaddressed. You leave with an accurate label for the symptom and no map to what's underneath it.</p>
+          <p class="text-medium line-height-30">This isn't an indictment. It's a description of a design constraint. <strong>For most mental health challenges, DSM-style symptom mapping works well.</strong> But for developmental trauma — the kind that shapes identity, attachment, and how the nervous system calibrates to the world — a symptom checklist will never tell the full story. It can't. That's not what it was built for.</p>
+          <p class="text-medium line-height-30">That's what makes the ICD-11's recognition of C-PTSD significant. Not because the DSM got something wrong, but because trauma survivors finally have a diagnostic framework that that better reflects <em>what</em> is happening and <em>why</em> it started happening in the first place. That distinction is the difference between managing symptoms and actually treating the wound.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wow animate__fadeIn bg-light-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 text-center">
+          <i class="fa-solid fa-lightbulb icon-medium text-deep-pink d-block margin-15px-bottom"></i>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-5px-bottom">Takeaway...</h5>
+          <h5 class="alt-font text-extra-dark-gray font-weight-300">Where the DSM stops at symptoms, the ICD goes further by naming the deeper wounds to emotion, identity, and relationships that long-term trauma leaves behind.</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-0 wow animate__fadeIn bg-light-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft">
+          <span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small d-block margin-20px-bottom">Interesting Fact</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">DSM Said "No" (Twice)</h5>
+          <p class="text-medium line-height-30">C-PTSD didn't fail to appear in the DSM by accident or oversight. It was proposed. It was reviewed. It was rejected. Twice. By the same body. With decades of mounting evidence behind it each time. That's worth sitting with.</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li class="text-dark-gray text-medium line-height-30"><strong>DSM-IV (1994):</strong> The proposal for <em>DESNOS</em> (Disorders of Extreme Stress, Not Otherwise Specified) — an early framework for what we now call C-PTSD — was rejected. The research supporting it was acknowledged. The diagnosis was not.</li>
+              <li class="text-dark-gray text-medium line-height-30"><strong>DSM-5 (2013):</strong> Nearly two decades later, <em>Developmental Trauma Disorder (DTD)</em> — focused specifically on the effects of chronic relational trauma in children — was proposed again. Rejected again. The committee cited insufficient evidence, a conclusion that remains contested by the clinicians who submitted it.</li>
+            </ul>
+          </div>
+          <p class="text-medium line-height-30">These weren't minor procedural debates. Each rejection meant millions of trauma survivors continued being scattered across multiple partial diagnoses — depression here, anxiety there, substance use somewhere else — with no single framework to explain why all of those things were happening to the same person at the same time. The ICD-11's recognition of C-PTSD in 2022 wasn't a new discovery. It was a correction that was thirty years overdue.</p>
+        </div>
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/dsm-lens.jpg');"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-0 wow animate__fadeIn bg-light-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/icd-lens.jpg');"></div>
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft">
+          <span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small d-block margin-20px-bottom">Local Connection</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">Alberta Was Paying Attention</h5>
+          <p class="text-medium line-height-30">In 2014 — the same year the DSM-5 rejection of Developmental Trauma Disorder was still fresh — two separate bodies of work came out of this province that pointed in exactly the same direction.</p>
+          <p class="text-medium line-height-30">A commentary from the University of Alberta's Trauma and Attachment Program called the DSM's exclusion of Developmental Trauma Disorder a significant oversight — and went further. They argued that if only one trauma diagnosis were to exist, it would more accurately be developmental in nature, given how chronic early trauma reshapes a person's biology, psychology, and social functioning across an entire lifetime. <strong><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4032083/" target="_blank" class="text-deep-pink">Read the commentary here.</a></strong></p>
+          <p class="text-medium line-height-30">That same year, the Alberta Adverse Childhood Experiences Survey — the first provincial ACE study ever conducted here — published its findings from 1,200 Albertan adults. The results were stark: Albertans who had experienced three or more ACEs were <strong>six times more likely</strong> to be diagnosed with a mental health condition or substance dependence in adulthood. Nearly <strong>60% of all mental health and addiction diagnoses</strong> in the sample were attributable to early adverse childhood experiences. <strong><a href="https://policywise.com/wp-content/uploads/resources/2016/07/345_ALBERTA_ADVERSE_CHILDHOOD_EXPERIENCES_SURVEY_FINAL_JULY_2014.pdf" target="_blank" class="text-deep-pink">Read the Alberta ACE Survey here.</a></strong></p>
+          <blockquote class="border-color-deep-pink">
+            <p>Two different research teams. Two different methodologies. One province. The same conclusion: early trauma is the through-line — and the system wasn't built to name it.</p>
+          </blockquote>
+          <p class="text-medium line-height-30">I think they were right. Both of them.</p>
+        </div>
+      </div>
+    </div>
+  </section><!-- start page title section -->
+  <section class="big-section bg-white wow animate__fadeIn">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-2 col-lg-3 md-margin-5px-bottom">
+          <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-bottom d-none d-lg-block"></div>
+          <span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small">Opinion</span>
+        </div>
+        <div class="col-xl-8 col-lg-7 offset-lg-2 last-paragraph-no-margin">
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-30px-bottom">2013: A Big Year for the DSM</h5>
+          <p class="text-medium line-height-30">In 2013, the DSM-5 rejected Developmental Trauma Disorder for the second time — effectively taking its closest iteration of C-PTSD and killing it on the runway. But something else happened in that same revision cycle that I haven't been able to stop thinking about.</p>
+          <p class="text-medium line-height-30">That same year, DSM-5 added a <strong>fourth symptom cluster</strong> to its otherwise classical definition of PTSD: <strong class="text-deep-pink">negative alterations in cognition and mood</strong>. The original three clusters — re-experiencing, avoidance, and hyperarousal — had defined PTSD since its introduction. The fourth was new. And it covers territory that should sound familiar by now: persistent negative beliefs about oneself, distorted blame, diminished interest, feelings of detachment, inability to experience positive emotions.</p>
+          <blockquote class="border-color-deep-pink">
+            <p>In the same year they rejected the diagnosis that would have named complex trauma directly, they quietly absorbed a portion of its symptom domain into the existing PTSD framework.</p>
+          </blockquote>
+          <p class="text-medium line-height-30">This is my opinion — I want to be clear about that. But it's hard not to read Criterion D as a half-measure. A way of acknowledging that the classical PTSD definition wasn't capturing the full picture, without going the full distance of recognizing C-PTSD as its own condition. The identity wounds, the relational instability, the chronic dysregulation — those still don't have a home in the DSM. But the mood and cognition cluster gestures toward them.</p>
+          <p class="text-medium line-height-30">Whether that was a deliberate compromise, a limitation of the evidence threshold, or simply the way large institutional frameworks evolve — I can't say. What I can say is that the timing is worth noting. They knew something was missing. The fourth cluster is what they did about it instead.</p>
+
+          <div class="bg-light-gray border-radius-10px margin-40px-top" style="padding: 36px 40px;">
+            <p class="text-uppercase alt-font font-weight-700 text-extra-dark-gray margin-15px-bottom" style="font-size: 13px; letter-spacing: 0.1em;">
+              <span class="text-deep-pink" style="margin-right: 8px;">//</span> To Be Clear About My Position
+            </p>
+            <div style="height: 2px; width: 50px; background: #e83e8c; border-radius: 2px; margin: 0 0 24px 0;"></div>
+            <p class="text-medium line-height-28 text-extra-dark-gray margin-20px-bottom">I'm not arguing that the ICD gets everything right and the DSM gets everything wrong. That's not the point. My question is narrower: <em>why hasn't the DSM picked up C-PTSD?</em></p>
+            <p class="text-medium line-height-28 text-extra-dark-gray margin-20px-bottom">The most common explanation is symptom overlap — and that overlap is real. C-PTSD shares its three original clusters with PTSD: re-experiencing, avoidance, and hyperarousal. But C-PTSD also requires three additional clusters on top of those — affect dysregulation, negative self-concept, and relational disturbances — and <strong>all six must be present</strong> for a C-PTSD diagnosis. That's not overlap. That's a higher and more specific threshold. Of course the conditions share symptoms. One contains the other, plus more.</p>
+            <p class="text-medium line-height-28 text-extra-dark-gray margin-0">And here's where I land: if the DSM wants to keep them separated, fine. That's a defensible position. But if that's the approach, then treating the multiple discrete diagnoses that result has to be connected, coordinated, and focused on root cause. Otherwise the symptoms will ruthlessly persist — because you're managing the outputs of an injury that nobody is naming or treating directly.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft text-center">
+          <!-- Image wrapper -->
+          <div class="diagram-wrapper" onclick="openLightbox()" title="Click to expand">
+            <img
+              alt="Comparison of DSM-5 and ICD-11 PTSD frameworks showing fragmentation in DSM and integration in ICD-11 with C-PTSD added in 2022."
+              class="shadow-light border-radius-8 diagram-img"
+              src="images/dsm-vs-icd-cptsd-comparison.png"
+            >
+            <div class="diagram-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+              <span>Expand</span>
+            </div>
+          </div>
+          <p class="text-extra-small text-uppercase text-medium-gray margin-10px-top">
+            <strong>Same person, multiple diagnoses.</strong> The DSM fragments trauma; the ICD-11 integrates it.
+          </p>
+        </div>
+
+        <div class="col-lg-6 offset-lg-1 wow animate__FadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">// Quick note on the manuals</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">PTSD and C-PTSD Across DSM and ICD</h5>
+          <blockquote class="border-color-deep-pink">
+            <p>Same phenomenon. Two frameworks. Only one gives complex trauma its own home.</p>
+          </blockquote>
+
+          <p class="text-medium line-height-30 margin-20px-bottom">Look at the left side of that diagram long enough and you start to feel it — the weight of being handed five different explanations for the same person. What the DSM's fragmented approach does, beyond the clinical inconvenience, is leave the door wide open for a particular and crushing conclusion: <em>I am broken in multiple, compounding ways.</em> That I have a defective brain. That the sum of all these labels is simply what I am.</p>
+
+          <p class="text-medium line-height-30 margin-20px-bottom">The C-PTSD lens moves the frame entirely. It doesn't look at the same picture and see malfunction. It sees <strong class="text-deep-pink">adaptation</strong>. A nervous system that learned to survive the conditions it was given. The symptoms aren't evidence that something went wrong with you — they're evidence that something was done to you, and that you found a way to keep going anyway. Those are two completely different animals. And which one you're handed matters more than most people realize.</p>
+
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li>Both the DSM and ICD originally built PTSD around three symptom clusters: re-experiencing, avoidance, and hyperarousal.</li>
+              <li>DSM-5 (2013) expanded those criteria — adding a fourth cluster and a dissociative subtype — but stopped short of recognizing complex trauma as its own condition.</li>
+              <li>ICD-11 (2022) took a different path entirely: it introduced C-PTSD as its own separate diagnosis alongside PTSD, rather than expanding an existing one.</li>
+              <li>C-PTSD — or its clinical predecessors — was proposed to the DSM twice. Denied both times.</li>
+              <li>Even with the expanded criteria, the DSM still leaves key elements of complex trauma underrepresented: identity wounds, relational instability, and the chronic dysregulation that doesn't fit neatly into any single symptom category.</li>
+            </ul>
+          </div>
+
+          <p class="text-medium">Read the DSM (North America) PTSD criteria <a href="https://www.ncbi.nlm.nih.gov/books/NBK207191/box/part1_ch3.box16/" target="_blank"><strong class="text-deep-pink">here.</strong></a></p>
+          <p class="text-medium">Read the ICD-11 (WHO) PTSD and C-PTSD overview <a href="https://icd.who.int/browse/2025-01/mms/en#585833559" target="_blank"><strong class="text-deep-pink">here.</strong></a></p>
+          <p class="text-medium"><strong>Note on symptom clusters:</strong> If you've read the DSM criteria closely, you'll notice it runs from A through H — which makes it look like far more than four categories. That confused me too. Only B, C, D, and E are actual symptom clusters. The others — A, F, G, H — cover exposure criteria, duration, functional impairment, and exclusions. So: four clusters. Eight letters. Classic DSM energy.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="diagram-lightbox" id="diagramLightbox" onclick="closeLightbox()">
+    <div class="diagram-lightbox-inner" onclick="event.stopPropagation()">
+      <button class="diagram-close" onclick="closeLightbox()" aria-label="Close">&#x2715;</button>
+      <img
+        src="images/dsm-vs-icd-cptsd-comparison.png"
+        alt="Comparison of DSM-5 and ICD-11 PTSD frameworks showing fragmentation in DSM and integration in ICD-11 with C-PTSD added in 2022."
+      >
+    </div>
+  </div>
+
+  <style>
+    /* --- Image wrapper --- */
+    .diagram-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: zoom-in;
+      width: 115%;
+      max-width: 650px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Hover: slight zoom + dim */
+    .diagram-wrapper:hover .diagram-img {
+      transform: scale(1.02);
+      filter: brightness(0.75);
+    }
+
+    /* Overlay badge */
+    .diagram-overlay {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+
+    .diagram-wrapper:hover .diagram-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Lightbox --- */
+    .diagram-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+
+    .diagram-lightbox.active {
+      display: flex;
+      animation: lbFadeIn 0.2s ease;
+    }
+
+    @keyframes lbFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .diagram-lightbox-inner {
+      position: relative;
+      max-width: min(90vw, 900px);
+      max-height: 90vh;
+      cursor: default;
+    }
+
+    .diagram-lightbox-inner img {
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    .diagram-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      color: #111;
+      border: none;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background 0.2s;
+      z-index: 1;
+    }
+
+    .diagram-close:hover {
+      background: #f0f0f0;
+    }
+  </style>
+
+  <script>
+    function openLightbox() {
+      document.getElementById('diagramLightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('diagramLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+  <section class="wow animate__fadeIn bg-white" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <span class="text-deep-pink alt-font text-small d-block margin-10px-bottom">// Beyond the Label</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">The Pattern Beneath the Diagnoses</h5>
+          <div style="height:3px; width:80px; background:#e83e8c; border-radius:2px; margin:0 0 28px 0;"></div>
+
+          <p class="text-medium line-height-30">A diagnosis can be genuinely useful — it gives language to what you're experiencing and helps clinicians coordinate care. But it's still a tool. Not a verdict. Not an identity. And for a lot of people with complex trauma histories, it's a tool that's been consistently reaching for the wrong shelf.</p>
+
+          <p class="text-medium line-height-30">Most survivors with chronic trauma don't get one diagnosis. They collect them — depression, anxiety, substance use, personality disorders — each one describing a slice of the picture without any of them naming what's underneath. You end up with a folder full of explanations and still no map to the thing that's actually driving all of it.</p>
+
+          <blockquote class="border-color-deep-pink">
+            <p>Different offices. Different labels. Same story underneath.</p>
+          </blockquote>
+
+          <p class="text-medium line-height-30">For many survivors, that story finally starts to make sense when viewed through the lens of <strong class="text-deep-pink">Complex PTSD (ICD-11)</strong>. Not because it replaces every other diagnosis — but because it explains why so many symptoms cluster together in the same person, and why treatment keeps falling short when the trauma underneath goes unaddressed.</p>
+
+          <div class="bg-very-light-gray border-radius-10" style="border-left:4px solid #1f1f1f; padding:16px 18px; margin:20px 0;">
+            <p class="text-medium text-extra-dark-gray line-height-26 margin-0 alt-font"><strong>That's not how it works.</strong> You don't need a perfectly worded diagnosis to begin healing. If your nervous system has been shaped by long-term trauma, you are allowed to start recovering from it right now — whether or not anyone has written "C-PTSD" in your file. The work doesn't wait for the paperwork.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn padding-80px-tb md-padding-50px-tb position-relative overflow-hidden bg-deep-pink text-center">
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-15" style="background: radial-gradient(circle at 50% 40%, #ffffff40 0%, transparent 70%);"></div>
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="text-uppercase alt-font text-white-2 opacity-70 letter-spacing-1 text-small d-block margin-10px-bottom">Reflection Point</span>
+          <h2 class="alt-font text-white-2 font-weight-700 letter-spacing-minus-1 margin-25px-bottom">Why does this matter?</h2>
+          <p class="text-white-2 text-large font-weight-300 w-85 mx-auto line-height-30">Understanding where your experience sits in relation to DSM-5 and ICD-11 isn't an academic exercise. It changes what you ask for, what you expect from care, and how you talk about what's actually happened to you.</p>
+          <p class="text-white-2 text-medium w-80 mx-auto margin-25px-top opacity-90">Having the right language doesn't fix anything on its own. But it gets you into the right conversation — and the right conversation is where things start to shift.</p>
+          <div class="separator-line-horrizontal-full bg-white opacity-30 margin-40px-top w-60 mx-auto"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="extra-big-section parallax wow animate__fadeIn position-relative" data-parallax-background-ratio="0.5" style="background-image: url('images/webp/friend-and-foe.webp');">
+    <div class="overlay-dark"></div>
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h5 class="font-weight-600 text-white alt-font text-shadow"><span class="text-deep-pink">//</span> How to Use This Knowledge</h5>
+          <p class="text-white text-medium opacity-90 margin-20px-top">Before the practical bit — one thing worth saying clearly: many clinicians are just as frustrated by these gaps as you are. They're working inside systems that constrain their time, their training, and what they're able to formally diagnose — even when they can see complex trauma plainly in front of them. This page isn't an indictment of individual therapists. It's about giving you — and the people trying to help you — better language to work with the reality you're both already navigating.</p>
+
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3 text-white opacity-95">
+              <li><strong class="text-deep-pink">In Therapy:</strong> If you've been diagnosed with ADHD, GAD, depression, or a personality disorder, you don't have to accept that as the whole story. Try: <em>"I've been reading about C-PTSD in the ICD-11, and it fits my experience of long-term relational trauma better than the current diagnosis does. Can we explore treatment through that lens?"</em> Most trauma-informed clinicians will know exactly what you're pointing at.</li>
+              <li><strong class="text-deep-pink">Self-Advocacy:</strong> You don't need the diagnosis in your file to use the language. Phrases like "difficulties with emotional regulation," "negative self-concept connected to early trauma," or "chronic relational trauma" signal to the right clinicians that you understand what you're dealing with and what kind of help you're looking for. That specificity changes the conversation.</li>
+              <li><strong class="text-deep-pink">Choosing Care:</strong> When you're evaluating a therapist or program, don't just ask "do you treat PTSD?" — almost everyone will say yes. Ask: <em>"What is your approach to complex or developmental trauma?"</em> The answer will tell you quickly whether they're working at the symptom level or the root level. Those are very different things.</li>
+              <li><strong class="text-deep-pink">Navigating Alberta's System:</strong> Your clinician may diagnose you using broader DSM categories like <em>Unspecified Trauma- and Stressor-Related Disorder</em> even when what they're actually seeing is complex trauma. That's not a failure of the clinician — it's a constraint of the system. Those diagnoses can still fully support trauma-focused treatment — EMDR, ART, somatic work, regulation skills. The label doesn't have to be perfect for the care to be right. And trauma, addiction, and mental health services here are still largely siloed — understanding the C-PTSD framework gives you language to bridge those silos yourself.</li>
+            </ul>
+          </div>
+
+          <div class="bg-black-transparent border-radius-8 padding-25px-all box-shadow-soft margin-30px-bottom">
+            <p class="text-small text-white text-uppercase alt-font opacity-70" style="letter-spacing:1px; margin-bottom:10px;"><span class="text-deep-pink">//</span> a note on PTSD vs. C-PTSD</p>
+            <p class="text-medium text-white opacity-90 line-height-26 margin-0">If your current diagnosis is <strong>PTSD</strong> rather than <strong>C-PTSD</strong>, the treatment approaches that actually help — EMDR, TF-CBT, DBT, IFS, somatic work, nervous system regulation, attachment-focused therapy — overlap heavily regardless of which label is in your file. The C-PTSD framework here is meant to give you clarity and language, not a reason to stall until someone updates your chart. Recovery doesn't require a specific diagnostic code. It requires showing up.</p>
+          </div>
+
+          <blockquote class="border-color-deep-pink bg-black-transparent text-white border-radius-8 padding-25px-all box-shadow-soft">
+            <p class="text-large">If you were hoping for ammo to roast your doctor with a "Checkmate, DSM" speech — this ain't that.<br>
+            <strong>This is about building a bridge,</strong> <span class="text-deep-pink"><strong>not burning one to the ground.</strong></span><br>
+            The system is imperfect. The people inside it, mostly, are trying. The better your language, the better your odds of finding the ones who can actually help.</p>
+          </blockquote>
+
+        </div>
+      </div>
+    </div>
+  </section><!-- end blog content section -->
+  <!-- start section -->
+    
+
+  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
+    <video id="learnMoreBg" autoplay muted loop playsinline class="learn-more-bg">
+      <source src="video/learn-more-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
+          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
+          <p class="learn-more-subtitle">
+            Follow the next step in order, or branch out into related topics.
+          </p>
+        </div>
+      </div>
+
+      <div class="learn-more-divider mx-auto"></div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
+
+        <!-- Up Next -->
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
+          <a class="learn-card is-next category-critical" href="better-model-of-care.html">
+            <span class="learn-card-label">Up Next</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">More Than Managed</div>
+            <p>Why stabilizing symptoms isn't healing — and what trauma-aware care must add.</p>
+          </a>
+        </div>
+
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+          <a class="learn-card" href="misdiagnosed.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">The Wrong Diagnosis</div>
+            <p>How trauma hides as ADHD, anxiety, and depression — root cause matters.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
+          <a class="learn-card" href="disease-of-addiction.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Disease or Disorder?</div>
+            <p>How understanding addiction evolved — and why the framework still matters.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+          <a class="learn-card" href="cptsd-behaviours.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Trauma in Plain Sight</div>
+            <p>How C-PTSD really appears — in thoughts, habits, relationships, daily life.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray" id="sources">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
+            <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <ol class="list-style-9 text-small text-medium-gray">
+
+              <!-- The two diagnostic systems -->
+              <li id="ref-apa-dsm5">
+                American Psychiatric Association. (2013). <strong>Diagnostic and Statistical Manual of Mental Disorders</strong> (5th ed.). American Psychiatric Publishing. The current US diagnostic standard — which does not include Complex PTSD as a distinct diagnosis, instead subsuming its features across PTSD specifiers and personality disorder categories. Understanding its structure is essential to understanding why so many trauma survivors feel their experience isn't named in the system they encounter.
+                <a class="text-deep-pink" href="https://www.psychiatry.org/psychiatrists/practice/dsm" rel="noopener" target="_blank">View at APA</a>
+              </li>
+
+              <li id="ref-who-icd11">
+                World Health Organization. (2019). <strong>International Classification of Diseases, 11th Revision (ICD-11): Post-Traumatic Stress Disorder (6B40) and Complex PTSD (6B41).</strong>
+                WHO. The ICD-11 formally recognized C-PTSD in 2019 as a diagnosis distinct from PTSD — requiring the core PTSD criteria plus three additional clusters (affect dysregulation, persistent negative self-concept, relational disturbances) arising from prolonged, repeated trauma. Its inclusion validated decades of clinical observation and established a diagnostic framework that better fits the reality of developmental trauma survivors.
+                <a class="text-deep-pink" href="https://icd.who.int/browse/2025-01/mms/en#585833559" rel="noopener" target="_blank">View ICD-11 Entry</a>
+              </li>
+
+              <!-- The empirical case for C-PTSD as distinct -->
+              <li id="ref-cloitre-2013">
+                Cloitre, M., Garvert, D. W., Brewin, C. R., Bryant, R. A., &amp; Maercker, A. (2013). <strong>Evidence for proposed ICD-11 PTSD and complex PTSD: a latent profile analysis.</strong>
+                <em>European Journal of Psychotraumatology, 4</em>(1), 20706. Landmark latent profile analysis providing empirical evidence that PTSD and C-PTSD are statistically distinct presentations — not points on a single continuum. Directly substantiates the ICD-11's decision to recognize them separately, and the clinical argument that the two require different treatment approaches.
+                <a class="text-deep-pink" href="https://doi.org/10.3402/ejpt.v4i0.20706" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <li id="ref-vdk-2005">
+                Van der Kolk, B. A., Roth, S., Pelcovitz, D., Sunday, S., &amp; Spinazzola, J. (2005). <strong>Disorders of extreme stress: the empirical foundation of a complex adaptation to trauma.</strong>
+                <em>Journal of Traumatic Stress, 18</em>(5), 389–399. The empirical foundation paper for Disorders of Extreme Stress Not Otherwise Specified (DESNOS) — documenting the symptom clusters arising from prolonged developmental trauma that the DSM's single-incident PTSD framework cannot adequately capture. A foundational argument for the C-PTSD diagnosis that the DSM-5 declined and the ICD-11 accepted.
+                <a class="text-deep-pink" href="https://doi.org/10.1002/jts.20047" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <li id="ref-spinazzola-2018">
+                Spinazzola, J., Van der Kolk, B. A., &amp; Ford, J. D. (2018). <strong>Complex trauma exposure and symptoms in children and adolescents: developmentally sensitive diagnostic considerations.</strong>
+                <em>Journal of Nervous and Mental Disease, 206</em>(11), 873–880. Examines the case for Developmental Trauma Disorder — a proposed diagnosis for children and adolescents whose complex trauma presentations the existing DSM framework fails to capture — extending the C-PTSD argument into the paediatric context where the gap between diagnosis and clinical reality is most consequential.
+                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/30338544/" rel="noopener" target="_blank">View via PubMed</a>
+              </li>
+
+              <li id="ref-ford-2017">
+                Ford, J. D. (2017). <strong>Complex PTSD: research directions for nosology, clinical assessment, and treatment.</strong>
+                <em>European Journal of Psychotraumatology, 8</em>(sup7), 1323022. Reviews the state of complex PTSD research across nosology, assessment, and treatment — providing the clinical and scientific rationale for its recognition as a distinct condition and outlining the implications of that recognition for how treatment should be designed and delivered.
+                <a class="text-deep-pink" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4439420/" rel="noopener" target="_blank">View via PubMed</a>
+              </li>
+
+              <!-- Treatment implications of the diagnostic divide -->
+              <li id="ref-cloitre-2011">
+                Cloitre, M., Courtois, C. A., Charuvastra, A., Carapezza, R., Stolbach, B. C., &amp; Green, B. L. (2011). <strong>Treatment of complex PTSD: results of the ISTSS expert clinician survey on best practices.</strong>
+                <em>Journal of Traumatic Stress, 24</em>(6), 615–627. Expert consensus establishing phase-based, sequenced treatment as the clinical standard for C-PTSD — directly addressing what the diagnostic gap costs in practice: when the diagnosis is absent or misapplied, the treatment model that follows it is also misapplied.
+                <a class="text-deep-pink" href="https://doi.org/10.1002/jts.20697" rel="noopener" target="_blank">View via DOI</a>
+              </li>
+
+              <li id="ref-ford-courtois-2021">
+                Ford, J. D., &amp; Courtois, C. A. (2021). <strong>Posttraumatic Stress Disorder: Scientific and Professional Dimensions</strong> (2nd ed.). Academic Press. Comprehensive academic and clinical reference covering PTSD and C-PTSD across nosology, neurobiology, assessment, and treatment — providing the scholarly scaffolding for understanding the full significance of the DSM/ICD divergence and its clinical downstream effects.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/52283709-treating-complex-traumatic-stress-disorders-in-adults" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+
+
+              <!-- Foundational texts -->
+              <!-- Cross-pollination: confirmed Goodreads link from sources file -->
+              <li id="ref-herman-1992">
+                Herman, J. L. (1992). <strong>Trauma and Recovery: The Aftermath of Violence — from Domestic Abuse to Political Terror.</strong>
+                Basic Books. The text that first proposed Complex PTSD as a distinct diagnostic category — making the clinical and human argument that the DSM's single-incident framework was structurally inadequate for survivors of prolonged interpersonal trauma, decades before the ICD-11 formally validated that argument.
+                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/542700.Trauma_and_Recovery" rel="noopener" target="_blank">View on Goodreads</a>
+              </li>
+
+              <!-- Cross-pollination: confirmed NCTSN link from sources file -->
+              <li id="ref-samhsa-2014">
+                SAMHSA. (2014). <strong>SAMHSA's Concept of Trauma and Guidance for a Trauma-Informed Approach.</strong>
+                HHS Publication No. (SMA) 14-4884. Foundational federal policy document establishing the trauma-informed care framework — and implicitly acknowledging the diagnostic gap this page addresses: systemic recognition of trauma's role in behavioral health does not automatically produce diagnostic tools adequate to name it.
+                <a class="text-deep-pink" href="https://www.nctsn.org/sites/default/files/resources/resource-guide/samhsa_trauma.pdf" rel="noopener" target="_blank">Download PDF</a>
+              </li>
+
+
+
+            </ol>
+            <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These references trace how the DSM-5 and ICD-11 diverged in defining trauma-related disorders, why C-PTSD was validated through ICD-11, and how clinicians and advocates are bridging the diagnostic gap for survivors of chronic trauma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ticker">
+                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- start services section -->
+
+    <!-- ========== NEW FOOTER & PRIVACY ========== -->
+    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+      <div class="container">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__left alt-font text-small font-weight-500">
+            <a href="contact.html">GET IN TOUCH</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="open-privacy-policy">Privacy Policy</a>
+          </div>
+
+          <div class="site-footer__center">
+            <a href="index.html">
+              <img
+                alt="Recover You logo white"
+                class="footer-logo"
+                data-at2x="images/logo-white@2x.png"
+                src="images/logo-white.png"
+              >
+            </a>
+          </div>
+
+          <div class="site-footer__right alt-font text-small font-weight-500">
+            Not medical advice.<br>
+            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+          </div>
+
+        </div>
+      </div>
+    </footer><!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
+     <!-- javascript -->
+     
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script> 
+    <script src="js/bootsnav.js" type="text/javascript">
+    </script> 
+    <script src="js/jquery.nav.js" type="text/javascript">
+    </script> 
+    <script src="js/hamburger-menu.js" type="text/javascript">
+    </script> 
+    <script src="js/theme-vendors.min.js" type="text/javascript">
+    </script> <!-- setting -->
+     
+    <script src="js/main.js" type="text/javascript">
+    </script>
+
+
+
+    
+    <script>
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+
+      if (!progress || !fill) return;
+
+      /* 
+        Reusable rules:
+        1) If a section has id="page-hero", use that
+        2) otherwise use the first .parallax section
+        3) if no hero exists, start from top of page
+      */
+      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight
+        );
+      }
+
+      function updateReadingProgress() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+
+        let startPoint = 0;
+
+        if (hero) {
+          startPoint = hero.offsetTop + hero.offsetHeight;
+        }
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+
+          if (totalReadableDistance <= 0) {
+            fill.style.width = '100%';
+            return;
+          }
+
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', updateReadingProgress);
+      window.addEventListener('resize', updateReadingProgress);
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    })();
+    </script>
+
+
+    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
+    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+      <div class="privacy-modal__backdrop" data-close-policy></div>
+
+      <div
+        class="privacy-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-modal-title"
+      >
+        <div class="privacy-modal__header">
+          <h3 id="privacy-modal-title">Privacy Policy</h3>
+          <button
+            type="button"
+            class="privacy-modal__close"
+            aria-label="Close privacy policy"
+            data-close-policy
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="privacy-modal__body">
+          <p><strong>Last updated:</strong> March 2026</p>
+
+          <p>
+            If you reach out through the contact form, I'll collect your name, email, and 
+            message — nothing more. That information is used only to get back to you. It's 
+            not shared, sold, or used for anything else.
+          </p>
+
+          <p>
+            This site uses two analytics tools to help me understand how people find and 
+            use it. Google Analytics is only active if you choose to allow analytics cookies. 
+            Netlify Web Analytics runs quietly in the background using general server data — 
+            no cookies, no individual tracking.
+          </p>
+
+          <p>
+            A few third-party services help keep the site running — things like hosting and 
+            the contact form. Some of these are based outside Canada, so your information 
+            may be processed there. I've chosen providers I trust, but I want you to know.
+          </p>
+
+          <p>
+            Please don't share anything urgent or crisis-related through the contact form — 
+            it's not monitored in real time. If you're in immediate distress, please reach 
+            out to a crisis line or emergency services.
+          </p>
+
+          <p>
+            Questions about this policy, or want to see or correct something I have about 
+            you? You can reach me through the contact page — I'm happy to help.
+          </p>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const modal = document.getElementById('privacy-modal');
+        const openBtn = document.getElementById('open-privacy-policy');
+        const closeBtns = document.querySelectorAll('[data-close-policy]');
+
+        if (!modal || !openBtn) return;
+
+        function openPolicy(e) {
+          e.preventDefault();
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('policy-modal-open');
+        }
+
+        function closePolicy() {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('policy-modal-open');
+        }
+
+        openBtn.addEventListener('click', openPolicy);
+
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', closePolicy);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            closePolicy();
+          }
+        });
+      })();
+    </script>
+      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">
+        <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CONSENT_KEY = 'ry_cookie_consent';
+      const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+      const DECLINE_DAYS = 180;
+
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const declineBtn = document.getElementById('cookie-decline');
+
+      function grantAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+
+      function denyAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+
+      function showBanner() {
+        if (banner) banner.style.display = 'block';
+      }
+
+      function hideBanner() {
+        if (banner) banner.style.display = 'none';
+      }
+
+      function setDeclineExpiry(days) {
+        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
+      }
+
+      function clearDeclineExpiry() {
+        localStorage.removeItem(CONSENT_EXPIRY_KEY);
+      }
+
+      function isDeclineExpired() {
+        const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
+        if (!expiry) return true;
+        return Date.now() > Number(expiry);
+      }
+
+      function applyConsentState() {
+        const consent = localStorage.getItem(CONSENT_KEY);
+
+        if (consent === 'accepted') {
+          grantAnalytics();
+          hideBanner();
+          return;
+        }
+
+        if (consent === 'declined') {
+          denyAnalytics();
+
+          if (isDeclineExpired()) {
+            localStorage.removeItem(CONSENT_KEY);
+            localStorage.removeItem(CONSENT_EXPIRY_KEY);
+            showBanner();
+          } else {
+            hideBanner();
+          }
+          return;
+        }
+
+        denyAnalytics();
+        showBanner();
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'accepted');
+          clearDeclineExpiry();
+          grantAnalytics();
+          hideBanner();
+        });
+      }
+
+      if (declineBtn) {
+        declineBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'declined');
+          setDeclineExpiry(DECLINE_DAYS);
+          denyAnalytics();
+          hideBanner();
+        });
+      }
+
+      applyConsentState();
+    })();
+  </script>
+  </body>
+</html>

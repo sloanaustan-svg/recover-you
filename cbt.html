@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    // Default: deny analytics until user accepts
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+
+    gtag('config', 'G-6968KR6JY9', {
+      'anonymize_ip': true
+    });
+  </script>
+  <title>CBT: Rewiring the Filters of the Trauma-Informed Brain | Recover-You</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+      <meta name="author" content="Austan Sloan | Recover-You">
+      <meta name="description" content="CBT isn't about positive thinking; it’s about auditing the distorted filters created by trauma. Learn the structured process of identifying and challenging the thoughts that drive addiction.">
+      <meta name="keywords" content="cbt recovery, cognitive behavioral therapy, cognitive distortions, trauma-informed cbt, rewiring the brain, neuroplasticity cbt, Recover-You, Alberta mental health, Austan Sloan">
+
+      <meta property="og:title" content="CBT: Troubleshooting Your Internal Blueprint">
+      <meta property="og:description" content="Stop fighting your feelings and start auditing your thoughts. Discover how CBT provides a mechanical framework for identifying distortions and reclaiming your reality.">
+      <meta property="og:image" content="images/og-cbt.jpg">
+      <meta property="og:type" content="article">
+      <meta property="og:url" content="https://recover-you.ca/cbt.html">
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Rewiring Thinking with CBT | Recover-You">
+      <meta name="twitter:description" content="A survivor-led, science-backed look at CBT as a tool for updating the trauma-informed brain.">
+      <meta name="twitter:image" content="images/og-cbt.jpg">
+
+      <link rel="canonical" href="https://recover-you.ca/cbt.html">
+
+      <link href="favicon.ico" rel="icon" type="image/x-icon">
+      <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+      <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
+      <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
+      <link href="apple-touch-icon.png" rel="apple-touch-icon">
+      <link href="favicon.svg" rel="icon" type="image/svg+xml">
+
+      <link rel="stylesheet" href="css/bootsnav.css" type="text/css">
+      <link rel="stylesheet" href="css/font-icons.min.css" type="text/css">
+      <link rel="stylesheet" href="css/theme-vendors.min.css" type="text/css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <link rel="stylesheet" href="css/responsive.css" type="text/css">
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "CBT Thought Auditing Process",
+        "description": "A structured method for identifying cognitive distortions and restructuring thoughts to align with present reality rather than past trauma.",
+        "image": "images/og-cbt.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Austan Sloan"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Recover-You",
+          "url": "https://recover-you.ca"
+        },
+        "step": [
+          { "@type": "HowToStep", "text": "Identify the automatic thought or situation." },
+          { "@type": "HowToStep", "text": "Pinpoint the underlying cognitive distortion (filter)." },
+          { "@type": "HowToStep", "text": "Challenge the distortion with objective evidence." },
+          { "@type": "HowToStep", "text": "Generate a balanced, realistic alternative thought." }
+        ]
+      }
+      </script>
+  <style>
+       /* scope */
+       .cbt-closing { position: relative; }
+
+       /* LEFT: quote card */
+       .cbt-closing .quote-card {
+         max-width: 560px; width: 75%;
+         border-radius: 14px;
+         box-shadow: 0 12px 30px rgba(0,0,0,.25);
+         position: relative;
+       }
+       .cbt-closing .quote-card h6 {
+         font-weight: 300;
+         line-height: 1.6;
+         letter-spacing: .2px;
+         margin: 0;
+       }
+       /* decorative quote mark – sits above, not on top of lines */
+       .cbt-closing .quote-mark {
+         position: absolute;
+         left: 24px; top: -22px;
+         width: 56px; height: 56px;
+         background: rgba(255,255,255,.12);
+         border-radius: 12px;
+         display: grid; place-items: center;
+       }
+       .cbt-closing .quote-mark i { font-size: 26px; color:#fff; opacity:.9; }
+
+       /* ensure background image stays visible + darkens a touch */
+       .cbt-closing .bg-cover {
+         background-position: center; background-size: cover;
+       }
+       .cbt-closing .bg-cover::before{
+         content:""; position:absolute; inset:0;
+         background: linear-gradient(0deg, rgba(0,0,0,.32), rgba(0,0,0,.18));
+       }
+
+       /* RIGHT: typography rhythm */
+       .cbt-closing .closing-title {
+         font-size: clamp(30px, 3.2vw, 44px);
+         line-height: 1.15;
+         letter-spacing: .2px;
+       }
+       .cbt-closing .title-underline {
+         width: 140px; height: 2px; background:#ff275b;
+         margin: 14px 0 18px 0; opacity:.85;
+       }
+       .cbt-closing .lead {
+         font-size: clamp(18px, 1.35vw, 22px);
+         color: #d8d8d8;
+       }
+       .cbt-closing p { color:#bfbfbf; line-height:1.75; }
+       .cbt-closing .callout { color:#ff275b; font-weight:700; }
+       
+       /* spacing on large screens */
+       @media (min-width: 1200px){
+         .cbt-closing .pad-x { padding-left: 70px; padding-right: 70px; }
+       }
+       /* responsive widths */
+       @media (max-width: 991.98px){
+         .cbt-closing .quote-card { width: 86%; }
+       }
+       .shadow-lg:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+       }
+       .cbt-callout {
+         border-radius: 12px;
+         border-left: 4px solid #ff275b;
+         background: rgba(0,0,0,.03);
+         padding: 18px 20px;
+         margin-top: 18px;
+       }
+       .cbt-callout h6 { margin: 0 0 8px 0; font-weight: 700; }
+       .cbt-callout p { margin: 0; }
+       .cbt-callout--warn { background: rgba(255,39,91,.06); }
+       .cbt-callout--note { background: rgba(0,0,0,.04); }
+       .box-shadow-medium {
+         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+       }
+  </style>
+</head>
+<body>
+  <div aria-hidden="true" id="reading-progress">
+    <div id="reading-progress-fill"></div>
+  </div><!-- start header -->
+  <header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
+      <div class="container-fluid nav-header-container">
+        <div class="col-auto ps-0">
+          <a class="logo" href="index.html" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+        </div>
+        <div class="col accordion-menu pe-0 pe-md-3">
+          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
+              <li>
+                <a href="index.html" title="Home">Home</a>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-this-site-exists.html">Why This Site Exists</a>
+                  </li>
+                  <li>
+                    <a href="about-me.html">About Me</a>
+                  </li>
+                  <li>
+                    <a href="start-here.html">Start Here</a>
+                  </li>
+                  <li>
+                    <a href="faq.html">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="what-is-trauma.html">What Is Trauma</a>
+                      </li>
+                      <li>
+                        <a href="attachment.html">Attachment Styles</a>
+                      </li>
+                      <li>
+                        <a href="toxic-stress.html">Toxic Stress</a>
+                      </li>
+                      <li>
+                        <a href="shame-grief-false-self.html">Shame, Grief &amp; The False Self</a>
+                      </li>
+                      <li>
+                        <a href="cptsd-behaviours.html">CPTSD Patterns</a>
+                      </li>
+                      <li>
+                        <a href="aces-high.html">ACEs &amp; Risk</a>
+                      </li>
+                      <li>
+                        <a href="dunedin-study.html">The Dunedin Study</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="brain-on-fire.html">Brain on Fire</a>
+                      </li>
+                      <li>
+                        <a href="when-sobriety-feels-worse.html">When Sobriety Feels Worse</a>
+                      </li>
+                      <li>
+                        <a href="neuroplasticity.html">Neuroplasticity</a>
+                      </li>
+                      <li>
+                        <a href="critical-window.html">Critical Windows</a>
+                      </li>
+                      <li>
+                        <a href="epigenetics.html">Epigenetics</a>
+                      </li>
+                      <li>
+                        <a href="dohad.html">DOHaD: Developmental Origins</a>
+                      </li>
+                      <li>
+                        <a href="metabolism.html">Metabolism</a>
+                      </li>
+                      <li>
+                        <a href="the-hijacked-engine.html">The Hijacked Engine</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="the-reckoning.html">The Reckoning: What the Research Shows</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-traditional-treatment-falls-short.html">Why Traditional Treatment Falls Short</a>
+                  </li>
+                  <li>
+                    <a href="problem-with-aa.html">Limits of the AA Model</a>
+                  </li>
+                  <li>
+                    <a href="misdiagnosed.html">When Trauma Is Misdiagnosed</a>
+                  </li>
+                  <li>
+                    <a href="disease-of-addiction.html">The “Disease of Addiction” Debate</a>
+                  </li>
+                  <li>
+                    <a href="dsm-explained.html">DSM vs ICD (Diagnosis Explained)</a>
+                  </li>
+                  <li>
+                    <a href="better-model-of-care.html">What Better Care Requires</a>
+                  </li>
+                  <li>
+                    <a href="trauma-avoidant.html">When Trauma Is Avoided</a>
+                  </li>
+                  <li>
+                    <a href="compassionate-care.html">Compassionate Care: A Critique</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="cbt.html">CBT</a>
+                      </li>
+                      <li>
+                        <a href="dbt.html">DBT</a>
+                      </li>
+                      <li>
+                        <a href="life-traps.html">Life Traps (Schema Therapy)</a>
+                      </li>
+                      <li>
+                        <a href="healing-trauma.html">Healing Trauma (Post-Traumatic Growth)</a>
+                      </li>
+                      <li>
+                        <a href="types-of-therapy.html">Therapy Types</a>
+                      </li>
+                      <li>
+                        <a href="role-of-therapy.html">The Role of Therapy</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="chart-your-life.html">Chart Your Life</a>
+                      </li>
+                      <li>
+                        <a href="distorted-thinking.html">Distorted Thinking</a>
+                      </li>
+                      <li>
+                        <a href="regulation-tools.html">Regulation Tools</a>
+                      </li>
+                      <li>
+                        <a href="reality-test.html">Reality Testing</a>
+                      </li>
+                      <li>
+                        <a href="relationships.html">Relationships in Recovery</a>
+                      </li>
+                      <li>
+                        <a href="connection.html">Connection</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="identity-values-and-beliefs.html">Identity, Values &amp; Beliefs</a>
+                      </li>
+                      <li>
+                        <a href="spirituality.html">Spirituality</a>
+                      </li>
+                      <li>
+                        <a href="the-resilience-lie.html">The Resilience Lie</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="resources.html">Resources</a>
+                      </li>
+                      <li>
+                        <a href="tfr-model.html">Trauma-Focused Recovery Model (TFR Model)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="contact.html" title="Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-auto pe-0"></div>
+      </div>
+    </nav><!-- end navigation -->
+  </header><!-- end header -->
+  <!-- start page title section -->
+  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/cbt-hero.webp');">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
+          <!-- start page title -->
+          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">CBT</h1>
+          <h6 class="text-light-gray alt-font font-weight-600"><del>Cognitive</del> "Constant" Behavioural Therapy</h6>
+        </div>
+      </div>
+    </div>
+    <div class="down-section text-center">
+      <a class="section-link up-down-ani" href="#"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-white" id="why">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
+            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>15 min read</span>
+          </div>
+          <h2 class="alt-font text-extra-dark-gray font-weight-600 margin-15px-bottom">What is <span class="text-deep-pink">CBT</span>?</h2>
+          <p class="text-medium line-height-30 sm-line-height-28 text-dark-gray"><strong>Cognitive Behavioural Therapy is one of the most researched and widely used therapies in the world.</strong> It's recommended for anxiety, depression, trauma, and addiction because it's structured, practical, and backed by decades of evidence from people who were considerably more skeptical than you are right now.</p>
+          <p class="text-dark-gray line-height-30 sm-line-height-28"><strong>Please take that seriously.</strong> This isn't optimistic sales copy. For years I dismissed anything that sounded like "change your thinking, change your life" because I was absolutely certain that the only real solutions for whatever was wrong with my brain had to arrive in pill form — preferably fast-acting, ideally covered by insurance. The idea that writing things down in a structured way could rewire neurological damage accumulated over two decades struck me as, at best, adorable. I was spectacularly wrong.</p>
+          <p class="text-dark-gray opacity-9">CBT grew out of the work of Aaron Beck and Albert Ellis in the 1960s and 70s. Most treatments at the time were either years of psychoanalysis or purely behavioural approaches that ignored what was happening in the mind entirely. Beck and Ellis discovered that the quick, automatic stories we tell ourselves — the ones that fire before we've even registered a situation — have an outsized influence on how we feel and what we do. Teaching people to identify and challenge those stories produced better outcomes, faster, than anything that came before it. The evidence has only accumulated since.</p>
+          <p class="text-dark-gray mb-2">At its core, CBT runs on a single loop:</p>
+          <div class="d-flex align-items-center margin-20px-top margin-25px-bottom">
+            <div class="border-left border-3 border-color-deep-pink margin-right-20px" style="height:auto;"></div>
+            <p class="alt-font text-large line-height-28 mb-0"><strong class="text-deep-pink">Situation</strong> <span class="text-dark-gray">→</span> <strong class="text-deep-pink">Thought</strong> <span class="text-dark-gray">→</span> <strong class="text-deep-pink">Emotion</strong> <span class="text-dark-gray">→</span> <strong class="text-deep-pink">Behaviour</strong> <span class="text-dark-gray">→</span> <strong class="text-extra-dark-gray">(back into Thought)</strong></p>
+          </div>
+          <p class="text-dark-gray opacity-9">These pieces pull on each other constantly — and not always in the order you'd expect. <strong class="text-deep-pink">The loop isn't linear:</strong> sometimes the thought arrives first, sometimes you're already three behaviours deep before you've noticed what triggered any of it. The entry point doesn't matter as much as you'd think.</p>
+          <div class="bg-light-gray border-radius-10 padding-30px-all md-padding-25px-all sm-padding-20px-all">
+            <p class="text-dark-gray line-height-28 mb-0"><em>CBT works because you can break in anywhere.</em> You don't need to catch every piece of the cycle — you just need to get hold of one. A thought. An emotion. A behaviour you can redirect. Pull on any thread and the whole pattern starts to shift. Do it enough times and those shifts stop being effort and start being the new default. That's not a metaphor. That's what neuroplasticity actually looks like in practice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100" src="images/CBT.png"></div>
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">Why I Call It:</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">"Constant Behavioural Therapy"</h5>
+          <p>I call CBT "constant behavioural therapy" — not as a criticism, but as an honest description of what it felt like in the beginning. My thoughts weren't background noise. They were a rapid-fire command center, issuing instructions to my behaviour before I'd had a chance to weigh in on the decision. If I wanted a different life, I had to get in there constantly, deliberately, and without mercy.</p>
+          <p><strong>A notepad and pen became my most important tools.</strong> In treatment, every time a negative thought surfaced, I wrote it down. If I had the bandwidth to work through it in the moment, I did. But often the thought arrived wrapped in a surge of emotion that made any kind of reflection impossible — like trying to read a map while someone holds it on fire. In those cases, I'd just capture the facts: who was there, what happened, what I felt. Then I'd come back to it later, once the nervous system had stood down.</p>
+          <p>The pattern that emerged was almost insulting in its consistency: what felt completely impossible to process mid-storm was usually straightforward once I was regulated. Not easy — but workable. And the storms themselves started arriving less often. Then less intensely. Then with slightly more warning time before they hit.</p>
+          <p><strong>That's the part nobody tells you going in: CBT isn't a skill we're born with — it's a capacity you strengthen over time.</strong> In my case, that meant methodically dismantling decades of automatic thinking, one thought at a time, with no particular guarantee it was working until one day it clearly was. You don't finish it. You don't get a certificate. You just practice it, over and over, until your brain stops needing you to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h5 class="alt-font text-extra-dark-gray mb-4">The Science (and Surprise) of <strong>CBT</strong></h5>
+          <p>What finally got me to take CBT seriously was the evidence — not a therapist's recommendation, not a workbook, not someone in a meeting telling me it changed their life. The data. Study after study placing it alongside medication for depression and anxiety — and in many cases showing that the results hold longer after treatment ends, because the skill stays with you in a way a prescription doesn't. I started skeptical, certain that "thinking differently" was repackaged wishful thinking for people who hadn't tried hard enough to just feel better. Then I sat with the actual mechanism for long enough and it clicked: of course it works. It was my own thought patterns — unchecked, automatic, running on infrastructure built during the worst years of my life — that constructed the reality I was trapped in. Retraining those patterns isn't optimism. It's engineering.</p>
+          <p><strong>My real "Aha — or maybe just 'Duh'" moment came when I understood what CBT actually is.</strong> In four words: <strong class="text-deep-pink text-medium"><em>thinking about your thinking.</em></strong> Which sounds almost insultingly simple until you realize that up to that point in my life, almost none of my thinking had any conscious oversight behind it whatsoever. My emotions ran the show. I ran after them. It was fast, automatic, and completely effortless — with consequences that were anything but. So when it finally landed that the solution was the exact opposite of everything I'd been doing — slowing down, intercepting, questioning, actually paying attention before acting — it wasn't abstract or complicated. It was just the one thing I had never once actually tried: <strong>using my brain on purpose.</strong> Deliberately. With the lights on.</p>
+          <div class="cbt-nerd-box">
+            <div class="d-flex align-items-center mb-2">
+              <i class="fa-solid fa-brain text-deep-pink me-2"></i>
+              <h6 class="alt-font text-extra-dark-gray mb-0">
+                Nerd Alert: Metacognition
+              </h6>
+            </div>
+            <p class="text-small alt-font line-height-24">In clinical circles, this is called <strong>metacognition</strong> — thinking about thinking. It's the mechanical process of moving activity from the autopilot centres of the brain to the <strong>prefrontal cortex</strong>. When you practice these reps, you're not "staying positive." You're performing a manual override on your neural circuitry — transitioning from passenger to systems administrator.</p>
+          </div>
+
+          <p>And when it starts working — when you actually experience it for yourself — it's disorienting in the best possible way. After decades of a thought stream that flowed reliably toward disaster, I started noticing different ones surfacing on their own. Unprompted. Uninvited. <em>"You could do that."</em> I caught myself daydreaming — not about everything collapsing, which had been the default playlist — but about a future I could actually picture myself in. Occupying. Living. That shift, after everything that came before it, is difficult to overstate. It makes all the tedious, relentless, unglamorous work of CBT feel like exactly what it is: worth every minute.</p>
+          <div class="card shadow-sm border-0 bg-light-gray mt-5 p-4 rounded-3">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fa-solid fa-flask text-deep-pink me-3" style="font-size:28px;"></i>
+              <h6 class="alt-font text-extra-dark-gray mb-0">Evidence Snapshot</h6>
+            </div>
+            <p class="mb-0">Decades of research affirm CBT's effectiveness across anxiety, depression, PTSD, and substance use disorders. Multiple meta-analyses have found CBT outcomes comparable to — <strong>and in many cases more durable than</strong> — pharmacotherapy alone (<a href="https://doi.org/10.1016/j.cpr.2005.07.003" target="_blank">Butler et al., 2006</a>; <a href="https://doi.org/10.1016/j.cpr.2012.01.005" target="_blank">Hofmann et al., 2012</a>). When clients actively practice the skills rather than passively receive them, the benefits continue well beyond treatment — because the tool goes with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .cbt-nerd-box {
+        background: #f3f3f3;
+        border-left: 4px solid #ff275b;
+        padding: 20px 22px;
+        margin: 35px 0;
+        border-radius: 10px;
+        box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cbt-nerd-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+      }
+
+      .cbt-nerd-box p {
+        
+        color: #555;
+      }
+    </style>
+  </section>
+  <section class="p-0 wow animate__fadeIn bg-light-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft">
+          <h5 class="alt-font text-extra-dark-gray">TF-CBT: The Two-Track System <strong>— for adults too</strong></h5>
+          <p class="text-dark-gray">While originally designed for younger survivors, the principles of Trauma-Focused CBT are the gold standard for adult recovery as well. In adult clinical settings, you might hear this called <strong>Cognitive Processing Therapy (CPT)</strong>. Whatever the label, the engine is the same: two tracks running simultaneously so you don't stall out.</p>
+
+          <ul class="p-0 list-style-3 margin-20px-bottom">
+            <li class="text-dark-gray"><strong>Track 1: Capacity Building.</strong> Before touching a trauma memory, you build the hardware to handle it — grounding, emotional regulation, and identifying the distorted beliefs the trauma installed.</li>
+            <li class="text-dark-gray"><strong>Track 2: The Narrative.</strong> Once the foundation is stable, you methodically process the memories themselves. Not venting — auditing. The goal is to stop the past from hijacking your present-day nervous system.</li>
+          </ul>
+
+          <p class="text-dark-gray">That combination matters. Traditional talk therapy often jumps to Track 2 without the tools of Track 1, which can lead to retraumatization. <a href="brain-on-fire.html">Understanding why that retraumatization happens — what's actually firing in the brain — makes the case for the two-track approach impossible to argue with.</a> Pure coping-skills work stays in Track 1 and never addresses the root. TF-CBT and CPT do both — reducing symptoms while building a lived sense of safety, not just an intellectual understanding of it.</p>
+
+
+        </div>
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/tf-cbt.webp');"></div>
+      </div>
+    </div>
+  </section>
+  <section class="big-section bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-2 col-lg-3 md-margin-5px-bottom wow animate__fadeInLeft">
+          <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-bottom d-none d-lg-block"></div><span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small">useful hack</span>
+        </div>
+        <div class="col-xl-8 col-lg-7 offset-lg-2 last-paragraph-no-margin">
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-30px-bottom">Using Emotions as the Entry Point</h5>
+          <p class="text-medium line-height-30">For a long time I felt completely hopeless trying to catch my thinking before it sent me somewhere I didn't want to go. The whole system felt sealed. I called them "switch moments" — one second I was fine, the next it was like someone had flipped a circuit breaker and I was already three blocks from the liquor store wondering how I got there. By the time I registered what was happening, I was already past the point where anything I knew about thought-challenging was going to help.</p>
+          <blockquote class="border-color-deep-pink">
+            <p><strong class="text-deep-pink">"How the hell do I interrupt a thought I don't know I'm having?!"</strong></p>
+          </blockquote>
+          <p class="text-medium line-height-30">What finally gave me an opening was realizing the vulnerable point in the system wasn't my thoughts. It was my body. Emotions left physical evidence my nervous system couldn't fake its way out of — like a poker player whose tell is written all over their face before the cards even hit the table. Tight chest. Stomach dropping through the floor. Heat crawling up the back of the neck. Jaw locking down without being asked to. My body had been signaling those switch moments for years before I knew to look. I just never learned the language. <a href="regulation-tools.html">Learning to read that signal — and respond to it before the loop executes — is its own skill set.</a></p>
+          <p class="text-medium line-height-30">The breakthrough wasn't catching the thought. It was noticing the mismatch. If my emotional reaction was running at a 9 and the actual event that triggered it was maybe a 2, that gap alone exposed the distortion — without me needing to identify a single cognitive pattern. Just naming the discrepancy was often enough to dissolve the grip, because once I could see it clearly, the intensity no longer made sense. My body became the early warning system my brain had been too fast and too automatic to provide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft">
+          <div class="p-3 bg-white border-radius-12 shadow-lg" style="box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-radius: 12px; transform: translateY(0); transition: transform 0.3s ease, box-shadow 0.3s ease;"><img alt="Cartoon muscular CBT character lifting barbells" class="w-100" src="images/webp/cbt-reps.webp" style="border-radius: 10px; filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.1));"></div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">Practice makes <del>Perfect</del> <strong>"better"</strong> (bit by bit).</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">What Happens With Reps</h5>
+          <p>In the beginning, this took a nearly disheartening amount of effort. Catch the emotion. Pause. Question it. Reframe it. Put it down. Pick up the next one. Dozens of times a day, every day, with no obvious feedback that anything was changing.</p>
+          <p>But repetition rewires. Over time, the automatic thoughts began losing their authority:</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li>"I could never do that."</li>
+              <li>"I'm a piece of shit."</li>
+              <li>"Don't even try."</li>
+            </ul>
+          </div>
+          <p>Not replaced by affirmations or motivational content, but by something quieter and more durable: grounded, honest self-talk that didn't require constant maintenance to believe. As the inner dialogue shifted, the behaviour followed. Not through discipline, but because it finally made sense:</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li>Handling small responsibilities without the internal negotiation.</li>
+              <li>Keeping a consistent sleep schedule without it feeling like punishment.</li>
+              <li>Practicing CBT and journaling daily — not because I had to, but because I'd seen what happened when I didn't.</li>
+              <li>Making actual time for things that weren't survival-related.</li>
+              <li>Participating in conversations without mining them for validation.</li>
+              <li>Letting go of ego long enough to ask, "What is needed of me right now?" instead of "How will this make me look?"</li>
+            </ul>
+          </div>
+          <p>None of this felt forced anymore. It reflected something that had quietly taken hold underneath: the working belief that I was worth the effort. Not as a declaration. Not as an affirmation. Just as the thing that was true now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h5 class="alt-font text-extra-dark-gray">Why CBT <strong>Works</strong>: The Brain and Body</h5>
+          <p class="text-medium line-height-28 sm-line-height-26">CBT isn't a mindset trick. It produces measurable changes in how the brain and nervous system actually function. Here's what's happening underneath while you're doing the reps:</p>
+          <div class="margin-30px-tb">
+            <ul class="p-0 list-style-3">
+              <li><strong class="text-deep-pink">Prefrontal Cortex (Logic and Regulation):</strong> Trauma and addiction weaken this region over time. Every time you pause, examine a thought, and choose a response instead of firing one automatically, you are strengthening it. The capacity to stop before reacting isn't a personality trait — it's a muscle, and CBT is the training.</li>
+              <li><strong class="text-deep-pink">Amygdala (The Alarm System):</strong> In trauma survivors, this fires constantly and disproportionately. When you prove a prediction wrong — "That reaction was a 9 for a situation that was a 2" — the amygdala recalibrates. <a href="distorted-thinking.html">Knowing the specific distortions driving those predictions makes that process significantly faster.</a> Repeated enough times, it stops treating that category of situation as an emergency.</li>
+              <li><strong class="text-deep-pink">Allostatic Load (Accumulated Stress Damage):</strong> Chronic distorted thinking keeps the stress response running continuously — even when nothing is actually wrong. CBT reduces that load by shutting down false alarms, giving the body the sustained downtime it needs to begin repairing the wear that load causes.</li>
+              <li><strong class="text-deep-pink">Neuroplasticity (The Actual Rewiring):</strong> Every time you replace a distorted thought with an accurate one, you reinforce a new neural pathway. Repetition deepens it until it becomes the default route. The old track — "I am worthless, I will fail, don't bother" — doesn't disappear overnight. But it weakens with disuse while the new one gets stronger with practice. Eventually the traffic shifts.</li>
+            </ul>
+          </div>
+          <blockquote class="border-color-deep-pink">
+            <p>CBT doesn't just change how you think — it changes the physical infrastructure thinking runs on. Stronger regulation. A quieter alarm. Less accumulated damage. New default routes. That's not motivation. That's biology doing its job.</p>
+          </blockquote>
+
+          <div class="row justify-content-center margin-50px-top">
+            <div class="col-lg-10">
+              <div class="bg-light-gray border-radius-10 padding-30px-all md-padding-25px-all sm-padding-20px-all box-shadow-medium">
+                <div class="row align-items-center">
+                  <div class="col-lg-8 md-margin-20px-bottom">
+                    <h6 class="alt-font text-extra-dark-gray margin-15px-bottom">
+                      Another CBT-Based Option: <strong>SMART Recovery</strong>
+                    </h6>
+                    <p class="text-medium line-height-28 text-dark-gray mb-0">
+                      SMART Recovery is built around CBT and motivational principles — structured, practical, and evidence-based. Its 4-Point Program<sup>®</sup> covers building motivation, managing urges, and shifting the thoughts and behaviours that keep people stuck. If that approach resonates with you, it's worth exploring.
+                      <span class="d-block margin-10px-top text-medium-gray" style="font-size: 90%;">
+                        <em>Note: SMART is effective for skill-building but doesn't address underlying trauma. If trauma is part of the picture, it works best alongside dedicated trauma-focused work — not instead of it.</em>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-center">
+                    <a href="https://smartrecovery-canada.ca/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Visit SMART Recovery Canada">
+                      <img src="images/smart-recovery-logo.png"
+                           alt="SMART Recovery Canada logo"
+                           class="img-fluid"
+                           style="max-width: 170px; width: 100%; height: auto;">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-light-gray wow animate__fadeIn">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- LEFT: Video Thumbnail with Click-to-Watch -->
+        <div class="col-lg-6 text-center fit-videos wow animate__fadeInLeft">
+          <p class="text-medium alt-font text-extra-dark-gray margin-20px-bottom">MedCircle – A Guided CBT Session with Dr. Judy Ho</p><!-- Clickable YouTube Block -->
+           <a class="position-relative d-block rounded-3 overflow-hidden shadow-lg" href="https://www.youtube.com/watch?v=8-2WQF3SWwo" rel="noopener" style="text-decoration:none;" target="_blank"><img alt="Watch: MedCircle – A Guided CBT Session with Dr. Judy Ho" class="w-100 rounded-3" src="https://img.youtube.com/vi/8-2WQF3SWwo/hqdefault.jpg"> <span class="position-absolute top-50 start-50 translate-middle bg-deep-pink text-white rounded-circle" style="width:72px;height:72px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.25);"><i class="fas fa-play"></i></span> <span class="position-absolute bottom-0 start-0 w-100 py-2 px-3 bg-extra-dark-gray" style="background:rgba(0,0,0,.55); color:#fff; font-weight:500;">Watch on YouTube</span></a>
+          <p class="text-small text-uppercase letter-spacing-1 margin-10px-top text-extra-medium-gray"><em>It's one thing to read about CBT, but it's another to see it in action. This session is a clear, practical demonstration of <strong>how a CBT session works</strong>, moving from theory into real-time practice.</em></p>
+        </div><!-- RIGHT: Copy -->
+        <div class="col-lg-6 wow animate__FadeInRight">
+          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">Seeing the Tools in Action</span>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">Demystifying the <strong>CBT Process</strong></h5>
+          <p>This video from <strong>MedCircle</strong> is a fantastic, practical demonstration of what a <strong>Cognitive Behavioural Therapy (CBT)</strong> session actually looks like. It features <strong>Dr. Judy Ho</strong> guiding host <strong>Kyle Kittleson</strong> through a real-time example, showing how to connect thoughts, emotions, and behaviours in the moment.</p>
+          <p>For me, seeing the process “live” was more helpful than dozens of articles just describing it. CBT is all about identifying, challenging, and reframing the cognitive distortions that fuel our negative emotions. This video shows you <em>how</em> that’s done, step-by-step, in an actual conversation.</p>
+          <p>This is a core tool for rebuilding our internal framework. Watching it helps turn the abstract idea of “challenging your thoughts” into a concrete method you can start to understand and apply to your own life.</p>
+          <blockquote class="border-color-deep-pink">
+            <p>CBT provides a structured way to intercept our automatic negative thoughts, analyze their validity, and choose a more balanced perspective. This is how we begin changing the emotional and behavioural cycles we get stuck in.</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section><!-- CBT vs. Medication -->
+  <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image:url('images/webp/cbt-meds-storm.webp')">
+    <div class="opacity-full-dark bg-extra-dark-gray"></div>
+    <div class="w-100 h-100 position-absolute top-0 left-0" style="background:linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,.35) 100%);"></div>
+    <div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-lg-11">
+          <div class="w-100 border-radius-10 box-shadow-large padding-50px-all md-padding-35px-all" style="background:rgba(0,0,0,.35); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.08);">
+            <h2 class="alt-font text-white margin-10px-bottom"><span class="text-deep-pink">//</span> CBT vs. Medication:<br>
+            <strong>Not Either/Or</strong></h2>
+            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-70 margin-20px-bottom"></div>
+            <div class="row">
+              <div class="col-lg-7">
+                <p class="text-medium text-white opacity-9">Medication can be life-saving. It can quiet the storm enough to keep you functional, present, and able to engage with the work. <strong>CBT teaches you how to read the weather and eventually sail the ship yourself.</strong></p>
+                <p class="text-medium text-white opacity-9">Picture someone living with relentless anxiety — stopped going out, stopped answering messages, eventually stopped leaving the house entirely. A doctor prescribes medication. The anxiety subsides. Life becomes survivable — but not fuller. Avoidance deepens quietly in the background, and the medication becomes the thing holding them in the same spot while they wait to feel ready for a life they keep putting off.</p>
+                <p class="text-medium text-white opacity-9">When the medication is reduced or stopped, the same fear returns — often stronger, because the brain spent that entire time confirming that the only way to feel okay was the pill. It never learned another route. They're not starting from zero. They're starting further back than when they began.</p>
+                <p class="text-medium text-white opacity-9">I used to be afraid of medication. I worried it would flatten everything — that if the symptoms were managed, I'd have nothing left to work with in therapy. What I eventually understood was that I had it backwards. Medication didn't make the work impossible. It made the work accessible. It quieted the noise enough that I could actually hear what was underneath it. We treated what was chemical and what was learned — not as competing approaches, but as two parts of the same repair. Together, they didn't blunt the process. <strong>They made it survivable enough to actually do.</strong></p>
+              </div>
+              <div class="col-lg-5 margin-30px-top md-margin-20px-top">
+                <div class="bg-white border-radius-10 padding-30px-all h-100" style="background:rgba(255,255,255,0.92);">
+                  <div class="row">
+                    <div class="col-12 margin-10px-bottom">
+                      <h6 class="alt-font text-extra-dark-gray font-weight-600 mb-2"><i class="icon-heart text-deep-pink margin-10px-right"></i> Medication = <span class="text-deep-pink">Relief</span></h6>
+                      <ul class="list-style-6 text-medium-gray mb-0">
+                        <li>Reduces physiological intensity and panic.</li>
+                        <li>Stabilizes mood to allow learning and presence.</li>
+                        <li>Creates enough safety for therapeutic engagement.</li>
+                      </ul>
+                    </div>
+                    <div class="col-12 margin-20px-top">
+                      <h6 class="alt-font text-extra-dark-gray font-weight-600 mb-2"><i class="icon-compass text-deep-pink margin-10px-right"></i> CBT = <span class="text-deep-pink">Retraining</span></h6>
+                      <ul class="list-style-6 text-medium-gray mb-0">
+                        <li>Identifies thought–emotion–behaviour cycles.</li>
+                        <li>Tests beliefs against real evidence.</li>
+                        <li>Rewires automatic responses through repetition.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <blockquote class="border-color-deep-pink margin-40px-top">
+              <p class="text-white mb-0 opacity-9">I am not anti-medication. <strong>I am against pretending it's enough on its own.</strong><br>
+              Medication quiets the storm. CBT teaches you what the storm actually is — and how to stop needing it to pass before you can function.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Body-First Tool -->
+  <section class="p-0 wow animate__fadeIn bg-light-gray">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 m-0">
+        <div class="col d-flex align-items-stretch wow animate__slideInLeft">
+          <div class="w-100 bg-white border-radius-10 box-shadow-large padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-all">
+            <h2 class="alt-font text-extra-dark-gray margin-10px-bottom"><span class="text-deep-pink">//</span> A Body-First Tool for Catching the Loop</h2>
+            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-70 margin-20px-bottom"></div>
+            <p class="text-dark-gray opacity-8">If you're anything like me, catching the thought before it executes feels impossible — like trying to grab smoke. The loop moves faster than conscious attention, and by the time you realize what's happening, the behaviour is already underway. This system is for that problem specifically: using the body as the entry point when the mind is moving too fast to intercept.</p>
+            <div class="margin-30px-tb">
+              <ul class="p-0 list-style-3">
+                <li class="text-dark-gray"><strong>Notice the emotion in your body first:</strong> Start with what you can actually catch. For me it was the fight-or-flight surge — chest tightening, heart rate spiking, a sudden restlessness with nowhere to go. Yours might be a stomach drop, a jaw that locks, shoulders that climb toward your ears, or heat that crawls up the back of your neck. The signals are yours and they're specific. Learn them like you'd learn a language — because that's exactly what they are.</li>
+                <li class="text-dark-gray"><strong>Ask: "What just happened?"</strong> Run a quick scan. Sometimes the trigger is obvious. Sometimes it's subtle — a tone of voice, a smell that belongs to a different decade, a reminder you didn't consciously register. And sometimes there's nothing identifiable at all. <strong>That's fine.</strong> The point isn't to solve it immediately — it's to slow down enough to look.</li>
+                <li class="text-dark-gray"><strong>Test the thought:</strong> Hold it up and examine it. What's the evidence for it? What's the evidence against? If my emotional reaction is running at a 9 and the actual situation is a 2, that mismatch is the distortion announcing itself. You don't need to identify the cognitive pattern — you just need to notice the math doesn't add up. Logic back in the loop, emotion loses its grip.</li>
+                <li class="text-dark-gray"><strong>Test the mismatch:</strong> Ask directly: does this level of reaction make sense for what actually just happened? For me, the answer was no about 99% of the time. When I couldn't find a cause, I coached myself: <em>"I'm okay."</em> <em>"I'm safe right now."</em> Simple. Almost embarrassingly simple. But telling the nervous system directly that the emergency is over is often exactly what it needs to hear.</li>
+                <li class="text-dark-gray"><strong>Write it down:</strong> In the beginning, I logged everything — the situation, the feeling, the trigger if I could find one, and what I did next. Writing forced the slowdown the emotion was trying to prevent. It also revealed patterns I would never have seen in real time. Eventually the logging became internal — but the writing phase is what built the capacity. Don't skip it.</li>
+              </ul>
+            </div>
+            <p class="text-dark-gray opacity-8">When thoughts move too fast, your physiology is the back door they can't lock. The body signals before the mind catches up — and those signals are catchable even when the thought itself isn't. Notice the feeling, question it, coach yourself through. You'll interrupt the loop without ever landing the thought. And over time, you'll catch it earlier and earlier until the loop simply stops having the same power over you.</p>
+          </div>
+        </div>
+        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image:url('images/webp/cbt-practice.webp');">
+          <div class="position-absolute top-0 left-0 w-100 h-100" style="background:linear-gradient(90deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0) 60%);"></div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Closing Reflection -->
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray cbt-closing position-relative overflow-hidden">
+    <div class="container-fluid p-0">
+      <div class="row row-cols-1 row-cols-lg-2 g-0">
+        <div class="col position-relative d-flex align-items-center justify-content-center bg-cover" style="background-image: url('images/webp/hope.webp'); min-height: 420px;">
+          <div class="w-100 h-100 position-absolute top-0 left-0" style="background:rgba(0,0,0,0.45);"></div>
+          <div class="position-relative bg-deep-pink border-radius-15 box-shadow-large text-center text-white padding-ten-all z-index-5 sm-w-85" style="background: linear-gradient(180deg, rgba(255,20,99,0.92) 0%, rgba(255,20,99,0.85) 100%); backdrop-filter: blur(4px);">
+            <div class="quote-mark text-white-2 opacity-8 margin-10px-bottom">
+              <i class="fa-solid fa-quote-left fa-2xl"></i>
+            </div>
+            <h5 class="alt-font line-height-34">CBT taught me this:<br>
+            <strong class="text-white">Our emotions remember.</strong><br>
+            Some belong to today.<br>
+            Others belong to decades ago —<br>
+            and they are not equally trustworthy.</h5>
+          </div>
+        </div>
+        <div class="col d-flex align-items-center justify-content-center text-center text-lg-start position-relative" style="background: linear-gradient(180deg, rgba(25,25,25,1) 0%, rgba(18,18,18,0.98) 100%);">
+          <div class="padding-fifteen-all xl-padding-thirteen-all lg-padding-ten-all md-padding-90px-all sm-no-padding-lr sm-padding-40px-tb w-100">
+            <h2 class="alt-font text-white mb-0 font-weight-600">Closing Reflection</h2>
+            <div class="separator-line-horrizontal-full bg-deep-pink w-70 h-2px margin-20px-tb"></div>
+            <p class="lead w-85 xl-w-100 text-white opacity-9">You don't have to believe every thought or obey every feeling. <em>The goal isn't to silence your brain — it's to stop letting it run unsupervised.</em></p>
+            <p class="w-85 xl-w-100 text-medium text-white opacity-8">Catch the loop. Name the distortion. Prove it wrong. Repeat until the old scripts start losing their confidence — and one day you notice the new ones are running without you having to start them.</p>
+            <p class="w-85 xl-w-100 text-medium text-white opacity-8">CBT is the daily discipline that clears the noise — not so you can feel better in a vague, general sense, but so you can do the deeper work without your own thinking constantly ambushing you. It creates the conditions for healing the trauma underneath and rebuilding an identity that belongs to you rather than to everything that was done to you. <span class="d-block bg-deep-pink text-white alt-font font-weight-500 padding-15px-all border-radius-8 box-shadow-large margin-25px-top" style="display:inline-block; background:rgba(255,20,99,0.15); border-left:3px solid #ff1463;">You cannot discover your <em>why</em> if your brain's <em>what</em> keeps screaming that you are worthless.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
+    <video id="learnMoreBg" autoplay muted loop playsinline class="learn-more-bg">
+      <source src="video/learn-more-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
+          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
+          <p class="learn-more-subtitle">
+            Follow the next step in order, or branch out into related topics.
+          </p>
+        </div>
+      </div>
+
+      <div class="learn-more-divider mx-auto"></div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
+
+        <!-- Up Next -->
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
+          <a class="learn-card is-next category-tools" href="dbt.html">
+            <span class="learn-card-label">Up Next</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">The Painful Middle</div>
+            <p>Holding two opposing truths — DBT's radical approach to emotional survival.</p>
+          </a>
+        </div>
+
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+          <a class="learn-card" href="types-of-therapy.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Which Therapy Fits?</div>
+            <p>EMDR, ART, IFS, somatic work — what each does and when it works.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
+          <a class="learn-card" href="distorted-thinking.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Your Mental Crystal Ball</div>
+            <p>The cognitive distortions keeping you stuck — and how to catch them.</p>
+          </a>
+        </div>
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+          <a class="learn-card" href="role-of-therapy.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Make Therapy Work</div>
+            <p>How to find the right fit and get the most from the therapeutic process.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray" id="sources">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
+          <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <ol class="list-style-9 text-small text-medium-gray">
+
+            <!-- Core CBT model and techniques -->
+            <li id="ref-beck-1979">
+              Beck, A. T., Rush, A. J., Shaw, B. F., &amp; Emery, G. (1979). <strong>Cognitive Therapy of Depression.</strong>
+              Guilford Press. Foundational manual outlining the cognitive model (situation–thought–emotion–behaviour loop), automatic thoughts, and structured thought records that this page translates into the “constant behavioural therapy” practice of writing thoughts down, interrogating them, and deliberately choosing new responses.
+              <a class="text-deep-pink" href="https://search.worldcat.org/title/Cognitive-therapy-of-depression/oclc/5333645" rel="noopener" target="_blank">Find via WorldCat</a>
+            </li>
+
+            <li id="ref-beck-1976">
+              Beck, A. T. (1976). <strong>Cognitive Therapy and the Emotional Disorders.</strong>
+              International Universities Press. Introduces automatic thoughts and core beliefs as fast, habitual stories that shape emotion and behaviour before conscious awareness — directly backing this page’s focus on “switch moments” and the idea that CBT works by slowing down and bringing those hidden thoughts into the light where they can be examined and rewired.
+              <a class="text-deep-pink" href="https://search.worldcat.org/title/2330993" rel="noopener" target="_blank">Find via WorldCat</a>
+            </li>
+
+            <!-- Evidence base & durability -->
+            <li id="ref-butler-2006">
+              Butler, A. C., Chapman, J. E., Forman, E. M., &amp; Beck, A. T. (2006). <strong>The empirical status of cognitive-behavioral therapy: A review of meta-analyses.</strong>
+              <em>Clinical Psychology Review, 26</em>(1), 17–31. Summarizes 16 methodologically rigorous meta-analyses across depression, anxiety disorders, PTSD, substance use, and other conditions, showing that CBT produces large effect sizes and is often comparable to, or better than, pharmacotherapy alone — directly supporting this page’s claim that CBT is one of the most researched and effective therapies available.
+              <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/16199119/" rel="noopener" target="_blank">View on PubMed</a>
+            </li>
+
+            <li id="ref-hofmann-2013">
+              Hofmann, S. G., Asnaani, A., Vonk, I. J. J., Sawyer, A. T., &amp; Fang, A. (2013). <strong>The efficacy of cognitive behavioral therapy: A review of meta-analyses.</strong>
+              <em>Cognitive Therapy and Research, 36</em>(5), 427–440. Integrates results from multiple meta-analyses across anxiety disorders, depression, and other conditions, concluding that CBT shows strong efficacy and that treatment gains are generally well maintained over time — backing this page’s description of CBT as both highly evidence-based and uniquely durable because the skills continue working after therapy ends.
+              <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/23459093/" rel="noopener" target="_blank">View on PubMed</a>
+            </li>
+
+            <!-- Trauma-focused CBT -->
+            <li id="ref-nice-2022">
+              National Institute for Health and Care Excellence (NICE). (2022). <strong>Post-traumatic stress disorder: Management.</strong>
+              NICE Guideline NG116. Recommends trauma‑focused CBT as a first‑line treatment for PTSD in adults and children — supporting this page’s description of TF‑CBT as a two‑track approach (skills plus trauma processing) and its argument that survivors need both coping tools and careful work with the memories themselves.
+              <a class="text-deep-pink" href="https://www.nice.org.uk/guidance/ng116" rel="noopener" target="_blank">View guideline</a>
+            </li>
+
+            <li id="ref-ncptsd-tfcbt">
+              U.S. National Center for PTSD. <strong>Treatment for PTSD: Trauma-Focused Cognitive Behavioral Therapy (TF-CBT).</strong>
+              Brief clinical overview of TF‑CBT components (psychoeducation, relaxation, cognitive restructuring, and trauma narrative work) — mirroring this page’s explanation that trauma‑focused CBT builds regulation skills while also processing the trauma itself, rather than offering coping strategies in isolation.
+              <a class="text-deep-pink" href="https://www.ptsd.va.gov/understand_tx/tx_tfcbt.asp" rel="noopener" target="_blank">View overview</a>
+            </li>
+
+            <!-- Neuroplasticity & mechanism -->
+            <li id="ref-kolb-gibb-2014">
+              Kolb, B., &amp; Gibb, R. (2014). <strong>Searching for the principles of brain plasticity and behavior.</strong>
+              <em>Cortex, 58</em>, 251–260. Reviews principles of lifelong neuroplasticity and how repeated practice strengthens new neural pathways — providing the biological foundation for this page’s claim that “reps” of catching, testing, and reframing thoughts gradually shift default responses, not as wishful thinking but as physical rewiring of prefrontal control and threat pathways.
+              <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/24457097/" rel="noopener" target="_blank">View on PubMed</a>
+            </li>
+
+          </ol>
+          <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">
+            These sources capture CBT’s origins, evidence base, trauma-focused adaptations, and neuroplastic mechanisms — grounding this page’s focus on thought loops, TF‑CBT, and the “constant behavioural therapy” work of retraining the brain over time. They are educational and not medical advice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ticker">
+                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- start services section -->
+
+    <!-- ========== NEW FOOTER & PRIVACY ========== -->
+    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+      <div class="container">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__left alt-font text-small font-weight-500">
+            <a href="contact.html">GET IN TOUCH</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="open-privacy-policy">Privacy Policy</a>
+          </div>
+
+          <div class="site-footer__center">
+            <a href="index.html">
+              <img
+                alt="Recover You logo white"
+                class="footer-logo"
+                data-at2x="images/logo-white@2x.png"
+                src="images/logo-white.png"
+              >
+            </a>
+          </div>
+
+          <div class="site-footer__right alt-font text-small font-weight-500">
+            Not medical advice.<br>
+            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+          </div>
+
+        </div>
+      </div>
+    </footer><!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
+     <!-- javascript -->
+     
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script> 
+    <script src="js/bootsnav.js" type="text/javascript">
+    </script> 
+    <script src="js/jquery.nav.js" type="text/javascript">
+    </script> 
+    <script src="js/hamburger-menu.js" type="text/javascript">
+    </script> 
+    <script src="js/theme-vendors.min.js" type="text/javascript">
+    </script> <!-- setting -->
+     
+    <script src="js/main.js" type="text/javascript">
+    </script>
+
+
+
+    
+    <script>
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+
+      if (!progress || !fill) return;
+
+      /* 
+        Reusable rules:
+        1) If a section has id="page-hero", use that
+        2) otherwise use the first .parallax section
+        3) if no hero exists, start from top of page
+      */
+      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight
+        );
+      }
+
+      function updateReadingProgress() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+
+        let startPoint = 0;
+
+        if (hero) {
+          startPoint = hero.offsetTop + hero.offsetHeight;
+        }
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+
+          if (totalReadableDistance <= 0) {
+            fill.style.width = '100%';
+            return;
+          }
+
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', updateReadingProgress);
+      window.addEventListener('resize', updateReadingProgress);
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    })();
+    </script>
+
+
+    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
+    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+      <div class="privacy-modal__backdrop" data-close-policy></div>
+
+      <div
+        class="privacy-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-modal-title"
+      >
+        <div class="privacy-modal__header">
+          <h3 id="privacy-modal-title">Privacy Policy</h3>
+          <button
+            type="button"
+            class="privacy-modal__close"
+            aria-label="Close privacy policy"
+            data-close-policy
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="privacy-modal__body">
+          <p><strong>Last updated:</strong> March 2026</p>
+
+          <p>
+            If you reach out through the contact form, I'll collect your name, email, and 
+            message — nothing more. That information is used only to get back to you. It's 
+            not shared, sold, or used for anything else.
+          </p>
+
+          <p>
+            This site uses two analytics tools to help me understand how people find and 
+            use it. Google Analytics is only active if you choose to allow analytics cookies. 
+            Netlify Web Analytics runs quietly in the background using general server data — 
+            no cookies, no individual tracking.
+          </p>
+
+          <p>
+            A few third-party services help keep the site running — things like hosting and 
+            the contact form. Some of these are based outside Canada, so your information 
+            may be processed there. I've chosen providers I trust, but I want you to know.
+          </p>
+
+          <p>
+            Please don't share anything urgent or crisis-related through the contact form — 
+            it's not monitored in real time. If you're in immediate distress, please reach 
+            out to a crisis line or emergency services.
+          </p>
+
+          <p>
+            Questions about this policy, or want to see or correct something I have about 
+            you? You can reach me through the contact page — I'm happy to help.
+          </p>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const modal = document.getElementById('privacy-modal');
+        const openBtn = document.getElementById('open-privacy-policy');
+        const closeBtns = document.querySelectorAll('[data-close-policy]');
+
+        if (!modal || !openBtn) return;
+
+        function openPolicy(e) {
+          e.preventDefault();
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('policy-modal-open');
+        }
+
+        function closePolicy() {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('policy-modal-open');
+        }
+
+        openBtn.addEventListener('click', openPolicy);
+
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', closePolicy);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            closePolicy();
+          }
+        });
+      })();
+    </script>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-text">
+          <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
+        </p>
+        <div class="cookie-banner-actions">
+          <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
+          <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const CONSENT_KEY = 'ry_cookie_consent';
+        const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+        const DECLINE_DAYS = 180;
+
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('cookie-accept');
+        const declineBtn = document.getElementById('cookie-decline');
+
+        function grantAnalytics() {
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+        }
+
+        function denyAnalytics() {
+          gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+          });
+        }
+
+        function showBanner() {
+          if (banner) banner.style.display = 'block';
+        }
+
+        function hideBanner() {
+          if (banner) banner.style.display = 'none';
+        }
+
+        function setDeclineExpiry(days) {
+          const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+          localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
+        }
+
+        function clearDeclineExpiry() {
+          localStorage.removeItem(CONSENT_EXPIRY_KEY);
+        }
+
+        function isDeclineExpired() {
+          const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
+          if (!expiry) return true;
+          return Date.now() > Number(expiry);
+        }
+
+        function applyConsentState() {
+          const consent = localStorage.getItem(CONSENT_KEY);
+
+          if (consent === 'accepted') {
+            grantAnalytics();
+            hideBanner();
+            return;
+          }
+
+          if (consent === 'declined') {
+            denyAnalytics();
+
+            if (isDeclineExpired()) {
+              localStorage.removeItem(CONSENT_KEY);
+              localStorage.removeItem(CONSENT_EXPIRY_KEY);
+              showBanner();
+            } else {
+              hideBanner();
+            }
+            return;
+          }
+
+          denyAnalytics();
+          showBanner();
+        }
+
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', function () {
+            localStorage.setItem(CONSENT_KEY, 'accepted');
+            clearDeclineExpiry();
+            grantAnalytics();
+            hideBanner();
+          });
+        }
+
+        if (declineBtn) {
+          declineBtn.addEventListener('click', function () {
+            localStorage.setItem(CONSENT_KEY, 'declined');
+            setDeclineExpiry(DECLINE_DAYS);
+            denyAnalytics();
+            hideBanner();
+          });
+        }
+
+        applyConsentState();
+      })();
+    </script>
+  </body>
+</html>
