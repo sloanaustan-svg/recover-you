@@ -103,6 +103,130 @@
          opacity: 1;
          text-decoration: underline;
        }
+
+          /* ═══════════════════════════════════════════════════
+             ANCHOR NAV
+          ════════════════════════════════════════════════════ */
+          #ry-anchor-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1040;
+            background: rgba(15, 15, 15, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 47, 110, 0.25);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, top 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+          }
+
+          #ry-anchor-nav.is-visible {
+            transform: translateY(0);
+          }
+
+          /* When bootsnav is showing, drop the anchor bar below it */
+          #ry-anchor-nav.main-nav-visible {
+            top: var(--ry-main-nav-h, 60px);
+          }
+
+          /* Scrollable link area — takes all space left of logo */
+          #ry-anchor-scroll-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+          }
+
+          #ry-anchor-nav ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+          #ry-anchor-nav ul::-webkit-scrollbar { display: none; }
+
+          #ry-anchor-nav a {
+            display: block;
+            padding: 11px 15px;
+            font-family: "Poppins", system-ui, sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(210, 210, 210, 0.75);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+          }
+
+          #ry-anchor-nav a:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+
+          #ry-anchor-nav a.is-active {
+            color: #ff2f6e;
+            border-bottom-color: #ff2f6e;
+          }
+
+          /* Fade edge — "there's more to the right" */
+          #ry-anchor-fade {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 48px;
+            pointer-events: none;
+            background: linear-gradient(
+              to right,
+              rgba(15, 15, 15, 0) 0%,
+              rgba(15, 15, 15, 0.96) 100%
+            );
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-fade.is-hidden {
+            opacity: 0;
+          }
+
+          /* Pinned logo — sits outside the scroll area */
+          #ry-anchor-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 14px 0 6px;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+          }
+          #ry-anchor-logo img {
+            height: 22px;
+            width: auto;
+            display: block;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-logo:hover img {
+            opacity: 1;
+          }
+
+          @media (max-width: 767px) {
+            #ry-anchor-nav a {
+              font-size: 10.5px;
+              padding: 10px 11px;
+              letter-spacing: 0.04em;
+            }
+            #ry-anchor-logo img {
+              height: 18px;
+            }
+          }
     </style>
 </head>
 <body>
@@ -276,6 +400,34 @@
           </div>
         </nav><!-- end navigation -->
     </header><!-- end header -->
+
+  <!-- ═══════════════════════════════════════════════════
+       ANCHOR NAV — aces-high.html
+       Appears after hero scrolls out of view.
+       Tracks main nav hide/show via .nav-fixed class on <nav>.
+  ════════════════════════════════════════════════════ -->
+  <nav aria-label="Page sections" id="ry-anchor-nav">
+    <!-- scrollable link list -->
+    <div id="ry-anchor-scroll-wrap">
+      <ul>
+        <li><a data-section="why"           href="#why">What Are ACEs</a></li>
+        <li><a data-section="about"         href="#about">The Data</a></li>
+        <li><a data-section="anav-causes"   href="#anav-causes">Cause & Effect</a></li>
+        <li><a data-section="anav-myscore"  href="#anav-myscore">My Score</a></li>
+        <li><a data-section="ace-tool"      href="#ace-tool">Take the Quiz</a></li>
+        <li><a data-section="anav-brain"    href="#anav-brain">Brain & Body</a></li>
+        <li><a data-section="anav-destiny"  href="#anav-destiny">Not Destiny</a></li>
+        <li><a data-section="sources"       href="#sources">Sources</a></li>
+      </ul>
+      <!-- fade-out right edge — signals more content to scroll -->
+      <div id="ry-anchor-fade" aria-hidden="true"></div>
+    </div>
+    <!-- pinned logo — always visible, links home -->
+    <a aria-label="Go to home page" href="index.html" id="ry-anchor-logo">
+      <img alt="Recover You" src="images/logo-white.png">
+    </a>
+  </nav>
+
     <!-- start page title section -->
     <section  id="page-hero" class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" style="background-image:url('images/webp/aces.webp');">
         <div class="opacity-medium bg-extra-dark-gray"></div>
@@ -622,7 +774,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-light-gray wow animate__fadeIn section-shadow">
+    <section class="bg-light-gray wow animate__fadeIn section-shadow" id="anav-causes">
         <div class="container">
             <div class="row align-items-center">
                 <!-- IMAGE COLUMN -->
@@ -1156,7 +1308,7 @@
 
     </section>
 <!-- end pricing section -->
-<section class="wow animate__fadeIn section-shadow bg-white">
+<section class="wow animate__fadeIn section-shadow bg-white" id="anav-myscore">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center text-md-start">
@@ -1563,7 +1715,7 @@
      </style>
    </section>
 
-   <section class="wow animate__fadeIn bg-white section-shadow">
+   <section class="wow animate__fadeIn bg-white section-shadow" id="anav-brain">
        <div class="container">
            <div class="row align-items-center">
                <div class="col-xl-6 col-lg-6 wow animate__fadeInRight">
@@ -1846,7 +1998,7 @@
             </div>
         </div>
     </section>
-    <section class="wow animate__fadeIn bg-white section-shadow">
+    <section class="wow animate__fadeIn bg-white section-shadow" id="anav-destiny">
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -2557,5 +2709,107 @@
         applyConsentState();
       })();
     </script>
+  <!-- ═══════════════════════════════════════════════
+       ANCHOR NAV SCRIPT
+       - Shows bar once hero section scrolls past
+       - Tracks main nav show/hide (bootsnav adds
+         .nav-fixed when it pins to top)
+       - Highlights active section via IntersectionObserver
+       - Hides fade edge when list is scrolled to end
+  ════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    const anchorNav   = document.getElementById('ry-anchor-nav');
+    const mainNav     = document.querySelector('nav.navbar');
+    const hero        = document.getElementById('page-hero');
+    const scrollWrap  = document.getElementById('ry-anchor-scroll-wrap');
+    const fadeEl      = document.getElementById('ry-anchor-fade');
+    const ul          = anchorNav ? anchorNav.querySelector('ul') : null;
+    const links       = anchorNav ? anchorNav.querySelectorAll('a[data-section]') : [];
+
+    if (!anchorNav || !hero) return;
+
+    /* ── 1. Measure main nav height and keep it up to date ── */
+    function setNavHeight () {
+      const h = mainNav ? mainNav.offsetHeight : 60;
+      anchorNav.style.setProperty('--ry-main-nav-h', h + 'px');
+    }
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+
+    /* ── 2. Show/hide anchor bar based on hero visibility ── */
+    const heroObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        anchorNav.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+
+    /* ── 3. Track whether bootsnav is visible at top ──
+       Bootsnav adds/removes 'nav-fixed' on the <nav> when it
+       pins. We mirror that to shift the anchor bar down.     */
+    if (mainNav) {
+      const navClassObserver = new MutationObserver(function () {
+        const isFixed = mainNav.classList.contains('nav-fixed') ||
+                        mainNav.classList.contains('navbar-fixed-top') ||
+                        mainNav.classList.contains('sticky-header');
+        anchorNav.classList.toggle('main-nav-visible', isFixed);
+        setNavHeight();
+      });
+      navClassObserver.observe(mainNav, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    /* ── 4. Fade edge: hide when scrolled to end of list ── */
+    if (ul && fadeEl) {
+      function updateFade () {
+        const atEnd = ul.scrollLeft + ul.clientWidth >= ul.scrollWidth - 4;
+        fadeEl.classList.toggle('is-hidden', atEnd);
+      }
+      ul.addEventListener('scroll', updateFade, { passive: true });
+      window.addEventListener('resize', updateFade);
+      updateFade(); /* run once on load */
+    }
+
+    /* ── 5. Scroll-spy: highlight active section link ── */
+    const sectionIds = Array.from(links).map(function (a) {
+      return a.getAttribute('data-section');
+    });
+
+    const sections = sectionIds.map(function (id) {
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    const anchorNavHeight = function () { return anchorNav.offsetHeight + 10; };
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          links.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('data-section') === id);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-10% 0px -80% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function (s) { sectionObserver.observe(s); });
+
+    /* ── 6. Smooth-scroll with offset for anchor nav ── */
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        const target = document.getElementById(a.getAttribute('data-section'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = anchorNavHeight() + (anchorNav.classList.contains('main-nav-visible') ? mainNav.offsetHeight : 0);
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+
+  }());
+  </script>
   </body>
 </html>

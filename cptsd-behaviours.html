@@ -85,6 +85,90 @@
                  opacity: 1;
                  text-decoration: underline;
                }
+
+          /* ═══════════════════════════════════════════════════
+             ANCHOR NAV
+          ════════════════════════════════════════════════════ */
+          #ry-anchor-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1040;
+            background: rgba(15, 15, 15, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 47, 110, 0.25);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, top 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+          }
+          #ry-anchor-nav.is-visible { transform: translateY(0); }
+          #ry-anchor-nav.main-nav-visible { top: var(--ry-main-nav-h, 60px); }
+          #ry-anchor-scroll-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+          }
+          #ry-anchor-nav ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+          #ry-anchor-nav ul::-webkit-scrollbar { display: none; }
+          #ry-anchor-nav a {
+            display: block;
+            padding: 11px 15px;
+            font-family: "Poppins", system-ui, sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(210, 210, 210, 0.75);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+          }
+          #ry-anchor-nav a:hover { color: #fff; text-decoration: none; }
+          #ry-anchor-nav a.is-active { color: #ff2f6e; border-bottom-color: #ff2f6e; }
+          #ry-anchor-fade {
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 48px;
+            pointer-events: none;
+            background: linear-gradient(to right, rgba(15,15,15,0) 0%, rgba(15,15,15,0.96) 100%);
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-fade.is-hidden { opacity: 0; }
+          #ry-anchor-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 14px 0 6px;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+          }
+          #ry-anchor-logo img {
+            height: 22px;
+            width: auto;
+            display: block;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-logo:hover img { opacity: 1; }
+          @media (max-width: 767px) {
+            #ry-anchor-nav a { font-size: 10.5px; padding: 10px 11px; letter-spacing: 0.04em; }
+            #ry-anchor-logo img { height: 18px; }
+          }
   </style>
 </head>
 <body>
@@ -300,6 +384,32 @@
       </div>
     </nav><!-- end navigation -->
   </header><!-- end header -->
+
+  <!-- ═══════════════════════════════════════════════════
+       ANCHOR NAV — cptsd-behaviours.html
+       Appears after hero scrolls out of view.
+       Tracks main nav hide/show via .nav-fixed class on <nav>.
+  ════════════════════════════════════════════════════ -->
+  <nav aria-label="Page sections" id="ry-anchor-nav">
+    <div id="ry-anchor-scroll-wrap">
+      <ul>
+        <li><a data-section="why"           href="#why">Overview</a></li>
+        <li><a data-section="anav-cognitive" href="#anav-cognitive">01 · Cognitive</a></li>
+        <li><a data-section="anav-emotional" href="#anav-emotional">02 · Emotional</a></li>
+        <li><a data-section="anav-behaviour" href="#anav-behaviour">03 · Behavioural</a></li>
+        <li><a data-section="anav-relations" href="#anav-relations">04 · Relationships</a></li>
+        <li><a data-section="anav-identity"  href="#anav-identity">05 · Identity</a></li>
+        <li><a data-section="anav-somatic"   href="#anav-somatic">06 · Somatic</a></li>
+        <li><a data-section="anav-meaning"   href="#anav-meaning">07 · Meaning</a></li>
+        <li><a data-section="sources"        href="#sources">Sources</a></li>
+      </ul>
+      <div aria-hidden="true" id="ry-anchor-fade"></div>
+    </div>
+    <a aria-label="Go to home page" href="index.html" id="ry-anchor-logo">
+      <img alt="Recover You" src="images/logo-white.png">
+    </a>
+  </nav>
+
   <!-- start page title section -->
   <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/trauma-bg2.webp');">
     <div class="opacity-medium bg-extra-dark-gray"></div>
@@ -349,7 +459,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/cognitive-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-cognitive" style="background-image: url('images/webp/cognitive-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -507,7 +617,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/emotional-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-emotional" style="background-image: url('images/webp/emotional-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -636,7 +746,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/behaviour-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-behaviour" style="background-image: url('images/webp/behaviour-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -777,147 +887,7 @@
       </div><!-- end column -->
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/behaviour-bg.webp')">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
-          <div class="position-relative overflow-hidden w-100 bg-light-gray">
-            <div class="col text-center d-flex align-items-center last-paragraph-no-margin wow animate__fadeInRight p-0">
-              <div class="padding-fifteen-all md-padding-50px-all sm-padding-30px-all w-100">
-                <h2 class="text-deep-pink alt-font letter-spacing-minus-3 mb-0">03.</h2>
-                <h3 class="text-extra-dark-gray alt-font letter-spacing-minus-3 mb-0">Behavioural Patterns</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-5">
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Avoidance of reminders of trauma:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Takes a longer route to work to avoid driving past a specific building or street.</li>
-              <li>Changes the channel immediately if a show features yelling or aggressive conflict.</li>
-              <li>Refuses to look at childhood photos because they trigger a physical sense of dread.</li>
-              <li>"Forgets" to go to therapy sessions when they know a difficult topic is coming up.</li>
-            </ul>
-          </div>
-        </div><!-- end column -->
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">People-pleasing or fawning behaviour:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Agrees to help someone move while sick, just to be liked.</li>
-              <li>Buys drugs for someone they’re trying to impress, despite trying to stay clean.</li>
-              <li>Nods and smiles during a partner’s criticism, then cries in private.</li>
-              <li>Volunteers for every task in group, even when burned out, fearing rejection.</li>
-            </ul>
-          </div>
-        </div><!-- end column -->
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Self-sabotage:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Misses an important therapy appointment “by accident” after making good progress.</li>
-              <li>Stops taking prescribed meds because they “don’t need them anymore.”</li>
-              <li>Relapses after a big life win (job offer, reconnecting with family).</li>
-              <li>Gets into a new relationship immediately after pledging to focus on recovery.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row mb-5">
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Perfectionism or hyper-vigilance about doing things “right”:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Spends hours rewriting their Step 4 worksheet, terrified it’s not “deep enough.”</li>
-              <li>Avoids applying for a job unless they meet 100% of the qualifications.</li>
-              <li>Over-plans every day in treatment, then spirals if one thing goes “off-schedule.”</li>
-              <li>Feels constant pressure to perform flawlessly in relationships, or assumes they’ll be abandoned.</li>
-            </ul>
-          </div>
-        </div><!-- end column -->
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Addictive or compulsive coping behaviou rs:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Replaces alcohol with compulsive sex, food, or gambling post-detox.</li>
-              <li>Can’t stop scrolling social media, even when they feel numb and disconnected.</li>
-              <li>Shops online obsessively after trauma work, chasing dopamine.</li>
-              <li>Works 12-hour days every day to avoid being alone with thoughts.</li>
-            </ul>
-          </div>
-        </div><!-- end column -->
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Disordered eating or sleep disturbances:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Binges late at night after spending the day dissociating.</li>
-              <li>Refuses to eat in front of others due to body shame and past abuse.</li>
-              <li>Sleeps all day to avoid depression, then stays up all night ruminating.</li>
-              <li>Relapses to “fall asleep” after weeks of insomnia triggered by stress.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row mb-5">
-        <!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Chronic overworking or workaholism:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Takes every shift offered, then collapses into relapse due to exhaustion.</li>
-              <li>Says “work is my therapy” but avoids all emotional processing.</li>
-              <li>Stays at the office late to avoid going home to an abusive partner.</li>
-              <li>Uses achievement to validate self-worth, but burns out constantly trying to prove they matter.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Self-harm or suicidal ideation:</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Cuts or burns skin after feeling emotionally overwhelmed.</li>
-              <li>Uses dangerously high doses during a relapse and doesn’t care about survival.</li>
-              <li>Thinks about driving into oncoming traffic during a moment of grief.</li>
-              <li>Refuses to make future plans because they don’t expect to be alive.</li>
-            </ul>
-          </div>
-        </div><!-- start column -->
-        <div class="col-12 col-lg-4 md-margin-15px-bottom">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin ry-card-hover ry-card-accent">
-            <span class="text-extra-large text-extra-dark-gray alt-font font-weight-600 margin-20px-bottom d-block">Struggles with basic routines (self-care, chores, hygiene):</span>
-            <div class="ry-card-divider"></div>
-            <ul class="p-0 list-style-9">
-              <li>Avoids showering for days, not out of laziness, but because “it feels pointless.”</li>
-              <li>Trash piles up in their room because they can’t muster the energy to clean.</li>
-              <li>Doesn’t eat for a full day, then binges out of desperation.</li>
-              <li>Tries to do laundry but dissociates halfway through and forgets it.</li>
-            </ul>
-          </div>
-        </div><!-- end column -->
-      </div><!-- end column -->
-    </div>
-  </section>
+ 
   <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
     <div class="container">
       <div class="row">
@@ -929,7 +899,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/relations-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-relations" style="background-image: url('images/webp/relations-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -1070,7 +1040,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/identity-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-identity" style="background-image: url('images/webp/identity-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -1187,7 +1157,7 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/physical-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-somatic" style="background-image: url('images/webp/physical-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -1336,7 +1306,7 @@
               }
     </style>
   </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/meaning-bg.webp')">
+  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" id="anav-meaning" style="background-image: url('images/webp/meaning-bg.webp')">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
@@ -1887,6 +1857,89 @@
 
       applyConsentState();
     })();
+  </script>
+  <!-- ═══════════════════════════════════════════════
+       ANCHOR NAV SCRIPT — cptsd-behaviours.html
+  ════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    const anchorNav  = document.getElementById('ry-anchor-nav');
+    const mainNav    = document.querySelector('nav.navbar');
+    const hero       = document.getElementById('page-hero');
+    const ul         = anchorNav ? anchorNav.querySelector('ul') : null;
+    const fadeEl     = document.getElementById('ry-anchor-fade');
+    const links      = anchorNav ? anchorNav.querySelectorAll('a[data-section]') : [];
+
+    if (!anchorNav || !hero) return;
+
+    function setNavHeight () {
+      const h = mainNav ? mainNav.offsetHeight : 60;
+      anchorNav.style.setProperty('--ry-main-nav-h', h + 'px');
+    }
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+
+    const heroObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        anchorNav.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+
+    if (mainNav) {
+      const navClassObserver = new MutationObserver(function () {
+        const isFixed = mainNav.classList.contains('nav-fixed') ||
+                        mainNav.classList.contains('navbar-fixed-top') ||
+                        mainNav.classList.contains('sticky-header');
+        anchorNav.classList.toggle('main-nav-visible', isFixed);
+        setNavHeight();
+      });
+      navClassObserver.observe(mainNav, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    if (ul && fadeEl) {
+      function updateFade () {
+        const atEnd = ul.scrollLeft + ul.clientWidth >= ul.scrollWidth - 4;
+        fadeEl.classList.toggle('is-hidden', atEnd);
+      }
+      ul.addEventListener('scroll', updateFade, { passive: true });
+      window.addEventListener('resize', updateFade);
+      updateFade();
+    }
+
+    const sectionIds = Array.from(links).map(function (a) {
+      return a.getAttribute('data-section');
+    });
+    const sections = sectionIds.map(function (id) {
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    const anchorNavHeight = function () { return anchorNav.offsetHeight + 10; };
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          links.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('data-section') === id);
+          });
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { sectionObserver.observe(s); });
+
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        const target = document.getElementById(a.getAttribute('data-section'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = anchorNavHeight() + (anchorNav.classList.contains('main-nav-visible') ? mainNav.offsetHeight : 0);
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+  }());
   </script>
   </body>
 </html>
