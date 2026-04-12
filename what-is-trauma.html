@@ -410,6 +410,131 @@
               max-width: 320px;
             }
           }
+
+          /* ═══════════════════════════════════════════════════
+             ANCHOR NAV
+          ════════════════════════════════════════════════════ */
+          #ry-anchor-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1040;
+            background: rgba(15, 15, 15, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 47, 110, 0.25);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, top 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+          }
+
+          #ry-anchor-nav.is-visible {
+            transform: translateY(0);
+          }
+
+          /* When bootsnav is showing, drop the anchor bar below it */
+          #ry-anchor-nav.main-nav-visible {
+            top: var(--ry-main-nav-h, 60px);
+          }
+
+          /* Scrollable link area — takes all space left of logo */
+          #ry-anchor-scroll-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden; /* clip the fade pseudo-element */
+          }
+
+          #ry-anchor-nav ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+          #ry-anchor-nav ul::-webkit-scrollbar { display: none; }
+
+          #ry-anchor-nav a {
+            display: block;
+            padding: 11px 15px;
+            font-family: "Poppins", system-ui, sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(210, 210, 210, 0.75);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+          }
+
+          #ry-anchor-nav a:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+
+          #ry-anchor-nav a.is-active {
+            color: #ff2f6e;
+            border-bottom-color: #ff2f6e;
+          }
+
+          /* Fade edge — "there's more to the right" */
+          #ry-anchor-fade {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 48px;
+            pointer-events: none;
+            background: linear-gradient(
+              to right,
+              rgba(15, 15, 15, 0) 0%,
+              rgba(15, 15, 15, 0.96) 100%
+            );
+            /* Hide once the list is scrolled to the end */
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-fade.is-hidden {
+            opacity: 0;
+          }
+
+          /* Pinned logo — sits outside the scroll area */
+          #ry-anchor-logo {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 14px 0 6px;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+          }
+          #ry-anchor-logo img {
+            height: 22px;
+            width: auto;
+            display: block;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+          }
+          #ry-anchor-logo:hover img {
+            opacity: 1;
+          }
+
+          @media (max-width: 767px) {
+            #ry-anchor-nav a {
+              font-size: 10.5px;
+              padding: 10px 11px;
+              letter-spacing: 0.04em;
+            }
+            #ry-anchor-logo img {
+              height: 18px;
+            }
+          }
   </style>
 </head>
 <body class="ry-trauma">
@@ -625,6 +750,35 @@
       </div>
     </nav><!-- end navigation -->
   </header><!-- end header -->
+
+  <!-- ═══════════════════════════════════════════════════
+       ANCHOR NAV — what-is-trauma.html
+       Appears after hero scrolls out of view.
+       Tracks main nav hide/show via .nav-fixed class on <nav>.
+  ════════════════════════════════════════════════════ -->
+  <nav aria-label="Page sections" id="ry-anchor-nav">
+    <!-- scrollable link list -->
+    <div id="ry-anchor-scroll-wrap">
+      <ul>
+        <li><a data-section="why"                href="#why">Overview</a></li>
+        <li><a data-section="anav-biology"       href="#anav-biology">Biology</a></li>
+        <li><a data-section="anav-architectures" href="#anav-architectures">Architectures</a></li>
+        <li><a data-section="anav-bigt"          href="#anav-bigt">Big T / Little T</a></li>
+        <li><a data-section="anav-memory"        href="#anav-memory">Memory</a></li>
+        <li><a data-section="anav-recognize"     href="#anav-recognize">Recognizing It</a></li>
+        <li><a data-section="anav-responses"     href="#anav-responses">Responses</a></li>
+        <li><a data-section="anav-addiction"     href="#anav-addiction">→ Addiction</a></li>
+        <li><a data-section="sources"            href="#sources">Sources</a></li>
+      </ul>
+      <!-- fade-out right edge — signals more content to scroll -->
+      <div id="ry-anchor-fade" aria-hidden="true"></div>
+    </div>
+    <!-- pinned logo — always visible, links home -->
+    <a aria-label="Go to home page" href="index.html" id="ry-anchor-logo">
+      <img alt="Recover You" src="images/logo-white.png">
+    </a>
+  </nav>
+
   <!-- start page title section -->
   <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/trauma-bg2.webp');">
     <div class="opacity-medium bg-extra-dark-gray"></div>
@@ -656,42 +810,143 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10 wow animate__fadeIn">
-          <div class="margin-25px-bottom">
-            <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
-              <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>28 min read</span>
-            </div>
-            <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">//</span> Trauma's Quid Pro Quo: <strong>Survive Now, Pay Later</strong></h5>
-            <blockquote class="border-color-deep-pink margin-25px-bottom">
-              <h6 class="alt-font no-margin-bottom"><strong class="text-deep-pink">"I am in danger and I can't stop it."</strong></h6>
-            </blockquote>
-            <p class="text-medium">Trauma isn't just something that happened to you. It's a deal your nervous system made under duress — in the moment when something was too big, too fast, or too much, and your brain had no other move. The terms were simple: <strong>"Get me through this now. We'll deal with the cost later."</strong> Like a high-interest loan taken out at the worst possible moment. It makes complete sense when you're drowning. The problem is the interest never stops compounding.</p>
-            <p class="text-medium">And it works. That's what doesn't get said often enough — the trade actually works. It keeps you alive. It carries you through what might otherwise break you entirely. But survival has a price tag, and it gets collected slowly: anxiety, hypervigilance, disconnection, a nervous system that never received the signal that the danger passed. Without deliberate healing, those symptoms don't fade with time. They just keep running in the background, quietly shaping everything.</p>
-            <p class="text-medium">Trauma doesn't resolve because you ignored it long enough. It doesn't dissolve because time passed or because you willed yourself to move on. If adequate support is absent during those times of adversity, what isn't processed doesn't disappear — it waits. And eventually the system that once protected you starts demanding something different. Not punishment. Resolution. Until it gets that, it keeps doing the only thing it knows: sending signals. <strong>Symptoms aren't malfunction. <em>They're communication.</em></strong></p>
+
+          <!-- read time -->
+          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
+            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>28 min read</span>
           </div>
-          <blockquote class="border-left border-2 border-color-deep-pink padding-25px-left margin-60px-top margin-50px-bottom ry-quote">
-            <p class="text-medium">"Equally powerful as the desire to deny atrocities is the conviction that denial does not work. Folk wisdom is filled with ghosts who refuse to rest in their graves until their stories are told. Murder will out. Remembering and telling the truth about terrible events are prerequisites both for the restoration of the social order and for the healing of individual victims."</p>
-            <p class="text-small opacity-7 margin-10px-top">— Judith Herman, <em>Trauma and Recovery</em></p>
+
+          <!-- section heading + kicker -->
+          <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">//</span> Trauma's Quid Pro Quo: <strong>Survive Now, Pay Later</strong></h5>
+          <blockquote class="border-color-deep-pink margin-25px-bottom">
+            <h6 class="alt-font no-margin-bottom"><strong class="text-deep-pink">"I am in danger and I can't stop it."</strong></h6>
           </blockquote>
-          <blockquote class="ry-explainer margin-40px-bottom">
+
+          <!-- core argument -->
+          <p class="text-medium">Trauma isn't just something that happened to you. It's a deal your nervous system made under duress — in the moment when something was too big, too fast, or too much, and your brain had no other move. The terms were simple: <strong>"Get me through this now. We'll deal with the cost later."</strong> Like a high-interest loan taken out at the worst possible moment. It makes complete sense when you're drowning. The problem is the interest never stops compounding.</p>
+          <p class="text-medium">And it works. That's what doesn't get said often enough — the trade actually works. It keeps you alive. It carries you through what might otherwise break you entirely. But survival has a price tag, and it gets collected slowly: anxiety, hypervigilance, disconnection, a nervous system that never received the signal that the danger passed. Without deliberate healing, those symptoms don't fade with time. They just keep running in the background, quietly shaping everything.</p>
+          <p class="text-medium">Trauma doesn't resolve because you ignored it long enough. It doesn't dissolve because time passed or because you willed yourself to move on. What isn't processed doesn't disappear — it waits. And eventually the system that once protected you starts demanding something different. Not punishment. Resolution. Until it gets that, it keeps doing the only thing it knows: sending signals. <strong>Symptoms aren't malfunction. <em>They're communication.</em></strong></p>
+
+          <!-- definition reframe -->
+          <blockquote class="ry-explainer margin-40px-top margin-30px-bottom">
             <p><strong>Trauma isn't defined only by what happened to you; <em>it's defined by what happened inside you.</em></strong> It's the moment your system becomes overwhelmed — when you can't fight, can't flee, and can't stop what's happening. Not the event alone, but the internal experience of helplessness in the face of it.</p>
             <p>And not all trauma arrives with visible damage. Sometimes it's the absence — growing up unseen, unheard, chronically dismissed, never quite safe. When safety, consistency, or belonging go unmet for long enough, the body registers danger anyway. Emotional neglect and early disconnection can shape the nervous system just as completely as overt threat. The body doesn't distinguish between types of harm. It just keeps score.</p>
             <p>This is why trauma isn't only about memory. It's about adaptation — how the brain and body reorganize themselves to survive, and how that same wiring can eventually be rewritten.</p>
+            <p class="text-small margin-10px-top" style="opacity:0.6; font-style:italic; border-top:1px solid rgba(255,47,110,0.2); padding-top:12px; margin-bottom:0;">Herman, J. L. (1992). <em>Trauma and Recovery.</em> Basic Books. — The foundational clinical text establishing trauma as physiological adaptation, not character weakness.</p>
           </blockquote>
-          <h5 class="alt-font text-extra-dark-gray ry-transition">The cost of that deal <strong>doesn't just disappear.</strong></h5>
-          <p class="text-medium">It imprints into the nervous system and rewires how you experience everything that comes after. A brain built to protect you reorganizes itself around survival. It stops asking <em>"Am I safe?"</em> and starts assuming <em>"I'm not."</em> From there, the body keeps responding as if the emergency never ended — bracing, scanning, reacting to threats that aren't there anymore. Survival stops being a response and becomes the default setting. Even when the danger is long gone. Especially then.</p>
-          <div class="ry-note">
-            <p>For me, this wasn't theory. It was Tuesday. I grew up in poverty, surrounded by addiction, never knowing which version of my caregivers would be present when I entered the room. Their moods could shift completely between morning and night — and not in ways that were safe to misread. "Walking on eggshells" doesn't cover it. It was more like walking on shattered glass, barefoot, in the dark.</p>
-            <p>Every move had to be calculated, because getting it wrong didn't just mean being noticed — it meant getting hurt. So I learned to go quiet. To make myself small enough to disappear into the corners and call it survival. That's what living inside chronic trauma actually feels like — not one wound, but a nervous system that was shaped, slowly and completely, by never once being allowed to fully exhale.</p>
-          </div>
-          <blockquote class="border-left-deep-pink padding-30px-left text-large text-extra-dark-gray alt-font margin-40px-top">
-              Trauma adaptations are survival solutions that endure in a body that either forgot how to feel safe or never learned it in the first place.<br>
-              <em class="text-medium">- Recover-You</em>
-          </blockquote>
+
         </div>
       </div>
     </div>
-  </section><!-- BIOLOGY OF TRAUMA SPLIT SECTION -->
-  <section class="p-0 wow animate__fadeIn bg-light-gray">
+  </section>
+
+  <!-- ── INTERSTITIAL: emotional reset before personal note ── -->
+  <div class="ry-interstitial wow animate__fadeIn" id="ry-interstitial-tuesday">
+    <p class="ry-interstitial-label">A Personal Reflection:</p>
+    <blockquote class="ry-interstitial-quote">
+      For me, this wasn't theory.<br>It was Tuesday.
+    </blockquote>
+  </div>
+  <style>
+    .ry-interstitial {
+      background: #0f0f0f;
+      padding: clamp(60px, 8vw, 100px) 24px;
+      text-align: center;
+    }
+    .ry-interstitial-label {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ff2f6e;
+      margin: 0 0 20px;
+    }
+    .ry-interstitial-quote {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: 600;
+      line-height: 1.25;
+      color: #fff;
+      margin: 0 auto;
+      max-width: 800px;
+      border: none;
+      padding: 0;
+    }
+    .ry-interstitial-quote::before,
+    .ry-interstitial-quote::after { display: none; }
+  </style>
+
+  <!-- ── PERSONAL NOTE + CLOSING ── -->
+  <section class="bg-white" style="padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(48px, 6vw, 80px);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h5 class="alt-font text-extra-dark-gray ry-transition"><span class="text-deep-pink">//</span> The cost of that deal <strong>doesn't just disappear.</strong></h5>
+          <p class="text-medium">It imprints into the nervous system and rewires how you experience everything that comes after. A brain built to protect you reorganizes itself around survival. It stops asking <em>"Am I safe?"</em> and starts assuming <em>"I'm not."</em> From there, the body keeps responding as if the emergency never ended — bracing, scanning, reacting to threats that aren't there anymore. Survival stops being a response and becomes the default setting. Even when the danger is long gone. Especially then.</p>
+
+          <blockquote class="border-left-deep-pink padding-30px-left text-large text-extra-dark-gray alt-font margin-40px-top">
+            Trauma adaptations are survival solutions that endure in a body that either forgot how to feel safe or never learned it in the first place.<br>
+            <em class="text-medium">- Recover-You</em>
+          </blockquote>
+
+          <!-- Personal reflection card -->
+          <div class="ry-reflection margin-40px-top margin-40px-bottom">
+            <div class="ry-reflection-bar"></div>
+            <div class="ry-reflection-body">
+              <p>That's what living inside chronic terror actually feels like as a child. Not the acute moments — those are terrible, but they have edges. You can name them, point to them, build a case around them. Terror doesn't work that way. It's diffuse. It's the hours stretching into days of not knowing if they were coming back — and the sick realisation that you couldn't decide whether you wanted them to. Desperate for them. Afraid of them. Listening for footsteps and not knowing which outcome you were praying for. Of learning to read a door opening the way other kids learned to read a traffic light — because getting that wrong had consequences.</p>
+              <p>Retrospect has a way of correcting the assumptions you made just to survive. I was certain I knew which kind of harm was worse. I had it completely backwards. The abuse I could name. Being abandoned laid a set of tracks I didn't choose — and I spent years running on them before I understood they were never going to get me where I needed to go.</p>
+              <p>So I learned to survive — sometimes by going silent, disappearing into corners, making myself small enough to stop being a target. Sometimes by exploding. Destroying things. Becoming exactly what they already thought I was. I never knew which one was coming. That uncertainty lived in me the same way it lived in everyone around me. The difference is they called it bad behaviour. I just called it Tuesday.</p>
+              <p class="ry-reflection-byline">— Austan - Recover-You</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .ry-reflection {
+      display: flex;
+      gap: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f7f7f8;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+    }
+    .ry-reflection-bar {
+      width: 4px;
+      flex-shrink: 0;
+      background: #ff2f6e;
+      border-radius: 12px 0 0 12px;
+    }
+    .ry-reflection-body {
+      padding: clamp(22px, 3vw, 36px) clamp(22px, 3vw, 36px);
+    }
+    .ry-reflection-body p {
+      font-size: clamp(15px, 1.05vw, 16.5px);
+      line-height: 1.9;
+      color: #444;
+      font-style: italic;
+      margin: 0 0 1.1em;
+    }
+    .ry-reflection-body p:last-of-type {
+      margin-bottom: 0;
+    }
+    .ry-reflection-byline {
+      font-size: 13px !important;
+      font-style: normal !important;
+      font-weight: 600;
+      color: #ff2f6e !important;
+      letter-spacing: 0.04em;
+      margin-top: 18px !important;
+      opacity: 0.9;
+    }
+  </style><!-- BIOLOGY OF TRAUMA SPLIT SECTION -->
+  <section class="p-0 wow animate__fadeIn bg-light-gray" id="anav-biology">
     <div class="container-fluid p-0">
       <div class="row row-cols-1 row-cols-lg-2 m-0">
         <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInLeft" data-wow-duration="900ms" style="background-image: url('images/webp/childhood-trauma-brain-2.webp');"></div>
@@ -711,7 +966,7 @@
       </div>
     </div>
   </section><!-- THREE ARCHITECTURES SECTION -->
-  <section class="wow animate__fadeIn bg-white ry-arch-section">
+  <section class="wow animate__fadeIn bg-white ry-arch-section" id="anav-architectures">
     <style>
        .ry-arch-section .ry-arch-title { line-height:1.15; margin-bottom:18px; }
        .ry-arch-section .ry-arch-title .ry-title-hook { display:block; font-size:1.35em; font-weight:700; letter-spacing:-0.2px; }
@@ -791,7 +1046,7 @@
       </div>
     </div>
   </section><!-- CAR CRASH VIGNETTE -->
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray" id="anav-bigt">
     <div class="container-fluid p-0">
       <div class="row row-cols-1 row-cols-lg-2 m-0">
         <div class="col position-relative md-h-550px sm-h-350px ry-tilt-photo wow animate__slideInLeft" data-wow-duration="900ms">
@@ -829,7 +1084,7 @@
       </div>
     </div>
   </section><!-- IMPLICIT VS EXPLICIT MEMORY -->
-  <section class="wow animate__fadeIn parallax trauma-memory-section"
+  <section class="wow animate__fadeIn parallax trauma-memory-section" id="anav-memory"
            data-parallax-background-ratio="0.5"
            style="background-image:url('images/webp/spectrum-bg.webp');">
     <div class="container">
@@ -927,51 +1182,53 @@
       </div>
     </div>
   </section>
-  <section class="wow animate__fadeIn">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h5 class="alt-font text-extra-dark-gray">Why It's <span class="text-deep-pink">Normal</span> <strong>Not to Know</strong>: Recognizing Childhood Trauma</h5>
-          <p class="text-medium line-height-28 sm-line-height-26">If you grew up in chaos, it rarely feels chaotic. It feels like reality. That's one of the most insidious parts of childhood trauma: you don't always realize it happened. Sometimes it goes further than that — it convinces you nothing happened at all. No clear memory to hold onto. Just a vague unease, like a shape you can sense in the dark but cannot name.</p>
-          <blockquote class="border-color-deep-pink text-center margin-40px-tb">
-            <h5 class="alt-font text-extra-dark-gray d-inline-block"><u>This isn't denial. It's the <strong class="text-deep-pink">absence of contrast.</strong></u></h5>
-          </blockquote>
-          <div class="row align-items-start margin-40px-top margin-40px-bottom">
-            <!-- Image -->
-            <div class="col-lg-5 margin-20px-bottom">
-              <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A child standing uneasily in a calm, safe environment" class="img-fluid border-radius-6" src="images/webp/contrast-safe-room.webp"></div>
-            </div><!-- Text -->
-            <div class="col-lg-7">
-              <p>Psychological trauma is often quiet. No broken objects. No dramatic scenes. Just a steady absence of what makes us feel human: being accepted, being comforted, being seen, being believed, <em>being loved.</em> Without that contrast, the nervous system learns to treat ordinary life as something uncertain or unsafe.</p>
-              <p>When dysfunction is your baseline, healthy environments don't feel warm or safe. They feel wrong. Artificial. <em>Suspicious.</em> <strong>For a long time I couldn't identify what was missing because I had never known anything different. <em class="text-deep-pink">I had to build the contrast myself.</em></strong> Through learning, through healing, through choosing differently — one deliberate decision at a time. Only then could I see how deep the patterns actually ran.</p>
-              <div class="bg-light-gray padding-15px-all border-radius-6px margin-25px-top alt-font" style="max-width:860px; margin-left:auto; margin-right:auto;">
-                <p class="text-small m-0 text-extra-dark-gray" style="line-height:1.7; opacity:0.9;"><strong class="text-deep-pink">// Guardrail:</strong> This isn't proof that trauma happened, and it's not a reason to go hunting for memories. It's a way to explain how an unsafe baseline can feel "normal" when you have nothing safe to compare it to.</p>
+  <section class="wow animate__fadeIn" id="anav-recognize"> 
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h5 class="alt-font text-extra-dark-gray">Why It's <span class="text-deep-pink">Normal</span> <strong>Not to Know</strong>: Recognizing Childhood Trauma</h5>
+            <p class="text-medium line-height-28 sm-line-height-26">If you grew up in chaos, it rarely feels chaotic. It feels like reality. That's one of the most insidious parts of childhood trauma: you don't always realize it happened. Sometimes it goes further than that — it convinces you nothing happened at all. No clear memory to hold onto. Just a vague unease, like a shape you can sense in the dark but cannot name.</p>
+            <blockquote class="border-color-deep-pink text-center margin-40px-tb">
+              <h5 class="alt-font text-extra-dark-gray d-inline-block"><u>This isn't denial. It's the <strong class="text-deep-pink">absence of contrast.</strong></u></h5>
+            </blockquote>
+            <div class="row align-items-start margin-40px-top margin-40px-bottom">
+              <!-- Image -->
+              <div class="col-lg-5 margin-20px-bottom">
+                <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A child standing uneasily in a calm, safe environment" class="img-fluid border-radius-6" src="images/webp/contrast-safe-room.webp"></div>
+              </div><!-- Text -->
+              <div class="col-lg-7">
+                <p>Psychological trauma is often quiet. No broken objects. No dramatic scenes. Just a steady absence of what makes us feel human: being accepted, being comforted, being seen, being believed, <em>being loved.</em> Without that contrast, the nervous system learns to treat ordinary life as something uncertain or unsafe.</p>
+                <p>When dysfunction is your baseline, healthy environments don't feel warm or safe. They feel wrong. Artificial. <em>Suspicious.</em> <strong>For a long time I couldn't identify what was missing because I had never known anything different. <em class="text-deep-pink">I had to build the contrast myself.</em></strong> Through learning, through healing, through choosing differently — one deliberate decision at a time. Only then could I see how deep the patterns actually ran.</p>
+                <div class="bg-light-gray padding-15px-all border-radius-6px margin-25px-top alt-font" style="max-width:860px; margin-left:auto; margin-right:auto;">
+                  <p class="text-small m-0 text-extra-dark-gray" style="line-height:1.7; opacity:0.9;"><strong class="text-deep-pink">// Guardrail:</strong> This isn't proof that trauma happened, and it's not a reason to go hunting for memories. It's a way to explain how an unsafe baseline can feel "normal" when you have nothing safe to compare it to.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <blockquote class="border-color-deep-pink">
-            <p>Think of the old analogy: a frog in slowly heating water. The temperature rises so gradually it never registers as danger. It just keeps adapting — until it can't. That's what growing up inside trauma often feels like. <strong>Pain doesn't make you wince when pain is all you've known.</strong></p>
-          </blockquote>
-          <div class="row align-items-start margin-40px-top margin-40px-bottom">
-            <!-- Text Content -->
-            <div class="col-lg-7">
-              <p>Every treatment program I attended handed me some version of the same message: <em>"Addiction is killing you. You need better habits. You need to change."</em> None of that was news. I had been telling myself the same thing for years, with considerably more self-loathing. <strong class="text-deep-pink">What no one ever explained was <em>why I felt so relentlessly compelled to destroy myself</em></strong> despite knowing exactly what it was costing me. The answers I got back were always the same: <em>poor choices, weak character, lack of discipline.</em> A résumé of moral failure dressed up as diagnosis.</p>
-              <p>The truth was simpler and more human than any of that. My nervous system wasn't defective. It was adaptive. It was doing precisely what it had been trained to do — and doing it well, by its own logic. Only when I understood that could I stop trying to <em>fix</em> something that was never broken and start learning how to actually re-pattern it. Healing didn't begin the day I stopped using. It began the day I stopped treating my survival strategies like character defects — and started learning what <em>intentional safety</em> actually feels like in a body that had never known it.</p>
-            </div><!-- Frog Image -->
-            <div class="col-lg-5 margin-20px-bottom">
-              <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A sweating cartoon frog sitting in hot water saying 'This is totally normal'" class="img-fluid border-radius-6" src="images/webp/frog-normal.webp"></div>
+            <blockquote class="border-color-deep-pink">
+              <p>Think of the old analogy: a frog in slowly heating water. The temperature rises so gradually it never registers as danger. It just keeps adapting — until it can't. That's what growing up inside trauma often feels like. <strong>Pain doesn't make you wince when pain is all you've known.</strong></p>
+            </blockquote>
+            <div class="row align-items-start margin-40px-top margin-40px-bottom">
+              <!-- Text Content -->
+              <div class="col-lg-7">
+                <p>Every treatment program I attended handed me some version of the same message: <em>"Addiction is killing you. You need better habits. You need to change."</em> None of that was news. I had been telling myself the same thing for years, with considerably more self-loathing. <strong class="text-deep-pink">What no one ever explained was <em>why I felt so relentlessly compelled to destroy myself</em></strong> despite knowing exactly what it was costing me. The answers I got back were always the same: <em>poor choices, weak character, lack of discipline.</em> A résumé of moral failure dressed up as diagnosis.</p>
+                <p>The truth was simpler and more human than any of that. My nervous system wasn't defective. It was adaptive. It was doing precisely what it had been trained to do — and doing it well, by its own logic. Only when I understood that could I stop trying to <em>fix</em> something that was never broken and start learning how to actually re-pattern it. Healing didn't begin the day I stopped using. It began the day I stopped treating my survival strategies like character defects — and started learning what <em>intentional safety</em> actually feels like in a body that had never known it.</p>
+              </div><!-- Frog Image -->
+              <div class="col-lg-5 margin-20px-bottom">
+                <div class="bg-white box-shadow-large border-radius-6 padding-10px-all"><img alt="A sweating cartoon frog sitting in hot water saying 'This is totally normal'" class="img-fluid border-radius-6" src="images/webp/frog-normal.webp"></div>
+              </div>
             </div>
+            <p>And here's the question that almost never gets asked: if pain feels like home to a child, what does that child grow into? How does someone learn to navigate a world they never felt safe in — let alone learn to trust it, or themselves, again?</p>
+            <blockquote class="border-color-deep-pink">
+              <p>I wasn't born traumatized. I didn't arrive broken or defective or beyond repair. I adapted — plain and simple — to the environment I was handed before I was old enough to know I had any other option. I shaped myself around what surrounded me, by instinct, by trial, by the imperative to survive one more day. By that same logic — the same capacity for adaptation that kept me alive — I can unlearn it.<br>
+              <br>
+              <strong>I can heal. And so can you.</strong></p>
+            </blockquote>
           </div>
-          <p>And here's the question that almost never gets asked: if pain feels like home to a child, what does that child grow into? How does someone learn to navigate a world they never felt safe in — let alone learn to trust it, or themselves, again?</p>
-          <blockquote class="border-color-deep-pink">
-            <p>I wasn't born traumatized. I didn't arrive broken or defective or beyond repair. I adapted — plain and simple — to the environment I was handed before I was old enough to know I had any other option. I shaped myself around what surrounded me, by instinct, by trial, by the imperative to survive one more day. By that same logic — the same capacity for adaptation that kept me alive — I can unlearn it.<br>
-            <br>
-            <strong>I can heal. And so can you.</strong></p>
-          </blockquote>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+
   <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
     <div class="container-fluid p-0">
       <div class="row row-cols-1 row-cols-lg-2 m-0">
@@ -1078,7 +1335,7 @@
       </div>
     </div>
   </section>
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray ry-trauma-patterns">
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray ry-trauma-patterns" id="anav-responses">
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-lg-2">
         <!-- LEFT IMAGE -->
@@ -1209,11 +1466,11 @@
             .ry-trauma-patterns .ry-copy em{ color:#fff; }
 
     </style>
-  </section>
-  <section class="wow animate__fadeIn bg-white">
+  </section> 
+  <section class="wow animate__fadeIn bg-white" id="anav-addiction">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="Cycle of trauma to addiction" class="w-100" src="images/trauma-relief-cycle.png"></div>
+    <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="Cycle of trauma to addiction" class="w-100" src="images/trauma-relief-cycle.png"></div>
         <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
           <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Cruel Irony of Survival</span>
           <h5 class="alt-font text-extra-dark-gray font-weight-600">When Relief Becomes Another Danger</h5>
@@ -1837,5 +2094,107 @@
       applyConsentState();
     })();
   </script>
-  </body>
+  <!-- ═══════════════════════════════════════════════
+       ANCHOR NAV SCRIPT
+       - Shows bar once hero section scrolls past
+       - Tracks main nav show/hide (bootsnav adds
+         .nav-fixed when it pins to top)
+       - Highlights active section via IntersectionObserver
+       - Hides fade edge when list is scrolled to end
+  ════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    const anchorNav   = document.getElementById('ry-anchor-nav');
+    const mainNav     = document.querySelector('nav.navbar');
+    const hero        = document.getElementById('page-hero');
+    const scrollWrap  = document.getElementById('ry-anchor-scroll-wrap');
+    const fadeEl      = document.getElementById('ry-anchor-fade');
+    const ul          = anchorNav ? anchorNav.querySelector('ul') : null;
+    const links       = anchorNav ? anchorNav.querySelectorAll('a[data-section]') : [];
+
+    if (!anchorNav || !hero) return;
+
+    /* ── 1. Measure main nav height and keep it up to date ── */
+    function setNavHeight () {
+      const h = mainNav ? mainNav.offsetHeight : 60;
+      anchorNav.style.setProperty('--ry-main-nav-h', h + 'px');
+    }
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+
+    /* ── 2. Show/hide anchor bar based on hero visibility ── */
+    const heroObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        anchorNav.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+
+    /* ── 3. Track whether bootsnav is visible at top ──
+       Bootsnav adds/removes 'nav-fixed' on the <nav> when it
+       pins. We mirror that to shift the anchor bar down.     */
+    if (mainNav) {
+      const navClassObserver = new MutationObserver(function () {
+        const isFixed = mainNav.classList.contains('nav-fixed') ||
+                        mainNav.classList.contains('navbar-fixed-top') ||
+                        mainNav.classList.contains('sticky-header');
+        anchorNav.classList.toggle('main-nav-visible', isFixed);
+        setNavHeight();
+      });
+      navClassObserver.observe(mainNav, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    /* ── 4. Fade edge: hide when scrolled to end of list ── */
+    if (ul && fadeEl) {
+      function updateFade () {
+        const atEnd = ul.scrollLeft + ul.clientWidth >= ul.scrollWidth - 4;
+        fadeEl.classList.toggle('is-hidden', atEnd);
+      }
+      ul.addEventListener('scroll', updateFade, { passive: true });
+      window.addEventListener('resize', updateFade);
+      updateFade(); /* run once on load */
+    }
+
+    /* ── 5. Scroll-spy: highlight active section link ── */
+    const sectionIds = Array.from(links).map(function (a) {
+      return a.getAttribute('data-section');
+    });
+
+    const sections = sectionIds.map(function (id) {
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    const anchorNavHeight = function () { return anchorNav.offsetHeight + 10; };
+
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          links.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('data-section') === id);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-10% 0px -80% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function (s) { sectionObserver.observe(s); });
+
+    /* ── 6. Smooth-scroll with offset for anchor nav ── */
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        const target = document.getElementById(a.getAttribute('data-section'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = anchorNavHeight() + (anchorNav.classList.contains('main-nav-visible') ? mainNav.offsetHeight : 0);
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+
+  }());
+  </script>
+</body>
 </html>
