@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9">
+  </script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
 
-    gtag('js', new Date());
+     gtag('js', new Date());
 
-    // Default: deny analytics until user accepts
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied'
-    });
+     // Default: deny analytics until user accepts
+     gtag('consent', 'default', {
+       'analytics_storage': 'denied'
+     });
 
-    gtag('config', 'G-6968KR6JY9', {
-      'anonymize_ip': true
-    });
+     gtag('config', 'G-6968KR6JY9', {
+       'anonymize_ip': true
+     });
   </script>
   <title>Which Therapy Does What? A Survivor’s Guide to Trauma Care | Recover-You</title>
   <meta charset="utf-8">
@@ -46,276 +48,276 @@
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link href="css/responsive.css" rel="stylesheet" type="text/css">
   <script type="application/ld+json">
-       {
-         "@context": "https://schema.org",
-         "@type": "Article",
-         "headline": "Which Therapy Does What? A Guide to Trauma Recovery Models",
-         "description": "A survivor-made comparison of common trauma therapy approaches, including EMDR, ART, CBT, DBT, and somatic therapies.",
-         "image": "images/webp/types-of-therapy.webp",
-         "author": {
-           "@type": "Person",
-           "name": "Austan Sloan"
-         },
-         "publisher": {
-           "@type": "Organization",
-           "name": "Recover-You",
-           "url": "https://recover-you.ca"
-         },
-         "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https://recover-you.ca/types-of-therapy.html"
-         },
-         "inLanguage": "en",
-         "about": [
-           { "@type": "Thing", "name": "Trauma Therapy" },
-           { "@type": "Thing", "name": "EMDR" },
-           { "@type": "Thing", "name": "Somatic Experiencing" }
-         ]
-       }
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Which Therapy Does What? A Guide to Trauma Recovery Models",
+          "description": "A survivor-made comparison of common trauma therapy approaches, including EMDR, ART, CBT, DBT, and somatic therapies.",
+          "image": "images/webp/types-of-therapy.webp",
+          "author": {
+            "@type": "Person",
+            "name": "Austan Sloan"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Recover-You",
+            "url": "https://recover-you.ca"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://recover-you.ca/types-of-therapy.html"
+          },
+          "inLanguage": "en",
+          "about": [
+            { "@type": "Thing", "name": "Trauma Therapy" },
+            { "@type": "Thing", "name": "EMDR" },
+            { "@type": "Thing", "name": "Somatic Experiencing" }
+          ]
+        }
   </script>
   <style>
-            /* =========================
-               RY Therapy Categories (Card within Card)
-               ========================= */
-            :root{
-              --ry-accent: #c1122f;
-              --ry-accent-rgb: 193, 18, 47;
+             /* =========================
+                RY Therapy Categories (Card within Card)
+                ========================= */
+             :root{
+               --ry-accent: #c1122f;
+               --ry-accent-rgb: 193, 18, 47;
 
-              --ry-ink: #1f2328;
-              --ry-muted: rgba(31,35,40,.70);
-              --ry-border: rgba(31,35,40,.10);
+               --ry-ink: #1f2328;
+               --ry-muted: rgba(31,35,40,.70);
+               --ry-border: rgba(31,35,40,.10);
 
-              --ry-shadow: 0 18px 50px rgba(0,0,0,.08);
-              --ry-shadow-hover: 0 26px 65px rgba(0,0,0,.12);
-            }
+               --ry-shadow: 0 18px 50px rgba(0,0,0,.08);
+               --ry-shadow-hover: 0 26px 65px rgba(0,0,0,.12);
+             }
 
-            /* Outer grid for category blocks (optional) */
-            .ry-therapy-cat-grid{
-              display:grid;
-              grid-template-columns: 1fr;
-              gap: 24px;
-            }
+             /* Outer grid for category blocks (optional) */
+             .ry-therapy-cat-grid{
+               display:grid;
+               grid-template-columns: 1fr;
+               gap: 24px;
+             }
 
-            /* =========================
-               Outer Category Card
-               ========================= */
-            .ry-therapy-cat{
-              background:#fff;
-              border:1px solid rgba(31,35,40,.12);
-              border-radius: 18px;
-              box-shadow: var(--ry-shadow);
-              overflow:hidden;
-            }
+             /* =========================
+                Outer Category Card
+                ========================= */
+             .ry-therapy-cat{
+               background:#fff;
+               border:1px solid rgba(31,35,40,.12);
+               border-radius: 18px;
+               box-shadow: var(--ry-shadow);
+               overflow:hidden;
+             }
 
-            .ry-therapy-cat-head{
-              padding: 26px 26px 18px 26px;
-              position:relative;
-              background:
-                radial-gradient(900px 180px at 12% -18%, rgba(var(--ry-accent-rgb), .09), transparent 62%),
-                radial-gradient(700px 160px at 90% 0%, rgba(31,35,40,.05), transparent 58%);
-              border-bottom: 1px solid rgba(31,35,40,.08);
-            }
+             .ry-therapy-cat-head{
+               padding: 26px 26px 18px 26px;
+               position:relative;
+               background:
+                 radial-gradient(900px 180px at 12% -18%, rgba(var(--ry-accent-rgb), .09), transparent 62%),
+                 radial-gradient(700px 160px at 90% 0%, rgba(31,35,40,.05), transparent 58%);
+               border-bottom: 1px solid rgba(31,35,40,.08);
+             }
 
-            .ry-therapy-cat-kicker{
-              font-size: 11px;
-              letter-spacing: .14em;
-              text-transform: uppercase;
-              color: rgba(31,35,40,.60);
-              margin-bottom: 8px;
-            }
+             .ry-therapy-cat-kicker{
+               font-size: 11px;
+               letter-spacing: .14em;
+               text-transform: uppercase;
+               color: rgba(31,35,40,.60);
+               margin-bottom: 8px;
+             }
 
-            .ry-therapy-cat-title{
-              margin: 0;
-              font-size: 20px;
-              line-height: 1.25;
-              color: var(--ry-ink);
-              display:flex;
-              align-items:flex-start;
-              gap: 10px;
-            }
+             .ry-therapy-cat-title{
+               margin: 0;
+               font-size: 20px;
+               line-height: 1.25;
+               color: var(--ry-ink);
+               display:flex;
+               align-items:flex-start;
+               gap: 10px;
+             }
 
-            .ry-therapy-cat-title .ry-therapy-cat-mark{
-              width: 10px;
-              height: 10px;
-              border-radius: 3px;
-              margin-top: 7px;
-              background: var(--ry-accent);
-              box-shadow: 0 0 0 4px rgba(var(--ry-accent-rgb), .10);
-              flex: 0 0 auto;
-            }
+             .ry-therapy-cat-title .ry-therapy-cat-mark{
+               width: 10px;
+               height: 10px;
+               border-radius: 3px;
+               margin-top: 7px;
+               background: var(--ry-accent);
+               box-shadow: 0 0 0 4px rgba(var(--ry-accent-rgb), .10);
+               flex: 0 0 auto;
+             }
 
-            .ry-therapy-cat-sub{
-              margin: 10px 0 0 0;
-              color: rgba(31,35,40,.72);
-              font-size: 14px;
-              line-height: 1.6;
-              max-width: 78ch;
-            }
+             .ry-therapy-cat-sub{
+               margin: 10px 0 0 0;
+               color: rgba(31,35,40,.72);
+               font-size: 14px;
+               line-height: 1.6;
+               max-width: 78ch;
+             }
 
-            /* Inner grid for therapy cards inside category */
-            .ry-therapy-cat-body{
-              padding: 18px 18px 22px 18px;
-            }
+             /* Inner grid for therapy cards inside category */
+             .ry-therapy-cat-body{
+               padding: 18px 18px 22px 18px;
+             }
 
-            .ry-therapy-inner-grid{
-              display:grid;
-              grid-template-columns: repeat(2, minmax(0,1fr));
-              gap: 16px;
-            }
-            @media (max-width: 991px){
-              .ry-therapy-inner-grid{ grid-template-columns: 1fr; }
-            }
+             .ry-therapy-inner-grid{
+               display:grid;
+               grid-template-columns: repeat(2, minmax(0,1fr));
+               gap: 16px;
+             }
+             @media (max-width: 991px){
+               .ry-therapy-inner-grid{ grid-template-columns: 1fr; }
+             }
 
-            /* =========================
-               Inner Therapy Card (nested)
-               ========================= */
-            .ry-therapy-inner{
-              background: rgba(31,35,40,.015);
-              border: 1px solid rgba(31,35,40,.10);
-              border-radius: 16px;
-              overflow:hidden;
-              transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
-            }
-            .ry-therapy-inner:hover{
-              transform: translateY(-2px);
-              border-color: rgba(var(--ry-accent-rgb), .26);
-              background: rgba(var(--ry-accent-rgb), .03);
-              box-shadow: 0 14px 40px rgba(0,0,0,.08);
-            }
+             /* =========================
+                Inner Therapy Card (nested)
+                ========================= */
+             .ry-therapy-inner{
+               background: rgba(31,35,40,.015);
+               border: 1px solid rgba(31,35,40,.10);
+               border-radius: 16px;
+               overflow:hidden;
+               transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+             }
+             .ry-therapy-inner:hover{
+               transform: translateY(-2px);
+               border-color: rgba(var(--ry-accent-rgb), .26);
+               background: rgba(var(--ry-accent-rgb), .03);
+               box-shadow: 0 14px 40px rgba(0,0,0,.08);
+             }
 
-            .ry-therapy-inner-head{
-              padding: 18px 18px 14px 18px;
-              background:#fff;
-              border-bottom: 1px solid rgba(31,35,40,.08);
-            }
+             .ry-therapy-inner-head{
+               padding: 18px 18px 14px 18px;
+               background:#fff;
+               border-bottom: 1px solid rgba(31,35,40,.08);
+             }
 
-            .ry-therapy-inner-title{
-              margin: 0 0 8px 0;
-              font-size: 16px;
-              line-height: 1.3;
-              color: var(--ry-ink);
-            }
+             .ry-therapy-inner-title{
+               margin: 0 0 8px 0;
+               font-size: 16px;
+               line-height: 1.3;
+               color: var(--ry-ink);
+             }
 
-            .ry-therapy-inner-meta{
-              display:flex;
-              flex-wrap:wrap;
-              gap:8px;
-              margin-top: 10px;
-            }
+             .ry-therapy-inner-meta{
+               display:flex;
+               flex-wrap:wrap;
+               gap:8px;
+               margin-top: 10px;
+             }
 
-            /* Compact pill */
-            .ry-pill{
-              display:inline-flex;
-              align-items:center;
-              gap:8px;
-              padding: 6px 10px;
-              border-radius: 999px;
-              font-size: 12px;
-              border: 1px solid rgba(31,35,40,.10);
-              background: rgba(31,35,40,.04);
-              color: rgba(31,35,40,.78);
-            }
-            .ry-pill i{
-              color: var(--ry-accent);
-              opacity: .88;
-            }
+             /* Compact pill */
+             .ry-pill{
+               display:inline-flex;
+               align-items:center;
+               gap:8px;
+               padding: 6px 10px;
+               border-radius: 999px;
+               font-size: 12px;
+               border: 1px solid rgba(31,35,40,.10);
+               background: rgba(31,35,40,.04);
+               color: rgba(31,35,40,.78);
+             }
+             .ry-pill i{
+               color: var(--ry-accent);
+               opacity: .88;
+             }
 
-            /* “Recovery stage” pill variant */
-            .ry-pill-accent{
-              border-color: rgba(var(--ry-accent-rgb), .24);
-              background: rgba(var(--ry-accent-rgb), .08);
-              color: rgba(31,35,40,.82);
-            }
+             /* “Recovery stage” pill variant */
+             .ry-pill-accent{
+               border-color: rgba(var(--ry-accent-rgb), .24);
+               background: rgba(var(--ry-accent-rgb), .08);
+               color: rgba(31,35,40,.82);
+             }
 
-            /* Body sections */
-            .ry-therapy-inner-body{
-              padding: 16px 18px 18px 18px;
-              background:#fff;
-            }
+             /* Body sections */
+             .ry-therapy-inner-body{
+               padding: 16px 18px 18px 18px;
+               background:#fff;
+             }
 
-            .ry-field{
-              margin-top: 14px;
-            }
-            .ry-field:first-child{ margin-top: 0; }
+             .ry-field{
+               margin-top: 14px;
+             }
+             .ry-field:first-child{ margin-top: 0; }
 
-            .ry-field-label{
-              margin: 0 0 6px 0;
-              font-size: 11px;
-              letter-spacing: .14em;
-              text-transform: uppercase;
-              color: rgba(31,35,40,.60);
-            }
+             .ry-field-label{
+               margin: 0 0 6px 0;
+               font-size: 11px;
+               letter-spacing: .14em;
+               text-transform: uppercase;
+               color: rgba(31,35,40,.60);
+             }
 
-            .ry-field-text{
-              margin: 0;
-              font-size: 13px;
-              line-height: 1.65;
-              color: rgba(31,35,40,.78);
-            }
+             .ry-field-text{
+               margin: 0;
+               font-size: 13px;
+               line-height: 1.65;
+               color: rgba(31,35,40,.78);
+             }
 
-            /* Lists inside fields */
-            .ry-field-list{
-              margin: 0;
-              padding-left: 18px;
-              color: rgba(31,35,40,.78);
-              font-size: 13px;
-              line-height: 1.65;
-            }
-            .ry-field-list li{ margin: 6px 0; }
+             /* Lists inside fields */
+             .ry-field-list{
+               margin: 0;
+               padding-left: 18px;
+               color: rgba(31,35,40,.78);
+               font-size: 13px;
+               line-height: 1.65;
+             }
+             .ry-field-list li{ margin: 6px 0; }
 
-            /* Intensity bar (simple visual) */
-            .ry-intensity{
-              display:flex;
-              align-items:center;
-              gap:10px;
-              margin-top: 6px;
-            }
-            .ry-dots{
-              display:flex;
-              gap:6px;
-            }
-            .ry-dot{
-              width: 9px;
-              height: 9px;
-              border-radius: 3px;
-              background: rgba(31,35,40,.16);
-            }
-            .ry-dot.on{
-              background: rgba(var(--ry-accent-rgb), .95);
-            }
-            .ry-intensity-text{
-              font-size: 12px;
-              color: rgba(31,35,40,.70);
-              font-weight: 700;
-            }
+             /* Intensity bar (simple visual) */
+             .ry-intensity{
+               display:flex;
+               align-items:center;
+               gap:10px;
+               margin-top: 6px;
+             }
+             .ry-dots{
+               display:flex;
+               gap:6px;
+             }
+             .ry-dot{
+               width: 9px;
+               height: 9px;
+               border-radius: 3px;
+               background: rgba(31,35,40,.16);
+             }
+             .ry-dot.on{
+               background: rgba(var(--ry-accent-rgb), .95);
+             }
+             .ry-intensity-text{
+               font-size: 12px;
+               color: rgba(31,35,40,.70);
+               font-weight: 700;
+             }
 
-            /* Optional collapsible considerations */
-            .ry-inner-details{
-              margin-top: 14px;
-              border-top: 1px dashed rgba(31,35,40,.14);
-              padding-top: 14px;
-            }
-            .ry-inner-details summary{
-              cursor:pointer;
-              list-style:none;
-              display:flex;
-              align-items:center;
-              justify-content:space-between;
-              gap:12px;
-              font-weight:800;
-              font-size: 12px;
-              letter-spacing:.08em;
-              text-transform: uppercase;
-              color: rgba(31,35,40,.72);
-            }
-            .ry-inner-details summary::-webkit-details-marker{ display:none; }
-            .ry-inner-details summary i{ color: var(--ry-accent); }
-            .ry-inner-details .ry-details-body{
-              margin-top: 10px;
-              color: rgba(31,35,40,.78);
-              font-size: 13px;
-              line-height: 1.65;
-            }
+             /* Optional collapsible considerations */
+             .ry-inner-details{
+               margin-top: 14px;
+               border-top: 1px dashed rgba(31,35,40,.14);
+               padding-top: 14px;
+             }
+             .ry-inner-details summary{
+               cursor:pointer;
+               list-style:none;
+               display:flex;
+               align-items:center;
+               justify-content:space-between;
+               gap:12px;
+               font-weight:800;
+               font-size: 12px;
+               letter-spacing:.08em;
+               text-transform: uppercase;
+               color: rgba(31,35,40,.72);
+             }
+             .ry-inner-details summary::-webkit-details-marker{ display:none; }
+             .ry-inner-details summary i{ color: var(--ry-accent); }
+             .ry-inner-details .ry-details-body{
+               margin-top: 10px;
+               color: rgba(31,35,40,.78);
+               font-size: 13px;
+               line-height: 1.65;
+             }
 
   </style>
 </head>
@@ -547,7 +549,6 @@
     <div class="down-section text-center">
       <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
     </div>
-
   </section>
   <section class="wow animate__fadeIn bg-light-gray" id="why">
     <div class="container">
@@ -1268,394 +1269,326 @@
               </div>
             </div>
           </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="padding-30px-all border-radius-6" style="background:#fff; border-left:4px solid #e8204a; box-shadow:0 8px 20px rgba(0,0,0,0.06);">
+                <h6 class="font-weight-600"><span class="text-deep-pink">//</span> Knowing what these approaches are is one thing.</h6>
+                <p class="text-medium line-height-28 sm-line-height-26 margin-0">Finding a practitioner who actually uses them — and who works with trauma and addiction specifically — is another. <a class="text-deep-pink" href="resources-trauma-therapy.html" style="color:#e8204a !important;">The trauma therapy directory</a> filters by modality and location so you can search for exactly what you've just read about.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section><!-- start section -->
-  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
-    <video id="learnMoreBg" autoplay muted loop playsinline class="learn-more-bg">
-      <source src="video/learn-more-bg.mp4" type="video/mp4">
-    </video>
+</div>
 
+  </section>
+<!-- start section -->
+  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
+    <video autoplay muted loop playsinline class="learn-more-bg" id="learnMoreBg" loop=""><source src="video/learn-more-bg.mp4" type="video/mp4"></video>
     <div class="container position-relative z-index-2">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
           <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
-          <p class="learn-more-subtitle">
-            Follow the next step in order, or branch out into related topics.
-          </p>
+          <p class="learn-more-subtitle">Follow the next step in order, or branch out into related topics.</p>
         </div>
       </div>
-
       <div class="learn-more-divider mx-auto"></div>
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
-
         <!-- Up Next -->
         <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
-          <a class="learn-card is-next category-tools" href="role-of-therapy.html">
-            <span class="learn-card-label">Up Next</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Make Therapy Work</div>
-            <p>How to find the right fit and get the most from the therapeutic process.</p>
-          </a>
+          <a class="learn-card is-next category-tools" href="role-of-therapy.html"><span class="learn-card-label">Up Next</span> <i aria-hidden="true" class="icon-book-open learn-card-icon"></i>
+          <div class="learn-card-title alt-font">
+            Make Therapy Work
+          </div>
+          <p>How to find the right fit and get the most from the therapeutic process.</p></a>
         </div>
-
         <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-          <a class="learn-card" href="cbt.html">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">The CBT Problem</div>
-            <p>Why CBT falls short for trauma — and the narrow cases where it helps.</p>
-          </a>
+          <a class="learn-card" href="cbt.html"><span class="learn-card-label learn-card-label--explore">Explore</span> <i aria-hidden="true" class="icon-book-open learn-card-icon"></i>
+          <div class="learn-card-title alt-font">
+            The CBT Problem
+          </div>
+          <p>Why CBT falls short for trauma — and the narrow cases where it helps.</p></a>
         </div>
         <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-          <a class="learn-card" href="dbt.html">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">The Painful Middle</div>
-            <p>Holding two opposing truths — DBT's radical approach to emotional survival.</p>
-          </a>
+          <a class="learn-card" href="dbt.html"><span class="learn-card-label learn-card-label--explore">Explore</span> <i aria-hidden="true" class="icon-book-open learn-card-icon"></i>
+          <div class="learn-card-title alt-font">
+            The Painful Middle
+          </div>
+          <p>Holding two opposing truths — DBT's radical approach to emotional survival.</p></a>
         </div>
         <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-          <a class="learn-card" href="role-of-therapy.html">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Make Therapy Work</div>
-            <p>How to find the right fit and get the most from the therapeutic process.</p>
-          </a>
+          <a class="learn-card" href="role-of-therapy.html"><span class="learn-card-label learn-card-label--explore">Explore</span> <i aria-hidden="true" class="icon-book-open learn-card-icon"></i>
+          <div class="learn-card-title alt-font">
+            Make Therapy Work
+          </div>
+          <p>How to find the right fit and get the most from the therapeutic process.</p></a>
         </div>
       </div>
     </div>
   </section>
-<section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- start services section -->
-
-    <!-- ========== NEW FOOTER & PRIVACY ========== -->
-    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
-      <div class="container">
-        <div class="site-footer__inner">
-
-          <div class="site-footer__left alt-font text-small font-weight-500">
-            <a href="contact.html">GET IN TOUCH</a>
-            <span class="footer-sep">|</span>
-            <a href="#" id="open-privacy-policy">Privacy Policy</a>
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="ticker">
+            <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
           </div>
-
-          <div class="site-footer__center">
-            <a href="index.html">
-              <img
-                alt="Recover You logo white"
-                class="footer-logo"
-                data-at2x="images/logo-white@2x.png"
-                src="images/logo-white.png"
-              >
-            </a>
-          </div>
-
-          <div class="site-footer__right alt-font text-small font-weight-500">
-            Not medical advice.<br>
-            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
-          </div>
-
-        </div>
-      </div>
-    </footer><!-- end footer -->
-    <!-- start scroll to top -->
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
-     <!-- javascript -->
-     
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script> 
-    <script src="js/bootsnav.js" type="text/javascript">
-    </script> 
-    <script src="js/jquery.nav.js" type="text/javascript">
-    </script> 
-    <script src="js/hamburger-menu.js" type="text/javascript">
-    </script> 
-    <script src="js/theme-vendors.min.js" type="text/javascript">
-    </script> <!-- setting -->
-     
-    <script src="js/main.js" type="text/javascript">
-    </script>
-
-
-
-    
-    <script>
-    (function () {
-      const progress = document.getElementById('reading-progress');
-      const fill = document.getElementById('reading-progress-fill');
-
-      if (!progress || !fill) return;
-
-      /* 
-        Reusable rules:
-        1) If a section has id="page-hero", use that
-        2) otherwise use the first .parallax section
-        3) if no hero exists, start from top of page
-      */
-      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-
-      function getScrollTop() {
-        return window.pageYOffset || document.documentElement.scrollTop || 0;
-      }
-
-      function getDocHeight() {
-        return Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-
-      function updateReadingProgress() {
-        const scrollTop = getScrollTop();
-        const viewportHeight = window.innerHeight;
-        const docHeight = getDocHeight();
-
-        let startPoint = 0;
-
-        if (hero) {
-          startPoint = hero.offsetTop + hero.offsetHeight;
-        }
-
-        const totalReadableDistance = docHeight - viewportHeight - startPoint;
-        const distanceRead = scrollTop - startPoint;
-
-        if (scrollTop > startPoint) {
-          progress.classList.add('is-visible');
-
-          if (totalReadableDistance <= 0) {
-            fill.style.width = '100%';
-            return;
-          }
-
-          let percent = (distanceRead / totalReadableDistance) * 100;
-          percent = Math.max(0, Math.min(percent, 100));
-          fill.style.width = percent + '%';
-        } else {
-          progress.classList.remove('is-visible');
-          fill.style.width = '0%';
-        }
-      }
-
-      window.addEventListener('load', updateReadingProgress);
-      window.addEventListener('resize', updateReadingProgress);
-      window.addEventListener('scroll', updateReadingProgress, { passive: true });
-    })();
-    </script>
-
-
-    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
-    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-      <div class="privacy-modal__backdrop" data-close-policy></div>
-
-      <div
-        class="privacy-modal__dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="privacy-modal-title"
-      >
-        <div class="privacy-modal__header">
-          <h3 id="privacy-modal-title">Privacy Policy</h3>
-          <button
-            type="button"
-            class="privacy-modal__close"
-            aria-label="Close privacy policy"
-            data-close-policy
-          >
-            &times;
-          </button>
-        </div>
-
-        <div class="privacy-modal__body">
-          <p><strong>Last updated:</strong> March 2026</p>
-
-          <p>
-            If you reach out through the contact form, I'll collect your name, email, and 
-            message — nothing more. That information is used only to get back to you. It's 
-            not shared, sold, or used for anything else.
-          </p>
-
-          <p>
-            This site uses two analytics tools to help me understand how people find and 
-            use it. Google Analytics is only active if you choose to allow analytics cookies. 
-            Netlify Web Analytics runs quietly in the background using general server data — 
-            no cookies, no individual tracking.
-          </p>
-
-          <p>
-            A few third-party services help keep the site running — things like hosting and 
-            the contact form. Some of these are based outside Canada, so your information 
-            may be processed there. I've chosen providers I trust, but I want you to know.
-          </p>
-
-          <p>
-            Please don't share anything urgent or crisis-related through the contact form — 
-            it's not monitored in real time. If you're in immediate distress, please reach 
-            out to a crisis line or emergency services.
-          </p>
-
-          <p>
-            Questions about this policy, or want to see or correct something I have about 
-            you? You can reach me through the contact page — I'm happy to help.
-          </p>
-        </div>
-
-        <div class="privacy-modal__footer">
-          <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
         </div>
       </div>
     </div>
-    <script>
-      (function () {
-        const modal = document.getElementById('privacy-modal');
-        const openBtn = document.getElementById('open-privacy-policy');
-        const closeBtns = document.querySelectorAll('[data-close-policy]');
+  </section><!-- start services section -->
+  <!-- ========== NEW FOOTER & PRIVACY ========== -->
+  <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div class="site-footer__left alt-font text-small font-weight-500">
+          <a href="contact.html">GET IN TOUCH</a> <span class="footer-sep">|</span> <a href="#" id="open-privacy-policy">Privacy Policy</a>
+        </div>
+        <div class="site-footer__center">
+          <a href="index.html"><img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+        </div>
+        <div class="site-footer__right alt-font text-small font-weight-500">
+          Not medical advice.<br>
+          See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+        </div>
+      </div>
+    </div>
+  </footer><!-- end footer -->
+  <!-- start scroll to top -->
+  <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
+   <!-- javascript -->
+   
+  <script src="js/jquery.min.js" type="text/javascript">
+  </script> 
+  <script src="js/bootsnav.js" type="text/javascript">
+  </script> 
+  <script src="js/jquery.nav.js" type="text/javascript">
+  </script> 
+  <script src="js/hamburger-menu.js" type="text/javascript">
+  </script> 
+  <script src="js/theme-vendors.min.js" type="text/javascript">
+  </script> <!-- setting -->
+   
+  <script src="js/main.js" type="text/javascript">
+  </script> 
+  <script>
+     (function () {
+       const progress = document.getElementById('reading-progress');
+       const fill = document.getElementById('reading-progress-fill');
 
-        if (!modal || !openBtn) return;
+       if (!progress || !fill) return;
 
-        function openPolicy(e) {
-          e.preventDefault();
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('policy-modal-open');
-        }
+       /* 
+         Reusable rules:
+         1) If a section has id="page-hero", use that
+         2) otherwise use the first .parallax section
+         3) if no hero exists, start from top of page
+       */
+       const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
 
-        function closePolicy() {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('policy-modal-open');
-        }
+       function getScrollTop() {
+         return window.pageYOffset || document.documentElement.scrollTop || 0;
+       }
 
-        openBtn.addEventListener('click', openPolicy);
+       function getDocHeight() {
+         return Math.max(
+           document.body.scrollHeight,
+           document.documentElement.scrollHeight,
+           document.body.offsetHeight,
+           document.documentElement.offsetHeight,
+           document.body.clientHeight,
+           document.documentElement.clientHeight
+         );
+       }
 
-        closeBtns.forEach((btn) => {
-          btn.addEventListener('click', closePolicy);
-        });
+       function updateReadingProgress() {
+         const scrollTop = getScrollTop();
+         const viewportHeight = window.innerHeight;
+         const docHeight = getDocHeight();
 
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-            closePolicy();
-          }
-        });
-      })();
-    </script>
-      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
-    <div class="cookie-banner-inner">
-      <p class="cookie-banner-text">
-        <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
-      </p>
-      <div class="cookie-banner-actions">
-        <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
-        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+         let startPoint = 0;
+
+         if (hero) {
+           startPoint = hero.offsetTop + hero.offsetHeight;
+         }
+
+         const totalReadableDistance = docHeight - viewportHeight - startPoint;
+         const distanceRead = scrollTop - startPoint;
+
+         if (scrollTop > startPoint) {
+           progress.classList.add('is-visible');
+
+           if (totalReadableDistance <= 0) {
+             fill.style.width = '100%';
+             return;
+           }
+
+           let percent = (distanceRead / totalReadableDistance) * 100;
+           percent = Math.max(0, Math.min(percent, 100));
+           fill.style.width = percent + '%';
+         } else {
+           progress.classList.remove('is-visible');
+           fill.style.width = '0%';
+         }
+       }
+
+       window.addEventListener('load', updateReadingProgress);
+       window.addEventListener('resize', updateReadingProgress);
+       window.addEventListener('scroll', updateReadingProgress, { passive: true });
+     })();
+  </script> <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
+  <div aria-hidden="true" class="privacy-modal" id="privacy-modal">
+    <div class="privacy-modal__backdrop" data-close-policy=""></div>
+    <div aria-labelledby="privacy-modal-title" class="privacy-modal__dialog" role="dialog">
+      <div class="privacy-modal__header">
+        <h3 id="privacy-modal-title">Privacy Policy</h3><button aria-label="Close privacy policy" class="privacy-modal__close" data-close-policy="" type="button">&times;</button>
+      </div>
+      <div class="privacy-modal__body">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>If you reach out through the contact form, I'll collect your name, email, and message — nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data — no cookies, no individual tracking.</p>
+        <p>A few third-party services help keep the site running — things like hosting and the contact form. Some of these are based outside Canada, so your information may be processed there. I've chosen providers I trust, but I want you to know.</p>
+        <p>Please don't share anything urgent or crisis-related through the contact form — it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+        <p>Questions about this policy, or want to see or correct something I have about you? You can reach me through the contact page — I'm happy to help.</p>
+      </div>
+      <div class="privacy-modal__footer">
+        <button class="privacy-modal__ok" data-close-policy="" type="button">OK</button>
       </div>
     </div>
   </div>
   <script>
-    (function () {
-      const CONSENT_KEY = 'ry_cookie_consent';
-      const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
-      const DECLINE_DAYS = 180;
+       (function () {
+         const modal = document.getElementById('privacy-modal');
+         const openBtn = document.getElementById('open-privacy-policy');
+         const closeBtns = document.querySelectorAll('[data-close-policy]');
 
-      const banner = document.getElementById('cookie-banner');
-      const acceptBtn = document.getElementById('cookie-accept');
-      const declineBtn = document.getElementById('cookie-decline');
+         if (!modal || !openBtn) return;
 
-      function grantAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
+         function openPolicy(e) {
+           e.preventDefault();
+           modal.classList.add('is-open');
+           modal.setAttribute('aria-hidden', 'false');
+           document.body.classList.add('policy-modal-open');
+         }
 
-      function denyAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
+         function closePolicy() {
+           modal.classList.remove('is-open');
+           modal.setAttribute('aria-hidden', 'true');
+           document.body.classList.remove('policy-modal-open');
+         }
 
-      function showBanner() {
-        if (banner) banner.style.display = 'block';
-      }
+         openBtn.addEventListener('click', openPolicy);
 
-      function hideBanner() {
-        if (banner) banner.style.display = 'none';
-      }
+         closeBtns.forEach((btn) => {
+           btn.addEventListener('click', closePolicy);
+         });
 
-      function setDeclineExpiry(days) {
-        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
-        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
-      }
-
-      function clearDeclineExpiry() {
-        localStorage.removeItem(CONSENT_EXPIRY_KEY);
-      }
-
-      function isDeclineExpired() {
-        const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
-        if (!expiry) return true;
-        return Date.now() > Number(expiry);
-      }
-
-      function applyConsentState() {
-        const consent = localStorage.getItem(CONSENT_KEY);
-
-        if (consent === 'accepted') {
-          grantAnalytics();
-          hideBanner();
-          return;
-        }
-
-        if (consent === 'declined') {
-          denyAnalytics();
-
-          if (isDeclineExpired()) {
-            localStorage.removeItem(CONSENT_KEY);
-            localStorage.removeItem(CONSENT_EXPIRY_KEY);
-            showBanner();
-          } else {
-            hideBanner();
-          }
-          return;
-        }
-
-        denyAnalytics();
-        showBanner();
-      }
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'accepted');
-          clearDeclineExpiry();
-          grantAnalytics();
-          hideBanner();
-        });
-      }
-
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'declined');
-          setDeclineExpiry(DECLINE_DAYS);
-          denyAnalytics();
-          hideBanner();
-        });
-      }
-
-      applyConsentState();
-    })();
+         document.addEventListener('keydown', function (e) {
+           if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+             closePolicy();
+           }
+         });
+       })();
   </script>
-  </body>
+  <div aria-label="Cookie consent banner" aria-live="polite" class="cookie-banner" id="cookie-banner" role="dialog">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text"><strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.</p>
+      <div class="cookie-banner-actions">
+        <button class="cookie-btn cookie-btn-decline" id="cookie-decline" type="button">Decline</button> <button class="cookie-btn cookie-btn-accept" id="cookie-accept" type="button">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+     (function () {
+       const CONSENT_KEY = 'ry_cookie_consent';
+       const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+       const DECLINE_DAYS = 180;
+
+       const banner = document.getElementById('cookie-banner');
+       const acceptBtn = document.getElementById('cookie-accept');
+       const declineBtn = document.getElementById('cookie-decline');
+
+       function grantAnalytics() {
+         gtag('consent', 'update', {
+           'analytics_storage': 'granted'
+         });
+       }
+
+       function denyAnalytics() {
+         gtag('consent', 'update', {
+           'analytics_storage': 'denied'
+         });
+       }
+
+       function showBanner() {
+         if (banner) banner.style.display = 'block';
+       }
+
+       function hideBanner() {
+         if (banner) banner.style.display = 'none';
+       }
+
+       function setDeclineExpiry(days) {
+         const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+         localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
+       }
+
+       function clearDeclineExpiry() {
+         localStorage.removeItem(CONSENT_EXPIRY_KEY);
+       }
+
+       function isDeclineExpired() {
+         const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
+         if (!expiry) return true;
+         return Date.now() > Number(expiry);
+       }
+
+       function applyConsentState() {
+         const consent = localStorage.getItem(CONSENT_KEY);
+
+         if (consent === 'accepted') {
+           grantAnalytics();
+           hideBanner();
+           return;
+         }
+
+         if (consent === 'declined') {
+           denyAnalytics();
+
+           if (isDeclineExpired()) {
+             localStorage.removeItem(CONSENT_KEY);
+             localStorage.removeItem(CONSENT_EXPIRY_KEY);
+             showBanner();
+           } else {
+             hideBanner();
+           }
+           return;
+         }
+
+         denyAnalytics();
+         showBanner();
+       }
+
+       if (acceptBtn) {
+         acceptBtn.addEventListener('click', function () {
+           localStorage.setItem(CONSENT_KEY, 'accepted');
+           clearDeclineExpiry();
+           grantAnalytics();
+           hideBanner();
+         });
+       }
+
+       if (declineBtn) {
+         declineBtn.addEventListener('click', function () {
+           localStorage.setItem(CONSENT_KEY, 'declined');
+           setDeclineExpiry(DECLINE_DAYS);
+           denyAnalytics();
+           hideBanner();
+         });
+       }
+
+       applyConsentState();
+     })();
+  </script>
+</body>
 </html>
