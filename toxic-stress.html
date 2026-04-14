@@ -537,7 +537,180 @@
               transform: translateY(-6px);
           }
     </style>
-  </section><!-- CONTENT WARNING CARD -->
+  </section>
+  <!-- CORTISOL IMPACT TABLE -->
+  <!-- CORTISOL IMPACT TABLE -->
+  <section class="bg-white padding-60px-tb md-padding-40px-tb wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">
+          <span class="text-deep-pink">//</span>  Okay, so — too much cortisol is bad. But <em>why?</em>
+          </h5>
+          <p class="text-medium">In short bursts, cortisol is useful — necessary, even. It mobilizes energy, sharpens threat detection, and temporarily suppresses everything non-urgent: inflammation, digestion, reproduction. Your body's operating on a single directive: <em>emergency now, maintenance later.</em> That logic works fine for a sprint. The damage comes when the sprint becomes a marathon.</p>
+
+          <div class="cortisol-grid margin-40px-top">
+
+            <div class="cx-cell">
+              <div class="cx-icon"><i class="fas fa-brain"></i></div>
+              <p class="cx-label">Memory &amp; Context</p>
+              <h6 class="cx-title">Hippocampus</h6>
+              <div class="cx-divider"></div>
+              <ul class="cx-points">
+                <li>Reduces the growth of new neurons</li>
+                <li>Existing neurons pull back their connections</li>
+                <li>Associated with measurable volume reductions over time</li>
+                <li>Weakens the "that was then" signal — the brake on the alarm system</li>
+              </ul>
+            </div>
+
+            <div class="cx-cell">
+              <div class="cx-icon"><i class="fas fa-sliders-h"></i></div>
+              <p class="cx-label">Regulation</p>
+              <h6 class="cx-title">Prefrontal Cortex</h6>
+              <div class="cx-divider"></div>
+              <ul class="cx-points">
+                <li>Progressively weakens top-down control</li>
+                <li>Impairs working memory and flexible thinking</li>
+                <li>Shifts the brain toward reactive, subcortical systems</li>
+              </ul>
+            </div>
+
+            <div class="cx-cell">
+              <div class="cx-icon"><i class="fas fa-exclamation-triangle"></i></div>
+              <p class="cx-label">Threat Detection</p>
+              <h6 class="cx-title">Amygdala</h6>
+              <div class="cx-divider"></div>
+              <ul class="cx-points">
+                <li>Opposite effect: reactivity <em>increases</em></li>
+                <li>Lower threat threshold — alarm fires sooner</li>
+                <li>Responses feel sudden because the trigger bar dropped, not because the threat got bigger</li>
+              </ul>
+            </div>
+
+            <div class="cx-cell">
+              <div class="cx-icon"><i class="fas fa-bolt"></i></div>
+              <p class="cx-label">Reward &amp; Motivation</p>
+              <h6 class="cx-title">Dopamine System</h6>
+              <div class="cx-divider"></div>
+              <ul class="cx-points">
+                <li>Chronic stress can blunt baseline dopamine sensitivity</li>
+                <li>Ordinary pleasure becomes harder to register</li>
+                <li>Makes synthetic relief feel not optional, but necessary</li>
+              </ul>
+            </div>
+
+          </div><!-- end cortisol-grid -->
+
+          <div class="cx-adaptive margin-20px-top">
+            None of these are malfunctions. They’re adaptations — the brain doing exactly what it was trained to do in an environment it believed was permanently dangerous.
+          </div>
+
+          <div class="cx-summary margin-10px-top">
+            So you get hippocampal shrinkage (context, memory, braking), PFC weakening (regulation), and amygdala sensitization (alarm) — all at once. The dopamine system goes quiet underneath it. That's not a collection of separate problems. That's a single, unified setup that increases vulnerability to trauma-driven addiction.
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <style>
+      .cortisol-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border: 1px solid #dee2e6;
+      }
+      .cx-cell {
+        padding: 1.5rem 1.25rem;
+        border-right: 1px solid #dee2e6;
+        background: #fff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+      .cx-cell::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+      }
+      .cx-cell:nth-child(1)::before { background: #7c9fc4; }
+      .cx-cell:nth-child(2)::before { background: #8fa888; }
+      .cx-cell:nth-child(3)::before { background: #c47c7c; }
+      .cx-cell:nth-child(4)::before { background: #a07cb8; }
+      .cx-cell:last-child { border-right: none; }
+      .cx-cell:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+        background: #f9f9f9;
+        z-index: 1;
+      }
+      .cx-icon { font-size: 20px; margin-bottom: 14px; margin-top: 4px; }
+      .cx-cell:nth-child(1) .cx-icon { color: #7c9fc4; }
+      .cx-cell:nth-child(2) .cx-icon { color: #8fa888; }
+      .cx-cell:nth-child(3) .cx-icon { color: #c47c7c; }
+      .cx-cell:nth-child(4) .cx-icon { color: #a07cb8; }
+      .cx-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #999;
+        margin-bottom: 5px;
+      }
+      .cx-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 14px;
+        line-height: 1.2;
+      }
+      .cx-divider { height: 1px; background: #ebebeb; margin-bottom: 14px; }
+      .cx-points { list-style: none; padding: 0; margin: 0; }
+      .cx-points li {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #555;
+        padding: 5px 0;
+        border-bottom: 1px solid #f2f2f2;
+      }
+      .cx-points li:last-child { border-bottom: none; padding-bottom: 0; }
+      .cx-adaptive {
+        margin-top: 1.5rem;
+        padding: 1rem 1.4rem;
+        background: #f7f7f7;
+        border-left: 3px solid #bbb;
+        border-radius: 0;
+        font-size: 14px;
+        line-height: 1.85;
+        color: #666;
+        font-style: italic;
+      }
+      .cx-summary {
+        margin-top: 8px;
+        padding: 1.1rem 1.4rem;
+        background: #f2f2f2;
+        border-left: 4px solid #1a1a1a;
+        border-radius: 0;
+        font-size: 15px;
+        line-height: 1.85;
+        color: #1a1a1a;
+      }
+      @media (max-width: 768px) {
+        .cortisol-grid { grid-template-columns: 1fr 1fr; }
+        .cx-cell { border-bottom: 1px solid #dee2e6; }
+      }
+      @media (max-width: 480px) {
+        .cortisol-grid { grid-template-columns: 1fr; }
+      }
+      .section-lifted {
+        box-shadow: 0 -8px 24px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+      }
+    </style>
+  </section>
+  <!-- CONTENT WARNING CARD -->
   <section class="wow animate__fadeIn bg-light-gray padding-60px-tb md-padding-40px-tb">
     <div class="container">
       <div class="row justify-content-center">
@@ -736,50 +909,65 @@
           </div>
         </div>
       </section>
-      <section class="wow animate__fadeIn position-relative padding-80px-tb md-padding-50px-tb" style="background: linear-gradient(135deg, #ff1463 0%, #ff3c7a 100%);">
+      <section class="wow animate__fadeIn position-relative padding-80px-tb md-padding-50px-tb" style="background: #1a1a1a;">
         <div class="container">
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-9">
-              <p class="alt-font text-extra-large text-white line-height-34 mb-0">Does this page describe something you’ve felt but never had words for?<br>
-              <strong>If so, you’re not broken — you’ve adapted.</strong><br>
-              And if you’ve adapted once, <span class="text-white-2 opacity-9">you can do it again.</span></p>
-            </div>
-          </div>
-        </div><!-- Subtle top glow accent -->
-        <div class="position-absolute top-0 start-0 w-100 h-10px" style="background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);"></div>
-      </section>
-      <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image: url('images/webp/hope.webp');">
-        <div class="opacity-full-dark bg-extra-dark-gray"></div>
-        <div class="container position-relative">
           <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-              <h5 class="alt-font text-white font-weight-600 mb-4 position-relative d-inline-block" style="font-size: 2.4rem;"><span class="text-deep-pink">//</span> Final Word</h5>
-              <div class="separator-line-horrizontal-full bg-deep-pink opacity-8 w-60 mx-auto h-2px mb-5"></div>
-              <div class="quote-panel bg-transparent border-left border-color-deep-pink mx-auto text-start px-4 py-3 rounded-3 shadow-sm" style="max-width: 800px;">
-                <p class="text-white text-medium line-height-28 mb-4">Understanding toxic stress is not about excusing the past or softening what it did. It's about naming the force that rewired your nervous system — and reclaiming authorship over what happens next. The wiring that once kept you alive does not have to govern your life forever. That's not a promise. That's a biological fact.</p>
-                <p class="text-white text-medium line-height-28 mb-4">You were not broken. You were trained — biologically, relentlessly, without your consent — to survive in conditions where safety was scarce or absent entirely. Substances worked not because you were weak, but because they solved a real problem your body couldn't solve alone.<br>
-                <em class="text-deep-pink">That truth doesn't trap you. It frees you.</em></p>
-                <p class="text-white text-medium line-height-28 mb-4"><em>When survival is understood, it can be renegotiated.<br>
-                When the nervous system is seen clearly, it can be rewired deliberately.<br>
-                When the story finally makes sense, recovery stops being a mystery — it becomes a direction you can actually move in.</em></p>
-                <p class="text-white text-medium line-height-28 mb-4">For many of us there is no stable baseline waiting underneath the chaos. Peace isn't a place we return to. It's something we build — slowly, with evidence, in a nervous system that is learning for the first time that it's allowed to rest.</p>
-                <p class="alt-font text-white text-medium line-height-28 mb-0"><strong class="text-deep-pink">Recovery stops being a moral struggle the moment it becomes a biological negotiation you finally have the tools to act on.</strong></p>
+            <div class="col-lg-7">
+              <div style="border-left: 3px solid #ff1463; padding-left: 1.75rem;">
+                <p class="alt-font text-white-2 line-height-34 mb-0" style="font-size: 1.2rem; opacity: 0.95;">Does this page describe something you've felt but never had words for?<br>
+                <strong class="text-white">If so, you're not broken — you've adapted.</strong><br>
+                <span style="color: rgba(255,255,255,0.65);">And if you've adapted once, you can do it again.</span></p>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image: url('images/healthy-brain-bg.png');">
+        <div class="opacity-full-dark bg-extra-dark-gray"></div>
+        <div class="container position-relative">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h5 class="alt-font text-white font-weight-600 mb-4 position-relative d-inline-block" style="font-size: 2.4rem;"><span class="text-deep-pink">//</span> Final Word</h5>
+              <div class="separator-line-horrizontal-full bg-deep-pink opacity-8 w-60 mx-auto h-2px mb-5"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-7 text-start final-word-body">
+
+              <p class="text-white-2 text-medium line-height-30 mb-5">If this page brought something up — a recognition, a grief, an anger you couldn't quite name before — that's not a sign you've gone somewhere wrong. That's what it feels like when something that lived wordlessly in your body finally gets a name.</p>
+
+              <p class="text-white-2 text-medium line-height-30 mb-5">Understanding toxic stress doesn't ask you to forgive the past, minimize it, or rush toward anything. It asks something quieter: that you consider the possibility that what happened to you was real, that your responses to it made sense, and that the version of you who survived it was doing the only thing available.</p>
+
+              <p class="text-white-2 text-medium line-height-30 mb-4">You were not broken. You were trained — biologically, relentlessly, without your consent — to survive in conditions where safety was scarce or absent entirely. Substances worked not because you were weak, but because they solved a real problem your body couldn't solve on its own.</p>
+
+              <p class="text-deep-pink alt-font mb-5" style="font-size: 1.1rem; font-style: italic; line-height: 1.8;">That truth is not an easy one to sit with. But it is an honest one. And honest is where recovery actually starts.</p>
+
+              <div class="final-word-triptych mb-5">
+                <p class="text-white-2 text-medium line-height-30"><em>When survival is understood, it can be renegotiated.</em></p>
+                <p class="text-white-2 text-medium line-height-30"><em>When the nervous system is seen clearly, it can be rewired deliberately.</em></p>
+                <p class="text-white-2 text-medium line-height-30"><em>When the story finally makes sense, recovery stops being a mystery — it becomes a direction you can actually move in.</em></p>
+              </div>
+
+              <p class="text-white-2 text-medium line-height-30 mb-5">For many of us there is no stable baseline waiting underneath the chaos. Peace isn't a place we return to. It's something we build — slowly, with evidence, in a nervous system that is learning for the first time that it's allowed to rest. That process is not linear. It is not fast. But it is possible.</p>
+
+              <p class="alt-font text-white mb-0" style="font-size: 1.15rem; font-weight: 600; line-height: 1.75; border-top: 2px solid #ff1463; padding-top: 1.5rem;"><strong class="text-deep-pink">Recovery stops being a moral struggle the moment it becomes a biological negotiation you finally have the tools to act on.</strong></p>
+
+            </div>
+          </div>
+        </div>
         <style>
-              .quote-panel {
-                border-left: 3px solid #ff1463;
-                backdrop-filter: saturate(140%) blur(3px);
-                background: rgba(255,255,255,0.03);
-                box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-                transition: all 0.3s ease;
-              }
-              .quote-panel:hover {
-                background: rgba(255,255,255,0.06);
-                transform: translateY(-2px);
-              }
+          .final-word-body p { opacity: 0.92; }
+          .final-word-triptych {
+            border-left: 3px solid rgba(255,20,99,0.4);
+            padding-left: 1.5rem;
+          }
+          .final-word-triptych p {
+            margin-bottom: 0.6rem;
+          }
+          .final-word-triptych p:last-child {
+            margin-bottom: 0;
+          }
+          .line-height-30 { line-height: 1.9; }
         </style>
       </section><!-- start footer -->
         
@@ -841,86 +1029,89 @@
         </div>
       </section>
       <section class="wow animate__fadeIn bg-light-gray" id="sources">
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-lg-8 text-center">
-                    <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
-                    <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
-                  </div>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                    <ol class="list-style-9 text-small text-medium-gray">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
+              <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <ol class="list-style-9 text-small text-medium-gray">
 
-                      <!-- NEW: Shonkoff et al. (2012) — the foundational policy/science source for the toxic stress framework itself -->
-                      <li id="ref-shonkoff-2012">
-                        Shonkoff, J. P., et al. (2012). <strong>The lifelong effects of early childhood adversity and toxic stress.</strong>
-                        <em>Pediatrics, 129</em>(1), e232–e246. Seminal American Academy of Pediatrics policy statement authored by the Harvard Center on the Developing Child. Distinguishes positive, tolerable, and toxic stress; documents how prolonged activation of stress response systems without an adequate adult buffer disrupts brain architecture, immune function, metabolic systems, and cardiovascular health in ways that persist across the lifespan.
-                        <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/22201156/" rel="noopener" target="_blank">View PubMed Record</a>
-                      </li>
+                <li id="ref-shonkoff-2012">
+                  Shonkoff, J. P., et al. (2012). <strong>The lifelong effects of early childhood adversity and toxic stress.</strong>
+                  <em>Pediatrics, 129</em>(1), e232–e246. Seminal American Academy of Pediatrics policy statement authored by the Harvard Center on the Developing Child. Distinguishes positive, tolerable, and toxic stress; documents how prolonged activation of stress response systems without an adequate adult buffer disrupts brain architecture, immune function, metabolic systems, and cardiovascular health in ways that persist across the lifespan.
+                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/22201156/" rel="noopener" target="_blank">View PubMed Record</a>
+                </li>
 
-                      <li id="ref-harvard-toxic-stress">
-                        Center on the Developing Child at Harvard University. (n.d.). <strong>Toxic Stress.</strong>
-                        The foundational public-facing resource defining toxic stress and the role of the adult buffering relationship in moderating its biological effects.
-                        <a class="text-deep-pink" href="https://developingchild.harvard.edu/science/key-concepts/toxic-stress/" rel="noopener" target="_blank">Access Harvard Resource</a>
-                      </li>
+                <li id="ref-harvard-toxic-stress">
+                  Center on the Developing Child at Harvard University. (n.d.). <strong>Toxic Stress.</strong>
+                  The foundational public-facing resource defining toxic stress and the role of the adult buffering relationship in moderating its biological effects.
+                  <a class="text-deep-pink" href="https://developingchild.harvard.edu/science/key-concepts/toxic-stress/" rel="noopener" target="_blank">Access Harvard Resource</a>
+                </li>
 
-                      <li id="ref-mcewen-2007">
-                        McEwen, B. S. (2007). <strong>Stress effects on the hippocampus: Plasticity, vulnerability and adaptation.</strong>
-                        <em>Neuropsychopharmacology, 32</em>(1), 3–15. A widely cited review detailing how chronic stress and prolonged cortisol exposure alter hippocampal structure and function — including reduced neurogenesis, dendritic atrophy, and impaired memory processing — while also highlighting the brain’s capacity for recovery under supportive conditions.
-                        <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View PubMed Record</a>
-                      </li>
+                <li id="ref-mcewen-2007">
+                  McEwen, B. S. (2007). <strong>Physiological and neurobiology of stress and adaptation: Central role of the brain.</strong>
+                  <em>Physiological Reviews, 87</em>(3), 873–904. A widely cited review detailing how chronic stress alters hippocampal structure and function — including reduced neurogenesis, dendritic atrophy, and impaired memory consolidation — with glucocorticoids identified as a key mediating mechanism. Also highlights the brain's capacity for partial recovery under supportive conditions.
+                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View PubMed Record</a>
+                </li>
 
-                      <li id="ref-mcewen-1998">
-                        McEwen, B. S. (1998). <strong>Stress, adaptation, and disease: Allostasis and allostatic load.</strong>
-                        <em>Annals of the New York Academy of Sciences, 840</em>, 33–44. The foundational paper that defined the concept of allostatic load — the cumulative physiological cost of chronic stress — and established the framework for understanding how sustained dysregulation damages body systems over time.
-                        <a class="text-deep-pink" href="https://doi.org/10.1111/j.1749-6632.1998.tb09546.x" rel="noopener" target="_blank">View via DOI</a>
-                      </li>
+                <li id="ref-mcewen-1998">
+                  McEwen, B. S. (1998). <strong>Stress, adaptation, and disease: Allostasis and allostatic load.</strong>
+                  <em>Annals of the New York Academy of Sciences, 840</em>, 33–44. The foundational paper that defined the concept of allostatic load — the cumulative physiological cost of chronic stress — and established the framework for understanding how sustained dysregulation damages body systems over time.
+                  <a class="text-deep-pink" href="https://doi.org/10.1111/j.1749-6632.1998.tb09546.x" rel="noopener" target="_blank">View via DOI</a>
+                </li>
 
-                      <!-- NEW: McEwen & Gianaros (2011) — allostatic load consequences across body systems -->
-                      <li id="ref-mcewen-gianaros-2011">
-                        McEwen, B. S., &amp; Gianaros, P. J. (2011). <strong>Stress- and allostasis-induced brain plasticity.</strong>
-                        <em>Annual Review of Medicine, 62</em>, 431–445. Reviews the biological consequences of allostatic overload: elevated inflammatory markers, HPA dysregulation, hippocampal atrophy, cardiovascular damage, and immune suppression — directly linking chronic stress to increased risk of heart disease, metabolic disorders, and premature mortality.
-                        <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/20707675/" rel="noopener" target="_blank">View PubMed Record</a>
-                      </li>
+                <li id="ref-mcewen-gianaros-2011">
+                  McEwen, B. S., &amp; Gianaros, P. J. (2011). <strong>Stress- and allostasis-induced brain plasticity.</strong>
+                  <em>Annual Review of Medicine, 62</em>, 431–445. Reviews the biological consequences of allostatic overload — elevated inflammatory markers, HPA dysregulation, hippocampal atrophy, cardiovascular strain, and immune suppression — and examines associations between chronic stress and increased risk of heart disease, metabolic disorders, and premature mortality.
+                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/20707675/" rel="noopener" target="_blank">View PubMed Record</a>
+                </li>
 
-                      <li id="ref-guidi-2021">
-                        Guidi, J., Lucente, M., Sonino, N., &amp; Fava, G. A. (2021). <strong>Allostatic load and its impact on health: A systematic review.</strong>
-                        <em>Psychotherapy and Psychosomatics, 90</em>(1), 11–27. A systematic review synthesizing evidence on allostatic load and its associations with poorer health outcomes across cardiovascular, immune, metabolic, and neurological systems.
-                        <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/32799204/" rel="noopener" target="_blank">View PubMed Record</a>
-                      </li>
+                <li id="ref-guidi-2021">
+                  Guidi, J., Lucente, M., Sonino, N., &amp; Fava, G. A. (2021). <strong>Allostatic load and its impact on health: A systematic review.</strong>
+                  <em>Psychotherapy and Psychosomatics, 90</em>(1), 11–27. A systematic review synthesizing evidence on allostatic load and its associations with poorer health outcomes across cardiovascular, immune, metabolic, and neurological systems.
+                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/32799204/" rel="noopener" target="_blank">View PubMed Record</a>
+                </li>
 
-                      <!-- CORRECTED: Previous citation (JCP 67:10) and link did not match. Correct paper is Dialogues in Clinical Neuroscience, PMID 17117613 -->
-                      <li id="ref-bremner-2006">
-                        Bremner, J. D. (2006). <strong>Traumatic stress: Effects on the brain.</strong>
-                        <em>Dialogues in Clinical Neuroscience, 8</em>(4), 445–461. A key review documenting how chronic HPA axis activation from early stress produces measurable structural changes in the prefrontal cortex (reduced volume), amygdala (heightened reactivity), and hippocampus (glucocorticoid-driven atrophy) — the three brain regions most directly implicated in toxic stress outcomes.
-                        <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View PubMed Record</a>
-                      </li>
+                <li id="ref-bremner-2006">
+                  Bremner, J. D. (2006). <strong>Traumatic stress: Effects on the brain.</strong>
+                  <em>Dialogues in Clinical Neuroscience, 8</em>(4), 445–461. A key review documenting how chronic HPA axis activation from early stress produces measurable structural changes in the prefrontal cortex (reduced volume), amygdala (heightened reactivity), and hippocampus (glucocorticoid-driven atrophy) — the three brain regions most directly implicated in toxic stress outcomes.
+                  <a class="text-deep-pink" href="https://www.tandfonline.com/doi/full/10.31887/DCNS.2006.8.4/jbremner" rel="noopener" target="_blank">View Full Paper</a>
+                </li>
 
-                      <li id="ref-burke-harris-2018">
-                        Burke Harris, N. (2018). <strong>The Deepest Well: Healing the Long-Term Effects of Childhood Adversity.</strong>
-                        Houghton Mifflin Harcourt. Connects ACE science, toxic stress biology, and long-term health outcomes, translating the clinical and neurobiological research into accessible clinical and community frameworks.
-                        <a class="text-deep-pink" href="https://www.goodreads.com/book/show/33413909-the-deepest-well" rel="noopener" target="_blank">View on Goodreads</a>
-                      </li>
+                <li id="ref-koob-volkow-2016">
+                  Koob, G. F., &amp; Volkow, N. D. (2016). <strong>Neurobiology of addiction: A neurocircuitry analysis.</strong>
+                  <em>The Lancet Psychiatry, 3</em>(8), 760–773. Details how chronic stress dysregulates mesolimbic dopamine circuitry — reducing baseline reward sensitivity and increasing the salience of substance-related cues. Provides the neurobiological basis for understanding why trauma-exposed individuals experience blunted pleasure and heightened vulnerability to addiction.
+                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/27475769/" rel="noopener" target="_blank">View PubMed Record</a>
+                </li>
 
-                      <li id="ref-vdk-2014">
-                        Van der Kolk, B. A. (2014). <strong>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</strong>
-                        Viking. Seminal text on how trauma and chronic stress are stored in the body and autonomic nervous system, and why healing requires addressing these systems directly rather than through cognitive approaches alone.
-                        <a class="text-deep-pink" href="https://www.goodreads.com/book/show/18693771-the-body-keeps-the-score" rel="noopener" target="_blank">View on Goodreads</a>
-                      </li>
+                <li id="ref-burke-harris-2018">
+                  Burke Harris, N. (2018). <strong>The Deepest Well: Healing the Long-Term Effects of Childhood Adversity.</strong>
+                  Houghton Mifflin Harcourt. Connects ACE science, toxic stress biology, and long-term health outcomes, translating the clinical and neurobiological research into accessible clinical and community frameworks.
+                  <a class="text-deep-pink" href="https://www.goodreads.com/book/show/33413909-the-deepest-well" rel="noopener" target="_blank">View on Goodreads</a>
+                </li>
 
-                      <li id="ref-mate-2008">
-                        Maté, G. (2008). <strong>In the Realm of Hungry Ghosts: Close Encounters with Addiction.</strong>
-                        Knopf Canada. Argues that addiction is most accurately understood as a response to the unbearable pain of early adversity and developmental stress — directly linking the toxic stress framework to compulsive substance use.
-                        <a class="text-deep-pink" href="https://drgabormate.com/book/in-the-realm-of-hungry-ghosts/" rel="noopener" target="_blank">View on Dr. Maté's Site</a>
-                      </li>
+                <li id="ref-vdk-2014">
+                  Van der Kolk, B. A. (2014). <strong>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</strong>
+                  Viking. Seminal text on how trauma and chronic stress are stored in the body and autonomic nervous system, and why healing requires addressing these systems directly rather than through cognitive approaches alone.
+                  <a class="text-deep-pink" href="https://www.goodreads.com/book/show/18693771-the-body-keeps-the-score" rel="noopener" target="_blank">View on Goodreads</a>
+                </li>
 
-                    </ol>
-                    <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These references support the scientific and clinical concepts of toxic stress, allostatic load, neurobiology, and the link between childhood adversity and addiction. They are for educational context, not medical advice.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+                <li id="ref-mate-2008">
+                  Maté, G. (2008). <strong>In the Realm of Hungry Ghosts: Close Encounters with Addiction.</strong>
+                  Knopf Canada. Argues that addiction is most accurately understood as a response to the unbearable pain of early adversity and developmental stress — directly linking the toxic stress framework to compulsive substance use.
+                  <a class="text-deep-pink" href="https://drgabormate.com/book/in-the-realm-of-hungry-ghosts/" rel="noopener" target="_blank">View on Dr. Maté's Site</a>
+                </li>
+
+              </ol>
+              <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These references support the scientific and clinical concepts of toxic stress, allostatic load, neurobiology, and the link between childhood adversity and addiction. They are for educational context, not medical advice.</p>
+            </div>
+          </div>
+        </div>
+      </section>
   <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
         <div class="container">
             <div class="row">
