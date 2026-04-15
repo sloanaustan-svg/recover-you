@@ -169,6 +169,168 @@
              line-height: 1.75;
            }
            .quote-panel p:last-child{ margin-bottom:0; }
+        .gallery-shadow {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.40);
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .gallery-shadow:hover {
+            box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+            transform: translateY(-6px);
+        }
+
+    .cortisol-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid #dee2e6;
+    }
+    .cx-cell {
+      padding: 1.5rem 1.25rem;
+      border-right: 1px solid #dee2e6;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .cx-cell::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .cx-cell:nth-child(1)::before { background: #7c9fc4; }
+    .cx-cell:nth-child(2)::before { background: #8fa888; }
+    .cx-cell:nth-child(3)::before { background: #c47c7c; }
+    .cx-cell:nth-child(4)::before { background: #a07cb8; }
+    .cx-cell:last-child { border-right: none; }
+    .cx-cell:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+      background: #f9f9f9;
+      z-index: 1;
+    }
+    .cx-icon { font-size: 20px; margin-bottom: 14px; margin-top: 4px; }
+    .cx-cell:nth-child(1) .cx-icon { color: #7c9fc4; }
+    .cx-cell:nth-child(2) .cx-icon { color: #8fa888; }
+    .cx-cell:nth-child(3) .cx-icon { color: #c47c7c; }
+    .cx-cell:nth-child(4) .cx-icon { color: #a07cb8; }
+    .cx-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin-bottom: 5px;
+    }
+    .cx-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .cx-divider { height: 1px; background: #ebebeb; margin-bottom: 14px; }
+    .cx-points { list-style: none; padding: 0; margin: 0; }
+    .cx-points li {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #555;
+      padding: 5px 0;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .cx-points li:last-child { border-bottom: none; padding-bottom: 0; }
+    .cx-adaptive {
+      margin-top: 1.5rem;
+      padding: 1rem 1.4rem;
+      background: #f7f7f7;
+      border-left: 3px solid #bbb;
+      border-radius: 0;
+      font-size: 14px;
+      line-height: 1.85;
+      color: #666;
+      font-style: italic;
+    }
+    .cx-summary {
+      margin-top: 8px;
+      padding: 1.1rem 1.4rem;
+      background: #f2f2f2;
+      border-left: 4px solid #1a1a1a;
+      border-radius: 0;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #1a1a1a;
+    }
+    @media (max-width: 768px) {
+      .cortisol-grid { grid-template-columns: 1fr 1fr; }
+      .cx-cell { border-bottom: 1px solid #dee2e6; }
+    }
+    @media (max-width: 480px) {
+      .cortisol-grid { grid-template-columns: 1fr; }
+    }
+    .section-lifted {
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+      .somber-blue-bg {
+        background: linear-gradient(rgba(13,26,42,0.92), rgba(13,26,42,0.95));
+      }
+      .hero-title {
+        color: #ff2f54 !important;
+        text-shadow: 0 0 14px rgba(255,47,84,0.25);
+        font-weight: 700;
+        font-size: 3rem;
+        letter-spacing: -0.5px;
+      }
+      .text-white-soft { color: #f0f0f0 !important; }
+      .title-rule {
+        background-color: #ff2f54 !important;
+        height: 3px;
+        width: 80px;
+        margin: 15px auto 25px auto;
+        opacity: 0.9;
+      }
+      .trauma-contrast-section .trauma-pane {
+        position: relative;
+        background: rgba(0,0,0,0.30);
+        border-radius: 8px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+        margin-bottom: 30px;
+      }
+      .trauma-contrast-section .left-pane::after {
+        content: "";
+        position: absolute;
+        top: 8%;
+        right: -1px;
+        width: 2px;
+        height: 84%;
+        background: rgba(255,255,255,0.18);
+        transition: background 0.3s ease;
+      }
+      .trauma-contrast-section .left-pane:hover::after {
+        background: rgba(255,255,255,0.35);
+      }
+      .trauma-contrast-section .text-medium { line-height: 1.8; }
+      .trauma-contrast-section .opacity-light-deep-pink {
+        position: absolute;
+        inset: 0;
+        background: rgba(46,98,150,0.10);
+        pointer-events: none;
+      }
+    .final-word-body p { opacity: 0.92; }
+    .final-word-triptych {
+      border-left: 3px solid rgba(255,20,99,0.4);
+      padding-left: 1.5rem;
+    }
+    .final-word-triptych p {
+      margin-bottom: 0.6rem;
+    }
+    .final-word-triptych p:last-child {
+      margin-bottom: 0;
+    }
+    .line-height-30 { line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -567,18 +729,7 @@
         </div>
       </div>
     </div>
-    <style>
-          .gallery-shadow {
-              box-shadow: 0 15px 45px rgba(0,0,0,0.40);
-              border-radius: 8px;
-              transition: 0.3s ease;
-          }
 
-          .gallery-shadow:hover {
-              box-shadow: 0 25px 60px rgba(0,0,0,0.55);
-              transform: translateY(-6px);
-          }
-    </style>
   </section>
   <!-- CORTISOL IMPACT TABLE -->
   <!-- CORTISOL IMPACT TABLE -->
@@ -656,101 +807,6 @@
         </div>
       </div>
     </div>
-    <style>
-      .cortisol-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        border: 1px solid #dee2e6;
-      }
-      .cx-cell {
-        padding: 1.5rem 1.25rem;
-        border-right: 1px solid #dee2e6;
-        background: #fff;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        cursor: default;
-        position: relative;
-        overflow: hidden;
-      }
-      .cx-cell::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-      }
-      .cx-cell:nth-child(1)::before { background: #7c9fc4; }
-      .cx-cell:nth-child(2)::before { background: #8fa888; }
-      .cx-cell:nth-child(3)::before { background: #c47c7c; }
-      .cx-cell:nth-child(4)::before { background: #a07cb8; }
-      .cx-cell:last-child { border-right: none; }
-      .cx-cell:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 32px rgba(0,0,0,0.09);
-        background: #f9f9f9;
-        z-index: 1;
-      }
-      .cx-icon { font-size: 20px; margin-bottom: 14px; margin-top: 4px; }
-      .cx-cell:nth-child(1) .cx-icon { color: #7c9fc4; }
-      .cx-cell:nth-child(2) .cx-icon { color: #8fa888; }
-      .cx-cell:nth-child(3) .cx-icon { color: #c47c7c; }
-      .cx-cell:nth-child(4) .cx-icon { color: #a07cb8; }
-      .cx-label {
-        font-size: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #999;
-        margin-bottom: 5px;
-      }
-      .cx-title {
-        font-size: 17px;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 14px;
-        line-height: 1.2;
-      }
-      .cx-divider { height: 1px; background: #ebebeb; margin-bottom: 14px; }
-      .cx-points { list-style: none; padding: 0; margin: 0; }
-      .cx-points li {
-        font-size: 13px;
-        line-height: 1.7;
-        color: #555;
-        padding: 5px 0;
-        border-bottom: 1px solid #f2f2f2;
-      }
-      .cx-points li:last-child { border-bottom: none; padding-bottom: 0; }
-      .cx-adaptive {
-        margin-top: 1.5rem;
-        padding: 1rem 1.4rem;
-        background: #f7f7f7;
-        border-left: 3px solid #bbb;
-        border-radius: 0;
-        font-size: 14px;
-        line-height: 1.85;
-        color: #666;
-        font-style: italic;
-      }
-      .cx-summary {
-        margin-top: 8px;
-        padding: 1.1rem 1.4rem;
-        background: #f2f2f2;
-        border-left: 4px solid #1a1a1a;
-        border-radius: 0;
-        font-size: 15px;
-        line-height: 1.85;
-        color: #1a1a1a;
-      }
-      @media (max-width: 768px) {
-        .cortisol-grid { grid-template-columns: 1fr 1fr; }
-        .cx-cell { border-bottom: 1px solid #dee2e6; }
-      }
-      @media (max-width: 480px) {
-        .cortisol-grid { grid-template-columns: 1fr; }
-      }
-      .section-lifted {
-        box-shadow: 0 -8px 24px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-      }
-    </style>
   </section>
   <!-- CONTENT WARNING CARD -->
   <section class="wow animate__fadeIn bg-light-gray padding-60px-tb md-padding-40px-tb">
@@ -832,53 +888,7 @@
         </div>
       </div>
     </div>
-    <style>
-        .somber-blue-bg {
-          background: linear-gradient(rgba(13,26,42,0.92), rgba(13,26,42,0.95));
-        }
-        .hero-title {
-          color: #ff2f54 !important;
-          text-shadow: 0 0 14px rgba(255,47,84,0.25);
-          font-weight: 700;
-          font-size: 3rem;
-          letter-spacing: -0.5px;
-        }
-        .text-white-soft { color: #f0f0f0 !important; }
-        .title-rule {
-          background-color: #ff2f54 !important;
-          height: 3px;
-          width: 80px;
-          margin: 15px auto 25px auto;
-          opacity: 0.9;
-        }
-        .trauma-contrast-section .trauma-pane {
-          position: relative;
-          background: rgba(0,0,0,0.30);
-          border-radius: 8px;
-          box-shadow: 0 24px 60px rgba(0,0,0,0.45);
-          margin-bottom: 30px;
-        }
-        .trauma-contrast-section .left-pane::after {
-          content: "";
-          position: absolute;
-          top: 8%;
-          right: -1px;
-          width: 2px;
-          height: 84%;
-          background: rgba(255,255,255,0.18);
-          transition: background 0.3s ease;
-        }
-        .trauma-contrast-section .left-pane:hover::after {
-          background: rgba(255,255,255,0.35);
-        }
-        .trauma-contrast-section .text-medium { line-height: 1.8; }
-        .trauma-contrast-section .opacity-light-deep-pink {
-          position: absolute;
-          inset: 0;
-          background: rgba(46,98,150,0.10);
-          pointer-events: none;
-        }
-    </style>
+
   </section>
   <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
         <div class="container">
@@ -997,20 +1007,7 @@
             </div>
           </div>
         </div>
-        <style>
-          .final-word-body p { opacity: 0.92; }
-          .final-word-triptych {
-            border-left: 3px solid rgba(255,20,99,0.4);
-            padding-left: 1.5rem;
-          }
-          .final-word-triptych p {
-            margin-bottom: 0.6rem;
-          }
-          .final-word-triptych p:last-child {
-            margin-bottom: 0;
-          }
-          .line-height-30 { line-height: 1.9; }
-        </style>
+
       </section><!-- start footer -->
         
 
