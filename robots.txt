@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
 Sitemap: https://recover-you.ca/sitemap.xml
