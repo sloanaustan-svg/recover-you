@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    // Default: deny analytics until user accepts
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+
+    gtag('config', 'G-6968KR6JY9', {
+      'anonymize_ip': true
+    });
+  </script>
+  <title>The Four Trauma Responses: Fight, Flight, Freeze, Fawn | Recover-You</title>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
+  <meta content="Austan Sloan | Recover-You" name="author">
+  <meta content="Understand the four trauma responses — fight, flight, freeze, and fawn — not as personality types but as survival protocols. Includes an in-depth look at the fawn response and its long-term cost." name="description">
+  <meta content="four trauma responses, fight flight freeze fawn, fawn response, trauma survival patterns, Pete Walker 4Fs, trauma and addiction, C-PTSD responses, Alberta mental health" name="keywords">
+  <meta content="The Four Trauma Responses | Recover-You" property="og:title">
+  <meta content="Fight, flight, freeze, and fawn aren't personality flaws — they're automated survival protocols. Understand what they are, how they run, and what they cost." property="og:description">
+  <meta content="images/og-tfr-model.jpg" property="og:image">
+  <meta content="article" property="og:type">
+  <meta content="https://recover-you.ca/four-trauma-responses.html" property="og:url">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="The Four Trauma Responses | Recover-You" name="twitter:title">
+  <meta content="Fight, flight, freeze, and fawn — not personality types, but survival defaults your nervous system learned when it needed a way to stay safe." name="twitter:description">
+  <meta content="images/og-tfr-model.jpg" name="twitter:image">
+  <link href="https://recover-you.ca/four-trauma-responses" rel="canonical">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
+  <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="css/bootsnav.css" rel="stylesheet" type="text/css">
+  <link href="css/font-icons.min.css" rel="stylesheet" type="text/css">
+  <link href="css/theme-vendors.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  <script type="application/ld+json">
+       {
+         "@context": "https://schema.org",
+         "@type": "Article",
+         "headline": "The Four Trauma Responses: Fight, Flight, Freeze, and Fawn",
+         "description": "A detailed breakdown of the four trauma responses — fight, flight, freeze, and fawn — as automated survival protocols, including an in-depth look at the fawn response and its long-term costs.",
+         "image": "images/og-tfr-model.jpg",
+         "author": {
+           "@type": "Person",
+           "name": "Austan Sloan"
+         },
+         "publisher": {
+           "@type": "Organization",
+           "name": "Recover-You",
+           "url": "https://recover-you.ca"
+         },
+         "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https://recover-you.ca/four-trauma-responses.html"
+         },
+         "inLanguage": "en",
+         "about": [
+           { "@type": "Thing", "name": "Trauma Responses" },
+           { "@type": "Thing", "name": "Fight Flight Freeze Fawn" },
+           { "@type": "Thing", "name": "Fawn Response" },
+           { "@type": "Thing", "name": "Complex PTSD" }
+         ]
+       }
+  </script>
+  <style>
+    /* --- Wrapper & hover --- */
+    .diagram-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: zoom-in;
+      width: 100%;
+      max-width: 650px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .diagram-wrapper:hover .diagram-img {
+      transform: scale(1.02);
+      filter: brightness(0.75);
+    }
+    .diagram-overlay {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.55);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+    .diagram-wrapper:hover .diagram-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Lightbox --- */
+    .tfr-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+    .tfr-lightbox.active {
+      display: flex;
+      animation: lbFadeIn 0.2s ease;
+    }
+    @keyframes lbFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .tfr-lightbox .diagram-lightbox-inner {
+      position: relative;
+      max-width: min(90vw, 900px);
+      max-height: 90vh;
+      cursor: default;
+    }
+    .tfr-lightbox .diagram-lightbox-inner img {
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+    .tfr-lightbox .diagram-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      color: #111;
+      border: none;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background 0.2s;
+      z-index: 1;
+    }
+    .tfr-lightbox .diagram-close:hover {
+      background: #f0f0f0;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div aria-hidden="true" id="reading-progress">
+    <div id="reading-progress-fill"></div>
+  </div><!-- start header -->
+  <header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
+      <div class="container-fluid nav-header-container">
+        <div class="col-auto ps-0">
+          <a class="logo" href="index.html" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+        </div>
+        <div class="col accordion-menu pe-0 pe-md-3">
+          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
+              <li>
+                <a href="index.html" title="Home">Home</a>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-this-site-exists.html">Why This Site Exists</a>
+                  </li>
+                  <li>
+                    <a href="about-me.html">About Me</a>
+                  </li>
+                  <li>
+                    <a href="start-here.html">Start Here</a>
+                  </li>
+                  <li>
+                    <a href="faq.html">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="what-is-trauma.html">What Is Trauma</a>
+                      </li>
+                      <li>
+                        <a href="attachment.html">Attachment Styles</a>
+                      </li>
+                      <li>
+                        <a href="toxic-stress.html">Toxic Stress</a>
+                      </li>
+                      <li>
+                        <a href="shame-grief-false-self.html">Shame, Grief &amp; The False Self</a>
+                      </li>
+                      <li>
+                        <a href="cptsd-behaviours.html">CPTSD Patterns</a>
+                      </li>
+                      <li><a href="four-trauma-responses.html">Trauma Responses</a></li>
+                      <li>
+                        <a href="aces-high.html">ACEs &amp; Risk</a>
+                      </li>
+                      <li>
+                        <a href="dunedin-study.html">The Dunedin Study</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="brain-on-fire.html">Brain on Fire</a>
+                      </li>
+                      <li>
+                        <a href="when-sobriety-feels-worse.html">When Sobriety Feels Worse</a>
+                      </li>
+                      <li>
+                        <a href="neuroplasticity.html">Neuroplasticity</a>
+                      </li>
+                      <li>
+                        <a href="critical-window.html">Critical Windows</a>
+                      </li>
+                      <li>
+                        <a href="epigenetics.html">Epigenetics</a>
+                      </li>
+                      <li>
+                        <a href="dohad.html">DOHaD: Developmental Origins</a>
+                      </li>
+                      <li>
+                        <a href="metabolism.html">Metabolism</a>
+                      </li>
+                      <li>
+                        <a href="the-hijacked-engine.html">The Hijacked Engine</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="the-reckoning.html">The Reckoning: What the Research Shows</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="why-traditional-treatment-falls-short.html">Why Traditional Treatment Falls Short</a>
+                  </li>
+                  <li>
+                    <a href="problem-with-aa.html">Limits of the AA Model</a>
+                  </li>
+                  <li>
+                    <a href="misdiagnosed.html">When Trauma Is Misdiagnosed</a>
+                  </li>
+                  <li>
+                    <a href="disease-of-addiction.html">The “Disease of Addiction” Debate</a>
+                  </li>
+                  <li>
+                    <a href="dsm-explained.html">DSM vs ICD (Diagnosis Explained)</a>
+                  </li>
+                  <li>
+                    <a href="better-model-of-care.html">What Better Care Requires</a>
+                  </li>
+                  <li>
+                    <a href="trauma-avoidant.html">When Trauma Is Avoided</a>
+                  </li>
+                  <li>
+                    <a href="compassionate-care.html">Compassionate Care: A Critique</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown simple-dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="cbt.html">CBT</a>
+                      </li>
+                      <li>
+                        <a href="dbt.html">DBT</a>
+                      </li>
+                      <li>
+                        <a href="life-traps.html">Life Traps (Schema Therapy)</a>
+                      </li>
+                      <li>
+                        <a href="healing-trauma.html">Healing Trauma (Post-Traumatic Growth)</a>
+                      </li>
+                      <li>
+                        <a href="types-of-therapy.html">Therapy Types</a>
+                      </li>
+                      <li>
+                        <a href="role-of-therapy.html">The Role of Therapy</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="chart-your-life.html">Chart Your Life</a>
+                      </li>
+                      <li>
+                        <a href="distorted-thinking.html">Distorted Thinking</a>
+                      </li>
+                      <li>
+                        <a href="regulation-tools.html">Regulation Tools</a>
+                      </li>
+                      <li>
+                        <a href="reality-test.html">Reality Testing</a>
+                      </li>
+                      <li>
+                        <a href="relationships.html">Relationships in Recovery</a>
+                      </li>
+                      <li>
+                        <a href="connection.html">Connection</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="identity-values-and-beliefs.html">Identity, Values &amp; Beliefs</a>
+                      </li>
+                      <li>
+                        <a href="spirituality.html">Spirituality</a>
+                      </li>
+                      <li>
+                        <a href="the-resilience-lie.html">The Resilience Lie</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="resources.html">Resources</a>
+                      </li>
+                      <li>
+                        <a href="tfr-model.html">Trauma-Focused Recovery Model (TFR Model)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="contact.html" title="Contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-auto pe-0"></div>
+      </div>
+    </nav><!-- end navigation -->
+  </header><!-- end header -->
+  <!-- start page title section -->
+  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/trauma-response-bg.jpg');">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
+          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">The Four Trauma Responses</h1>
+          <h6 class="text-light-gray alt-font font-weight-600">Not personality flaws. Survival protocols your nervous system learned when it needed a way to stay safe.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="down-section text-center">
+      <a class="section-link up-down-ani" href="#four-f-responses"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
+    </div>
+  </section>
+  <!-- ── PREFACE ── -->
+  <!-- ── PREFACE ── -->
+  <section class="wow animate__fadeIn bg-extra-dark-gray" id="four-f-preface">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="padding-35px-all border-radius-6" style="background:#f8f8f8; border-left:4px solid #e8204a;">
+            <p class="alt-font font-weight-700 text-extra-dark-gray margin-15px-bottom" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase;">A note on sources</p>
+            <p class="text-medium line-height-28 sm-line-height-26 margin-15px-bottom">The framework on this page is built on Pete Walker's 4F model, which remains the most useful articulation of these survival patterns I've found. His work is the foundation. What's been added here is the addiction lens.</p>
+            <p class="text-medium line-height-28 sm-line-height-26 margin-15px-bottom">That mapping — how each response generates the specific internal conditions that substances are perfectly designed to address — came from treatment, from reading widely across trauma, neuroscience, and addiction research, and from working through what it actually felt like from the inside. The subcategory breakdowns, the fawn/feign distinction, and the Machiavellian endpoint are extensions of Walker's framework, not his conclusions.</p>
+            <p class="text-medium line-height-28 sm-line-height-26 mb-0">Where I'm drawing on established literature I've said so. Where I'm offering my own read, I've flagged it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INTRO + FIGHT / FLIGHT / FREEZE ── -->
+  <section class="wow animate__fadeIn" id="four-f-responses" style="position:relative; overflow:hidden;">
+
+    <div class="container" style="position:relative; z-index:1;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <h3 class="alt-font text-extra-dark-gray font-weight-700 margin-25px-bottom"><span class="text-deep-pink">//</span> The Four Trauma Responses — Through an Addiction Lens</h3>
+
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">Before I mapped myself against these, I spent time in the clinical literature. Much of it left me cold. The frameworks were technically accurate but, for me, useless to the person inside them — written by clinicians observing the behaviour from the outside, in a language built for other clinicians rather than the people sitting inside these patterns.</p>
+
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">Pete Walker was different. His work on the 4Fs, and particularly his treatment of fawn, had a specificity the academic literature rarely reaches. Reading it, I started to recognize things. The kind of recognition that's uncomfortable because it's accurate.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">The challenge was that Walker's framework lives <em>mostly</em> in the trauma space. The addiction dimension (my dimension) wasn't mapped out. How each response generates the internal conditions that substances are perfectly designed to address. To see it properly, I had to filter the whole framework through the lens of the addict. That's where it sharpened.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">When I first started mapping myself against these, my intuition misled me. Twice. Which makes sense — intuition about yourself is built from the same material the trauma response shaped. It's not a neutral observer. It's part of the system it's trying to read.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">My first read was Fight. That felt plausible, and I could point to evidence. What I couldn't see yet was that the fight was situational, a surface layer. The more honest answer was Flight. I'd been running from stillness, from feeling, from anything that required me to stop, for most of my adult life. I'd dressed it up to look like drive. But the running wasn't only from the inside — from the voices and the tension that showed up the second I stopped moving — it was also from the thing on the other side of stillness, which was connection. When someone got close, I had no idea what to do with it. So I kept moving, and called it a lot of things that weren't the truth.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">Fawn I dismissed entirely. I read it as the weakest of the four: passivity, submission, people-pleasing. Not me. I was wrong about that too, and wrong on more than one level.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">What broke it open was realising I wasn't one response. I was different responses in different contexts. Different people, different power dynamics, different rooms. That's when the subcategories started to matter. And that's when fawn sent me somewhere I wasn't expecting.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-40px-bottom">What I found there is what I find every time I dig into this honestly: the recognitions that make you wince are usually the useful ones. Every pattern I flinched at, traced back far enough, made complete sense. Not as a flaw. As an adaptation.</p>
+
+          <!-- ── FIGHT ── -->
+          <div class="border-radius-6 margin-30px-bottom overflow-hidden" style="border:1px solid #e8e8e8; position:relative;">
+                      <span style="position:absolute; right:-15px; bottom:-20px; font-size:160px; font-weight:800; letter-spacing:-.02em; color:#000; opacity:.03; pointer-events:none; user-select:none; line-height:1; white-space:nowrap; z-index:0;">FIGHT</span>
+                      <div class="padding-25px-all" style="border-bottom:1px solid #e8e8e8; position:relative; z-index:1;">
+                        <div class="d-flex align-items-center gap-3 margin-10px-bottom">
+                          <span class="text-uppercase font-weight-700" style="font-size:10px; letter-spacing:1.5px; background:rgba(232,32,74,0.08); color:#e8204a; padding:4px 10px; border-radius:3px;">Fight</span>
+                          <em class="text-medium-gray" style="font-size:14px;">Safety is found in being the strongest force in the room.</em>
+                        </div>
+                        <p class="line-height-28 sm-line-height-26 mb-0" style="font-size:15px;">The fight response mobilises aggression, outward or inward, as a way to neutralise the threat. In the moment it evolved for, it made sense: confront the danger before it reaches you. In a chronic stress environment, it becomes a default setting that can't distinguish between a real threat and an ordinary Tuesday. Fight isn't equally available to everyone. Size, strength, and physical vulnerability are real variables, and for a child, or anyone facing someone much bigger, fighting back was never a survivable option. Others have been so emotionally diminished over time that even when fight is technically on the table, something inside will not let them reach for it. For many people, then, the fight response doesn't look like aggression at all. It routes inward as relentless self-criticism, or outward as control, contempt, or the quiet hostility of someone who has learned to win without raising their voice. The energy is the same. The expression just found a different exit.</p>
+                      </div>
+                      <div class="row m-0" style="position:relative; z-index:1;">
+                        <div class="col-lg-3 col-md-6 padding-25px-all" style="border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">
+                          <i class="fa-solid fa-fist-raised text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                          <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The enforcer</p>
+                          <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Anger, volume, or intimidation used to control the environment before it becomes a threat.</p>
+                          <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: isolation; burned bridges</p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 padding-25px-all" style="border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">
+                          <i class="fa-solid fa-crown text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                          <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The sovereign</p>
+                          <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">A grandiose self built as armour. Admiration is demanded, criticism is unthinkable, and other people become either mirrors or threats.</p>
+                          <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: no one gets close enough to know you</p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 padding-25px-all" style="border-right:1px solid #e8e8e8;">
+                          <i class="fa-solid fa-comment-slash text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                          <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The critic</p>
+                          <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">The fight turns inward. A punishing internal voice trying to beat the self into something that can't be hurt.</p>
+                          <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: shame; chronic self-erosion</p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 padding-25px-all">
+                          <i class="fa-solid fa-sliders text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                          <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The controller</p>
+                          <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Obsessive management of people, schedules, and outcomes. If nothing surprises you, nothing can wound you.</p>
+                          <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: HPA-axis burnout; no real intimacy</p>
+                        </div>
+                      </div>
+                    </div>
+
+          <!-- ── FLIGHT ── -->
+          <div class="border-radius-6 margin-30px-bottom overflow-hidden" style="border:1px solid #e8e8e8; position:relative;">
+            <span style="position:absolute; right:-15px; bottom:-20px; font-size:160px; font-weight:800; letter-spacing:-.02em; color:#000; opacity:.03; pointer-events:none; user-select:none; line-height:1; white-space:nowrap; z-index:0;">FLIGHT</span>
+            <div class="padding-25px-all" style="border-bottom:1px solid #e8e8e8; position:relative; z-index:1;">
+              <div class="d-flex align-items-center gap-3 margin-10px-bottom">
+                <span class="text-uppercase font-weight-700" style="font-size:10px; letter-spacing:1.5px; background:rgba(232,32,74,0.08); color:#e8204a; padding:4px 10px; border-radius:3px;">Flight</span>
+                <em class="text-medium-gray" style="font-size:14px;">Safety is found in staying ahead of the pain.</em>
+              </div>
+              <p class="line-height-28 sm-line-height-26 mb-0" style="font-size:15px;">The flight response drives movement away from threat, whether physical, mental, or chemical. In its chronic form, it's not about running from something specific. It's about keeping enough velocity that whatever's behind you never catches up. Stillness becomes the danger. It's also worth noting that flight is the only trauma response society rewards. The grinder gets promoted. The overthinker gets called thorough. The driven, high-functioning person who hasn't stopped moving in fifteen years gets admired, until the system crashes. That's what makes it the hardest one to question. It doesn't feel like a problem. It feels like a personality.</p>
+            </div>
+            <div class="row m-0" style="position:relative; z-index:1;">
+              <div class="col-lg-4 col-md-4 padding-25px-all" style="border-right:1px solid #e8e8e8;">
+                <i class="fa-solid fa-laptop-code text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The grinder</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Productivity as sedation. Staying busy enough that stillness, and whatever lives there, never gets a foothold.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: physical depletion; can't slow down</p>
+              </div>
+              <div class="col-lg-4 col-md-4 padding-25px-all" style="border-right:1px solid #e8e8e8;">
+                <i class="fa-solid fa-brain text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The overthinker</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Intellectual looping. Analysing the threat from every angle, never landing. Understanding becomes a substitute for feeling.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: paralysis; disconnected from body</p>
+              </div>
+              <div class="col-lg-4 col-md-4 padding-25px-all">
+                <i class="fa-solid fa-bolt text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The thrill-seeker</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">High-intensity experience or substances used to drown out the internal signal. Running toward the noise to escape the quiet.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: dopamine depletion; relapse risk</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── FREEZE ── -->
+          <div class="border-radius-6 margin-40px-bottom overflow-hidden" style="border:1px solid #e8e8e8; position:relative;">
+            <span style="position:absolute; right:-15px; bottom:-20px; font-size:160px; font-weight:800; letter-spacing:-.02em; color:#000; opacity:.03; pointer-events:none; user-select:none; line-height:1; white-space:nowrap; z-index:0;">FREEZE</span>
+            <div class="padding-25px-all" style="border-bottom:1px solid #e8e8e8; position:relative; z-index:1;">
+              <div class="d-flex align-items-center gap-3 margin-10px-bottom">
+                <span class="text-uppercase font-weight-700" style="font-size:10px; letter-spacing:1.5px; background:rgba(232,32,74,0.08); color:#e8204a; padding:4px 10px; border-radius:3px;">Freeze</span>
+                <em class="text-medium-gray" style="font-size:14px;">Safety is found in becoming invisible, or going offline entirely.</em>
+              </div>
+              <p class="line-height-28 sm-line-height-26 mb-0" style="font-size:15px;">The freeze response shuts the system down when fight and flight aren't viable. In acute threat, it's the body going still to avoid detection or reduce harm. In chronic form, it looks like numbness, disconnection, and a life that keeps moving while the person inside stops registering it.</p>
+            </div>
+            <div class="row m-0" style="position:relative; z-index:1;">
+              <div class="col-lg-4 col-md-4 padding-25px-all" style="border-right:1px solid #e8e8e8;">
+                <i class="fa-solid fa-robot text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The functional bot</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Shows up, does the job, pays the bills. Emotionally flatlined the entire time. Life runs but nothing lands.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: a hollow life; lost years</p>
+              </div>
+              <div class="col-lg-4 col-md-4 padding-25px-all" style="border-right:1px solid #e8e8e8;">
+                <i class="fa-solid fa-ghost text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The ghost</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Full withdrawal. Phone ignored, social demands avoided, presence reduced to the minimum. Disappearing as protection.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: social atrophy; depression deepens</p>
+              </div>
+              <div class="col-lg-4 col-md-4 padding-25px-all">
+                <i class="fa-solid fa-tv text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                <p class="font-weight-700 text-extra-dark-gray margin-5px-bottom" style="font-size:14px;">The escapist</p>
+                <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#666;">Media, fantasy, substances, or screens used to log out of reality. Not numbing, just not being present for life.</p>
+                <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#999; border-top:1px solid #f0f0f0; padding-top:8px;">Cost: lost agency; time dissolves</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ADDICTION BRIDGE ── -->
+  <section class="wow animate__fadeIn bg-light-gray" id="four-f-addiction" style="clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <h4 class="alt-font text-extra-dark-gray font-weight-700 margin-15px-bottom"><span class="text-deep-pink">//</span> Where Addiction Enters the Picture</h4>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">None of this exists in a vacuum. For most people reading this site, these responses don't just sit quietly in the background as personality quirks. They run hot, and they run straight into addiction.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 margin-30px-bottom">The connection isn't incidental. Each survival response generates a chronic internal state, and substances or behaviours are well-designed for exactly that state. Fight produces arousal, shame spirals, and rage with nowhere to go; alcohol and opioids blunt the edge. Flight produces relentless hyperactivation that can't be switched off; stimulants extend the run, alcohol brings the landing. Freeze produces numbness and anhedonia so complete that nothing registers; substances become the only thing that does. Fawn produces chronic self-erasure and resentment with no sanctioned outlet; anything that briefly returns a sense of self, control, or relief fills the gap. The 4Fs don't cause addiction directly. They create the conditions addiction was made for.</p>
+
+          <div class="row margin-30px-bottom">
+            <div class="col-lg-6 col-md-6 sm-margin-20px-bottom">
+              <div class="padding-30px-all h-100 border-radius-6" style="background:#fff; border:1px solid #e8e8e8; border-top:3px solid #e8204a;">
+                <p class="font-weight-700 text-extra-dark-gray margin-10px-bottom alt-font" style="font-size:13px; letter-spacing:.06em; text-transform:uppercase;"><i class="fa-solid fa-eye-slash text-deep-pink margin-10px-right"></i>The visible crisis</p>
+                <p class="line-height-28 sm-line-height-26 mb-0" style="font-size:14px; color:#555;">Addiction is what gets seen, by family, by clinicians, by the system. It's measurable, diagnosable, and demands attention. So it becomes the problem to solve. The behaviour that preceded it, sustained it, and will outlast treatment if left untouched (the survival response architecture underneath) rarely gets the same attention. Not because nobody cares. Because it isn't visible in the same way.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="padding-30px-all h-100 border-radius-6" style="background:#fff; border:1px solid #e8e8e8; border-top:3px solid #e8204a;">
+                <p class="font-weight-700 text-extra-dark-gray margin-10px-bottom alt-font" style="font-size:13px; letter-spacing:.06em; text-transform:uppercase;"><i class="fa-solid fa-arrows-rotate text-deep-pink margin-10px-right"></i>The misread cycle</p>
+                <p class="line-height-28 sm-line-height-26 mb-0" style="font-size:14px; color:#555;">When someone relapses, the explanation almost always points at the addiction: lack of willpower, incomplete program, poor readiness. Rarely does it point at the survival response that was still running underneath. The 4Fs sustain addiction because they sustain the internal conditions that made it necessary. Remove the substance without touching the response, and the nervous system simply finds another exit, or returns to the same one.</p>
+              </div>
+            </div>
+          </div>
+
+          <blockquote class="border-color-deep-pink">
+            <p class="text-medium alt-font">Some of the responses on this page look so much like addiction that they can be mistaken for it. Workaholism. Compulsive risk-taking. Endless scrolling. Emotional unavailability. These aren't always addiction. Sometimes they're the response the addiction was covering for, and the response was there first.</p>
+          </blockquote>
+
+          <p class="text-medium line-height-28 sm-line-height-26 margin-20px-bottom">This matters clinically and personally. If the 4F responses are the engine, addiction is often the exhaust: the visible output of a system running on survival mode. Treatment that addresses only the exhaust leaves the engine running. Understanding your responses isn't a detour from recovery. For many people, it's the part that was missing.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 mb-0">The fawn section below goes deepest into this, partly because fawn is the most cognitively complex of the four, and partly because it has the most interesting relationship with addiction. The skills fawn develops don't just sustain the nervous system state that needs medicating. They can actively be used to secure the resources (substances, relationships, money, loyalty) that addiction requires. Which makes it the hardest response to see clearly, and the most important one to understand.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAWN ── dark section -->
+  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray" id="fawn-response" style="clip-path: polygon(0 80px, 100% 0, 100% 100%, 0 100%); margin-top: -40px; padding-top: 100px !important; position:relative; overflow:hidden;">
+
+
+
+    <span style="position:absolute; right:-20px; top:50%; transform:translateY(-50%); font-size:220px; font-weight:800; letter-spacing:-.02em; color:#e8204a; opacity:.05; pointer-events:none; user-select:none; line-height:1; white-space:nowrap; z-index:0;">FAWN</span>
+
+    <div class="container" style="position:relative; z-index:1;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="padding-eight-lr padding-seven-tb xl-padding-five-tb md-padding-ten-tb sm-padding-15px-lr last-paragraph-no-margin">
+
+
+            <h4 class="alt-font text-light-gray margin-15px-bottom"><span class="text-deep-pink">//</span> Fawn (Feign) — A Closer Look</h4>
+            <p class="text-medium text-light-gray opacity-6 line-height-28 sm-line-height-26 margin-25px-bottom"><em>Safety is found in becoming whatever the hell you need me to be.</em></p>
+
+            <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">The first three responses are <strong class="text-light-gray">subcortical</strong>. They fire from the brainstem and limbic system before the thinking brain gets a vote. They're ancient, fast, and shared with animals that have almost no cortex. A deer freezes. A cornered dog fights. These aren't strategies. They're reflexes wearing behaviour as clothing.</p>
+
+            <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">Fawn is different in kind, not just degree. To successfully appease someone (to read their emotional state, calibrate your response, suppress your own authentic reaction, and perform whatever the threat requires) is a multi-layered cognitive task. It requires a level of social sophistication the perpetrator often doesn't possess. There's something quietly tragic in that: the child who becomes the most emotionally intelligent person in the room <strong class="text-deep-pink">because they had to be</strong>, just to survive it.</p>
+
+            <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26 margin-30px-bottom">The word <em>fawn</em> describes the posture: submissive, shrinking, accommodating. <em>Feign</em> describes what it can become: a learned performance, still rooted in fear, but increasingly deliberate. The distinction matters because one is a response, the other is a skill. And skills, unlike reflexes, are hard to give up.</p>
+
+            <!-- Gender note -->
+            <div class="margin-30px-bottom padding-25px-all border-radius-6" style="background:rgba(255,255,255,0.05); border-left:3px solid rgba(255,255,255,0.2);">
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26 mb-0">A note on gender: fawn gets coded female by default, in the literature and in the culture. That's worth pushback. Male fawn tends to route through competence and charm rather than compliance and warmth, which makes it harder to clock, including in yourself. The man who is diplomatic, useful, quick to read a room, slow to assert a need: that's not easygoing. That's often fawn wearing a socially acceptable disguise. If you're a man who almost skipped this section because nothing here sounded like you, that's probably the most important reason to keep reading.</p>
+            </div>
+
+            <!-- Fawn subtype cards -->
+            <div class="row margin-30px-bottom">
+              <div class="col-lg-4 col-md-4 sm-margin-20px-bottom">
+                <div class="h-100" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-top:3px solid #e8204a; border-radius:6px; padding:24px;">
+                  <i class="fa-solid fa-heart-crack text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                  <p class="font-weight-700 text-light-gray margin-5px-bottom" style="font-size:14px;">The fixer</p>
+                  <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#aaa;">Takes ownership of everyone else's emotional state to pre-empt conflict. Peace-keeping as a survival contract.</p>
+                  <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#666; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">Cost: compassion fatigue; self disappears</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 sm-margin-20px-bottom">
+                <div class="h-100" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-top:3px solid #e8204a; border-radius:6px; padding:24px;">
+                  <i class="fa-solid fa-masks-theater text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                  <p class="font-weight-700 text-light-gray margin-5px-bottom" style="font-size:14px;">The mirror</p>
+                  <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#aaa;">Shifts opinions, values, and personality to match whoever holds the most threat or approval in the room.</p>
+                  <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#666; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">Cost: identity fragmentation; chronic resentment</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="h-100" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-top:3px solid #e8204a; border-radius:6px; padding:24px;">
+                  <i class="fa-solid fa-link text-deep-pink margin-15px-bottom d-block" style="font-size:20px;"></i>
+                  <p class="font-weight-700 text-light-gray margin-5px-bottom" style="font-size:14px;">The indispensable</p>
+                  <p class="line-height-26 margin-10px-bottom" style="font-size:13px; color:#aaa;">Becomes so necessary to others that abandonment becomes structurally impossible. Love as insurance policy.</p>
+                  <p class="text-uppercase margin-0" style="font-size:11px; letter-spacing:.04em; color:#666; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">Cost: enables toxic dynamics; total burnout</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hostage block -->
+            <div class="margin-40px-top padding-30px-all border-radius-6" style="background:rgba(255,255,255,0.05); border-left:3px solid #e8204a;">
+              <p class="font-weight-700 text-light-gray margin-10px-bottom" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase;">The hostage</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">Think of someone held in a genuinely life-threatening situation. Not the negotiator on the outside, but the person inside. Cornered and helpless, they do the only thing left available to them: they start collecting data. Watching the face. Reading the body language. Mapping what triggers escalation and what buys calm. They suppress every authentic reaction (fear, anger, disgust) because any of those could end badly. They become agreeable, useful, even warm. Not because they want to. <strong class="text-light-gray">Because staying alive required it.</strong></p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">That's fawn. Not manipulation. Not weakness. A person who learned early that becoming who the threat needed them to be was the only reliable way to stay safe. The difference between that and someone trying to get something they want sounds subtle, but the motivator is completely different. One is survival. One is strategy. Fawn is survival wearing the costume of strategy, and people who grew up in it rarely know which one they're doing.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">The tragedy isn't that it didn't work. It worked exactly as designed. The tragedy is that the person keeps using it long after they've left the room.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26 mb-0">One thing worth stating before the next section: reading this can produce a specific kind of guilt. Not the guilt of having been hurt, but the guilt of recognizing how the hurt got used. That's a different feeling, and it deserves to be acknowledged rather than skipped over.</p>
+            </div>
+
+            <!-- Machiavellian endpoint -->
+            <div class="margin-30px-top padding-30px-all border-radius-6" style="background:rgba(255,255,255,0.05); border-left:3px solid rgba(255,255,255,0.15);">
+              <p class="font-weight-700 text-light-gray margin-10px-bottom" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase;">The Machiavellian endpoint <em class="text-lowercase" style="font-size:11px; letter-spacing:0; opacity:.5;">— my read, not established literature</em></p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26"><em>Where it gets murky is when the victim feigns fawning.</em></p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">That's the inflection point. The moment fawn stops being a response and becomes a tool. The person is no longer appeasing out of fear. They're performing appeasement because they've learned it works. The fear is still the origin, but it's no longer the driver. And from the outside, it becomes almost impossible to distinguish from calculated manipulation.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">Recognizing this pattern in a child (the deliberate performance of submission) signals significant intelligence. Not the kind anyone would ever even think to look for.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">Pete Walker draws the line from fight to narcissism: the "narcissistic defense," where staying on top becomes a way to make being hurt impossible. I think fawn has its own endpoint on the other side of that same line.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">The other three responses build <strong class="text-light-gray">patterns</strong>: hypervigilance, avoidance, dissociation. Fawn builds <strong class="text-deep-pink">competencies</strong>. Years of reading people, managing emotional climates, telling people what they want to hear, pre-empting anger. Those aren't just coping mechanisms. They're skills. Relational intelligence wired to a threat-detection system rather than genuine connection.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">When those skills run long enough without being examined, they can drift into something that looks Machiavellian from the outside: calculated people-reading, strategic self-presentation, using warmth as a tool. Not because the person is manipulative by nature, but because <strong class="text-light-gray">the original use case for that intelligence was survival</strong>, and the strategy never got updated.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">I know this section well because I lived it. Not as an observer, but as someone who deployed these skills deliberately, and got results. The recognition didn't come from reading about it. It came from eventually having to account for it.</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26">The compassion this deserves isn't small. It's the same compassion Walker asks us to extend to the fighter: not "this person is dangerous," but "this person learned something that kept them safe, and never had a reason to unlearn it."</p>
+              <p class="text-medium text-light-gray opacity-8 line-height-28 sm-line-height-26 mb-0">If that had been your childhood, <em>wouldn't you have used it too?</em></p>
+            </div>
+
+            <div class="margin-25px-top padding-25px-all border-radius-6" style="background:#f8f8f8; border-left:4px solid #e8204a;">
+              <p class="alt-font font-weight-700 text-extra-dark-gray margin-10px-bottom" style="font-size:11px; letter-spacing:.1em; text-transform:uppercase;">A note on schema therapy</p>
+              <p class="text-medium line-height-28 sm-line-height-26 margin-15px-bottom">If you've done schema work, some of this will feel familiar, and that's not your imagination. Schema therapy and the 4F framework are mapping the same underlying territory from different angles. Schemas describe what you came to <em>believe</em> about yourself and the world as a result of early experience. The 4Fs describe what your <em>nervous system learned to do</em> about it. Same architecture, different entry points.</p>
+              <p class="text-medium line-height-28 sm-line-height-26 mb-0">They're kept separate here deliberately; merging them would blur distinctions that matter clinically and practically. If you want to explore how schemas map onto trauma responses, that work lives on its own page. <a href="life-traps.html" class="text-deep-pink" style="color:#e8204a !important;">Schema Therapy and Life Traps →</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- end fawn section -->
+
+ <!-- ── GRAPHIC ── -->
+ <section class="wow animate__fadeIn bg-light-gray" id="four-f-graphic">
+   <div class="container">
+     <div class="row align-items-center">
+
+       <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft text-center">
+        <div class="diagram-wrapper" onclick="openTFRLightbox()" title="Click to expand">
+          <img
+            alt="The Four Trauma Responses — Fight, Flight, Freeze, and Fawn/Feign — a visual reference graphic showing subtypes and costs for each response. Created by Recover-You."
+            class="shadow-light border-radius-6 diagram-img"
+            src="images/recover-you-trauma-responses.jpg"
+          >
+          <div class="diagram-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+            <span>Expand</span>
+          </div>
+        </div>
+         <p class="text-extra-small text-uppercase text-medium-gray margin-10px-top">
+           <strong>Four responses. Thirteen subtypes.</strong> Click to expand.
+         </p>
+       </div>
+
+       <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
+         <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">// Reference graphic</span>
+         <h5 class="alt-font text-extra-dark-gray font-weight-600">Everything on This Page, at a Glance</h5>
+         <blockquote class="border-color-deep-pink">
+           <p>These aren't personality types. They're survival protocols — and most people are running more than one.</p>
+         </blockquote>
+         <p class="text-medium line-height-30 margin-20px-bottom">The graphic summarizes the full framework covered on this page: each of the four responses, the subtypes they produce, and what each one costs over time. It's designed as a reference — something to return to after the reading, when the question shifts from <em>what is this</em> to <em>which one is me.</em></p>
+         <p class="text-medium line-height-30 margin-20px-bottom">One thing worth keeping in mind as you use it: most people don't map cleanly onto a single response. The framework gets sharper when you stop looking for the one that fits and start noticing which responses show up in which contexts — different rooms, different relationships, different power dynamics. That's usually where the real picture is.</p>
+         <p class="text-medium line-height-30">The fawn/feign distinction is flagged separately because it sits differently from the other three — less a reflex, more a learned competency. If that one lands harder than expected, that's probably not a coincidence.</p>
+       </div>
+
+     </div>
+   </div>
+ </section>
+
+
+ <!-- TFR Lightbox -->
+ <div class="tfr-lightbox" id="tfrLightbox" onclick="closeTFRLightbox()">
+   <div class="diagram-lightbox-inner" onclick="event.stopPropagation()">
+     <button class="diagram-close" onclick="closeTFRLightbox()" aria-label="Close">&#x2715;</button>
+     <img
+       src="images/recover-you-trauma-responses.jpg"
+       alt="The Four Trauma Responses reference graphic"
+     >
+   </div>
+ </div>
+
+
+ <script>
+   function openTFRLightbox() {
+     document.getElementById('tfrLightbox').classList.add('active');
+     document.body.style.overflow = 'hidden';
+   }
+   function closeTFRLightbox() {
+     document.getElementById('tfrLightbox').classList.remove('active');
+     document.body.style.overflow = '';
+   }
+   document.addEventListener('keydown', function(e) {
+     if (e.key === 'Escape') closeTFRLightbox();
+   });
+ </script>
+ <!-- end graphic section -->
+  <!-- end graphic section -->
+
+  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
+    <video id="learnMoreBg" autoplay muted loop playsinline class="learn-more-bg">
+      <source src="video/learn-more-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="container position-relative z-index-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
+          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
+          <p class="learn-more-subtitle">
+            Follow the next step in order, or branch out into related topics.
+          </p>
+        </div>
+      </div>
+
+      <div class="learn-more-divider mx-auto"></div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
+
+        <!-- Up Next -->
+        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
+          <a class="learn-card is-next category-foundations" href="cptsd-behaviours.html">
+            <span class="learn-card-label">Up Next</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">CPTSD Patterns</div>
+            <p>How these responses calcify into long-term patterns, and what that looks like in daily life.</p>
+          </a>
+        </div>
+
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+          <a class="learn-card" href="what-is-trauma.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Survive Now, Pay Later</div>
+            <p>Trauma is a survival solution with a deferred cost. Start here.</p>
+          </a>
+        </div>
+
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
+          <a class="learn-card" href="the-reckoning.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">The Reckoning</div>
+            <p>What the research actually shows about trauma and addiction, and why the two can't be separated.</p>
+          </a>
+        </div>
+
+        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
+          <a class="learn-card" href="shame-grief-false-self.html">
+            <span class="learn-card-label learn-card-label--explore">Explore</span>
+            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
+            <div class="learn-card-title alt-font">Shame, Grief &amp; The False Self</div>
+            <p>What fawn builds on top of, and why the self that survives isn't always the self that's real.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray" id="sources">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <p class="text-extra-small text-uppercase text-medium-gray margin-0" style="border-top:1px solid #e0e0e0; padding-top:16px;">The 4F framework originates with Pete Walker — <em>Complex PTSD: From Surviving to Thriving</em> (2013). The addiction lens, subcategory breakdown, fawn/feign distinction, and Machiavellian endpoint are extensions developed independently for this site. The Machiavellian endpoint section is my own interpretation and is not established literature. Educational only — not clinical advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ticker">
+                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community & mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- start services section -->
+
+    <!-- ========== NEW FOOTER & PRIVACY ========== -->
+    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+      <div class="container">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__left alt-font text-small font-weight-500">
+            <a href="contact.html">GET IN TOUCH</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="open-privacy-policy">Privacy Policy</a>
+          </div>
+
+          <div class="site-footer__center">
+            <a href="index.html">
+              <img
+                alt="Recover You logo white"
+                class="footer-logo"
+                data-at2x="images/logo-white@2x.png"
+                src="images/logo-white.png"
+              >
+            </a>
+          </div>
+
+          <div class="site-footer__right alt-font text-small font-weight-500">
+            Not medical advice.<br>
+            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+          </div>
+
+        </div>
+      </div>
+    </footer><!-- end footer -->
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
+     <!-- javascript -->
+     
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script> 
+    <script src="js/bootsnav.js" type="text/javascript">
+    </script> 
+    <script src="js/jquery.nav.js" type="text/javascript">
+    </script> 
+    <script src="js/hamburger-menu.js" type="text/javascript">
+    </script> 
+    <script src="js/theme-vendors.min.js" type="text/javascript">
+    </script> <!-- setting -->
+     
+    <script src="js/main.js" type="text/javascript">
+    </script>
+
+
+
+    
+    <script>
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+
+      if (!progress || !fill) return;
+
+      /* 
+        Reusable rules:
+        1) If a section has id="page-hero", use that
+        2) otherwise use the first .parallax section
+        3) if no hero exists, start from top of page
+      */
+      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight,
+          document.body.clientHeight,
+          document.documentElement.clientHeight
+        );
+      }
+
+      function updateReadingProgress() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+
+        let startPoint = 0;
+
+        if (hero) {
+          startPoint = hero.offsetTop + hero.offsetHeight;
+        }
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+
+          if (totalReadableDistance <= 0) {
+            fill.style.width = '100%';
+            return;
+          }
+
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', updateReadingProgress);
+      window.addEventListener('resize', updateReadingProgress);
+      window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    })();
+    </script>
+
+
+    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
+    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+      <div class="privacy-modal__backdrop" data-close-policy></div>
+
+      <div
+        class="privacy-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-modal-title"
+      >
+        <div class="privacy-modal__header">
+          <h3 id="privacy-modal-title">Privacy Policy</h3>
+          <button
+            type="button"
+            class="privacy-modal__close"
+            aria-label="Close privacy policy"
+            data-close-policy
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="privacy-modal__body">
+          <p><strong>Last updated:</strong> March 2026</p>
+
+          <p>
+            If you reach out through the contact form, I'll collect your name, email, and 
+            message — nothing more. That information is used only to get back to you. It's 
+            not shared, sold, or used for anything else.
+          </p>
+
+          <p>
+            This site uses two analytics tools to help me understand how people find and 
+            use it. Google Analytics is only active if you choose to allow analytics cookies. 
+            Netlify Web Analytics runs quietly in the background using general server data — 
+            no cookies, no individual tracking.
+          </p>
+
+          <p>
+            A few third-party services help keep the site running — things like hosting and 
+            the contact form. Some of these are based outside Canada, so your information 
+            may be processed there. I've chosen providers I trust, but I want you to know.
+          </p>
+
+          <p>
+            Please don't share anything urgent or crisis-related through the contact form — 
+            it's not monitored in real time. If you're in immediate distress, please reach 
+            out to a crisis line or emergency services.
+          </p>
+
+          <p>
+            Questions about this policy, or want to see or correct something I have about 
+            you? You can reach me through the contact page — I'm happy to help.
+          </p>
+        </div>
+
+        <div class="privacy-modal__footer">
+          <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const modal = document.getElementById('privacy-modal');
+        const openBtn = document.getElementById('open-privacy-policy');
+        const closeBtns = document.querySelectorAll('[data-close-policy]');
+
+        if (!modal || !openBtn) return;
+
+        function openPolicy(e) {
+          e.preventDefault();
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('policy-modal-open');
+        }
+
+        function closePolicy() {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('policy-modal-open');
+        }
+
+        openBtn.addEventListener('click', openPolicy);
+
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', closePolicy);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            closePolicy();
+          }
+        });
+      })();
+    </script>
+      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">
+        <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
+        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CONSENT_KEY = 'ry_cookie_consent';
+      const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+      const DECLINE_DAYS = 180;
+
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const declineBtn = document.getElementById('cookie-decline');
+
+      function grantAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+
+      function denyAnalytics() {
+        gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+
+      function showBanner() {
+        if (banner) banner.style.display = 'block';
+      }
+
+      function hideBanner() {
+        if (banner) banner.style.display = 'none';
+      }
+
+      function setDeclineExpiry(days) {
+        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
+      }
+
+      function clearDeclineExpiry() {
+        localStorage.removeItem(CONSENT_EXPIRY_KEY);
+      }
+
+      function isDeclineExpired() {
+        const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
+        if (!expiry) return true;
+        return Date.now() > Number(expiry);
+      }
+
+      function applyConsentState() {
+        const consent = localStorage.getItem(CONSENT_KEY);
+
+        if (consent === 'accepted') {
+          grantAnalytics();
+          hideBanner();
+          return;
+        }
+
+        if (consent === 'declined') {
+          denyAnalytics();
+
+          if (isDeclineExpired()) {
+            localStorage.removeItem(CONSENT_KEY);
+            localStorage.removeItem(CONSENT_EXPIRY_KEY);
+            showBanner();
+          } else {
+            hideBanner();
+          }
+          return;
+        }
+
+        denyAnalytics();
+        showBanner();
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'accepted');
+          clearDeclineExpiry();
+          grantAnalytics();
+          hideBanner();
+        });
+      }
+
+      if (declineBtn) {
+        declineBtn.addEventListener('click', function () {
+          localStorage.setItem(CONSENT_KEY, 'declined');
+          setDeclineExpiry(DECLINE_DAYS);
+          denyAnalytics();
+          hideBanner();
+        });
+      }
+
+      applyConsentState();
+    })();
+  </script>
+  </body>
+</html>

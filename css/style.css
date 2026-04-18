@@ -5476,8 +5476,109 @@ body.policy-modal-open {
 
 
 
+/* ============================================================
+   SITEWIDE HORIZONTAL NAV SKIN
+   Applies to all pages except the homepage (body.home-page)
+   Mirrors the Index sidebar's colour + typography treatment
+   ============================================================ */
 
+/* ── NAV BAR WRAPPER ── */
+body:not(.home-page) nav.bootsnav,
+body:not(.home-page) header.sticky nav.bootsnav,
+body:not(.home-page) header.header-appear nav.bootsnav {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
 
+/* ── TOP-LEVEL NAV LINKS ── */
+body:not(.home-page) nav.bootsnav ul.nav > li > a {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 200 !important;
+  text-transform: uppercase !important;
+  transition: color 0.2s ease !important;
+}
 
+body:not(.home-page) nav.bootsnav ul.nav > li > a:hover,
+body:not(.home-page) nav.bootsnav ul.nav > li.active > a {
+  color: #ff0000 !important;
+  background: rgba(255, 0, 0, 0.04) !important;
+}
 
+/* ── DROPDOWN CARET ICONS ── */
+body:not(.home-page) nav.bootsnav ul.nav > li > i.fa-angle-down {
+  color: rgba(255, 255, 255, 0.2) !important;
+  transition: color 0.2s ease !important;
+}
 
+body:not(.home-page) nav.bootsnav ul.nav > li:hover > i.fa-angle-down {
+  color: #ff0000 !important;
+}
+
+/* ── DROPDOWN PANELS (2nd level) ── */
+body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu {
+  background: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-top: 2px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu li a {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 200 !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+}
+
+body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu li a:hover {
+  color: #ff0000 !important;
+  padding-left: 22px !important;
+  background: rgba(255, 0, 0, 0.04) !important;
+}
+
+/* ── NESTED DROPDOWN PANELS (3rd level) ── */
+body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu .dropdown-menu {
+  border-top: none !important;
+  border-left: 2px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+/* ── LOGO: hide dark, show light — all scroll states ──
+   The theme uses visibility/opacity/width (not display) to toggle logos.
+   We must override on the same properties to win the cascade.        */
+body:not(.home-page) header .logo .logo-dark,
+body:not(.home-page) header.sticky .logo .logo-dark,
+body:not(.home-page) header.header-appear .logo .logo-dark {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+}
+
+body:not(.home-page) header .logo .logo-light,
+body:not(.home-page) header .logo .logo-light.default,
+body:not(.home-page) header.sticky .logo .logo-light,
+body:not(.home-page) header.sticky .logo .logo-light.default,
+body:not(.home-page) header.header-appear .logo .logo-light,
+body:not(.home-page) header.header-appear .logo .logo-light.default {
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: auto !important;
+}
+
+/* ── MOBILE HAMBURGER BARS ── */
+body:not(.home-page) nav.bootsnav .navbar-toggler .icon-bar {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ── MOBILE OPEN STATE ── */
+@media (max-width: 991px) {
+  body:not(.home-page) nav.bootsnav ul.nav > li.open > a,
+  body:not(.home-page) nav.bootsnav ul.nav > li.show > a {
+    color: #ff0000 !important;
+    background: rgba(255, 0, 0, 0.06) !important;
+  }
+}

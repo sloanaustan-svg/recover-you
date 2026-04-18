@@ -161,7 +161,134 @@
            text-align: left;
          }
        }
+       /* ── HOMEPAGE SIDEBAR SKIN ── */
+       nav.sidebar-nav {
+         background: #0d0d0d !important;
+         border-right: 1px solid rgba(255,255,255,0.06) !important;
+       }
 
+       nav.sidebar-nav .sidenav-header {
+         background: #0d0d0d;
+         border-bottom: 1px solid rgba(255,255,255,0.06);
+         padding-bottom: 20px;
+       }
+
+       /* ── TOP LEVEL NAV ITEMS ── */
+       nav.sidebar-nav .navbar-left-sidebar > li > a {
+         color: rgba(255,255,255,0.55) !important;
+         font-family: 'Bebas Neue', sans-serif !important;
+         font-size: 13px !important;
+         letter-spacing: .14em !important;
+         text-transform: uppercase !important;
+         padding: 14px 30px !important;
+         border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+         transition: color .2s, padding-left .2s !important;
+       }
+
+       nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
+       nav.sidebar-nav .navbar-left-sidebar > li.active > a {
+         color: #ff0000 !important;
+         padding-left: 38px !important;
+         background: rgba(255,0,0,0.04) !important;
+       }
+
+       nav.sidebar-nav .navbar-left-sidebar > li > a i {
+         color: rgba(255,255,255,0.2) !important;
+         transition: color .2s !important;
+       }
+
+       nav.sidebar-nav .navbar-left-sidebar > li > a:hover i {
+         color: #ff0000 !important;
+       }
+
+       /* ── DROPDOWN MENUS (second + third level) ── */
+       nav.sidebar-nav .dropdown-menu.second-level,
+       nav.sidebar-nav .dropdown-menu.third-level {
+         background: #111111 !important;
+         border: 1px solid rgba(255,255,255,0.07) !important;
+         border-left: 2px solid rgba(255,0,0,0.3) !important;
+       }
+
+       nav.sidebar-nav .dropdown-menu.second-level li a,
+       nav.sidebar-nav .dropdown-menu.third-level li a {
+         color: rgba(255,255,255,0.45) !important;
+         font-family: 'Bebas Neue', sans-serif !important;
+         font-size: 12px !important;
+         letter-spacing: .12em !important;
+         text-transform: uppercase !important;
+         border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+         padding: 10px 20px !important;
+         transition: color .2s, padding-left .2s !important;
+       }
+
+       nav.sidebar-nav .dropdown-menu.second-level li a:hover,
+       nav.sidebar-nav .dropdown-menu.third-level li a:hover {
+         color: #ff0000 !important;
+         padding-left: 28px !important;
+         background: rgba(255,0,0,0.04) !important;
+       }
+
+       nav.sidebar-nav .dropdown-menu.second-level li a i,
+       nav.sidebar-nav .dropdown-menu.third-level li a i {
+         color: rgba(255,255,255,0.2) !important;
+       }
+
+       nav.sidebar-nav .dropdown-menu.second-level li a:hover i,
+       nav.sidebar-nav .dropdown-menu.third-level li a:hover i {
+         color: #ff0000 !important;
+       }
+
+       /* ── BOTTOM COPYRIGHT ── */
+       nav.sidebar-nav .footer-holder {
+         border-color: rgba(255,255,255,0.1) !important;
+       }
+
+       nav.sidebar-nav .footer-holder .text-medium-gray,
+       nav.sidebar-nav .footer-holder * {
+         color: rgba(255,255,255,0.55) !important;
+         font-size: 11px !important;
+       }
+
+       nav.sidebar-nav .footer-holder .text-deep-pink {
+         color: #ff0000 !important;
+       }
+
+       /* ── GRAIN TEXTURE ── */
+       nav.sidebar-nav::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+         pointer-events: none;
+         z-index: 0;
+         opacity: .4;
+       }
+       /* ── MOBILE NAV LOGO SWAP ── */
+       @media (max-width: 991px) {
+         nav.sidebar-nav .sidenav-header .logo img {
+           content: url('images/webp/logo@2x.webp') !important;
+         }
+       }
+
+       /* ── MOBILE DROPDOWN ACTIVE/OPEN STATE FIX ── */
+       @media (max-width: 991px) {
+         nav.sidebar-nav .navbar-left-sidebar > li.open > a,
+         nav.sidebar-nav .navbar-left-sidebar > li.show > a,
+         nav.sidebar-nav .navbar-left-sidebar > li.active > a,
+         nav.sidebar-nav .dropdown-menu.second-level li.open > a,
+         nav.sidebar-nav .dropdown-menu.second-level li.show > a,
+         nav.sidebar-nav .dropdown-menu.third-level li.open > a,
+         nav.sidebar-nav .dropdown-menu.third-level li.show > a {
+           color: #ff0000 !important;
+           background: rgba(255,0,0,0.06) !important;
+         }
+
+         nav.sidebar-nav .navbar-left-sidebar li.open > a,
+         nav.sidebar-nav .navbar-left-sidebar li.show > a {
+           color: #ff0000 !important;
+           background: rgba(255,0,0,0.06) !important;
+         }
+       }
   </style>
 </head>
 <body class="home-page">
@@ -171,7 +298,7 @@
   <nav class="navbar no-margin-bottom bootsnav alt-font bg-white sidebar-nav sidebar-nav-style-1 navbar-expand-lg">
     <div class="col-12 sidenav-header">
       <div class="logo-holder">
-        <a class="d-inline-block logo" href="index.html"><img alt="Recover You" data-at2x="images/logo@2x.png" src="images/logo@2x.png"></a>
+        <a class="d-inline-block logo" href="index.html"><img alt="Recover You" data-at2x="images/webp/logo-white@2x.webp" src="images/webp/logo-white@2x.webp"></a>
       </div><button aria-label="Toggle navigation" class="navbar-toggler mobile-toggle" id="mobileToggleSidenav" type="button"><span></span><span></span><span></span></button>
     </div>
     <div class="col-12 px-0">
@@ -220,6 +347,7 @@
                   <li>
                     <a href="cptsd-behaviours.html">CPTSD Patterns</a>
                   </li>
+                  <li><a href="four-trauma-responses.html">Trauma Responses</a></li>
                   <li>
                     <a href="aces-high.html">ACEs &amp; Risk</a>
                   </li>
@@ -388,7 +516,7 @@
   </nav>
   <div class="sidebar-wrapper mobile-height">
     <!-- start hero with parallax section -->
-    <section class="wow animate__fadeIn p-0 parallax sm-background-image-center fog-layer" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/recover-you-hero-logo.jpg');">
+    <section class="wow animate__fadeIn p-0 parallax sm-background-image-center fog-layer" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/recover-you-hero-logo2.jpg');">
       <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:1;"></div>
       <div class="container full-screen position-relative z-index-2">
         <div class="row m-0 h-100 align-items-center">
@@ -583,7 +711,7 @@
           </div>
           <div class="col-xl-4 col-sm-10 lg-margin-seven-top wow animate__fadeIn" data-wow-delay="0.6s">
             <div class="padding-ten-left lg-no-padding-lr text-center text-lg-start md-padding-30px-lr sm-no-padding-lr">
-              <p class="margin-20px-bottom">Grounded in neuroscience, trauma research, and hard-earned experience, this is a survivor's blueprint built on evidence, not optimism. No clichés. No slogans. No language designed to make you feel better without actually helping you get better.</p>
+              <p class="margin-20px-bottom">Grounded in neuroscience, trauma research, and hard-earned experience, this is a survivor's blueprint built on evidence, not optimism. No clichés, no slogans, no language engineered to make you feel better without helping you get better.</p>
               <p class="margin-25px-bottom">Recover-You is for people in recovery, people who don't know they're in it yet and the ones who love them and can't figure out why nothing's working.</p><a aria-label="Learn why this site exists" class="btn btn-very-small btn-transparent-white" href="why-this-site-exists.html">Why This Site Exists</a>
             </div>
           </div>
@@ -611,7 +739,7 @@
                 <li><i class="far fa-check-circle ry-bullet"></i> Understand how trauma shapes the brain, body, and behaviour — and why so many patterns make sense once you see their origin.</li>
                 <li><i class="far fa-check-circle ry-bullet"></i> See how trauma and addiction reinforce each other, and why abstinence alone rarely holds without addressing the root.</li>
                 <li><i class="far fa-check-circle ry-bullet"></i> Identify the beliefs, life traps, and survival patterns still quietly running your choices.</li>
-                <li><i class="far fa-check-circle ry-bullet"></i> Learn practical tools to regulate the nervous system when patterns activate — not just understand them.</li>
+                <li><i class="far fa-check-circle ry-bullet"></i> Learn practical tools to regulate the nervous system when old patterns activate — not just name what's happening.</li>
                 <li><i class="far fa-check-circle ry-bullet"></i> Rebuild a sense of identity and direction grounded in who you are, not who you had to become to survive.</li>
                 <li><i class="far fa-check-circle ry-bullet"></i> Find Alberta-based resources and real pathways into trauma-specific care — with programs broken down and application links where available.</li>
               </ul>
@@ -809,8 +937,7 @@
             Push someone into their past before they're ready, and they won't come out stronger. They'll come out defended.</p>
             <p class="text-medium text-white margin-20px-bottom">Recovery starts with willingness, not pressure. My job is not to drag you into your history.<br>
             It's to make sure that when you choose to face it, you're not walking in blind.</p>
-            <p class="text-medium text-white margin-30px-bottom">For years, ignorance was my armor. So was indifference. So was apathy.<br>
-            They kept me safe, until they started killing me.<br>
+            <p class="text-medium text-white margin-30px-bottom">For years, ignorance was my armor. Indifference was the lining. They kept me safe, until they started killing me.<br>
             <br>
             What finally broke through was not confrontation. It was understanding.<br>
             Learning how trauma rewires the brain and body made denial harder to maintain. Once you see the mechanics, once you recognize the pattern running through your own life, <em><strong>you cannot unsee it.</strong></em></p>
