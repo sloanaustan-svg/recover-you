@@ -73,6 +73,227 @@
           ]
         }
   </script>
+  <style>
+    /* ── Zigzag scroll timeline ───────────────────────────────────── */
+    .ry-timeline {
+      position: relative;
+      padding: 20px 0 40px;
+    }
+     
+    /* The vertical line */
+    .ry-timeline__track {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e8e8e8;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+     
+    /* Animated fill that grows as you scroll */
+    .ry-timeline__fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: #e8204a;
+      transition: height 0.4s ease;
+    }
+     
+    /* Each row */
+    .ry-timeline__item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 56px;
+      gap: 0;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .ry-timeline__item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+     
+    /* Left-side items: card on left, dot center, empty right */
+    .ry-timeline__item--left {
+      flex-direction: row;
+    }
+    .ry-timeline__item--left .ry-timeline__card {
+      margin-right: 0;
+      text-align: right;
+    }
+    .ry-timeline__item--left .ry-timeline__card .ry-timeline__title {
+      justify-content: flex-end;
+    }
+     
+    /* Right-side items: empty left, dot center, card on right */
+    .ry-timeline__item--right {
+      flex-direction: row-reverse;
+    }
+    .ry-timeline__item--right .ry-timeline__card {
+      margin-left: 0;
+      text-align: left;
+    }
+     
+    /* Card */
+    .ry-timeline__card {
+      flex: 0 0 calc(50% - 28px);
+      max-width: calc(50% - 28px);
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-top: 3px solid #e8204a;
+      padding: 22px 24px 20px;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .ry-timeline__card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+      transform: translateY(-3px);
+    }
+     
+    /* Dot connector in the middle */
+    .ry-timeline__dot-wrap {
+      flex: 0 0 56px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .ry-timeline__dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #e8204a;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #e8204a;
+      transition: transform 0.3s ease;
+    }
+    .ry-timeline__item.is-visible .ry-timeline__dot {
+      transform: scale(1.2);
+    }
+    .ry-timeline__item.is-visible .ry-timeline__dot:after {
+      transform: scale(1);
+    }
+     
+    /* Date */
+    .ry-timeline__date {
+      font-size: 26px;
+      font-weight: 700;
+      color: #e8204a;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+     
+    /* Title row */
+    .ry-timeline__title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #232323;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .ry-timeline__item--left .ry-timeline__title {
+      flex-direction: row-reverse;
+    }
+     
+    /* Body text */
+    .ry-timeline__body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #777;
+      margin: 0;
+    }
+     
+    /* ── Mobile: single left-rail column ──────────────────────────── */
+    @media (max-width: 767px) {
+      /* Move the track line to the left edge */
+      .ry-timeline__track {
+        left: 11px;
+        transform: none;
+      }
+     
+      /* Force every item: dot first (left), then card — no zigzag */
+      .ry-timeline__item,
+      .ry-timeline__item--left,
+      .ry-timeline__item--right {
+        flex-direction: row !important;
+        align-items: flex-start;
+      }
+     
+      /* Dot always renders first in DOM order on mobile */
+      .ry-timeline__dot-wrap {
+        order: 0 !important;
+        flex: 0 0 36px !important;
+        padding-top: 16px;
+      }
+     
+      /* Card fills remaining width */
+      .ry-timeline__card {
+        order: 1 !important;
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        padding: 16px 18px 14px;
+      }
+     
+      /* Hide the desktop spacer divs */
+      .ry-timeline__item > div:not(.ry-timeline__card):not(.ry-timeline__dot-wrap) {
+        display: none !important;
+      }
+     
+      /* Reset all title alignment overrides */
+      .ry-timeline__card .ry-timeline__title,
+      .ry-timeline__item--left .ry-timeline__title,
+      .ry-timeline__item--right .ry-timeline__title {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+      }
+     
+      /* Reset right-alignment on left cards */
+      .ry-timeline__item--left .ry-timeline__card {
+        text-align: left !important;
+      }
+    }
+
+    .disease-meme-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    @media (min-width: 992px) {
+      .disease-meme-img {
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+
+          .distinction-panel {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            padding: 45px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+          }
+
+          /* tighten on small screens */
+          @media (max-width: 767px) {
+            .distinction-panel {
+              padding: 30px 20px;
+              border-radius: 10px;
+            }
+          }
+  </style>
 </head>
 <body>
   <div aria-hidden="true" id="reading-progress">
@@ -317,71 +538,95 @@
             <span>11 min read</span>
           </div>
 <h5 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> The <strong class="text-decoration-line-through">Disease</strong> Evolution of Addiction</h5>
-          <p class="text-medium line-height-28 sm-line-height-26">The word "disease" didn't arrive attached to addiction by accident. It arrived because every generation looks at human suffering through the lens of what it currently understands — and then builds a model around that understanding. Sometimes the model helps. Sometimes it calcifies into doctrine long after the evidence has moved on.</p>
-          <p class="text-medium-gray">What we've called addiction has shifted dramatically across history — not because the experience changed, but because our tools for understanding it did. Each new framework was the best available answer to the same ancient question: why do people keep doing things that are destroying them?</p>
+          <p class="text-medium line-height-28 sm-line-height-26">The word "disease" didn't arrive attached to addiction by accident. It arrived because every generation looks at human suffering through the lens of what it currently understands, and then builds a model around that understanding. Sometimes the model helps. Sometimes it calcifies into doctrine long after the evidence has moved on.</p>
+          <p class="text-medium-gray">What we've called addiction has shifted dramatically across history. Not because the experience changed, but because our tools for understanding it did. Each new framework was the best available answer to the same ancient question: why do people keep doing things that are destroying them?</p>
           <blockquote class="border-color-deep-pink margin-40px-tb">
             <p class="text-large line-height-30"><em>The model changed; the person didn't.</em><br>
             Whatever we've called addiction at any given moment in history has been a mirror of what society understood about pain at that time. Not the truth. A reflection of where we were.</p>
           </blockquote>
           <h6 class="alt-font text-extra-dark-gray text-uppercase letter-spacing-1 margin-30px-bottom">The Architecture of Understanding</h6>
-          <div class="timeline-stacked">
-            <div class="margin-30px-bottom">
-              <div class="alt-font text-deep-pink font-weight-700" style="font-size:28px;">
-                1700s–1920s
-              </div>
-              <div class="alt-font text-extra-dark-gray font-weight-600 margin-10px-top">
-                <i class="fa-solid fa-scale-balanced text-deep-pink margin-10px-right"></i> The Moral Model: "The Sinner"
-              </div>
-              <p class="text-medium-gray margin-5px-top mb-0 alt-font">Guided by religious doctrine and the Temperance Movement, addiction was a failure of will, a vice, or a sin. The cures were punishment, imprisonment, or prayer. The person was the problem — full stop.</p>
-              <div class="separator-line-horrizontal-full bg-extra-light-gray margin-25px-tb h-2px"></div>
+          <div class="ry-timeline" id="ry-timeline">
+            <div class="ry-timeline__track">
+              <div class="ry-timeline__fill" id="ry-fill"></div>
             </div>
-            <div class="margin-30px-bottom">
-              <div class="alt-font text-deep-pink font-weight-700" style="font-size:28px;">
-                1880s–1940s
+           
+            <!-- 1 ── Left -->
+            <div class="ry-timeline__item ry-timeline__item--left">
+              <div class="ry-timeline__card alt-font">
+                <div class="ry-timeline__date">1700s–1920s</div>
+                <div class="ry-timeline__title">
+                  <i class="fa-solid fa-scale-balanced text-deep-pink"></i>
+                  The Moral Model: "The Sinner"
+                </div>
+                <p class="ry-timeline__body">Guided by religious doctrine and the Temperance Movement, addiction was a failure of will, a vice, or a sin. The cures were punishment, imprisonment, or prayer. The person was the problem. Full stop.</p>
               </div>
-              <div class="alt-font text-extra-dark-gray font-weight-600 margin-10px-top">
-                <i class="fa-solid fa-dna text-deep-pink margin-10px-right"></i> The Hereditary Model: "The Defect"
-              </div>
-              <p class="text-medium-gray margin-5px-top mb-0 alt-font">At the height of the Eugenics era, addiction became "bad stock" — a genetic curse rather than a moral failing. No longer a choice, but still something to be managed or eliminated. The shame didn't disappear. It just changed its justification.</p>
-              <div class="separator-line-horrizontal-full bg-extra-light-gray margin-25px-tb h-2px"></div>
+              <div class="ry-timeline__dot-wrap"><div class="ry-timeline__dot"></div></div>
+              <div style="flex:0 0 calc(50% - 28px);"></div>
             </div>
-            <div class="margin-30px-bottom">
-              <div class="alt-font text-deep-pink font-weight-700" style="font-size:28px;">
-                1930s–1960s
+           
+            <!-- 2 ── Right -->
+            <div class="ry-timeline__item ry-timeline__item--right">
+              <div class="ry-timeline__card alt-font">
+                <div class="ry-timeline__date">1880s–1940s</div>
+                <div class="ry-timeline__title">
+                  <i class="fa-solid fa-dna text-deep-pink"></i>
+                  The Hereditary Model: "The Defect"
+                </div>
+                <p class="ry-timeline__body">At the height of the Eugenics era, addiction became "bad stock," a genetic curse rather than a moral failing. No longer a choice, but still something to be managed or eliminated. The shame didn't disappear. It just changed its justification.</p>
               </div>
-              <div class="alt-font text-extra-dark-gray font-weight-600 margin-10px-top">
-                <i class="fa-solid fa-brain text-deep-pink margin-10px-right"></i> The Psychological Era: "The Symptom"
-              </div>
-              <p class="text-medium-gray margin-5px-top mb-0 alt-font">With the rise of psychoanalysis, addiction became a manifestation of arrested development or an "addictive personality." The conversation shifted from bloodlines to the mind — but still circled back to something being fundamentally wrong with the person.</p>
-              <div class="separator-line-horrizontal-full bg-extra-light-gray margin-25px-tb h-2px"></div>
+              <div class="ry-timeline__dot-wrap"><div class="ry-timeline__dot"></div></div>
+              <div style="flex:0 0 calc(50% - 28px);"></div>
             </div>
-            <div class="margin-30px-bottom">
-              <div class="alt-font text-deep-pink font-weight-700" style="font-size:28px;">
-                1956–Present
+           
+            <!-- 3 ── Left -->
+            <div class="ry-timeline__item ry-timeline__item--left">
+              <div class="ry-timeline__card alt-font">
+                <div class="ry-timeline__date">1930s–1960s</div>
+                <div class="ry-timeline__title">
+                  <i class="fa-solid fa-brain text-deep-pink"></i>
+                  The Psychological Era: "The Symptom"
+                </div>
+                <p class="ry-timeline__body">With the rise of psychoanalysis, addiction became a manifestation of arrested development or an "addictive personality." The conversation shifted from bloodlines to the mind, but still circled back to something being fundamentally wrong with the person.</p>
               </div>
-              <div class="alt-font text-extra-dark-gray font-weight-600 margin-10px-top">
-                <i class="fa-solid fa-flask text-deep-pink margin-10px-right"></i> The Disease Model: "The Patient"
-              </div>
-              <p class="text-medium-gray margin-5px-top mb-0 alt-font">In 1956, the AMA declared alcoholism a disease. This reduced shame, medicalized treatment, and gave people a framework that didn't require them to simply "try harder." A genuine step forward. Also, as it turned out, an incomplete one.</p>
-              <div class="separator-line-horrizontal-full bg-extra-light-gray margin-25px-tb h-2px"></div>
+              <div class="ry-timeline__dot-wrap"><div class="ry-timeline__dot"></div></div>
+              <div style="flex:0 0 calc(50% - 28px);"></div>
             </div>
-            <div>
-              <div class="alt-font text-deep-pink font-weight-700" style="font-size:28px;">
-                1998–Present
+           
+            <!-- 4 ── Right -->
+            <div class="ry-timeline__item ry-timeline__item--right">
+              <div class="ry-timeline__card alt-font">
+                <div class="ry-timeline__date">1956–Present</div>
+                <div class="ry-timeline__title">
+                  <i class="fa-solid fa-flask text-deep-pink"></i>
+                  The Disease Model: "The Patient"
+                </div>
+                <p class="ry-timeline__body">In 1956, the AMA declared alcoholism a disease. This reduced shame, medicalized treatment, and gave people a framework that didn't require them to simply "try harder." A genuine step forward. Also, as it turned out, an incomplete one.</p>
               </div>
-              <div class="alt-font text-extra-dark-gray font-weight-600 margin-10px-top">
-                <i class="fa-solid fa-heart-crack text-deep-pink margin-10px-right"></i> The Trauma-Informed Model: "The Survivor"
+              <div class="ry-timeline__dot-wrap"><div class="ry-timeline__dot"></div></div>
+              <div style="flex:0 0 calc(50% - 28px);"></div>
+            </div>
+           
+            <!-- 5 ── Left -->
+            <div class="ry-timeline__item ry-timeline__item--left">
+              <div class="ry-timeline__card alt-font">
+                <div class="ry-timeline__date">1998–Present</div>
+                <div class="ry-timeline__title">
+                  <i class="fa-solid fa-heart-crack text-deep-pink"></i>
+                  The Trauma-Informed Model: "The Survivor"
+                </div>
+                <p class="ry-timeline__body">Sparked by the 1998 ACE Study, we began to understand that addiction is often not the problem. It's the <em>solution</em> to a problem that came first. A physiological <strong>adaptation</strong> to a nervous system that learned, for very good reasons, that the world wasn't safe. We're not treating a broken brain. We're working with one that did exactly what it was built to do.</p>
               </div>
-              <p class="text-medium-gray margin-5px-top mb-0 alt-font">Sparked by the 1998 ACE Study, we began to understand that addiction is often not the problem — it's the <em>solution</em> to a problem that came first. A physiological <strong>adaptation</strong> to a nervous system that learned, for very good reasons, that the world wasn't safe. We're not treating a broken brain. We're working with one that did exactly what it was built to do.</p>
+              <div class="ry-timeline__dot-wrap"><div class="ry-timeline__dot"></div></div>
+              <div style="flex:0 0 calc(50% - 28px);"></div>
             </div>
           </div>
           <div class="separator-line-horrizontal-full bg-extra-light-gray margin-40px-tb h-2px"></div>
           <div class="row">
             <div class="col-12">
               <h6 class="alt-font text-extra-dark-gray text-uppercase letter-spacing-1 margin-15px-bottom">The Next Evolution: Precision, Not Dogma</h6>
-              <p class="text-medium line-height-28">This site leans heavily into the <strong>Trauma Model</strong> — and deliberately so. For decades the trauma connection was ignored, minimized, or dismissed entirely. Leaning hard into it now is an intentional correction for a long history of looking the other way.</p>
+              <p class="text-medium line-height-28">This site leans heavily into the <strong>Trauma Model</strong>, and deliberately so. For decades the trauma connection was ignored, minimized, or dismissed entirely. Leaning hard into it now is an intentional correction for a long history of looking the other way.</p>
               <p class="text-medium line-height-28">But history also shows that once we find a new hammer, everything starts to look like a nail.</p>
-              <p class="text-medium line-height-28">The trauma–addiction link is massive — but it isn't absolute. Looking for trauma where none exists — <strong>"ghost hunting"</strong> — sends you chasing phantoms instead of the actual problem. Not every addiction story starts with trauma. Enough do that we can't afford to keep ignoring it. Not so many that we should stop looking for other explanations.</p>
+              <p class="text-medium line-height-28">The trauma-addiction link is massive, but it isn't absolute. Looking for trauma where none exists, what I'd call <strong>"ghost hunting,"</strong> sends you chasing phantoms instead of the actual problem. Not every addiction story starts with trauma. Enough do that we can't afford to keep ignoring it. Not so many that we should stop looking for other explanations.</p>
               <div class="bg-light-gray padding-30px-all border-radius-4px margin-30px-top">
                 <p class="alt-font text-extra-dark-gray font-weight-600 margin-5px-bottom">// A more grounded way to understand recovery</p>
                 <ul class="list-style-01 text-medium-gray margin-10px-top">
@@ -389,7 +634,7 @@
                   <li><strong>The "Trauma" Path:</strong> For the survival adaptation. The nervous system that needs <em>healing</em>.</li>
                 </ul>
                 <p class="text-small text-uppercase margin-15px-top text-deep-pink font-weight-700 letter-spacing-1">This is your Genesis Point.</p>
-                <p class="text-medium-gray margin-10px-top">Where did yours begin? In overwhelm, in conditioning, in repetition, or in something that happened long before substances were ever part of the picture? <strong>Context matters.</strong> Your Genesis Point isn't a diagnosis — it's a direction. A starting place that can help clarify what kind of care is actually going to move the needle, rather than treating the surface while the root goes untouched.</p>
+                <p class="text-medium-gray margin-10px-top">Where did yours begin? In overwhelm, in conditioning, in repetition, or in something that happened long before substances were ever part of the picture? <strong>Context matters.</strong> Your Genesis Point isn't a diagnosis. It's a direction. A starting place that can help clarify what kind of care is actually going to work, rather than treating the surface while the root keeps feeding it.</p>
               </div>
             </div>
           </div>
@@ -401,59 +646,48 @@
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-lg-2">
         <!-- TEXT COLUMN -->
-        <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInLeft">
+        <div class="col p-0 wow animate__fadeInLeft"><img alt="Diagnosis ≠ Destiny" class="w-100 disease-meme-img" src="images/disease-peril.png"></div>
+        <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInRight">
           <h5 class="alt-font text-extra-dark-gray">The <strong>Power</strong> and <strong>Peril</strong> of a Label</h5>
           <p class="text-dark-gray">The debate over "disease" versus "disorder" can become its own distraction. The vocabulary matters far less than whether the label actually moves us toward the right kind of care. A word that opens a door is useful. A word that closes one is not, regardless of how clinically precise it sounds.</p>
           <blockquote class="border-color-deep-pink">
             <p>The real question isn't what we call it. The real question is: <em>does the label empower you, or does it shrink you?</em></p>
           </blockquote>
           <p class="text-dark-gray">For some people, the disease label is genuinely liberating. It lifts shame, reframes addiction as something treatable, and removes the demand to simply "try harder" against something that was never a willpower problem. That matters.</p>
-          <p class="text-dark-gray">For others, the same label quietly installs a ceiling. <strong>"Well, if it's a disease, maybe there's nothing I can do about it."</strong> The condition stays identical — but the story changes, and the story is what determines whether recovery feels possible or pointless.</p>
-          <p class="text-dark-gray">Which brings us to the real problem with the disease framing: if we're going to call addiction a disease, then the care around it needs to actually behave like it is one. Something that addresses root causes, not just symptoms. Something that demands more than abstinence and a handshake. Otherwise the language is purely symbolic — and we could rename it <strong>Chronic Bad Idea Syndrome™</strong> without changing a single thing about the biology, the suffering, or the failure rate.</p>
+          <p class="text-dark-gray">For others, the same label quietly installs a ceiling. <strong>"Well, if it's a disease, maybe there's nothing I can do about it."</strong> The condition stays identical. The story changes. And the story is what determines whether recovery feels possible or pointless.</p>
+          <p class="text-dark-gray">Which brings us to the real problem with the disease framing. If we're going to call addiction a disease, then the care around it needs to actually behave like it is one. It needs to address root causes, not just symptoms. It needs to demand more than abstinence and a handshake. Otherwise the language is purely symbolic, and we could rename it <strong>Chronic Bad Idea Syndrome™</strong> without changing a single thing about the biology, the suffering, or the failure rate.</p>
           <hr class="margin-20px-top margin-20px-bottom opacity4">
           <p class="text-small opacity7">
-            Image references a scene from <em>South Park</em>, used here for commentary on how diagnostic labels can influence behavior and recovery. Not affiliated with or endorsed by the original creators.
+            Image references a scene from <em>South Park</em>, used here for commentary on how diagnostic labels can influence behaviour and recovery. Not affiliated with or endorsed by the original creators.
           </p>
           <p class="text-small opacity7 margin-10px-top">
             *Modified and included for educational and commentary purposes. All rights remain with the respective copyright holders.
           </p>
         </div>
         <!-- IMAGE COLUMN -->
-        <div class="col p-0 wow animate__fadeInRight"><img alt="Diagnosis ≠ Destiny" class="w-100 disease-meme-img" src="images/disease-peril.png"></div>
+        
       </div>
-      <style>
-        .disease-meme-img {
-          display: block;
-          width: 100%;
-          height: auto;
-        }
-        @media (min-width: 992px) {
-          .disease-meme-img {
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-          }
-        }
-      </style>
+
     </div>
   </section>
   <section class="bg-light-gray border-none p-0 wow animate__fadeIn bg-light-gray">
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-lg-2">
         <!-- IMAGE COLUMN -->
-        <div class="col p-0 wow animate__fadeInLeft"><img alt="A figure sits alone in the dark, head in hands, while an alarm blares overhead — the fire is gone, but the alarm never stopped" class="w-100 disease-meme-img" src="images/alarm-no-fire.png"></div>
+        
         <!-- TEXT COLUMN -->
-        <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInRight">
+        <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInLeft">
           <h5 class="alt-font text-extra-dark-gray">Mistaking the <strong>Solution</strong> for the <strong>Problem</strong></h5>
-          <p class="text-dark-gray">When we treat addiction as the whole story, we risk doing something that looks like help but functions like misdirection. Addiction does rewire the brain — genuinely, measurably, in ways that make recovery harder than it would otherwise be. But those changes almost always sit downstream from something older, something deeper — something that was already doing damage before substances were ever part of the picture.</p>
-          <p class="text-dark-gray">If you've gotten sober and discovered that life felt worse — that the raw anxiety, the shame, the hollow feeling underneath were more terrifying than the substance ever was — you already understand this. You removed the coping tool . But the thing it was coping with didn't go anywhere. It just stopped having somewhere to hide. <a href="when-sobriety-feels-worse.html"><em><u>Learn more here.</u></em></a></p>
-          <p class="text-dark-gray">That's what the image is trying to show. The fire is out. The alarm is still going. No smoke, no flames — just a nervous system that never got the memo that the emergency is over. That's not a character flaw. That's what untreated trauma looks like in a sober body.</p>
+          <p class="text-dark-gray">When we treat addiction as the whole story, we risk doing something that looks like help but functions like misdirection. Addiction does rewire the brain. Genuinely, measurably, in ways that make recovery harder than it would otherwise be. But those changes almost always sit downstream from something older, something deeper. Something that was already doing damage before substances were ever part of the picture.</p>
+          <p class="text-dark-gray">If you've gotten sober and discovered that life felt worse, that the raw anxiety, the shame, the hollow feeling underneath were more terrifying than the substance ever was, you already understand this. You removed the coping tool. The thing it was coping with didn't go anywhere. It just lost its cover. <a href="when-sobriety-feels-worse.html"><em><u>Learn more here.</u></em></a></p>
+          <p class="text-dark-gray">That's what the image is trying to show. The fire is out. The alarm is still going. No smoke, no flames, just a nervous system that never got the memo that the emergency is over. That's not a character flaw. That's what untreated trauma looks like in a sober body.</p>
           <blockquote class="border-color-deep-pink">
-            <p>Addiction wasn't the root problem. <em>It was the desperate solution to one</em> — formed under duress, in the absence of anything better.</p>
+            <p>Addiction wasn't the root problem. <em>It was the desperate solution to one</em>, formed under duress, in the absence of anything better.</p>
           </blockquote>
-          <p class="text-dark-gray">For many people, the problem addiction was trying to solve already has a name: Complex PTSD. Not every addiction story starts there. But enough do that treating the substance without asking what the substance was managing isn't just incomplete — it's how people end up cycling through the same doors for years without ever understanding why nothing holds.</p>
+          <p class="text-dark-gray">For many people, the problem addiction was trying to solve already has a name: Complex PTSD. Not every addiction story starts there. But enough do that treating the substance without asking what the substance was managing isn't just incomplete. It's how people end up cycling through the same doors for years without ever understanding why nothing holds.</p>
 
         </div>
+        <div class="col p-0 wow animate__fadeInRight"><img alt="A figure sits alone in the dark, head in hands, while an alarm blares overhead. The fire is gone, but the alarm never stopped." class="w-100 disease-meme-img" src="images/alarm-no-fire.png"></div>
       </div>
     </div>
   </section>
@@ -462,19 +696,19 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <h5 class="alt-font text-extra-dark-gray">If <strong>Brain Changes</strong> Define Addiction as a Disease, then <strong><span style="white-space: nowrap;">C-PTSD</span> Is the Prototype</strong></h5>
-          <p class="text-medium line-height-28 sm-line-height-26">The core argument for calling addiction a disease is straightforward: it produces measurable, dysfunctional changes in the brain. Fair enough. But if that's the standard, then complex trauma doesn't just qualify — it wrote the criteria. C-PTSD demonstrates, with unsettling precision, how early experience can derail typical brain development and how <em class="text-deep-pink">psychological injury leaves physical scars.</em> Not metaphorically. Structurally.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">And here's what makes this more than an academic argument: <strong>the brain changes of C-PTSD almost always come first.</strong> Hypervigilance. Fractured identity. Blunted regulation. A nervous system permanently tuned to threat. None of these guarantee addiction — but they build exactly the kind of internal landscape where substances can take root fast, go deep, and feel, for a long time, like the only thing working.</p>
+          <p class="text-medium line-height-28 sm-line-height-26">The core argument for calling addiction a disease is straightforward: it produces measurable, dysfunctional changes in the brain. Fair enough. But if that's the standard, then complex trauma doesn't just qualify. It wrote the criteria. C-PTSD demonstrates, with unsettling precision, how early experience can derail typical brain development and how <em class="text-deep-pink">psychological injury leaves physical scars.</em> Not metaphorically. Structurally.</p>
+          <p class="text-medium line-height-28 sm-line-height-26">And here's what makes this more than an academic argument: <strong>the brain changes of C-PTSD almost always come first.</strong> Hypervigilance. Fractured identity. Blunted regulation. A nervous system permanently tuned to threat. None of these guarantee addiction. But they build exactly the kind of internal landscape where substances can take root fast, go deep, and feel, for a long time, like the only thing working.</p>
           <blockquote class="border-color-deep-pink">
             <p>Addiction rewires systems.<br>
             C-PTSD rewrites the operating system.</p>
           </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">By the time substances enter the picture, the architecture has often already shifted. Addiction doesn't arrive as the origin point. It arrives as the body's attempt to regulate what trauma already destabilized. Which means that if we're serious about the disease framework — if brain changes are the yardstick — then we have to reckon with the fact that trauma got there first, changed more, and runs deeper.</p>
+          <p class="text-medium line-height-28 sm-line-height-26">By the time substances enter the picture, the architecture has often already shifted. Addiction doesn't arrive as the origin point. It arrives as the body's attempt to regulate what trauma already destabilized. Which means that if we're serious about the disease framework, if brain changes are the yardstick, then we have to reckon with the fact that trauma got there first, changed more, and runs deeper.</p>
           <div class="margin-30px-tb">
             <ul class="p-0 list-style-3">
               <li><strong class="text-dark-gray">Amygdala (Threat Detector):</strong> Locked on high alert, generating hypervigilance and anxiety that have no off switch and no clear target.</li>
-              <li><strong class="text-dark-gray">Prefrontal Cortex (Control Tower):</strong> Underactive — weakening impulse control, emotional regulation, and the capacity to choose deliberately rather than react automatically.</li>
+              <li><strong class="text-dark-gray">Prefrontal Cortex (Control Tower):</strong> Underactive, weakening impulse control, emotional regulation, and the capacity to choose deliberately rather than react automatically.</li>
               <li><strong class="text-dark-gray">Hippocampus (Memory Filer):</strong> Shrinks under chronic stress, blurring the boundary between past danger and present safety until the body can no longer reliably tell the difference.</li>
-              <li><strong class="text-dark-gray">Default Mode Network (Sense of Self):</strong> Fractures — feeding dissociation, identity instability, and the specific feeling of being a stranger inside your own life.</li>
+              <li><strong class="text-dark-gray">Default Mode Network (Sense of Self):</strong> Fractures, feeding dissociation, identity instability, and the specific feeling of being a stranger inside your own life.</li>
             </ul>
           </div>
           <p class="text-medium line-height-28 sm-line-height-26">Addiction hijacks the brain's motivation system. C-PTSD hijacks the brain's survival system.</p>
@@ -482,8 +716,8 @@
             <p>One is a siege on your life.<br>
             The other is a siege on your self.</p>
           </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">This is where the confusion compounds. Addiction becomes the visible crisis — the thing everyone sees, labels, and tries to treat. Trauma hides underneath it, hiding in plain sight, doing most of the driving. <strong>Without trauma work, sobriety can feel like tearing down your shelter in the middle of a storm.</strong> You've removed something real. You just haven't replaced what it was protecting you from.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">So here's the argument turned back on itself: if the disease model rests on the premise that brain changes are what make something a disease — then the most honest application of that framework isn't addiction. It's the trauma that preceded it, shaped it, and in many cases, made it feel like the only rational response to an irrational amount of pain.</p>
+          <p class="text-medium line-height-28 sm-line-height-26">This is where the confusion compounds. Addiction becomes the visible crisis, the thing everyone sees, labels, and tries to treat. Trauma runs underneath it, doing most of the driving while nobody looks. <strong>Without trauma work, sobriety can feel like tearing down your shelter in the middle of a storm.</strong> You've removed something real. You just haven't replaced what it was protecting you from.</p>
+          <p class="text-medium line-height-28 sm-line-height-26">So here's the argument turned back on itself: if the disease model rests on the premise that brain changes are what make something a disease, then the most honest application of that framework isn't addiction. It's the trauma that preceded it, shaped it, and in many cases, made it feel like the only rational response to an irrational amount of pain.</p>
         </div>
       </div>
     </div>
@@ -494,9 +728,9 @@
         <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100 injury-img" src="images/webp/order-of-injury.webp"></div>
         <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
           <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Autoimmune Analogy</span>
-          <h5 class="alt-font text-extra-dark-gray font-weight-600">This isn’t about which condition is “worse.”</h5>
-          <p><strong class="text-deep-pink">It’s about understanding the order of injury.</strong></p>
-          <p>If addiction is like an infection — something triggered by exposure to an external agent — then <em>C-PTSD is closer to an autoimmune disorder of the psyche.</em></p>
+          <h5 class="alt-font text-extra-dark-gray font-weight-600">This isn't about which condition is "worse."</h5>
+          <p><strong class="text-deep-pink">It's about understanding the order of injury.</strong></p>
+          <p>If addiction is like an infection, something triggered by exposure to an external agent, then <em>C-PTSD is closer to an autoimmune disorder of the psyche.</em></p>
           <p>The survival system, conditioned by years of threat, begins to turn inward. It attacks the very capacities meant to protect you: emotional regulation, secure attachment, the ability to feel safe in your own skin.</p>
           <blockquote class="border-color-deep-pink">
             <p><strong>The defense becomes the damage.</strong></p>
@@ -520,39 +754,23 @@
           <div class="distinction-panel">
             <span class="alt-font text-deep-pink text-small d-block margin-5px-bottom">// Trauma changes the equation</span>
             <h5 class="font-weight-600 text-white alt-font">Why This Distinction Is Everything</h5>
-            <p class="text-large text-white">This isn’t just an academic exercise.</p>
-            <p class="text-medium text-deep-pink"><strong>It’s the difference between managing symptoms and healing the wound that created them.</strong></p>
-            <p class="text-medium text-white">Treating addiction without addressing trauma is like patching leaks in a roof while the foundation quietly collapses. It’s why “just don’t use” so often fails, and why relapse feels inevitable: addiction was never the original problem. It was the mask worn over the problem.</p>
+            <p class="text-large text-white">This isn't just an academic exercise.</p>
+            <p class="text-medium text-deep-pink"><strong>It's the difference between managing symptoms and healing the wound that created them.</strong></p>
+            <p class="text-medium text-white">Treating addiction without addressing trauma is like patching leaks in a roof while the foundation quietly collapses. It's why "just don't use" so often fails, and why relapse feels inevitable. Addiction was never the original problem. It was the mask worn over the problem.</p>
             <p class="text-medium text-white">Recognizing the trauma link does four critical things:</p>
             <div class="margin-30px-tb">
               <ul class="p-0 list-style-3">
-                <li class="text-medium text-white"><strong>Shifts the Focus:</strong> from "What is wrong with me?" to "What happened to me?" — which is not a small linguistic shift. It's the difference between shame and understanding. And understanding is where the actual work begins.</li>
-                <li class="text-medium text-white"><strong>Validates the Struggle:</strong> it explains why sobriety alone can feel unbearable — why removing the substance sometimes makes everything worse before it gets better. Willpower was never the variable. It was never a fair fight.</li>
-                <li class="text-medium text-white"><strong>Exposes What's Actually Driving It:</strong> addiction was the visible costume. Trauma was wearing it. Until the wound underneath gets treated, the cycle doesn't end — it just restarts with a different substance or a different behaviour and the same root cause.</li>
-                <li class="text-medium text-white"><strong>Restores Real Agency:</strong> you aren't defective. You were injured. And injuries — unlike character flaws — can actually be treated. That reframe isn't just compassionate. It's the most accurate description of what happened.</li>
+                <li class="text-medium text-white"><strong>Shifts the Focus:</strong> from "What is wrong with me?" to "What happened to me?" That's not a small linguistic shift. It's the difference between shame and understanding. And understanding is where the actual work begins.</li>
+                <li class="text-medium text-white"><strong>Validates the Struggle:</strong> it explains why sobriety alone can feel unbearable, and why removing the substance sometimes makes everything worse before it gets better. Willpower was never the variable. It was never a fair fight.</li>
+                <li class="text-medium text-white"><strong>Exposes What's Actually Driving It:</strong> addiction was the visible costume. Trauma was wearing it. Until the wound underneath gets treated, the cycle doesn't end. It just restarts with a different substance or a different behaviour and the same root cause.</li>
+                <li class="text-medium text-white"><strong>Restores Real Agency:</strong> you aren't defective. You were injured. And injuries, unlike character flaws, can actually be treated. That reframe is more than compassionate. It's the most accurate description of what happened.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <style>
-            .distinction-panel {
-              background: rgba(0, 0, 0, 0.7);
-              border-radius: 12px;
-              padding: 45px 40px;
-              box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
-              backdrop-filter: blur(4px);
-            }
 
-            /* tighten on small screens */
-            @media (max-width: 767px) {
-              .distinction-panel {
-                padding: 30px 20px;
-                border-radius: 10px;
-              }
-            }
-    </style>
   </section>
   <section class="big-section bg-light-gray">
     <div class="container">
@@ -561,12 +779,13 @@
           <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-bottom d-none d-lg-block"></div><span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small">The Bottom Line</span>
         </div>
         <div class="col-xl-8 col-lg-7 offset-lg-2 last-paragraph-no-margin">
-          <p class="text-medium line-height-30">Calling addiction a disease was a milestone. It reduced shame, opened treatment doors, and gave people a framework that didn't demand they simply "want it more." That mattered. It still matters. But a stepping stone is not a destination — and treating it like one has cost us decades of more precise, more effective care.</p>
+          <p class="text-medium line-height-30">Calling addiction a disease was a milestone. It reduced shame, opened treatment doors, and gave people a framework that didn't demand they simply "want it more." That mattered. It still matters. But a stepping stone is not a destination, and treating it like one has cost us decades of more precise, more effective care.</p>
           <blockquote class="border-color-deep-pink">
-            <p>The most honest thing we can say right now is: <em>"This model was the best we had — and it has to keep getting better."</em></p>
+            <p>The most honest thing we can say right now is: <em>"This model was the best we had, and it has to keep getting better."</em></p>
           </blockquote>
-          <p class="text-medium line-height-30">Not all addiction is rooted in trauma. But enough of it is that ignoring the link isn't a neutral position — it's a costly one. Treating the label without treating the wound underneath is how people spend years in and out of programs and never quite understand why nothing sticks.</p>
-          <p class="text-medium line-height-30">The real work isn't just removing the substance. It's understanding what the substance was doing there in the first place — what it was managing, what it was masking, what it was trying to make bearable. That's where the actual recovery begins. Not at the symptom. At the source.</p>
+          <p class="text-medium line-height-30">Not all addiction is rooted in trauma. But enough of it is that ignoring the link isn't a neutral position. It's a costly one. Treating the label without treating the wound underneath is how people spend years in and out of programs and never quite understand why nothing sticks.</p>
+          <p class="text-medium line-height-30">The real work isn't just removing the substance. It's understanding what the substance was doing there in the first place. What it was managing. What it was masking. What it was trying to make bearable.</p>
+          <p class="text-medium line-height-30"><strong>That's where the actual recovery begins. Not at the symptom. At the source.</strong></p>
         </div>
       </div>
     </div>
@@ -952,6 +1171,40 @@
       </div>
     </div>
   </div>
+  <script>
+  (function () {
+    var items = document.querySelectorAll('.ry-timeline__item');
+    var fill  = document.getElementById('ry-fill');
+    var track = document.querySelector('.ry-timeline__track');
+   
+    if (!items.length || !fill || !track) return;
+   
+    /* Grow the red fill line as the user scrolls through the timeline */
+    function updateFill() {
+      var trackRect  = track.getBoundingClientRect();
+      var trackTop   = trackRect.top + window.pageYOffset;
+      var trackH     = track.offsetHeight;
+      var scrolled   = window.pageYOffset + window.innerHeight * 0.65;
+      var pct        = Math.min(100, Math.max(0, ((scrolled - trackTop) / trackH) * 100));
+      fill.style.height = pct + '%';
+    }
+   
+    /* Fade cards in when they enter the viewport */
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+   
+    items.forEach(function (el) { observer.observe(el); });
+   
+    window.addEventListener('scroll', updateFill, { passive: true });
+    updateFill(); // run once on load in case already in view
+  })();
+  </script>
   <script>
     (function () {
       const CONSENT_KEY = 'ry_cookie_consent';
