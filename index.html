@@ -382,7 +382,41 @@
     /* Mobile */
     @media (max-width: 991px) {
       nav.sidebar-nav .sidenav-header .logo img {
-        content: url('images/webp/logo@2x.webp') !important;
+        content: url('images/webp/logo-white@2x.webp') !important;
+      }
+
+      /* Mobile readability fixes */
+      nav.sidebar-nav .navbar-left-sidebar a,
+      nav.sidebar-nav .navbar-left-sidebar a:focus,
+      nav.sidebar-nav .navbar-left-sidebar a:active,
+      nav.sidebar-nav .navbar-left-sidebar a[aria-expanded="true"] {
+        color: rgba(255,255,255,0.68) !important;
+        background-color: transparent !important;
+        text-decoration: none !important;
+      }
+
+      nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
+      nav.sidebar-nav .navbar-left-sidebar > li.active > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.open > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.show > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.dropdown.on > a,
+      nav.sidebar-nav .navbar-left-sidebar > li > a:focus,
+      nav.sidebar-nav .navbar-left-sidebar > li > a:active,
+      nav.sidebar-nav .navbar-left-sidebar > li > a[aria-expanded="true"],
+      nav.sidebar-nav .dropdown-menu li > a:hover,
+      nav.sidebar-nav .dropdown-menu li.active > a,
+      nav.sidebar-nav .dropdown-menu li.open > a,
+      nav.sidebar-nav .dropdown-menu li.show > a,
+      nav.sidebar-nav .dropdown-menu li.dropdown.on > a,
+      nav.sidebar-nav .dropdown-menu li > a:focus,
+      nav.sidebar-nav .dropdown-menu li > a:active,
+      nav.sidebar-nav .dropdown-menu li > a[aria-expanded="true"] {
+        color: #ffffff !important;
+        background-color: rgba(255,255,255,0.035) !important;
+      }
+
+      nav.sidebar-nav .navbar-left-sidebar a i {
+        color: inherit !important;
       }
 
       nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
@@ -802,7 +836,537 @@
                align-self: flex-start;
              }
            }
-  </style>
+  
+
+    /* ── MOBILE HOMEPAGE NAV — CLEAN FULL-WIDTH VERSION ── */
+    @media (max-width: 991px) {
+      body.home-page {
+        padding-left: 0 !important;
+      }
+
+      body.home-page .sidebar-wrapper {
+        padding-left: 0 !important;
+      }
+
+      body.home-page nav.sidebar-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        display: block !important;
+        padding: 0 !important;
+        background: #0d0d0d !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        box-shadow: 0 10px 32px rgba(0,0,0,0.42) !important;
+        z-index: 10050 !important;
+      }
+
+      body.home-page nav.sidebar-nav .sidenav-header {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 68px !important;
+        height: 68px !important;
+        padding: 0 18px !important;
+        background: #0d0d0d !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+      }
+
+      body.home-page nav.sidebar-nav .logo-holder {
+        min-height: 0 !important;
+        height: auto !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      body.home-page nav.sidebar-nav .sidenav-header .logo,
+      body.home-page nav.sidebar-nav .sidenav-header .logo img {
+        display: block !important;
+      }
+
+      body.home-page nav.sidebar-nav .sidenav-header .logo img {
+        content: url('images/webp/logo-white@2x.webp') !important;
+        width: auto !important;
+        max-width: 138px !important;
+        max-height: 34px !important;
+        opacity: 1 !important;
+      }
+
+      body.home-page nav.sidebar-nav .mobile-toggle {
+        display: block !important;
+        position: absolute !important;
+        top: 50% !important;
+        right: 18px !important;
+        transform: translateY(-50%) !important;
+        width: 28px !important;
+        height: 24px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      body.home-page nav.sidebar-nav .mobile-toggle span {
+        display: block !important;
+        width: 26px !important;
+        height: 2px !important;
+        margin: 5px 0 !important;
+        background: rgba(255,255,255,0.86) !important;
+        border-radius: 0 !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-collapse {
+        width: 100% !important;
+        max-height: calc(100vh - 68px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        background: #0d0d0d !important;
+        border-top: 0 !important;
+        padding: 0 !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #0d0d0d !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.075) !important;
+        background: transparent !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li > a {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 44px 15px 22px !important;
+        color: rgba(255,255,255,0.78) !important;
+        background: transparent !important;
+        border: 0 !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        letter-spacing: .17em !important;
+        font-weight: 400 !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        transition: color .18s ease, background .18s ease !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li > a::before,
+      body.home-page nav.sidebar-nav .dropdown-menu li > a::before {
+        content: none !important;
+        display: none !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li > a:focus,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li > a:active,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li.open > a,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li.show > a,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li.dropdown.on > a,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar > li.active > a {
+        color: #ffffff !important;
+        background: rgba(255,255,255,0.035) !important;
+        padding-left: 22px !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.dropdown > a > i.fa-solid,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.dropdown > a > i.fas {
+        position: absolute !important;
+        right: 18px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 18px !important;
+        height: 18px !important;
+        line-height: 18px !important;
+        margin: 0 !important;
+        color: rgba(255,255,255,0.34) !important;
+        font-size: 10px !important;
+        text-align: center !important;
+      }
+
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.open > a > i,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.show > a > i,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.dropdown.on > a > i {
+        color: #ff0000 !important;
+        transform: translateY(-50%) rotate(90deg) !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level,
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level,
+      body.home-page nav.sidebar-nav .navbar-left-sidebar li.dropdown ul.dropdown-menu {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #111111 !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level,
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level .dropdown-menu {
+        background: #151515 !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu li {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.055) !important;
+        background: transparent !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu li > a {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 13px 44px 13px 40px !important;
+        color: rgba(255,255,255,0.56) !important;
+        background: transparent !important;
+        border: 0 !important;
+        font-family: 'Bebas Neue', sans-serif !important;
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+        letter-spacing: .15em !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        transition: color .18s ease, background .18s ease !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level li > a,
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level .dropdown-menu li > a {
+        padding-left: 56px !important;
+        color: rgba(255,255,255,0.48) !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu li > a:hover,
+      body.home-page nav.sidebar-nav .dropdown-menu li > a:focus,
+      body.home-page nav.sidebar-nav .dropdown-menu li > a:active,
+      body.home-page nav.sidebar-nav .dropdown-menu li.open > a,
+      body.home-page nav.sidebar-nav .dropdown-menu li.show > a,
+      body.home-page nav.sidebar-nav .dropdown-menu li.dropdown.on > a,
+      body.home-page nav.sidebar-nav .dropdown-menu li.active > a {
+        color: #ffffff !important;
+        background: rgba(255,255,255,0.035) !important;
+        padding-left: 40px !important;
+      }
+
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level li > a:hover,
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level li > a:focus,
+      body.home-page nav.sidebar-nav .dropdown-menu.third-level li.active > a,
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level .dropdown-menu li > a:hover,
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level .dropdown-menu li > a:focus,
+      body.home-page nav.sidebar-nav .dropdown-menu.second-level .dropdown-menu li.active > a {
+        padding-left: 56px !important;
+      }
+
+      body.home-page nav.sidebar-nav .footer-holder,
+      body.home-page nav.sidebar-nav .position-absolute.bottom-0 {
+        display: none !important;
+      }
+
+      body.home-page nav.sidebar-nav .side-left-menu-close,
+      body.home-page nav.sidebar-nav .close-side {
+        display: none !important;
+      }
+    }
+
+
+    /* ── RY MOBILE NAV STATE FIX — closed by default, above page content ── */
+    @media (max-width: 991px) {
+      nav.sidebar-nav,
+      body.home-page nav.sidebar-nav,
+      body:not(.home-page) nav.bootsnav.sidebar-nav {
+        z-index: 99999 !important;
+      }
+
+      nav.sidebar-nav .sidenav-header,
+      body.home-page nav.sidebar-nav .sidenav-header,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .sidenav-header {
+        position: relative !important;
+        z-index: 100001 !important;
+      }
+
+      nav.sidebar-nav #navbar-menu,
+      body.home-page nav.sidebar-nav #navbar-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu {
+        position: relative !important;
+        z-index: 100000 !important;
+      }
+
+      nav.sidebar-nav #navbar-menu.collapse:not(.show),
+      body.home-page nav.sidebar-nav #navbar-menu.collapse:not(.show),
+      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu.collapse:not(.show) {
+        display: none !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+      }
+
+      nav.sidebar-nav #navbar-menu.collapse.show,
+      body.home-page nav.sidebar-nav #navbar-menu.collapse.show,
+      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu.collapse.show {
+        display: block !important;
+        height: auto !important;
+        max-height: calc(100vh - 68px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        visibility: visible !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu,
+      body.home-page nav.sidebar-nav .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu {
+        display: none !important;
+      }
+
+      nav.sidebar-nav li.open > .dropdown-menu,
+      nav.sidebar-nav li.show > .dropdown-menu,
+      nav.sidebar-nav .dropdown-menu.show,
+      body.home-page nav.sidebar-nav li.open > .dropdown-menu,
+      body.home-page nav.sidebar-nav li.show > .dropdown-menu,
+      body.home-page nav.sidebar-nav .dropdown-menu.show,
+      body:not(.home-page) nav.bootsnav.sidebar-nav li.open > .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav li.show > .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu.show {
+        display: block !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(2) {
+        opacity: 0 !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+      }
+    }
+    /* ── RY MOBILE NAV HARD FIX — full panel open/closed state ── */
+    @media (max-width: 991px) {
+      nav.sidebar-nav {
+        overflow: visible !important;
+      }
+
+      nav.sidebar-nav > .col-12.px-0,
+      nav.sidebar-nav > div.col-12.px-0 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 100000 !important;
+        background: #0d0d0d !important;
+      }
+
+      nav.sidebar-nav #navbar-menu {
+        display: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        background: #0d0d0d !important;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu {
+        display: block !important;
+        height: auto !important;
+        max-height: calc(100vh - 68px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar,
+      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar > li {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu {
+        display: none !important;
+      }
+
+      nav.sidebar-nav li.open > .dropdown-menu,
+      nav.sidebar-nav li.show > .dropdown-menu,
+      nav.sidebar-nav .dropdown-menu.show {
+        display: block !important;
+      }
+    }
+
+
+    /* RY MOBILE NAV FINAL OVERRIDE - sewn in 2026-04-24 */
+    @media (max-width: 991px) {
+      nav.sidebar-nav,
+      body.home-page nav.sidebar-nav,
+      body:not(.home-page) nav.bootsnav.sidebar-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        background: #0d0d0d !important;
+        z-index: 999999 !important;
+      }
+
+      nav.sidebar-nav .sidenav-header,
+      body.home-page nav.sidebar-nav .sidenav-header,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .sidenav-header {
+        position: relative !important;
+        z-index: 1000001 !important;
+      }
+
+      nav.sidebar-nav #navbar-menu,
+      body.home-page nav.sidebar-nav #navbar-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu {
+        display: none !important;
+        position: fixed !important;
+        top: 68px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        height: calc(100vh - 68px) !important;
+        max-height: calc(100vh - 68px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        background: #0d0d0d !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-top: 1px solid rgba(255,255,255,0.08) !important;
+        z-index: 1000000 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      body.ry-nav-open nav.sidebar-nav #navbar-menu,
+      body.ry-nav-open nav.bootsnav.sidebar-nav #navbar-menu {
+        display: block !important;
+      }
+
+      body.ry-nav-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar,
+      body.ry-nav-open nav.bootsnav.sidebar-nav #navbar-menu .navbar-left-sidebar {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #0d0d0d !important;
+      }
+
+      body.ry-nav-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar > li,
+      body.ry-nav-open nav.bootsnav.sidebar-nav #navbar-menu .navbar-left-sidebar > li {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+      }
+
+      body.ry-nav-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar > li > a,
+      body.ry-nav-open nav.bootsnav.sidebar-nav #navbar-menu .navbar-left-sidebar > li > a {
+        display: block !important;
+        width: 100% !important;
+        color: rgba(255,255,255,0.78) !important;
+        background: transparent !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu,
+      body.home-page nav.sidebar-nav .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu {
+        display: none !important;
+      }
+
+      nav.sidebar-nav li.open > .dropdown-menu,
+      nav.sidebar-nav li.show > .dropdown-menu,
+      nav.sidebar-nav .dropdown-menu.show,
+      body.home-page nav.sidebar-nav li.open > .dropdown-menu,
+      body.home-page nav.sidebar-nav li.show > .dropdown-menu,
+      body.home-page nav.sidebar-nav .dropdown-menu.show,
+      body:not(.home-page) nav.bootsnav.sidebar-nav li.open > .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav li.show > .dropdown-menu,
+      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu.show {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: #111111 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(2) {
+        opacity: 0 !important;
+      }
+
+      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
+      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
+      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+      }
+
+      body.ry-nav-open { overflow: hidden !important; }
+    }
+
+</style>
 
 </head>
 <body class="home-page">
@@ -816,7 +1380,7 @@
       </div><button aria-label="Toggle navigation" class="navbar-toggler mobile-toggle" id="mobileToggleSidenav" type="button"><span></span><span></span><span></span></button>
     </div>
     <div class="col-12 px-0">
-      <div class="collapse navbar-collapse no-padding" id="navbar-menu">
+      <div class="navbar-collapse no-padding ry-mobile-menu" id="navbar-menu">
         <ul class="nav navbar-nav navbar-left-sidebar font-weight-500">
           <!-- HOME -->
           <li>
@@ -1610,5 +2174,112 @@
       applyConsentState();
     })();
   </script>
+
+  <script>
+/* RY mobile sidebar nav controller: final plain overlay controller */
+(function () {
+  function initRyMobileNav() {
+    const oldToggle = document.getElementById('mobileToggleSidenav');
+    const nav = document.querySelector('nav.sidebar-nav');
+    const menu = document.getElementById('navbar-menu');
+
+    if (!oldToggle || !nav || !menu) return;
+
+    const toggle = oldToggle.cloneNode(true);
+    oldToggle.parentNode.replaceChild(toggle, oldToggle);
+
+    function isMobile() { return window.matchMedia('(max-width: 991px)').matches; }
+
+    function closeSubmenus() {
+      nav.querySelectorAll('li.dropdown.open, li.dropdown.show, li.dropdown.on').forEach(function (li) {
+        li.classList.remove('open', 'show', 'on');
+        const link = li.querySelector(':scope > a');
+        const submenu = li.querySelector(':scope > .dropdown-menu');
+        if (link) link.setAttribute('aria-expanded', 'false');
+        if (submenu) {
+          submenu.classList.remove('show');
+          submenu.removeAttribute('style');
+        }
+      });
+    }
+
+    function closeMenu() {
+      document.body.classList.remove('ry-nav-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-expanded', 'false');
+      closeSubmenus();
+    }
+
+    function openMenu() {
+      document.body.classList.add('ry-nav-open');
+      toggle.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function (event) {
+      if (!isMobile()) return;
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      document.body.classList.contains('ry-nav-open') ? closeMenu() : openMenu();
+    }, true);
+
+    nav.querySelectorAll('li.dropdown > a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (!isMobile()) return;
+        const li = link.parentElement;
+        const submenu = li ? li.querySelector(':scope > .dropdown-menu') : null;
+        if (!submenu) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        const parentList = li.parentElement;
+        if (parentList) {
+          Array.from(parentList.children).forEach(function (sibling) {
+            if (sibling !== li && sibling.classList && sibling.classList.contains('dropdown')) {
+              sibling.classList.remove('open', 'show', 'on');
+              const siblingLink = sibling.querySelector(':scope > a');
+              const siblingMenu = sibling.querySelector(':scope > .dropdown-menu');
+              if (siblingLink) siblingLink.setAttribute('aria-expanded', 'false');
+              if (siblingMenu) {
+                siblingMenu.classList.remove('show');
+                siblingMenu.removeAttribute('style');
+              }
+            }
+          });
+        }
+
+        const willOpen = !(li.classList.contains('open') || li.classList.contains('show'));
+        li.classList.toggle('open', willOpen);
+        li.classList.toggle('show', willOpen);
+        li.classList.toggle('on', willOpen);
+        submenu.classList.toggle('show', willOpen);
+        link.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      }, true);
+    });
+
+    nav.querySelectorAll('.navbar-left-sidebar a[href]:not([href="#"])').forEach(function (link) {
+      link.addEventListener('click', function () { if (isMobile()) closeMenu(); });
+    });
+
+    window.addEventListener('resize', function () { if (!isMobile()) closeMenu(); });
+    window.addEventListener('orientationchange', function () { if (!isMobile()) closeMenu(); });
+
+    closeMenu();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRyMobileNav);
+  } else {
+    initRyMobileNav();
+  }
+})();
+</script>
+
+
 </body>
 </html>
