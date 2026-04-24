@@ -45,6 +45,7 @@ Table of contents
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* ===================================
     02. Reset
@@ -2616,7 +2617,7 @@ nav.navbar.sidebar-nav .navbar-left-sidebar li.dropdown .third-level li:first-ch
 
 /* pull left sidebar */
 .cbp-spmenu {background: #fff; position: fixed; z-index: 1;}
-.cbp-spmenu-vertical {width: 455px;height: 100%;top: 0;	z-index: 10005;}
+.cbp-spmenu-vertical {width: 455px;height: 100%;top: 0; z-index: 10005;}
 .cbp-spmenu-right {right: -455px;}
 .cbp-spmenu-left {left: -100%;}
 .cbp-spmenu-left.cbp-spmenu-open {left: 0;}
@@ -3827,7 +3828,7 @@ aside .instafeed-grid.gutter-extra-large, footer .instafeed-grid.gutter-extra-la
 
 /* services modern */
 .arrow-bottom{position: relative;}
-.arrow-bottom:after {top: 100%;	left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-top-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
+.arrow-bottom:after {top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-top-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
 .arrow-top{position: relative;}
 .arrow-top:after{top: -29px; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(245, 245, 245, 0); border-bottom-color: #f5f5f5; border-width: 15px; margin-left: -15px; z-index: 9;}
 
@@ -3838,8 +3839,8 @@ aside .instafeed-grid.gutter-extra-large, footer .instafeed-grid.gutter-extra-la
 
 /* sidebar nav style 2 */
 .tparrows:before {font-family: "Font Awesome 6 Free"; font-weight: 700;}
-.tparrows.tp-leftarrow:before	{content: '\f060';}
-.tparrows.tp-rightarrow:before	{content: '\f061';}
+.tparrows.tp-leftarrow:before   {content: '\f060';}
+.tparrows.tp-rightarrow:before  {content: '\f061';}
 
 /* rev slider */
 .rev_slider_wrapper {height: 980px;}
@@ -5476,80 +5477,158 @@ body.policy-modal-open {
 
 
 
+
+
+
 /* ============================================================
-   SITEWIDE HORIZONTAL NAV SKIN
-   Applies to all pages except the homepage (body.home-page)
-   Mirrors the Index sidebar's colour + typography treatment
+   SITEWIDE HORIZONTAL NAV SKIN — CLEAN RECOVER-YOU STYLE
+   Applies to horizontal Bootsnav headers only.
+   Sidebar navs are excluded so page-specific sidebar skins stay intact.
    ============================================================ */
 
-/* ── NAV BAR WRAPPER ── */
-body:not(.home-page) nav.bootsnav,
-body:not(.home-page) header.sticky nav.bootsnav,
-body:not(.home-page) header.header-appear nav.bootsnav {
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav),
+body:not(.home-page) header.sticky nav.bootsnav:not(.sidebar-nav),
+body:not(.home-page) header.header-appear nav.bootsnav:not(.sidebar-nav) {
   background: #0d0d0d !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22) !important;
 }
 
-/* ── TOP-LEVEL NAV LINKS ── */
-body:not(.home-page) nav.bootsnav ul.nav > li > a {
-  color: rgba(255, 255, 255, 0.55) !important;
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: 10.5px !important;
-  letter-spacing: 0.12em !important;
-  font-weight: 200 !important;
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) .navbar-collapse,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) .navbar-nav {
+  background: transparent !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li {
+  margin: 0 !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a {
+  position: relative !important;
+  color: rgba(255, 255, 255, 0.62) !important;
+  font-family: 'Bebas Neue', 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.15em !important;
+  font-weight: 400 !important;
   text-transform: uppercase !important;
-  transition: color 0.2s ease !important;
+  padding: 27px 13px 25px !important;
+  background: transparent !important;
+  transition: color 0.18s ease, background 0.18s ease !important;
 }
 
-body:not(.home-page) nav.bootsnav ul.nav > li > a:hover,
-body:not(.home-page) nav.bootsnav ul.nav > li.active > a {
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 18px;
+  height: 1px;
+  background: #ff0000;
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: center;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a:hover,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.active > a,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.open > a,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.show > a {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a:hover::after,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.active > a::after,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.open > a::after,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.show > a::after {
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
+/* Dropdown/caret icons */
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > i.fa-angle-down {
+  color: rgba(255, 255, 255, 0.28) !important;
+  margin-left: 6px !important;
+  transition: color 0.18s ease, transform 0.18s ease !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li:hover > a i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.open > a i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.show > a i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li:hover > i.fa-angle-down {
   color: #ff0000 !important;
-  background: rgba(255, 0, 0, 0.04) !important;
 }
 
-/* ── DROPDOWN CARET ICONS ── */
-body:not(.home-page) nav.bootsnav ul.nav > li > i.fa-angle-down {
-  color: rgba(255, 255, 255, 0.2) !important;
-  transition: color 0.2s ease !important;
+/* Dropdown panels */
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu {
+  background: #101010 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 2px solid rgba(255, 0, 0, 0.55) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45) !important;
+  padding: 6px 0 !important;
+  min-width: 230px !important;
 }
 
-body:not(.home-page) nav.bootsnav ul.nav > li:hover > i.fa-angle-down {
-  color: #ff0000 !important;
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li {
+  margin: 0 !important;
 }
 
-/* ── DROPDOWN PANELS (2nd level) ── */
-body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu {
-  background: #111111 !important;
-  border: 1px solid rgba(255, 255, 255, 0.07) !important;
-  border-top: 2px solid rgba(255, 0, 0, 0.3) !important;
-}
-
-body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu li a {
-  color: rgba(255, 255, 255, 0.45) !important;
-  font-family: 'Bebas Neue', sans-serif !important;
-  font-size: 10px !important;
-  letter-spacing: 0.12em !important;
-  font-weight: 200 !important;
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a {
+  position: relative !important;
+  color: rgba(255, 255, 255, 0.50) !important;
+  font-family: 'Bebas Neue', 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.13em !important;
+  font-weight: 400 !important;
   text-transform: uppercase !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-  transition: color 0.2s ease, padding-left 0.2s ease !important;
+  padding: 12px 18px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045) !important;
+  background: transparent !important;
+  transition: color 0.18s ease, background 0.18s ease, padding-left 0.18s ease !important;
 }
 
-body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu li a:hover {
-  color: #ff0000 !important;
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li:last-child > a {
+  border-bottom: 0 !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a:hover,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.active > a,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.open > a,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.show > a {
+  color: #ffffff !important;
   padding-left: 22px !important;
-  background: rgba(255, 0, 0, 0.04) !important;
+  background: rgba(255, 0, 0, 0.055) !important;
 }
 
-/* ── NESTED DROPDOWN PANELS (3rd level) ── */
-body:not(.home-page) nav.bootsnav ul.nav .dropdown-menu .dropdown-menu {
-  border-top: none !important;
-  border-left: 2px solid rgba(255, 0, 0, 0.3) !important;
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a i {
+  color: rgba(255, 255, 255, 0.24) !important;
+  transition: color 0.18s ease !important;
 }
 
-/* ── LOGO: hide dark, show light — all scroll states ──
-   The theme uses visibility/opacity/width (not display) to toggle logos.
-   We must override on the same properties to win the cascade.        */
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a:hover i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.open > a i,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.show > a i {
+  color: #ff0000 !important;
+}
+
+/* Third-level dropdowns get a subtle hierarchy shift */
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu .dropdown-menu {
+  background: #151515 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 2px solid rgba(255, 0, 0, 0.45) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.5) !important;
+}
+
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu .dropdown-menu li a {
+  color: rgba(255, 255, 255, 0.46) !important;
+  font-size: 11.5px !important;
+}
+
+/* Logo: force light logo on dark horizontal nav */
 body:not(.home-page) header .logo .logo-dark,
 body:not(.home-page) header.sticky .logo .logo-dark,
 body:not(.home-page) header.header-appear .logo .logo-dark {
@@ -5569,16 +5648,56 @@ body:not(.home-page) header.header-appear .logo .logo-light.default {
   width: auto !important;
 }
 
-/* ── MOBILE HAMBURGER BARS ── */
-body:not(.home-page) nav.bootsnav .navbar-toggler .icon-bar {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+/* Mobile hamburger */
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) .navbar-toggler .icon-bar,
+body:not(.home-page) nav.bootsnav:not(.sidebar-nav) .navbar-toggler span {
+  background-color: rgba(255, 255, 255, 0.75) !important;
 }
 
-/* ── MOBILE OPEN STATE ── */
+/* Mobile open state */
 @media (max-width: 991px) {
-  body:not(.home-page) nav.bootsnav ul.nav > li.open > a,
-  body:not(.home-page) nav.bootsnav ul.nav > li.show > a {
-    color: #ff0000 !important;
-    background: rgba(255, 0, 0, 0.06) !important;
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a {
+    padding: 14px 22px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045) !important;
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a::after {
+    left: 0;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    transform: scaleY(0.35);
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li > a:hover::after,
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.active > a::after,
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.open > a::after,
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav > li.show > a::after {
+    transform: scaleY(1);
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu {
+    box-shadow: none !important;
+    border-top: 0 !important;
+    border-left: 2px solid rgba(255, 0, 0, 0.32) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a {
+    padding: 11px 26px !important;
+  }
+
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li a:hover,
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.open > a,
+  body:not(.home-page) nav.bootsnav:not(.sidebar-nav) ul.nav .dropdown-menu li.show > a {
+    padding-left: 30px !important;
   }
 }

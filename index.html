@@ -164,135 +164,646 @@
            text-align: left;
          }
        }
-       /* ── HOMEPAGE SIDEBAR SKIN ── */
-       nav.sidebar-nav {
-         background: #0d0d0d !important;
-         border-right: 1px solid rgba(255,255,255,0.06) !important;
-       }
+    /* ── HOMEPAGE SIDEBAR NAV — CLEAN / SHARP VERSION ── */
+    nav.sidebar-nav {
+      --ry-nav-bg: #0d0d0d;
+      --ry-nav-panel: #111111;
+      --ry-nav-panel-2: #151515;
+      --ry-nav-line: rgba(255,255,255,0.065);
+      --ry-nav-text: rgba(255,255,255,0.58);
+      --ry-nav-text-soft: rgba(255,255,255,0.44);
+      --ry-nav-text-active: #ffffff;
+      --ry-nav-red: #ff0000;
+      background: var(--ry-nav-bg) !important;
+      border-right: 1px solid var(--ry-nav-line) !important;
+      box-shadow: 16px 0 40px rgba(0,0,0,0.22);
+    }
 
-       nav.sidebar-nav .sidenav-header {
-         background: #0d0d0d;
-         border-bottom: 1px solid rgba(255,255,255,0.06);
-         padding-bottom: 20px;
-       }
+    nav.sidebar-nav .sidenav-header {
+      background: var(--ry-nav-bg) !important;
+      border-bottom: 1px solid var(--ry-nav-line) !important;
+      padding-bottom: 20px;
+    }
 
-       /* ── TOP LEVEL NAV ITEMS ── */
-       nav.sidebar-nav .navbar-left-sidebar > li > a {
-         color: rgba(255,255,255,0.55) !important;
-         font-family: 'Bebas Neue', sans-serif !important;
-         font-size: 13px !important;
-         letter-spacing: .14em !important;
-         text-transform: uppercase !important;
-         padding: 14px 30px !important;
-         border-bottom: 1px solid rgba(255,255,255,0.04) !important;
-         transition: color .2s, padding-left .2s !important;
-       }
+    /* Remove inherited template spacing that makes the sidebar feel bulky */
+    nav.sidebar-nav .navbar-left-sidebar,
+    nav.sidebar-nav .dropdown-menu {
+      margin: 0 !important;
+    }
 
-       nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
-       nav.sidebar-nav .navbar-left-sidebar > li.active > a {
-         color: #ff0000 !important;
-         padding-left: 38px !important;
-         background: rgba(255,0,0,0.04) !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar li,
+    nav.sidebar-nav .dropdown-menu li {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
 
-       nav.sidebar-nav .navbar-left-sidebar > li > a i {
-         color: rgba(255,255,255,0.2) !important;
-         transition: color .2s !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar li a,
+    nav.sidebar-nav .dropdown-menu li > a {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box;
+    }
 
-       nav.sidebar-nav .navbar-left-sidebar > li > a:hover i {
-         color: #ff0000 !important;
-       }
+    /* Top-level items */
+    nav.sidebar-nav .navbar-left-sidebar > li > a {
+      position: relative;
+      display: block !important;
+      color: var(--ry-nav-text) !important;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 15px !important;
+      line-height: 1.25 !important;
+      letter-spacing: .145em !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      padding: 14px 30px !important;
+      border-bottom: 1px solid rgba(255,255,255,0.045) !important;
+      background: transparent !important;
+      transition: color .18s ease, background .18s ease, padding-left .18s ease !important;
+    }
 
-       /* ── DROPDOWN MENUS (second + third level) ── */
-       nav.sidebar-nav .dropdown-menu.second-level,
-       nav.sidebar-nav .dropdown-menu.third-level {
-         background: #111111 !important;
-         border: 1px solid rgba(255,255,255,0.07) !important;
-         border-left: 2px solid rgba(255,0,0,0.3) !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar > li > a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--ry-nav-red);
+      opacity: 0;
+      transition: opacity .18s ease;
+    }
 
-       nav.sidebar-nav .dropdown-menu.second-level li a,
-       nav.sidebar-nav .dropdown-menu.third-level li a {
-         color: rgba(255,255,255,0.45) !important;
-         font-family: 'Bebas Neue', sans-serif !important;
-         font-size: 12px !important;
-         letter-spacing: .12em !important;
-         text-transform: uppercase !important;
-         border-bottom: 1px solid rgba(255,255,255,0.04) !important;
-         padding: 10px 20px !important;
-         transition: color .2s, padding-left .2s !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
+    nav.sidebar-nav .navbar-left-sidebar > li.active > a,
+    nav.sidebar-nav .navbar-left-sidebar > li.open > a,
+    nav.sidebar-nav .navbar-left-sidebar > li.show > a,
+    nav.sidebar-nav .navbar-left-sidebar > li.dropdown.on > a {
+      color: var(--ry-nav-text-active) !important;
+      padding-left: 33px !important; /* minimal polish shift — was 38px */
+      background: rgba(255,255,255,0.025) !important;
+    }
 
-       nav.sidebar-nav .dropdown-menu.second-level li a:hover,
-       nav.sidebar-nav .dropdown-menu.third-level li a:hover {
-         color: #ff0000 !important;
-         padding-left: 28px !important;
-         background: rgba(255,0,0,0.04) !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar > li > a:hover::before,
+    nav.sidebar-nav .navbar-left-sidebar > li.active > a::before,
+    nav.sidebar-nav .navbar-left-sidebar > li.open > a::before,
+    nav.sidebar-nav .navbar-left-sidebar > li.show > a::before,
+    nav.sidebar-nav .navbar-left-sidebar > li.dropdown.on > a::before {
+      opacity: .95;
+    }
 
-       nav.sidebar-nav .dropdown-menu.second-level li a i,
-       nav.sidebar-nav .dropdown-menu.third-level li a i {
-         color: rgba(255,255,255,0.2) !important;
-       }
+    /* Arrow icons */
+    nav.sidebar-nav .navbar-left-sidebar li.dropdown > a > i.fa-solid,
+    nav.sidebar-nav .navbar-left-sidebar li.dropdown > a > i.fas {
+      right: 22px !important;
+      color: rgba(255,255,255,0.24) !important;
+      font-size: 10px !important;
+      transition: color .18s ease, transform .18s ease !important;
+    }
 
-       nav.sidebar-nav .dropdown-menu.second-level li a:hover i,
-       nav.sidebar-nav .dropdown-menu.third-level li a:hover i {
-         color: #ff0000 !important;
-       }
+    nav.sidebar-nav .navbar-left-sidebar li.dropdown > a:hover > i,
+    nav.sidebar-nav .navbar-left-sidebar li.dropdown.on > a > i,
+    nav.sidebar-nav .navbar-left-sidebar li.open > a > i,
+    nav.sidebar-nav .navbar-left-sidebar li.show > a > i {
+      color: var(--ry-nav-red) !important;
+    }
 
-       /* ── BOTTOM COPYRIGHT ── */
-       nav.sidebar-nav .footer-holder {
-         border-color: rgba(255,255,255,0.1) !important;
-       }
+    /* Dropdown panels */
+    nav.sidebar-nav .dropdown-menu.second-level,
+    nav.sidebar-nav .dropdown-menu.third-level {
+      height: 100vh !important;
+      top: 0 !important;
+      padding-top: 155px !important;
+      padding-bottom: 40px !important;
+      border-top: none !important;
+      border-right: 1px solid var(--ry-nav-line) !important;
+      border-bottom: none !important;
+      border-left: 1px solid rgba(255,0,0,0.20) !important;
+      border-radius: 0 !important;
+      box-shadow: 18px 0 36px rgba(0,0,0,0.28) !important;
+    }
 
-       nav.sidebar-nav .footer-holder .text-medium-gray,
-       nav.sidebar-nav .footer-holder * {
-         color: rgba(255,255,255,0.55) !important;
-         font-size: 11px !important;
-       }
+    nav.sidebar-nav .dropdown-menu.second-level {
+      left: 290px !important;
+      width: 280px !important;
+      background: var(--ry-nav-panel) !important;
+    }
 
-       nav.sidebar-nav .footer-holder .text-deep-pink {
-         color: #ff0000 !important;
-       }
+    nav.sidebar-nav .dropdown-menu.third-level {
+      left: 570px !important;
+      width: 280px !important;
+      background: var(--ry-nav-panel-2) !important;
+    }
 
-       /* ── GRAIN TEXTURE ── */
-       nav.sidebar-nav::before {
-         content: '';
-         position: absolute;
-         inset: 0;
-         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-         pointer-events: none;
-         z-index: 0;
-         opacity: .4;
-       }
-       /* ── MOBILE NAV LOGO SWAP ── */
-       @media (max-width: 991px) {
-         nav.sidebar-nav .sidenav-header .logo img {
-           content: url('images/webp/logo@2x.webp') !important;
-         }
-       }
+    /* Second + third level links */
+    nav.sidebar-nav .dropdown-menu.second-level li a,
+    nav.sidebar-nav .dropdown-menu.third-level li a {
+      position: relative;
+      display: block !important;
+      color: var(--ry-nav-text-soft) !important;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 14px !important;
+      line-height: 1.28 !important;
+      letter-spacing: .12em !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      padding: 11px 42px 11px 24px !important;
+      border-bottom: 1px solid rgba(255,255,255,0.045) !important;
+      background: transparent !important;
+      transition: color .18s ease, background .18s ease, padding-left .18s ease !important;
+    }
 
-       /* ── MOBILE DROPDOWN ACTIVE/OPEN STATE FIX ── */
-       @media (max-width: 991px) {
-         nav.sidebar-nav .navbar-left-sidebar > li.open > a,
-         nav.sidebar-nav .navbar-left-sidebar > li.show > a,
-         nav.sidebar-nav .navbar-left-sidebar > li.active > a,
-         nav.sidebar-nav .dropdown-menu.second-level li.open > a,
-         nav.sidebar-nav .dropdown-menu.second-level li.show > a,
-         nav.sidebar-nav .dropdown-menu.third-level li.open > a,
-         nav.sidebar-nav .dropdown-menu.third-level li.show > a {
-           color: #ff0000 !important;
-           background: rgba(255,0,0,0.06) !important;
-         }
+    nav.sidebar-nav .dropdown-menu.third-level li a {
+      color: rgba(255,255,255,0.40) !important;
+    }
 
-         nav.sidebar-nav .navbar-left-sidebar li.open > a,
-         nav.sidebar-nav .navbar-left-sidebar li.show > a {
-           color: #ff0000 !important;
-           background: rgba(255,0,0,0.06) !important;
-         }
-       }
+    nav.sidebar-nav .dropdown-menu.second-level li a::before,
+    nav.sidebar-nav .dropdown-menu.third-level li a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--ry-nav-red);
+      opacity: 0;
+      transition: opacity .18s ease;
+    }
+
+    nav.sidebar-nav .dropdown-menu.second-level li a:hover,
+    nav.sidebar-nav .dropdown-menu.third-level li a:hover,
+    nav.sidebar-nav .dropdown-menu.second-level li.active > a,
+    nav.sidebar-nav .dropdown-menu.third-level li.active > a,
+    nav.sidebar-nav .dropdown-menu.second-level li.open > a,
+    nav.sidebar-nav .dropdown-menu.third-level li.open > a,
+    nav.sidebar-nav .dropdown-menu.second-level li.show > a,
+    nav.sidebar-nav .dropdown-menu.third-level li.show > a,
+    nav.sidebar-nav .dropdown-menu.second-level li.dropdown.on > a,
+    nav.sidebar-nav .dropdown-menu.third-level li.dropdown.on > a {
+      color: #ffffff !important;
+      padding-left: 27px !important; /* minimal polish shift — was 28px+ with inherited spacing */
+      background: rgba(255,255,255,0.025) !important;
+    }
+
+    nav.sidebar-nav .dropdown-menu.second-level li a:hover::before,
+    nav.sidebar-nav .dropdown-menu.third-level li a:hover::before,
+    nav.sidebar-nav .dropdown-menu.second-level li.active > a::before,
+    nav.sidebar-nav .dropdown-menu.third-level li.active > a::before,
+    nav.sidebar-nav .dropdown-menu.second-level li.open > a::before,
+    nav.sidebar-nav .dropdown-menu.third-level li.open > a::before,
+    nav.sidebar-nav .dropdown-menu.second-level li.show > a::before,
+    nav.sidebar-nav .dropdown-menu.third-level li.show > a::before,
+    nav.sidebar-nav .dropdown-menu.second-level li.dropdown.on > a::before,
+    nav.sidebar-nav .dropdown-menu.third-level li.dropdown.on > a::before {
+      opacity: .85;
+    }
+
+    nav.sidebar-nav .dropdown-menu.second-level li a:hover i,
+    nav.sidebar-nav .dropdown-menu.third-level li a:hover i,
+    nav.sidebar-nav .dropdown-menu.second-level li.dropdown.on > a i,
+    nav.sidebar-nav .dropdown-menu.third-level li.dropdown.on > a i {
+      color: var(--ry-nav-red) !important;
+    }
+
+    /* Footer */
+    nav.sidebar-nav .footer-holder {
+      border-color: rgba(255,255,255,0.1) !important;
+    }
+
+    nav.sidebar-nav .footer-holder .text-medium-gray,
+    nav.sidebar-nav .footer-holder * {
+      color: rgba(255,255,255,0.55) !important;
+      font-size: 11px !important;
+    }
+
+    nav.sidebar-nav .footer-holder .text-deep-pink {
+      color: var(--ry-nav-red) !important;
+    }
+
+    /* Mobile */
+    @media (max-width: 991px) {
+      nav.sidebar-nav .sidenav-header .logo img {
+        content: url('images/webp/logo@2x.webp') !important;
+      }
+
+      nav.sidebar-nav .navbar-left-sidebar > li > a:hover,
+      nav.sidebar-nav .navbar-left-sidebar > li.active > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.open > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.show > a,
+      nav.sidebar-nav .navbar-left-sidebar > li.dropdown.on > a {
+        padding-left: 31px !important;
+        color: #ffffff !important;
+        background: rgba(255,255,255,0.025) !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu.second-level,
+      nav.sidebar-nav .dropdown-menu.third-level {
+        position: static !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-right: none !important;
+        border-left: 1px solid rgba(255,0,0,0.18) !important;
+        background: #111111 !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu.second-level li a,
+      nav.sidebar-nav .dropdown-menu.third-level li a {
+        padding-left: 36px !important;
+      }
+
+      nav.sidebar-nav .dropdown-menu.second-level li a:hover,
+      nav.sidebar-nav .dropdown-menu.third-level li a:hover,
+      nav.sidebar-nav .dropdown-menu.second-level li.open > a,
+      nav.sidebar-nav .dropdown-menu.third-level li.open > a,
+      nav.sidebar-nav .dropdown-menu.second-level li.show > a,
+      nav.sidebar-nav .dropdown-menu.third-level li.show > a {
+        padding-left: 39px !important;
+      }
+    }
+
+                blockquote {
+                    margin-top: 40px;
+                    padding-left: 25px;
+                    border-left: 3px solid #ff2f6e;
+                }
+                .text-deep-pink strong {
+                    animation: pulseGlow 4s ease-in-out infinite;
+                }
+
+                @keyframes pulseGlow {
+                    0%, 100% { text-shadow: 0 0 4px rgba(255,47,110,0.4); }
+                    50% { text-shadow: 0 0 12px rgba(255,47,110,0.7); }
+                }
+                .text-medium.text-white {
+                    line-height: 1.75;
+                    opacity: 0.92;
+                    margin-bottom: 22px;
+                }
+                h5.alt-font {
+                    margin-bottom: 10px;
+                    letter-spacing: 0.5px;
+                }
+                .text-deep-pink.text-large strong {
+                    display: inline-block;
+                    border-bottom: 2px solid #ff2f6e;
+                    padding-bottom: 4px;
+                    margin-bottom: 10px;
+                }
+                .extra-big-section {
+                    background-blend-mode: overlay;
+                    background-size: cover;
+                }
+ 
+           /* Scoped styling */
+           .ry-warning{
+             background:linear-gradient(to bottom,#121212,#000);
+             padding:96px 0 104px;
+           }
+
+           .ry-warning .card{
+             background:rgba(22,22,22,0.85);                     /* translucent for glass effect */
+             backdrop-filter:blur(6px) saturate(140%);
+             border:1px solid rgba(255,42,42,.22);
+             border-top:2px solid #ff2a2a;
+             border-radius:18px;
+             padding:42px 40px;
+             box-shadow:
+               0 18px 48px rgba(0,0,0,.55),
+               0 0 0 1px rgba(255,255,255,.04) inset,
+               0 20px 50px rgba(255,42,42,.05);
+             max-width:72ch;
+             margin:0 auto;
+             transform:translateY(4px);
+             animation:ryLift .6s ease-out both;
+           }
+
+           @keyframes ryLift{
+             from{opacity:0; transform:translateY(18px) scale(.985);}
+             to  {opacity:1; transform:translateY(0)   scale(1);}
+           }
+
+           .ry-warning .eyebrow{
+             font-size:.9rem;
+             letter-spacing:.12em;
+             text-transform:uppercase;
+             color:#ff2a2a;
+             margin:0 0 8px;
+             font-weight:700;
+           }
+
+           .ry-warning h3{
+             font-size:1.32rem;
+             line-height:1.25;
+             margin:0 0 10px;
+             color:#fff;
+             font-weight:700;
+             text-transform:uppercase;
+             letter-spacing:.04em;
+           }
+
+           .ry-warning .rule{
+             width:112px;
+             height:2px;
+             background:#ff2a2a;
+             margin:12px 0 26px;
+           }
+
+           /* refined paragraph style */
+           .ry-warning p{
+             color:rgba(255,255,255,.88);
+             line-height:1.82;
+             font-size:.97rem;
+             font-weight:300;
+             margin:0 0 18px;
+             letter-spacing:0.01em;
+           }
+
+           .ry-warning .highlight{color:#ff2a2a; font-weight:500;}
+           .ry-warning .spacer{height:44px;}
+
+           /* Optional micro hover lift (desktop only) */
+           @media (hover:hover){
+             .ry-warning .card:hover{
+               transform:translateY(-3px);
+               box-shadow:
+                 0 24px 56px rgba(0,0,0,.6),
+                 0 0 0 1px rgba(255,255,255,.04) inset,
+                 0 24px 60px rgba(255,42,42,.07);
+             }
+           }
+
+           /* Reduced motion respect */
+           @media (prefers-reduced-motion: reduce){
+             .ry-warning .card{animation:none; transform:none;}
+           }
+
+           /* Responsive tweaks */
+           @media (max-width:991px){
+             .ry-warning{padding:80px 0 90px;}
+             .ry-warning .card{padding:34px 28px; border-radius:16px;}
+             .ry-warning .rule{width:96px; margin:10px 0 22px;}
+           }
+           /* Parallax section that uses --ry-bg custom property */
+           .ry-parallax{
+             position: relative;
+             background-image: var(--ry-bg) !important;  /* consume the variable */
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             /* If you truly want parallax via CSS only: */
+             /* background-attachment: fixed; */
+           }
+
+           /* Darken layer */
+           .ry-parallax-overlay{
+             position: absolute;
+             inset: 0;
+             background: rgba(0,0,0,.55);
+             pointer-events: none;
+             z-index: 0;
+           }
+
+           /* Keep content above overlay */
+           .ry-parallax > *:not(.ry-parallax-overlay){
+             position: relative;
+             z-index: 1;
+           }
+           .ry-checklist li {
+             display: flex;
+             align-items: flex-start;   /* ← fixes misalignment */
+             gap: 14px;
+           }
+
+           .ry-checklist .ry-bullet {
+             margin-top: 3px;          /* nudges icon so it aligns visually */
+             flex-shrink: 0;           /* prevents icon from compressing */
+           }
+
+
+           .ry-checklist {
+             text-align: left;
+           }
+
+           .ry-checklist li {
+             display: flex;
+             align-items: flex-start;
+             gap: 14px;
+           }
+
+           /* ============================= */
+           /* HOW IT HELPS — POLISH PASS    */
+           /* ============================= */
+
+           #how-it-helps .ry-warningcard{
+             background: rgba(10, 10, 14, 0.88);
+             border: 1px solid rgba(255, 42, 42, 0.55);
+             border-radius: 0;
+             box-shadow:
+               0 18px 45px rgba(0,0,0,.45),
+               0 0 0 1px rgba(255,255,255,.03) inset;
+             overflow: hidden;
+           }
+
+           #how-it-helps .ry-cardhead{
+             text-align: center;
+             padding: 48px 42px 28px;
+           }
+
+           #how-it-helps .ry-eyebrow{
+             display: block;
+             margin-bottom: 14px;
+             font-size: 0.9rem;
+             font-weight: 700;
+             letter-spacing: 0.18em;
+             text-transform: uppercase;
+             color: #ff2a2a;
+           }
+
+           #how-it-helps .ry-cardhead h3{
+             margin: 0;
+             color: #fff;
+             font-size: clamp(2.1rem, 4vw, 3.2rem);
+             line-height: 1.08;
+             font-weight: 700;
+             letter-spacing: -0.02em;
+             text-transform: none;
+           }
+
+           #how-it-helps .ry-accent{
+             color: #ff1a1a;
+           }
+
+           #how-it-helps .ry-underline{
+             width: 78px;
+             height: 3px;
+             background: #ff2a2a;
+             margin: 18px auto 18px;
+             border-radius: 0;
+           }
+
+           #how-it-helps .ry-sub{
+             margin: 0;
+             color: rgba(255,255,255,.78);
+             font-size: 1.05rem;
+             line-height: 1.6;
+           }
+
+           #how-it-helps .ry-checklist{
+             margin: 0;
+             padding: 0;
+             list-style: none;
+             text-align: left;
+             border-top: 1px solid rgba(255,255,255,.06);
+           }
+
+           #how-it-helps .ry-checklist li{
+             display: flex;
+             align-items: flex-start;
+             gap: 16px;
+             margin: 0;
+             padding: 22px 28px;
+             border-bottom: 1px solid rgba(255,255,255,.06);
+             color: rgba(255,255,255,.95);
+             font-size: 1.08rem;
+             line-height: 1.5;
+
+             opacity: 0;
+             transform: translateX(-90px);
+             transition:
+               opacity 0.55s ease,
+               transform 0.7s cubic-bezier(.22,1,.36,1),
+               background .2s ease;
+             will-change: transform, opacity;
+           }
+
+           #how-it-helps .ry-checklist li.is-in{
+             opacity: 1;
+             transform: translateX(0);
+           }
+
+           /* stagger */
+           #how-it-helps .ry-checklist li:nth-child(1){ transition-delay: 0.00s; }
+           #how-it-helps .ry-checklist li:nth-child(2){ transition-delay: 0.08s; }
+           #how-it-helps .ry-checklist li:nth-child(3){ transition-delay: 0.16s; }
+           #how-it-helps .ry-checklist li:nth-child(4){ transition-delay: 0.24s; }
+           #how-it-helps .ry-checklist li:nth-child(5){ transition-delay: 0.32s; }
+           #how-it-helps .ry-checklist li:nth-child(6){ transition-delay: 0.40s; }
+
+           @media (prefers-reduced-motion: reduce){
+             #how-it-helps .ry-checklist li{
+               opacity: 1;
+               transform: none;
+               transition: none;
+             }
+           }
+
+           #how-it-helps .ry-checklist li:hover{
+             background: rgba(255,255,255,.03);
+             transition: background .2s ease;
+           }
+
+           #how-it-helps .ry-bullet{
+             margin-top: 3px;
+             flex-shrink: 0;
+             color: #ff2a2a;
+             transform: scale(1.05);
+           }
+
+           #how-it-helps .ry-checklist li:last-child{
+             border-bottom: 0;
+           }
+
+           /* "Contrast" pulse from white to deep pink */
+           .ry-contrast-pulse {
+             display: inline-block;
+             animation: ryContrastColor 3.5s ease-in-out infinite;
+           }
+
+           @keyframes ryContrastColor {
+             0%   { color: #ffffff; }
+             30%  { color: var(--ry-brand-red); }
+             60%  { color: #ffffff; }
+             100% { color: #ffffff; }
+           }
+
+           /* Faint red divider under title */
+           .ry-contrast-divider {
+             width: 72px;
+             height: 2px;
+             margin: 0 auto;
+             background: rgba(255, 51, 102, 0.35); /* soft deep-pink */
+             border-radius: 999px;
+           }
+
+           #coach-banner .container {
+             max-width: 60%;
+             padding-left: 40px;
+             padding-right: 40px;
+           }
+
+           #coach-banner {
+             background: #0d0d0d;
+             border-top: 1px solid rgba(255,255,255,0.06);
+             border-bottom: 1px solid rgba(255,0,0,0.18);
+             padding: 22px 0;
+           }
+           #coach-banner .coach-inner {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             gap: 32px;
+             margin-top: 25px;
+             flex-wrap: nowrap;
+           }
+           #coach-banner .coach-text {
+             color: rgba(255,255,255,0.55);
+             font-family: 'Bebas Neue', sans-serif;
+             font-size: 16px;
+             letter-spacing: 0.10em;
+             text-transform: uppercase;
+             line-height: 1.6;
+             flex: 1;
+           }
+           #coach-banner .coach-text strong {
+             color: rgba(255,255,255,0.85);
+           }
+           #coach-banner .coach-link {
+             font-family: 'Bebas Neue', sans-serif;
+             font-size: 12px;
+             letter-spacing: 0.16em;
+             text-transform: uppercase;
+             color: #ff0000;
+             border: 1px solid rgba(255,0,0,0.35);
+             padding: 9px 20px;
+             white-space: nowrap;
+             text-decoration: none;
+             transition: background 0.2s, color 0.2s;
+             flex-shrink: 0;
+           }
+           #coach-banner .coach-link:hover {
+             background: rgba(255,0,0,0.08);
+             color: #ff4444;
+             text-decoration: none;
+           }
+           @media (max-width: 767px) {
+             #coach-banner .container {
+               padding-left: 24px;
+               padding-right: 24px;
+             }
+             #coach-banner .coach-inner {
+               flex-direction: column;
+               align-items: flex-start;
+               gap: 16px;
+             }
+             #coach-banner .coach-link {
+               align-self: flex-start;
+             }
+           }
   </style>
+
 </head>
 <body class="home-page">
   <div aria-hidden="true" id="reading-progress">
@@ -322,6 +833,9 @@
               </li>
               <li>
                 <a href="start-here.html">Start Here</a>
+              </li>
+              <li>
+                <a href="for-coaches.html">For Frontline Workers</a>
               </li>
               <li>
                 <a href="faq.html">FAQ</a>
@@ -539,143 +1053,7 @@
       </div>
     </section><!-- ========== RECOVERY & TRAUMA WARNINGS (Glass + Fine Text) ========== -->
     <section aria-labelledby="ry-warning-title" class="wow animate__fadeIn ry-warning" id="what-is-recover-you">
-      <style>
-               /* Scoped styling */
-               .ry-warning{
-                 background:linear-gradient(to bottom,#121212,#000);
-                 padding:96px 0 104px;
-               }
 
-               .ry-warning .card{
-                 background:rgba(22,22,22,0.85);                     /* translucent for glass effect */
-                 backdrop-filter:blur(6px) saturate(140%);
-                 border:1px solid rgba(255,42,42,.22);
-                 border-top:2px solid #ff2a2a;
-                 border-radius:18px;
-                 padding:42px 40px;
-                 box-shadow:
-                   0 18px 48px rgba(0,0,0,.55),
-                   0 0 0 1px rgba(255,255,255,.04) inset,
-                   0 20px 50px rgba(255,42,42,.05);
-                 max-width:72ch;
-                 margin:0 auto;
-                 transform:translateY(4px);
-                 animation:ryLift .6s ease-out both;
-               }
-
-               @keyframes ryLift{
-                 from{opacity:0; transform:translateY(18px) scale(.985);}
-                 to  {opacity:1; transform:translateY(0)   scale(1);}
-               }
-
-               .ry-warning .eyebrow{
-                 font-size:.9rem;
-                 letter-spacing:.12em;
-                 text-transform:uppercase;
-                 color:#ff2a2a;
-                 margin:0 0 8px;
-                 font-weight:700;
-               }
-
-               .ry-warning h3{
-                 font-size:1.32rem;
-                 line-height:1.25;
-                 margin:0 0 10px;
-                 color:#fff;
-                 font-weight:700;
-                 text-transform:uppercase;
-                 letter-spacing:.04em;
-               }
-
-               .ry-warning .rule{
-                 width:112px;
-                 height:2px;
-                 background:#ff2a2a;
-                 margin:12px 0 26px;
-               }
-
-               /* refined paragraph style */
-               .ry-warning p{
-                 color:rgba(255,255,255,.88);
-                 line-height:1.82;
-                 font-size:.97rem;
-                 font-weight:300;
-                 margin:0 0 18px;
-                 letter-spacing:0.01em;
-               }
-
-               .ry-warning .highlight{color:#ff2a2a; font-weight:500;}
-               .ry-warning .spacer{height:44px;}
-
-               /* Optional micro hover lift (desktop only) */
-               @media (hover:hover){
-                 .ry-warning .card:hover{
-                   transform:translateY(-3px);
-                   box-shadow:
-                     0 24px 56px rgba(0,0,0,.6),
-                     0 0 0 1px rgba(255,255,255,.04) inset,
-                     0 24px 60px rgba(255,42,42,.07);
-                 }
-               }
-
-               /* Reduced motion respect */
-               @media (prefers-reduced-motion: reduce){
-                 .ry-warning .card{animation:none; transform:none;}
-               }
-
-               /* Responsive tweaks */
-               @media (max-width:991px){
-                 .ry-warning{padding:80px 0 90px;}
-                 .ry-warning .card{padding:34px 28px; border-radius:16px;}
-                 .ry-warning .rule{width:96px; margin:10px 0 22px;}
-               }
-               /* Parallax section that uses --ry-bg custom property */
-               .ry-parallax{
-                 position: relative;
-                 background-image: var(--ry-bg) !important;  /* consume the variable */
-                 background-size: cover;
-                 background-position: center;
-                 background-repeat: no-repeat;
-                 /* If you truly want parallax via CSS only: */
-                 /* background-attachment: fixed; */
-               }
-
-               /* Darken layer */
-               .ry-parallax-overlay{
-                 position: absolute;
-                 inset: 0;
-                 background: rgba(0,0,0,.55);
-                 pointer-events: none;
-                 z-index: 0;
-               }
-
-               /* Keep content above overlay */
-               .ry-parallax > *:not(.ry-parallax-overlay){
-                 position: relative;
-                 z-index: 1;
-               }
-               .ry-checklist li {
-                 display: flex;
-                 align-items: flex-start;   /* ← fixes misalignment */
-                 gap: 14px;
-               }
-
-               .ry-checklist .ry-bullet {
-                 margin-top: 3px;          /* nudges icon so it aligns visually */
-                 flex-shrink: 0;           /* prevents icon from compressing */
-               }
-
-
-               .ry-checklist {
-                 text-align: left;
-               }
-
-               .ry-checklist li {
-                 display: flex;
-                 align-items: flex-start;
-                 gap: 14px;
-               }
-      </style>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 col-xl-9">
@@ -753,130 +1131,7 @@
           </div>
         </div>
       </div>
-      <style>
-               /* ============================= */
-               /* HOW IT HELPS — POLISH PASS    */
-               /* ============================= */
 
-               #how-it-helps .ry-warningcard{
-                 background: rgba(10, 10, 14, 0.88);
-                 border: 1px solid rgba(255, 42, 42, 0.55);
-                 border-radius: 0;
-                 box-shadow:
-                   0 18px 45px rgba(0,0,0,.45),
-                   0 0 0 1px rgba(255,255,255,.03) inset;
-                 overflow: hidden;
-               }
-
-               #how-it-helps .ry-cardhead{
-                 text-align: center;
-                 padding: 48px 42px 28px;
-               }
-
-               #how-it-helps .ry-eyebrow{
-                 display: block;
-                 margin-bottom: 14px;
-                 font-size: 0.9rem;
-                 font-weight: 700;
-                 letter-spacing: 0.18em;
-                 text-transform: uppercase;
-                 color: #ff2a2a;
-               }
-
-               #how-it-helps .ry-cardhead h3{
-                 margin: 0;
-                 color: #fff;
-                 font-size: clamp(2.1rem, 4vw, 3.2rem);
-                 line-height: 1.08;
-                 font-weight: 700;
-                 letter-spacing: -0.02em;
-                 text-transform: none;
-               }
-
-               #how-it-helps .ry-accent{
-                 color: #ff1a1a;
-               }
-
-               #how-it-helps .ry-underline{
-                 width: 78px;
-                 height: 3px;
-                 background: #ff2a2a;
-                 margin: 18px auto 18px;
-                 border-radius: 0;
-               }
-
-               #how-it-helps .ry-sub{
-                 margin: 0;
-                 color: rgba(255,255,255,.78);
-                 font-size: 1.05rem;
-                 line-height: 1.6;
-               }
-
-               #how-it-helps .ry-checklist{
-                 margin: 0;
-                 padding: 0;
-                 list-style: none;
-                 text-align: left;
-                 border-top: 1px solid rgba(255,255,255,.06);
-               }
-
-               #how-it-helps .ry-checklist li{
-                 display: flex;
-                 align-items: flex-start;
-                 gap: 16px;
-                 margin: 0;
-                 padding: 22px 28px;
-                 border-bottom: 1px solid rgba(255,255,255,.06);
-                 color: rgba(255,255,255,.95);
-                 font-size: 1.08rem;
-                 line-height: 1.5;
-
-                 opacity: 0;
-                 transform: translateX(-90px);
-                 transition:
-                   opacity 0.55s ease,
-                   transform 0.7s cubic-bezier(.22,1,.36,1),
-                   background .2s ease;
-                 will-change: transform, opacity;
-               }
-
-               #how-it-helps .ry-checklist li.is-in{
-                 opacity: 1;
-                 transform: translateX(0);
-               }
-
-               /* stagger */
-               #how-it-helps .ry-checklist li:nth-child(1){ transition-delay: 0.00s; }
-               #how-it-helps .ry-checklist li:nth-child(2){ transition-delay: 0.08s; }
-               #how-it-helps .ry-checklist li:nth-child(3){ transition-delay: 0.16s; }
-               #how-it-helps .ry-checklist li:nth-child(4){ transition-delay: 0.24s; }
-               #how-it-helps .ry-checklist li:nth-child(5){ transition-delay: 0.32s; }
-               #how-it-helps .ry-checklist li:nth-child(6){ transition-delay: 0.40s; }
-
-               @media (prefers-reduced-motion: reduce){
-                 #how-it-helps .ry-checklist li{
-                   opacity: 1;
-                   transform: none;
-                   transition: none;
-                 }
-               }
-
-               #how-it-helps .ry-checklist li:hover{
-                 background: rgba(255,255,255,.03);
-                 transition: background .2s ease;
-               }
-
-               #how-it-helps .ry-bullet{
-                 margin-top: 3px;
-                 flex-shrink: 0;
-                 color: #ff2a2a;
-                 transform: scale(1.05);
-               }
-
-               #how-it-helps .ry-checklist li:last-child{
-                 border-bottom: 0;
-               }
-      </style>
     </section><!-- START: Brand Quote Section -->
     <section class="bg-extra-dark-gray wow animate__fadeIn">
       <div class="container text-center">
@@ -893,29 +1148,7 @@
           </div>
         </div>
       </div>
-      <style>
-               /* "Contrast" pulse from white to deep pink */
-               .ry-contrast-pulse {
-                 display: inline-block;
-                 animation: ryContrastColor 3.5s ease-in-out infinite;
-               }
 
-               @keyframes ryContrastColor {
-                 0%   { color: #ffffff; }
-                 30%  { color: var(--ry-brand-red); }
-                 60%  { color: #ffffff; }
-                 100% { color: #ffffff; }
-               }
-
-               /* Faint red divider under title */
-               .ry-contrast-divider {
-                 width: 72px;
-                 height: 2px;
-                 margin: 0 auto;
-                 background: rgba(255, 51, 102, 0.35); /* soft deep-pink */
-                 border-radius: 999px;
-               }
-      </style>
     </section><!-- END: Brand Quote Section -->
     <section class="wow animate__fadeIn" id="about">
       <div class="container">
@@ -932,6 +1165,22 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== COACH BANNER ========== -->
+
+    <section id="coach-banner">
+      <div class="container">
+        <div class="coach-inner">
+          <p class="coach-text margin-0">
+            <strong>Working in recovery and can't <em>go there</em> with a client?</strong><br>
+            Your client is ready to understand why. This site explains the mechanics — trauma, the nervous system, why abstinence alone rarely holds — so you don't have to.
+          </p>
+          <a class="coach-link" href="for-coaches.html">For Recovery Workers &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== END COACH BANNER ========== -->
     <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image: url('images/webp/trauma-bg2.webp')">
       <div class="opacity-full-dark bg-extra-dark-gray"></div>
       <div class="container position-relative">
@@ -954,40 +1203,7 @@
             </blockquote>
           </div>
         </div>
-        <style>
-                      blockquote {
-                          margin-top: 40px;
-                          padding-left: 25px;
-                          border-left: 3px solid #ff2f6e;
-                      }
-                      .text-deep-pink strong {
-                          animation: pulseGlow 4s ease-in-out infinite;
-                      }
 
-                      @keyframes pulseGlow {
-                          0%, 100% { text-shadow: 0 0 4px rgba(255,47,110,0.4); }
-                          50% { text-shadow: 0 0 12px rgba(255,47,110,0.7); }
-                      }
-                      .text-medium.text-white {
-                          line-height: 1.75;
-                          opacity: 0.92;
-                          margin-bottom: 22px;
-                      }
-                      h5.alt-font {
-                          margin-bottom: 10px;
-                          letter-spacing: 0.5px;
-                      }
-                      .text-deep-pink.text-large strong {
-                          display: inline-block;
-                          border-bottom: 2px solid #ff2f6e;
-                          padding-bottom: 4px;
-                          margin-bottom: 10px;
-                      }
-                      .extra-big-section {
-                          background-blend-mode: overlay;
-                          background-size: cover;
-                      }
-        </style>
       </div>
     </section>
     <footer class="footer-center-logo2-dark index-footer padding-five-tb sm-padding-30px-tb" style="background: linear-gradient(to bottom, #1c1c1c, #000000);">

@@ -87,26 +87,34 @@
               font-kerning: normal;
             }
 
-            /* Editorial links + citations (scoped, no underline style) */
-            .ry-trauma p a,
-            .ry-trauma li a {
+            /* Editorial links + citations
+               IMPORTANT: keep this inside page content sections only.
+               The old selector used `.ry-trauma li a`, which also hit the main horizontal nav. */
+            .ry-trauma section p a,
+            .ry-trauma section li a {
               color: var(--ry-pink);
               text-decoration: none;
               transition: color 0.25s ease;
             }
 
-            .ry-trauma p a:hover,
-            .ry-trauma li a:hover {
+            .ry-trauma section p a:hover,
+            .ry-trauma section li a:hover {
               color: #d91d5a; /* slightly darker pink on hover */
-              text-decoration: none;
-            }
-
-            .ry-trauma p a:hover,
-            .ry-trauma li a:hover {
               text-decoration: underline;
               text-underline-offset: 3px;
               text-decoration-thickness: 1.25px;
               text-decoration-color: var(--ry-pink);
+            }
+
+            /* Defensive reset: do not let article-link styling touch the global navs */
+            .ry-trauma header li a,
+            .ry-trauma header li a:hover,
+            .ry-trauma nav.bootsnav li a,
+            .ry-trauma nav.bootsnav li a:hover,
+            .ry-trauma #ry-anchor-nav li a,
+            .ry-trauma #ry-anchor-nav li a:hover {
+              text-decoration: none !important;
+              text-decoration-color: transparent !important;
             }
             /* ===== Kicker quote (“I am in danger…”) ===== */
             .ry-trauma .ry-kicker-quote{
@@ -475,7 +483,7 @@
             text-decoration: none;
             white-space: nowrap;
             transition: color 0.2s ease;
-            border-bottom: 2px solid transparent;
+            
           }
 
           #ry-anchor-nav a:hover {
@@ -485,7 +493,7 @@
 
           #ry-anchor-nav a.is-active {
             color: #ff2f6e;
-            border-bottom-color: #ff2f6e;
+            
           }
 
           /* Fade edge — "there's more to the right" */
@@ -573,6 +581,7 @@
                   <li>
                     <a href="faq.html">FAQ</a>
                   </li>
+              <li><a href="for-coaches.html">For Frontline Workers</a></li>
                 </ul>
               </li>
               <li class="dropdown simple-dropdown">
@@ -894,7 +903,7 @@
           <div class="ry-reflection margin-40px-top margin-40px-bottom">
             <div class="ry-reflection-bar"></div>
             <div class="ry-reflection-body">
-              <p>That's what living inside chronic terror actually feels like as a child. Not the acute moments — those are terrible, but they have edges. You can name them, point to them, build a case around them. Terror doesn't work that way. It's diffuse. It's the hours stretching into days of not knowing if they were coming back — and the sick realisation that you couldn't decide whether you wanted them to. Desperate for them. Afraid of them. Listening for footsteps and not knowing which outcome you were praying for. Of learning to read a door opening the way other kids learned to read a traffic light — because getting that wrong had consequences.</p>
+              <p>That's what living inside chronic terror actually feels like as a child. Not the acute moments — those are terrible, but they have edges. You can name them, point to them, build a case around them. Terror doesn't work that way. It's diffuse. It's the hours stretching into days of not knowing if they were coming back — and the sick realization that you couldn't decide whether you wanted them to. Desperate for them. Afraid of them. Listening for footsteps and not knowing which outcome you were praying for. Of learning to read a door opening the way other kids learned to read a traffic light — because getting that wrong had consequences.</p>
               <p>Retrospect corrects the assumptions you made just to survive. I was certain I knew which kind of harm was worse. I had it completely backwards. The abuse I could name. Being abandoned laid a set of tracks I didn't choose — and I spent years running on them before I understood they were never going to get me where I needed to go.</p>
               <p>So I learned to survive — sometimes by going silent, disappearing into corners, making myself small enough to stop being a target. Sometimes by exploding. Destroying things. Becoming exactly what they already thought I was. I never knew which one was coming. That uncertainty lived in me the same way it lived in everyone around me. The difference is they called it bad behaviour. I just called it Tuesday.</p>
               <p class="ry-reflection-byline">— Austan - Recover-You</p>
