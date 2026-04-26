@@ -647,33 +647,58 @@
       </div>
     </div>
   </section>
-  <section class="bg-light-gray border-none p-0 wow animate__fadeIn bg-light-gray">
+  <section class="bg-light-gray border-none p-0 wow animate__fadeIn">
     <div class="container-fluid">
       <div class="row row-cols-1 row-cols-lg-2">
+
+        <!-- IMAGE COLUMN -->
+        <div class="col p-0 wow animate__fadeInLeft">
+          <button class="expand-image-trigger" onclick="document.getElementById('diseaseImageModal').showModal()" aria-label="Expand image">
+            <img alt="Diagnosis ≠ Destiny" class="w-100 disease-meme-img" src="images/disease-peril.png">
+            <span class="expand-image-badge">
+              <i class="fa-solid fa-expand"></i> View full image
+            </span>
+          </button>
+        </div>
+
         <!-- TEXT COLUMN -->
-        <div class="col p-0 wow animate__fadeInLeft"><img alt="Diagnosis ≠ Destiny" class="w-100 disease-meme-img" src="images/disease-peril.png"></div>
         <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInRight">
           <h5 class="alt-font text-extra-dark-gray">The <strong>Power</strong> and <strong>Peril</strong> of a Label</h5>
+
           <p class="text-dark-gray">The debate over "disease" versus "disorder" can become its own distraction. The vocabulary matters far less than whether the label actually moves us toward the right kind of care. A word that opens a door is useful. A word that closes one is not, regardless of how clinically precise it sounds.</p>
+
           <blockquote class="border-color-deep-pink">
             <p>The real question isn't what we call it. The real question is: <em>does the label empower you, or does it shrink you?</em></p>
           </blockquote>
+
           <p class="text-dark-gray">For some people, the disease label is genuinely liberating. It lifts shame, reframes addiction as something treatable, and removes the demand to simply "try harder" against something that was never a willpower problem. That matters.</p>
+
           <p class="text-dark-gray">For others, the same label quietly installs a ceiling. <strong>"Well, if it's a disease, maybe there's nothing I can do about it."</strong> The condition stays identical. The story changes. And the story is what determines whether recovery feels possible or pointless.</p>
+
           <p class="text-dark-gray">Which brings us to the real problem with the disease framing. If we're going to call addiction a disease, then the care around it needs to actually behave like it is one. It needs to address root causes, not just symptoms. It needs to demand more than abstinence and a handshake. Otherwise the language is purely symbolic, and we could rename it <strong>Chronic Bad Idea Syndrome™</strong> without changing a single thing about the biology, the suffering, or the failure rate.</p>
+
           <hr class="margin-20px-top margin-20px-bottom opacity4">
+
           <p class="text-small opacity7">
             Image references a scene from <em>South Park</em>, used here for commentary on how diagnostic labels can influence behaviour and recovery. Not affiliated with or endorsed by the original creators.
           </p>
+
           <p class="text-small opacity7 margin-10px-top">
             *Modified and included for educational and commentary purposes. All rights remain with the respective copyright holders.
           </p>
         </div>
-        <!-- IMAGE COLUMN -->
-        
-      </div>
 
+      </div>
     </div>
+
+    <!-- EXPANDED IMAGE MODAL -->
+    <dialog class="expand-image-modal" id="diseaseImageModal">
+      <button class="expand-image-close" onclick="document.getElementById('diseaseImageModal').close()" aria-label="Close expanded image">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <img alt="Diagnosis ≠ Destiny" src="images/disease-peril.png">
+    </dialog>
   </section>
   <section class="bg-light-gray border-none p-0 wow animate__fadeIn bg-light-gray">
     <div class="container-fluid">

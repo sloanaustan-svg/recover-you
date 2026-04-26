@@ -749,27 +749,56 @@
         <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
           <div class="container-fluid p-0">
             <div class="row row-cols-1 row-cols-lg-2 m-0">
+
+              <!-- TEXT COLUMN -->
               <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft">
                 <h5 class="alt-font text-light-gray"><span class="text-deep-pink">//</span> The Bigger Lesson: <strong>New</strong> Is <strong>New</strong></h5>
+
                 <p>Whenever we're trying something unfamiliar — whether it's riding a backward bike or walking back into treatment for the eleventeenth time — <strong>new is new.</strong></p>
+
                 <p>The new experience isn't just happening on the outside. While we're fumbling, doubting, or starting over yet again, our brains are busy laying down new neural pathways, quietly wiring themselves to support the thing we're struggling to learn.</p>
+
                 <p>Even relapse doesn't erase progress. It's a reminder that rewiring is still in motion. The path is still there — you just have to walk it again.</p>
+
                 <p>And not unlike a level that seems impossible the first time — or the fifth — something eventually shifts. The pattern reveals itself. What once felt unsurvivable begins, slowly, to feel navigable. That's not willpower. That's your brain doing exactly what brains do when you give them enough attempts.</p>
+
                 <p>Change isn't about instant mastery. It's about persistence — working with your brain, not against it, until something finally clicks and the unfamiliar begins to feel like ground.</p>
+
                 <blockquote class="border-color-deep-pink">
                   <p>That's not failure.<br><strong>That's neuroplasticity in real time.</strong></p>
                 </blockquote>
+
                 <hr class="margin-20px-top margin-20px-bottom opacity4">
+
                 <p class="text-small opacity7">
                   Modified image based on a scene from <em>Grand Theft Auto: San Andreas</em> (Rockstar Games / Take-Two Interactive, 2004), used here as visual commentary on recovery and behavioural patterns. Not affiliated with or endorsed by the original creators.
                 </p>
+
                 <p class="text-small opacity7 margin-10px-top">
                   *Included for commentary and educational purposes only. All rights remain with the respective copyright holders.
                 </p>
               </div>
-              <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/new-is-new.webp');"></div>
+
+              <!-- IMAGE COLUMN -->
+              <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/new-is-new.webp');">
+                <button class="expand-image-trigger" onclick="document.getElementById('newIsNewImageModal').showModal()" aria-label="Expand image">
+                  <span class="expand-image-badge">
+                    <i class="fa-solid fa-expand"></i> View full image
+                  </span>
+                </button>
+              </div>
+
             </div>
           </div>
+
+          <!-- EXPANDED IMAGE MODAL -->
+          <dialog class="expand-image-modal" id="newIsNewImageModal">
+            <button class="expand-image-close" onclick="document.getElementById('newIsNewImageModal').close()" aria-label="Close expanded image">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img alt="New is new recovery visual" src="images/webp/new-is-new.webp">
+          </dialog>
         </section>
 
         <section class="bg-light-gray wow animate__fadeIn">
