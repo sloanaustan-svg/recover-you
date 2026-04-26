@@ -12,17 +12,17 @@
     gtag('consent', 'default', { 'analytics_storage': 'denied' });
     gtag('config', 'G-6968KR6JY9', { 'anonymize_ip': true });
   </script>
-  <title>For Frontline Workers | Recover-You</title>
+  <title>For Loved Ones | Recover-You</title>
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
   <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="A resource for recovery coaches, caseworkers, and frontline workers who want to support clients through psychoeducation about trauma and addiction — without overstepping their role." name="description">
-  <meta content="For Frontline Workers | Recover-You" property="og:title">
-  <meta content="Working in recovery and can't go there with a client? This page explains how Recover-You can help bridge the gap." property="og:description">
+  <meta content="A resource for the people who loved someone through addiction. What it costs, what actually helps, what makes things worse, and a practical plan for the morning after a relapse." name="description">
+  <meta content="For Loved Ones | Recover-You" property="og:title">
+  <meta content="You were the strong one too. This page is for you." property="og:description">
   <meta content="article" property="og:type">
-  <meta content="https://recover-you.ca/for-coaches.html" property="og:url">
-  <link href="https://recover-you.ca/for-coaches.html" rel="canonical">
+  <meta content="https://recover-you.ca/for-loved-ones.html" property="og:url">
+  <link href="https://recover-you.ca/for-loved-ones.html" rel="canonical">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
   <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
@@ -510,58 +510,45 @@
       }
     }
 
-    /* ── PAGE STYLES ── */
-    .text-deep-pink { color: #ff2f6e; }
+        /* ── PAGE-SPECIFIC STYLES ── */
+
 
     /* HERO */
-    .fc-hero {
-      background: linear-gradient(to bottom, #0a0a0a, #111);
+    .fl-hero {
+      background: linear-gradient(to bottom, #0a0a0a, #141414);
       padding: 100px 0 80px;
-      border-bottom: 1px solid rgba(255,0,0,0.15);
+      border-bottom: 1px solid rgba(255,0,0,0.12);
     }
-    .fc-eyebrow {
+    .fl-eyebrow {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.2em;
+      font-size: 13px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: #ff0000;
-      margin-bottom: 18px;
       display: block;
+      margin-bottom: 18px;
     }
-    .fc-hero h1 {
+    .fl-hero h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 0.95;
-      color: #fff;
-      margin-bottom: 24px;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.0;
+      color: #ffffff;
       letter-spacing: 0.02em;
+      margin-bottom: 28px;
     }
-    .fc-hero h1 span {
+    .fl-hero h1 span {
       color: #ff0000;
     }
-    .fc-hero .fc-lead {
-      color: rgba(255,255,255,0.72);
+    .fl-lead {
       font-size: 1.15rem;
       line-height: 1.75;
-      max-width: 58ch;
-      margin-bottom: 0;
+      color: rgba(255,255,255,0.65);
+      max-width: 640px;
+      margin: 0;
     }
 
-    /* MAIN CONTENT */
-    .fc-body {
-      background: #fff;
-      padding: 80px 0;
-    }
-    .fc-body p {
-      font-size: 1.05rem;
-      line-height: 1.82;
-      color: #2a2a2a;
-      margin-bottom: 22px;
-    }
-    .fc-body p:last-child {
-      margin-bottom: 0;
-    }
-    .fc-section-label {
+    /* SECTION LABELS */
+    .fl-section-label {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 13px;
       letter-spacing: 0.22em;
@@ -570,33 +557,165 @@
       display: block;
       margin-bottom: 10px;
     }
-    .fc-rule {
+    .fl-rule {
       width: 48px;
       height: 2px;
       background: #ff0000;
       margin: 14px 0 28px;
     }
 
-    /* DARK PULL QUOTE SECTION */
-    .fc-quote-section {
+    /* MAIN BODY */
+    .fl-body {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .fl-body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+    .fl-body p:last-child { margin-bottom: 0; }
+
+    /* FATHER'S WORDS — dark inset block */
+    .fl-testimony {
       background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
       padding: 80px 0;
       border-top: 1px solid rgba(255,0,0,0.15);
       border-bottom: 1px solid rgba(255,0,0,0.15);
     }
-    .fc-quote-section blockquote {
+    .fl-testimony-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      display: block;
+      margin-bottom: 28px;
+    }
+    .fl-testimony blockquote {
       border-left: 3px solid #ff0000;
       padding-left: 28px;
       margin: 0;
     }
-    .fc-quote-section blockquote p {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.35rem;
+    .fl-testimony blockquote p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .fl-testimony blockquote p:last-child { margin-bottom: 0; }
+    .fl-testimony .fl-attribution {
+      margin-top: 24px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding-left: 31px;
+    }
+
+    /* REFRAME SECTION */
+    .fl-reframe {
+      background: #f5f5f5;
+      padding: 80px 0;
+    }
+    .fl-reframe p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+    .fl-reframe p:last-child { margin-bottom: 0; }
+
+    /* DO'S AND DON'TS */
+    .fl-guide {
+      background: #fff;
+      padding: 80px 0;
+    }
+    .fl-guide p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+    .fl-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 1px solid #dee2e6;
+      margin-top: 40px;
+    }
+    .fl-guide-item {
+      padding: 32px 34px;
+      border-right: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+      background: #fff;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .fl-guide-item:nth-child(2n) { border-right: none; }
+    .fl-guide-item:nth-last-child(-n+2) { border-bottom: none; }
+    .fl-guide-item:hover {
+      background: #f8f9fa;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+    .fl-guide-item i {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .fl-guide-item i.helps { color: #2e7d32; }
+    .fl-guide-item i.hurts { color: #ff0000; }
+    .fl-guide-item strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+    .fl-guide-item p {
+      font-size: 0.9rem;
+      color: #555;
       line-height: 1.65;
+      margin: 0;
+    }
+    .fl-subsection-head {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      color: #1a1a1a;
+      margin: 48px 0 6px;
+    }
+    .fl-subsection-head.red { color: #ff0000; }
+    @media (max-width: 600px) {
+      .fl-guide-grid { grid-template-columns: 1fr; }
+      .fl-guide-item { border-right: none; }
+      .fl-guide-item:nth-last-child(-n+2) { border-bottom: 1px solid #dee2e6; }
+      .fl-guide-item:last-child { border-bottom: none; }
+    }
+
+    /* PULL QUOTE (longer personal voice) */
+    .fl-quote-section {
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,0,0,0.15);
+      border-bottom: 1px solid rgba(255,0,0,0.15);
+    }
+    .fl-quote-section blockquote {
+      border-left: 3px solid #ff0000;
+      padding-left: 28px;
+      margin: 0;
+    }
+    .fl-quote-section blockquote p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.2rem;
+      line-height: 1.7;
       font-style: italic;
       margin: 0;
     }
-    .fc-quote-section .fc-attribution {
+    .fl-quote-section .fl-attribution {
       margin-top: 20px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 11px;
@@ -606,93 +725,78 @@
       padding-left: 31px;
     }
 
-    /* WHAT IT COVERS SECTION */
-    .fc-covers {
+    /* BOUNDARIES */
+    .fl-boundaries {
       background: #f5f5f5;
       padding: 80px 0;
     }
-    .fc-covers-grid {
+    .fl-boundaries p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 22px;
+    }
+    .fl-boundaries p:last-child { margin-bottom: 0; }
+    .fl-scope-box {
+      background: #0f0f0f;
+      border: 1px solid rgba(255,0,0,0.2);
+      border-left: 3px solid #ff0000;
+      padding: 38px 42px;
+      margin-top: 36px;
+    }
+    .fl-scope-box p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .fl-scope-box p:last-child { margin-bottom: 0; }
+    .fl-scope-box strong { color: rgba(255,255,255,0.95); }
+
+    /* BOUNDARY TYPE CARDS */
+    .fl-bnd-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
       border: 1px solid #dee2e6;
       margin-top: 40px;
     }
-    .fc-cover-item {
+    .fl-bnd-item {
       padding: 30px 32px;
       border-right: 1px solid #dee2e6;
       border-bottom: 1px solid #dee2e6;
-      transition: background 0.2s, transform 0.2s;
       background: #fff;
+      transition: background 0.2s, transform 0.2s;
     }
-    .fc-cover-item:nth-child(2n) {
-      border-right: none;
-    }
-    .fc-cover-item:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-    .fc-cover-item:hover {
+    .fl-bnd-item:nth-child(2n) { border-right: none; }
+    .fl-bnd-item:nth-last-child(-n+2) { border-bottom: none; }
+    .fl-bnd-item:hover {
       background: #f8f9fa;
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.07);
     }
-    .fc-cover-item i {
-      color: #ff0000;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .fc-cover-item strong {
-      display: block;
-      font-size: 0.95rem;
-      color: #1a1a1a;
-      margin-bottom: 6px;
-      letter-spacing: 0.01em;
-    }
-    .fc-cover-item p {
-      font-size: 0.9rem;
-      color: #666;
-      line-height: 1.6;
-      margin: 0;
-    }
+    .fl-bnd-item i { color: #ff0000; font-size: 1.1rem; margin-bottom: 12px; display: block; }
+    .fl-bnd-item strong { display: block; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 6px; }
+    .fl-bnd-item p { font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0; }
     @media (max-width: 600px) {
-      .fc-covers-grid {
-        grid-template-columns: 1fr;
-      }
-      .fc-cover-item {
-        border-right: none;
-      }
-      .fc-cover-item:nth-last-child(-n+2) {
-        border-bottom: 1px solid #dee2e6;
-      }
-      .fc-cover-item:last-child {
-        border-bottom: none;
-      }
+      .fl-bnd-grid { grid-template-columns: 1fr; }
+      .fl-bnd-item { border-right: none; }
+      .fl-bnd-item:nth-last-child(-n+2) { border-bottom: 1px solid #dee2e6; }
+      .fl-bnd-item:last-child { border-bottom: none; }
     }
 
-    /* SCOPE NOTE */
-    .fc-scope {
+    /* WHAT THIS IS */
+    .fl-plan-intro {
       background: #fff;
-      padding: 70px 0;
+      padding: 80px 0;
     }
-    .fc-scope-box {
-      background: #0f0f0f;
-      border: 1px solid rgba(255,0,0,0.2);
-      border-left: 3px solid #ff0000;
-      padding: 38px 42px;
+    .fl-plan-intro p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #2a2a2a;
+      margin-bottom: 22px;
     }
-    .fc-scope-box p {
-      color: rgba(255,255,255,0.78);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .fc-scope-box p:last-child {
-      margin-bottom: 0;
-    }
-    .fc-scope-box strong {
-      color: rgba(255,255,255,0.95);
-    }
+    .fl-plan-intro p:last-child { margin-bottom: 0; }
 
     /* CTA */
     .fc-cta {
@@ -722,177 +826,35 @@
       padding: 14px 32px;
       display: inline-block;
       transition: background 0.2s;
+      margin: 0 8px 12px;
     }
     .fc-cta .fc-url:hover {
       background: rgba(255,0,0,0.08);
       text-decoration: none;
       color: #ff4444;
     }
+    .fc-cta .fc-url.secondary {
+      color: rgba(255,255,255,0.5);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .fc-cta .fc-url.secondary:hover {
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.75);
+    }
 
     /* reading progress */
     #reading-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      z-index: 9999;
-      opacity: 0;
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 3px;
+      z-index: 9999; opacity: 0;
       transition: opacity 0.3s;
     }
     #reading-progress.is-visible { opacity: 1; }
     #reading-progress-fill {
-      height: 100%;
-      width: 0%;
+      height: 100%; width: 0%;
       background: #ff0000;
       transition: width 0.1s linear;
     }
-
-
-
-
-  
-
-    /* ── RY MOBILE NAV STATE FIX — closed by default, above page content ── */
-    @media (max-width: 991px) {
-      nav.sidebar-nav,
-      body.home-page nav.sidebar-nav,
-      body:not(.home-page) nav.bootsnav.sidebar-nav {
-        z-index: 99999 !important;
-      }
-
-      nav.sidebar-nav .sidenav-header,
-      body.home-page nav.sidebar-nav .sidenav-header,
-      body:not(.home-page) nav.bootsnav.sidebar-nav .sidenav-header {
-        position: relative !important;
-        z-index: 100001 !important;
-      }
-
-      nav.sidebar-nav #navbar-menu,
-      body.home-page nav.sidebar-nav #navbar-menu,
-      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu {
-        position: relative !important;
-        z-index: 100000 !important;
-      }
-
-      nav.sidebar-nav #navbar-menu.collapse:not(.show),
-      body.home-page nav.sidebar-nav #navbar-menu.collapse:not(.show),
-      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu.collapse:not(.show) {
-        display: none !important;
-        height: 0 !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        visibility: hidden !important;
-      }
-
-      nav.sidebar-nav #navbar-menu.collapse.show,
-      body.home-page nav.sidebar-nav #navbar-menu.collapse.show,
-      body:not(.home-page) nav.bootsnav.sidebar-nav #navbar-menu.collapse.show {
-        display: block !important;
-        height: auto !important;
-        max-height: calc(100vh - 68px) !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        visibility: visible !important;
-      }
-
-      nav.sidebar-nav .dropdown-menu,
-      body.home-page nav.sidebar-nav .dropdown-menu,
-      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu {
-        display: none !important;
-      }
-
-      nav.sidebar-nav li.open > .dropdown-menu,
-      nav.sidebar-nav li.show > .dropdown-menu,
-      nav.sidebar-nav .dropdown-menu.show,
-      body.home-page nav.sidebar-nav li.open > .dropdown-menu,
-      body.home-page nav.sidebar-nav li.show > .dropdown-menu,
-      body.home-page nav.sidebar-nav .dropdown-menu.show,
-      body:not(.home-page) nav.bootsnav.sidebar-nav li.open > .dropdown-menu,
-      body:not(.home-page) nav.bootsnav.sidebar-nav li.show > .dropdown-menu,
-      body:not(.home-page) nav.bootsnav.sidebar-nav .dropdown-menu.show {
-        display: block !important;
-      }
-
-      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
-      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(1),
-      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg) !important;
-      }
-
-      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
-      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(2),
-      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(2) {
-        opacity: 0 !important;
-      }
-
-      nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
-      body.home-page nav.sidebar-nav .mobile-toggle.is-open span:nth-child(3),
-      body:not(.home-page) nav.bootsnav.sidebar-nav .mobile-toggle.is-open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg) !important;
-      }
-    }
-    /* ── RY MOBILE NAV HARD FIX — full panel open/closed state ── */
-    @media (max-width: 991px) {
-      nav.sidebar-nav {
-        overflow: visible !important;
-      }
-
-      nav.sidebar-nav > .col-12.px-0,
-      nav.sidebar-nav > div.col-12.px-0 {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        position: relative !important;
-        z-index: 100000 !important;
-        background: #0d0d0d !important;
-      }
-
-      nav.sidebar-nav #navbar-menu {
-        display: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        background: #0d0d0d !important;
-        border: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu {
-        display: block !important;
-        height: auto !important;
-        max-height: calc(100vh - 68px) !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-
-      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar,
-      body.ry-mobile-menu-open nav.sidebar-nav #navbar-menu .navbar-left-sidebar > li {
-        display: block !important;
-        width: 100% !important;
-      }
-
-      nav.sidebar-nav .dropdown-menu {
-        display: none !important;
-      }
-
-      nav.sidebar-nav li.open > .dropdown-menu,
-      nav.sidebar-nav li.show > .dropdown-menu,
-      nav.sidebar-nav .dropdown-menu.show {
-        display: block !important;
-      }
-    }
-
 
     /* RY MOBILE NAV FINAL OVERRIDE - sewn in 2026-04-24 */
     @media (max-width: 991px) {
@@ -1022,20 +984,20 @@
       body.ry-nav-open { overflow: hidden !important; }
     }
 
-</style>
+  </style>
 </head>
-<body>
-  <div aria-hidden="true" id="reading-progress">
-    <div id="reading-progress-fill"></div>
-  </div>
 
-  <!-- NAV -->
-  <nav class="navbar no-margin-bottom bootsnav alt-font bg-white sidebar-nav sidebar-nav-style-1 navbar-expand-lg">
+<body>
+
+<div id="reading-progress" aria-hidden="true"><div id="reading-progress-fill"></div></div>
+
+<!-- NAV — copied directly from for-coaches.html -->
+<nav class="navbar no-margin-bottom bootsnav alt-font bg-white sidebar-nav sidebar-nav-style-1 navbar-expand-lg">
     <div class="col-12 sidenav-header">
       <div class="logo-holder">
         <a class="d-inline-block logo" href="index.html"><img alt="Recover You" data-at2x="images/webp/logo-white@2x.webp" src="images/webp/logo-white@2x.webp"></a>
       </div>
-      <button aria-label="Toggle navigation" class="navbar-toggler mobile-toggle" id="mobileToggleSidenav" type="button"><span></span><span></span><span></span></button>
+      <button aria-label="Toggle navigation" class="navbar-toggler mobile-toggle" id="mobileToggleSidenav" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="col-12 px-0">
       <div class="navbar-collapse no-padding ry-mobile-menu" id="navbar-menu">
@@ -1049,7 +1011,7 @@
               <li><a href="start-here.html">Start Here</a></li>
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="for-coaches.html">For Frontline Workers</a></li>
-            <li><a href="for-loved-ones.html">For Loved Ones</a></li>
+              <li class="active"><a href="for-loved-ones.html">For Loved Ones</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -1157,295 +1119,444 @@
     </div>
   </nav>
 
-  <div class="sidebar-wrapper mobile-height">
+<div class="sidebar-wrapper mobile-height">
 
   <!-- HERO -->
-  <section class="fc-hero wow animate__fadeIn" id="page-hero">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-md-10">
-            <span class="fc-eyebrow">// For Frontline Workers</span>
-            <h1>You Already<br>Know <span>The Gap.</span></h1>
-            <p class="fc-lead">Your client is sober, or getting there. They're asking the real questions for the first time. And your role has limits on how far you can go with them. This site is built for that moment.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAIN BODY -->
-    <section class="fc-body wow animate__fadeIn">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-md-10">
-            <span class="fc-section-label">// The situation</span>
-            <div class="fc-rule"></div>
-            <p>A client gets stable. Or sober. Or honest for the first time. Then the questions start. Why do I keep reacting this way? Why does safety feel unfamiliar? Why does shame follow me everywhere, even when I'm trying? They're ready in a way they haven't been before.</p>
-            <p>Sometimes it's less a question and more a statement. <em>I want to talk about my trauma.</em> Said plainly, out of nowhere, in the middle of a session about something else. You know what it took for them to say it. You also know what comes next isn't something you can fully meet.</p>
-            <p>Not because you don't want to, but because you're working inside a scope that doesn't extend to trauma processing. You may not have the mandate, the clinical backing, or the session time to walk someone through what may be driving the addiction beneath the surface.</p>
-            <p>So the conversation has to be handled carefully. The client, who finally feels safe enough to ask, needs more than silence, avoidance, or a referral they may not know how to use yet.</p>
-            <p>I was that client once. The only thing worse than hearing <em>"yeah, we don't do that here"</em> is hearing it with nothing to follow. A 20-year-old clinical printout. A workbook written in a language that already lost them. A referral to a waitlist a month or more deep. These aren't bridges. They're dead ends dressed up as help.</p>
-            <p>There's a level of understanding that only lands when it's spoken by someone who came up through the same fire. Not clinical distance. Not a worksheet. A voice that sounds like it knows, because it does.</p>
-            <p>A lot of you reading this already know what that sounds like. You came up through your own version of it. That's part of why you do this work. This isn't a site written around you. It's written next to you — something you can hand a client when your role runs out of room, in the voice you'd use yourself if the session weren't ending.</p>
-            <p>That's the gap. Recover-You is built to sit inside it. Not as a replacement for therapy, clinical care, or trauma processing, but as something real to hand someone in the moment they finally ask.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PULL QUOTE -->
-    <section class="fc-quote-section wow animate__fadeIn">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10">
-            <blockquote>
-              <p>This site explains the mechanics so you don't have to. The client reads why their brain works the way it does. They come back with better questions. You do the work you're there to do.</p>
-            </blockquote>
-            <p class="fc-attribution">— Austan Sloan, Founder, Recover-You</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT IT COVERS -->
-    <section class="fc-covers wow animate__fadeIn">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-md-10">
-            <span class="fc-section-label">// What clients will find here</span>
-            <div class="fc-rule"></div>
-            <p style="color:#2a2a2a; font-size:1.05rem; line-height:1.8;">Trauma theory, neuroscience, shame, survival responses, therapy options, and Alberta-specific pathways. Plain language, lived experience, grounded in research. No clinical jargon. No soft landings.</p>
-
-            <div class="fc-covers-grid">
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>Why trauma drives addiction</strong>
-                <p>How survival adaptations become substance use, and why abstinence alone so often fails to hold.</p>
-              </div>
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>What the nervous system is actually doing</strong>
-                <p>Fight, flight, freeze, fawn as biological responses. Not character defects.</p>
-              </div>
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>Shame and the false self</strong>
-                <p>How chronic shame shapes identity, and what shifts when someone finally sees the pattern.</p>
-              </div>
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>Why sobriety can feel worse before it feels better</strong>
-                <p>The neuroscience of early recovery, so clients don't read a normal stage as failure.</p>
-              </div>
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>What different therapies are designed to do</strong>
-                <p>EMDR, ART, DBT, IFS, somatic work. In plain language, so clients can ask informed questions.</p>
-              </div>
-              <div class="fc-cover-item">
-                <i class="far fa-circle-dot"></i>
-                <strong>Alberta-specific pathways</strong>
-                <p>Programs, services, and trauma-informed supports across the province, broken down and accessible.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCOPE NOTE -->
-    <section class="fc-scope wow animate__fadeIn">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-md-10">
-
-            <span class="fc-section-label">// What this site is not</span>
-            <div class="fc-rule"></div>
-
-            <p style="color:#2a2a2a; font-size:1.05rem; line-height:1.8; margin-bottom:32px;">Some clients aren't ready for this yet. Newly sober, actively destabilized, in crisis — stabilization comes first. You know your clients. Use your judgment on timing.</p>
-
-            <div class="fc-scope-box">
-              <p>Recover-You is <strong>not therapy</strong>. It doesn't diagnose, doesn't treat, and doesn't replace clinical care. It won't push someone into trauma processing before they're ready, and it's explicit about that.</p>
-              <p>What it is: psychoeducation. Language, context, and direction, so clients can understand what's happening inside them and have better conversations with the people already supporting them.</p>
-              <p><strong>The goal isn't to open everything at once. It's to make sure that when someone is ready to face it, they're not walking in blind.</strong></p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fc-body wow animate__fadeIn" style="background:#f9f9f9; padding: 70px 0;">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 col-md-10">
-            <span class="fc-section-label">// How to share it</span>
-            <div class="fc-rule"></div>
-            <p>However feels right. There's no referral form, no intake process, no organization on the other end. It's a website. You can mention it, text the URL, leave the page open.</p>
-            <p><em>"You've been asking good questions. This might put some language to it."</em></p>
-            <p>That's enough. The site will do the rest.</p>
-            <p>If it helps to have something physical — a two-page overview you can print and leave with someone — <a href="assets/recover-you-summary.pdf" download style="color:#ff0000; text-decoration:none; border-bottom:1px solid rgba(255,0,0,0.3);">download the reference sheet here</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="fc-cta wow animate__fadeIn">
-      <div class="container">
-        <h4>Free. No Sign-Up. No Agenda.</h4>
-        <p>A survivor-built resource for the people who are finally ready to ask why.</p>
-        <a class="fc-url" href="start-here.html">Explore the Site &rarr;</a>
-      </div>
-    </section>
-</div>
-
-  <!-- TICKER -->
-  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+  <section class="fl-hero wow animate__fadeIn" id="page-hero">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="ticker">
-            <span class="alt-font text-medium">Feeling overwhelmed by what you've read? Support is here &bull; Call 988 Anywhere in Canada 24/7 Suicide Crisis Line &bull; In Alberta call 211 (community &amp; mental health referrals) &bull; Distress Line 780-482-HELP &bull; 911 in emergencies</span>
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-eyebrow">// For Loved Ones</span>
+          <h1>You Were <span>Strong</span><br>Too.</h1>
+          <p class="fl-lead">This page is not for the person in addiction. It is for the person who loved them through it, who is still loving them through it, and who has never once been told what that actually costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPENING PERSONAL SECTION -->
+  <section class="fl-body wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-section-label">// From the founder</span>
+          <div class="fl-rule"></div>
+
+          <p>I used to think I was the strong one.</p>
+
+          <p>I survived addiction. I clawed my way back from something that kills people. For a long time, that felt like the harder thing. The thing that asked more from a person than most people are ever asked to give.</p>
+
+          <p>I don't think that anymore.</p>
+
+          <p>What I've come to understand, slowly and with some difficulty, is that the people who loved me through it were doing something I could not have done. They were watching someone they loved dismantle himself in real time, and they had no lever to pull. No amount of love, logic, pleading, or presence could make me choose differently before I was ready to choose.</p>
+
+          <p>Here is the part that took me a long time to sit with: I got a break from it. A destructive break, a temporary one, one that made everything worse in the long run, but a break nonetheless. When it got to be too much, I had an escape hatch I could reach for that would take the edge off the unbearable. The crash was brutal. The cost was everything. But for a moment, there was <em>'relief'.</em></p>
+
+          <p>My father never drank. He had no version of that. What I was feeling, he felt too. The fear, the grief, the helplessness, and he felt it raw, unfiltered, with nowhere to put it and no way to turn it down. Every day. For years. While holding down a life, showing up to work, and trying not to let the waiting swallow him whole.</p>
+
+          <p>My daughter felt it too. In the way children do, not always understanding what was happening, but feeling every bit of it.</p>
+
+          <p>They had to find a way to keep living while holding a truth I could not face yet: that one day, they might get a phone call. That I might not make it. And that it would be my choice, not theirs, that decided it.</p>
+
+          <p>I don't know what that takes. I know it's not nothing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FATHER'S WORDS -->
+  <section class="fl-testimony wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <span class="fl-testimony-label">// My father watched all of it. I asked him to write something. This is what he said.</span>
+          <blockquote>
+            <p>There were times when I felt like I was watching you slip further away and there was nothing I could do to stop it. That kind of helplessness is something a father never forgets. The worry, the sleepless nights, the fear of getting the worst kind of phone call. It stays with you.</p>
+            <p>But so does something else: love. It never left, not for a second.</p>
+            <p>Seeing you now, putting in the work to get your life back, means more to me than I can fully put into words. I know the strength it takes to face what you've faced. I know it isn't easy. And I want you to know that I see it. I see you.</p>
+            <p>I'm proud of you, not just for being sober, but for choosing to keep going, one day at a time. That matters more than anything. No matter what's behind us, I'm here. Always.</p>
+          </blockquote>
+          <p class="fl-attribution">— Austan's father</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING OF OPENING / BRIDGE INTO PRACTICAL -->
+  <section class="fl-body wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+
+          <p>I included his full letter because it earns its ending. The relief and the pride at the close of it did not come cheaply. What preceded it was nearly twenty-five years of addiction, hospitalizations, suicide attempts, and nights I simply should not have survived. My father sat through all of it. He did not know how it would end. Neither did I.</p>
+
+          <p>Not every story lands where ours did. I know that. But if there is one thing I want you to take from his words, it is that the ending he describes is possible. People do get better. Not all of them, not always, not on any timeline that feels reasonable from where you are standing. But it happens. And sometimes the people who watched the worst of it get to be there for that too.</p>
+
+          <p>If you're here because you love someone in addiction, or someone in recovery who keeps slipping, or someone you're not sure you can keep watching, this page is for you. Not for them. <em><strong class="text-deep-pink">For you.</strong></em></p>
+
+          <p>I have built this site on one principle: no borrowed wisdom dressed up as insight, no soft landings, no telling people what they want to hear when the truth would do more. I have held to that for the person in addiction across every page here. I will hold to it here too.</p>
+
+          <p>What that means for you: some of what follows will sit uncomfortably with what you already believe, what you have already tried, or what feels like the loving thing to do. That discomfort is worth listening to. The most useful path forward for a loved one is almost always the one that feels the least natural, because everything your instincts are telling you to do comes from love, and love alone has never been enough to get someone sober.</p>
+
+          <p>This page is not going to tell you to stop loving them. It is going to try to redirect some of that love somewhere it can actually do something.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU WERE ACTUALLY WATCHING -->
+  <section class="fl-reframe wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-section-label">// What you were actually watching</span>
+          <div class="fl-rule"></div>
+
+          <p>When someone you love is deep in addiction, the behaviour you're witnessing looks like a choice. It looks like selfishness. It looks like they love the substance more than they love you, more than they love themselves, more than they love anything worth keeping.</p>
+
+          <p>That framing is understandable. Any reasonable person watching from the outside would arrive at the same conclusion. You are not wrong to think and feel that way. We are taught to read character by what people do, not by what they say. But in the often counterintuitive world of trauma laced addiction, that read is incomplete, and it matters that you understand why. Not to excuse what happened, but because the way you understand it will shape everything you do next.</p>
+
+          <p>Here is what that incomplete picture misses: in trauma, we are almost always applying moral frameworks to what are actually physiological reactions. The person you love was not just making bad decisions. They were running survival responses through a nervous system that had learned, often long before the addiction started, that the world was not safe. The shame, the secrecy, the cycle of promises and relapse, these look like character failures from the outside. From the inside, they are the architecture of a person trying to manage unbearable internal states with the only tools they had. Many of us in recovery were not failed adults. We were very old children who never got to finish growing up.</p>
+
+          <p>And those moral frameworks do not stay contained to the person in addiction. They bleed into the people around them. If he keeps doing this, he must not love us enough. If she wanted to get better, she would. If I were enough, things would be different. These are not irrational thoughts. They are the natural conclusions of watching someone destroy themselves and trying to make sense of it through a human lens.</p>
+
+          <p>But try this lens instead: what you were watching was a desperate bid for relief from a nervous system in genuine distress, hijacked by both trauma and addiction, reaching for the only thing that had ever made the unbearable feel manageable, even temporarily.</p>
+
+          <p>It sits differently that way. It does not erase the damage. It does not mean the behaviour was acceptable. But it opens a door that moral framing keeps locked, and that door is empathy. Not the kind that pulls you under with them. The kind that lets you stay present without losing yourself entirely.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHAT HELPS / WHAT HURTS -->
+  <section class="fl-guide wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-section-label">// What helps and what doesn't</span>
+          <div class="fl-rule"></div>
+
+          <p>Most advice aimed at loved ones of people in addiction falls into one of two traps. It is either so soft it is useless, or so clinical it feels like it was written for somebody else's life. What follows is neither. It is drawn from research, from lived experience on both sides, and from the honest reality of what actually moves the needle, and what quietly makes things worse.</p>
+
+          <p class="fl-subsection-head">What actually helps</p>
+
+          <div class="fl-guide-grid">
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot helps"></i>
+              <strong>Regulate yourself first</strong>
+              <p>The emotional state you bring into a conversation with someone in active addiction or early recovery is not neutral. A nervous system in distress is contagious. When you approach them anxious, angry, or braced for the worst, their system reads it instantly and answers in kind, usually by shutting down, getting defensive, or reaching for whatever makes the feeling stop. This is not a character flaw. It is biology. The single most powerful thing you can offer someone in that state is your own calm. That means doing whatever you need to do to find it before the conversation, not during it.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot helps"></i>
+              <strong>Validate without endorsing</strong>
+              <p>There is a difference between telling someone their feelings make sense and telling them their behaviour is acceptable. Loved ones often collapse these two because it feels like you cannot do one without doing the other. You can. "I can see you are overwhelmed" is not the same as "so it makes sense you relapsed." Keeping those two separate is one of the more useful skills you can build.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot helps"></i>
+              <strong>Ask before you push</strong>
+              <p>One of the defining features of trauma laced addiction is a history of having no control over what happens to you. Restoring even small amounts of agency matters more than it sounds. Asking "is now a good time to talk about what happened, or do you need a bit longer?" is not weakness. It is the difference between a conversation that opens something and one that slams everything shut.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot helps"></i>
+              <strong>Keep showing up in small ways</strong>
+              <p>Recovery is not linear and neither is the relationship around it. Grand gestures matter less than consistency. A text. A meal. Showing up without an agenda. The message underneath all of it is: I am still here, and I am not keeping score today.</p>
+            </div>
+          </div>
+
+          <p class="fl-subsection-head red" style="margin-top:56px;">What makes it worse</p>
+
+          <div class="fl-guide-grid">
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot hurts"></i>
+              <strong>Absorbing the chaos</strong>
+              <p>This is the most common default, and the one most likely already happening for whoever is reading this. Calling in sick for them. Covering the financial fallout. Smoothing things over with people they have hurt. Every time the natural consequences of the addiction get absorbed by the people around it, the feedback loop that might otherwise create motivation gets interrupted. Helping someone into treatment is support. Helping them avoid the reality of what their addiction is costing them is something else entirely.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot hurts"></i>
+              <strong>Shame and blame</strong>
+              <p>"How could you do this to us" and "why can't you just stop" are not questions. They are accusations dressed as questions, and the answer they produce is not honesty. It is withdrawal, defensiveness, and the quiet reinforcement of the belief that they are too broken to recover. Moving from "what is wrong with you" to "what happened to you" is not letting them off the hook. It is choosing the framing that actually has a chance of reaching them.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot hurts"></i>
+              <strong>Tough love as abandonment</strong>
+              <p>Boundaries are necessary. Withdrawing care entirely is a different thing. For someone whose addiction is rooted in trauma, and whose trauma is often rooted in early experiences of abandonment or neglect, being cut off completely during a relapse can confirm the belief they've carried their whole lives: that they are fundamentally unlovable, that people always leave, that there is no point. This is not an argument against consequences. It is an argument for knowing the difference between a consequence and a wound.</p>
+            </div>
+            <div class="fl-guide-item">
+              <i class="far fa-circle-dot hurts"></i>
+              <strong>Surveillance and policing</strong>
+              <p>Checking phones, sniffing breath, tracking movements. It feels like vigilance. What it builds is a dynamic where the person in addiction becomes more secretive, more skilled at hiding, and less likely to come to you when something is actually wrong. It also locks you into a role that will exhaust you completely, because you cannot monitor your way to someone else's recovery.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOUGH LOVE PULL QUOTE — personal voice -->
+  <section class="fl-quote-section wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+          <blockquote>
+            <p>In my experience, the distance between "I'm done with you, I can't watch you destroy yourself" and "I love you, but I have to take a step back" is infinite. They can sound similar from the outside. They land completely differently on the inside.</p>
+          </blockquote>
+          <p class="fl-attribution">— Austan Sloan, Founder, Recover-You</p>
+          <div style="border-left: 3px solid #ff0000; padding-left: 28px; margin-top: 32px;">
+            <p style="color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">Even when you say the loving version, it may not land that way. You may get "oh bullshit, you are leaving, just like everyone else." That response is real, and it will hurt, and it does not mean you said the wrong thing. It means you are talking to someone whose history has taught them that people who leave do not come back. You cannot fix that belief in the moment. What you can do is mean what you said, and follow through when they are ready.</p>
+            <p style="color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.8; margin: 0;">I know this because I have been on the receiving end of both. The version that carried the promise of reconnection, that made clear the door was not being closed permanently, became something I held onto. Not immediately. But it was there when I needed it.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+  <!-- BOUNDARIES -->
+  <section class="fl-boundaries wow animate__fadeIn">
     <div class="container">
-      <div class="site-footer__inner">
-        <div class="site-footer__left alt-font text-small font-weight-500">
-          <a href="contact.html">GET IN TOUCH</a>
-          <span class="footer-sep">|</span>
-          <a href="#" id="open-privacy-policy">Privacy Policy</a>
-        </div>
-        <div class="site-footer__center">
-          <a href="index.html">
-            <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
-          </a>
-        </div>
-        <div class="site-footer__right alt-font text-small font-weight-500">
-          Not medical advice.<br>
-          See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-section-label">// Boundaries are not punishment</span>
+          <div class="fl-rule"></div>
+
+          <p>If there is one word that gets more misused in the world of addiction and recovery than any other, it is boundaries. It gets weaponized, collapsed into ultimatums, confused with punishment, and abandoned out of guilt the moment it is tested.</p>
+
+          <p>A boundary is not something you set to control another person. It is something you set to protect yourself. That distinction matters more than it sounds, because the moment a boundary becomes about changing the other person's behaviour, it stops being a boundary and starts being a negotiation you are guaranteed to lose. Every. Single. Time.</p>
+
+          <p>The other thing worth naming so you're prepared before going in: setting a boundary with someone in active addiction will almost certainly be met with resistance, guilt, anger, or all three. That resistance is not evidence the boundary is wrong. In most cases it is evidence the boundary is necessary. If it did not matter, there would be no reaction.</p>
+
+          <p>One more thing before we get into what boundaries actually look like in practice. If you are setting a boundary because you want them to finally understand you mean business, to see that you are serious this time, to shock them into changing, you have got it twisted. I say that with love, but it is the truth.</p>
+
+          <blockquote>
+            <p>Before you set a boundary, ask yourself one honest question: am I setting this because I genuinely need it for my own sanity, or am I setting it because I want them to hurt the way they have been hurting me?</p>
+          </blockquote>
+
+          <p>One of those answers is healthy. The other resembles malice, even if it is dressed up in the language of self-care. And I promise you, in the likely event that a malice-driven boundary blows up in your face, you will be farther from your loved one than when you started, and they will be more defensive and more closed off for it. You will have confirmed something they already feared: that people do not actually show up for them, they just find more sophisticated ways to punish them.</p>
+
+          <div class="fl-scope-box">
+            <p>Boundaries are not a performance of seriousness. They are not leverage. They are not a message you're sending to the person in addiction. They are an act of not abandoning yourself in the process of loving someone who is currently unable to love themselves well.</p>
+            <p>There is a version of love that erases the person doing the loving. It happens slowly, across a hundred small accommodations, a hundred moments of putting your own needs on the shelf because the crisis in front of you felt more urgent. Then one day you look up and you have lost your footing entirely. You are exhausted and resentful and barely recognizable to yourself, and somehow you feel guilty about that too.</p>
+            <p>That is not love. That is self erasure wearing love's clothes.</p>
+            <p><strong>You cannot be a stable presence for someone in chaos if the chaos has consumed you too. The boundary is not for them. It is for you. It is how you stay intact enough to still be there when they are ready. And if they never get ready, it is how you stay intact regardless.</strong></p>
+          </div>
+
+          <div class="fl-bnd-grid" style="margin-top: 48px;">
+            <div class="fl-bnd-item">
+              <i class="far fa-circle-dot"></i>
+              <strong>Your physical space</strong>
+              <p>You are allowed to decide what happens in your home. Substances in the house, people under the influence in the house, behaviour that makes your home feel unsafe: these are things you get to have a position on. "If you choose to use, you cannot be here tonight" is not cruelty. It is a decision about your own space.</p>
+            </div>
+            <div class="fl-bnd-item">
+              <i class="far fa-circle-dot"></i>
+              <strong>Your emotional capacity</strong>
+              <p>You are not your loved one's therapist, their crisis line, or their emotional storage unit. Loving someone does not obligate you to be available for every spiraling conversation at every hour, or to absorb rage that belongs somewhere else. "I love you and I want to support you, but I cannot be your only source of support" is a complete sentence. Meaning it is the hardest part.</p>
+            </div>
+            <div class="fl-bnd-item">
+              <i class="far fa-circle-dot"></i>
+              <strong>Your finances</strong>
+              <p>Money that goes toward keeping someone comfortable in their addiction is not help, it is insulation from the consequences that might otherwise create motivation. Paying for groceries, a medical appointment, or a treatment program is different from covering rent so the fallout of active use never fully arrives. You are allowed to know the difference and act on it.</p>
+            </div>
+            <div class="fl-bnd-item">
+              <i class="far fa-circle-dot"></i>
+              <strong>Your conversations</strong>
+              <p>You do not have to engage with someone who is under the influence. You do not have to sit in arguments that go nowhere at 2am. "I am not able to have this conversation right now, but I want to when you are in a better place" is not abandonment. It is refusing to let the addiction set the terms of your relationship.</p>
+            </div>
+          </div>
+
+          <p style="margin-top: 36px; font-size: 0.95rem; color: #555; font-style: italic;">A note on guilt: when you set a boundary and someone you love responds with pain or anger, the guilt that follows can feel like confirmation that you did something wrong. It is almost never that. Guilt in this context is usually the feeling of doing something unfamiliar, something that cuts against years of instinct and accommodation. It passes. The boundary, if it is the right one, holds.</p>
+
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+  <!-- WHAT THIS IS — bridge into the plan PDF -->
+  <section class="fl-plan-intro wow animate__fadeIn">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <span class="fl-section-label">// The recovery lifeline plan</span>
+          <div class="fl-rule"></div>
 
-  <script src="js/jquery.min.js" type="text/javascript"></script>
-  <script src="js/bootsnav.js" type="text/javascript"></script>
-  <script src="js/jquery.nav.js" type="text/javascript"></script>
-  <script src="js/hamburger-menu.js" type="text/javascript"></script>
-  <script src="js/theme-vendors.min.js" type="text/javascript"></script>
-  <script src="js/main.js" type="text/javascript"></script>
+          <p>Everything above is about understanding. This next part is about preparing.</p>
 
-  <script>
-  (function () {
-    const progress = document.getElementById('reading-progress');
-    const fill = document.getElementById('reading-progress-fill');
-    if (!progress || !fill) return;
-    const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-    function getScrollTop() { return window.pageYOffset || document.documentElement.scrollTop || 0; }
-    function getDocHeight() {
-      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-    }
-    function updateReadingProgress() {
-      const scrollTop = getScrollTop();
-      const viewportHeight = window.innerHeight;
-      const docHeight = getDocHeight();
-      let startPoint = hero ? hero.offsetTop + hero.offsetHeight : 0;
-      const totalReadableDistance = docHeight - viewportHeight - startPoint;
-      const distanceRead = scrollTop - startPoint;
-      if (scrollTop > startPoint) {
-        progress.classList.add('is-visible');
-        let percent = totalReadableDistance <= 0 ? 100 : (distanceRead / totalReadableDistance) * 100;
-        fill.style.width = Math.max(0, Math.min(percent, 100)) + '%';
-      } else {
-        progress.classList.remove('is-visible');
-        fill.style.width = '0%';
-      }
-    }
-    window.addEventListener('load', updateReadingProgress);
-    window.addEventListener('resize', updateReadingProgress);
-    window.addEventListener('scroll', updateReadingProgress, { passive: true });
-  })();
-  </script>
+          <p>A relapse is not the end of the story. It is a flaw in the design of the recovery, and like any flaw, it carries information. The only way a relapse becomes a true failure is if nothing is learned from it, and no one shows up.</p>
 
-  <!-- PRIVACY MODAL -->
-  <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-    <div class="privacy-modal__backdrop" data-close-policy></div>
-    <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
-      <div class="privacy-modal__header">
-        <h3 id="privacy-modal-title">Privacy Policy</h3>
-        <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy>&times;</button>
+          <p>The Recovery Lifeline Plan exists so that the worst morning has a shape to it. So that when the person you love wakes up crushed by shame and regret, already drowning in "not again," they are not also trying to figure out who to call, what to say, how to ask for help, and whether the person they call is going to make it worse. The two of you already figured that out. Together. While both of you were clear headed enough to do it well.</p>
+
+          <p>This is not a sponsor call. A sponsor call is valuable and has its place, but a sponsor is responding in real time, from whatever headspace they happen to be in that day, without preparation. This plan is different. The person on the other end of that call has already said yes. Not just yes to being called, but yes to a specific role, a specific response, and a specific set of actions. They already know what they are doing when they pick up the phone. That call has been rehearsed, prepared for, and agreed to in advance.</p>
+
+          <p>The plan below is a loose framework. It names the things that tend to get missed, the ones nobody thinks to include until the moment they need them. The specifics are yours to fill in. Print it. Sit down together with the person in recovery. Talk through it honestly. Fill it in while both of you are stable and clear. Sign it. Put it somewhere you can both find it.</p>
+
+          <p>One honest note on timing: this plan is not for someone cycling through relapse week to week. It is for people leaving treatment, or people in a sustained period of stability who are serious about what comes next. A plan built in the wrong window will get abandoned the first time it is tested. Built in the right one, it becomes something both of you can reach for in the dark.</p>
+        </div>
       </div>
-      <div class="privacy-modal__body">
-        <p><strong>Last updated:</strong> March 2026</p>
-        <p>If you reach out through the contact form, I'll collect your name, email, and message — nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
-        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data — no cookies, no individual tracking.</p>
-        <p>Please don't share anything urgent or crisis-related through the contact form — it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
-      </div>
-      <div class="privacy-modal__footer">
-        <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+    </div>
+  </section>
+
+  <!-- CTA — DOWNLOAD PLAN -->
+  <section class="fc-cta wow animate__fadeIn">
+    <div class="container">
+      <h4>The Recovery Lifeline Plan</h4>
+      <p>A two-sided planning document for the person in recovery and the person who loves them. Built when things are good. Reached for when they are not.</p>
+      <a class="fc-url" href="assets/recovery-lifeline-plan.pdf" download>Download the Plan &darr;</a>
+      <a class="fc-url secondary" href="start-here.html">Explore the Site &rarr;</a>
+    </div>
+  </section>
+
+</div><!-- end sidebar-wrapper -->
+
+<!-- TICKER -->
+<section class="wow animate__fadeIn bg-light-gray ticker-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="ticker">
+          <span class="alt-font text-medium">Feeling overwhelmed by what you've read? Support is here &bull; Call 988 Anywhere in Canada 24/7 Suicide Crisis Line &bull; In Alberta call 211 (community &amp; mental health referrals) &bull; Distress Line 780-482-HELP &bull; 911 in emergencies</span>
+        </div>
       </div>
     </div>
   </div>
-  <script>
-  (function () {
-    const modal = document.getElementById('privacy-modal');
-    const openBtn = document.getElementById('open-privacy-policy');
-    const closeBtns = document.querySelectorAll('[data-close-policy]');
-    if (!modal || !openBtn) return;
-    function openPolicy(e) { e.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('policy-modal-open'); }
-    function closePolicy() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('policy-modal-open'); }
-    openBtn.addEventListener('click', openPolicy);
-    closeBtns.forEach(btn => btn.addEventListener('click', closePolicy));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
-  })();
-  </script>
+</section>
 
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
-    <div class="cookie-banner-inner">
-      <p class="cookie-banner-text"><strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally.</p>
-      <div class="cookie-banner-actions">
-        <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
-        <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+<!-- FOOTER -->
+<footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div class="site-footer__left alt-font text-small font-weight-500">
+        <a href="contact.html">GET IN TOUCH</a>
+        <span class="footer-sep">|</span>
+        <a href="#" id="open-privacy-policy">Privacy Policy</a>
+      </div>
+      <div class="site-footer__center">
+        <a href="index.html">
+          <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
+        </a>
+      </div>
+      <div class="site-footer__right alt-font text-small font-weight-500">
+        Not medical advice.<br>
+        See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
       </div>
     </div>
   </div>
-  <script>
-  (function () {
-    const CONSENT_KEY = 'ry_cookie_consent';
-    const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
-    const DECLINE_DAYS = 180;
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const declineBtn = document.getElementById('cookie-decline');
-    function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
-    function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
-    function showBanner() { if (banner) banner.style.display = 'block'; }
-    function hideBanner() { if (banner) banner.style.display = 'none'; }
-    function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
-    function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
-    function isDeclineExpired() { const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY); return !expiry || Date.now() > Number(expiry); }
-    function applyConsentState() {
-      const consent = localStorage.getItem(CONSENT_KEY);
-      if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
-      if (consent === 'declined') { denyAnalytics(); isDeclineExpired() ? (localStorage.removeItem(CONSENT_KEY), localStorage.removeItem(CONSENT_EXPIRY_KEY), showBanner()) : hideBanner(); return; }
-      denyAnalytics(); showBanner();
+</footer>
+
+<a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootsnav.js" type="text/javascript"></script>
+<script src="js/jquery.nav.js" type="text/javascript"></script>
+<script src="js/hamburger-menu.js" type="text/javascript"></script>
+<script src="js/theme-vendors.min.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+
+<script>
+(function () {
+  const progress = document.getElementById('reading-progress');
+  const fill = document.getElementById('reading-progress-fill');
+  if (!progress || !fill) return;
+  const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
+  function getScrollTop() { return window.pageYOffset || document.documentElement.scrollTop || 0; }
+  function getDocHeight() {
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight);
+  }
+  function updateReadingProgress() {
+    const scrollTop = getScrollTop();
+    const viewportHeight = window.innerHeight;
+    const docHeight = getDocHeight();
+    let startPoint = hero ? hero.offsetTop + hero.offsetHeight : 0;
+    const totalReadableDistance = docHeight - viewportHeight - startPoint;
+    const distanceRead = scrollTop - startPoint;
+    if (scrollTop > startPoint) {
+      progress.classList.add('is-visible');
+      let percent = totalReadableDistance <= 0 ? 100 : (distanceRead / totalReadableDistance) * 100;
+      fill.style.width = Math.max(0, Math.min(percent, 100)) + '%';
+    } else {
+      progress.classList.remove('is-visible');
+      fill.style.width = '0%';
     }
-    if (acceptBtn) acceptBtn.addEventListener('click', () => { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
-    if (declineBtn) declineBtn.addEventListener('click', () => { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
-    applyConsentState();
-  })();
-  </script>
+  }
+  window.addEventListener('load', updateReadingProgress);
+  window.addEventListener('resize', updateReadingProgress);
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+})();
+</script>
 
+<!-- PRIVACY MODAL -->
+<div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+  <div class="privacy-modal__backdrop" data-close-policy></div>
+  <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+    <div class="privacy-modal__header">
+      <h3 id="privacy-modal-title">Privacy Policy</h3>
+      <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy>&times;</button>
+    </div>
+    <div class="privacy-modal__body">
+      <p><strong>Last updated:</strong> March 2026</p>
+      <p>If you reach out through the contact form, I'll collect your name, email, and message — nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+      <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data — no cookies, no individual tracking.</p>
+      <p>Please don't share anything urgent or crisis-related through the contact form — it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+    </div>
+    <div class="privacy-modal__footer">
+      <button type="button" class="privacy-modal__ok" data-close-policy>OK</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  const modal = document.getElementById('privacy-modal');
+  const openBtn = document.getElementById('open-privacy-policy');
+  const closeBtns = document.querySelectorAll('[data-close-policy]');
+  if (!modal || !openBtn) return;
+  function openPolicy(e) { e.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('policy-modal-open'); }
+  function closePolicy() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('policy-modal-open'); }
+  openBtn.addEventListener('click', openPolicy);
+  closeBtns.forEach(btn => btn.addEventListener('click', closePolicy));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
+})();
+</script>
 
-  <script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text"><strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally.</p>
+    <div class="cookie-banner-actions">
+      <button id="cookie-decline" class="cookie-btn cookie-btn-decline" type="button">Decline</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn-accept" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  const CONSENT_KEY = 'ry_cookie_consent';
+  const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
+  const DECLINE_DAYS = 180;
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+  function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+  function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+  function showBanner() { if (banner) banner.style.display = 'block'; }
+  function hideBanner() { if (banner) banner.style.display = 'none'; }
+  function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
+  function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
+  function isDeclineExpired() { const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY); return !expiry || Date.now() > Number(expiry); }
+  function applyConsentState() {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
+    if (consent === 'declined') { denyAnalytics(); isDeclineExpired() ? (localStorage.removeItem(CONSENT_KEY), localStorage.removeItem(CONSENT_EXPIRY_KEY), showBanner()) : hideBanner(); return; }
+    denyAnalytics(); showBanner();
+  }
+  if (acceptBtn) acceptBtn.addEventListener('click', () => { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
+  if (declineBtn) declineBtn.addEventListener('click', () => { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
+  applyConsentState();
+})();
+</script>
+
+<script>
 /* RY mobile sidebar nav controller: final plain overlay controller */
 (function () {
   function initRyMobileNav() {
@@ -1549,7 +1660,6 @@
   }
 })();
 </script>
-
 
 </body>
 </html>
