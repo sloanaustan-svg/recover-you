@@ -250,8 +250,63 @@
            opacity: 1;
            text-decoration: underline;
          }
+    
+            .ry-style-card {
+              border-radius: 10px;
+              box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+              border: 1px solid rgba(0, 0, 0, 0.03);
+              background-color: #f7f7f7;
+            }
+            .ry-style-number {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 12px;
+              width: 34px;
+              height: 34px;
+              border-radius: 999px;
+              font-size: 13px;
+              font-weight: 700;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              background: rgba(255, 42, 109, 0.12);
+              color: #ff2a6d;
+            }
+    
+        
+                           .stc-preview-wrapper {
+                             border-radius: 10px;
+                             overflow: hidden;
+                             box-shadow: 0 18px 45px rgba(0,0,0,.10);
+                             border: 1px solid rgba(0,0,0,.06);
+                             background: #fff;
+                             position: relative;
+                           }
+                           .stc-preview-inner { position: relative; }
+                           .stc-page {
+                             width: 100%;
+                             display: none;
+                             transition: opacity .25s ease;
+                           }
+                           .stc-page.active { display: block; }
+                           @media (hover: hover) {
+                             .stc-preview-wrapper:hover .stc-page:nth-child(1) { display: none; }
+                             .stc-preview-wrapper:hover .stc-page:nth-child(2) { display: block; }
+                             .stc-preview-wrapper:active .stc-page:nth-child(2) { display: none; }
+                             .stc-preview-wrapper:active .stc-page:nth-child(3) { display: block; }
+                           }
+        .hero-small-line {
+  display: inline-block;
+  font-size: 0.62em;
+  line-height: 1.2;
+  font-weight: 900;
+}
+@media (max-width: 767px) {
+  .hero-small-line {
+    font-size: 0.7em;
+  }
+}
 
-         
   </style>
 </head>
 <body>
@@ -481,8 +536,14 @@
       <div class="row align-items-center">
         <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
           <!-- start page title -->
-          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">Come here… no, actually <em>f*ck off…</em> but please don’t leave.</h1>
-          <h6 class="text-light-gray alt-font font-weight-600">How Early Bonds Shape Safety, Connection, and the Stories We Carry</h6>
+          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">
+            Come here… no, actually <em>f*ck off…</em><br>
+            <span class="hero-small-line">but please don’t leave.</span>
+          </h1>
+
+          <h6 class="text-light-gray alt-font font-weight-600">
+            How Early Bonds Shape Safety, Connection, and the Stories We Carry
+          </h6>
         </div>
       </div>
     </div>
@@ -724,29 +785,37 @@
         </div>
       </div>
     </div>
-    <style>
-            .ry-style-card {
-              border-radius: 10px;
-              box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
-              border: 1px solid rgba(0, 0, 0, 0.03);
-              background-color: #f7f7f7;
-            }
-            .ry-style-number {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              margin-right: 12px;
-              width: 34px;
-              height: 34px;
-              border-radius: 999px;
-              font-size: 13px;
-              font-weight: 700;
-              letter-spacing: 0.08em;
-              text-transform: uppercase;
-              background: rgba(255, 42, 109, 0.12);
-              color: #ff2a6d;
-            }
-    </style>
+    <!-- Loved-One Paradox / Betrayal Trauma Theory -->
+    <div class="row justify-content-center margin-40px-top margin-30px-bottom">
+      <div class="col-lg-7">
+        <div class="bg-white padding-40px-all sm-padding-30px-all ry-style-card" style="border-left: 4px solid #ff2a6d;">
+          <h5 class="alt-font text-extra-dark-gray margin-15px-bottom">
+            <span class="text-deep-pink">//</span> The Loved-One Paradox
+          </h5>
+
+          <p class="text-medium alt-font text-extra-dark-gray">
+            There is one additional dynamic that is absolutely worth mentioning here: sometimes the deepest wound is not only the trauma itself, but the relationship it happens inside of.
+          </p>
+
+          <p class="text-medium alt-font text-extra-dark-gray">
+            Trauma caused by a stranger is horrific. But trauma caused by a parent, caregiver, partner, or trusted loved one carries another kind of injury. The person who should represent safety becomes part of the danger. The person the child may need for comfort, protection, food, shelter, identity, and survival may also be the person creating the fear, or failing to stop it.
+          </p>
+
+          <p class="text-medium alt-font text-extra-dark-gray">
+            This is where attachment becomes brutally complicated. A child cannot simply walk away from the person they depend on. So the nervous system is forced into a contradiction: <strong class="text-deep-pink">recognize the danger clearly and risk losing the attachment, or preserve the attachment by minimizing, excusing, compartmentalizing, forgetting, or blaming themselves for what happened.</strong>
+          </p>
+
+          <p class="text-medium alt-font text-extra-dark-gray">
+            That does not make the trauma less real. It makes the survival strategy more understandable. The child may accept the apology. They may run back toward the same person who hurt them. They may bury the truth, soften it, explain it away, or turn the blame inward because attachment is not optional to a child. Attachment is survival.
+          </p>
+
+          <p class="text-medium alt-font text-extra-dark-gray margin-0">
+            <em><a href="https://susanzola.com/wp-content/uploads/8.What-is-a-Betrayal-Trauma-Jennifer-Freyd.pdf" target="_blank" rel="noopener noreferrer" class="text-deep-pink">Betrayal trauma theory</a> offers one lens for understanding this paradox. I am not presenting it as a perfect explanation for every survivor's experience. I am offering it as a useful theory, and a painfully important dynamic to consider: sometimes trauma does not only teach the body that the world is unsafe. It teaches the child that love, danger, comfort, and betrayal can all wear the same face.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+<
   </section>
   <section class="bg-white wow animate__fadeIn">
     <div class="container">
@@ -1004,29 +1073,7 @@
         </div>
       </div>
     </div>
-    <style>
-                      .stc-preview-wrapper {
-                        border-radius: 10px;
-                        overflow: hidden;
-                        box-shadow: 0 18px 45px rgba(0,0,0,.10);
-                        border: 1px solid rgba(0,0,0,.06);
-                        background: #fff;
-                        position: relative;
-                      }
-                      .stc-preview-inner { position: relative; }
-                      .stc-page {
-                        width: 100%;
-                        display: none;
-                        transition: opacity .25s ease;
-                      }
-                      .stc-page.active { display: block; }
-                      @media (hover: hover) {
-                        .stc-preview-wrapper:hover .stc-page:nth-child(1) { display: none; }
-                        .stc-preview-wrapper:hover .stc-page:nth-child(2) { display: block; }
-                        .stc-preview-wrapper:active .stc-page:nth-child(2) { display: none; }
-                        .stc-preview-wrapper:active .stc-page:nth-child(3) { display: block; }
-                      }
-    </style>
+
   </section><!-- ====== ATTACHMENT STYLE QUIZ - CSS + JAVASCRIPT ====== -->
   <!-- end blog content section -->
   <!-- start section -->
