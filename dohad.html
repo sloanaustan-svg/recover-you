@@ -23,7 +23,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
   <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="Explore DOHaD: how early-life signals program your metabolism, immunity, and stress response. Learn why your biology isn't broken—it was calibrated for survival." name="description">
+  <meta content="Explore DOHaD: how early-life signals program your metabolism, immunity, and stress response. Your biology isn't broken. It was calibrated for survival." name="description">
   <meta content="DOHaD, developmental origins of health and disease, first 1000 days, epigenetics trauma, prenatal stress, fetal programming, ACE study mechanisms, Recover-You, Alberta mental health" name="keywords">
   <meta content="DOHaD: The Biology of Beginnings and Recovery" property="og:title">
   <meta content="How early environments leave permanent fingerprints on health. Discover the science of how our 'operating system' is installed before we are even born." property="og:description">
@@ -32,7 +32,7 @@
   <meta content="https://recover-you.ca/dohad.html" property="og:url">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="DOHaD &amp; The First 1,000 Days | Recover-You" name="twitter:title">
-  <meta content="A survivor-led look at the Developmental Origins of Health and Disease—and what it means for trauma recovery." name="twitter:description">
+  <meta content="A survivor-led look at the Developmental Origins of Health and Disease and what it means for trauma recovery." name="twitter:description">
   <meta content="images/og-dohad.jpg" name="twitter:image">
   <link href="https://recover-you.ca/dohad" rel="canonical">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
@@ -91,9 +91,83 @@
            .dohad-card p { margin-bottom: 18px; }
            .dohad-card ul { margin: 20px 0 30px; padding-left: 25px; }
            .dohad-card .separator-line-horrizontal-full { margin-bottom: 25px; }
-           #dohad .container { padding-top: 60px; padding-bottom: 60px; }
-           #dohad .btn { margin-top: 8px; }
-  </style>
+            #dohad .container { padding-top: 60px; padding-bottom: 60px; }
+            #dohad .btn { margin-top: 8px; }
+
+            .personal-vignette {
+              position: relative;
+              overflow: hidden;
+              margin: 38px 0 8px;
+              padding: 38px 42px;
+              background: linear-gradient(135deg, #ffffff 0%, #f8f8f9 100%);
+              border: 1px solid rgba(232, 32, 74, 0.14);
+              border-left: 5px solid #e8204a;
+              border-radius: 12px;
+              box-shadow: 0 14px 38px rgba(22, 26, 34, 0.08);
+            }
+            .personal-vignette::after {
+              content: "“";
+              position: absolute;
+              right: 24px;
+              top: -24px;
+              color: rgba(232, 32, 74, 0.06);
+              font-family: Georgia, serif;
+              font-size: 150px;
+              line-height: 1;
+              pointer-events: none;
+            }
+            .personal-vignette__grid {
+              position: relative;
+              z-index: 1;
+              display: grid;
+              grid-template-columns: minmax(180px, 0.72fr) minmax(0, 2.2fr);
+              gap: 42px;
+              align-items: start;
+            }
+            .personal-vignette__label {
+              display: inline-block;
+              margin-bottom: 16px;
+              padding: 6px 10px;
+              color: #e8204a;
+              background: rgba(232, 32, 74, 0.08);
+              border-radius: 999px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.12em;
+              line-height: 1.2;
+              text-transform: uppercase;
+            }
+            .personal-vignette__title {
+              margin-bottom: 16px;
+              color: #232323;
+              font-size: 24px;
+              line-height: 1.25;
+            }
+            .personal-vignette__pull {
+              margin: 0;
+              color: #555;
+              font-family: Georgia, serif;
+              font-size: 17px;
+              font-style: italic;
+              line-height: 1.55;
+            }
+            .personal-vignette__body {
+              max-width: 780px;
+            }
+            .personal-vignette__body p {
+              margin-bottom: 18px;
+              color: #333;
+              font-size: 16px;
+              line-height: 1.8;
+            }
+            .personal-vignette__body p:last-child { margin-bottom: 0; }
+            @media (max-width: 767px) {
+              .personal-vignette { padding: 28px 24px; }
+              .personal-vignette__grid { grid-template-columns: 1fr; gap: 24px; }
+              .personal-vignette__title { font-size: 21px; }
+              .personal-vignette__pull { max-width: 30rem; }
+            }
+   </style>
 </head>
 <body>
   <div aria-hidden="true" id="reading-progress">
@@ -345,11 +419,11 @@
 <h5 class="alt-font text-extra-dark-gray margin-20px-bottom"><span class="text-deep-pink">//</span> The Biology of Beginnings:<br>
           <strong class="text-extra-dark-gray">DOHaD and the First 1,000 Days</strong></h5>
           <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-70 margin-25px-bottom"></div>
-          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">The <strong>Developmental Origins of Health and Disease (DOHaD)</strong> framework starts with one deceptively simple question: <em>how do early experiences become lifelong biology?</em> Where the ACE Study reveals that early adversity predicts later health risks, DOHaD explains the <strong>mechanisms</strong> — how nutrition, stress, and environment, especially during the <strong>first 1,000 days (conception through age two)</strong>, physically sculpt the systems the body will rely on for the rest of its life.</p>
-          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">During this window, the body isn't simply growing. It is interpreting. Every signal it receives — maternal cortisol levels, glucose availability, sleep patterns, environmental toxins, even parental health before conception — functions as a biological forecast about the world it's preparing to enter. Is it safe or dangerous? Predictable or chaotic? Abundant or scarce? The developing system takes notes and begins calibrating accordingly.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">The <strong>Developmental Origins of Health and Disease (DOHaD)</strong> framework starts with one deceptively simple question: <em>how do early experiences become lifelong biology?</em> The ACE Study shows that early adversity predicts later health risks. DOHaD explains <strong>how</strong>. It looks at the ways nutrition, stress, and environment, especially during the <strong>first 1,000 days from conception through age two</strong>, physically shape the systems the body will rely on for the rest of its life.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">During this window, the body isn't simply growing. It is interpreting. Maternal cortisol, glucose availability, sleep patterns, environmental toxins, and even parental health before conception all become signals about the world ahead. Is it safe or dangerous? Predictable or chaotic? Abundant or scarce? The developing system takes notes and begins calibrating accordingly.</p>
           <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">
             Think of it as a biological bet placed before the outcome is known.
-            The developing system doesn't wait to see the world before calibrating for it —
+            The developing system doesn't wait to see the world before calibrating for it.
             it reads the incoming signals and builds accordingly.
             Stress hormones, nutrient availability, caregiver responsiveness:
             each one is interpreted as a data point about what's coming.
@@ -358,11 +432,24 @@
             It is, by any reasonable measure, one of the most sophisticated pieces of engineering in existence.
             It also has a significant design flaw: the forecast can be wrong.
           </p>
-          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">When the projection is accurate, those calibrations are protective — the body arrives prepared for the world it enters. When it isn't — scarcity signaled in utero followed by abundance in childhood, for example — those same calibrations become liabilities: increased risk for obesity, diabetes, cardiovascular disease, anxiety, attention dysregulation, and lifelong heightened stress sensitivity. This is how trauma and early environment <strong>get under the skin.</strong> Not as metaphor. As measurable biological alteration.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">When the projection is accurate, those calibrations protect us. The body arrives prepared for the world it enters. When the projection is wrong, the same adaptations can become liabilities. Scarcity signaled in the womb followed by abundance in childhood, for example, can increase the risk of obesity, diabetes, cardiovascular disease, anxiety, attention dysregulation, and heightened stress sensitivity. This is how trauma and early environment <strong>get under the skin.</strong> Not as metaphor. As measurable biological change.</p>
           <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8 margin-20px-top">DOHaD is one pillar in a broader and increasingly convergent scientific argument. Alongside the <strong>ACE Study</strong>, the <strong>Critical Window (0–7)</strong>, and the <strong>Dunedin Longitudinal Study</strong>, it forms a message that the evidence has made impossible to dismiss:<br>
           <br>
-          <span class="text-extra-dark-gray"><strong>Early development matters — profoundly, measurably, and across an entire lifetime.</strong></span></p>
-          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">Each framework approaches the question from a different angle — population-level risk (ACEs), biological programming (DOHaD), neurodevelopment and attachment (Critical Window), long-term lifespan outcomes (Dunedin) — and all four arrive at the same place: <strong>the conditions we are born into shape our biology, behavior, resilience, and vulnerability far more deeply and far more lastingly than we once had the science to understand.</strong></p>
+          <span class="text-extra-dark-gray"><strong>Early development matters. Its effects can be profound, measurable, and lifelong.</strong></span></p>
+          <p class="text-medium line-height-28 sm-line-height-26 text-extra-dark-gray opacity-8">Each framework approaches the question from a different angle. ACEs looks at population-level risk. DOHaD looks at biological programming. Critical Window explores neurodevelopment and attachment, while Dunedin tracks outcomes across a lifetime. All four arrive at the same place: <strong>the conditions we are born into shape our biology, behavior, resilience, and vulnerability far more deeply and far more lastingly than we once had the science to understand.</strong></p>
+          <div class="personal-vignette">
+            <div class="personal-vignette__grid">
+              <div>
+                <span class="personal-vignette__label">// Personal note</span>
+                <h5 class="personal-vignette__title alt-font">Why this became personal for me</h5>
+                <p class="personal-vignette__pull">It upset me and liberated me at the same time.</p>
+              </div>
+              <div class="personal-vignette__body">
+                <p>DOHaD was my first deeper dive into the science beyond toxic stress. Until then, most of what I had been taught in treatment narrowed addiction to the dopamine hijack. That mattered, but it was myopic. DOHaD gave me my first real glimpse into epigenetics and intergenerational trauma. It helped me see the whole person and how developmental conditions can shape what happens much later in life.</p>
+                <p>None of it felt academic. I saw my own life reflected in so many of the conditions tied to poor outcomes, and that hurt. Recovery can be full of clich&eacute; and metaphor, but that language could only carry me so far. The science gave me something sturdier. It helped explain why I am the way I am and began to break through the belief that I was somehow <em>hopelessly, inexplicably wrong.</em></p>
+              </div>
+            </div>
+          </div>
           <div class="row g-3 margin-25px-top">
             <div class="col-md-4">
               <a class="btn btn-small btn-transparent-dark-gray border-radius-4 d-block w-100 text-center" href="critical-window">Critical Window (0–7 Years)</a>
@@ -374,7 +461,7 @@
               <a class="btn btn-small btn-transparent-dark-gray border-radius-4 d-block w-100 text-center" href="dunedin-study">Dunedin Study (45-Year Outcomes)</a>
             </div>
           </div>
-          <p class="text-extra-small text-uppercase letter-spacing-2 margin-35px-top text-medium-gray">Below: Six core domains of DOHaD — exposures → mechanisms → outcomes → timing → generations → the recovery lens.</p>
+          <p class="text-extra-small text-uppercase letter-spacing-2 margin-35px-top text-medium-gray">Below: Six core domains of DOHaD. Exposures → mechanisms → outcomes → timing → generations → the recovery lens.</p>
         </div>
       </div>
     </div>
@@ -387,42 +474,42 @@
           <!-- TITLE CARD -->
           <div class="dohad-card" id="dohad-0">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// DOHaD</span> Developmental Origins of <strong>Health and Disease</strong></h5>
-            <p class="text-medium line-height-28 opacity-8">The DOHaD framework starts with a question that sounds simple until you sit with its implications: <strong>how do early environments leave permanent fingerprints on health?</strong> Where the ACE Study shows that early adversity predicts later health risks, DOHaD explains the machinery behind that prediction — how nutrition, stress, toxins, and caregiving, especially during the first 1,000 days from conception through age two, physically program the systems the body will run on for life.</p>
+            <p class="text-medium line-height-28 opacity-8">At its core, DOHaD can be understood in three moves. Early conditions signal what kind of world is coming. The body calibrates itself around that forecast. Those adaptations can protect us early and create vulnerabilities later.</p>
             <ul class="ry-tiles text-medium-gray margin-20px-top margin-10px-bottom">
               <li><strong>Signal:</strong> early-life conditions send biological messages about what kind of world to expect.</li>
-              <li><strong>Calibration:</strong> the body uses epigenetics and organ development to adapt to that forecast — before it has ever seen the world it's preparing for.</li>
+              <li><strong>Calibration:</strong> the body uses epigenetics and organ development to adapt to that forecast before it has ever seen the world it's preparing for.</li>
               <li><strong>Trade-offs:</strong> those adaptations can protect in the short term and increase risk significantly over the long run.</li>
             </ul>
-            <p class="text-medium line-height-28 opacity-8">For people navigating trauma, addiction, and chronic illness, DOHaD offers something most systems never provide: <strong>context.</strong> Your body isn't broken by accident or by character. It was shaped — often before you drew your first breath — to survive a specific kind of world. Whether that world is the one you ended up living in is a different question entirely.</p>
+            <p class="text-medium line-height-28 opacity-8">For people navigating trauma, addiction, and chronic illness, DOHaD offers something most systems never provide: <strong>context.</strong> Your body isn't broken by accident or by character. It was shaped, often before you drew your first breath, to survive a specific kind of world. Whether that is the world you eventually entered is another question entirely.</p>
           </div><!-- CARD 1 – Early-Life Exposures & Nutrition -->
           <div class="dohad-card" id="dohad-1">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 1</span> Early-Life Exposures and <strong>Nutrition</strong></h5>
-            <p class="text-medium line-height-28 opacity-8">The earliest inputs — food, stress, toxins, and parental health — act as <strong>biological forecasts.</strong> They tell the developing system what to expect: scarcity or abundance, threat or safety, inflammation or calm. The body calibrates energy storage, stress reactivity, and organ development around that prediction — before it has any way to verify whether it's accurate.</p>
+            <p class="text-medium line-height-28 opacity-8">The earliest inputs, including food, stress, toxins, and parental health, act as <strong>biological forecasts.</strong> They tell the developing system what to expect: scarcity or abundance, threat or safety, inflammation or calm. The body calibrates energy storage, stress reactivity, and organ development around that prediction before it has any way to know whether the prediction is accurate.</p>
             <ul class="ry-tiles text-medium-gray margin-20px-top margin-25px-bottom">
               <li><strong class="text-extra-dark-gray">Maternal nutrition:</strong> famine, obesity, or micronutrient deficits can shape infant metabolism, appetite regulation, and future cardiometabolic risk.</li>
               <li><strong class="text-extra-dark-gray">Paternal factors:</strong> the father's diet, weight, and stress before conception can leave epigenetic marks on sperm that influence how the offspring develops.</li>
               <li><strong class="text-extra-dark-gray">Stress and mental health:</strong> maternal anxiety, depression, or trauma during pregnancy can alter fetal stress reactivity through elevated cortisol and inflammatory signaling.</li>
               <li><strong class="text-extra-dark-gray">Environmental toxins:</strong> BPA, phthalates, tobacco, and alcohol disrupt hormonal signaling and, in some cases, neural wiring and immune calibration.</li>
-              <li><strong class="text-extra-dark-gray">Microbiome and infection:</strong> maternal gut health, infections, and antibiotic use influence the infant's microbiome — a major regulator of metabolism and immunity.</li>
+              <li><strong class="text-extra-dark-gray">Microbiome and infection:</strong> maternal gut health, infections, and antibiotic use influence the infant's microbiome, a major regulator of metabolism and immunity.</li>
             </ul>
-            <p class="text-medium line-height-28 opacity-8">When the forecast is wrong — scarcity predicted in utero, abundance encountered in childhood — the mismatch increases risk for obesity, diabetes, and cardiovascular disease. The system is doing its best with the information it had; the problem is the information changed.</p>
+            <p class="text-medium line-height-28 opacity-8">When the forecast is wrong, the mismatch can increase the risk of obesity, diabetes, and cardiovascular disease. A body prepared for scarcity may struggle when it encounters abundance in childhood. The system did its best with the information it had. The problem is that the information changed.</p>
           </div><!-- CARD 2 – Biological Mechanisms & Programming -->
           <div class="dohad-card" id="dohad-2">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 2</span> Biological Mechanisms and <strong>Programming</strong></h5>
-            <p class="text-medium line-height-28 opacity-8">Once exposures happen, the body needs mechanisms to make them stick. <strong>Epigenetics</strong> and early organ development are the tools it uses to convert early signals into long-term settings — effectively installing the operating parameters before the system goes live.</p>
+            <p class="text-medium line-height-28 opacity-8">Once exposures happen, the body needs a way to make them stick. <strong>Epigenetics</strong> and early organ development convert early signals into long-term settings. In effect, they install the operating parameters before the system goes live.</p>
             <div class="row">
               <div class="col-md-6">
                 <ul class="list-style-3 text-medium-gray">
-                  <li><strong>DNA methylation</strong> — chemical tags that silence or activate genes in response to environmental conditions.</li>
-                  <li><strong>Histone modification</strong> — altering how tightly DNA is packaged to change which genes can be accessed.</li>
-                  <li><strong>Metabolic programming</strong> — establishing set points for insulin sensitivity, fat storage, and appetite regulation.</li>
+                  <li><strong>DNA methylation:</strong> chemical tags that silence or activate genes in response to environmental conditions.</li>
+                  <li><strong>Histone modification:</strong> changes in how tightly DNA is packaged, which affects which genes can be accessed.</li>
+                  <li><strong>Metabolic programming:</strong> the establishment of set points for insulin sensitivity, fat storage, and appetite regulation.</li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="list-style-3 text-medium-gray">
-                  <li><strong>Organ fine-tuning</strong> — heart, brain, pancreas, kidneys, and liver are calibrated in utero.</li>
-                  <li><strong>Stress-system setup</strong> — HPA-axis sensitivity and autonomic balance are partly written before birth.</li>
-                  <li><strong>Neural connectivity</strong> — synapse growth and pruning prioritize circuits needed for threat detection or learning, depending on what the incoming signals predict.</li>
+                  <li><strong>Organ fine-tuning:</strong> the heart, brain, pancreas, kidneys, and liver are calibrated in the womb.</li>
+                  <li><strong>Stress-system setup:</strong> HPA-axis sensitivity and autonomic balance are partly established before birth.</li>
+                  <li><strong>Neural connectivity:</strong> synapse growth and pruning prioritize the circuits needed for threat detection or learning, depending on what the incoming signals predict.</li>
                 </ul>
               </div>
             </div>
@@ -430,7 +517,7 @@
           </div><!-- CARD 3 – Long-Term Health Outcomes -->
           <div class="dohad-card" id="dohad-3">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 3</span> Long-Term <strong>Health Outcomes</strong></h5>
-            <p class="text-medium line-height-28 opacity-8">The adaptations that protect us early carry trade-offs later. This is where DOHaD connects directly to the adult conditions seen in clinics worldwide — and increasingly, to patterns of mental health and addiction that were never framed as developmental in origin.</p>
+            <p class="text-medium line-height-28 opacity-8">The adaptations that protect us early can carry a cost later. This is where DOHaD connects directly to the adult conditions seen in clinics worldwide, including patterns of mental health and addiction that were rarely understood as developmental in origin.</p>
             <div class="row">
               <div class="col-md-6">
                 <h6 class="alt-font text-extra-dark-gray margin-10px-bottom"><i class="fas fa-heartbeat text-deep-pink margin-5px-right"></i> Cardiometabolic</h6>
@@ -444,25 +531,25 @@
             <div class="row margin-15px-top">
               <div class="col-md-6">
                 <h6 class="alt-font text-extra-dark-gray margin-10px-bottom"><i class="fas fa-lungs text-deep-pink margin-5px-right"></i> Immune and Respiratory</h6>
-                <p class="text-small line-height-22 opacity-8">Early exposures calibrate immune tolerance — shaping risk for asthma, allergies, and some autoimmune conditions. A system trained to expect infection or inflammation may overreact to otherwise harmless triggers.</p>
+                <p class="text-small line-height-22 opacity-8">Early exposures calibrate immune tolerance and can shape the risk of asthma, allergies, and some autoimmune conditions. A system trained to expect infection or inflammation may overreact to otherwise harmless triggers.</p>
               </div>
               <div class="col-md-6">
                 <h6 class="alt-font text-extra-dark-gray margin-10px-bottom"><i class="fas fa-venus-mars text-deep-pink margin-5px-right"></i> Reproductive</h6>
-                <p class="text-small line-height-22 opacity-8">Developmental environment can affect puberty timing, hormone balance, and fertility — especially when combined with later-life stressors and nutritional patterns.</p>
+                <p class="text-small line-height-22 opacity-8">The developmental environment can affect puberty timing, hormone balance, and fertility, especially when combined with later stress and nutritional patterns.</p>
               </div>
             </div>
-            <p class="text-medium line-height-28 opacity-8 margin-20px-top"><strong>Bottom line:</strong> the seeds of adult health — or vulnerability — are planted before we are born, and they keep interacting with every environment we move through across the entire lifespan.</p>
+            <p class="text-medium line-height-28 opacity-8 margin-20px-top"><strong>Bottom line:</strong> the seeds of adult health and vulnerability are planted before birth. They continue interacting with every environment we move through for the rest of our lives.</p>
           </div><!-- CARD 4 – Critical Developmental Windows -->
           <div class="dohad-card" id="dohad-4">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 4</span> Critical Developmental <strong>Windows</strong></h5>
-            <p class="text-medium line-height-28 opacity-8">In DOHaD, <strong>when</strong> an exposure happens is as important as <strong>what</strong> happens. Some systems are highly plastic for only a narrow window — and within that window, small inputs can have outsized, lasting effects. This is why the <strong>first 1,000 days</strong> keep appearing across the research. It isn't arbitrary. It's when the calibration is most consequential.</p>
+            <p class="text-medium line-height-28 opacity-8">In DOHaD, <strong>when</strong> an exposure happens is as important as <strong>what</strong> happens. Some systems are highly plastic for only a narrow window. During that time, small inputs can have outsized and lasting effects. This is why the <strong>first 1,000 days</strong> keep appearing across the research. The number isn't arbitrary. This is when calibration has the greatest reach.</p>
             <ul class="ry-tiles text-medium-gray margin-20px-top">
               <li><strong>Preconception:</strong> parental nutrition, metabolic health, substance use, and stress already influence outcomes before conception occurs.</li>
-              <li><strong>Gestation:</strong> each trimester programs different organs and neural circuits — the construction phase, running continuously and in parallel.</li>
-              <li><strong>Perinatal:</strong> the newborn transitions to air, feeding, and self-regulation — high-stakes physiology compressed into hours and days.</li>
+              <li><strong>Gestation:</strong> each trimester programs different organs and neural circuits during a construction phase that runs continuously and in parallel.</li>
+              <li><strong>Perinatal:</strong> the newborn transitions to air, feeding, and self-regulation. It is high-stakes physiology compressed into hours and days.</li>
               <li><strong>Infancy to age two:</strong> peak brain growth, immune calibration, and microbiome formation; caregiving patterns get wired in during this window in ways that persist long after it closes.</li>
             </ul>
-            <p class="text-medium line-height-28 opacity-8 margin-20px-top">This is the same window discussed on the <a class="text-deep-pink text-decoration-underline" href="critical-window">Critical Window</a> page — DOHaD is the biological mechanism behind that 0–7 year sensitivity. Meaningful plasticity continues beyond childhood, but the foundational calibration happens here.</p>
+            <p class="text-medium line-height-28 opacity-8 margin-20px-top">This is the same period discussed on the <a class="text-deep-pink text-decoration-underline" href="critical-window">Critical Window</a> page. DOHaD explains much of the biology behind that early sensitivity. Meaningful plasticity continues beyond childhood, but the foundational calibration happens here.</p>
           </div><!-- CARD 5 – Intergenerational Effects -->
           <div class="dohad-card" id="dohad-5">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 5</span> Intergenerational and <strong>Transgenerational</strong> Effects</h5>
@@ -472,35 +559,35 @@
                 <h6 class="alt-font text-extra-dark-gray margin-10px-bottom">F-Generation Map</h6>
                 <ul class="list-style-3 text-medium-gray">
                   <li><strong>F0:</strong> original parent(s) exposed.</li>
-                  <li><strong>F1:</strong> direct offspring — in utero during exposure.</li>
-                  <li><strong>F2:</strong> grandchild generation — germ cells present during F0 exposure.</li>
-                  <li><strong>F3:</strong> great-grandchild generation — the threshold for true transgenerational inheritance.</li>
+                  <li><strong>F1:</strong> direct offspring who were in the womb during exposure.</li>
+                  <li><strong>F2:</strong> the grandchild generation, whose germ cells were present during F0 exposure.</li>
+                  <li><strong>F3:</strong> the great-grandchild generation and the threshold for true transgenerational inheritance.</li>
                 </ul>
               </div>
               <div class="col-md-6">
-                <p class="text-small line-height-22 opacity-8">This is how the biology of adversity — or of healing — can echo across generations. Epigenetic inheritance isn't destiny; it's <strong>potential.</strong> Safer environments, regulated caregivers, and improved nutrition can send new biological signals: the world is different now than the one your parents survived.</p>
+                <p class="text-small line-height-22 opacity-8">This is how the biology of adversity, and potentially healing, can echo across generations. Epigenetic inheritance isn't destiny. It is <strong>potential.</strong> Safer environments, regulated caregivers, and improved nutrition can send new biological signals: the world is different now from the one your parents survived.</p>
               </div>
             </div>
             <div class="ry-callout bg-light-gray border-radius-8 padding-20px">
               <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong class="text-deep-pink">// Scientific Note</strong></p>
-              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-5px-bottom">The <strong>core DOHaD finding</strong> — that early-life environments shape later health — is well established in human research. Barker's work on birth weight, the Dutch Hunger Winter cohorts, and maternal obesity and smoking studies all provide robust, replicated evidence.</p>
-              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-5px-bottom"><strong>Multi-generational epigenetic inheritance in humans is a genuinely different and still-evolving question.</strong> Animal studies demonstrate it clearly. Human data, at this point, remain largely observational — compelling, but not yet establishing direct causal chains across three or four generations.</p>
-              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-0">The honest position: early experience gets under the skin — that much is established. How far the biological echo travels across generations is a question the science is still working to answer precisely. We can hold both the evidence and its limits without losing the significance of either.</p>
+              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-5px-bottom">The <strong>core DOHaD finding is well established in human research:</strong> early-life environments shape later health. Barker's work on birth weight, the Dutch Hunger Winter cohorts, and studies of maternal obesity and smoking all provide robust, replicated evidence.</p>
+              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-5px-bottom"><strong>Multigenerational epigenetic inheritance in humans is a different and still-evolving question.</strong> Animal studies demonstrate it clearly. Human data remain largely observational. The findings are compelling, but they do not yet establish direct causal chains across three or four generations.</p>
+              <p class="text-small text-extra-dark-gray opacity-8 line-height-22 margin-0">The honest position is that early experience gets under the skin. That much is established. How far the biological echo travels across generations is still being worked out. We can respect both the evidence and its limits without losing the significance of either.</p>
             </div>
           </div><!-- CARD 6 – Recovery, Repair & Prevention -->
           <div class="dohad-card" id="dohad-6">
             <h5 class="alt-font text-extra-dark-gray margin-15px-bottom"><span class="text-deep-pink">// 6</span> Recovery, <strong>Repair</strong> and Prevention</h5>
-            <p class="text-medium line-height-28 opacity-8">DOHaD can feel like a lot to absorb — and for good reason. What it describes is a system that was being shaped before you had any awareness, any agency, or any say. The game wasn't fair from the beginning. That's not a metaphor. It's a biological fact. But this framework isn't an argument for hopelessness — it's the most honest account available of why you are where you are, which is also the only starting point from which real change becomes possible.</p>
+            <p class="text-medium line-height-28 opacity-8">DOHaD can feel like a lot to absorb, and for good reason. What it describes is a system that was being shaped before you had any awareness, agency, or say. Part of recognizing that is realizing the table was tilted against a lot of us before we even got started. It's unfair, but it's real.</p>
+            <p class="text-medium line-height-28 opacity-8">That realization does not have to end in hopelessness. For me, understanding the science brought some relief from the shame of not knowing why I felt compelled to do what I did. The unfairness was still there, but it stopped being the whole story once I no longer treated it as proof that something was wrong with me. The science did not change what happened. It changed what I believed it said about me.</p>
             <ul class="ry-tiles text-medium-gray margin-20px-top margin-25px-bottom">
               <li><strong class="text-extra-dark-gray">Preconception and pregnancy care:</strong> supporting nutrition, mental health, and substance use treatment in would-be parents lowers biological risk before a child is even conceived. The intervention that starts earliest reaches furthest.</li>
-              <li><strong class="text-extra-dark-gray">Early caregiving and attachment:</strong> consistent, responsive caregiving helps recalibrate stress systems toward safety — even after a difficult start. The nervous system is still listening.</li>
+              <li><strong class="text-extra-dark-gray">Early caregiving and attachment:</strong> consistent, responsive caregiving helps recalibrate stress systems toward safety, even after a difficult start. The nervous system is still listening.</li>
               <li><strong class="text-extra-dark-gray">Lifestyle and metabolic health:</strong> movement, sleep, and anti-inflammatory nutrition can meaningfully shift cardiometabolic risk, especially when combined with sustained stress reduction.</li>
               <li><strong class="text-extra-dark-gray">Trauma-focused therapy:</strong> EMDR, ART, somatic work, CBT, and other evidence-based approaches can quiet chronic threat responses and support the development of healthier neural patterns.</li>
               <li>
-                <strong class="text-extra-dark-gray">Nervous system regulation:</strong> breathwork, grounding, and body-based tools (see <a class="text-deep-pink text-decoration-underline" href="regulation-tools">Regulation Tools</a>) reinforce calmer, safer patterns through consistent repetition — the only way the nervous system actually updates.
+                <strong class="text-extra-dark-gray">Nervous system regulation:</strong> breathwork, grounding, and body-based tools (see <a class="text-deep-pink text-decoration-underline" href="regulation-tools">Regulation Tools</a>) reinforce calmer, safer patterns through consistent repetition. Repetition is how the nervous system updates.
               </li>
             </ul>
-            <p class="text-medium line-height-28 opacity-8">You cannot rewrite the conditions you were programmed in. But you can absolutely influence how that programming plays out from here. Recovery work, values, and safer environments are all ways of sending your biology an updated memo about the world you live in today.</p>
             <p class="text-medium line-height-28 opacity-8">
               You cannot rewrite the conditions you were programmed in.
               But you can absolutely influence how that programming plays out from here.
@@ -508,10 +595,11 @@
               an updated memo about the world you live in today.
               This is also why shifting the focus from addiction as a disease to be managed
               toward the upstream developmental dysregulation that drives it
-              tends to produce better long-term outcomes —
-              you're finally working on the system that was miscalibrated,
+              tends to produce better long-term outcomes.
+              You're finally working on the system that was miscalibrated,
               not just the behaviour it produced.
             </p>
+            <p class="text-medium line-height-28 opacity-8 margin-0"><strong>What's done is done. So what do we do now?</strong></p>
           </div>
         </div>
       </div>
@@ -525,13 +613,13 @@
         </div>
         <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInRight" data-wow-duration="900ms">
           <h5 class="alt-font text-light-gray margin-20px-bottom"><span class="text-deep-pink">//</span> Why DOHaD <strong class="text-white-2">Matters for Recovery</strong></h5>
-          <p class="text-light-gray opacity-7 line-height-28">The DOHaD model does something most clinical frameworks don't — it reframes what we've been calling "disorder" as <strong>adaptation.</strong> Not malfunction. Not moral failure. A body doing the only thing it knew how to do given the conditions it was handed. For people in recovery, that reframe matters enormously: the biology isn't broken. It's <em>trained for a world that no longer exists.</em></p>
-          <p class="text-light-gray opacity-7 line-height-28">Addiction, anxiety, hypervigilance — seen through this lens, they're not random defects or character flaws. They're the operational echoes of early calibration, a nervous system executing faithfully on instructions that were accurate once and have simply never been updated. The environment changed. The programming didn't. That gap is where most of the suffering lives.</p>
+          <p class="text-light-gray opacity-7 line-height-28">The DOHaD model does something most clinical frameworks don't. It reframes what we've been calling "disorder" as <strong>adaptation.</strong> Not malfunction. Not moral failure. A body doing what it learned to do under the conditions it was handed. For people in recovery, that reframe matters enormously. The biology isn't broken. It's <em>trained for a world that no longer exists.</em></p>
+          <p class="text-light-gray opacity-7 line-height-28">Through this lens, addiction, anxiety, and hypervigilance are not random defects or character flaws. They are echoes of early calibration. The nervous system is still following instructions that may once have been accurate but were never updated. The environment changed. The programming didn't. That gap is where so much of the suffering lives.</p>
           <blockquote class="border-color-deep-pink margin-25px-top margin-25px-bottom">
             <p class="text-white-2 line-height-28">Sobriety without trauma work can feel like tearing down the shelter in the middle of the storm.</p>
           </blockquote>
-          <p class="text-light-gray opacity-7 line-height-28">DOHaD points toward something more useful than diagnosis: if the body once <strong>learned survival,</strong> it can also <strong>learn safety.</strong> That's the shared argument running through <a class="text-deep-pink text-decoration-underline" href="aces-high">ACEs</a>, <a class="text-deep-pink text-decoration-underline" href="critical-window">critical window development</a>, <a class="text-deep-pink text-decoration-underline" href="dunedin-study">Dunedin,</a> and trauma recovery — different angles on the same terrain, all pointing toward the same conclusion.</p>
-          <p class="text-light-gray opacity-7 line-height-28 margin-25px-bottom">Protecting and nurturing the first 1,000 days doesn't just prevent disease — it reshapes the trajectory of entire lives. And for those already on the recovery path, understanding this science does something that most treatment models never manage: it replaces shame with context, and self-blame with a more accurate account of what actually happened — and what it means for what comes next.</p><a class="btn btn-small btn-deep-pink border-radius-4 text-uppercase letter-spacing-1 margin-10px-top sm-margin-15px-top" href="why-traditional-treatment-falls-short">Better Model of Care</a>
+          <p class="text-light-gray opacity-7 line-height-28">DOHaD points toward something more useful than diagnosis: if the body once <strong>learned survival,</strong> it can also <strong>learn safety.</strong> That same argument runs through <a class="text-deep-pink text-decoration-underline" href="aces-high">ACEs</a>, <a class="text-deep-pink text-decoration-underline" href="critical-window">critical window development</a>, <a class="text-deep-pink text-decoration-underline" href="dunedin-study">Dunedin,</a> and trauma recovery. Different fields are looking at the same terrain and arriving at the same conclusion.</p>
+          <p class="text-light-gray opacity-7 line-height-28 margin-25px-bottom">Protecting and nurturing the first 1,000 days can reshape the course of an entire life. For those of us already on the recovery path, this science offers something most treatment models never do. It replaces shame with context and self-blame with a more accurate account of what happened. That changes what comes next.</p><a class="btn btn-small btn-deep-pink border-radius-4 text-uppercase letter-spacing-1 margin-10px-top sm-margin-15px-top" href="why-traditional-treatment-falls-short">Better Model of Care</a>
         </div>
       </div>
     </div>
@@ -543,10 +631,10 @@
         <div class="col-lg-9 col-md-10">
           <h5 class="alt-font text-white-2 margin-30px-bottom"><span class="text-deep-pink">//</span> The Takeaway</h5>
           <div class="separator-line-horrizontal-full bg-deep-pink w-70 mx-auto h-2px margin-25px-bottom"></div>
-          <p class="text-large text-light-gray opacity-9 line-height-34">The first 1,000 days aren't a countdown — they're a <strong>conversation between biology and environment,</strong> conducted before the person being shaped has any awareness it's happening. Every signal received — stress, nourishment, connection, or its absence — writes a few more lines of code into a system that will run that code for the rest of a life.</p>
-          <p class="text-light-gray opacity-7 line-height-30 margin-25px-bottom text-medium">When we understand this, healing stops being about fixing something broken and becomes about <strong>updating something that worked — once, under different conditions, for a different world.</strong> The biology of survival is not the enemy. It is the mechanism. The same one that can be directed, with the right inputs and enough time, toward safety, trust, and connection.</p>
+          <p class="text-large text-light-gray opacity-9 line-height-34">The first 1,000 days aren't a countdown. They are a <strong>conversation between biology and environment</strong> that begins before the person being shaped has any awareness of it. Every signal received, from stress and nourishment to connection or its absence, writes a few more lines of code into a system that may run them for the rest of a life.</p>
+          <p class="text-light-gray opacity-7 line-height-30 margin-25px-bottom text-medium">When we understand this, healing stops being about fixing something broken. It becomes the work of <strong>updating something that once worked under different conditions, in a different world.</strong> The biology of survival is not the enemy. It is the mechanism. With the right inputs and enough time, that same mechanism can move toward safety, trust, and connection.</p>
           <p class="text-white-2 alt-font text-extra-large font-weight-500 margin-35px-top">Change the inputs early enough, and you change the entire script.<br>
-          <span class="text-medium text-light-gray opacity-7 d-block margin-15px-top">Change them later — and you change what the script produces. That's still worth doing.</span></p>
+          <span class="text-medium text-light-gray opacity-7 d-block margin-15px-top">Change them later, and you change what the script produces. That's still worth doing.</span></p>
 
         </div>
       </div>
@@ -580,7 +668,7 @@
             <span class="learn-card-label">Up Next</span>
             <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
             <div class="learn-card-title alt-font">Know Your Machinery</div>
-            <p>Your genetic blueprint shapes substance metabolism — and why that matters.</p>
+            <p>How your genetic blueprint shapes substance metabolism, and why that matters.</p>
           </a>
         </div>
 
@@ -589,7 +677,7 @@
             <span class="learn-card-label learn-card-label--explore">Explore</span>
             <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
             <div class="learn-card-title alt-font">Trauma's Biological Fingerprint</div>
-            <p>Adversity rewires gene expression — and recovery can change it back.</p>
+            <p>How adversity rewires gene expression, and how recovery can influence it.</p>
           </a>
         </div>
         <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
