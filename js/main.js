@@ -29,6 +29,38 @@
         isiPhoneiPad = true;
     }
 
+    /* Site-wide smooth wheel scrolling. Touch devices and reduced-motion users
+     * retain the browser's native scrolling. */
+    var smoothScrollDesktop = window.matchMedia('(min-width: 992px)'),
+            reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function updateSmoothScroll() {
+        var shouldSmooth = smoothScrollDesktop.matches && !reducedMotion.matches && typeof Lenis !== 'undefined';
+
+        if (shouldSmooth && !window.recoverYouLenis) {
+            window.recoverYouLenis = new Lenis({
+                autoRaf: true,
+                smoothWheel: true,
+                syncTouch: false,
+                lerp: 0.18,
+                wheelMultiplier: 1,
+                anchors: true,
+                allowNestedScroll: true,
+                stopInertiaOnNavigate: true
+            });
+        } else if (!shouldSmooth && window.recoverYouLenis) {
+            window.recoverYouLenis.destroy();
+            window.recoverYouLenis = null;
+        }
+    }
+
+    updateSmoothScroll();
+
+    if (typeof smoothScrollDesktop.addEventListener === 'function') {
+        smoothScrollDesktop.addEventListener('change', updateSmoothScroll);
+        reducedMotion.addEventListener('change', updateSmoothScroll);
+    }
+
     /* jQuery appear */
     $('.pie-chart-style-01, .pie-chart-style-02, .pie-chart-style-03, .counter, .progress-bar').each(function () {
         $(this).appear().trigger('resize');
