@@ -7,8 +7,15 @@
             linkDropdown = 0,
             isotopeObjs = [],
             swiperObjs = [],
-            wow = '';
+            wow = '',
+            scrollFramePending = false,
+            scrollTopArrowVisible = false;
     var sliderBreakPoint = 991;
+
+    /* Use the browser's native scrolling instead of the legacy wheel interceptor. */
+    if (window.SmoothScroll && typeof window.SmoothScroll.destroy === 'function') {
+        window.SmoothScroll.destroy();
+    }
 
     /* check for browser os */
     var isMobile = false;
@@ -32,7 +39,16 @@
     destroySwiperLoop();
     setHeaderPosition();
 
-    $(window).on('scroll', init_scroll_navigate);
+    /* Keep scroll work to one update per animation frame. */
+    $(window).on('scroll', function () {
+        if (!scrollFramePending) {
+            scrollFramePending = true;
+            window.requestAnimationFrame(function () {
+                init_scroll_navigate();
+                scrollFramePending = false;
+            });
+        }
+    });
 
 
     function init_scroll_navigate() {
@@ -88,6 +104,12 @@
         var headerHeight = $('nav').outerHeight();
         if (lastScroll <= headerHeight)
             $('header').removeClass('header-appear');
+
+        var shouldShowScrollTop = st > 150;
+        if (shouldShowScrollTop !== scrollTopArrowVisible) {
+            $('.scroll-top-arrow').stop(true, true)[shouldShowScrollTop ? 'fadeIn' : 'fadeOut'](150);
+            scrollTopArrowVisible = shouldShowScrollTop;
+        }
     }
 
     /* header search */
@@ -117,16 +139,10 @@
 
     /* parallax background */
     function setParallax() {
-        if (!isIE()) {
-            $('[data-parallax-background-ratio]').each(function () {
-                var ratio = $(this).attr('data-parallax-background-ratio') || 0.5;
-                $(this).parallax('0%', ratio);
-            });
-            $('[data-parallax-layout-ratio]').each(function () {
-                var ratio = $(this).attr('data-parallax-layout-ratio') || 1;
-                $(this).parallaxImg(ratio);
-            });
-        }
+        /* Moving large backgrounds on every scroll frame causes expensive repaints.
+         * Preserve the artwork while keeping it still for consistently smooth pages. */
+        $('[data-parallax-background-ratio]').css('background-position', 'center center');
+        $('[data-parallax-layout-ratio]').css({'transform': 'none', 'bottom': ''});
     }
 
     /* full screen */
@@ -168,7 +184,6 @@
 
     /* window load */
     $(window).on('load', function () {
-        setParallax();
         SetResizeContent();
     });
 
@@ -225,13 +240,6 @@
                 $(this).parents('li.dropdown').addClass("active");
             }
         });
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 150)
-                $('.scroll-top-arrow').fadeIn('slow');
-            else
-                $('.scroll-top-arrow').fadeOut('slow');
-        });
-
         /* scroll to top */
         $(document).on('click', '.scroll-top-arrow', function () {
             $('html, body').animate({scrollTop: 0}, 800);

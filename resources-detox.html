@@ -1057,7 +1057,14 @@
 
        window.addEventListener('load', updateReadingProgress);
        window.addEventListener('resize', updateReadingProgress);
-       window.addEventListener('scroll', updateReadingProgress, { passive: true });
+       window.addEventListener('scroll', function () {
+         if (updateReadingProgress.framePending) return;
+         updateReadingProgress.framePending = true;
+         window.requestAnimationFrame(function () {
+           updateReadingProgress();
+           updateReadingProgress.framePending = false;
+         });
+       }, { passive: true });
      })();
   </script> <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
   <div aria-hidden="true" class="privacy-modal" id="privacy-modal">
