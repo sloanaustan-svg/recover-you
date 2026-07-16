@@ -28,7 +28,7 @@
   <meta content="Life traps (schemas) are the survival-based beliefs that quietly run the show. Learn how they form in childhood and how to rewrite your internal blueprint. No more autopilot." name="description">
   <meta content="life traps, schema therapy, schemas, maladaptive schemas, Reinventing Your Life, addiction recovery, CPTSD, childhood trauma, Recover-You, survivor-led recovery" name="keywords">
   <meta content="Life Traps: Why You Keep Repeating the Same Patterns" property="og:title">
-  <meta content="Your current behavior isn't a defect—it's an old blueprint. Discover how 'Life Traps' shape your reality and how to start redrawing the map." property="og:description">
+  <meta content="Your current behavior isn't a defect. It's an old blueprint. Discover how 'Life Traps' shape your reality and how to start redrawing the map." property="og:description">
   <meta content="images/webp/life-trap-hero.webp" property="og:image">
   <meta content="article" property="og:type">
   <meta content="https://recover-you.ca/life-traps.html" property="og:url">
@@ -77,7 +77,7 @@
        }
   </script>
   <style>
-    /* Inline contextual links — legible on light and dark sections */
+    /* Inline contextual links, legible on light and dark sections */
     .ry-link{ color:#ff1463; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; transition:opacity .2s ease; }
     .ry-link:hover, .ry-link:focus{ opacity:.78; }
   </style>
@@ -347,7 +347,7 @@
               <div class="icon-small text-deep-pink margin-10px-right">
                 <i aria-hidden="true" class="fa-solid fa-circle-info"></i>
               </div>
-              <p class="text-small text-extra-dark-gray opacity-8 mb-0"><strong>Schema work belongs to everyone.</strong> These patterns show up everywhere: families, workplaces, friendships, relationships, leadership. Not just trauma or addiction. We all build blueprints early in life. Schema work hands you the tools to examine yours, and decide which parts still deserve to be there.</p>
+              <p class="text-small text-extra-dark-gray opacity-8 mb-0"><strong>Schema work belongs to everyone.</strong> These patterns show up in families, workplaces, friendships, relationships, and leadership, not only in trauma or addiction. We all build blueprints early in life. Schema work gives you the tools to examine yours and decide which parts still deserve to be there.</p>
             </div>
           </div>
           <blockquote class="border-left border-color-deep-pink padding-20px-left margin-25px-bottom">
@@ -596,7 +596,16 @@
               </article>
             </div>
           </div><!-- closing -->
-          <p class="margin-40px-top text-medium opacity-8">It's also worth knowing that schemas don't operate in isolation. Working on one often loosens others. Sometimes starting with the one that feels most manageable, or even its "ugly cousin" when the biggest feels untouchable, is enough to shift the whole structure. <strong>You don't have to dismantle everything at once.</strong></p>
+          <div class="ry-schema-personal margin-40px-top">
+            <div class="ry-schema-personal__eyebrow"><span>//</span> When the list became personal</div>
+            <h4 class="alt-font text-extra-dark-gray font-weight-600 margin-15px-bottom">What I Found Beneath the Labels</h4>
+            <p>I did eventually go back to the questionnaire. Once I knew I would be tackling my trauma with trauma-specific therapy, my thinking was simple: if I was going in, I had to go all the way.</p>
+            <p><strong>Abandonment was the loudest result, followed by mistrust and abuse.</strong> The questionnaire also suggested that unrelenting standards played a major role, and at first I believed it. It fit what I could see on the surface: the pressure, the performance, and the inability to ever feel like I had done enough. Only after some serious emotional excavation did I realize that defectiveness was closer to the root. The standards were not the wound itself. They were part of how I tried to outrun it.</p>
+            <p>That changed what schema work meant for me. This was less about finding one hidden cause for everything and more about tracing the origins of shame. Shame had always felt like evidence about who I was. Schema work helped me see that it had been embodied through a harmful environment. It was something I had learned to carry, not proof of what I was.</p>
+            <p>The recognition was painful first and liberating second. I could finally trace behaviours that had followed me for as long as I could remember, including lying, stealing, and manipulation. I had assumed addiction created them. Instead, I found earlier and more basic roots in survival. Those behaviours came easily to me because, at one time, they had been necessary. That did not excuse the terrible things I did or remove my responsibility for them. It made the truth easier to face without treating every failure as proof of moral corruption.</p>
+            <p class="mb-0"><strong>The list can initially feel like an inventory of poisons coursing through you. But it offers the antidotes at the same time.</strong> I had no hope of changing a psychological pattern I could not correctly identify. Recognition did not mean I was more damaged than I realized. It meant I finally had an accurate map of what needed care.</p>
+          </div>
+          <p class="margin-40px-top text-medium opacity-8">Schemas do not operate in isolation. Working on one often loosens others. Sometimes starting with the one that feels most manageable, or even its "ugly cousin" when the biggest feels untouchable, is enough to shift the whole structure. <strong>You do not have to dismantle everything at once.</strong></p>
         </div>
       </div>
     </div>
@@ -693,6 +702,53 @@
             opacity:.82;
             gap:11px;
           }
+
+          #lifetraps .ry-schema-personal {
+            position:relative;
+            overflow:hidden;
+            padding:34px 36px 34px 40px;
+            border:1px solid rgba(255,20,99,.18);
+            border-radius:14px;
+            background:linear-gradient(135deg, #fff 0%, #fff 62%, rgba(255,20,99,.055) 100%);
+            box-shadow:0 18px 45px rgba(24,28,34,.08);
+          }
+
+          #lifetraps .ry-schema-personal::before {
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            width:5px;
+            background:#ff1463;
+          }
+
+          #lifetraps .ry-schema-personal__eyebrow {
+            color:#ff1463;
+            font-family:inherit;
+            font-size:12px;
+            font-weight:700;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+          }
+
+          #lifetraps .ry-schema-personal__eyebrow span {
+            margin-right:6px;
+          }
+
+          #lifetraps .ry-schema-personal p {
+            color:#3c4450;
+            font-size:16px;
+            line-height:1.75;
+            margin-bottom:18px;
+          }
+
+          @media (max-width:767px) {
+            #lifetraps .ry-schema-personal {
+              padding:28px 23px 28px 27px;
+              border-radius:12px;
+            }
+          }
     </style>
   </section>
   <section class="p-0 wow animate__fadeIn bg-extra-dark-gray" id="coping-styles" style="--ry-accent:#ff1463;">
@@ -705,7 +761,7 @@
           </div>
           <h3 class="alt-font text-white-2 margin-5px-bottom">How We <strong>Respond</strong> to Life Traps</h3>
           <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-15px-bottom"></div>
-          <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-20px-bottom">Once a lifetrap is installed, you don't just sit with it. You build an entire operating style around it. Young and Klosko describe three ways people adapt to schemas, coping styles that often mirror the nervous system's <a class="ry-link" href="four-trauma-responses">trauma responses</a>. None of them fix the underlying belief. All of them make a certain kind of sense in the short term. And all of them keep the lifetrap exactly where it is.</p>
+          <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-20px-bottom">Once a lifetrap is installed, you do not just sit with it. You build an entire operating style around it. Young and Klosko describe three ways people adapt to schemas: coping styles that often mirror the nervous system's <a class="ry-link" href="four-trauma-responses">trauma responses</a>. None of them resolve the underlying belief. Each makes sense in the short term, and each keeps the lifetrap in place.</p>
           <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-40 margin-15px-bottom margin-15px-top"></div>
           <div class="ry-coping-group">
             <div class="ry-coping-item margin-20px-bottom">
@@ -718,7 +774,7 @@
             </div>
             <div class="ry-coping-item">
               <h6 class="alt-font text-white-2 margin-5px-bottom d-flex align-items-center"><span class="badge rounded-pill bg-deep-pink text-white-2 text-extra-small margin-10px-right">3</span> Counterattack (Overcompensation)</h6>
-              <p class="text-small text-white-2 opacity-8 mb-0">Fighting the schema by performing its opposite with everything you have. Someone with a failure schema overworks compulsively, not because they enjoy it, but because stopping lets the fear catch up. In addiction, this looks like swinging from feeling worthless to performing invincibility: demanding control, chasing status, insisting nothing is wrong. The performance is exhausting. The wound underneath never gets touched. And when the performance finally cracks, which it always does, the fall confirms everything the schema said about you all along.</p>
+              <p class="text-small text-white-2 opacity-8 mb-0">Fighting the schema by performing its opposite with everything you have. Someone with a failure schema overworks compulsively, not because they enjoy it, but because stopping lets the fear catch up. In addiction, this can look like swinging from feeling worthless to performing invincibility: demanding control, chasing status, and insisting nothing is wrong. The performance is exhausting, and the wound underneath never gets touched. When the performance finally cracks, the fall can seem to confirm everything the schema said about you.</p>
             </div>
           </div>
         </div><!-- Image side -->
@@ -739,7 +795,7 @@
               // The Lifetrap Loop
             </div>
             <h5 class="alt-font text-extra-dark-gray margin-10px-bottom">Addiction as the Last Link</h5>
-            <p class="text-medium line-height-28 sm-line-height-26 text-dark-gray margin-25px-bottom">Addiction rarely starts with the substance. It's usually the final link in a much longer internal chain: trigger, schema, coping style, and only then the behaviour. <a class="ry-link" href="why-traditional-treatment-falls-short">Most treatment targets the last link.</a> Schema work asks what the first link was, because that's the only place the chain actually breaks.</p>
+            <p class="text-medium line-height-28 sm-line-height-26 text-dark-gray margin-25px-bottom">Addiction rarely starts with the substance. It is usually the final link in a much longer internal chain: trigger, schema, coping style, and only then the behaviour. <a class="ry-link" href="why-traditional-treatment-falls-short">Most treatment targets the last link.</a> Schema work asks what the first link was, because that is where the chain can begin to break.</p>
             <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong>Trigger:</strong> A friend doesn't text back.</p>
             <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-100 margin-10px-bottom" style="opacity:.35;"></div>
             <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong>Schema Activated (Abandonment):</strong> <em>"They're pulling away. I'm going to be left."</em></p>
@@ -757,12 +813,12 @@
               // Schema Healing
             </div>
             <h5 class="alt-font text-white-2 margin-10px-bottom">Rewiring the Pattern</h5>
-            <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-25px-bottom">Schemas formed for a reason, and that reason made sense given what was happening at the time. The work isn't to erase them. It's to weaken their grip until they stop running the show automatically. <a class="ry-link" href="neuroplasticity">The brain changes through repeated, intentional practice.</a> Not insight alone. Not willpower. Repetition, over enough time, with enough support.</p>
+            <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-25px-bottom">Schemas formed for a reason, and that reason made sense given what was happening at the time. The work is not to erase them. It is to weaken their grip until they stop running the show automatically. <a class="ry-link" href="neuroplasticity">The brain changes through repeated, intentional practice.</a> Not through insight alone. Not through willpower. Through repetition, over time, with enough support.</p>
             <p class="alt-font text-white-2 margin-10px-bottom"><strong>Recognize:</strong> Catch the schema as it activates. Name the story, the sensation, the pull toward the old response. You can't interrupt what you haven't noticed.</p>
             <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-10px-bottom" style="opacity:.35;"></div>
             <p class="alt-font text-white-2 margin-10px-bottom"><strong>Challenge:</strong> Ask: "Is this actually happening right now, or is my past replaying itself through a present that just looks similar enough to trigger it?" This is <a class="ry-link" href="reality-test">reality testing</a> in practice.</p>
             <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-white-2 margin-10px-bottom"><strong>Replace:</strong> Choose a response <a class="ry-link" href="identity-values-and-beliefs">aligned with your values</a>, with who you're building toward, instead of one dictated by what you survived. Do it even when it feels wrong. Especially when it feels wrong.</p>
+            <p class="alt-font text-white-2 margin-10px-bottom"><strong>Replace:</strong> Choose a response <a class="ry-link" href="identity-values-and-beliefs">aligned with your values</a> and the person you are building toward, instead of one dictated by what you survived. Do it even when it feels wrong. Especially when it feels wrong.</p>
             <p class="text-medium text-white-2 opacity-7 mb-0">
               Repeat that cycle enough times
               and the schema loses its automatic authority.
@@ -822,11 +878,9 @@
             </div>
           </div>
 
-          <p>The descriptions here are doorways, not destinations.
-          For anyone who wants to go further,
-          the book below is where this work actually lives.
-          It was written for people doing this themselves, not clinicians reading about it from a distance.
-          And for anyone who finds that the recognition hits hard,
+          <p>The descriptions here are doorways, not destinations. If you want to go further,
+          the book below is where this work actually lives. It was written for people doing this themselves,
+          not clinicians reading about it from a distance. If the recognition hits hard,
           a schema-informed therapist can take you places a page never could.</p>
 
         </div>
@@ -914,7 +968,7 @@
             <span class="learn-card-label">Up Next</span>
             <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
             <div class="learn-card-title alt-font">Post-Traumatic Growth</div>
-            <p>What healing from trauma actually looks like — it's not a straight line.</p>
+            <p>What healing from trauma actually looks like, and why it is not a straight line.</p>
           </a>
         </div>
 
@@ -931,7 +985,7 @@
             <span class="learn-card-label learn-card-label--explore">Explore</span>
             <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
             <div class="learn-card-title alt-font">The Mask You Wear</div>
-            <p>How shame builds a false self — and why grief is the way through.</p>
+            <p>How shame builds a false self, and why grief is the way through.</p>
           </a>
         </div>
         <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
@@ -939,7 +993,7 @@
             <span class="learn-card-label learn-card-label--explore">Explore</span>
             <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
             <div class="learn-card-title alt-font">Trauma in Plain Sight</div>
-            <p>How C-PTSD really appears — in thoughts, habits, relationships, daily life.</p>
+            <p>How C-PTSD really appears in thoughts, habits, relationships, and daily life.</p>
           </a>
         </div>
       </div>
@@ -1098,32 +1152,32 @@
 
           <p>
             If you reach out through the contact form, I'll collect your name, email, and
-            message — nothing more. That information is used only to get back to you. It's
+            message, nothing more. That information is used only to get back to you. It's
             not shared, sold, or used for anything else.
           </p>
 
           <p>
             This site uses two analytics tools to help me understand how people find and
             use it. Google Analytics is only active if you choose to allow analytics cookies.
-            Fathom runs quietly in the background using general server data —
+            Fathom runs quietly in the background using general server data:
             no cookies, no individual tracking.
           </p>
 
           <p>
-            A few third-party services help keep the site running — things like hosting and
+            A few third-party services help keep the site running, including hosting and
             the contact form. Some of these are based outside Canada, so your information
             may be processed there. I've chosen providers I trust, but I want you to know.
           </p>
 
           <p>
-            Please don't share anything urgent or crisis-related through the contact form —
+            Please don't share anything urgent or crisis-related through the contact form.
             it's not monitored in real time. If you're in immediate distress, please reach
             out to a crisis line or emergency services.
           </p>
 
           <p>
             Questions about this policy, or want to see or correct something I have about
-            you? You can reach me through the contact page — I'm happy to help.
+            you? You can reach me through the contact page. I'm happy to help.
           </p>
         </div>
 
