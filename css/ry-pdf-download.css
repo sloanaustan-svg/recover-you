@@ -266,6 +266,97 @@
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   RY PDF PILL  —  small inline badge for index/roadmap lists
+   Used on start-here.html to flag which roadmap entries have a
+   printable PDF. Sits as the last flex child of the list row so
+   it never interrupts the sentence and lines up in a right rail.
+   ═══════════════════════════════════════════════════════════ */
+
+.ry-pdf-pill {
+  --ry-pink: #ff2f6e;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 3px 0 0 14px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 47, 110, 0.45);
+  background: rgba(255, 47, 110, 0.06);
+  color: var(--ry-pink);
+  font-family: "Poppins", "Montserrat", system-ui, sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.6;
+  white-space: nowrap;
+  transition: background 0.22s ease, color 0.22s ease,
+              border-color 0.22s ease, transform 0.22s ease;
+}
+
+.ry-pdf-pill::before {
+  content: "\f1c1";
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 9px;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ry-pdf-pill:hover,
+.ry-pdf-pill:focus-visible {
+  background: var(--ry-pink);
+  border-color: var(--ry-pink);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.ry-pdf-pill:focus-visible {
+  outline: 2px solid var(--ry-pink);
+  outline-offset: 2px;
+}
+
+/* Non-interactive copy of the pill, for use inside explanatory text */
+.ry-pdf-pill--demo {
+  margin: 0 2px;
+  vertical-align: 1px;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Beat the list's own anchor styling on start-here */
+#phases .page-list a.ry-pdf-pill {
+  display: inline-flex;
+  font-family: "Poppins", "Montserrat", system-ui, sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  color: var(--ry-pink);
+  background-image: none;
+  padding-bottom: 3px;
+}
+
+#phases .page-list a.ry-pdf-pill:hover,
+#phases .page-list a.ry-pdf-pill:focus {
+  color: #fff;
+  background-image: none;
+  background-size: 0 0;
+}
+
+@media (max-width: 575px) {
+  .ry-pdf-pill {
+    margin-left: 10px;
+    padding: 2px 7px;
+    font-size: 9px;
+  }
+}
+
 /* ── Accessibility ──────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .ry-pdf-card,

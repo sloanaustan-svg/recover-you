@@ -49,7 +49,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
   <link href="css/site.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ry-pdf-download.css" rel="stylesheet" type="text/css">
   <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -167,18 +166,10 @@
             Roadmap cards
             ========================================================= */
 
-         /* Backdrop wash. Glass panels need something behind them to blur,
-            so this drifts through the phase accents as you scroll: slate,
-            blue, rose, sage, violet. Kept low opacity so body text stays
-            comfortable to read over it. */
          #phases{
            background:
-             radial-gradient(ellipse 70% 40% at 12% 4%,  rgba(135,154,165,.16), transparent 60%),
-             radial-gradient(ellipse 65% 35% at 88% 24%, rgba(125,163,200,.17), transparent 62%),
-             radial-gradient(ellipse 60% 32% at 8%  48%, rgba(201,139,147,.15), transparent 60%),
-             radial-gradient(ellipse 65% 35% at 92% 70%, rgba(126,164,138,.15), transparent 62%),
-             radial-gradient(ellipse 60% 34% at 15% 92%, rgba(148,137,200,.14), transparent 60%),
-             linear-gradient(180deg, #fdfdfe 0%, #f7f9fb 40%, #f4f6fa 100%);
+             radial-gradient(circle at top right, rgba(116,132,161,.06), transparent 30%),
+             linear-gradient(180deg, #fff 0%, #fbfcfd 45%, #f6f8fb 100%);
          }
 
          #phases .rule{
@@ -202,57 +193,31 @@
            overflow:hidden;
            z-index:1;
            margin:22px 0;
-           padding:28px 30px 22px;
-           border-radius:16px;
-           /* Frosted panel. The background-image layer draws the vertical
-              accent rail; the translucent background-color is what the
-              backdrop blur shows through. */
-           background-color:rgba(255,255,255,.55);
-           background-image:linear-gradient(180deg, var(--phase-accent) 0%, color-mix(in srgb, var(--phase-accent) 10%, transparent) 100%);
-           background-size:3px calc(100% - 32px);
-           background-position:0 16px;
-           background-repeat:no-repeat;
-           -webkit-backdrop-filter:blur(20px) saturate(160%);
-           backdrop-filter:blur(20px) saturate(160%);
-           box-shadow:0 14px 38px var(--phase-glow),
-                      0 4px 14px rgba(20,35,26,.04),
-                      inset 0 1px 0 rgba(255,255,255,.85);
-           transition:transform .25s ease, box-shadow .25s ease;
-         }
-
-         /* Browsers without backdrop-filter get an opaque panel instead of
-            a washed-out translucent one. */
-         @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-           #phases .phase-card{
-             background-color:rgba(255,255,255,.93);
-           }
+           padding:30px 30px 24px;
+           border-radius:22px;
+           border:1px solid var(--phase-border);
+           background:linear-gradient(145deg, rgba(255,255,255,.96) 0%, var(--phase-soft) 100%);
+           box-shadow:0 18px 45px var(--phase-glow), 0 10px 24px rgba(20,35,26,.04);
+           transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
          }
 
          #phases .phase-card:hover{
            transform:translateY(-2px);
-           box-shadow:0 22px 52px var(--phase-glow),
-                      0 8px 22px rgba(20,35,26,.07),
-                      inset 0 1px 0 rgba(255,255,255,.9);
+           box-shadow:0 24px 60px var(--phase-glow), 0 14px 32px rgba(20,35,26,.07);
+           border-color:var(--phase-border-strong);
          }
 
-         /* Gradient hairline border, drawn as a mask so the 16px corners
-            stay crisp and the accent colour reads in the edge itself. */
          #phases .phase-card::before{
            content:"";
            position:absolute;
-           inset:0;
-           border-radius:inherit;
-           padding:1px;
-           background:linear-gradient(135deg,
-             color-mix(in srgb, var(--phase-accent) 85%, transparent) 0%,
-             rgba(255,255,255,.30) 48%,
-             color-mix(in srgb, var(--phase-accent) 55%, transparent) 100%);
-           -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-           -webkit-mask-composite:xor;
-           mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-           mask-composite:exclude;
-           pointer-events:none;
+           top:0;
+           left:26px;
+           right:26px;
+           height:3px;
+           border-radius:0 0 999px 999px;
+           background:linear-gradient(90deg, color-mix(in srgb, var(--phase-accent) 0%, transparent), var(--phase-accent), color-mix(in srgb, var(--phase-accent) 0%, transparent));
            z-index:2;
+           opacity:.75;
          }
 
          #phases .phase-card::after{
@@ -365,22 +330,19 @@
 
          #phases .badge{
            flex:0 0 auto;
-           min-width:54px;
-           height:54px;
-           border-radius:15px;
+           min-width:58px;
+           height:58px;
+           border-radius:18px;
            display:flex;
            align-items:center;
            justify-content:center;
            font-weight:800;
-           font-size:1.34rem;
+           font-size:1.42rem;
            line-height:1;
            color:var(--phase-accent-dark) !important;
-           background:rgba(255,255,255,.62);
-           -webkit-backdrop-filter:blur(10px) saturate(150%);
-           backdrop-filter:blur(10px) saturate(150%);
-           border:1px solid color-mix(in srgb, var(--phase-accent) 48%, transparent);
-           box-shadow:0 6px 18px color-mix(in srgb, var(--phase-accent) 20%, transparent),
-                      inset 0 1px 0 rgba(255,255,255,.9);
+           background:linear-gradient(145deg, #ffffff, color-mix(in srgb, var(--phase-accent) 16%, #ffffff));
+           border:1px solid var(--phase-border-strong);
+           box-shadow:0 12px 26px color-mix(in srgb, var(--phase-accent) 16%, transparent);
          }
 
          #phases .phase-title{
@@ -444,19 +406,16 @@
            width:32px;
            height:32px;
            margin:0 16px 0 0;
-           border-radius:10px;
-           border:1px solid color-mix(in srgb, var(--phase-accent) 40%, transparent);
+           border-radius:11px;
+           border:1px solid var(--phase-border-strong);
            color:var(--phase-accent-dark);
-           background:rgba(255,255,255,.58);
-           -webkit-backdrop-filter:blur(8px) saturate(140%);
-           backdrop-filter:blur(8px) saturate(140%);
+           background:rgba(255,255,255,.82);
            display:inline-flex;
            align-items:center;
            justify-content:center;
            font-size:12px;
            line-height:1;
-           box-shadow:0 4px 12px rgba(20,35,26,.05),
-                      inset 0 1px 0 rgba(255,255,255,.8);
+           box-shadow:0 6px 14px rgba(20,35,26,.05);
            transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
            box-sizing:border-box;
          }
@@ -894,7 +853,6 @@
           <p class="text-medium line-height-28 sm-line-height-26"><strong>First: education grounded in lived experience.</strong> The science is woven together with my own relationship to it because concepts land differently when you can feel them. The goal is recognition. You begin to see yourself in the patterns, release some shame, and understand the <em>why</em> behind what you have been carrying.</p>
           <p class="text-medium line-height-28 sm-line-height-26"><strong>Second: a critical look at the systems meant to help.</strong> This is not cynicism. It is validation. If treatment never mentioned trauma, or “trauma-informed care” meant very little in practice, your frustration is real and widely shared. <strong>You are not crazy. You are not broken.</strong> These are systemic failures, not personal ones.</p>
           <p class="text-medium line-height-28 sm-line-height-26"><strong>Third: the path forward.</strong> Evidence-based therapies, practical tools, and a resource centre that moves from detox to trauma-specific care. Programs are explained clearly and linked directly to application pages where available.</p>
-          <p class="text-medium line-height-28 sm-line-height-26"><strong>You do not have to read it on a screen.</strong> Many of the longer pages can be downloaded as free, printable PDFs, formatted so you can read offline, mark them up, or pass them to someone who needs them. The roadmap below shows which ones.</p>
           <p class="text-medium line-height-28 sm-line-height-26 margin-0">When circumstances allow, follow the sequence. Each section builds on the last. You can arrive completely lost and leave with a clearer understanding of what is happening, what may help, and where to take the next practical step.</p>
         </div>
       </div>
@@ -913,8 +871,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <h5 class="alt-font text-extra-dark-gray"><strong>Your Roadmap</strong></h5>
-          <div class="rule margin-10px-bottom"></div>
-          <p class="text-medium line-height-28 sm-line-height-26 margin-25px-bottom">Most of the longer pages below are also free, printable PDFs. Look for the <span class="ry-pdf-pill ry-pdf-pill--demo">PDF</span> tag beside an entry to download that page in full, or use the download panel near the top of the page itself.</p><!-- ORIENTATION -->
+          <div class="rule margin-10px-bottom"></div><!-- ORIENTATION -->
           <!-- ORIENTATION -->
           <div class="phase-card phase-orientation">
             <div class="phase-top">
@@ -950,14 +907,14 @@
             </div>
             <p class="why"><strong>Why this comes next:</strong> You can't make sense of anxiety, addiction, shame, or emotional chaos until you understand the nervous system that learned to survive them. This section reframes your patterns as intelligent adaptations, not personal failures.</p>
             <ul class="page-list alt-font">
-              <li><i aria-hidden="true" class="fa-solid fa-brain page-item-icon"></i> <span><a href="what-is-trauma"><strong>What Is Trauma</strong></a>: Trauma as a survival response, not only the event itself, and why “it wasn't that bad” is often part of the response.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/What-Trauma-Really-Is.pdf" download="What-Trauma-Really-Is-Recover-You.pdf" aria-label="Download What Is Trauma as a printable PDF" data-fathom-event="download-pdf-what-is-trauma-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-map page-item-icon"></i> <span><a href="what-is-cptsd"><strong>What Is C-PTSD</strong></a>: What repeated, inescapable harm can do to identity, emotion, and connection. It includes the six ICD-11 domains and a private self-reflection.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/What-Is-CPTSD.pdf" download="What-Is-CPTSD-Recover-You.pdf" aria-label="Download What Is C-PTSD as a printable PDF" data-fathom-event="download-pdf-what-is-cptsd-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-link page-item-icon"></i> <span><a href="attachment"><strong>Attachment Styles</strong></a>: How early relationships shape expectations around safety, closeness, trust, and self-worth.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Attachment-Styles.pdf" download="Attachment-Styles-Recover-You.pdf" aria-label="Download Attachment Styles as a printable PDF" data-fathom-event="download-pdf-attachment-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-bolt page-item-icon"></i> <span><a href="toxic-stress"><strong>Toxic Stress</strong></a>: How prolonged stress without a buffering adult reshapes the brain and body, creating a biological foundation for later struggles.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Toxic-Stress.pdf" download="Toxic-Stress-Recover-You.pdf" aria-label="Download Toxic Stress as a printable PDF" data-fathom-event="download-pdf-toxic-stress-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-brain page-item-icon"></i> <span><a href="what-is-trauma"><strong>What Is Trauma</strong></a>: Trauma as a survival response, not only the event itself, and why “it wasn't that bad” is often part of the response.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-map page-item-icon"></i> <span><a href="what-is-cptsd"><strong>What Is C-PTSD</strong></a>: What repeated, inescapable harm can do to identity, emotion, and connection. It includes the six ICD-11 domains and a private self-reflection.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-link page-item-icon"></i> <span><a href="attachment"><strong>Attachment Styles</strong></a>: How early relationships shape expectations around safety, closeness, trust, and self-worth.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-bolt page-item-icon"></i> <span><a href="toxic-stress"><strong>Toxic Stress</strong></a>: How prolonged stress without a buffering adult reshapes the brain and body, creating a biological foundation for later struggles.</span></li>
               <li><i aria-hidden="true" class="fa-solid fa-masks-theater page-item-icon"></i> <span><a href="shame-grief-false-self"><strong>Shame, Grief &amp; The False Self</strong></a>: How toxic shame becomes an operating system and why grieving the unlived self can support authenticity.</span></li>
-              <li><i aria-hidden="true" class="fa-solid fa-diagram-project page-item-icon"></i> <span><a href="cptsd-behaviours"><strong>CPTSD Patterns</strong></a>: The four trauma responses and how they show up in adult behaviour.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/CPTSD-Patterns.pdf" download="CPTSD-Patterns-Recover-You.pdf" aria-label="Download CPTSD Patterns as a printable PDF" data-fathom-event="download-pdf-cptsd-behaviours-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-shield-heart page-item-icon"></i> <span><a href="four-trauma-responses"><strong>The Four Trauma Responses</strong></a>: A deeper look at fight, flight, freeze, and fawn, including subtypes, the fawn/feign distinction, and why effective patterns can be hard to spot.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Four-Trauma-Responses.pdf" download="Four-Trauma-Responses-Recover-You.pdf" aria-label="Download The Four Trauma Responses as a printable PDF" data-fathom-event="download-pdf-four-trauma-responses-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-chart-line page-item-icon"></i> <span><a href="aces-high"><strong>ACEs &amp; Risk</strong></a>: How adverse childhood experiences create dose-dependent risks for addiction, mental health concerns, and physical disease.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/ACEs-High.pdf" download="ACEs-High-Recover-You.pdf" aria-label="Download ACEs &amp; Risk as a printable PDF" data-fathom-event="download-pdf-aces-high-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-diagram-project page-item-icon"></i> <span><a href="cptsd-behaviours"><strong>CPTSD Patterns</strong></a>: The four trauma responses and how they show up in adult behaviour.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-shield-heart page-item-icon"></i> <span><a href="four-trauma-responses"><strong>The Four Trauma Responses</strong></a>: A deeper look at fight, flight, freeze, and fawn, including subtypes, the fawn/feign distinction, and why effective patterns can be hard to spot.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-chart-line page-item-icon"></i> <span><a href="aces-high"><strong>ACEs &amp; Risk</strong></a>: How adverse childhood experiences create dose-dependent risks for addiction, mental health concerns, and physical disease.</span></li>
               <li><i aria-hidden="true" class="fa-solid fa-microscope page-item-icon"></i> <span><a href="dunedin-study"><strong>The Dunedin Study</strong></a>: Landmark research tracking how early temperament and self-control relate to adult outcomes across decades.</span></li>
             </ul>
             <div class="pill-row">
@@ -976,15 +933,15 @@
             </div>
             <p class="why"><strong>Why this matters:</strong> Understanding the “why” behind your symptoms can reduce shame and give you a target. This section explains how trauma and addiction reshape the brain and nervous system, and why sobriety alone is often not enough.</p>
             <ul class="page-list alt-font">
-              <li><i aria-hidden="true" class="fa-solid fa-fire page-item-icon"></i> <span><a href="brain-on-fire"><strong>Brain on Fire</strong></a>: How trauma vulnerability and addiction create a self-reinforcing loop in the brain.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Brain-On-Fire.pdf" download="Brain-On-Fire-Recover-You.pdf" aria-label="Download Brain on Fire as a printable PDF" data-fathom-event="download-pdf-brain-on-fire-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-heart-pulse page-item-icon"></i> <span><a href="when-sobriety-feels-worse"><strong>When Sobriety Feels Worse</strong></a>: Why removing the substance can expose a dysregulated nervous system and make early recovery feel unbearable.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/When-Sobriety-Feels-Worse.pdf" download="When-Sobriety-Feels-Worse-Recover-You.pdf" aria-label="Download When Sobriety Feels Worse as a printable PDF" data-fathom-event="download-pdf-when-sobriety-feels-worse-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-arrows-rotate page-item-icon"></i> <span><a href="neuroplasticity"><strong>Neuroplasticity</strong></a>: How the brain wires for survival and addiction, and how it can rewire for recovery.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Neuroplasticity.pdf" download="Neuroplasticity-Recover-You.pdf" aria-label="Download Neuroplasticity as a printable PDF" data-fathom-event="download-pdf-neuroplasticity-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-hourglass-half page-item-icon"></i> <span><a href="critical-window"><strong>Critical Windows</strong></a>: Why early childhood is a powerful period for brain development and why missed developmental needs can be difficult to address later.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/The-Critical-Window.pdf" download="The-Critical-Window-Recover-You.pdf" aria-label="Download Critical Windows as a printable PDF" data-fathom-event="download-pdf-critical-window-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-dna page-item-icon"></i> <span><a href="epigenetics"><strong>Epigenetics</strong></a>: How environment can influence gene expression without changing DNA, shaping vulnerability and resilience.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Epigenetics.pdf" download="Epigenetics-Recover-You.pdf" aria-label="Download Epigenetics as a printable PDF" data-fathom-event="download-pdf-epigenetics-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-clock-rotate-left page-item-icon"></i> <span><a href="trauma-does-not-expire"><strong>Why Trauma Doesn't Expire</strong></a>: What can happen biologically and neurologically when trauma goes unaddressed across a lifetime, and why intervention still matters.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Why-Trauma-Doesnt-Expire.pdf" download="Why-Trauma-Doesnt-Expire-Recover-You.pdf" aria-label="Download Why Trauma Doesn&#x27;t Expire as a printable PDF" data-fathom-event="download-pdf-trauma-does-not-expire-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-seedling page-item-icon"></i> <span><a href="dohad"><strong>DOHaD: Developmental Origins</strong></a>: How early-life conditions can shape long-term physiology, metabolism, and disease risk.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/DOHaD.pdf" download="DOHaD-Recover-You.pdf" aria-label="Download DOHaD: Developmental Origins as a printable PDF" data-fathom-event="download-pdf-dohad-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-vial page-item-icon"></i> <span><a href="metabolism"><strong>Metabolism</strong></a>: Why people respond differently to substances, medications, and stress based on individual biology.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Know-Your-Machinery.pdf" download="Know-Your-Machinery-Recover-You.pdf" aria-label="Download Metabolism as a printable PDF" data-fathom-event="download-pdf-metabolism-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-gears page-item-icon"></i> <span><a href="the-hijacked-engine"><strong>The Hijacked Engine</strong></a>: How trauma can make the brain’s reward system more vulnerable to addiction and cue-driven behaviour.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/The-Hijacked-Engine.pdf" download="The-Hijacked-Engine-Recover-You.pdf" aria-label="Download The Hijacked Engine as a printable PDF" data-fathom-event="download-pdf-the-hijacked-engine-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-fire page-item-icon"></i> <span><a href="brain-on-fire"><strong>Brain on Fire</strong></a>: How trauma vulnerability and addiction create a self-reinforcing loop in the brain.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-heart-pulse page-item-icon"></i> <span><a href="when-sobriety-feels-worse"><strong>When Sobriety Feels Worse</strong></a>: Why removing the substance can expose a dysregulated nervous system and make early recovery feel unbearable.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-arrows-rotate page-item-icon"></i> <span><a href="neuroplasticity"><strong>Neuroplasticity</strong></a>: How the brain wires for survival and addiction, and how it can rewire for recovery.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-hourglass-half page-item-icon"></i> <span><a href="critical-window"><strong>Critical Windows</strong></a>: Why early childhood is a powerful period for brain development and why missed developmental needs can be difficult to address later.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-dna page-item-icon"></i> <span><a href="epigenetics"><strong>Epigenetics</strong></a>: How environment can influence gene expression without changing DNA, shaping vulnerability and resilience.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-clock-rotate-left page-item-icon"></i> <span><a href="trauma-does-not-expire"><strong>Why Trauma Doesn't Expire</strong></a>: What can happen biologically and neurologically when trauma goes unaddressed across a lifetime, and why intervention still matters.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-seedling page-item-icon"></i> <span><a href="dohad"><strong>DOHaD: Developmental Origins</strong></a>: How early-life conditions can shape long-term physiology, metabolism, and disease risk.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-vial page-item-icon"></i> <span><a href="metabolism"><strong>Metabolism</strong></a>: Why people respond differently to substances, medications, and stress based on individual biology.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-gears page-item-icon"></i> <span><a href="the-hijacked-engine"><strong>The Hijacked Engine</strong></a>: How trauma can make the brain’s reward system more vulnerable to addiction and cue-driven behaviour.</span></li>
             </ul>
             <div class="pill-row">
               <span class="pill"><span class="text-deep-pink">//</span> biology</span> <span class="pill"><span class="text-deep-pink">//</span> rewiring</span> <span class="pill"><span class="text-deep-pink">//</span> mechanisms</span>
@@ -1004,7 +961,7 @@
             <p class="why"><strong>Why this comes last in this section:</strong> After looking at trauma, the nervous system, toxic stress, and the biology of addiction, this page shifts from mechanism to treatment evidence. Project Harmony does not prove that trauma causes every addiction, and it does not argue for rushing people into trauma work. What it does show is harder to ignore: when PTSD and substance use disorder overlap, keeping them in separate treatment silos by default is no longer well supported by the evidence.</p>
 
             <ul class="page-list alt-font">
-              <li><i aria-hidden="true" class="fa-solid fa-scale-balanced page-item-icon"></i> <span><a href="trauma-addiction-evidence"><strong>When Trauma and Addiction Overlap</strong></a>: What Project Harmony clarifies about PTSD, substance use, integrated care, clinical caution, and the limits of the old “addiction first, trauma later” model.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/When-Trauma-And-Addiction-Overlap.pdf" download="When-Trauma-And-Addiction-Overlap-Recover-You.pdf" aria-label="Download When Trauma and Addiction Overlap as a printable PDF" data-fathom-event="download-pdf-trauma-addiction-evidence-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-scale-balanced page-item-icon"></i> <span><a href="trauma-addiction-evidence"><strong>When Trauma and Addiction Overlap</strong></a>: What Project Harmony clarifies about PTSD, substance use, integrated care, clinical caution, and the limits of the old “addiction first, trauma later” model.</span></li>
             </ul>
 
             <div class="pill-row">
@@ -1025,13 +982,13 @@
             </div>
             <p class="why"><strong>Why this matters:</strong> If you don’t understand the limits of standard approaches, it’s easy to think you’re the problem when they fail. This section gives you discernment without cynicism.</p>
             <ul class="page-list alt-font">
-              <li><i aria-hidden="true" class="fa-solid fa-triangle-exclamation page-item-icon"></i> <span><a href="why-traditional-treatment-falls-short"><strong>Why Traditional Treatment Falls Short</strong></a>: The critical gap between stabilization and trauma healing.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Why-Traditional-Treatment-Falls-Short.pdf" download="Why-Traditional-Treatment-Falls-Short-Recover-You.pdf" aria-label="Download Why Traditional Treatment Falls Short as a printable PDF" data-fathom-event="download-pdf-why-traditional-treatment-falls-short-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-circle-nodes page-item-icon"></i> <span><a href="problem-with-aa"><strong>Limits of the AA Model</strong></a>: Where 12-step support helps and where it may be harmful or incomplete for trauma survivors.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Limits-Of-The-AA-Model.pdf" download="Limits-Of-The-AA-Model-Recover-You.pdf" aria-label="Download Limits of the AA Model as a printable PDF" data-fathom-event="download-pdf-problem-with-aa-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-stethoscope page-item-icon"></i> <span><a href="misdiagnosed"><strong>When Trauma Is Misdiagnosed</strong></a>: How trauma symptoms can be labelled as anxiety, depression, ADHD, or personality disorders.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/When-Trauma-Is-Misdiagnosed.pdf" download="When-Trauma-Is-Misdiagnosed-Recover-You.pdf" aria-label="Download When Trauma Is Misdiagnosed as a printable PDF" data-fathom-event="download-pdf-misdiagnosed-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-pills page-item-icon"></i> <span><a href="disease-of-addiction"><strong>The “Disease of Addiction” Debate</strong></a>: What the disease model gets right and what it can miss when trauma is involved.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/The-Disease-Of-Addiction-Debate.pdf" download="The-Disease-Of-Addiction-Debate-Recover-You.pdf" aria-label="Download The “Disease of Addiction” Debate as a printable PDF" data-fathom-event="download-pdf-disease-of-addiction-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-book-medical page-item-icon"></i> <span><a href="dsm-explained"><strong>DSM vs ICD (Diagnosis Explained)</strong></a>: Why diagnostic systems differ and where C-PTSD fits.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/DSM-vs-ICD.pdf" download="DSM-vs-ICD-Recover-You.pdf" aria-label="Download DSM vs ICD (Diagnosis Explained) as a printable PDF" data-fathom-event="download-pdf-dsm-explained-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-triangle-exclamation page-item-icon"></i> <span><a href="why-traditional-treatment-falls-short"><strong>Why Traditional Treatment Falls Short</strong></a>: The critical gap between stabilization and trauma healing.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-circle-nodes page-item-icon"></i> <span><a href="problem-with-aa"><strong>Limits of the AA Model</strong></a>: Where 12-step support helps and where it may be harmful or incomplete for trauma survivors.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-stethoscope page-item-icon"></i> <span><a href="misdiagnosed"><strong>When Trauma Is Misdiagnosed</strong></a>: How trauma symptoms can be labelled as anxiety, depression, ADHD, or personality disorders.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-pills page-item-icon"></i> <span><a href="disease-of-addiction"><strong>The “Disease of Addiction” Debate</strong></a>: What the disease model gets right and what it can miss when trauma is involved.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-book-medical page-item-icon"></i> <span><a href="dsm-explained"><strong>DSM vs ICD (Diagnosis Explained)</strong></a>: Why diagnostic systems differ and where C-PTSD fits.</span></li>
               <li><i aria-hidden="true" class="fa-solid fa-hospital-user page-item-icon"></i> <span><a href="better-model-of-care"><strong>What Better Care Requires</strong></a>: Twelve elements often missing from systems that claim to provide trauma-informed recovery.</span></li>
-              <li><i aria-hidden="true" class="fa-solid fa-eye-slash page-item-icon"></i> <span><a href="trauma-avoidant"><strong>When Trauma Is Avoided</strong></a>: How programs can claim to be trauma-informed while avoiding direct trauma work.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/When-Trauma-Is-Avoided.pdf" download="When-Trauma-Is-Avoided-Recover-You.pdf" aria-label="Download When Trauma Is Avoided as a printable PDF" data-fathom-event="download-pdf-trauma-avoidant-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-eye-slash page-item-icon"></i> <span><a href="trauma-avoidant"><strong>When Trauma Is Avoided</strong></a>: How programs can claim to be trauma-informed while avoiding direct trauma work.</span></li>
               <li><i aria-hidden="true" class="fa-solid fa-hand-holding-heart page-item-icon"></i> <span><a href="compassionate-care"><strong>Compassionate Care: A Critique</strong></a>: Where good intentions in policy and practice still fall short of what survivors need.</span></li>
             </ul>
             <div class="pill-row">
@@ -1050,12 +1007,12 @@
             </div>
             <p class="why"><strong>Why this matters:</strong> Insight alone rarely changes behaviour. Progress usually requires structured methods that retrain thinking, regulate the nervous system, and challenge long-held survival patterns. This section explains what different therapies do and when they may be useful.</p>
             <ul class="page-list alt-font">
-              <li><i aria-hidden="true" class="fa-solid fa-brain page-item-icon"></i> <span><a href="cbt"><strong>CBT</strong></a>: Understanding the link between thoughts, emotions, and behaviour, and learning to interrupt distorted thinking patterns.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/CBT.pdf" download="CBT-Recover-You.pdf" aria-label="Download CBT as a printable PDF" data-fathom-event="download-pdf-cbt-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-life-ring page-item-icon"></i> <span><a href="dbt"><strong>DBT</strong></a>: Distress tolerance, emotion regulation, and learning to sit with urges without escaping into old coping strategies.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/DBT.pdf" download="DBT-Recover-You.pdf" aria-label="Download DBT as a printable PDF" data-fathom-event="download-pdf-dbt-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-box page-item-icon"></i> <span><a href="life-traps"><strong>Life Traps (Schema Therapy)</strong></a>: Core beliefs formed in childhood that can silently run adult behaviour, and how to challenge them.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Life-Traps.pdf" download="Life-Traps-Recover-You.pdf" aria-label="Download Life Traps (Schema Therapy) as a printable PDF" data-fathom-event="download-pdf-life-traps-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-seedling page-item-icon"></i> <span><a href="healing-trauma"><strong>Healing Trauma (Post-Traumatic Growth)</strong></a>: Healing as integration rather than erasure, and what growth can mean over time.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Post-Traumatic-Growth.pdf" download="Post-Traumatic-Growth-Recover-You.pdf" aria-label="Download Healing Trauma (Post-Traumatic Growth) as a printable PDF" data-fathom-event="download-pdf-healing-trauma-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-shapes page-item-icon"></i> <span><a href="types-of-therapy"><strong>Therapy Types</strong></a>: A guide to common trauma-focused and behavioural therapies, what they target, and how they differ.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/Which-Therapy-Does-What.pdf" download="Which-Therapy-Does-What-Recover-You.pdf" aria-label="Download Therapy Types as a printable PDF" data-fathom-event="download-pdf-types-of-therapy-roadmap">PDF</a></li>
-              <li><i aria-hidden="true" class="fa-solid fa-comments page-item-icon"></i> <span><a href="role-of-therapy"><strong>The Role of Therapy</strong></a>: What therapy is for, what it can and cannot do, and why commitment matters alongside modality.</span> <a class="ry-pdf-pill" href="assets/website-pdfs/The-Role-Of-Therapy.pdf" download="The-Role-Of-Therapy-Recover-You.pdf" aria-label="Download The Role of Therapy as a printable PDF" data-fathom-event="download-pdf-role-of-therapy-roadmap">PDF</a></li>
+              <li><i aria-hidden="true" class="fa-solid fa-brain page-item-icon"></i> <span><a href="cbt"><strong>CBT</strong></a>: Understanding the link between thoughts, emotions, and behaviour, and learning to interrupt distorted thinking patterns.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-life-ring page-item-icon"></i> <span><a href="dbt"><strong>DBT</strong></a>: Distress tolerance, emotion regulation, and learning to sit with urges without escaping into old coping strategies.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-box page-item-icon"></i> <span><a href="life-traps"><strong>Life Traps (Schema Therapy)</strong></a>: Core beliefs formed in childhood that can silently run adult behaviour, and how to challenge them.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-seedling page-item-icon"></i> <span><a href="healing-trauma"><strong>Healing Trauma (Post-Traumatic Growth)</strong></a>: Healing as integration rather than erasure, and what growth can mean over time.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-shapes page-item-icon"></i> <span><a href="types-of-therapy"><strong>Therapy Types</strong></a>: A guide to common trauma-focused and behavioural therapies, what they target, and how they differ.</span></li>
+              <li><i aria-hidden="true" class="fa-solid fa-comments page-item-icon"></i> <span><a href="role-of-therapy"><strong>The Role of Therapy</strong></a>: What therapy is for, what it can and cannot do, and why commitment matters alongside modality.</span></li>
             </ul>
             <div class="pill-row">
               <span class="pill"><span class="text-deep-pink">//</span> structure</span> <span class="pill"><span class="text-deep-pink">//</span> skill building</span> <span class="pill"><span class="text-deep-pink">//</span> integration</span>
