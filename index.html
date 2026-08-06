@@ -599,9 +599,60 @@
            }
 
            /* Keep content above overlay */
-           .ry-parallax > *:not(.ry-parallax-overlay){
+           .ry-parallax > *:not(.ry-parallax-overlay):not(.ry-parallax-bg){
              position: relative;
              z-index: 1;
+           }
+
+           /* ── Layered scroll parallax ──
+              Uses a REAL child div (.ry-parallax-bg), not ::before/::after — several
+              existing classes (.fog-layer, etc.) already use ::before/::after for their
+              own effects, and stacking two ::before rules on the same element collides.
+              isolation:isolate guarantees this section owns its own stacking context so
+              z-index here can never leak into a distant ancestor's paint order. */
+           [data-ry-parallax]{
+             position: relative;
+             overflow: hidden;
+             isolation: isolate;
+           }
+           .ry-parallax-bg{
+             position: absolute;
+             top: -18%;
+             left: 0;
+             right: 0;
+             height: 136%;
+             background-size: cover;
+             background-position: center;
+             z-index: -1;
+             will-change: transform;
+             pointer-events: none;
+             transform: translate3d(0,0,0);
+           }
+           @media (prefers-reduced-motion: reduce){
+             .ry-parallax-bg{ transform: none !important; }
+           }
+
+           /* ── Magnetic CTA hover ── */
+           .ry-magnetic{
+             transition: transform .25s cubic-bezier(.2,.8,.2,1);
+             will-change: transform;
+           }
+
+           /* ── Film grain texture ──
+              mix-blend-mode:screen (not overlay) so it actually reads on this site's
+              near-black backgrounds — overlay barely affects pixels near pure black. */
+           body::after{
+             content: "";
+             position: fixed;
+             inset: 0;
+             pointer-events: none;
+             z-index: 99998;
+             opacity: 0.05;
+             mix-blend-mode: screen;
+             background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+           }
+           @media (prefers-reduced-motion: reduce){
+             body::after{ display: none; }
            }
            .ry-checklist li {
              display: flex;
@@ -1604,7 +1655,8 @@
   </nav>
   <div class="sidebar-wrapper mobile-height">
     <!-- start hero with parallax section -->
-    <section class="wow animate__fadeIn p-0 parallax sm-background-image-center fog-layer" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/recover-you-hero-logo2.jpg');">
+    <section class="wow animate__fadeIn p-0 parallax sm-background-image-center fog-layer" data-ry-parallax="90" id="page-hero">
+      <div class="ry-parallax-bg" style="background-image:url('images/recover-you-hero-logo2.jpg');"></div>
       <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:1;"></div>
       <div class="container full-screen position-relative z-index-2">
         <div class="row m-0 h-100 align-items-center">
@@ -1612,7 +1664,7 @@
             <!-- Headline -->
             <h1 class="text-white hero-title"><span id="recover-static">RECOVER</span><br>
             <span class="typewriter-line"><span class="text-deep-pink" id="recover-dynamic"></span><span id="cursor">|</span></span></h1><span class="alt-font d-block" style="font-size:1.35rem; color:rgba(255,255,255,0.9); margin-top:12px;">Trauma-aware. Science-backed.<br>
-            Forged inside Alberta’s system.</span> <a class="btn btn-transparent-white btn-medium margin-30px-top" href="start-here">Begin Here</a>
+            Forged inside Alberta’s system.</span> <a class="btn btn-transparent-white btn-medium margin-30px-top ry-magnetic" href="start-here">Begin Here</a>
           </div><!-- Mouse icon -->
           <div class="down-section text-center">
             <a class="section-link up-down-ani" href="#what-is-recover-you"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
@@ -1673,7 +1725,8 @@
     <!-- ============================= -->
     <!-- HOW IT HELPS SECTION -->
     <!-- ============================= -->
-    <section class="wow animate__fadeIn ry-darksection ry-flush ry-parallax" id="how-it-helps" style="--ry-bg:url('images/webp/index-brain.webp');">
+    <section class="wow animate__fadeIn ry-darksection ry-flush ry-parallax" data-ry-parallax="65" id="how-it-helps">
+      <div class="ry-parallax-bg" style="background-image:url('images/webp/index-brain.webp');"></div>
       <div class="ry-parallax-overlay"></div>
       <div class="container text-center">
         <div class="row justify-content-center">
@@ -1726,7 +1779,7 @@
               <p>If you grew up surviving instead of living, read this page first. It explains the six domains of C-PTSD without the clinical fog, then hands you a private self-reflection that turns them into a map of where you actually stand. And where to start.</p>
               <p class="ry-feature-meta alt-font">Free &nbsp;·&nbsp; Private &nbsp;·&nbsp; Nothing saved or tracked &nbsp;·&nbsp; Not a test. A mirror.</p>
               <div class="ry-feature-actions">
-                <a class="ry-feature-btn alt-font" href="what-is-cptsd">Read the Page</a>
+                <a class="ry-feature-btn alt-font ry-magnetic" href="what-is-cptsd">Read the Page</a>
                 <a aria-label="Skip straight to the C-PTSD self-reflection" class="btn btn-very-small btn-transparent-white" href="what-is-cptsd#reflect">Skip to the Self-Reflection</a>
               </div>
             </div>
@@ -1846,7 +1899,108 @@
   </script> 
   <script src="js/lenis.min.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript">
-  </script> 
+  </script>
+  <script>
+    /* Smooth inertia scroll (Lenis was loaded but never initialized) */
+    (function () {
+      if (typeof Lenis === 'undefined') return;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      var lenis = new Lenis({
+        duration: 1.1,
+        smoothWheel: true
+      });
+      window.__ryLenis = lenis;
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    })();
+  </script>
+  <script>
+    /* Real scroll-linked parallax: moves an actual .ry-parallax-bg child div via
+       transform (GPU-composited), decoupled from background-position.
+
+       Ties into Lenis's own animation tick (window.__ryLenis, set by the init
+       script above) rather than a native 'scroll' listener + its own separate
+       requestAnimationFrame call. Two independent rAF loops each reacting a
+       frame apart from one another is what produced the stutter — the parallax
+       was always one frame behind wherever Lenis had already smoothed the page
+       to. Falls back to a plain scroll+rAF loop only if Lenis isn't available. */
+    (function () {
+      var hosts = document.querySelectorAll('[data-ry-parallax]');
+      if (!hosts.length) return;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      var pairs = [];
+      hosts.forEach(function (host) {
+        var layer = host.querySelector('.ry-parallax-bg');
+        if (!layer) return;
+        pairs.push({
+          host: host,
+          layer: layer,
+          speed: parseFloat(host.getAttribute('data-ry-parallax')) || 40
+        });
+      });
+      if (!pairs.length) return;
+
+      function update() {
+        var vh = window.innerHeight;
+        // batch all reads first, then all writes — avoids forced-layout thrashing
+        var rects = pairs.map(function (p) { return p.host.getBoundingClientRect(); });
+        rects.forEach(function (rect, i) {
+          var p = pairs[i];
+          var progress = (rect.top + rect.height / 2 - vh / 2) / (vh + rect.height);
+          var offset = progress * p.speed;
+          p.layer.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+        });
+      }
+
+      if (window.__ryLenis) {
+        window.__ryLenis.on('scroll', update);
+        window.addEventListener('resize', update);
+      } else {
+        var ticking = false;
+        function onScroll() {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              update();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+      }
+
+      update();
+    })();
+  </script>
+  <script>
+    /* Magnetic CTA hover */
+    (function () {
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      var strength = 14;
+
+      document.querySelectorAll('.ry-magnetic').forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+          var rect = btn.getBoundingClientRect();
+          var x = e.clientX - rect.left - rect.width / 2;
+          var y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (x / rect.width * strength).toFixed(1) + 'px,' + (y / rect.height * strength).toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () {
+          btn.style.transform = '';
+        });
+      });
+    })();
+  </script>
   <script>
       (function () {
         const progress = document.getElementById('reading-progress');
