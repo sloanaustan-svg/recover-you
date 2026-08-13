@@ -1,1005 +1,807 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head>
-  <!-- Fathom - beautiful, simple website analytics -->
-  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer=""></script>
-  <!-- / Fathom -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-
     gtag('js', new Date());
-
-    // Default: deny analytics until user accepts
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied'
-    });
-
-    gtag('config', 'G-6968KR6JY9', {
-      'anonymize_ip': true
-    });
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    gtag('config', 'G-6968KR6JY9', { 'anonymize_ip': true });
   </script>
-  <title>Epigenetics &amp; Recovery: Your DNA Is Not Your Destiny | Recover-You</title>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer></script>
+  <!-- / Fathom -->
+
+  <title>Epigenetics | The Biology of Memory and Survival</title>
   <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
-  <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="Trauma leaves biological fingerprints, but they aren't permanent. Learn how epigenetics acts as a lever for change and why 'willpower' isn't the problem." name="description">
-  <meta content="epigenetics recovery, gene expression trauma, DNA methylation, intergenerational trauma Alberta, toxic stress, ACEs, Recover-You, neuroscience of addiction" name="keywords">
-  <meta content="Epigenetics: How Experience Changes Your Biology" property="og:title">
-  <meta content="Your genes are the sheet music; your experience is the conductor. Discover how recovery rewires the biological marks of trauma. Survivor-led &amp; science-backed." property="og:description">
-  <meta content="images/og-epigenetics.jpg" property="og:image">
-  <meta content="article" property="og:type">
-  <meta content="https://recover-you.ca/epigenetics" property="og:url">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="Epigenetics &amp; Recovery | Recover-You" name="twitter:title">
-  <meta content="A survivor-led look at how experience 'marks' our genes—and how we can use that same mechanism to heal." name="twitter:description">
-  <meta content="images/og-epigenetics.jpg" name="twitter:image">
-  <link href="https://recover-you.ca/epigenetics" rel="canonical">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <meta name="author" content="Austan Sloan | Recover-You">
+  <meta name="description" content="How early adversity leaves biological fingerprints on genes like NR3C1, SLC6A4 and DRD2 — and why epigenetic change means predisposition is not destiny.">
+  <meta name="keywords" content="epigenetics, DNA methylation, NR3C1, SLC6A4, DRD2, trauma biology, intergenerational trauma, addiction neuroscience, DunedinPACE">
+
+  <meta property="og:title" content="Epigenetics | The Biology of Memory and Survival">
+  <meta property="og:description" content="Your DNA is the sheet music. It is not your destiny. How lived experience switches genes on and off — and what that means for recovery.">
+  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://recover-you.ca/epigenetics">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Epigenetics | Recover-You">
+  <meta name="twitter:description" content="Real switches in the body, flipped by real experience — and the evidence they can be flipped back.">
+  <meta name="twitter:image" content="images/og-home.jpg">
+
+  <link rel="canonical" href="https://recover-you.ca/epigenetics">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
   <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
   <link href="apple-touch-icon.png" rel="apple-touch-icon">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="site.webmanifest" rel="manifest">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Lato:wght@100;300;400;700;900&amp;family=Poppins:wght@200;300;400;600;700;800&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet">
 
-  <link href="css/site.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ry-pdf-download.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap -->
+  <link href="assets/vendor/bootstrap/5.1.3/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts -->
+  <link href="assets/vendor/icomoon/icomoon.min.css" rel="stylesheet">
+  <!-- Off Canvas Menu -->
+  <link href="assets/vendor/offcanvas-nav/hc-offcanvas-nav.css" rel="stylesheet">
+  <!-- DarkStar Theme CSS -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <link href="assets/css/theme-colors.css" rel="stylesheet">
+  <!-- Recover-You homepage layer (red / black / grey / white brand) -->
+  <link href="assets/css/ry-home.css" rel="stylesheet">
+  <!-- Shared article component layer -->
+  <link href="assets/css/ry-article.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script type="application/ld+json">
-       {
-         "@context": "https://schema.org",
-         "@type": "Article",
-         "headline": "Epigenetics & Recovery: Why Your DNA Isn't Your Destiny",
-         "description": "An exploration of how trauma and environment influence gene expression, and how recovery practices can leverage epigenetics for healing.",
-         "image": "images/og-epigenetics.jpg",
-         "author": {
-           "@type": "Person",
-           "name": "Austan Sloan"
-         },
-         "publisher": {
-           "@type": "Organization",
-           "name": "Recover-You",
-           "url": "https://recover-you.ca"
-         },
-         "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https://recover-you.ca/epigenetics"
-         },
-         "inLanguage": "en",
-         "about": [
-           { "@type": "Thing", "name": "Epigenetics" },
-           { "@type": "Thing", "name": "Trauma-Informed Recovery" },
-           { "@type": "Thing", "name": "Gene Expression" }
-         ]
-       }
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Biology of Memory and Survival",
+    "description": "How early adversity leaves biological fingerprints that recovery can rewire.",
+    "url": "https://recover-you.ca/epigenetics",
+    "author": { "@type": "Person", "name": "Austan Sloan" },
+    "publisher": { "@type": "Organization", "name": "Recover-You" },
+    "isPartOf": { "@type": "WebSite", "name": "Recover-You", "url": "https://recover-you.ca" }
+  }
   </script>
-<link href="css/lenis.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  <div aria-hidden="true" id="reading-progress">
-    <div id="reading-progress-fill"></div>
-  </div><!-- start header -->
-  <header>
-    <!-- start navigation -->
-    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
-      <div class="container-fluid nav-header-container">
-        <div class="col-auto ps-0">
-          <a class="logo" href="index" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
-        </div>
-        <div class="col accordion-menu pe-0 pe-md-3">
-          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
-            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
-              <li>
-                <a href="index" title="Home">Home</a>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-this-site-exists">Why This Site Exists</a>
-                  </li>
-                  <li>
-                    <a href="about-me">About Me</a>
-                  </li>
-                  <li>
-                    <a href="start-here">Start Here</a>
-                  </li>
-                  <li>
-                    <a href="faq">FAQ</a>
-                  </li>
-              <li><a href="for-coaches">For Frontline Workers</a></li>
-            <li><a href="for-loved-ones">For Loved Ones</a></li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="what-is-trauma">What Is Trauma</a>
-                      </li>
-                      <li>
-                        <a href="what-is-cptsd">What Is C-PTSD</a>
-                      </li>
-                      <li>
-                        <a href="attachment">Attachment Styles</a>
-                      </li>
-                      <li>
-                        <a href="toxic-stress">Toxic Stress</a>
-                      </li>
-                      <li>
-                        <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a>
-                      </li>
-                      <li>
-                        <a href="cptsd-behaviours">CPTSD Patterns</a>
-                      </li>
-                      <li><a href="four-trauma-responses">Trauma Responses</a></li>
-                      <li>
-                        <a href="aces-high">ACEs &amp; Risk</a>
-                      </li>
-                      <li>
-                        <a href="dunedin-study">The Dunedin Study</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="brain-on-fire">Brain on Fire</a>
-                      </li>
-                      <li>
-                        <a href="when-sobriety-feels-worse">When Sobriety Feels Worse</a>
-                      </li>
-                      <li>
-                        <a href="neuroplasticity">Neuroplasticity</a>
-                      </li>
-                      <li>
-                        <a href="critical-window">Critical Windows</a>
-                      </li>
-                      <li>
-                        <a href="epigenetics">Epigenetics</a>
-                      </li>
-                      <li>
-                        <a href="trauma-does-not-expire">Trauma Doesn't Expire</a>
-                      </li>
-                      <li>
-                        <a href="dohad">DOHaD: Developmental Origins</a>
-                      </li>
-                      <li>
-                        <a href="metabolism">Metabolism</a>
-                      </li>
-                      <li>
-                        <a href="the-hijacked-engine">The Hijacked Engine</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a>
-                  </li>
-                  <li>
-                    <a href="problem-with-aa">Limits of the AA Model</a>
-                  </li>
-                  <li>
-                    <a href="misdiagnosed">When Trauma Is Misdiagnosed</a>
-                  </li>
-                  <li>
-                    <a href="disease-of-addiction">The "Disease of Addiction" Debate</a>
-                  </li>
-                  <li>
-                    <a href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a>
-                  </li>
-                  <li>
-                    <a href="better-model-of-care">What Better Care Requires</a>
-                  </li>
-                  <li>
-                    <a href="trauma-avoidant">When Trauma Is Avoided</a>
-                  </li>
-                  <li>
-                    <a href="compassionate-care">Compassionate Care: A Critique</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="cbt">CBT</a>
-                      </li>
-                      <li>
-                        <a href="dbt">DBT</a>
-                      </li>
-                      <li>
-                        <a href="life-traps">Life Traps (Schema Therapy)</a>
-                      </li>
-                      <li>
-                        <a href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a>
-                      </li>
-                      <li>
-                        <a href="types-of-therapy">Therapy Types</a>
-                      </li>
-                      <li>
-                        <a href="role-of-therapy">The Role of Therapy</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="chart-your-life">Chart Your Life</a>
-                      </li>
-                      <li>
-                        <a href="distorted-thinking">Distorted Thinking</a>
-                      </li>
-                      <li>
-                        <a href="regulation-tools">Regulation Tools</a>
-                      </li>
-                      <li>
-                        <a href="reality-test">Reality Testing</a>
-                      </li>
-                      <li>
-                        <a href="relationships">Relationships in Recovery</a>
-                      </li>
-                      <li>
-                        <a href="connection">Connection</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a>
-                      </li>
-                      <li>
-                        <a href="spirituality">Spirituality</a>
-                      </li>
-                      <li>
-                        <a href="the-resilience-lie">The Resilience Lie</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="resources">Resources</a>
-                      </li>
-                      <li>
-                        <a href="tfr-model">Trauma-Focused Recovery Model (TFR Model)</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact" title="Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-auto pe-0"></div>
-      </div>
-    </nav><!-- end navigation -->
-  </header><!-- end header -->
-  <!-- start page title section -->
-  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/epigenetics-hero.webp');">
-    <div class="opacity-medium bg-extra-dark-gray"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
-          <!-- start page title -->
-          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">The Biology of Memory and Survival</h1>
-          <h6 class="text-light-gray alt-font font-weight-600">Early adversity leaves biological fingerprints that recovery can rewire.</h6>
-        </div>
-      </div>
-    </div>
-    <div class="down-section text-center">
-      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-light-gray" id="why">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 wow animate__fadeIn">
 
-          <div class="position-relative icon-with-paragraph">
-            <span class="text-deep-pink position-absolute left-0 top-0 alt-font special-char-extra-large d-none d-lg-block">*</span>
-            <h5 class="font-weight-300 text-extra-dark-gray w-90 padding-nineteen-left lg-padding-twenty-left lg-w-100 xl-w-95 md-no-padding-left sm-margin-15px-bottom">A Note <strong>Before We Go Deeper</strong></h5>
-            <blockquote class="border-color-deep-pink">
-              <p><span class="text-deep-pink">I am not a doctor, or a geneticist.</span> What follows is not a prescription or a clinical evaluation. It's my best attempt to make sense of what I found in the research, the clinical literature, and my own experience of living inside a body that spent decades doing things I didn't fully understand. I came into this with one goal: to <em>disprove</em> any connection between my addiction and my genetics. I didn't want that excuse sitting on the shelf for me to reach for.</p>
-              <p>What I found instead was unsettling and clarifying in equal measure. The science didn't point to a fate carved in stone. It pointed to <strong>levers</strong>. Real, tangible, biological ones, that can be pulled in either direction. The hand we were dealt isn't fixed. What we do with it, consistently and over time, is still very much up to us.</p>
-            </blockquote>
-          </div>
+<body class="sk__article-page dark-shade-1-bg ry-article-page">
+
+  <main id="primary" class="site-main">
+
+    <!-- Site-wide reading progress bar -->
+    <div aria-hidden="true" id="reading-progress"><div id="reading-progress-fill"></div></div>
+
+    <!-- Master Curtain Effect -->
+    <!-- Built from real DOM rather than a background image so the optional
+         page title below the logo always sits a fixed distance beneath it,
+         at every viewport ratio. Builders inject .ry-curtain-title; the
+         home page deliberately has none. -->
+    <section class="sk__master-curtain">
+      <div class="mcurtain ry-mcurtain-single">
+        <div class="ry-curtain-inner">
+          <img class="ry-curtain-logo" src="images/webp/recover-you-logo-white.webp" alt="Recover-You" width="600" height="200">
+          <span class="ry-curtain-title">EPIGENETICS</span>
         </div>
       </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="sk__back-to-top-wrap">
+      <a class="sk__back-to-top" href="#smooth-content"><span class="sk__back-to-top"></span></a>
     </div>
-  </section><!-- end page title section -->
-  <section class="wow animate__fadeIn">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
-            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i>
-            <span>18 min read</span>
-          </div><!-- ═══ PDF DOWNLOAD CARD ═══ -->
-          <a class="ry-pdf-card" href="assets/website-pdfs/Epigenetics.pdf" download="Epigenetics-Recover-You.pdf" aria-label="Download the full The Biology of Memory and Survival page as a printable PDF, 8 pages, 363 KB" data-fathom-event="download-pdf-epigenetics">
-            <div class="ry-pdf-icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
-            <div class="ry-pdf-body">
-              <span class="ry-pdf-eyebrow">Prefer paper?</span>
-              <div class="ry-pdf-title">Take this entire page with you</div>
-              <p class="ry-pdf-sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</p>
-              <ul class="ry-pdf-meta">
-                <li>PDF</li>
-                <li>8 pages</li>
-                <li>363 KB</li>
-                <li>Free</li>
-              </ul>
-            </div>
-            <div class="ry-pdf-action">Download <i class="fas fa-arrow-down" aria-hidden="true"></i></div>
-          </a><!-- ═══ /PDF DOWNLOAD CARD ═══ -->
-          
-          <h5 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> So, exactly what is <strong>Epigenetics</strong>?</h5>
-          <blockquote class="border-color-deep-pink">
-            <p><em>You were born with a genetic blueprint. That blueprint is not your destiny.</em></p>
-          </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">Think of your DNA as the sheet music for a song. The notes on the page, the actual DNA sequence, never change. But how that song gets played, loudly or softly, with certain sections skipped entirely or others repeated on loop, depends completely on the conductor. <strong>In the story of your life, the conductor is everything you've lived through: stress, trauma, nutrition, the relationships that felt safe,</strong> and <strong class="text-deep-pink">the work of healing.</strong> Same sheet music. Wildly different performances.</p>
-          <p><strong>Epigenetics</strong> is the study of how lived experience can switch genes "on" or "off" without changing the underlying DNA sequence itself. These changes, called <em>epigenetic modifications</em>, <strong>can be temporary, like a dimmer on a light switch. Or they can persist for years. In some cases, they've been shown to echo into the next generation.</strong> Not a guarantee. A possibility worth taking seriously.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
-    <div class="container-fluid p-0">
-      <div class="row row-cols-1 row-cols-lg-2 m-0">
-        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInLeft" data-wow-duration="900ms" style="background-image: url('images/webp/epigenetic-switches.webp');"></div>
-        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInRight" data-wow-duration="900ms">
-          <h5 class="alt-font text-light-gray"><span class="text-deep-pink">//</span> How It <strong>Works.</strong><br>
-          (Without the Jargon)</h5>
-          <p class="text-medium alt-font">Every gene carries instructions for building and running your body. Epigenetics works by adding or removing tiny chemical tags on or around your DNA. The most common type is called a methyl group (and no, not that kind of meth). It's a carbon-and-hydrogen molecule whose entire job is <em>silencing genes instead of people.</em> Significantly less dramatic. Arguably more consequential.</p>
-          <p class="text-medium alt-font">Think of these methyl tags as sticky notes slapped onto a filing cabinet. In some cases, an actual padlock. Some notes say "read this." Some say "skip it entirely and don't ask why."</p>
-          <div class="margin-30px-tb text-medium">
-            <ul class="p-0 list-style-9">
-              <li><span style="margin-right:8px;"><i class="fa-solid fa-dna text-large"></i> <i class="fa-solid fa-toggle-on text-large text-light-gray"></i></span> <strong class="text-deep-pink">Gene On →</strong> The instruction is accessible. The cell can read it, follow it, and do exactly what it was designed to do.</li>
-              <li><span style="margin-right:8px;"><i class="fa-solid fa-dna text-large"></i> <i class="fa-solid fa-toggle-off text-large"></i></span> <strong class="text-deep-pink">Gene Off →</strong> A methyl tag physically blocks access. The gene is <em>"silenced."</em> The instruction is still there, it just can't be read. Like a library book that's been checked out permanently by someone who will never return it.</li>
-            </ul>
-          </div>
-          <p class="text-medium alt-font"><strong>The critical point: these switches aren't random. They're placed and removed in direct response to signals from your environment.</strong> Your experiences, including the ones you had no say in, have been quietly annotating your genome this entire time. And because these tags can be added, research suggests many of them can also be removed. Not guaranteed. Not overnight. But possible, with the right conditions and consistent work.</p>
-        </div>
-      </div>
-    </div>
-  </section><!-- end section -->
-  <!-- start blog content section -->
-  <section class="wow animate__fadeIn">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h5 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> Why Your Brain Does This: The <strong>Drive</strong> for <strong>Balance</strong></h5>
-          <h6 class="alt-font text-extra-dark-gray margin-30px-top">The Cell Phone Calibration Analogy</h6>
-          <div class="row align-items-start margin-30px-top">
-            <!-- LEFT: TEXT -->
-            <div class="col-lg-7 col-md-12">
-              <p class="text-medium line-height-28 sm-line-height-26">Think of it like getting a new phone. Every device rolls off the assembly line with the same <strong>factory settings</strong>. Same hardware, same operating system, same default everything. Same box too, complete with that vacuum-sealed packaging that makes you hold your breath because you already know, it's going to pop at exactly the wrong moment and launch your brand new phone across the room before you've even turned it on.</p>
-              <p class="text-medium line-height-28 sm-line-height-26">But the second it survives the unboxing? What do you open first?<br>
-              <strong>Settings.</strong></p>
-              <p class="text-medium line-height-28 sm-line-height-26">Brightness. Volume. Notifications. Privacy. Accessibility. Sleep mode. Focus filters. App permissions. Do Not Disturb schedules for the people you love but cannot deal with after 9pm. Within minutes, that generic device stops being a phone and becomes <em>your</em> phone, shaped entirely by your habits, your routines, and the specific chaos of the life it has to fit into.</p>
-            </div><!-- RIGHT: IMAGE -->
-            <div class="col-lg-5 col-md-12 margin-20px-bottom"><img alt="Man opening a vacuum-sealed phone box as it violently pops open, phone flying upward in shock" class="w-100" src="images/webp/phone-pop-chaos.webp" style="border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.25);"></div>
-          </div>
-          <p class="text-medium line-height-28 sm-line-height-26"><strong>And here's where the analogy actually earns its keep.</strong></p>
-          <p class="text-medium line-height-28 sm-line-height-26">Take two identical phones and swap them between two people. Same device. Same specs. Same everything that came in the box. Suddenly nothing works right. You can't find anything. The volume is either deafening or completely off. The font is either microscopic or aggressively enormous. Notifications are either erupting every thirty seconds or so silent you'd think the thing was broken. Where you had Tinder, there's now Grindr, or vice versa, and the whole experience just feels profoundly, uncomfortably <em>wrong.</em> That's assuming you can get past the passcode, which you absolutely cannot, because they went biometric and your face is not their face.</p>
-          <p class="text-medium line-height-28 sm-line-height-26"><strong>Identical hardware. Completely different human experience.</strong><br>
-          What separates them isn't the design. It's how each device was calibrated to the specific person living inside it.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">That's exactly how early development works.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">We arrive with a biological set of <em>"factory settings,"</em> but the calibration starts earlier than most people realize. Sometimes before we've even drawn our first breath <em class="text-deep-pink"><a href="dohad">(Learn more: DOHaD).</a></em> From the womb onward, the environment <strong>shapes the system:</strong> the stress, the safety, the connection, the chaos, the presence or absence of someone who gave a damn. It determines which alarms stay permanently on, which circuits stay hot, which filters open or clamp shut, and which survival apps get pinned to the home screen whether you wanted them there or not.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">And just like your phone, with time, intention, and consistent effort:</p>
-          <ul class="p-0 list-style-3 text-medium line-height-28 sm-line-height-26">
-            <li>You can <strong>turn off settings</strong> that no longer serve you.</li>
-            <li>You can <strong>silence old survival notifications</strong> that fire for threats that no longer exist.</li>
-            <li>You can <strong>update an outdated operating system</strong> that was built for a world you no longer live in.</li>
-            <li>You can <strong>delete apps</strong> that once kept you alive but are now doing more damage than good.</li>
-            <li>You can <strong>download new tools</strong> and slowly build healthier default patterns.</li>
-            <li>You can even <strong>reset parts of the system</strong> without losing who you actually are underneath it.</li>
+
+    <!-- Mobile menu bar -->
+    <div class="sk__mobile-menu-bar"></div>
+    <a class="sk__mobile-main-logo" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+    <!-- Navigation -->
+    <nav id="main-nav" style="opacity: 0;" class="sk__menu navbar sk__navbar navbar-expand-lg navbar-dark static-top">
+
+      <a class="navbar-brand" href="index"><img id="sk__main-logo" alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+      <ul class="navbar-nav ms-auto">
+
+        <li data-nav-custom-content class="custom-content sk__mobile-menu-logo">
+          <a class="sk__mobile-navbar-brand" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+
+        <!-- 1. Orientation -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Start Here</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-this-site-exists">Why This Site Exists</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-me">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="start-here">Start Here</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-coaches">For Frontline Workers</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-loved-ones">For Loved Ones</a></li>
           </ul>
-          <p class="text-medium line-height-28 sm-line-height-26">Nothing was broken. The device calibrated itself to survive the environment and the handler it had at the time. It did exactly what it was designed to do.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">Healing is <strong>re-calibration</strong>. It's updating the settings that kept you alive so they can help you actually live.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">That's not just a metaphor. Your brain's primary job is survival. It works constantly to keep your internal environment stable, a process called <strong>homeostasis</strong>. When life pushes too hard through chronic stress, fear, or substance use, <em>the brain <strong>doesn't break. <span class="text-deep-pink">It adapts.</span></strong></em> Epigenetics is one of the most powerful tools it has for making that adaptation, quietly, efficiently, and without asking your permission.</p>
-          <blockquote class="border-color-deep-pink">
-            <p>In a life built around threat, your brain may flip an epigenetic switch that dials down the gene responsible for cortisol's off-switch. In the short term? Brilliant. Keeps you sharp, alert, ready to move at a moment's notice. In the long term? The alarm stays on even after the emergency has passed.</p>
-          </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">The catch is that <strong>your brain can get stuck there.</strong> Settings built for survival in an unsafe world can persist long after the danger has gone, quietly fueling anxiety, inflammation, and chronic illness. The system isn't malfunctioning. It just hasn't received consistent enough signals that it's safe to stand down. That's what healing is for.</p>
-        </div>
-        <div class="col-12 margin-40px-tb"><img alt="" class="w-100" src="images/webp/epigenetics-enzyme.webp" style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.25);"></div>
-        <div class="col-lg-10 last-paragraph-no-margin">
-          <h5 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> Genetic Levers:<br>
-          <strong>Three Key Examples</strong></h5>
-          <p class="text-medium line-height-28 sm-line-height-26">When people say trauma affects our genetics, it tends to stay abstract. A phrase that lands with weight but seemingly has no clear explanation. <strong><em>Epigenetics makes it concrete: real switches in the body, flipped by <span class="text-deep-pink">real experience.</span></em></strong></p>
-          <p class="text-medium line-height-28 sm-line-height-26">I chose these three genes deliberately. Together they regulate <strong>stress, mood, and reward</strong>. The systems that determine how safe the world feels, how stable we feel inside it, and how motivated or depleted we feel trying to move through it.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">When early adversity recalibrates these systems, the baseline shifts. Stress runs louder. Mood sits lower. Natural reward feels muted, like the volume on ordinary life has been quietly turned down. <strong>Nothing is "broken," but the nervous system is primed, often without any conscious awareness, to go looking for relief.</strong></p>
-          <blockquote class="border-color-deep-pink">
-            <p><strong>Predisposition is not destiny, but it does change the starting conditions.</strong> And starting conditions matter.</p>
-          </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">The trap can be set by both nature and nurture long before a substance ever enters the picture. And when one finally does, something that powerfully quiets stress, lifts mood, or floods reward pathways that have been running on empty, <strong>it doesn't just feel good. It feels like a correction. Like finally breathing normally after years of not quite getting enough air.</strong></p>
-          <p class="text-medium line-height-28 sm-line-height-26">These three examples show what it actually means when we say trauma alters biology. Not metaphor. Measurable shifts in how the brain and body regulate <strong>stress, mood, and motivation</strong>. The three systems sitting at the center of both trauma and addiction.</p>
-          <div class="row margin-40px-top">
-            <div class="row margin-40px-top">
-              <!-- NR3C1 CARD -->
-              <div class="col-lg-4 col-md-6 margin-20px-bottom">
-                <div class="bg-white rounded-3 shadow-lg p-4 h-100 border-left border-color-deep-pink" style="border-left-width:4px;">
-                  <h6 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">NR3C1</span><br>
-                  The Cortisol "Off-Switch"</h6>
-                  <p class="text-medium line-height-26"><strong>System:</strong> Stress Regulation (HPA Axis)</p>
-                  <p class="text-medium line-height-26"><strong>What it does:</strong> Builds glucocorticoid receptors, the system responsible for telling your body, <em>"You're safe now. Stand down."</em></p>
-                  <p class="text-medium line-height-26"><strong>When altered by stress:</strong> Methylation can reduce receptor availability, weakening that shutdown signal. The result isn't just "stress." It's a system that struggles to turn off. Hypervigilance becomes baseline. The body stays braced. Anxiety shows up without a clear reason, because the system never got the message that the danger passed.</p>
-                  <p class="text-medium line-height-26"><strong>Healing direction:</strong> Repeated, real experiences of safety, not just insight, help rebuild this signal over time. This is where trauma-focused therapy and consistent environments matter: they don't just change how you think, they retrain when your body is allowed to relax.</p>
-                </div>
-              </div><!-- SLC6A4 CARD -->
-              <div class="col-lg-4 col-md-6 margin-20px-bottom">
-                <div class="bg-white rounded-3 shadow-lg p-4 h-100 border-left border-color-deep-pink" style="border-left-width:4px;">
-                  <h6 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">SLC6A4</span><br>
-                  The Serotonin Recycler</h6>
-                  <p class="text-medium line-height-26"><strong>System:</strong> Mood Regulation</p>
-                  <p class="text-medium line-height-26"><strong>What it does:</strong> Regulates the serotonin transporter, controlling how long serotonin stays active in the space between brain cells.</p>
-                  <p class="text-medium line-height-26"><strong>When altered by stress:</strong> Epigenetic shifts can disrupt that balance. Serotonin doesn't land or linger the way it should, and mood becomes less stable as a result. This can show up as low baseline mood, increased sensitivity to stress, or emotional reactions that feel stronger than the situation calls for. Not because you're overreacting, but because the system is under-supported.</p>
-                  <p class="text-medium line-height-26"><strong>Healing direction:</strong> Stability matters here more than intensity. Consistent routines, therapeutic support, and environments that feel predictable help restore rhythm to this system, not instantly, but gradually, as the brain relearns what "regulated" actually feels like.</p>
-                </div>
-              </div><!-- DRD2 CARD -->
-              <div class="col-lg-4 col-md-6 margin-20px-bottom">
-                <div class="bg-white rounded-3 shadow-lg p-4 h-100 border-left border-color-deep-pink" style="border-left-width:4px;">
-                  <h6 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">DRD2</span><br>
-                  The Reward Sensitivity Regulator</h6>
-                  <p class="text-medium line-height-26"><strong>System:</strong> Motivation &amp; Reward</p>
-                  <p class="text-medium line-height-26"><strong>What it does:</strong> Builds dopamine D2 receptors, key components of the brain's reward system and the circuitry that drives motivation, reinforcement, and meaning.</p>
-                  <p class="text-medium line-height-26"><strong>When altered by stress:</strong> Chronic adversity can blunt dopamine signaling and receptor sensitivity, flattening the reward system. Everyday life starts to feel dull, effortful, or pointless. When a substance floods that same system, the effect isn't just pleasure. It can feel like relief, clarity, or finally "coming online." That contrast is what makes the pull so powerful.</p>
-                  <p class="text-medium line-height-26"><strong>Healing direction:</strong> This system rebuilds slowly. Consistent engagement, physical movement, meaningful goals, and safe relationships help restore sensitivity over time, but this is measured in months and years, not quick fixes.</p>
+        </li>
+
+        <!-- 2-4. Trauma Foundations -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Trauma Foundations</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Core Concepts</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="what-is-trauma">What Is Trauma</a></li>
+                <li class="nav-item"><a class="nav-link" href="what-is-cptsd">What Is C-PTSD</a></li>
+                <li class="nav-item"><a class="nav-link" href="attachment">Attachment Styles</a></li>
+                <li class="nav-item"><a class="nav-link" href="toxic-stress">Toxic Stress</a></li>
+                <li class="nav-item"><a class="nav-link" href="shame-grief-false-self">Shame, Grief &amp; The False Self</a></li>
+                <li class="nav-item"><a class="nav-link" href="cptsd-behaviours">CPTSD Patterns</a></li>
+                <li class="nav-item"><a class="nav-link" href="four-trauma-responses">Trauma Responses</a></li>
+                <li class="nav-item"><a class="nav-link" href="aces-high">ACEs &amp; Risk</a></li>
+                <li class="nav-item"><a class="nav-link" href="dunedin-study">The Dunedin Study</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Brain &amp; Body</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="brain-on-fire">Brain on Fire</a></li>
+                <li class="nav-item"><a class="nav-link" href="when-sobriety-feels-worse">When Sobriety Feels Worse</a></li>
+                <li class="nav-item"><a class="nav-link" href="neuroplasticity">Neuroplasticity</a></li>
+                <li class="nav-item"><a class="nav-link" href="critical-window">Critical Windows</a></li>
+                <li class="nav-item"><a class="nav-link" href="epigenetics">Epigenetics</a></li>
+                <li class="nav-item"><a class="nav-link" href="trauma-does-not-expire">Trauma Doesn't Expire</a></li>
+                <li class="nav-item"><a class="nav-link" href="dohad">DOHaD: Developmental Origins</a></li>
+                <li class="nav-item"><a class="nav-link" href="metabolism">Metabolism</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-hijacked-engine">The Hijacked Engine</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. A Critical Lens -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">A Critical Lens</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a></li>
+            <li class="nav-item"><a class="nav-link" href="problem-with-aa">Limits of the AA Model</a></li>
+            <li class="nav-item"><a class="nav-link" href="misdiagnosed">When Trauma Is Misdiagnosed</a></li>
+            <li class="nav-item"><a class="nav-link" href="disease-of-addiction">The &ldquo;Disease of Addiction&rdquo; Debate</a></li>
+            <li class="nav-item"><a class="nav-link" href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a></li>
+            <li class="nav-item"><a class="nav-link" href="better-model-of-care">What Better Care Requires</a></li>
+            <li class="nav-item"><a class="nav-link" href="trauma-avoidant">When Trauma Is Avoided</a></li>
+            <li class="nav-item"><a class="nav-link" href="compassionate-care">Compassionate Care: A Critique</a></li>
+          </ul>
+        </li>
+
+        <!-- 6-9. Healing & Tools -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Healing &amp; Tools</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Therapeutic Models</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="cbt">CBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="dbt">DBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="life-traps">Life Traps (Schema Therapy)</a></li>
+                <li class="nav-item"><a class="nav-link" href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a></li>
+                <li class="nav-item"><a class="nav-link" href="types-of-therapy">Therapy Types</a></li>
+                <li class="nav-item"><a class="nav-link" href="role-of-therapy">The Role of Therapy</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Practical Tools &amp; Skills</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="chart-your-life">Chart Your Life</a></li>
+                <li class="nav-item"><a class="nav-link" href="distorted-thinking">Distorted Thinking</a></li>
+                <li class="nav-item"><a class="nav-link" href="regulation-tools">Regulation Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="reality-test">Reality Testing</a></li>
+                <li class="nav-item"><a class="nav-link" href="relationships">Relationships in Recovery</a></li>
+                <li class="nav-item"><a class="nav-link" href="connection">Connection</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Identity &amp; Growth</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a></li>
+                <li class="nav-item"><a class="nav-link" href="spirituality">Spirituality</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-resilience-lie">The Resilience Lie</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- 9. Resources -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="resources">Resources</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="resources">All Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-detox">Detox &amp; Stabilization</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-treatment-centres">Treatment Centres</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-trauma-therapy">Trauma Therapy &amp; Mental Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-alberta-health">Navigating Alberta Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-books-tools">Books, Journals &amp; Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-prominent-voices">Prominent Voices</a></li>
+            <li class="nav-item"><a class="nav-link" href="tfr-model">The TFR Model</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+
+      </ul>
+    </nav>
+    <!-- /.sk__menu -->
+    <div id="smooth-wrapper" class="pushable-content">
+      <div id="smooth-content">
+
+        <!-- ============================= -->
+        <!-- HERO -->
+        <!-- ============================= -->
+        <section class="ry-page-hero" id="page-hero">
+          <div class="ry-page-hero__bg" style="background-image:url('images/webp/epigenetics-hero.webp');"></div>
+          <div class="ry-page-hero__scrim"></div>
+          <div class="container ry-page-hero__inner">
+            <div class="row">
+              <div class="col-12 col-lg-9">
+                <span class="ry-hero-eyebrow">Brain &amp; Body</span>
+                <h1 class="ry-page-hero__title">The Biology of Memory and Survival</h1>
+                <p class="ry-page-hero__sub">Early adversity leaves biological fingerprints that recovery can rewire.</p>
+              </div>
+            </div>
+          </div>
+          <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ASH FIELD — carries across the author's note and the opener  -->
+        <!-- ============================================================ -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <!-- ============================= -->
+        <!-- AUTHOR'S NOTE -->
+        <!-- ============================= -->
+        <section id="why">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-note ry-prose">
+                  <span class="ry-note__label">A Note Before We Go Deeper</span>
+                  <p><span class="ry-hl">I am not a doctor, or a geneticist.</span> What follows is not a prescription or a clinical evaluation. It's my best attempt to make sense of what I found in the research, the clinical literature, and my own experience of living inside a body that spent decades doing things I didn't fully understand. I came into this with one goal: to <em>disprove</em> any connection between my addiction and my genetics. I didn't want that excuse sitting on the shelf for me to reach for.</p>
+                  <p>What I found instead was unsettling and clarifying in equal measure. The science didn't point to a fate carved in stone. It pointed to <strong>levers</strong>. Real, tangible, biological ones, that can be pulled in either direction. The hand we were dealt isn't fixed. What we do with it, consistently and over time, is still very much up to us.</p>
                 </div>
               </div>
             </div>
-            <div class="row margin-50px-top">
-              <div class="col-lg-12">
-                <div class="ry-intro-card margin-50px-top margin-55px-bottom" style=" background: #fffcfd; border: 2px solid #ff214f; border-radius: 12px; padding: 40px 45px; box-shadow: 0 20px 50px rgba(0,0,0,0.12);">
-                  <p class="eyebrow alt-font text-deep-pink margin-15px-bottom"><i class="fa-solid fa-circle-exclamation"></i> The Recover-You Critique</p>
-                  <h6 class="alt-font text-extra-dark-gray font-weight-600">The Systemic Silence</h6>
-                  <p class="text-medium text-extra-dark-gray line-height-28">We have known about the methylation of <strong>NR3C1</strong> and the blunting of <strong>DRD2</strong> receptors for decades. This is not fringe theory. It is foundational neurobiology.</p>
-                  <p class="text-medium text-extra-dark-gray line-height-28">And yet, most treatment models still walk you into a room and treat your <strong>hypervigilance</strong> as a lack of faith, your <strong>depletion</strong> as a lack of effort, and your <strong>cravings</strong> as a moral defect. They ask you to change the "performance" of your life while completely ignoring the biological <strong>conductors</strong>, trauma and toxic stress, still standing at the podium and frantically waving the baton.</p>
-                  <blockquote style=" margin-top: 25px; padding: 20px 25px; background: #ffffff; border-left: 4px solid #ff214f; border-radius: 6px;">
-                    <p class="text-small alt-font margin-0"><strong>The logic is simple:</strong> If the system doesn't name the lever (epigenetics), it can't help you pull it. By keeping you in the dark about your own biology, the system ensures that when you struggle, you blame yourself instead of the calibration. Recover-You exists to turn the lights on.</p>
+          </div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- OPENER + PDF -->
+        <!-- ============================= -->
+        <section id="what-is-epigenetics">
+          <div class="container sk__py-m">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+
+                <span class="ry-readtime">18 min read</span>
+
+                <a class="ry-pdf-card" href="assets/website-pdfs/Epigenetics.pdf" download="Epigenetics-Recover-You.pdf" data-fathom-event="download-pdf-epigenetics" aria-label="Download the full page as a printable PDF, 8 pages, 363 KB">
+                  <span class="ry-pdf-card__icon" aria-hidden="true">PDF</span>
+                  <span class="ry-pdf-card__body">
+                    <span class="ry-pdf-card__eyebrow">Prefer paper?</span>
+                    <span class="ry-pdf-card__title">Take this entire page with you</span>
+                    <span class="ry-pdf-card__sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</span>
+                    <span class="ry-pdf-card__meta">
+                      <span>PDF</span><span>8 pages</span><span>363 KB</span><span>Free</span>
+                    </span>
+                  </span>
+                  <span class="ry-pdf-card__action">Download &darr;</span>
+                </a>
+
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> So, exactly what is <strong>Epigenetics</strong>?</h2>
+
+                  <blockquote class="ry-pullquote">
+                    <p><em>You were born with a genetic blueprint. That blueprint is not your destiny.</em></p>
+                  </blockquote>
+
+                  <p>Think of your DNA as the sheet music for a song. The notes on the page, the actual DNA sequence, never change. But how that song gets played, loudly or softly, with certain sections skipped entirely or others repeated on loop, depends completely on the conductor. <strong>In the story of your life, the conductor is everything you've lived through: stress, trauma, nutrition, the relationships that felt safe,</strong> and <strong class="ry-hl">the work of healing.</strong> Same sheet music. Wildly different performances.</p>
+
+                  <p><strong>Epigenetics</strong> is the study of how lived experience can switch genes &ldquo;on&rdquo; or &ldquo;off&rdquo; without changing the underlying DNA sequence itself. These changes, called <em>epigenetic modifications</em>, <strong>can be temporary, like a dimmer on a light switch. Or they can persist for years. In some cases, they've been shown to echo into the next generation.</strong> Not a guarantee. A possibility worth taking seriously.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+        <!-- /.ry-ashfield -->
+
+        <!-- ============================= -->
+        <!-- SPLIT: HOW IT WORKS (image left) -->
+        <!-- ============================= -->
+        <section class="ry-split ry-split--reverse" id="how-it-works">
+          <div class="ry-split__media" style="background-image:url('images/webp/epigenetic-switches.webp');"></div>
+          <div class="ry-split__body ry-prose">
+            <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> How It <strong>Works.</strong><br>(Without the Jargon)</h2>
+            <p>Every gene carries instructions for building and running your body. Epigenetics works by adding or removing tiny chemical tags on or around your DNA. The most common type is called a methyl group (and no, not that kind of meth). It's a carbon-and-hydrogen molecule whose entire job is <em>silencing genes instead of people.</em> Significantly less dramatic. Arguably more consequential.</p>
+            <p>Think of these methyl tags as sticky notes slapped onto a filing cabinet. In some cases, an actual padlock. Some notes say &ldquo;read this.&rdquo; Some say &ldquo;skip it entirely and don't ask why.&rdquo;</p>
+            <ul>
+              <li><strong class="ry-hl">Gene On &rarr;</strong> The instruction is accessible. The cell can read it, follow it, and do exactly what it was designed to do.</li>
+              <li><strong class="ry-hl">Gene Off &rarr;</strong> A methyl tag physically blocks access. The gene is <em>&ldquo;silenced.&rdquo;</em> The instruction is still there, it just can't be read. Like a library book that's been checked out permanently by someone who will never return it.</li>
+            </ul>
+            <p><strong>The critical point: these switches aren't random. They're placed and removed in direct response to signals from your environment.</strong> Your experiences, including the ones you had no say in, have been quietly annotating your genome this entire time. And because these tags can be added, research suggests many of them can also be removed. Not guaranteed. Not overnight. But possible, with the right conditions and consistent work.</p>
+          </div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- WHY YOUR BRAIN DOES THIS -->
+        <!-- ============================= -->
+        <section id="drive-for-balance">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Why Your Brain Does This: The <strong>Drive</strong> for <strong>Balance</strong></h2>
+                  <h3>The Cell Phone Calibration Analogy</h3>
+
+                  <figure class="ry-figure ry-figure--side">
+                    <img src="images/webp/phone-pop-chaos.webp" alt="A man opening a vacuum-sealed phone box as it violently pops open, the phone flying upward" loading="lazy" width="900" height="600">
+                  </figure>
+
+                  <p>Think of it like getting a new phone. Every device rolls off the assembly line with the same <strong>factory settings</strong>. Same hardware, same operating system, same default everything. Same box too, complete with that vacuum-sealed packaging that makes you hold your breath because you already know, it's going to pop at exactly the wrong moment and launch your brand new phone across the room before you've even turned it on.</p>
+
+                  <p>But the second it survives the unboxing? What do you open first?<br><strong>Settings.</strong></p>
+
+                  <p>Brightness. Volume. Notifications. Privacy. Accessibility. Sleep mode. Focus filters. App permissions. Do Not Disturb schedules for the people you love but cannot deal with after 9pm. Within minutes, that generic device stops being a phone and becomes <em>your</em> phone, shaped entirely by your habits, your routines, and the specific chaos of the life it has to fit into.</p>
+
+                  <div class="ry-clear"></div>
+
+                  <p><strong>And here's where the analogy actually earns its keep.</strong></p>
+
+                  <p>Take two identical phones and swap them between two people. Same device. Same specs. Same everything that came in the box. Suddenly nothing works right. You can't find anything. The volume is either deafening or completely off. The font is either microscopic or aggressively enormous. Notifications are either erupting every thirty seconds or so silent you'd think the thing was broken. Where you had Tinder, there's now Grindr, or vice versa, and the whole experience just feels profoundly, uncomfortably <em>wrong.</em> That's assuming you can get past the passcode, which you absolutely cannot, because they went biometric and your face is not their face.</p>
+
+                  <p><strong>Identical hardware. Completely different human experience.</strong><br>What separates them isn't the design. It's how each device was calibrated to the specific person living inside it.</p>
+
+                  <p>That's exactly how early development works.</p>
+
+                  <p>We arrive with a biological set of <em>&ldquo;factory settings,&rdquo;</em> but the calibration starts earlier than most people realize. Sometimes before we've even drawn our first breath <em><a href="dohad">(Learn more: DOHaD).</a></em> From the womb onward, the environment <strong>shapes the system:</strong> the stress, the safety, the connection, the chaos, the presence or absence of someone who gave a damn. It determines which alarms stay permanently on, which circuits stay hot, which filters open or clamp shut, and which survival apps get pinned to the home screen whether you wanted them there or not.</p>
+
+                  <p>And just like your phone, with time, intention, and consistent effort:</p>
+
+                  <ul>
+                    <li>You can <strong>turn off settings</strong> that no longer serve you.</li>
+                    <li>You can <strong>silence old survival notifications</strong> that fire for threats that no longer exist.</li>
+                    <li>You can <strong>update an outdated operating system</strong> that was built for a world you no longer live in.</li>
+                    <li>You can <strong>delete apps</strong> that once kept you alive but are now doing more damage than good.</li>
+                    <li>You can <strong>download new tools</strong> and slowly build healthier default patterns.</li>
+                    <li>You can even <strong>reset parts of the system</strong> without losing who you actually are underneath it.</li>
+                  </ul>
+
+                  <p>Nothing was broken. The device calibrated itself to survive the environment and the handler it had at the time. It did exactly what it was designed to do.</p>
+
+                  <p>Healing is <strong>re-calibration</strong>. It's updating the settings that kept you alive so they can help you actually live.</p>
+
+                  <p>That's not just a metaphor. Your brain's primary job is survival. It works constantly to keep your internal environment stable, a process called <strong>homeostasis</strong>. When life pushes too hard through chronic stress, fear, or substance use, <em>the brain <strong>doesn't break. <span class="ry-hl">It adapts.</span></strong></em> Epigenetics is one of the most powerful tools it has for making that adaptation, quietly, efficiently, and without asking your permission.</p>
+
+                  <blockquote class="ry-pullquote">
+                    <p>In a life built around threat, your brain may flip an epigenetic switch that dials down the gene responsible for cortisol's off-switch. In the short term? Brilliant. Keeps you sharp, alert, ready to move at a moment's notice. In the long term? The alarm stays on even after the emergency has passed.</p>
+                  </blockquote>
+
+                  <p>The catch is that <strong>your brain can get stuck there.</strong> Settings built for survival in an unsafe world can persist long after the danger has gone, quietly fueling anxiety, inflammation, and chronic illness. The system isn't malfunctioning. It just hasn't received consistent enough signals that it's safe to stand down. That's what healing is for.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-11">
+                <figure class="ry-figure">
+                  <img src="images/webp/epigenetics-enzyme.webp" alt="Illustration of an enzyme acting on a strand of DNA" loading="lazy" width="1200" height="600">
+                </figure>
+              </div>
+            </div>
+
+            <!-- ====== three genes ====== -->
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Genetic Levers:<br><strong>Three Key Examples</strong></h2>
+
+                  <p>When people say trauma affects our genetics, it tends to stay abstract. A phrase that lands with weight but seemingly has no clear explanation. <strong><em>Epigenetics makes it concrete: real switches in the body, flipped by <span class="ry-hl">real experience.</span></em></strong></p>
+
+                  <p>I chose these three genes deliberately. Together they regulate <strong>stress, mood, and reward</strong>. The systems that determine how safe the world feels, how stable we feel inside it, and how motivated or depleted we feel trying to move through it.</p>
+
+                  <p>When early adversity recalibrates these systems, the baseline shifts. Stress runs louder. Mood sits lower. Natural reward feels muted, like the volume on ordinary life has been quietly turned down. <strong>Nothing is &ldquo;broken,&rdquo; but the nervous system is primed, often without any conscious awareness, to go looking for relief.</strong></p>
+
+                  <blockquote class="ry-pullquote">
+                    <p><strong>Predisposition is not destiny, but it does change the starting conditions.</strong> And starting conditions matter.</p>
+                  </blockquote>
+
+                  <p>The trap can be set by both nature and nurture long before a substance ever enters the picture. And when one finally does, something that powerfully quiets stress, lifts mood, or floods reward pathways that have been running on empty, <strong>it doesn't just feel good. It feels like a correction. Like finally breathing normally after years of not quite getting enough air.</strong></p>
+
+                  <p>These three examples show what it actually means when we say trauma alters biology. Not metaphor. Measurable shifts in how the brain and body regulate <strong>stress, mood, and motivation</strong>. The three systems sitting at the center of both trauma and addiction.</p>
+                </div>
+
+                <div class="ry-spec-grid">
+
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">NR3C1</span>
+                    <span class="ry-spec-card__role">The Cortisol &ldquo;Off-Switch&rdquo;</span>
+                    <dl>
+                      <dt>System</dt>
+                      <dd>Stress Regulation (HPA Axis)</dd>
+                      <dt>What it does</dt>
+                      <dd>Builds glucocorticoid receptors, the system responsible for telling your body, <em>&ldquo;You're safe now. Stand down.&rdquo;</em></dd>
+                      <dt>When altered by stress</dt>
+                      <dd>Methylation can reduce receptor availability, weakening that shutdown signal. The result isn't just &ldquo;stress.&rdquo; It's a system that struggles to turn off. Hypervigilance becomes baseline. The body stays braced. Anxiety shows up without a clear reason, because the system never got the message that the danger passed.</dd>
+                      <dt>Healing direction</dt>
+                      <dd>Repeated, real experiences of safety, not just insight, help rebuild this signal over time. This is where trauma-focused therapy and consistent environments matter: they don't just change how you think, they retrain when your body is allowed to relax.</dd>
+                    </dl>
+                  </article>
+
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">SLC6A4</span>
+                    <span class="ry-spec-card__role">The Serotonin Recycler</span>
+                    <dl>
+                      <dt>System</dt>
+                      <dd>Mood Regulation</dd>
+                      <dt>What it does</dt>
+                      <dd>Regulates the serotonin transporter, controlling how long serotonin stays active in the space between brain cells.</dd>
+                      <dt>When altered by stress</dt>
+                      <dd>Epigenetic shifts can disrupt that balance. Serotonin doesn't land or linger the way it should, and mood becomes less stable as a result. This can show up as low baseline mood, increased sensitivity to stress, or emotional reactions that feel stronger than the situation calls for. Not because you're overreacting, but because the system is under-supported.</dd>
+                      <dt>Healing direction</dt>
+                      <dd>Stability matters here more than intensity. Consistent routines, therapeutic support, and environments that feel predictable help restore rhythm to this system, not instantly, but gradually, as the brain relearns what &ldquo;regulated&rdquo; actually feels like.</dd>
+                    </dl>
+                  </article>
+
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">DRD2</span>
+                    <span class="ry-spec-card__role">The Reward Sensitivity Regulator</span>
+                    <dl>
+                      <dt>System</dt>
+                      <dd>Motivation &amp; Reward</dd>
+                      <dt>What it does</dt>
+                      <dd>Builds dopamine D2 receptors, key components of the brain's reward system and the circuitry that drives motivation, reinforcement, and meaning.</dd>
+                      <dt>When altered by stress</dt>
+                      <dd>Chronic adversity can blunt dopamine signaling and receptor sensitivity, flattening the reward system. Everyday life starts to feel dull, effortful, or pointless. When a substance floods that same system, the effect isn't just pleasure. It can feel like relief, clarity, or finally &ldquo;coming online.&rdquo; That contrast is what makes the pull so powerful.</dd>
+                      <dt>Healing direction</dt>
+                      <dd>This system rebuilds slowly. Consistent engagement, physical movement, meaningful goals, and safe relationships help restore sensitivity over time, but this is measured in months and years, not quick fixes.</dd>
+                    </dl>
+                  </article>
+
+                </div>
+
+                <!-- ====== the critique ====== -->
+                <div class="ry-callout ry-callout--red ry-prose">
+                  <span class="ry-callout__eyebrow">The Recover-You Critique</span>
+                  <h3 class="ry-callout__title">The Systemic Silence</h3>
+                  <p>We have known about the methylation of <strong>NR3C1</strong> and the blunting of <strong>DRD2</strong> receptors for decades. This is not fringe theory. It is foundational neurobiology.</p>
+                  <p>And yet, most treatment models still walk you into a room and treat your <strong>hypervigilance</strong> as a lack of faith, your <strong>depletion</strong> as a lack of effort, and your <strong>cravings</strong> as a moral defect. They ask you to change the &ldquo;performance&rdquo; of your life while completely ignoring the biological <strong>conductors</strong>, trauma and toxic stress, still standing at the podium and frantically waving the baton.</p>
+                  <div class="ry-callout__inner">
+                    <p><strong>The logic is simple:</strong> If the system doesn't name the lever (epigenetics), it can't help you pull it. By keeping you in the dark about your own biology, the system ensures that when you struggle, you blame yourself instead of the calibration. Recover-You exists to turn the lights on.</p>
+                  </div>
+                </div>
+
+                <!-- ====== testing ====== -->
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Testing, Measurement, and <strong>Misinterpretation</strong></h2>
+
+                  <p>As the science of epigenetics has evolved, so has the attempt to measure it. One of the more significant developments came out of the <a href="dunedin-study">Dunedin Study</a>. Researchers used decades of longitudinal health data to build something genuinely useful: a way to estimate not just how old a person is, but <strong>how fast their body is aging.</strong></p>
+
+                  <p>That work produced <a href="https://elifesciences.org/articles/73420" rel="noopener" target="_blank"><strong>DunedinPACE (Pace of Aging)</strong></a>, a DNA methylation-based measure designed to quantify the rate at which multiple biological systems are changing in real time. Access is still limited, not yet part of standard medical care in Canada, typically available through private longevity clinics or third-party labs, and relatively expensive. Like much of this field, it's still evolving in how it should be interpreted. Which brings us to the part that matters most.</p>
+
+                  <p>Recovery doesn't happen one variable at a time. The substance stops. Sleep stabilizes. Food improves. Therapy begins. Structure, connection, and environment shift together, all at once, all interacting. There is no clean way to isolate what caused what. The system is changing as a whole, and no test is going to disaggregate that for you.</p>
+
+                  <p>What these markers <em>can</em> offer is something more modest, and more genuinely useful: <strong>a directional signal.</strong> Not proof that one specific intervention produced a specific outcome. Not a verdict on whether you're &ldquo;fixed.&rdquo; A signal that the system is responding. That something, across the broader pattern of your life, is moving differently.</p>
+
+                  <p>That matters, especially in recovery, where a person's self-assessment can lag behind real progress, get distorted by shame, or swing with mood. Biological markers, behavioural indicators, and external life measures can serve as useful supplementary evidence that change is occurring even when you can't feel it yet. They don't replace lived experience. They anchor it in something outside of moment-to-moment perception.</p>
+
+                  <p>Used well, these tools offer something recovery rarely comes with: <strong>evidence that the needle is moving.</strong> Used poorly, they create false certainty or reinforce the exact black-and-white thinking that recovery is trying to dismantle. The difference is in what you ask of them. Ask for a direction. Not a diagnosis.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- VIDEO -->
+        <!-- ============================= -->
+        <section id="bbc-video">
+          <div class="container sk__py-m">
+            <div class="row align-items-center justify-content-center g-5">
+              <div class="col-12 col-lg-6">
+                <a class="ry-video-card" href="https://www.youtube.com/watch?v=n1Ew9jUCZLU" rel="noopener" target="_blank" aria-label="Watch: BBC — How Life Experiences Shape Your Genes on YouTube">
+                  <img src="https://img.youtube.com/vi/n1Ew9jUCZLU/hqdefault.jpg" alt="BBC — How Life Experiences Shape Your Genes" loading="lazy" width="480" height="360">
+                  <span class="ry-video-card__play" aria-hidden="true"></span>
+                  <span class="ry-video-card__bar">Watch on YouTube</span>
+                </a>
+                <p class="ry-video-caption"><em>This short BBC feature visualizes what the science on this page describes: how experiences, environment, and even healing can modify which genes are active or silent. It's a clear, accessible look at epigenetic change in real time.</em></p>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="ry-prose">
+                  <span class="ry-section-eyebrow"><i>//</i> From Science to Story</span>
+                  <h2 class="ry-eyebrow-h">The biology of change, in motion, not theory</h2>
+                  <p>Up to this point, you've read about the molecular &ldquo;switches&rdquo; that regulate how genes like <strong>NR3C1</strong> and <strong>SLC6A4</strong> respond to stress, nurture, and recovery. The BBC video beside this section translates that same concept visually, showing how signals from our daily lives instruct the body to activate or silence genes.</p>
+                  <p>What makes this powerful is that it closes the gap between abstract science and lived experience. Whether those signals come from trauma, nutrition, or connection, each one is shaping the symphony of gene expression happening beneath your awareness. Biology doesn't take a day off. It's always listening.</p>
+                  <p>It's also a reminder that healing isn't only psychological. Every time you practice safety, compassion, or regulation, you are sending new biological instructions. Epigenetics makes visible what recovery feels like from the inside: a rewiring of the song itself.</p>
+                  <blockquote class="ry-pullquote">
+                    <p>Our bodies have an incredible ability to adapt, to turn on or off parts of the genome according to our habits, our experiences, and the environments in which we live.</p>
+                    <cite>BBC Epigenetics Feature</cite>
                   </blockquote>
                 </div>
               </div>
-              <style>
-                             .ry-intro-card p {
-                               margin-bottom: 18px;
-                             }
-              </style>
-            </div>
-            <div class="row margin-50px-top">
-              <div class="col-lg-12">
-                <h5 class="alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> Testing, Measurement, and <strong>Misinterpretation</strong></h5>
-                <p class="text-medium line-height-28 sm-line-height-26">As the science of epigenetics has evolved, so has the attempt to measure it. One of the more significant developments came out of the <a class="text-deep-pink" href="dunedin-study">Dunedin Study</a>. Researchers used decades of longitudinal health data to build something genuinely useful: a way to estimate not just how old a person is, but <strong>how fast their body is aging.</strong></p>
-                <p class="text-medium line-height-28 sm-line-height-26">That work produced <a class="text-deep-pink" href="https://elifesciences.org/articles/73420" target="_blank"><strong>DunedinPACE (Pace of Aging)</strong></a>, a DNA methylation-based measure designed to quantify the rate at which multiple biological systems are changing in real time. Access is still limited, not yet part of standard medical care in Canada, typically available through private longevity clinics or third-party labs, and relatively expensive. Like much of this field, it's still evolving in how it should be interpreted. Which brings us to the part that matters most.</p>
-                <p class="text-medium line-height-28 sm-line-height-26">Recovery doesn't happen one variable at a time. The substance stops. Sleep stabilizes. Food improves. Therapy begins. Structure, connection, and environment shift together, all at once, all interacting. There is no clean way to isolate what caused what. The system is changing as a whole, and no test is going to disaggregate that for you.</p>
-                <p class="text-medium line-height-28 sm-line-height-26">What these markers <em>can</em> offer is something more modest, and more genuinely useful: <strong>a directional signal.</strong> Not proof that one specific intervention produced a specific outcome. Not a verdict on whether you're "fixed." A signal that the system is responding. That something, across the broader pattern of your life, is moving differently.</p>
-                <p class="text-medium line-height-28 sm-line-height-26">That matters, especially in recovery, where a person's self-assessment can lag behind real progress, get distorted by shame, or swing with mood. Biological markers, behavioural indicators, and external life measures can serve as useful supplementary evidence that change is occurring even when you can't feel it yet. They don't replace lived experience. They anchor it in something outside of moment-to-moment perception.</p>
-                <p class="text-medium line-height-28 sm-line-height-26">Used well, these tools offer something recovery rarely comes with: <strong>evidence that the needle is moving.</strong> Used poorly, they create false certainty or reinforce the exact black-and-white thinking that recovery is trying to dismantle. The difference is in what you ask of them. Ask for a direction. Not a diagnosis.</p>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- end blog content section -->
-  <section class="bg-light-gray wow animate__fadeIn">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- LEFT: Video Thumbnail with Click-to-Watch -->
-        <div class="col-lg-6 text-center fit-videos wow animate__fadeInLeft">
-          <p class="text-medium alt-font text-extra-dark-gray margin-20px-bottom">BBC – How Life Experiences Shape Your Genes</p><!-- Clickable YouTube Block -->
-           <a class="position-relative d-block rounded-3 overflow-hidden shadow-lg" href="https://www.youtube.com/watch?v=n1Ew9jUCZLU" rel="noopener" style="text-decoration:none;" target="_blank"><img alt="Watch: BBC – How Life Experiences Shape Your Genes" class="w-100 rounded-3" src="https://img.youtube.com/vi/n1Ew9jUCZLU/hqdefault.jpg"> <span class="position-absolute top-50 start-50 translate-middle bg-deep-pink text-white rounded-circle" style="width:72px;height:72px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.25);"><i class="fas fa-play"></i></span> <span class="position-absolute bottom-0 start-0 w-100 py-2 px-3 bg-extra-dark-gray" style="background:rgba(0,0,0,.55); color:#fff; font-weight:500;">Watch on YouTube</span></a>
-          <p class="text-small text-uppercase letter-spacing-1 margin-10px-top text-extra-medium-gray"><em>This short BBC feature visualizes what the science on this page describes: how experiences, environment, and even healing can modify which genes are active or silent. It's a clear, accessible look at epigenetic change in real time.</em></p>
-        </div><!-- RIGHT: Copy -->
-        <div class="col-lg-6 wow animate__fadeInRight">
-          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">From Science to Story</span>
-          <h5 class="alt-font text-extra-dark-gray font-weight-600">The biology of change, in motion, not theory</h5>
-          <p>Up to this point, you've read about the molecular "switches" that regulate how genes like <strong>NR3C1</strong> and <strong>SLC6A4</strong> respond to stress, nurture, and recovery. The BBC video beside this section translates that same concept visually, showing how signals from our daily lives instruct the body to activate or silence genes.</p>
-          <p>What makes this powerful is that it closes the gap between abstract science and lived experience. Whether those signals come from trauma, nutrition, or connection, each one is shaping the symphony of gene expression happening beneath your awareness. Biology doesn't take a day off. It's always listening.</p>
-          <p>It's also a reminder that healing isn't only psychological. Every time you practice safety, compassion, or regulation, you are sending new biological instructions. Epigenetics makes visible what recovery feels like from the inside: a rewiring of the song itself.</p>
-          <blockquote class="border-color-deep-pink">
-            <p>"Our bodies have an incredible ability to adapt, to turn on or off parts of the genome according to our habits, our experiences, and the environments in which we live." <em>BBC Epigenetics Feature</em></p>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section><!-- start section -->
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
-    <div class="container-fluid p-0">
-      <div class="row row-cols-1 row-cols-lg-2 m-0">
-        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInLeft">
-          <h5 class="alt-font text-light-gray"><span class="text-deep-pink">//</span> Putting It <strong>All</strong> Together: Trauma, Addiction, and <strong>Recovery</strong></h5>
-          <p class="text-medium alt-font">Epigenetics helps explain what most people can feel but struggle to articulate: why history doesn't stay in the past, and why biology isn't just something you were handed at birth. It connects what happened to you with what's happening inside your body right now.</p>
-          <div class="margin-30px-tb text-medium">
-            <ul class="p-0 list-style-3">
-              <li><strong class="text-light-gray">Predisposition vs. Destiny:</strong> You may carry certain genetic vulnerabilities, but genes rarely act alone. It's often the environment that pulls the trigger. The risk was loaded. The conditions fired it. Those are two very different things.</li>
-              <li><strong class="text-light-gray">Transgenerational Impact:</strong> Trauma doesn't always stop with the person who experienced it. A parent's unresolved trauma can alter the epigenetic markings passed to their children, potentially pre-setting a stress response system that's already braced for threat before the child has encountered any. You can inherit the biological echo of something you never directly lived through. That's not an excuse. It's context. And it matters.</li>
-              <li><strong class="text-light-gray">Hope in Recovery:</strong> This is not a story of permanent damage. Healing environments, consistent relationships, nutrition, movement, and trauma-focused therapy can send the nervous system new signals, signals it may, over time, begin to trust. Recovery is, on a molecular level, a sustained act of biological renovation. Slow. Nonlinear. And more possible than most people are ever told.</li>
+        </section>
+
+        <!-- ============================= -->
+        <!-- SPLIT: PUTTING IT TOGETHER (image right) -->
+        <!-- ============================= -->
+        <section class="ry-split" id="putting-it-together">
+          <div class="ry-split__body ry-prose">
+            <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Putting It <strong>All</strong> Together: Trauma, Addiction, and <strong>Recovery</strong></h2>
+            <p>Epigenetics helps explain what most people can feel but struggle to articulate: why history doesn't stay in the past, and why biology isn't just something you were handed at birth. It connects what happened to you with what's happening inside your body right now.</p>
+            <ul>
+              <li><strong>Predisposition vs. Destiny:</strong> You may carry certain genetic vulnerabilities, but genes rarely act alone. It's often the environment that pulls the trigger. The risk was loaded. The conditions fired it. Those are two very different things.</li>
+              <li><strong>Transgenerational Impact:</strong> Trauma doesn't always stop with the person who experienced it. A parent's unresolved trauma can alter the epigenetic markings passed to their children, potentially pre-setting a stress response system that's already braced for threat before the child has encountered any. You can inherit the biological echo of something you never directly lived through. That's not an excuse. It's context. And it matters.</li>
+              <li><strong>Hope in Recovery:</strong> This is not a story of permanent damage. Healing environments, consistent relationships, nutrition, movement, and trauma-focused therapy can send the nervous system new signals, signals it may, over time, begin to trust. Recovery is, on a molecular level, a sustained act of biological renovation. Slow. Nonlinear. And more possible than most people are ever told.</li>
             </ul>
           </div>
-        </div>
-        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/dna-healing.webp');"></div>
-      </div>
-    </div>
-  </section>
-  <section class="bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100" src="images/webp/robot-flipping-switches.webp" style="border-radius: 10px; box-shadow: 0 4px 18px rgba(0,0,0,0.25);"></div>
-        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
-          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block"><span class="text-deep-pink">//</span> The Positive Counterpoint</span>
-          <h5 class="alt-font text-extra-dark-gray font-weight-600">Flipping the Switches Back</h5>
-          <p>The same pathways that allowed trauma to leave its mark can also be worked with, gradually, deliberately, for repair. Healing isn't about <em>"trying to feel better."</em> It's about sending consistent biological signals to your nervous system that say, over and over, until the body starts to believe it: <em>the danger has passed. It's time to rebuild.</em></p>
-          <div class="margin-30px-tb">
-            <ul class="p-0 list-style-3">
+          <div class="ry-split__media" style="background-image:url('images/webp/dna-healing.webp');"></div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- SPLIT: FLIPPING THE SWITCHES BACK (image left) -->
+        <!-- ============================= -->
+        <section class="ry-split ry-split--reverse" id="flipping-back">
+          <div class="ry-split__figure">
+            <img src="images/webp/robot-flipping-switches.webp" alt="A robot methodically flipping a wall of switches back on" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> The Positive Counterpoint</span>
+            <h2 class="ry-eyebrow-h">Flipping the Switches Back</h2>
+            <p>The same pathways that allowed trauma to leave its mark can also be worked with, gradually, deliberately, for repair. Healing isn't about <em>&ldquo;trying to feel better.&rdquo;</em> It's about sending consistent biological signals to your nervous system that say, over and over, until the body starts to believe it: <em>the danger has passed. It's time to rebuild.</em></p>
+            <ul>
               <li><strong>Trauma-focused therapies</strong> like EMDR, ART, and Somatic Experiencing don't just help you reframe what happened. They work at the level where fear and stress became physically embedded, helping to rewire circuits that have been running the same emergency protocol for years.</li>
               <li><strong>Consistent movement, restorative sleep, and nutrition</strong> aren't lifestyle suggestions. They are biological signals, instructions to the brain and body to repair, regulate, and gradually restore a baseline that chronic stress has been quietly dismantling.</li>
               <li><strong>Safe, consistent relationships</strong> that allow for co-regulation act as an external nervous system, teaching your body through repeated experience what safety actually feels like, until it can begin to hold that state on its own.</li>
               <li><strong>Mind-body practices like meditation, yoga, and breathwork</strong> work at the root of the stress response, gradually strengthening the systems that govern resilience and giving an overactivated nervous system permission to stand down.</li>
             </ul>
+            <p>Your genes influence the starting conditions. Your daily choices influence what happens next. Healing isn't erasing the script trauma wrote. It's returning to the page, again and again, with new information about safety, capacity, and what's actually possible now. <strong>That work can always begin. It's rarely linear. And it's worth doing.</strong></p>
           </div>
-          <p>Your genes influence the starting conditions. Your daily choices influence what happens next. Healing isn't erasing the script trauma wrote. It's returning to the page, again and again, with new information about safety, capacity, and what's actually possible now. <strong>That work can always begin. It's rarely linear. And it's worth doing.</strong></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="big-section bg-light-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-2 col-lg-3 md-margin-5px-bottom wow animate__fadeInLeft">
-          <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-bottom d-none d-lg-block"></div><span class="text-uppercase alt-font text-medium-gray letter-spacing-1 font-weight-600 text-small">QUICK FAQ</span>
-        </div>
-        <div class="col-xl-8 col-lg-7 offset-lg-2 last-paragraph-no-margin">
-          <div class="panel-group accordion-event accordion-style2" data-active-icon="fa-angle-up" data-inactive-icon="fa-angle-down" id="accordion-main">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-parent="#accordion-main" data-bs-toggle="collapse" href="#collapseOne">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">01</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Is epigenetics permanent?</span> <i class="fa-solid fa-angle-up text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse show" data-bs-parent="#accordion-main" id="collapseOne">
-                <div class="panel-body">
-                  Some epigenetic changes are highly stable. They bed in deep and persist. But many are dynamic, responsive, and capable of shifting with the right conditions. Think of it less like permanent marker and more like a whiteboard that someone wrote on in a hurry during a very bad year. The marks are real. They're not necessarily forever.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-parent="#accordion-main" data-bs-toggle="collapse" href="#collapseTwo">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">02</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Can I test my epigenetics?</span> <i class="fa-solid fa-angle-down text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse" data-bs-parent="#accordion-main" id="collapseTwo">
-                <div class="panel-body">
-                  Commercial tests exist, but the science is still developing and they're not yet reliable enough to drive personal clinical decisions. The more useful truth is this: the most powerful levers for change don't require a test to access. Lifestyle, environment, relationships, and healing work are available right now, and the evidence behind them is considerably stronger than anything a consumer kit can currently offer.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-parent="#accordion-main" data-bs-toggle="collapse" href="#collapseThree">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">03</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Does this mean my trauma or family history is my fate?</span> <i class="fa-solid fa-angle-down text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse" data-bs-parent="#accordion-main" id="collapseThree">
-                <div class="panel-body">
-                  No. And the science actually argues the opposite. Epigenetics is the study of how we adapt, which means it's also the study of how adaptation can continue to happen. <strong>What you do matters. What you choose consistently, over time, matters most.</strong> It gives a biological foundation to something recovery has always known: that change from the inside out is not just possible. It's what the system was built for.
+        </section>
+
+        <!-- ============================= -->
+        <!-- QUICK FAQ -->
+        <!-- ============================= -->
+        <section id="faq">
+          <div class="container sk__py-m">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-section-eyebrow"><i>//</i> Quick FAQ</span>
+                <div class="ry-faq">
+
+                  <details open>
+                    <summary><span class="ry-faq__n">01</span><span class="ry-faq__q">Is epigenetics permanent?</span></summary>
+                    <div class="ry-faq__body">Some epigenetic changes are highly stable. They bed in deep and persist. But many are dynamic, responsive, and capable of shifting with the right conditions. Think of it less like permanent marker and more like a whiteboard that someone wrote on in a hurry during a very bad year. The marks are real. They're not necessarily forever.</div>
+                  </details>
+
+                  <details>
+                    <summary><span class="ry-faq__n">02</span><span class="ry-faq__q">Can I test my epigenetics?</span></summary>
+                    <div class="ry-faq__body">Commercial tests exist, but the science is still developing and they're not yet reliable enough to drive personal clinical decisions. The more useful truth is this: the most powerful levers for change don't require a test to access. Lifestyle, environment, relationships, and healing work are available right now, and the evidence behind them is considerably stronger than anything a consumer kit can currently offer.</div>
+                  </details>
+
+                  <details>
+                    <summary><span class="ry-faq__n">03</span><span class="ry-faq__q">Does this mean my trauma or family history is my fate?</span></summary>
+                    <div class="ry-faq__body">No. And the science actually argues the opposite. Epigenetics is the study of how we adapt, which means it's also the study of how adaptation can continue to happen. <strong>What you do matters. What you choose consistently, over time, matters most.</strong> It gives a biological foundation to something recovery has always known: that change from the inside out is not just possible. It's what the system was built for.</div>
+                  </details>
+
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn parallax big-section" data-parallax-background-ratio="0.4" style="background-image: url('images/webp/cbt-hero.webp')">
-    <div class="opacity-medium bg-extra-dark-gray"></div>
-    <div class="container position-relative">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10">
-          <div class="bg-white padding-nine-all text-center">
-            <h5 class="font-weight-600 alt-font text-extra-dark-gray"><span class="text-deep-pink">//</span> Final Word</h5>
-            <p>Epigenetics reframes the story, not from brokenness to perfection, but from misalignment to adaptation. It doesn't promise you'll get back exactly what was taken. It offers something more honest: evidence that the same system shaped by pain can be reshaped by healing. Slowly. With effort. Over time.</p>
-            <p>Your DNA is the sheet music. But you are the conductor. And conductors interpret, adjust, and find new ways to play what's in front of them. The song may have started in chaos. That doesn't mean it has to stay there. With new rhythms, new refrains, and enough repetition, the performance can change in ways that matter.</p>
-            <p><strong>Not just for you. For whoever comes after you.</strong><br>
-            That part isn't metaphor. It's molecular.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- end blog content section -->
-  <!-- start section -->
-  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
-    <video id="learnMoreBg" autoplay="" muted="" loop="" playsinline="" class="learn-more-bg">
-      <source src="video/learn-more-bg.mp4" type="video/mp4">
-    </video>
+        </section>
 
-    <div class="container position-relative z-index-2">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
-          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
-          <p class="learn-more-subtitle">
-            Follow the next step in order, or branch out into related topics.
-          </p>
-        </div>
-      </div>
-
-      <div class="learn-more-divider mx-auto"></div>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
-
-        <!-- Up Next -->
-        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
-          <a class="learn-card is-next category-trauma" href="trauma-does-not-expire">
-            <span class="learn-card-label">Up Next</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Trauma Can Endure</div>
-            <p>What the science says happens when trauma goes unaddressed across a lifetime — and why the window matters.</p>
-          </a>
-        </div>
-
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-          <a class="learn-card" href="critical-window">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">The Critical Window</div>
-            <p>Why early development shapes the nervous system in ways time alone can't undo.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-          <a class="learn-card" href="toxic-stress">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Toxic Stress</div>
-            <p>How chronic adversity rewires the developing brain from the inside out.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-          <a class="learn-card" href="dohad">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Your First 1,000 Days</div>
-            <p>How the prenatal environment permanently shapes your lifelong health blueprint.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-white" id="sources">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
-            <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-
-            <ol class="list-style-9 text-small text-medium-gray">
-
-              <!-- CORRECTED: HTML had vol. 6 (2004); spreadsheet specifies vol. 7 (2005) — updated to match -->
-              <li id="ref-meaney-2005">
-                Meaney, M. J., &amp; Szyf, M. (2005). <strong>Environmental programming of stress responses through DNA methylation: life at the interface between a dynamic environment and a fixed genome.</strong>
-                <em>Dialogues in Clinical Neuroscience, 7</em>(2), 103–123. Groundbreaking McGill University research showing that maternal care in rodents causes epigenetic changes — specifically methylation of the glucocorticoid receptor gene NR3C1 — that alter stress reactivity across the lifespan and can be passed to offspring. Established the biological mechanism for intergenerational transmission of stress vulnerability.
-                <a class="text-deep-pink" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181727/" rel="noopener" target="_blank">View on PMC</a>
-              </li>
-
-              <li id="ref-weaver-2004">
-                Weaver, I. C. G., et al. (2004). <strong>Epigenetic programming by maternal behavior.</strong>
-                <em>Nature Neuroscience, 7</em>(8), 847–854. Demonstrates how maternal care in rats directly influences NR3C1 methylation patterns, altering offspring stress regulation in ways that persist into adulthood — a cornerstone study in trauma-epigenetic science showing how relationship quality leaves a measurable molecular signature.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/15220929/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <!-- NEW from spreadsheet: Tyrka et al. (2012) — human NR3C1 methylation data -->
-              <li id="ref-tyrka-2012">
-                Tyrka, A. R., et al. (2012). <strong>Childhood adversity and epigenetic modulation of the leukocyte glucocorticoid receptor: preliminary findings in healthy adults.</strong>
-                <em>PLoS ONE, 7</em>(1), e30148. Human study examining DNA methylation in adults with childhood abuse or neglect histories. Found significant hypermethylation of the NR3C1 (glucocorticoid receptor) gene compared to controls — establishing that early adversity programs long-term HPA axis sensitivity at the epigenetic level in humans, not only in animal models.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/22295073/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <li id="ref-kang-2013">
-                Kang, H. J., Kim, J. M., et al. (2013). <strong>Association of SLC6A4 methylation with early adversity, characteristics and outcomes in depression.</strong>
-                <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 44</em>, 23–28. Human study linking early adversity with methylation of the SLC6A4 serotonin transporter gene — connecting disrupted serotonin regulation directly to trauma history and establishing a molecular basis for the depression vulnerability described on this page.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/23333376/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <!-- UPDATED: Now paired with Perroud (2014) per spreadsheet, as joint evidence for reversibility -->
-              <li id="ref-yehuda-2016">
-                Yehuda, R., et al. (2016). <strong>Holocaust exposure induced intergenerational effects on FKBP5 methylation.</strong>
-                <em>Biological Psychiatry, 80</em>(5), 372–380. Also: Perroud, N., et al. (2014). <strong>Response to psychotherapy in borderline personality disorder and methylation status of the BDNF gene.</strong> <em>Translational Psychiatry, 4</em>(1), e423. Yehuda et al. demonstrated that Holocaust survivors and their children showed altered FKBP5 methylation — evidence of intergenerational epigenetic transmission. Perroud et al. found that psychotherapy produced measurable changes in BDNF gene methylation correlated with symptom improvement — providing direct evidence that epigenetic modifications are not fixed destiny and can respond to healing interventions.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/26410355/" rel="noopener" target="_blank">View Yehuda et al. on PubMed</a>
-                &nbsp;·&nbsp;
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/23422958/" rel="noopener" target="_blank">View Perroud et al. on PubMed</a>
-              </li>
-
-              <li id="ref-bale-2015">
-                Bale, T. L. (2015). <strong>Epigenetic and transgenerational reprogramming of brain development.</strong>
-                <em>Nature Reviews Neuroscience, 16</em>(6), 332–344. Review of how parental stress and environmental exposures shape offspring neurodevelopment via epigenetic signaling — providing the mechanistic framework for understanding how a parent's unresolved trauma can pre-set a child's stress response before the child has encountered adversity directly.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/25921815/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <li id="ref-berens-2017">
-                Berens, A. E., Jensen, S. K. G., &amp; Nelson, C. A. (2017). <strong>Biological embedding of childhood adversity: from physiological mechanisms to clinical implications.</strong>
-                <em>BMC Medicine, 15</em>(1), 135. Comprehensive review summarizing how adversity alters neuroendocrine, immune, and epigenetic pathways across development — and what those changes mean for clinical care, reinforcing why a biologically informed approach to recovery is not optional but necessary.
-                <a class="text-deep-pink" href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-017-0895-4" rel="noopener" target="_blank">View Article</a>
-              </li>
-
-              <li id="ref-romens-2015">
-                Romens, S. E., et al. (2015). <strong>Associations between early life stress and gene methylation in children.</strong>
-                <em>Child Development, 86</em>(1), 303–309. Human data directly linking childhood adversity with methylation of stress-response genes in children — reinforcing that epigenetic programming by early experience is not a theoretical concept but a measurable biological reality occurring in real time during development.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/25056599/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <!-- CORRECTED: id updated from ref-szyf-2009 to ref-szyf-2011 to match the actual 2011 publication date -->
-              <li id="ref-szyf-2011">
-                Szyf, M. (2011). <strong>DNA methylation, the early-life social environment and behavioural disorders.</strong>
-                <em>Journal of Neurodevelopmental Disorders, 3</em>, 238–249. Foundational theoretical paper connecting social experience to lifelong biological adaptation through methylation — arguing that the social environment is not merely psychological but operates as a direct regulator of gene expression in ways that drive neurodevelopmental and behavioral outcomes.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/21772123/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <li id="ref-bbc-epigenetics">
-                BBC. (2019). <strong>How life experiences shape your genes.</strong>
-                Animated explainer illustrating how habits, environment, and experience influence gene expression and health outcomes — a clear, accessible visualization of the molecular science described on this page.
-                <a class="text-deep-pink" href="https://www.youtube.com/watch?v=n1Ew9jUCZLU" rel="noopener" target="_blank">Watch on YouTube</a>
-              </li>
-
-            </ol>
-            <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These sources provide the empirical foundation for this page's content — spanning molecular studies on NR3C1 and SLC6A4, intergenerational inheritance research, and the emerging evidence that recovery and safety can reverse stress-related epigenetic changes. Together, they highlight how trauma, addiction, and healing all leave measurable biological traces — and how those traces can be rewritten.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you've read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community &amp; mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
+        <!-- ============================= -->
+        <!-- FINAL WORD -->
+        <!-- ============================= -->
+        <section class="ry-finalword" id="final-word">
+          <div class="ry-finalword__bg" style="background-image:url('images/webp/cbt-hero.webp');"></div>
+          <div class="ry-finalword__scrim"></div>
+          <div class="container sk__py-l position-relative">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-9 col-xl-8">
+                <div class="ry-finalword__panel ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Final Word</h2>
+                  <p>Epigenetics reframes the story, not from brokenness to perfection, but from misalignment to adaptation. It doesn't promise you'll get back exactly what was taken. It offers something more honest: evidence that the same system shaped by pain can be reshaped by healing. Slowly. With effort. Over time.</p>
+                  <p>Your DNA is the sheet music. But you are the conductor. And conductors interpret, adjust, and find new ways to play what's in front of them. The song may have started in chaos. That doesn't mean it has to stay there. With new rhythms, new refrains, and enough repetition, the performance can change in ways that matter.</p>
+                  <p><strong>Not just for you. For whoever comes after you.</strong><br>That part isn't metaphor. It's molecular.</p>
                 </div>
+              </div>
             </div>
-        </div>
-    </section><!-- start services section -->
-
-    <!-- ========== NEW FOOTER & PRIVACY ========== -->
-    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
-      <div class="container">
-        <div class="site-footer__inner">
-
-          <div class="site-footer__left alt-font text-small font-weight-500">
-            <a href="contact">GET IN TOUCH</a>
-            <span class="footer-sep">|</span>
-            <a href="#" id="open-privacy-policy">Privacy Policy</a>
-          <span class="footer-sep">|</span>
-          <a href="sitemap">Site Map</a>
           </div>
+        </section>
 
-          <div class="site-footer__center">
-            <a href="index">
-              <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
-            </a>
+        <!-- ============================= -->
+        <!-- WHERE TO NEXT -->
+        <!-- ============================= -->
+        <section id="where-next">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center text-center">
+              <div class="col-12 col-lg-8">
+                <h2 class="ry-eyebrow-h" style="margin-bottom:12px;">Where to Next?</h2>
+                <p class="ry-lede" style="color:rgba(255,255,255,0.66) !important;">Follow the next step in order, or branch out into related topics.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <div class="ry-next-grid">
+
+                  <a class="ry-next-card ry-next-card--up" href="trauma-does-not-expire">
+                    <span class="ry-next-card__label">Up Next</span>
+                    <div class="ry-next-card__title">Trauma Can Endure</div>
+                    <p>What the science says happens when trauma goes unaddressed across a lifetime &mdash; and why the window matters.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+
+                  <a class="ry-next-card" href="critical-window">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">The Critical Window</div>
+                    <p>Why early development shapes the nervous system in ways time alone can't undo.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+
+                  <a class="ry-next-card" href="toxic-stress">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Toxic Stress</div>
+                    <p>How chronic adversity rewires the developing brain from the inside out.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+
+                  <a class="ry-next-card" href="dohad">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Your First 1,000 Days</div>
+                    <p>How the prenatal environment permanently shapes your lifelong health blueprint.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="site-footer__right alt-font text-small font-weight-500">
-            Not medical advice.<br>
-            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+        <!-- ============================= -->
+        <!-- SOURCES -->
+        <!-- ============================= -->
+        <section id="sources">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-section-eyebrow"><i>//</i> Sources + Further Reading</span>
+                <ol class="ry-sources">
+
+                  <li id="ref-meaney-2005">Meaney, M. J., &amp; Szyf, M. (2005). <strong>Environmental programming of stress responses through DNA methylation: life at the interface between a dynamic environment and a fixed genome.</strong> <em>Dialogues in Clinical Neuroscience, 7</em>(2), 103&ndash;123. Groundbreaking McGill University research showing that maternal care in rodents causes epigenetic changes &mdash; specifically methylation of the glucocorticoid receptor gene NR3C1 &mdash; that alter stress reactivity across the lifespan and can be passed to offspring. Established the biological mechanism for intergenerational transmission of stress vulnerability. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181727/" rel="noopener" target="_blank">View on PMC</a></li>
+
+                  <li id="ref-weaver-2004">Weaver, I. C. G., et al. (2004). <strong>Epigenetic programming by maternal behavior.</strong> <em>Nature Neuroscience, 7</em>(8), 847&ndash;854. Demonstrates how maternal care in rats directly influences NR3C1 methylation patterns, altering offspring stress regulation in ways that persist into adulthood &mdash; a cornerstone study in trauma-epigenetic science showing how relationship quality leaves a measurable molecular signature. <a href="https://pubmed.ncbi.nlm.nih.gov/15220929/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-tyrka-2012">Tyrka, A. R., et al. (2012). <strong>Childhood adversity and epigenetic modulation of the leukocyte glucocorticoid receptor: preliminary findings in healthy adults.</strong> <em>PLoS ONE, 7</em>(1), e30148. Human study examining DNA methylation in adults with childhood abuse or neglect histories. Found significant hypermethylation of the NR3C1 (glucocorticoid receptor) gene compared to controls &mdash; establishing that early adversity programs long-term HPA axis sensitivity at the epigenetic level in humans, not only in animal models. <a href="https://pubmed.ncbi.nlm.nih.gov/22295073/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-kang-2013">Kang, H. J., Kim, J. M., et al. (2013). <strong>Association of SLC6A4 methylation with early adversity, characteristics and outcomes in depression.</strong> <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 44</em>, 23&ndash;28. Human study linking early adversity with methylation of the SLC6A4 serotonin transporter gene &mdash; connecting disrupted serotonin regulation directly to trauma history and establishing a molecular basis for the depression vulnerability described on this page. <a href="https://pubmed.ncbi.nlm.nih.gov/23333376/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-yehuda-2016">Yehuda, R., et al. (2016). <strong>Holocaust exposure induced intergenerational effects on FKBP5 methylation.</strong> <em>Biological Psychiatry, 80</em>(5), 372&ndash;380. Also: Perroud, N., et al. (2014). <strong>Response to psychotherapy in borderline personality disorder and methylation status of the BDNF gene.</strong> <em>Translational Psychiatry, 4</em>(1), e423. Yehuda et al. demonstrated that Holocaust survivors and their children showed altered FKBP5 methylation &mdash; evidence of intergenerational epigenetic transmission. Perroud et al. found that psychotherapy produced measurable changes in BDNF gene methylation correlated with symptom improvement &mdash; providing direct evidence that epigenetic modifications are not fixed destiny and can respond to healing interventions. <a href="https://pubmed.ncbi.nlm.nih.gov/26410355/" rel="noopener" target="_blank">View Yehuda et al.</a> &middot; <a href="https://pubmed.ncbi.nlm.nih.gov/23422958/" rel="noopener" target="_blank">View Perroud et al.</a></li>
+
+                  <li id="ref-bale-2015">Bale, T. L. (2015). <strong>Epigenetic and transgenerational reprogramming of brain development.</strong> <em>Nature Reviews Neuroscience, 16</em>(6), 332&ndash;344. Review of how parental stress and environmental exposures shape offspring neurodevelopment via epigenetic signaling &mdash; providing the mechanistic framework for understanding how a parent's unresolved trauma can pre-set a child's stress response before the child has encountered adversity directly. <a href="https://pubmed.ncbi.nlm.nih.gov/25921815/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-berens-2017">Berens, A. E., Jensen, S. K. G., &amp; Nelson, C. A. (2017). <strong>Biological embedding of childhood adversity: from physiological mechanisms to clinical implications.</strong> <em>BMC Medicine, 15</em>(1), 135. Comprehensive review summarizing how adversity alters neuroendocrine, immune, and epigenetic pathways across development &mdash; and what those changes mean for clinical care, reinforcing why a biologically informed approach to recovery is not optional but necessary. <a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-017-0895-4" rel="noopener" target="_blank">View Article</a></li>
+
+                  <li id="ref-romens-2015">Romens, S. E., et al. (2015). <strong>Associations between early life stress and gene methylation in children.</strong> <em>Child Development, 86</em>(1), 303&ndash;309. Human data directly linking childhood adversity with methylation of stress-response genes in children &mdash; reinforcing that epigenetic programming by early experience is not a theoretical concept but a measurable biological reality occurring in real time during development. <a href="https://pubmed.ncbi.nlm.nih.gov/25056599/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-szyf-2011">Szyf, M. (2011). <strong>DNA methylation, the early-life social environment and behavioural disorders.</strong> <em>Journal of Neurodevelopmental Disorders, 3</em>, 238&ndash;249. Foundational theoretical paper connecting social experience to lifelong biological adaptation through methylation &mdash; arguing that the social environment is not merely psychological but operates as a direct regulator of gene expression in ways that drive neurodevelopmental and behavioral outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/21772123/" rel="noopener" target="_blank">View on PubMed</a></li>
+
+                  <li id="ref-bbc-epigenetics">BBC. (2019). <strong>How life experiences shape your genes.</strong> Animated explainer illustrating how habits, environment, and experience influence gene expression and health outcomes &mdash; a clear, accessible visualization of the molecular science described on this page. <a href="https://www.youtube.com/watch?v=n1Ew9jUCZLU" rel="noopener" target="_blank">Watch on YouTube</a></li>
+
+                </ol>
+                <p class="ry-sources-note">These sources provide the empirical foundation for this page's content &mdash; spanning molecular studies on NR3C1 and SLC6A4, intergenerational inheritance research, and the emerging evidence that recovery and safety can reverse stress-related epigenetic changes. Together, they highlight how trauma, addiction, and healing all leave measurable biological traces &mdash; and how those traces can be rewritten.</p>
+              </div>
+            </div>
           </div>
+        </section>
 
-        </div>
+        <!-- ============================= -->
+        <!-- CRISIS TICKER -->
+        <!-- ============================= -->
+        <section class="ry-ticker-wrap" aria-label="Crisis support numbers">
+          <div class="ry-ticker">
+            <div class="ry-ticker-track">
+              <span class="ry-ticker-item">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+              <span class="ry-ticker-item" aria-hidden="true">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+            </div>
+          </div>
+        </section>
+
+        <script src="assets/js/ry-ash.js"></script>
+
+        <!-- ============================= -->
+        <!-- FOOTER -->
+        <!-- ============================= -->
+        <footer class="dark-shade-2-bg position-relative ry-footer">
+          <div class="footer-tint sk__gradient-background-tint"></div>
+          <div class="container sk__py-m">
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                <a href="index"><img alt="Recover You" class="ry-footer-logo" src="images/recover-you-logo-white.png"></a>
+              </div>
+              <div class="col-lg-6 text-lg-end">
+                <span class="ry-footer-tagline">Trauma-aware. Science-backed. Forged inside Alberta's system.</span>
+              </div>
+            </div>
+
+            <span class="divider sk__subtle-divider d-block my-4"></span>
+
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-4 mb-3 mb-lg-0">
+                <a href="contact">Get In Touch</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="#" id="open-privacy-policy">Privacy Policy</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="sitemap">Site Map</a>
+              </div>
+              <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                <span class="ry-footer-copy">&copy; 2025 Recover-<span class="ry-red-letter">Y</span>ou. All rights reserved</span>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <span class="ry-footer-copy">Calgary, Alberta</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- /.ry-footer -->
       </div>
-    </footer><!-- end footer -->
-    <!-- start scroll to top -->
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
-     <!-- javascript -->
+      <!-- /#smooth-content -->
+    </div>
+    <!-- /#smooth-wrapper -->
 
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script>
-    <script src="js/bootsnav.js" type="text/javascript">
-    </script>
-    <script src="js/jquery.nav.js" type="text/javascript">
-    </script>
-    <script src="js/hamburger-menu.js" type="text/javascript">
-    </script>
-    <script src="js/theme-vendors.min.js" type="text/javascript">
-    </script> <!-- setting -->
+  </main>
+  <!-- /main#primary.site-main -->
 
-    <script src="js/lenis.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript">
-    </script>
-
-
-
-
-    <script>
-    (function () {
-      const progress = document.getElementById('reading-progress');
-      const fill = document.getElementById('reading-progress-fill');
-
-      if (!progress || !fill) return;
-
-      /*
-        Reusable rules:
-        1) If a section has id="page-hero", use that
-        2) otherwise use the first .parallax section
-        3) if no hero exists, start from top of page
-      */
-      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-
-      function getScrollTop() {
-        return window.pageYOffset || document.documentElement.scrollTop || 0;
-      }
-
-      function getDocHeight() {
-        return Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-
-      function updateReadingProgress() {
-        const scrollTop = getScrollTop();
-        const viewportHeight = window.innerHeight;
-        const docHeight = getDocHeight();
-
-        let startPoint = 0;
-
-        if (hero) {
-          startPoint = hero.offsetTop + hero.offsetHeight;
-        }
-
-        const totalReadableDistance = docHeight - viewportHeight - startPoint;
-        const distanceRead = scrollTop - startPoint;
-
-        if (scrollTop > startPoint) {
-          progress.classList.add('is-visible');
-
-          if (totalReadableDistance <= 0) {
-            fill.style.width = '100%';
-            return;
-          }
-
-          let percent = (distanceRead / totalReadableDistance) * 100;
-          percent = Math.max(0, Math.min(percent, 100));
-          fill.style.width = percent + '%';
-        } else {
-          progress.classList.remove('is-visible');
-          fill.style.width = '0%';
-        }
-      }
-
-      window.addEventListener('load', updateReadingProgress);
-      window.addEventListener('resize', updateReadingProgress);
-      window.addEventListener('scroll', function () {
-        if (updateReadingProgress.framePending) return;
-        updateReadingProgress.framePending = true;
-        window.requestAnimationFrame(function () {
-          updateReadingProgress();
-          updateReadingProgress.framePending = false;
-        });
-      }, { passive: true });
-    })();
-    </script>
-
-
-    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
-    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-      <div class="privacy-modal__backdrop" data-close-policy=""></div>
-
-      <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
-        <div class="privacy-modal__header">
-          <h3 id="privacy-modal-title">Privacy Policy</h3>
-          <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">
-            ×
-          </button>
-        </div>
-
-        <div class="privacy-modal__body">
-          <p><strong>Last updated:</strong> March 2026</p>
-
-          <p>
-            If you reach out through the contact form, I'll collect your name, email, and
-            message — nothing more. That information is used only to get back to you. It's
-            not shared, sold, or used for anything else.
-          </p>
-
-          <p>
-            This site uses two analytics tools to help me understand how people find and
-            use it. Google Analytics is only active if you choose to allow analytics cookies.
-            Netlify Web Analytics runs quietly in the background using general server data —
-            no cookies, no individual tracking.
-          </p>
-
-          <p>
-            A few third-party services help keep the site running — things like hosting and
-            the contact form. Some of these are based outside Canada, so your information
-            may be processed there. I've chosen providers I trust, but I want you to know.
-          </p>
-
-          <p>
-            Please don't share anything urgent or crisis-related through the contact form —
-            it's not monitored in real time. If you're in immediate distress, please reach
-            out to a crisis line or emergency services.
-          </p>
-
-          <p>
-            Questions about this policy, or want to see or correct something I have about
-            you? You can reach me through the contact page — I'm happy to help.
-          </p>
-        </div>
-
-        <div class="privacy-modal__footer">
-          <button type="button" class="privacy-modal__ok" data-close-policy="">OK</button>
-        </div>
+  <!-- Privacy Policy Modal -->
+  <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+    <div class="privacy-modal__backdrop" data-close-policy=""></div>
+    <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+      <div class="privacy-modal__header">
+        <h3 id="privacy-modal-title">Privacy Policy</h3>
+        <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">&times;</button>
+      </div>
+      <div class="privacy-modal__body">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>If you reach out through the contact form, I'll collect your name, email, and message &mdash; nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data &mdash; no cookies, no individual tracking.</p>
+        <p>A few third-party services help keep the site running &mdash; things like hosting and the contact form. Some of these are based outside Canada, so your information may be processed there. I've chosen providers I trust, but I want you to know.</p>
+        <p>Please don't share anything urgent or crisis-related through the contact form &mdash; it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+        <p>Questions about this policy, or want to see or correct something I have about you? You can reach me through the contact page &mdash; I'm happy to help.</p>
       </div>
     </div>
-    <script>
-      (function () {
-        const modal = document.getElementById('privacy-modal');
-        const openBtn = document.getElementById('open-privacy-policy');
-        const closeBtns = document.querySelectorAll('[data-close-policy]');
+  </div>
 
-        if (!modal || !openBtn) return;
-
-        function openPolicy(e) {
-          e.preventDefault();
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('policy-modal-open');
-        }
-
-        function closePolicy() {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('policy-modal-open');
-        }
-
-        openBtn.addEventListener('click', openPolicy);
-
-        closeBtns.forEach((btn) => {
-          btn.addEventListener('click', closePolicy);
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-            closePolicy();
-          }
-        });
-      })();
-    </script>
-      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
     <div class="cookie-banner-inner">
       <p class="cookie-banner-text">
         <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
@@ -1010,97 +812,245 @@
       </div>
     </div>
   </div>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/5.1.3/bootstrap.min.js"></script>
+  <script src="assets/vendor/offcanvas-nav/hc-offcanvas-nav.js"></script>
+  <script src="assets/vendor/greensock/gsap.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollToPlugin.min.js"></script>
+
+  <!-- Main Theme JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Local file:// preview only; no-op on a real server -->
+  <script src="assets/js/ry-local-preview.js"></script>
+
+  <!-- Keeps dropdowns from opening off the right edge of the viewport -->
+  <script src="assets/js/ry-nav-fit.js"></script>
+
+  <!-- Recover-You custom scripts -->
   <script>
+    /* Site-wide reading progress bar */
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+      if (!progress || !fill) return;
+
+      const hero = document.querySelector('.sk__hero-section');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+      }
+      function update() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+        let startPoint = 0;
+        if (hero) startPoint = hero.offsetTop + hero.offsetHeight;
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+          if (totalReadableDistance <= 0) { fill.style.width = '100%'; return; }
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', update);
+      window.addEventListener('resize', update);
+      window.addEventListener('scroll', function () {
+        if (update.framePending) return;
+        update.framePending = true;
+        window.requestAnimationFrame(function () { update(); update.framePending = false; });
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    /* Magnetic CTA hover */
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      const strength = 14;
+      document.querySelectorAll('.ry-magnetic').forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (x / rect.width * strength).toFixed(1) + 'px,' + (y / rect.height * strength).toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+      });
+    })();
+  </script>
+
+  <script>
+    /* Hero typewriter */
+    (function () {
+      const el = document.getElementById('ry-dynamic-word');
+      const cursor = document.getElementById('ry-cursor');
+      if (!el || !cursor) return;
+
+      const sequence = ['CONTROL', 'CLARITY', 'HOPE', 'YOU'];
+      let wordIndex = 0, charIndex = 0, isDeleting = false;
+      const typingSpeed = 105, deletingSpeed = 130, finalTypingSpeed = 300;
+      const pauseBetweenWords = 1600, pauseBeforeNextWord = 350;
+
+      function type() {
+        const currentWord = sequence[wordIndex];
+        const isFinalWord = wordIndex === sequence.length - 1;
+        const currentTypingSpeed = isFinalWord ? finalTypingSpeed : typingSpeed;
+
+        if (!isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            if (isFinalWord) {
+              setTimeout(function () { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 900);
+              return;
+            }
+            isDeleting = true;
+            setTimeout(type, pauseBetweenWords);
+            return;
+          }
+          setTimeout(type, currentTypingSpeed);
+        } else {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            setTimeout(type, pauseBeforeNextWord);
+            return;
+          }
+          setTimeout(type, deletingSpeed);
+        }
+      }
+      window.addEventListener('load', function () { setTimeout(type, 2600); });
+    })();
+  </script>
+
+  <script>
+    /* Checklist reveal-on-scroll */
+    (function () {
+      const items = document.querySelectorAll('#how-it-helps .ry-checklist li');
+      if (!items.length) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+
+  <script>
+    /* About strip — draw the route graphic in on scroll */
+    (function () {
+      const strip = document.getElementById('about-strip');
+      if (!strip) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-drawn');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+      observer.observe(strip);
+    })();
+  </script>
+
+  <script>
+    /* Privacy policy modal */
+    (function () {
+      const modal = document.getElementById('privacy-modal');
+      const dialog = modal ? modal.querySelector('.privacy-modal__dialog') : null;
+      const openBtn = document.getElementById('open-privacy-policy');
+      const closeBtns = document.querySelectorAll('[data-close-policy]');
+      if (!modal || !dialog || !openBtn) return;
+
+      let lastFocusedElement = null;
+
+      function openPolicy(e) {
+        e.preventDefault();
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('policy-modal-open');
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusable) firstFocusable.focus(); else { dialog.setAttribute('tabindex', '-1'); dialog.focus(); }
+      }
+      function closePolicy() {
+        if (document.activeElement && modal.contains(document.activeElement)) document.activeElement.blur();
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('policy-modal-open');
+        if (lastFocusedElement) lastFocusedElement.focus(); else openBtn.focus();
+      }
+      openBtn.addEventListener('click', openPolicy);
+      closeBtns.forEach(function (btn) { btn.addEventListener('click', closePolicy); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
+    })();
+  </script>
+
+  <script>
+    /* Cookie consent */
     (function () {
       const CONSENT_KEY = 'ry_cookie_consent';
       const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
       const DECLINE_DAYS = 180;
-
       const banner = document.getElementById('cookie-banner');
       const acceptBtn = document.getElementById('cookie-accept');
       const declineBtn = document.getElementById('cookie-decline');
 
-      function grantAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
-
-      function denyAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
-
-      function showBanner() {
-        if (banner) banner.style.display = 'block';
-      }
-
-      function hideBanner() {
-        if (banner) banner.style.display = 'none';
-      }
-
-      function setDeclineExpiry(days) {
-        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
-        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
-      }
-
-      function clearDeclineExpiry() {
-        localStorage.removeItem(CONSENT_EXPIRY_KEY);
-      }
-
+      function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+      function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+      function showBanner() { if (banner) banner.style.display = 'block'; }
+      function hideBanner() { if (banner) banner.style.display = 'none'; }
+      function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
+      function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
       function isDeclineExpired() {
         const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
         if (!expiry) return true;
         return Date.now() > Number(expiry);
       }
-
       function applyConsentState() {
         const consent = localStorage.getItem(CONSENT_KEY);
-
-        if (consent === 'accepted') {
-          grantAnalytics();
-          hideBanner();
-          return;
-        }
-
+        if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
         if (consent === 'declined') {
           denyAnalytics();
-
-          if (isDeclineExpired()) {
-            localStorage.removeItem(CONSENT_KEY);
-            localStorage.removeItem(CONSENT_EXPIRY_KEY);
-            showBanner();
-          } else {
-            hideBanner();
-          }
+          if (isDeclineExpired()) { localStorage.removeItem(CONSENT_KEY); localStorage.removeItem(CONSENT_EXPIRY_KEY); showBanner(); }
+          else hideBanner();
           return;
         }
-
         denyAnalytics();
         showBanner();
       }
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'accepted');
-          clearDeclineExpiry();
-          grantAnalytics();
-          hideBanner();
-        });
-      }
-
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'declined');
-          setDeclineExpiry(DECLINE_DAYS);
-          denyAnalytics();
-          hideBanner();
-        });
-      }
-
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
       applyConsentState();
     })();
   </script>
-  
-</body></html>
+
+</body>
+</html>

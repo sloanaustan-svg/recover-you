@@ -1,1459 +1,902 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head>
-  <!-- Fathom - beautiful, simple website analytics -->
-  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer=""></script>
-  <!-- / Fathom -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-
     gtag('js', new Date());
-
-    // Default: deny analytics until user accepts
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied'
-    });
-
-    gtag('config', 'G-6968KR6JY9', {
-      'anonymize_ip': true
-    });
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    gtag('config', 'G-6968KR6JY9', { 'anonymize_ip': true });
   </script>
-  <title>Toxic Stress: How the Brain Stays in Survival Mode | Recover-You</title>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer></script>
+  <!-- / Fathom -->
+
+  <title>Toxic Stress | The Paradox of Survival</title>
   <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
-  <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="How does toxic stress rewire the brain? This page explains the HPA axis, cortisol's effects on the hippocampus, PFC, and amygdala, allostatic load, and why trauma creates vulnerability to addiction, written for people in recovery in Alberta and beyond." name="description">
-  <meta content="toxic stress, HPA axis, SAM axis, allostatic load, amygdala trauma, hippocampus, prefrontal cortex, childhood adversity, Recover-You, Alberta mental health" name="keywords">
-  <meta content="Toxic Stress: The Biology of a Stuck Stress Response" property="og:title">
-  <meta content="When the alarm system won't turn off. Discover how prolonged stress reshapes the brain and body, and why recovery requires more than just 'calming down.'" property="og:description">
-  <meta content="images/og-toxic-stress.jpg" property="og:image">
-  <meta content="article" property="og:type">
-  <meta content="https://recover-you.ca/toxic-stress" property="og:url">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="Toxic Stress &amp; Brain Rewiring | Recover-You" name="twitter:title">
-  <meta content="A survivor-led, science-backed guide to how toxic stress gets under the skin and how to start the process of repair." name="twitter:description">
-  <meta content="images/og-toxic-stress.jpg" name="twitter:image">
-  <link href="https://recover-you.ca/toxic-stress" rel="canonical">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <meta name="author" content="Austan Sloan | Recover-You">
+  <meta name="description" content="How prolonged stress without a buffer reshapes the brain, the HPA axis and the body — and why that wiring makes substances feel less like pleasure and more like relief.">
+  <meta name="keywords" content="toxic stress, HPA axis, allostatic load, cortisol, childhood adversity, ACEs, trauma and addiction, nervous system dysregulation">
+
+  <meta property="og:title" content="Toxic Stress | The Paradox of Survival">
+  <meta property="og:description" content="The elegant, devastating wiring you never asked for. What toxic stress does to the brain, and why it makes addiction feel like a solution.">
+  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://recover-you.ca/toxic-stress">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Toxic Stress | Recover-You">
+  <meta name="twitter:description" content="You were not broken. You were trained, biologically, to survive where safety was scarce.">
+  <meta name="twitter:image" content="images/og-home.jpg">
+
+  <link rel="canonical" href="https://recover-you.ca/toxic-stress">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
   <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
   <link href="apple-touch-icon.png" rel="apple-touch-icon">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="site.webmanifest" rel="manifest">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Lato:wght@100;300;400;700;900&amp;family=Poppins:wght@200;300;400;600;700;800&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet">
 
-  <link href="css/toxic-stress.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ry-pdf-download.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap -->
+  <link href="assets/vendor/bootstrap/5.1.3/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts -->
+  <link href="assets/vendor/icomoon/icomoon.min.css" rel="stylesheet">
+  <!-- Off Canvas Menu -->
+  <link href="assets/vendor/offcanvas-nav/hc-offcanvas-nav.css" rel="stylesheet">
+  <!-- DarkStar Theme CSS -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <link href="assets/css/theme-colors.css" rel="stylesheet">
+  <!-- Recover-You homepage layer (red / black / grey / white brand) -->
+  <link href="assets/css/ry-home.css" rel="stylesheet">
+  <!-- Shared article component layer -->
+  <link href="assets/css/ry-article.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    "headline": "Toxic Stress: How Survival Mode Reshapes the Brain and Body",
-    "description": "A trauma-informed explanation of toxic stress, the HPA axis, allostatic load, and how chronic cortisol exposure affects the hippocampus, prefrontal cortex, amygdala, and dopamine system, and why this creates vulnerability to addiction.",
-    "specialty": "Psychiatry",
-    "lastReviewed": "2026-04",
-    "author": {
-      "@type": "Person",
-      "name": "Austan Sloan"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Recover-You",
-      "url": "https://recover-you.ca"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://recover-you.ca/toxic-stress"
-    },
-    "inLanguage": "en",
-    "about": [
-      { "@type": "Thing", "name": "Toxic Stress" },
-      { "@type": "Thing", "name": "HPA Axis" },
-      { "@type": "Thing", "name": "Allostatic Load" },
-      { "@type": "Thing", "name": "Cortisol" },
-      { "@type": "Thing", "name": "Trauma and Addiction" },
-      { "@type": "Thing", "name": "Adverse Childhood Experiences" }
-    ],
-    "citation": [
-      "https://pubmed.ncbi.nlm.nih.gov/22201156/",
-      "https://pubmed.ncbi.nlm.nih.gov/17615391/",
-      "https://pubmed.ncbi.nlm.nih.gov/17290802/",
-      "https://pubmed.ncbi.nlm.nih.gov/27475769/"
-    ]
+    "@type": "Article",
+    "headline": "Toxic Stress: The Paradox of Survival",
+    "description": "How prolonged stress without adequate buffering reshapes the brain, nervous system and body, and why it increases vulnerability to addiction.",
+    "url": "https://recover-you.ca/toxic-stress",
+    "author": { "@type": "Person", "name": "Austan Sloan" },
+    "publisher": { "@type": "Organization", "name": "Recover-You" },
+    "isPartOf": { "@type": "WebSite", "name": "Recover-You", "url": "https://recover-you.ca" }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is toxic stress and how does it affect the brain?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Toxic stress occurs when the stress response is activated repeatedly or for prolonged periods without an adequate buffer, typically a supportive adult relationship. Unlike normal stress, it does not resolve. Chronic activation of the HPA axis keeps cortisol elevated, which over time reduces hippocampal volume, weakens prefrontal cortex function, and increases amygdala reactivity, creating a nervous system biased toward threat detection and survival rather than growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does toxic stress increase vulnerability to addiction?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Chronic stress dysregulates the mesolimbic dopamine system, blunting the brain's natural capacity for reward and relief. Substances temporarily restore what the dysregulated nervous system can no longer produce on its own, a sense of calm, safety, or pleasure. For someone who has never experienced a regulated baseline, this effect can feel not optional but necessary, which is why trauma-born addiction is better understood as a biological adaptation than a moral failing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the HPA axis and what happens when it is dysregulated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The HPA axis (hypothalamic-pituitary-adrenal axis) is the body's primary hormonal stress response system. In a healthy state, a stressor triggers cortisol release, which feeds back to the brain to shut the system down. When dysregulated by early adversity or chronic stress, this feedback loop breaks down, the hypothalamus over-fires, cortisol stays elevated, and the system cannot return to baseline. This is the core mechanism behind toxic stress."
-        }
-      }
-    ]
-  }
-  </script>
-  <style>
-         /* --- In-text citation link styling --- */
-         .ry-cite a {
-           font-size: 0.75em;        /* Makes the number smaller */
-           vertical-align: super;    /* Aligns it like a superscript */
-           line-height: 0;           /* Prevents it from adding extra line spacing */
-           text-decoration: none;
-           font-weight: 600;
-           padding: 0 2px;
-           color: var(--deep-pink, #ff2a6d);
-           opacity: 0.8;
-         }
-         .ry-cite a:hover {
-           opacity: 1;
-           text-decoration: underline;
-         }
-         
-           /* Title polish */
-           .hero-title { 
-             letter-spacing: .5px; 
-             line-height: 1.15; 
-             font-weight: 700;
-           }
-           .title-rule {
-             height: 2px;
-             width: 56%;
-             margin-top: 14px;
-             opacity: .9;
-           }
-           @media (max-width: 991.98px){
-             .title-rule { width: 68%; }
-           }
-           @media (max-width: 575.98px){
-             .title-rule { width: 78%; }
-           }
-
-           /* Blockquote panel */
-           .quote-panel{
-             background: rgba(255,255,255,.04);
-             border-left: 4px solid #ff1463;      /* deep pink accent */
-             border-radius: 10px;
-             padding: 28px 28px 26px 26px;
-             box-shadow: 0 10px 30px rgba(0,0,0,.18);
-             backdrop-filter: saturate(120%) blur(1px);
-           }
-           .quote-panel blockquote{
-             border-color:#ff1463!important;      /* keep your Pofo border color */
-             margin:0;
-           }
-           .quote-panel p{
-             margin-bottom: 14px;
-             line-height: 1.75;
-           }
-           .quote-panel p:last-child{ margin-bottom:0; }
-        .gallery-shadow {
-            box-shadow: 0 15px 45px rgba(0,0,0,0.40);
-            border-radius: 8px;
-            transition: 0.3s ease;
-        }
-
-        .gallery-shadow:hover {
-            box-shadow: 0 25px 60px rgba(0,0,0,0.55);
-            transform: translateY(-6px);
-        }
-
-    .cortisol-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid #dee2e6;
-    }
-    .cx-cell {
-      padding: 1.5rem 1.25rem;
-      border-right: 1px solid #dee2e6;
-      background: #fff;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-    .cx-cell::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-    .cx-cell:nth-child(1)::before { background: #7c9fc4; }
-    .cx-cell:nth-child(2)::before { background: #8fa888; }
-    .cx-cell:nth-child(3)::before { background: #c47c7c; }
-    .cx-cell:nth-child(4)::before { background: #a07cb8; }
-    .cx-cell:last-child { border-right: none; }
-    .cx-cell:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.09);
-      background: #f9f9f9;
-      z-index: 1;
-    }
-    .cx-icon { font-size: 20px; margin-bottom: 14px; margin-top: 4px; }
-    .cx-cell:nth-child(1) .cx-icon { color: #7c9fc4; }
-    .cx-cell:nth-child(2) .cx-icon { color: #8fa888; }
-    .cx-cell:nth-child(3) .cx-icon { color: #c47c7c; }
-    .cx-cell:nth-child(4) .cx-icon { color: #a07cb8; }
-    .cx-label {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #999;
-      margin-bottom: 5px;
-    }
-    .cx-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-    .cx-divider { height: 1px; background: #ebebeb; margin-bottom: 14px; }
-    .cx-points { list-style: none; padding: 0; margin: 0; }
-    .cx-points li {
-      font-size: 13px;
-      line-height: 1.7;
-      color: #555;
-      padding: 5px 0;
-      border-bottom: 1px solid #f2f2f2;
-    }
-    .cx-points li:last-child { border-bottom: none; padding-bottom: 0; }
-    .cx-adaptive {
-      margin-top: 1.5rem;
-      padding: 1rem 1.4rem;
-      background: #f7f7f7;
-      border-left: 3px solid #bbb;
-      border-radius: 0;
-      font-size: 14px;
-      line-height: 1.85;
-      color: #666;
-      font-style: italic;
-    }
-    .cx-summary {
-      margin-top: 8px;
-      padding: 1.1rem 1.4rem;
-      background: #f2f2f2;
-      border-left: 4px solid #1a1a1a;
-      border-radius: 0;
-      font-size: 15px;
-      line-height: 1.85;
-      color: #1a1a1a;
-    }
-    @media (max-width: 768px) {
-      .cortisol-grid { grid-template-columns: 1fr 1fr; }
-      .cx-cell { border-bottom: 1px solid #dee2e6; }
-    }
-    @media (max-width: 480px) {
-      .cortisol-grid { grid-template-columns: 1fr; }
-    }
-    .section-lifted {
-      box-shadow: 0 -8px 24px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-    }
-
-      .somber-blue-bg {
-        background: linear-gradient(rgba(13,26,42,0.92), rgba(13,26,42,0.95));
-      }
-      .hero-title {
-        color: #ff2f54 !important;
-        text-shadow: 0 0 14px rgba(255,47,84,0.25);
-        font-weight: 700;
-        font-size: 3rem;
-        letter-spacing: -0.5px;
-      }
-      .text-white-soft { color: #f0f0f0 !important; }
-      .title-rule {
-        background-color: #ff2f54 !important;
-        height: 3px;
-        width: 80px;
-        margin: 15px auto 25px auto;
-        opacity: 0.9;
-      }
-      .trauma-contrast-section .trauma-pane {
-        position: relative;
-        background: rgba(0,0,0,0.30);
-        border-radius: 8px;
-        box-shadow: 0 24px 60px rgba(0,0,0,0.45);
-        margin-bottom: 30px;
-      }
-      .trauma-contrast-section .left-pane::after {
-        content: "";
-        position: absolute;
-        top: 8%;
-        right: -1px;
-        width: 2px;
-        height: 84%;
-        background: rgba(255,255,255,0.18);
-        transition: background 0.3s ease;
-      }
-      .trauma-contrast-section .left-pane:hover::after {
-        background: rgba(255,255,255,0.35);
-      }
-      .trauma-contrast-section .text-medium { line-height: 1.8; }
-      .trauma-contrast-section .opacity-light-deep-pink {
-        position: absolute;
-        inset: 0;
-        background: rgba(46,98,150,0.10);
-        pointer-events: none;
-      }
-    .final-word-body p { opacity: 0.92; }
-    .final-word-triptych {
-      border-left: 3px solid rgba(255,20,99,0.4);
-      padding-left: 1.5rem;
-    }
-    .final-word-triptych p {
-      margin-bottom: 0.6rem;
-    }
-    .final-word-triptych p:last-child {
-      margin-bottom: 0;
-    }
-    .line-height-30 { line-height: 1.9; }
-
-    /* SEO: primary section titles promoted from h5 to h2 for a correct
-       document outline. These rules re-apply the theme's original h5 sizing
-       at every breakpoint so the visual appearance is unchanged. */
-    h2.seo-h2 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
-    @media (max-width: 1199px) { h2.seo-h2 { font-size: 27px; line-height: 32px; } }
-    @media (max-width: 991px)  { h2.seo-h2 { font-size: 24px; line-height: 30px; } }
-    @media (max-width: 767px)  { h2.seo-h2 { font-size: 20px; line-height: 28px; } }
-  </style>
-<link href="css/lenis.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  <div aria-hidden="true" id="reading-progress">
-    <div id="reading-progress-fill"></div>
-  </div><!-- start header -->
-  <header>
-    <!-- start navigation -->
-    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
-      <div class="container-fluid nav-header-container">
-        <div class="col-auto ps-0">
-          <a class="logo" href="index" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
-        </div>
-        <div class="col accordion-menu pe-0 pe-md-3">
-          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
-            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
-              <li>
-                <a href="index" title="Home">Home</a>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-this-site-exists">Why This Site Exists</a>
-                  </li>
-                  <li>
-                    <a href="about-me">About Me</a>
-                  </li>
-                  <li>
-                    <a href="start-here">Start Here</a>
-                  </li>
-                  <li>
-                    <a href="faq">FAQ</a>
-                  </li>
-              <li><a href="for-coaches">For Frontline Workers</a></li>
-            <li><a href="for-loved-ones">For Loved Ones</a></li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="what-is-trauma">What Is Trauma</a>
-                      </li>
-                      <li>
-                        <a href="what-is-cptsd">What Is C-PTSD</a>
-                      </li>
-                      <li>
-                        <a href="attachment">Attachment Styles</a>
-                      </li>
-                      <li>
-                        <a href="toxic-stress">Toxic Stress</a>
-                      </li>
-                      <li>
-                        <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a>
-                      </li>
-                      <li>
-                        <a href="cptsd-behaviours">CPTSD Patterns</a>
-                      </li>
-                      <li><a href="four-trauma-responses">Trauma Responses</a></li>
-                      <li>
-                        <a href="aces-high">ACEs &amp; Risk</a>
-                      </li>
-                      <li>
-                        <a href="dunedin-study">The Dunedin Study</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="brain-on-fire">Brain on Fire</a>
-                      </li>
-                      <li>
-                        <a href="when-sobriety-feels-worse">When Sobriety Feels Worse</a>
-                      </li>
-                      <li>
-                        <a href="neuroplasticity">Neuroplasticity</a>
-                      </li>
-                      <li>
-                        <a href="critical-window">Critical Windows</a>
-                      </li>
-                      <li>
-                        <a href="epigenetics">Epigenetics</a>
-                      </li>
-                      <li>
-                        <a href="trauma-does-not-expire">Trauma Doesn't Expire</a>
-                      </li>
-                      <li>
-                        <a href="dohad">DOHaD: Developmental Origins</a>
-                      </li>
-                      <li>
-                        <a href="metabolism">Metabolism</a>
-                      </li>
-                      <li>
-                        <a href="the-hijacked-engine">The Hijacked Engine</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a>
-                  </li>
-                  <li>
-                    <a href="problem-with-aa">Limits of the AA Model</a>
-                  </li>
-                  <li>
-                    <a href="misdiagnosed">When Trauma Is Misdiagnosed</a>
-                  </li>
-                  <li>
-                    <a href="disease-of-addiction">The “Disease of Addiction” Debate</a>
-                  </li>
-                  <li>
-                    <a href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a>
-                  </li>
-                  <li>
-                    <a href="better-model-of-care">What Better Care Requires</a>
-                  </li>
-                  <li>
-                    <a href="trauma-avoidant">When Trauma Is Avoided</a>
-                  </li>
-                  <li>
-                    <a href="compassionate-care">Compassionate Care: A Critique</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="cbt">CBT</a>
-                      </li>
-                      <li>
-                        <a href="dbt">DBT</a>
-                      </li>
-                      <li>
-                        <a href="life-traps">Life Traps (Schema Therapy)</a>
-                      </li>
-                      <li>
-                        <a href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a>
-                      </li>
-                      <li>
-                        <a href="types-of-therapy">Therapy Types</a>
-                      </li>
-                      <li>
-                        <a href="role-of-therapy">The Role of Therapy</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="chart-your-life">Chart Your Life</a>
-                      </li>
-                      <li>
-                        <a href="distorted-thinking">Distorted Thinking</a>
-                      </li>
-                      <li>
-                        <a href="regulation-tools">Regulation Tools</a>
-                      </li>
-                      <li>
-                        <a href="reality-test">Reality Testing</a>
-                      </li>
-                      <li>
-                        <a href="relationships">Relationships in Recovery</a>
-                      </li>
-                      <li>
-                        <a href="connection">Connection</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a>
-                      </li>
-                      <li>
-                        <a href="spirituality">Spirituality</a>
-                      </li>
-                      <li>
-                        <a href="the-resilience-lie">The Resilience Lie</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="resources">Resources</a>
-                      </li>
-                      <li>
-                        <a href="tfr-model">Trauma-Focused Recovery Model (TFR Model)</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact" title="Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-auto pe-0"></div>
-      </div>
-    </nav><!-- end navigation -->
-  </header><!-- end header -->
-  <!-- start page title section -->
-  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/bg-2.jpg');">
-    <div class="opacity-medium bg-extra-dark-gray"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
-          <!-- start page title -->
-          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">Toxic Stress</h1>
-          <h6 class="text-light-gray alt-font font-weight-600">The Paradox of Survival</h6>
+
+<body class="sk__article-page dark-shade-1-bg ry-article-page">
+
+  <main id="primary" class="site-main">
+
+    <!-- Site-wide reading progress bar -->
+    <div aria-hidden="true" id="reading-progress"><div id="reading-progress-fill"></div></div>
+
+    <!-- Master Curtain Effect -->
+    <!-- Built from real DOM rather than a background image so the optional
+         page title below the logo always sits a fixed distance beneath it,
+         at every viewport ratio. Builders inject .ry-curtain-title; the
+         home page deliberately has none. -->
+    <section class="sk__master-curtain">
+      <div class="mcurtain ry-mcurtain-single">
+        <div class="ry-curtain-inner">
+          <img class="ry-curtain-logo" src="images/webp/recover-you-logo-white.webp" alt="Recover-You" width="600" height="200">
+          <span class="ry-curtain-title">TOXIC STRESS</span>
         </div>
       </div>
-    </div>
-    <div class="down-section text-center">
-      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn" id="why">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
-            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>14 min read</span>
-</div><!-- ═══ PDF DOWNLOAD CARD ═══ -->
-          <a class="ry-pdf-card" href="assets/website-pdfs/Toxic-Stress.pdf" download="Toxic-Stress-Recover-You.pdf" aria-label="Download the full Toxic Stress page as a printable PDF, 13 pages, 885 KB" data-fathom-event="download-pdf-toxic-stress">
-            <div class="ry-pdf-icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
-            <div class="ry-pdf-body">
-              <span class="ry-pdf-eyebrow">Prefer paper?</span>
-              <div class="ry-pdf-title">Take this entire page with you</div>
-              <p class="ry-pdf-sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</p>
-              <ul class="ry-pdf-meta">
-                <li>PDF</li>
-                <li>13 pages</li>
-                <li>885 KB</li>
-                <li>Free</li>
-              </ul>
-            </div>
-            <div class="ry-pdf-action">Download <i class="fas fa-arrow-down" aria-hidden="true"></i></div>
-          </a><!-- ═══ /PDF DOWNLOAD CARD ═══ -->
-          
-          <h2 class="seo-h2 font-weight-600 text-extra-dark-gray alt-font"><span class="text-deep-pink">//</span> The <strong>Elegant</strong>, <strong class="text-deep-pink">Devastating</strong> Wiring You Never Asked For</h2>
-          <p class="text-medium" style="border-left:3px solid #ff1463; padding-left:1.25rem;"><strong>Toxic stress is the prolonged or repeated activation of the body's stress response without enough support to recover from it.</strong> Unlike ordinary stress, which spikes and then resets, toxic stress keeps the nervous system stuck in survival mode, gradually reshaping the brain, hormones, and body. In adults, it is closely linked to anxiety, chronic illness, and a heightened vulnerability to addiction.</p>
-          <p class="text-medium">When childhood adversity goes unmet by adequate support, it doesn't just leave emotional scars. <em>It rewrites the brain's operating system.</em> What should have been wired for growth gets rewired for survival. A young brain, flooded with stress hormones, adapts to a constant state of alarm. This is toxic stress: the unseen architect of a nervous system built for war, not for peace.</p>
-          <p>And here's what most people miss: <strong>this isn't some dusty childhood relic we leave behind.</strong> It travels forward. A live wire running through adult life. Through the inexplicable impulsivity. The shutdowns that arrive without warning. The <strong><a href="brain-on-fire" class="text-deep-pink">vulnerability to addiction</a></strong> that feels like a life sentence with no mechanism for appeal.</p>
-          <p>Here's the part rarely explained in recovery circles: when the <em>autonomic nervous system</em>, the body's automatic pilot for heart rate, breathing, and digestion, gets stuck in chronic dysregulation, it becomes part of what keeps the suffering going. The system designed to bring you back to baseline can no longer do that job reliably. <em class="text-deep-pink">Relief stops arriving on its own. It has to be found somewhere else.</em></p>
-          <p>That is why the nervous system starts hunting for substitutes. Substances can stop feeling optional and start feeling <strong>necessary.</strong> Not because you are weak, but because your biology is trying to find relief with whatever is available.</p>
-          <blockquote class="border-color-deep-pink">
-            <p>With what we now know from psychology and neuroscience, <strong>toxic stress offers one of the <span class="text-deep-pink">clearest lenses</span> for understanding trauma-born addiction.</strong> For someone carrying both severe addiction and a trauma history, finding a framework that finally makes sense of their experience can be life-changing.</p>
-          </blockquote>
-          <p>I know this because I lived it. Sobriety without addressing the trauma underneath did not bring peace. It magnified the chaos. I never dared admit it then, but being sober with an unhealed nervous system felt worse than using.</p>
-          <p>Worse meant self-hate. With the buffer gone, I was left sitting with the consequences of my actions and the pain I had caused. My body was in revolt too. The sickness in my stomach. The twisting anxiety. Constantly cold hands and feet. Hands that shook violently.</p>
-          <p>As awful as those symptoms were, they paled beside the war of attrition occurring in the grey matter. Shame over every choice. Regret. The belief that I was not fixable, that there were wires crossed somewhere in my soul with no way to correct them. I knew in my bones that sobriety and recovery were for other people. Never for me. I believed addiction would claim me eventually.</p>
-          <p>Being alone with my thoughts was a special kind of hell. I had to keep moving or at least stay distracted. Television, music, games, anything. Never silence. Anything but that.</p>
-          <p>The first crack in that belief came when I watched Dr. Nadine Burke Harris's TED Talk on ACEs. It was my first real <em>aha</em> moment, the one that set everything else in motion. For the first time, I could see that what I was experiencing might have an explanation beyond moral failure.</p>
-          <p>Healing did not begin because the consequences disappeared. It began when I understood the machinery underneath them. Toxic stress was wiring I never asked for, doing what it had learned to do. That knowledge did not absolve me of responsibility. It gave me somewhere real to begin.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="bg-light-gray">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100" src="images/brain-stress.png"></div>
-        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
-          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Science:</span>
-          <h2 class="seo-h2 alt-font text-extra-dark-gray font-weight-600">What Toxic Stress Does</h2>
-          <p>Stress is supposed to rise and fall. The body mobilizes, then resets. Toxic stress develops when that reset repeatedly fails and the stress systems remain switched on.</p>
-          <div class="margin-30px-tb">
-            <ul class="p-0 list-style-3">
-              <li><strong class="text-extra-dark-gray">SAM Axis (Sympatho-Adreno-Medullary <span class="text-deep-pink">//</span> Adrenaline):</strong> Fires instantly, preparing the body for fight or flight. Heart races, breath quickens, muscles tense.</li>
-              <li><strong class="text-extra-dark-gray">HPA Axis (Hypothalamic-Pituitary-Adrenal <span class="text-deep-pink">//</span> Cortisol):</strong> Kicks in slower, but lasts longer. In short bursts, it helps. In chronic doses, it reshapes the brain.</li>
-            </ul>
-          </div>
-          <p>Key brain regions affected:</p>
-          <div class="margin-30px-tb">
-            <ul class="p-0 list-style-3">
-              <li><strong class="text-extra-dark-gray">Prefrontal Cortex:</strong> The brakes. Responsible for logic and impulse control. Trauma stunts its growth.</li>
-              <li><strong class="text-extra-dark-gray">Amygdala:</strong> The accelerator. The brain's threat-detection system. Trauma strengthens its wiring and keeps it on high alert.</li>
-              <li>
-                <strong class="text-extra-dark-gray">Hippocampus:</strong> Memory and context. It helps the brain separate what's happening <em>now</em> from what belongs to the past, and signals when the alarm is safe to shut off. Chronic cortisol exposure shrinks it, weakening both memory and the brain's ability to stand down.
-              </li>
-            </ul>
-          </div>
-          <p class="text-medium">
-          <em>These systems don't operate in isolation. When the hippocampus can no longer place experience in time, the stress response stays active as if the threat is still happening, even when it isn't.</em>
-          </p>
-          <p>The cumulative wear and tear created by this imbalance is called <em><a href="aces-high" class="text-deep-pink">allostatic load</a></em>. Instead of growth, the brain prioritizes vigilance. The autonomic nervous system is central here. The sympathetic branch remains overactive, the parasympathetic branch underfunctions, and the system that should restore calm never fully engages.</p>
-          <blockquote class="border-color-deep-pink">
-            <p>Toxic stress doesn't just shape emotions. It wears down the body. Research links it to heart disease, diabetes, autoimmune conditions, and shortened lifespan. This is allostatic load made visible.</p>
-          </blockquote>
-          <p>In children, the line between healthy and toxic stress often comes down to a reliable buffer: a caring, attentive adult who helps regulate the child's nervous system and turn off the alarm. Meeting new people, starting school, or falling off a bike are normal developmental stresses the brain can learn from <em>when safety and comfort follow.</em> Without that buffer, or when the caregiver is the source of fear, the child has no reliable way to reset. Safety never arrives. The body stays on high alert. The brain wires for survival instead of growth.</p>
-          <p>Even one consistent, supportive adult can change this trajectory. Safety doesn't erase trauma. But it reshapes how the brain organizes itself around it.</p>
-          <div class="separator-line-horrizontal-medium-light margin-30px-top md-no-margin-top bg-deep-pink"></div>
-        </div>
-      </div>
-    </div>
-  </section><!-- NOT ALL STRESS IS THE SAME -->
-  <section class="wow animate__fadeIn bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 last-paragraph-no-margin">
-          <h2 class="seo-h2 font-weight-600 text-extra-dark-gray alt-font"><span class="text-deep-pink">//</span> Not All Stress Is the Same</h2>
-          <p class="line-height-28 sm-line-height-26">People often talk about stress as if it were a single test of how well you cope. Developmental science identifies <strong>three distinct categories.</strong> The difference is not simply willpower or temperament. It is whether a reliable buffer is present when the alarm goes off.</p>
-          <p class="line-height-28 sm-line-height-26">Safety. Support. Someone who helps the system turn back off. When that buffer is present, stress builds capacity. When it's absent, when the alarm activates and <em>nothing answers it</em>, the body draws a different conclusion: <strong>stay ready. The danger isn't over.</strong></p>
-          <p class="line-height-28 sm-line-height-26">Once you understand these three types, a lot of the confusion dissolves. You stop asking <em>"what's wrong with me?"</em> and start seeing what actually happened: <strong>a stress response that adapted so completely it forgot how to stop.</strong></p>
-          <div class="separator-line-horrizontal-medium-light margin-30px-top md-no-margin-top bg-deep-pink"></div>
-        </div>
-        <div class="col-lg-6">
-          <div class="panel-group accordion-event toggles" data-active-icon="fa-angle-up" data-inactive-icon="fa-angle-down" id="accordion-stress-types">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-toggle="collapse" href="#collapseStressOne">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">01</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Positive Stress</span> <i class="fa-solid fa-angle-up text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse show" data-bs-parent="#accordion-stress-types" id="collapseStressOne">
-                <div class="panel-body">
-                  Brief, manageable stress that comes with support and resolution: trying something new, getting a vaccine, starting school. The system activates, then resets. <strong>This is how resilience is built.</strong>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-toggle="collapse" href="#collapseStressTwo">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">02</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Tolerable Stress</span> <i class="fa-solid fa-angle-down text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse" data-bs-parent="#accordion-stress-types" id="collapseStressTwo">
-                <div class="panel-body">
-                  More intense adversity: loss, injury, major disruption, that can still be recovered from when consistent emotional support is present. The response spikes hard, but it gets help finding its way back down.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a class="accordion-toggle" data-bs-toggle="collapse" href="#collapseStressThree">
-                <div class="panel-title">
-                  <span class="alt-font font-weight-600 text-deep-pink tab-tag">03</span> <span class="text-extra-dark-gray sm-w-80 d-inline-block">Toxic Stress</span> <i class="fa-solid fa-angle-down text-extra-dark-gray"></i>
-                </div></a>
-              </div>
-              <div class="panel-collapse collapse" data-bs-parent="#accordion-stress-types" id="collapseStressThree">
-                <div class="panel-body">
-                  Strong, frequent, or prolonged stress without adequate buffering. The danger may be overt, or it may be chronic neglect, instability, unpredictability, or simply the permanent absence of someone who helps the alarm turn off. The key feature is that the system <strong>doesn't shut down.</strong> Over time, survival becomes the default, not a response to a moment, but a permanent operating mode.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-light-gray">
-    <div class="container">
-      <div class="row justify-content-center">
-
-        <div class="col-lg-10">
-          <h2 class="seo-h2 font-weight-600 text-extra-dark-gray alt-font">
-            <span class="text-deep-pink">//</span> The <strong>HPA Axis</strong>: Your Stress System in Two Frames
-          </h2>
-
-          <p class="text-medium">
-            The images below show the core stress circuit at the center of trauma, anxiety, and addiction: the <strong>HPA axis</strong> (hypothalamic-pituitary-adrenal system). Its job is simple: detect threat, release stress hormones, and bring the body back to baseline once the danger has passed.
-          </p>
-
-          <p>
-            <strong>The first image shows it working.</strong> A stressor appears. The brain triggers a brief hormonal cascade. Cortisol is released. The brain detects that cortisol and shuts the system back down. A clean, elegant loop designed for short bursts of survival.
-          </p>
-
-          <p>
-            <strong>The second shows what happens when chronic stress or early adversity breaks that loop.</strong> The hypothalamus fires too easily. The pituitary over-releases ACTH. Cortisol stays high instead of settling. The feedback signal that should quiet the system begins to fail. Over time, constant activation reshapes the brain, heightens inflammation, and leaves the body stuck in survival mode.
-          </p>
-
-          <p>
-            Side by side, the diagrams show the difference between a nervous system that can return to calm and one that cannot. For many people with trauma histories, this was never a personality flaw. <strong>It was physiology.</strong>
-          </p>
-        </div>
-
-        <div class="col-lg-10 margin-70px-top margin-70px-bottom sm-margin-50px-top sm-margin-50px-bottom">
-          <hr class="opacity-2">
-        </div>
-
-        <div class="col-lg-10">
-          <div class="row g-4">
-
-            <div class="col-md-6 margin-30px-bottom">
-              <a class="single-image-lightbox d-block" data-group="hpa-axis-gallery" href="images/hpa-axis-healthy.png">
-                <img
-                  src="images/hpa-axis-healthy.png"
-                  alt="Healthy HPA Axis feedback loop diagram"
-                  class="w-100 gallery-shadow"
-                  loading="lazy"
-                    decoding="async">
-              </a>
-
-              <p class="text-center text-small text-extra-dark-gray alt-font margin-20px-top margin-0px-bottom">
-                <strong>Healthy Feedback Loop</strong><br>
-                HPA Axis
-              </p>
-            </div>
-
-            <div class="col-md-6 margin-30px-bottom">
-              <a class="single-image-lightbox d-block" data-group="hpa-axis-gallery" href="images/hpa-axis-dysregulated.png">
-                <img
-                  src="images/hpa-axis-dysregulated.png"
-                  alt="Dysregulated HPA Axis feedback loop diagram"
-                  class="w-100 gallery-shadow"
-                  loading="lazy"
-                    decoding="async">
-              </a>
-
-              <p class="text-center text-small text-extra-dark-gray alt-font margin-20px-top margin-0px-bottom">
-                <strong>Dysregulated Feedback Loop</strong><br>
-                HPA Axis
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- CORTISOL IMPACT TABLE -->
-  <!-- CORTISOL IMPACT TABLE -->
-  <section class="bg-white padding-60px-tb md-padding-40px-tb wow animate__fadeIn">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-
-          <h2 class="seo-h2 alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">
-          <span class="text-deep-pink">//</span> Too much cortisol is bad. But <em>why?</em>
-          </h2>
-          <p class="text-medium">In short bursts, cortisol is useful, necessary, even. It mobilizes energy, sharpens threat detection, and temporarily suppresses everything non-urgent: inflammation, digestion, reproduction. Your body's operating on a single directive: <em>emergency now, maintenance later.</em> That logic works fine for a sprint. The damage comes when the sprint becomes a marathon.</p>
-
-          <div class="cortisol-grid margin-40px-top">
-
-            <div class="cx-cell">
-              <div class="cx-icon"><i class="fas fa-brain"></i></div>
-              <p class="cx-label">Memory &amp; Context</p>
-              <h6 class="cx-title">Hippocampus</h6>
-              <div class="cx-divider"></div>
-              <ul class="cx-points">
-                <li>Reduces the growth of new neurons</li>
-                <li>Existing neurons pull back their connections</li>
-                <li>Associated with measurable volume reductions over time</li>
-                <li>Weakens the "that was then" signal, the brake on the alarm system</li>
-              </ul>
-            </div>
-
-            <div class="cx-cell">
-              <div class="cx-icon"><i class="fas fa-sliders-h"></i></div>
-              <p class="cx-label">Regulation</p>
-              <h6 class="cx-title">Prefrontal Cortex</h6>
-              <div class="cx-divider"></div>
-              <ul class="cx-points">
-                <li>Progressively weakens top-down control</li>
-                <li>Impairs working memory and flexible thinking</li>
-                <li>Shifts the brain toward reactive, subcortical systems</li>
-              </ul>
-            </div>
-
-            <div class="cx-cell">
-              <div class="cx-icon"><i class="fas fa-exclamation-triangle"></i></div>
-              <p class="cx-label">Threat Detection</p>
-              <h6 class="cx-title">Amygdala</h6>
-              <div class="cx-divider"></div>
-              <ul class="cx-points">
-                <li>Opposite effect: reactivity <em>increases</em></li>
-                <li>Lower threat threshold: alarm fires sooner</li>
-                <li>Responses feel sudden because the trigger bar dropped, not because the threat got bigger</li>
-              </ul>
-            </div>
-
-            <div class="cx-cell">
-              <div class="cx-icon"><i class="fas fa-bolt"></i></div>
-              <p class="cx-label">Reward &amp; Motivation</p>
-              <h6 class="cx-title">Dopamine System</h6>
-              <div class="cx-divider"></div>
-              <ul class="cx-points">
-                <li>Chronic stress can blunt baseline dopamine sensitivity</li>
-                <li>Ordinary pleasure becomes harder to register</li>
-                <li>Makes synthetic relief feel not optional, but necessary</li>
-              </ul>
-            </div>
-
-          </div><!-- end cortisol-grid -->
-
-          <div class="cx-adaptive margin-20px-top">
-            None of these are malfunctions. They're adaptations: the brain doing exactly what it was trained to do in an environment it believed was permanently dangerous.
-          </div>
-
-          <div class="cx-summary margin-10px-top">
-            Hippocampal shrinkage (context, memory, braking). PFC weakening (regulation). Amygdala sensitization (alarm), all at once. The dopamine system goes quiet underneath it. That's not a collection of separate problems. It's a single, unified setup that increases vulnerability to trauma-driven addiction.
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- CONTENT WARNING CARD -->
-  <section class="wow animate__fadeIn bg-light-gray padding-60px-tb md-padding-40px-tb">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="feature-box-16 bg-white border-radius-8 padding-40px-all shadow-sm">
-            <span class="alt-font text-deep-pink text-uppercase letter-spacing-2 margin-10px-bottom d-inline-block">// Before You Continue</span>
-            <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">A Note on What Follows</h5>
-            <p class="text-medium text-extra-dark-gray">Up to this point, the page has focused on the <strong>science of toxic stress</strong> and how prolonged activation reshapes the brain, nervous system, and body over time.</p>
-            <p class="text-medium text-extra-dark-gray"><strong>The next section shifts.</strong> It moves from biology into lived experience, using illustrative examples of psychological and relational harm to show where the science lands in the body. Some of it will be recognizable. That’s intentional.</p>
-            <p class="text-medium text-extra-dark-gray">The language draws from lived experience while reflecting patterns many people may recognize. The purpose is not to reduce trauma to one person's story. It is to name what often goes unnamed.</p>
-            <p class="text-medium text-extra-dark-gray margin-0">If the material becomes overwhelming at any point, pause or step away. That's not avoidance. That's regulation, and regulation is exactly what this page is about.</p>
-            <p class="text-large text-extra-dark-gray margin-0"><a href="#skip" class="text-deep-pink"><u>Click here to Skip</u></a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- ========== SIDE-BY-SIDE TRAUMA SECTIONS ========== -->
-  <section class="extra-big-section parallax wow animate__fadeIn somber-blue-bg trauma-contrast-section" data-parallax-background-ratio="0.5" style="background-image:url('images/webp/safety-gone.webp');">
-    <div class="opacity-full-dark bg-extra-dark-gray"></div>
-    <div class="opacity-light-deep-pink"></div>
-    <div class="container position-relative">
-      <div class="row justify-content-center">
-        <div class="col-xl-8 col-lg-10 text-center">
-          <h2 class="alt-font hero-title mb-0">Imagine this<span class="text-white-soft opacity-7">...</span></h2>
-          <div class="title-rule"></div>
-        </div>
-      </div>
-      <div class="row d-flex align-items-start flex-wrap margin-40px-top">
-        <!-- LEFT COLUMN: Physical and Relational Trauma -->
-        <div class="col-lg-6 col-md-12 padding-five-all sm-padding-40px-all trauma-pane left-pane">
-          <h6 class="alt-font text-white-2 opacity-7 margin-10px-top"><u>Physical and Relational Trauma</u></h6>
-          <h5 class="font-weight-600 text-white alt-font">Where Love and Harm Live Together</h5>
-          <p class="text-medium text-white">A small child stands trembling before the very person meant to protect them. Something breaks in the caregiver: rage, desperation, a darkness they can't outrun, and a line gets crossed that can never be uncrossed. <em><span class="text-deep-pink">They both feel it.</span></em> The child's body knows before their mind does, stomach dropping, throat tightening, breath coming in shallow, urgent bursts. They don't know what just happened. They don't have a word for it. They only know that something that was supposed to be safe has become the most dangerous place in their world, and that safety, the thing that was supposed to live here, is <strong class="text-deep-pink">gone.</strong></p>
-          <p class="text-medium text-white">Then come the commands:</p>
-          <ul class="p-0 list-style-6 text-medium text-deep-pink margin-20px-bottom">
-            <li><em>"Go to your room!"</em></li>
-            <li><em>"Stop crying!"</em></li>
-            <li><em>"Don't make me do this again!"</em></li>
-            <li><em>"This is your fault!"</em></li>
-            <li><em><strong>"You made me do this!"</strong></em></li>
-          </ul>
-          <p class="text-medium text-white">Alone now. Shame, fear and confusion twist together as the child curls on the edge of the bed, small hands gripping their knees, trying to take up less space than they already do. Waiting for someone, <strong>anyone</strong>, to come. To explain. To hold them. To say it's finished. But the only possible source of comfort is also the source of the pain. No one comes. Minutes stretch into hours. Hours into morning. The alarm never shuts off.</p>
-          <ul class="p-0 list-style-5 text-medium text-deep-pink margin-20px-bottom">
-            <li><em>Forced to make sense of it alone, the child's body writes a rule that will travel with them for years: "I am alone in danger." The brain wires for vigilance and self-blame, not because something is wrong with the child, but because that conclusion was the only one available.</em></li>
-          </ul>
-          <p class="text-medium text-white">In another version of that same night, the caregiver eventually returns. The anger is gone, replaced by a confusing tenderness. An apology, maybe. Tears, perhaps. <em>I love you. I didn't mean it.</em> The child desperately wants to believe them. Does believe them, because they have no other option. But the body doesn't follow. The small shoulders stay hunched. The breath doesn't fully return.</p>
-          <ul class="p-0 list-style-5 text-medium text-deep-pink margin-20px-bottom">
-            <li><em>The person who caused the pain is now the one offering comfort. The message lands in the nervous system as permanent contradiction: love is unpredictable. Safety can vanish without warning, and return without explanation.</em></li>
-          </ul>
-        </div><!-- RIGHT COLUMN: Neglect and Attachment Trauma -->
-        <div class="col-lg-6 col-md-12 padding-five-all sm-padding-40px-all trauma-pane">
-          <h6 class="alt-font text-white-2 opacity-7 margin-10px-top"><u>Neglect and Attachment Trauma</u></h6>
-          <h5 class="font-weight-600 text-white alt-font">Where the Void Becomes a Wound</h5>
-          <p class="text-medium text-white">A small child sits in a quiet room, an invisible antenna raised, scanning the silence. Their body is entirely still, a held breath, a subtle brace in the shoulders, a tightness around the eyes that has no name yet. They are waiting. Not for a sound, but for a signal: <strong>proof of their own existence.</strong></p>
-          <p class="text-medium text-white">Somewhere in the house, the parents move about, yet even in their presence, the child is entirely alone.</p>
-          <p class="text-medium text-white">A plea goes out, a drawing left carefully on the table, a tower of blocks built where it will be seen. A biological imperative: <em>be seen, be met, be answered.</em> <em>Serve-and-return.</em> But what comes back is <em>serve-and…nothing.</em> No anger. No warmth. Just a silence that lands with the full weight of a slammed door.</p>
-          <ul class="p-0 list-style-5 text-medium text-deep-pink margin-20px-bottom">
-            <li><em>The child's body registers the impact without having language for it: stomach clenching, a cold prickle across the skin, the specific hollow of a need that sent out a signal and received nothing back. Safety is not gone. It was never there to begin with.</em></li>
-          </ul>
-          <p class="text-medium text-white">Alone with the echoing non-event, the small brain, desperate for a rule, any rule, that makes the world predictable, concludes the only thing available to it: <strong class="text-deep-pink">my needs are the problem. To be safe, I must not have them.</strong></p>
-          <h6 class="alt-font text-white margin-20px-bottom">The Two Paths of the Unseen Child</h6>
-          <p class="text-medium text-white"><strong class="text-deep-pink">One child implodes.</strong> They learn to shrink, to vanish, to take up as little space as possible. Joy and pain both get turned down to whispers. The heart rate lowers, not from calm, but from collapse. Safety through self-erasure. Disappearing as a survival strategy.</p>
-          <p class="text-medium text-white"><strong class="text-deep-pink">Another explodes.</strong> They learn that chaos is the only way to make a shape in the void. They get louder, bigger, harder to manage, a body-level scream for contact. Attention proves existence. Even angry attention is oxygen. They become the "problem child", not because something is wrong with them, but because they found the only strategy that sometimes worked.</p>
-          <ul class="p-0 list-style-5 text-medium text-deep-pink margin-20px-bottom">
-            <li><em>The source of survival, the parent, is also the source of the void. The message lands as contradiction: connection requires self-abandonment. Being seen requires becoming someone other than who you are.</em></li>
-          </ul>
-        </div>
-      </div><!-- Bottom Quote Panel -->
-      <!-- Bottom Quote Panel -->
-      <div class="row justify-content-center margin-50px-top">
-        <div class="col-xl-9 col-lg-10">
-          <div class="quote-panel alt-font text-white-2">
-            <p><strong>Both paths lead to the same scar.</strong> <em>One bruises the body. The other starves the spirit.</em> Whether through chaos or neglect, the nervous system learns the same lesson: <strong>love is conditional</strong>, <em>safety uncertain</em>, and survival depends on <strong>staying alert.</strong></p>
-
-            <p><em>Here lies the cruel symmetry of trauma:</em> visible harm and invisible absence converge in the body's wiring. What is never named as abuse still registers as threat, keeping the alarm running long after the danger has passed.</p>
-
-            <p><strong><span class="text-deep-pink">This is the key:</span></strong> repeated fear or disconnection without resolution is where the <strong>psychological</strong> meets the <strong>physiological.</strong> What is later dismissed with a casual <em>“just get over it”</em> may already have shaped a body to survive what it was never meant to endure.</p>
-
-            <p><strong>This is how physical trauma rewires us, and how neglect becomes its own form of violence:</strong> quiet, cumulative, devastating. <strong>This is the engine of toxic stress.</strong></p>
-
-            <div class="margin-40px-top padding-35px-all bg-extra-dark-gray border-radius-6px">
-              <h5 class="alt-font text-white margin-15px-bottom">
-                <span class="text-deep-pink">//</span> The Loved-One Paradox
-              </h5>
-
-              <p>Sometimes the deepest wound is not only the trauma itself, but the relationship it happens inside.</p>
-
-              <p>A stranger can harm you and leave terror behind. But when the harm comes from a parent, caregiver, partner, or trusted loved one, the injury carries another layer. The person who should represent safety becomes part of the danger. The person the child may need for comfort, food, shelter, protection, and identity may also be the person creating the fear, or failing to stop it.</p>
-
-              <p>This is where attachment becomes complicated. A child cannot simply walk away from the person they depend on. So the nervous system is forced into a brutal contradiction: <strong class="text-deep-pink">recognize the danger clearly and risk losing the attachment, or preserve the attachment by minimizing, excusing, compartmentalizing, forgetting, or blaming themselves for what happened.</strong></p>
-
-              <p>That does not make the trauma less real. It makes the survival strategy more understandable. The child may accept the apology. They may run back toward the same person who hurt them. They may bury the truth, soften it, explain it away, or turn the blame inward because attachment is not optional to a child. Attachment is survival.</p>
-
-              <p class="margin-0"><em><a href="https://susanzola.com/wp-content/uploads/8.What-is-a-Betrayal-Trauma-Jennifer-Freyd.pdf" target="_blank" rel="noopener noreferrer" class="text-deep-pink">Betrayal trauma theory</a> offers one lens for understanding this paradox. I am not presenting it as a perfect explanation for every survivor's experience. I am offering it as a useful theory, and a painfully important dynamic to consider: sometimes trauma does not only teach the body that the world is unsafe. It teaches the child that love, danger, comfort, and betrayal can all wear the same face.</em></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community &amp; mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
+    <!-- Back to top button -->
+    <div class="sk__back-to-top-wrap">
+      <a class="sk__back-to-top" href="#smooth-content"><span class="sk__back-to-top"></span></a>
+    </div>
 
-      <section class="bg-light-gray wow animate__fadeIn" id="skip">
-        <div class="container">
-          <div class="row align-items-center">
-            <!-- LEFT: Video Thumbnail with Click-to-Watch -->
-            <div class="col-lg-6 text-center fit-videos wow animate__fadeInLeft">
-              <p class="text-medium alt-font text-extra-dark-gray margin-20px-bottom">Nadine Burke Harris: Healing From Toxic Stress</p><!-- Clickable YouTube Block -->
-               <a class="position-relative d-block rounded-3 overflow-hidden shadow-lg" href="https://www.youtube.com/watch?v=Ta5tbuFVkHY" rel="noopener" style="text-decoration:none;" target="_blank"><img alt="Watch: Nadine Burke Harris: Healing From Toxic Stress" class="w-100 rounded-3" src="https://img.youtube.com/vi/Ta5tbuFVkHY/hqdefault.jpg"> <span class="position-absolute top-50 start-50 translate-middle bg-deep-pink text-white rounded-circle" style="width:72px;height:72px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.25);"><i class="fas fa-play"></i></span> <span class="position-absolute bottom-0 start-0 w-100 py-2 px-3 bg-extra-dark-gray" style="background:rgba(0,0,0,.55); color:#fff; font-weight:500;">Watch on YouTube</span></a>
-              <p class="text-small text-uppercase letter-spacing-1 margin-10px-top text-extra-medium-gray"><em>In this installment of the ACEs Aware Storytelling Series, Dr. Burke Harris explains how the body’s stress response becomes toxic in the face of early adversity, and outlines evidence-based practices that support regulation and resilience.</em></p>
-            </div><!-- RIGHT: Copy -->
-            <div class="col-lg-6 wow animate__fadeInRight">
-              <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">From Alarm to Adaptation</span>
-              <h2 class="seo-h2 alt-font text-extra-dark-gray font-weight-600">Why understanding the biological shift from stress to disease matters</h2>
-              <p>Dr. Burke Harris maps the path from early exposures to the chronic activation of the nervous system, showing how repeated danger not only shapes behaviour, but rewires the brain, hormonal systems, and immune system.</p>
-              <p>Even when the stress response has been running in high gear for years, there are evidence-based ways to recalibrate it. The practices she highlights, from mindfulness to healthy relationships to consistent regulation habits, are accessible and within reach.</p>
-              <p>This is not only about childhood trauma. It is about understanding how hidden stress becomes <em>toxic</em>, how it can contribute to physical illness, and why recovery must include the nervous system.</p>
-              <blockquote class="border-color-deep-pink">
-                <p>“High doses of adversity in children actually change the way their brains develop … their immune systems, their hormonal systems, and even the way their <a href="epigenetics" class="text-deep-pink">DNA is read and transcribed</a>.”<br><span class="text-small">Dr. Nadine Burke Harris</span></p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section><!-- THE ADDICTION LINK -->
-      <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image: url('images/bg-1.jpg')">
-        <div class="opacity-full-dark bg-extra-dark-gray"></div>
-        <div class="container position-relative">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <h2 class="seo-h2 font-weight-600 text-white alt-font">The Addiction Link: <strong>Why Substances Hit Harder</strong></h2>
-              <p class="text-medium text-white">This is the missing piece: <strong>relief can feel categorically different when you live in survival mode.</strong></p>
-              <p class="text-white-2 text-medium"><strong><span class="text-large text-deep-pink">//</span> For someone with reliable access to regulation, a drink or drug may feel intensely pleasant.</strong></p>
-              <p class="text-white-2 text-medium"><strong><span class="text-large text-deep-pink">//</span> For someone living in chronic survival mode, <em class="text-deep-pink">it can feel like peace or safety arriving for the first time.</em></strong></p>
-              <p class="text-medium text-white">That contrast can be difficult to explain to someone who has always had some access to calm. For one person, the substance feels good. For another, it can feel like the sudden arrival of something that has been missing for years, perhaps for a lifetime. The brain does not simply record, <em>“this feels good.”</em> It can learn something far more powerful:</p>
-              <p class="text-large text-white-2 alt-font line-height-34 margin-30px-tb"><em>“This isn't just pleasure. This is safety. This is peace. This is connection. This is acceptance. This is love. This is whatever I have been missing, even if I never had a name for it.”</em></p>
-              <p class="text-medium text-white">When relief feels like all of those things at once, the fact that it is synthetic can seem almost irrelevant. You may not know exactly what has been missing. You only know that this, <em>whatever this is</em>, is the closest your body has come to quiet.</p>
-              <blockquote class="border-color-deep-pink bg-transparent padding-30px-all margin-40px-top margin-40px-bottom">
-                <p class="text-white">Chronic stress can blunt dopamine sensitivity and diminish the capacity for joy, motivation, and connection. Substances can overwhelm that circuit with an artificial surge. That is why they may not feel like recreation. They can feel like <strong>relief.</strong> Sometimes like <strong>salvation.</strong> For a nervous system unfamiliar with calm, the distinction can become dangerously thin.</p>
-              </blockquote>
-              <p class="text-medium text-white">Substances do more than “feel good.” They can temporarily do what the autonomic nervous system is struggling to do: bring the body down from the ledge and provide a counterfeit form of regulation. Addiction becomes less about chasing a high and more about chasing a <strong>nervous-system reset.</strong> That is why trauma-born addiction can feel so biologically compelling. It becomes a <strong>learned solution to an unbearable allostatic load.</strong> It works, until the cost of the solution exceeds the cost of the problem.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bg-light-gray">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft"><img alt="" class="w-100 shadow-lg rounded-3" src="images/webp/suppressed-brain.webp"></div>
-            <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
-              <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">The Hope:</span>
-              <h2 class="seo-h2 alt-font text-extra-dark-gray font-weight-600">Rewiring for Peace</h2>
-              <p>This wiring is powerful, but it is not permanent. The brain can change when it receives what it lacked: <strong>safety, tools, and support.</strong> <a href="neuroplasticity" class="text-deep-pink">Neuroplasticity</a> means the same brain that learned survival can also learn to settle and build new patterns that support sobriety.</p>
-              <p>For many of us, myself included, recovery isn't about returning to some stable self that existed before the damage. <strong>There is no <em>before</em> to go back to.</strong> It's about building something that was never there. That's harder, stranger, and more disorienting than anyone tells you. It's also more real.</p>
-              <blockquote class="border-color-deep-pink">
-                <p>That's what makes healing confusing, frightening, disorienting, and profoundly courageous.</p>
-              </blockquote>
-              <p>So where do you begin? Not with perfection. Not by erasing the past. You begin with <strong>noticing.</strong> The next time you feel keyed up or shut down, pause long enough to name it: <em>"This is my nervous system doing its job."</em> That simple act of awareness is the first step toward giving it a new one.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="wow animate__fadeIn position-relative padding-80px-tb md-padding-50px-tb" style="background: #1a1a1a;">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-7">
-              <div style="border-left: 3px solid #ff1463; padding-left: 1.75rem;">
-                <p class="alt-font text-white-2 line-height-34 mb-0" style="font-size: 1.2rem; opacity: 0.95;">Does this page describe something you've felt but never had words for?<br>
-                <strong class="text-white">If so, you're not broken. You've adapted.</strong><br>
-                <span style="color: rgba(255,255,255,0.65);">And if you've adapted once, you can do it again.</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="extra-big-section parallax wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background-image: url('images/healthy-brain-bg.png');">
-        <div class="opacity-full-dark bg-extra-dark-gray"></div>
-        <div class="container position-relative">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h5 class="alt-font text-white font-weight-600 mb-4 position-relative d-inline-block" style="font-size: 2.4rem;"><span class="text-deep-pink">//</span> Final Word</h5>
-              <div class="separator-line-horrizontal-full bg-deep-pink opacity-8 w-60 mx-auto h-2px mb-5"></div>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-7 text-start final-word-body">
+    <!-- Mobile menu bar -->
+    <div class="sk__mobile-menu-bar"></div>
+    <a class="sk__mobile-main-logo" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
 
-              <p class="text-white-2 text-medium line-height-30 mb-5">If this page brought something up, perhaps recognition, grief, or anger you could not name before, that does not mean you have gone somewhere wrong. It may be what happens when something that lived wordlessly in the body finally gets a name.</p>
+    <!-- Navigation -->
+    <nav id="main-nav" style="opacity: 0;" class="sk__menu navbar sk__navbar navbar-expand-lg navbar-dark static-top">
 
-              <p class="text-white-2 text-medium line-height-30 mb-5">Understanding toxic stress doesn't ask you to forgive the past, minimize it, or rush toward anything. It asks something quieter: that you consider the possibility that what happened to you was real, that your responses to it made sense, and that the version of you who survived was doing the only thing available.</p>
+      <a class="navbar-brand" href="index"><img id="sk__main-logo" alt="Recover-You" src="images/recover-you-logo-white.png"></a>
 
-              <p class="text-white-2 text-medium line-height-30 mb-4">You were not broken. You were trained, biologically, relentlessly, without your consent, to survive in conditions where safety was scarce or absent. Substances worked not because you were weak, but because they solved a real problem your body couldn't solve on its own.</p>
+      <ul class="navbar-nav ms-auto">
 
-              <p class="text-deep-pink alt-font mb-5" style="font-size: 1.1rem; font-style: italic; line-height: 1.8;">That truth is not easy to sit with. But it is honest. And honest is where recovery actually starts.</p>
+        <li data-nav-custom-content class="custom-content sk__mobile-menu-logo">
+          <a class="sk__mobile-navbar-brand" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+        </li>
 
-              <div class="final-word-triptych mb-5">
-                <p class="text-white-2 text-medium line-height-30"><em>When survival is understood, it can be renegotiated.</em></p>
-                <p class="text-white-2 text-medium line-height-30"><em>When the nervous system is seen clearly, it can be rewired deliberately.</em></p>
-                <p class="text-white-2 text-medium line-height-30"><em>When the story finally makes sense, recovery stops being a mystery. It becomes a direction you can actually move in.</em></p>
-              </div>
+        <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
 
-              <p class="text-white-2 text-medium line-height-30 mb-5">For many of us, there is no stable baseline waiting underneath the chaos. Peace isn't a place we return to. <strong>It's something we build</strong>, slowly, with evidence, in a nervous system that is learning for the first time that it's allowed to rest. The process is not linear. It is not fast. <em>But it is possible.</em></p>
+        <!-- 1. Orientation -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Start Here</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-this-site-exists">Why This Site Exists</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-me">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="start-here">Start Here</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-coaches">For Frontline Workers</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-loved-ones">For Loved Ones</a></li>
+          </ul>
+        </li>
 
-              <p class="alt-font text-white mb-0" style="font-size: 1.15rem; font-weight: 600; line-height: 1.75; border-top: 2px solid #ff1463; padding-top: 1.5rem;"><strong class="text-deep-pink">Recovery stops being a moral struggle the moment it becomes a biological negotiation you finally have the tools to act on.</strong></p>
+        <!-- 2-4. Trauma Foundations -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Trauma Foundations</a>
+          <ul class="sk__submenu-ul">
 
-            </div>
-          </div>
-        </div>
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Core Concepts</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="what-is-trauma">What Is Trauma</a></li>
+                <li class="nav-item"><a class="nav-link" href="what-is-cptsd">What Is C-PTSD</a></li>
+                <li class="nav-item"><a class="nav-link" href="attachment">Attachment Styles</a></li>
+                <li class="nav-item"><a class="nav-link" href="toxic-stress">Toxic Stress</a></li>
+                <li class="nav-item"><a class="nav-link" href="shame-grief-false-self">Shame, Grief &amp; The False Self</a></li>
+                <li class="nav-item"><a class="nav-link" href="cptsd-behaviours">CPTSD Patterns</a></li>
+                <li class="nav-item"><a class="nav-link" href="four-trauma-responses">Trauma Responses</a></li>
+                <li class="nav-item"><a class="nav-link" href="aces-high">ACEs &amp; Risk</a></li>
+                <li class="nav-item"><a class="nav-link" href="dunedin-study">The Dunedin Study</a></li>
+              </ul>
+            </li>
 
-      </section><!-- start footer -->
-        
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Brain &amp; Body</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="brain-on-fire">Brain on Fire</a></li>
+                <li class="nav-item"><a class="nav-link" href="when-sobriety-feels-worse">When Sobriety Feels Worse</a></li>
+                <li class="nav-item"><a class="nav-link" href="neuroplasticity">Neuroplasticity</a></li>
+                <li class="nav-item"><a class="nav-link" href="critical-window">Critical Windows</a></li>
+                <li class="nav-item"><a class="nav-link" href="epigenetics">Epigenetics</a></li>
+                <li class="nav-item"><a class="nav-link" href="trauma-does-not-expire">Trauma Doesn't Expire</a></li>
+                <li class="nav-item"><a class="nav-link" href="dohad">DOHaD: Developmental Origins</a></li>
+                <li class="nav-item"><a class="nav-link" href="metabolism">Metabolism</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-hijacked-engine">The Hijacked Engine</a></li>
+              </ul>
+            </li>
 
-      <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
-        <video id="learnMoreBg" autoplay="" muted="" loop="" playsinline="" class="learn-more-bg">
-          <source src="video/learn-more-bg.mp4" type="video/mp4">
-        </video>
+            <li class="nav-item"><a class="nav-link" href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a></li>
+          </ul>
+        </li>
 
-        <div class="container position-relative z-index-2">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
-              <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
-              <p class="learn-more-subtitle">
-                Follow the next step in order, or branch out into related topics.
-              </p>
-            </div>
-          </div>
+        <!-- 5. A Critical Lens -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">A Critical Lens</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a></li>
+            <li class="nav-item"><a class="nav-link" href="problem-with-aa">Limits of the AA Model</a></li>
+            <li class="nav-item"><a class="nav-link" href="misdiagnosed">When Trauma Is Misdiagnosed</a></li>
+            <li class="nav-item"><a class="nav-link" href="disease-of-addiction">The &ldquo;Disease of Addiction&rdquo; Debate</a></li>
+            <li class="nav-item"><a class="nav-link" href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a></li>
+            <li class="nav-item"><a class="nav-link" href="better-model-of-care">What Better Care Requires</a></li>
+            <li class="nav-item"><a class="nav-link" href="trauma-avoidant">When Trauma Is Avoided</a></li>
+            <li class="nav-item"><a class="nav-link" href="compassionate-care">Compassionate Care: A Critique</a></li>
+          </ul>
+        </li>
 
-          <div class="learn-more-divider mx-auto"></div>
+        <!-- 6-9. Healing & Tools -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Healing &amp; Tools</a>
+          <ul class="sk__submenu-ul">
 
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Therapeutic Models</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="cbt">CBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="dbt">DBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="life-traps">Life Traps (Schema Therapy)</a></li>
+                <li class="nav-item"><a class="nav-link" href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a></li>
+                <li class="nav-item"><a class="nav-link" href="types-of-therapy">Therapy Types</a></li>
+                <li class="nav-item"><a class="nav-link" href="role-of-therapy">The Role of Therapy</a></li>
+              </ul>
+            </li>
 
-            <!-- Up Next -->
-            <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
-              <a class="learn-card is-next category-trauma" href="shame-grief-false-self">
-                <span class="learn-card-label">Up Next</span>
-                <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-                <div class="learn-card-title alt-font">The Mask You Wear</div>
-                <p>How shame builds a false self, and why grief is the way through.</p>
-              </a>
-            </div>
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Practical Tools &amp; Skills</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="chart-your-life">Chart Your Life</a></li>
+                <li class="nav-item"><a class="nav-link" href="distorted-thinking">Distorted Thinking</a></li>
+                <li class="nav-item"><a class="nav-link" href="regulation-tools">Regulation Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="reality-test">Reality Testing</a></li>
+                <li class="nav-item"><a class="nav-link" href="relationships">Relationships in Recovery</a></li>
+                <li class="nav-item"><a class="nav-link" href="connection">Connection</a></li>
+              </ul>
+            </li>
 
-            <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-              <a class="learn-card" href="aces-high">
-                <span class="learn-card-label learn-card-label--explore">Explore</span>
-                <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-                <div class="learn-card-title alt-font">Your Invisible Score</div>
-                <p>How childhood adversity leaves a measurable, lifelong imprint on behaviour.</p>
-              </a>
-            </div>
-            <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-              <a class="learn-card" href="epigenetics">
-                <span class="learn-card-label learn-card-label--explore">Explore</span>
-                <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-                <div class="learn-card-title alt-font">Trauma's Biological Fingerprint</div>
-                <p>Adversity rewires gene expression, and recovery can change it back.</p>
-              </a>
-            </div>
-            <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-              <a class="learn-card" href="brain-on-fire">
-                <span class="learn-card-label learn-card-label--explore">Explore</span>
-                <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-                <div class="learn-card-title alt-font">Brain on Fire</div>
-                <p>How trauma and addiction hijack the brain, and why willpower can't fix it.</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="wow animate__fadeIn bg-light-gray" id="sources">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="seo-h2 alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h2>
-              <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-<ol class="list-style-9 text-small text-medium-gray">
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Identity &amp; Growth</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a></li>
+                <li class="nav-item"><a class="nav-link" href="spirituality">Spirituality</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-resilience-lie">The Resilience Lie</a></li>
+              </ul>
+            </li>
 
-                <li id="ref-shonkoff-2012">
-                  Shonkoff, J. P., et al. (2012). <strong>The lifelong effects of early childhood adversity and toxic stress.</strong>
-                  <em>Pediatrics, 129</em>(1), e232-e246. Seminal American Academy of Pediatrics policy statement authored by the Harvard Center on the Developing Child. Distinguishes positive, tolerable, and toxic stress; documents how prolonged activation of stress response systems without an adequate adult buffer disrupts brain architecture, immune function, metabolic systems, and cardiovascular health in ways that persist across the lifespan.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/22201156/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
+          </ul>
+        </li>
 
-                <li id="ref-harvard-toxic-stress">
-                  Center on the Developing Child at Harvard University. (n.d.). <strong>Toxic Stress.</strong>
-                  The foundational public-facing resource defining toxic stress and the role of the adult buffering relationship in moderating its biological effects.
-                  <a class="text-deep-pink" href="https://developingchild.harvard.edu/science/key-concepts/toxic-stress/" rel="noopener" target="_blank">Access Harvard Resource</a>
-                </li>
+        <!-- 9. Resources -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="resources">Resources</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="resources">All Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-detox">Detox &amp; Stabilization</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-treatment-centres">Treatment Centres</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-trauma-therapy">Trauma Therapy &amp; Mental Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-alberta-health">Navigating Alberta Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-books-tools">Books, Journals &amp; Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-prominent-voices">Prominent Voices</a></li>
+            <li class="nav-item"><a class="nav-link" href="tfr-model">The TFR Model</a></li>
+          </ul>
+        </li>
 
-                <li id="ref-mcewen-2007">
-                  McEwen, B. S. (2007). <strong>Physiology and neurobiology of stress and adaptation: Central role of the brain.</strong>
-                  <em>Physiological Reviews, 87</em>(3), 873-904. A widely cited review detailing how chronic stress alters hippocampal structure and function, including reduced neurogenesis, dendritic atrophy, and impaired memory consolidation, with glucocorticoids identified as a key mediating mechanism. Also highlights the brain's capacity for partial recovery under supportive conditions.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17615391/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
+        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
 
-                <li id="ref-mcewen-1998">
-                  McEwen, B. S. (1998). <strong>Stress, adaptation, and disease: Allostasis and allostatic load.</strong>
-                  <em>Annals of the New York Academy of Sciences, 840</em>, 33-44. The foundational paper that defined the concept of allostatic load, the cumulative physiological cost of chronic stress, and established the framework for understanding how sustained dysregulation damages body systems over time.
-                  <a class="text-deep-pink" href="https://doi.org/10.1111/j.1749-6632.1998.tb09546.x" rel="noopener" target="_blank">View via DOI</a>
-                </li>
+      </ul>
+    </nav>
+    <!-- /.sk__menu -->
+    <div id="smooth-wrapper" class="pushable-content">
+      <div id="smooth-content">
 
-                <li id="ref-mcewen-gianaros-2011">
-                  McEwen, B. S., &amp; Gianaros, P. J. (2011). <strong>Stress- and allostasis-induced brain plasticity.</strong>
-                  <em>Annual Review of Medicine, 62</em>, 431-445. Reviews the biological consequences of allostatic overload, elevated inflammatory markers, HPA dysregulation, hippocampal atrophy, cardiovascular strain, and immune suppression, and examines associations between chronic stress and increased risk of heart disease, metabolic disorders, and premature mortality.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/20707675/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
-
-                <li id="ref-guidi-2021">
-                  Guidi, J., Lucente, M., Sonino, N., &amp; Fava, G. A. (2021). <strong>Allostatic load and its impact on health: A systematic review.</strong>
-                  <em>Psychotherapy and Psychosomatics, 90</em>(1), 11-27. A systematic review synthesizing evidence on allostatic load and its associations with poorer health outcomes across cardiovascular, immune, metabolic, and neurological systems.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/32799204/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
-
-                <li id="ref-bremner-2006">
-                  Bremner, J. D. (2006). <strong>Traumatic stress: Effects on the brain.</strong>
-                  <em>Dialogues in Clinical Neuroscience, 8</em>(4), 445-461. A key review documenting how chronic HPA axis activation from traumatic stress produces measurable structural changes in the prefrontal cortex (reduced volume), amygdala (heightened reactivity), and hippocampus (glucocorticoid-driven atrophy), the three brain regions most directly implicated in toxic stress outcomes.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
-
-                <li id="ref-koob-volkow-2016">
-                  Koob, G. F., &amp; Volkow, N. D. (2016). <strong>Neurobiology of addiction: A neurocircuitry analysis.</strong>
-                  <em>The Lancet Psychiatry, 3</em>(8), 760-773. Details how chronic stress dysregulates mesolimbic dopamine circuitry, reducing baseline reward sensitivity and increasing the salience of substance-related cues. Provides the neurobiological basis for understanding why trauma-exposed individuals experience blunted pleasure and heightened vulnerability to addiction.
-                  <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/27475769/" rel="noopener" target="_blank">View PubMed Record</a>
-                </li>
-
-                <li id="ref-burke-harris-2018">
-                  Burke Harris, N. (2018). <strong>The Deepest Well: Healing the Long-Term Effects of Childhood Adversity.</strong>
-                  Houghton Mifflin Harcourt. Connects ACE science, toxic stress biology, and long-term health outcomes, translating the clinical and neurobiological research into accessible clinical and community frameworks.
-                  <a class="text-deep-pink" href="https://www.goodreads.com/book/show/33413909-the-deepest-well" rel="noopener" target="_blank">View on Goodreads</a>
-                </li>
-
-                <li id="ref-vdk-2014">
-                  Van der Kolk, B. A. (2014). <strong>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</strong>
-                  Viking. Seminal text on how trauma and chronic stress are stored in the body and autonomic nervous system, and why healing requires addressing these systems directly rather than through cognitive approaches alone.
-                  <a class="text-deep-pink" href="https://www.goodreads.com/book/show/18693771-the-body-keeps-the-score" rel="noopener" target="_blank">View on Goodreads</a>
-                </li>
-
-                <li id="ref-mate-2008">
-                  Maté, G. (2008). <strong>In the Realm of Hungry Ghosts: Close Encounters with Addiction.</strong>
-                  Knopf Canada. Argues that addiction is most accurately understood as a response to the unbearable pain of early adversity and developmental stress, directly linking the toxic stress framework to compulsive substance use.
-                  <a class="text-deep-pink" href="https://drgabormate.com/book/in-the-realm-of-hungry-ghosts/" rel="noopener" target="_blank">View on Dr. Maté's Site</a>
-                </li>
-
-              </ol>
-              <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These references support the scientific and clinical concepts of toxic stress, allostatic load, neurobiology, and the link between childhood adversity and addiction. They are for educational context, not medical advice.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
+        <!-- ============================= HERO ============================= -->
+        <section class="ry-page-hero" id="page-hero">
+          <div class="ry-page-hero__bg" style="background-image:url('images/webp/toxic-stress-hero.webp');"></div>
+          <div class="ry-page-hero__scrim"></div>
+          <div class="container ry-page-hero__inner">
             <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community &amp; mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
-                </div>
+              <div class="col-12 col-lg-9">
+                <span class="ry-hero-eyebrow">Trauma Foundations</span>
+                <h1 class="ry-page-hero__title">Toxic Stress</h1>
+                <p class="ry-page-hero__sub">The Paradox of Survival</p>
+              </div>
             </div>
+          </div>
+          <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+        </section>
+
+        <!-- ====================== ASH FIELD + OPENING ====================== -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <section id="why">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+
+                <span class="ry-readtime">14 min read</span>
+
+                <a class="ry-pdf-card" href="assets/website-pdfs/Toxic-Stress.pdf" download="Toxic-Stress-Recover-You.pdf" data-fathom-event="download-pdf-toxic-stress" aria-label="Download the full Toxic Stress page as a printable PDF, 13 pages, 885 KB">
+                  <span class="ry-pdf-card__icon" aria-hidden="true">PDF</span>
+                  <span class="ry-pdf-card__body">
+                    <span class="ry-pdf-card__eyebrow">Prefer paper?</span>
+                    <span class="ry-pdf-card__title">Take this entire page with you</span>
+                    <span class="ry-pdf-card__sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</span>
+                    <span class="ry-pdf-card__meta">
+                      <span>PDF</span><span>13 pages</span><span>885 KB</span><span>Free</span>
+                    </span>
+                  </span>
+                  <span class="ry-pdf-card__action">Download &darr;</span>
+                </a>
+
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> The <strong>Elegant</strong>, <strong class="ry-hl">Devastating</strong> Wiring You Never Asked For</h2>
+
+                  <div class="ry-note">
+                    <p><strong>Toxic stress is the prolonged or repeated activation of the body's stress response without enough support to recover from it.</strong> Unlike ordinary stress, which spikes and then resets, toxic stress keeps the nervous system stuck in survival mode, gradually reshaping the brain, hormones, and body. In adults, it is closely linked to anxiety, chronic illness, and a heightened vulnerability to addiction.</p>
+                  </div>
+
+                  <p>When childhood adversity goes unmet by adequate support, it doesn't just leave emotional scars. <em>It rewrites the brain's operating system.</em> What should have been wired for growth gets rewired for survival. A young brain, flooded with stress hormones, adapts to a constant state of alarm. This is toxic stress: the unseen architect of a nervous system built for war, not for peace.</p>
+
+                  <p>And here's what most people miss: <strong>this isn't some dusty childhood relic we leave behind.</strong> It travels forward. A live wire running through adult life. Through the inexplicable impulsivity. The shutdowns that arrive without warning. The <strong><a href="brain-on-fire">vulnerability to addiction</a></strong> that feels like a life sentence with no mechanism for appeal.</p>
+
+                  <p>Here's the part rarely explained in recovery circles: when the <em>autonomic nervous system</em>, the body's automatic pilot for heart rate, breathing, and digestion, gets stuck in chronic dysregulation, it becomes part of what keeps the suffering going. The system designed to bring you back to baseline can no longer do that job reliably. <em class="ry-hl">Relief stops arriving on its own. It has to be found somewhere else.</em></p>
+
+                  <p>That is why the nervous system starts hunting for substitutes. Substances can stop feeling optional and start feeling <strong>necessary.</strong> Not because you are weak, but because your biology is trying to find relief with whatever is available.</p>
+
+                  <blockquote class="ry-pullquote">
+                    <p>With what we now know from psychology and neuroscience, <strong>toxic stress offers one of the <span class="ry-hl">clearest lenses</span> for understanding trauma-born addiction.</strong> For someone carrying both severe addiction and a trauma history, finding a framework that finally makes sense of their experience can be life-changing.</p>
+                  </blockquote>
+
+                  <p>I know this because I lived it. Sobriety without addressing the trauma underneath did not bring peace. It magnified the chaos. I never dared admit it then, but being sober with an unhealed nervous system felt worse than using.</p>
+
+                  <p>Worse meant self-hate. With the buffer gone, I was left sitting with the consequences of my actions and the pain I had caused. My body was in revolt too. The sickness in my stomach. The twisting anxiety. Constantly cold hands and feet. Hands that shook violently.</p>
+
+                  <p>As awful as those symptoms were, they paled beside the war of attrition occurring in the grey matter. Shame over every choice. Regret. The belief that I was not fixable, that there were wires crossed somewhere in my soul with no way to correct them. I knew in my bones that sobriety and recovery were for other people. Never for me. I believed addiction would claim me eventually.</p>
+
+                  <p>Being alone with my thoughts was a special kind of hell. I had to keep moving or at least stay distracted. Television, music, games, anything. Never silence. Anything but that.</p>
+
+                  <p>The first crack in that belief came when I watched Dr. Nadine Burke Harris's TED Talk on ACEs. It was my first real <em>aha</em> moment, the one that set everything else in motion. For the first time, I could see that what I was experiencing might have an explanation beyond moral failure.</p>
+
+                  <p>Healing did not begin because the consequences disappeared. It began when I understood the machinery underneath them. Toxic stress was wiring I never asked for, doing what it had learned to do. That knowledge did not absolve me of responsibility. It gave me somewhere real to begin.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
-    </section><!-- start services section -->
+        <!-- /.ry-ashfield -->
 
-    <!-- ========== NEW FOOTER & PRIVACY ========== -->
-    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
-      <div class="container">
-        <div class="site-footer__inner">
-
-          <div class="site-footer__left alt-font text-small font-weight-500">
-            <a href="contact">GET IN TOUCH</a>
-            <span class="footer-sep">|</span>
-            <a href="#" id="open-privacy-policy">Privacy Policy</a>
-          <span class="footer-sep">|</span>
-          <a href="sitemap">Site Map</a>
+        <!-- ================ SPLIT: WHAT TOXIC STRESS DOES ================ -->
+        <section class="ry-split ry-split--reverse" id="the-science">
+          <div class="ry-split__figure">
+            <img src="images/webp/brain-stress.webp" alt="A layered illustration: a couple arguing behind a poster of a brain crackling with red lightning bolts under the word STRESS" width="625" height="725" loading="lazy" decoding="async">
           </div>
-
-          <div class="site-footer__center">
-            <a href="index">
-              <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
-            </a>
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> The Science</span>
+            <h2 class="ry-eyebrow-h">What Toxic Stress Does</h2>
+            <p>Stress is supposed to rise and fall. The body mobilizes, then resets. Toxic stress develops when that reset repeatedly fails and the stress systems remain switched on.</p>
+            <ul>
+              <li><strong>SAM Axis (Sympatho-Adreno-Medullary <span class="ry-hl">//</span> Adrenaline):</strong> Fires instantly, preparing the body for fight or flight. Heart races, breath quickens, muscles tense.</li>
+              <li><strong>HPA Axis (Hypothalamic-Pituitary-Adrenal <span class="ry-hl">//</span> Cortisol):</strong> Kicks in slower, but lasts longer. In short bursts, it helps. In chronic doses, it reshapes the brain.</li>
+            </ul>
+            <p>Key brain regions affected:</p>
+            <ul>
+              <li><strong>Prefrontal Cortex:</strong> The brakes. Responsible for logic and impulse control. Trauma stunts its growth.</li>
+              <li><strong>Amygdala:</strong> The accelerator. The brain's threat-detection system. Trauma strengthens its wiring and keeps it on high alert.</li>
+              <li><strong>Hippocampus:</strong> Memory and context. It helps the brain separate what's happening <em>now</em> from what belongs to the past, and signals when the alarm is safe to shut off. Chronic cortisol exposure shrinks it, weakening both memory and the brain's ability to stand down.</li>
+            </ul>
+            <p><em>These systems don't operate in isolation. When the hippocampus can no longer place experience in time, the stress response stays active as if the threat is still happening, even when it isn't.</em></p>
+            <p>The cumulative wear and tear created by this imbalance is called <em><a href="aces-high">allostatic load</a></em>. Instead of growth, the brain prioritizes vigilance. The autonomic nervous system is central here. The sympathetic branch remains overactive, the parasympathetic branch underfunctions, and the system that should restore calm never fully engages.</p>
+            <blockquote class="ry-pullquote">
+              <p>Toxic stress doesn't just shape emotions. It wears down the body. Research links it to heart disease, diabetes, autoimmune conditions, and shortened lifespan. This is allostatic load made visible.</p>
+            </blockquote>
+            <p>In children, the line between healthy and toxic stress often comes down to a reliable buffer: a caring, attentive adult who helps regulate the child's nervous system and turn off the alarm. Meeting new people, starting school, or falling off a bike are normal developmental stresses the brain can learn from <em>when safety and comfort follow.</em> Without that buffer, or when the caregiver is the source of fear, the child has no reliable way to reset. Safety never arrives. The body stays on high alert. The brain wires for survival instead of growth.</p>
+            <p>Even one consistent, supportive adult can change this trajectory. Safety doesn't erase trauma. But it reshapes how the brain organizes itself around it.</p>
           </div>
+        </section>
 
-          <div class="site-footer__right alt-font text-small font-weight-500">
-            Not medical advice.<br>
-            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+        <!-- ============================================================ -->
+        <!-- ASH FIELD 2 — one continuous field across the three          -->
+        <!-- science sections: stress types, HPA axis, cortisol.          -->
+        <!-- ============================================================ -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <!-- ================== NOT ALL STRESS IS THE SAME ================== -->
+        <section id="stress-types">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Not All Stress Is the Same</h2>
+                  <p>People often talk about stress as if it were a single test of how well you cope. Developmental science identifies <strong>three distinct categories.</strong> The difference is not simply willpower or temperament. It is whether a reliable buffer is present when the alarm goes off.</p>
+                  <p>Safety. Support. Someone who helps the system turn back off. When that buffer is present, stress builds capacity. When it's absent, when the alarm activates and <em>nothing answers it</em>, the body draws a different conclusion: <strong>stay ready. The danger isn't over.</strong></p>
+                  <p>Once you understand these three types, a lot of the confusion dissolves. You stop asking <em>&ldquo;what's wrong with me?&rdquo;</em> and start seeing what actually happened: <strong>a stress response that adapted so completely it forgot how to stop.</strong></p>
+                </div>
+
+                <div class="ry-escalate">
+                  <article class="ry-escalate__card">
+                    <span class="ry-escalate__n">01</span>
+                    <h3 class="ry-escalate__title">Positive Stress</h3>
+                    <p>Brief, manageable stress that comes with support and resolution: trying something new, getting a vaccine, starting school. The system activates, then resets. <strong>This is how resilience is built.</strong></p>
+                  </article>
+                  <article class="ry-escalate__card ry-escalate__card--mid">
+                    <span class="ry-escalate__n">02</span>
+                    <h3 class="ry-escalate__title">Tolerable Stress</h3>
+                    <p>More intense adversity: loss, injury, major disruption, that can still be recovered from when consistent emotional support is present. The response spikes hard, but it gets help finding its way back down.</p>
+                  </article>
+                  <article class="ry-escalate__card ry-escalate__card--high">
+                    <span class="ry-escalate__n">03</span>
+                    <h3 class="ry-escalate__title">Toxic Stress</h3>
+                    <p>Strong, frequent, or prolonged stress without adequate buffering. The danger may be overt, or it may be chronic neglect, instability, unpredictability, or simply the permanent absence of someone who helps the alarm turn off. The key feature is that the system <strong>doesn't shut down.</strong> Over time, survival becomes the default, not a response to a moment, but a permanent operating mode.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
+
+        <!-- ========================== HPA AXIS ========================== -->
+        <section id="hpa-axis">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> The <strong>HPA Axis</strong>: Your Stress System in Two Frames</h2>
+                  <p>The diagrams below show the core stress circuit at the center of trauma, anxiety, and addiction: the <strong>HPA axis</strong> (hypothalamic-pituitary-adrenal system). Its job is simple: detect threat, release stress hormones, and bring the body back to baseline once the danger has passed.</p>
+                  <p><strong>The healthy frame shows it working.</strong> A stressor appears. The brain triggers a brief hormonal cascade. Cortisol is released. The brain detects that cortisol and shuts the system back down. A clean, elegant loop designed for short bursts of survival.</p>
+                  <p><strong>The dysregulated frame shows what happens when chronic stress or early adversity breaks that loop.</strong> The hypothalamus fires too easily. The pituitary over-releases ACTH. Cortisol stays high instead of settling. The feedback signal that should quiet the system begins to fail. Over time, constant activation reshapes the brain, heightens inflammation, and leaves the body stuck in survival mode.</p>
+                  <p>Switch between them and watch what moves. The difference between a nervous system that can return to calm and one that cannot. For many people with trauma histories, this was never a personality flaw. <strong>It was physiology.</strong></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-11 col-xl-10">
+                <div class="ry-compare" id="hpa-compare">
+                  <p class="ry-compare__hint">Choose a state to compare &mdash; the diagram swaps in place</p>
+                  <div class="ry-compare__tabs" role="tablist" aria-label="HPA axis comparison">
+                    <button class="ry-compare__tab" type="button" role="tab" id="hpa-tab-healthy" data-target="hpa-healthy" aria-controls="hpa-healthy" aria-selected="true">
+                      <span class="ry-compare__tab-n">1 / 2</span>
+                      <span class="ry-compare__tab-body">
+                        <strong>Healthy Feedback Loop</strong>
+                        <span>Cortisol is detected. The system stands down and returns to baseline.</span>
+                      </span>
+                    </button>
+                    <button class="ry-compare__tab" type="button" role="tab" id="hpa-tab-dys" data-target="hpa-dysregulated" aria-controls="hpa-dysregulated" aria-selected="false">
+                      <span class="ry-compare__tab-n">2 / 2</span>
+                      <span class="ry-compare__tab-body">
+                        <strong>Dysregulated Feedback Loop</strong>
+                        <span>Feedback fails. Cortisol stays elevated and the alarm never switches off.</span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="ry-compare__stage">
+                    <div class="ry-compare__panel" id="hpa-healthy" role="tabpanel" aria-labelledby="hpa-tab-healthy">
+                      <div class="ry-sheet ry-sheet--diagram">
+                        <img src="images/webp/hpa-axis-healthy.webp" alt="Diagram of a healthy HPA axis: a stress signal triggers CRH from the hypothalamus, ACTH from the pituitary, and cortisol from the adrenal glands. The brain detects the cortisol and the system returns to baseline." width="1000" height="1000" loading="lazy" decoding="async">
+                      </div>
+                      <p class="ry-compare__cap">Healthy HPA axis &mdash; the loop closes. Cortisol is detected, and the system is told to stand down.</p>
+                    </div>
+
+                    <div class="ry-compare__panel" id="hpa-dysregulated" role="tabpanel" aria-labelledby="hpa-tab-dys">
+                      <div class="ry-sheet ry-sheet--diagram">
+                        <img src="images/webp/hpa-axis-dysregulated.webp" alt="Diagram of a dysregulated HPA axis: excess CRH release, persistent ACTH, and chronically elevated cortisol. The feedback signal fails because of reduced NR3C1 receptor sensitivity, so the system cannot return to baseline." width="1000" height="1000" loading="lazy" decoding="async">
+                      </div>
+                      <p class="ry-compare__cap">Dysregulated HPA axis &mdash; the loop stays open. Cortisol stays elevated and the brain can no longer detect the signal to stop.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= WHY CORTISOL HURTS ======================= -->
+        <section id="cortisol">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Too much cortisol is bad. But <em>why?</em></h2>
+                  <p>In short bursts, cortisol is useful, necessary, even. It mobilizes energy, sharpens threat detection, and temporarily suppresses everything non-urgent: inflammation, digestion, reproduction. Your body's operating on a single directive: <em>emergency now, maintenance later.</em> That logic works fine for a sprint. The damage comes when the sprint becomes a marathon.</p>
+                </div>
+
+                <div class="ry-spec-grid ry-spec-grid--4">
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">Hippocampus</span>
+                    <span class="ry-spec-card__role">Memory &amp; Context</span>
+                    <dl>
+                      <dt>Under chronic cortisol</dt>
+                      <dd>
+                        Reduces the growth of new neurons. Existing neurons pull back their connections. Associated with measurable volume reductions over time. Weakens the &ldquo;that was then&rdquo; signal &mdash; the brake on the alarm system.
+                      </dd>
+                    </dl>
+                  </article>
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">Prefrontal Cortex</span>
+                    <span class="ry-spec-card__role">Regulation</span>
+                    <dl>
+                      <dt>Under chronic cortisol</dt>
+                      <dd>
+                        Progressively weakens top-down control. Impairs working memory and flexible thinking. Shifts the brain toward reactive, subcortical systems.
+                      </dd>
+                    </dl>
+                  </article>
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">Amygdala</span>
+                    <span class="ry-spec-card__role">Threat Detection</span>
+                    <dl>
+                      <dt>Under chronic cortisol</dt>
+                      <dd>
+                        Opposite effect: reactivity <em>increases</em>. Lower threat threshold, so the alarm fires sooner. Responses feel sudden because the trigger bar dropped, not because the threat got bigger.
+                      </dd>
+                    </dl>
+                  </article>
+                  <article class="ry-spec-card">
+                    <span class="ry-spec-card__name">Dopamine System</span>
+                    <span class="ry-spec-card__role">Reward &amp; Motivation</span>
+                    <dl>
+                      <dt>Under chronic cortisol</dt>
+                      <dd>
+                        Chronic stress can blunt baseline dopamine sensitivity. Ordinary pleasure becomes harder to register. Makes synthetic relief feel not optional, but necessary.
+                      </dd>
+                    </dl>
+                  </article>
+                </div>
+
+                <div class="ry-callout ry-prose">
+                  <p>None of these are malfunctions. They're adaptations: the brain doing exactly what it was trained to do in an environment it believed was permanently dangerous.</p>
+                  <p>Hippocampal shrinkage (context, memory, braking). PFC weakening (regulation). Amygdala sensitization (alarm), all at once. The dopamine system goes quiet underneath it. That's not a collection of separate problems. It's a single, unified setup that increases vulnerability to trauma-driven addiction.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         </div>
+        <!-- /.ry-ashfield -->
+
+        <!-- ======================= CONTENT WARNING ======================= -->
+        <section id="content-note">
+          <div class="container sk__py-m">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-note ry-prose" role="note">
+                  <span class="ry-note__label">Before You Continue &mdash; A Note on What Follows</span>
+                  <p>Up to this point, the page has focused on the <strong>science of toxic stress</strong> and how prolonged activation reshapes the brain, nervous system, and body over time.</p>
+                  <p><strong>The next section shifts.</strong> It moves from biology into lived experience, using illustrative examples of psychological and relational harm to show where the science lands in the body. Some of it will be recognizable. That's intentional.</p>
+                  <p>The language draws from lived experience while reflecting patterns many people may recognize. The purpose is not to reduce trauma to one person's story. It is to name what often goes unnamed.</p>
+                  <p>If the material becomes overwhelming at any point, pause or step away. That's not avoidance. That's regulation, and regulation is exactly what this page is about.</p>
+                  <p><a class="ry-skip-link" href="#skip">Skip this section &darr;</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================= THE DIPTYCH ========================= -->
+        <section class="ry-diptych-section" id="imagine-this">
+          <div class="ry-diptych-section__bg" style="background-image:url('images/webp/safety-gone.webp');"></div>
+          <div class="ry-diptych-section__scrim"></div>
+          <div class="container sk__py-l position-relative">
+
+            <div class="row justify-content-center text-center">
+              <div class="col-12 col-lg-8">
+                <h2 class="ry-eyebrow-h" style="margin-bottom:10px;">Imagine this<span style="opacity:.5">&hellip;</span></h2>
+                <p class="ry-lede" style="color:rgba(255,255,255,0.6) !important;">Two different childhoods. Two different injuries. One identical conclusion in the body.</p>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <div class="ry-diptych">
+
+                  <article class="ry-diptych__pane ry-prose">
+                    <span class="ry-diptych__kicker">Physical and Relational Trauma</span>
+                    <h3 class="ry-diptych__title">Where Love and Harm Live Together</h3>
+                    <p>A small child stands trembling before the very person meant to protect them. Something breaks in the caregiver: rage, desperation, a darkness they can't outrun, and a line gets crossed that can never be uncrossed. <em><span class="ry-hl">They both feel it.</span></em> The child's body knows before their mind does, stomach dropping, throat tightening, breath coming in shallow, urgent bursts. They don't know what just happened. They don't have a word for it. They only know that something that was supposed to be safe has become the most dangerous place in their world, and that safety, the thing that was supposed to live here, is <strong class="ry-hl">gone.</strong></p>
+                    <p>Then come the commands:</p>
+                    <ul class="ry-said">
+                      <li>&ldquo;Go to your room!&rdquo;</li>
+                      <li>&ldquo;Stop crying!&rdquo;</li>
+                      <li>&ldquo;Don't make me do this again!&rdquo;</li>
+                      <li>&ldquo;This is your fault!&rdquo;</li>
+                      <li><strong>&ldquo;You made me do this!&rdquo;</strong></li>
+                    </ul>
+                    <p>Alone now. Shame, fear and confusion twist together as the child curls on the edge of the bed, small hands gripping their knees, trying to take up less space than they already do. Waiting for someone, <strong>anyone</strong>, to come. To explain. To hold them. To say it's finished. But the only possible source of comfort is also the source of the pain. No one comes. Minutes stretch into hours. Hours into morning. The alarm never shuts off.</p>
+                    <div class="ry-rulewrit">
+                      <span class="ry-rulewrit__label">The rule the body writes</span>
+                      <p>Forced to make sense of it alone, the child's body writes a rule that will travel with them for years: &ldquo;I am alone in danger.&rdquo; The brain wires for vigilance and self-blame, not because something is wrong with the child, but because that conclusion was the only one available.</p>
+                    </div>
+                    <p>In another version of that same night, the caregiver eventually returns. The anger is gone, replaced by a confusing tenderness. An apology, maybe. Tears, perhaps. <em>I love you. I didn't mean it.</em> The child desperately wants to believe them. Does believe them, because they have no other option. But the body doesn't follow. The small shoulders stay hunched. The breath doesn't fully return.</p>
+                    <div class="ry-rulewrit">
+                      <span class="ry-rulewrit__label">The rule the body writes</span>
+                      <p>The person who caused the pain is now the one offering comfort. The message lands in the nervous system as permanent contradiction: love is unpredictable. Safety can vanish without warning, and return without explanation.</p>
+                    </div>
+                  </article>
+
+                  <article class="ry-diptych__pane ry-prose">
+                    <span class="ry-diptych__kicker">Neglect and Attachment Trauma</span>
+                    <h3 class="ry-diptych__title">Where the Void Becomes a Wound</h3>
+                    <p>A small child sits in a quiet room, an invisible antenna raised, scanning the silence. Their body is entirely still, a held breath, a subtle brace in the shoulders, a tightness around the eyes that has no name yet. They are waiting. Not for a sound, but for a signal: <strong>proof of their own existence.</strong></p>
+                    <p>Somewhere in the house, the parents move about, yet even in their presence, the child is entirely alone.</p>
+                    <p>A plea goes out, a drawing left carefully on the table, a tower of blocks built where it will be seen. A biological imperative: <em>be seen, be met, be answered.</em> <em>Serve-and-return.</em> But what comes back is <em>serve-and&hellip;nothing.</em> No anger. No warmth. Just a silence that lands with the full weight of a slammed door.</p>
+                    <div class="ry-rulewrit">
+                      <span class="ry-rulewrit__label">The rule the body writes</span>
+                      <p>The child's body registers the impact without having language for it: stomach clenching, a cold prickle across the skin, the specific hollow of a need that sent out a signal and received nothing back. Safety is not gone. It was never there to begin with.</p>
+                    </div>
+                    <p>Alone with the echoing non-event, the small brain, desperate for a rule, any rule, that makes the world predictable, concludes the only thing available to it: <strong class="ry-hl">my needs are the problem. To be safe, I must not have them.</strong></p>
+                    <h4>The Two Paths of the Unseen Child</h4>
+                    <p><strong class="ry-hl">One child implodes.</strong> They learn to shrink, to vanish, to take up as little space as possible. Joy and pain both get turned down to whispers. The heart rate lowers, not from calm, but from collapse. Safety through self-erasure. Disappearing as a survival strategy.</p>
+                    <p><strong class="ry-hl">Another explodes.</strong> They learn that chaos is the only way to make a shape in the void. They get louder, bigger, harder to manage, a body-level scream for contact. Attention proves existence. Even angry attention is oxygen. They become the &ldquo;problem child&rdquo;, not because something is wrong with them, but because they found the only strategy that sometimes worked.</p>
+                    <div class="ry-rulewrit">
+                      <span class="ry-rulewrit__label">The rule the body writes</span>
+                      <p>The source of survival, the parent, is also the source of the void. The message lands as contradiction: connection requires self-abandonment. Being seen requires becoming someone other than who you are.</p>
+                    </div>
+                  </article>
+
+                </div>
+
+                <!-- the two accounts converging on one conclusion -->
+                <svg class="ry-converge" viewBox="0 0 1000 72" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                  <path d="M250,0 C250,44 500,28 500,72" stroke-width="1.4"/>
+                  <path d="M750,0 C750,44 500,28 500,72" stroke-width="1.4"/>
+                </svg>
+
+                <div class="ry-diptych__joint ry-prose">
+                  <p><strong>Both paths lead to the same scar.</strong> <em>One bruises the body. The other starves the spirit.</em> Whether through chaos or neglect, the nervous system learns the same lesson: <strong>love is conditional</strong>, <em>safety uncertain</em>, and survival depends on <strong>staying alert.</strong></p>
+                  <p><em>Here lies the cruel symmetry of trauma:</em> visible harm and invisible absence converge in the body's wiring. What is never named as abuse still registers as threat, keeping the alarm running long after the danger has passed.</p>
+                  <p><strong><span class="ry-hl">This is the key:</span></strong> repeated fear or disconnection without resolution is where the <strong>psychological</strong> meets the <strong>physiological.</strong> What is later dismissed with a casual <em>&ldquo;just get over it&rdquo;</em> may already have shaped a body to survive what it was never meant to endure.</p>
+                  <p><strong>This is how physical trauma rewires us, and how neglect becomes its own form of violence:</strong> quiet, cumulative, devastating. <strong>This is the engine of toxic stress.</strong></p>
+
+                  <div class="ry-callout ry-callout--red">
+                    <span class="ry-callout__eyebrow">// The Loved-One Paradox</span>
+                    <p>Sometimes the deepest wound is not only the trauma itself, but the relationship it happens inside.</p>
+                    <p>A stranger can harm you and leave terror behind. But when the harm comes from a parent, caregiver, partner, or trusted loved one, the injury carries another layer. The person who should represent safety becomes part of the danger. The person the child may need for comfort, food, shelter, protection, and identity may also be the person creating the fear, or failing to stop it.</p>
+                    <p>This is where attachment becomes complicated. A child cannot simply walk away from the person they depend on. So the nervous system is forced into a brutal contradiction: <strong class="ry-hl">recognize the danger clearly and risk losing the attachment, or preserve the attachment by minimizing, excusing, compartmentalizing, forgetting, or blaming themselves for what happened.</strong></p>
+                    <p>That does not make the trauma less real. It makes the survival strategy more understandable. The child may accept the apology. They may run back toward the same person who hurt them. They may bury the truth, soften it, explain it away, or turn the blame inward because attachment is not optional to a child. Attachment is survival.</p>
+                    <p><em><a href="https://susanzola.com/wp-content/uploads/8.What-is-a-Betrayal-Trauma-Jennifer-Freyd.pdf" rel="noopener" target="_blank">Betrayal trauma theory</a> offers one lens for understanding this paradox. I am not presenting it as a perfect explanation for every survivor's experience. I am offering it as a useful theory, and a painfully important dynamic to consider: sometimes trauma does not only teach the body that the world is unsafe. It teaches the child that love, danger, comfort, and betrayal can all wear the same face.</em></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ry-ticker-wrap" aria-label="Crisis support numbers">
+          <div class="ry-ticker">
+            <div class="ry-ticker-track">
+              <span class="ry-ticker-item">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+              <span class="ry-ticker-item" aria-hidden="true">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== VIDEO / BURKE HARRIS ===================== -->
+        <section id="skip">
+          <div class="container sk__py-l">
+            <div class="row align-items-center justify-content-center g-5">
+              <div class="col-12 col-lg-6">
+                <a class="ry-video-card" href="https://www.youtube.com/watch?v=Ta5tbuFVkHY" rel="noopener" target="_blank" aria-label="Watch: Nadine Burke Harris, Healing From Toxic Stress, on YouTube">
+                  <img src="https://img.youtube.com/vi/Ta5tbuFVkHY/hqdefault.jpg" alt="Nadine Burke Harris: Healing From Toxic Stress" loading="lazy" width="480" height="360">
+                  <span class="ry-video-card__play" aria-hidden="true"></span>
+                  <span class="ry-video-card__bar">Watch on YouTube</span>
+                </a>
+                <p class="ry-video-caption"><em>In this installment of the ACEs Aware Storytelling Series, Dr. Burke Harris explains how the body's stress response becomes toxic in the face of early adversity, and outlines evidence-based practices that support regulation and resilience.</em></p>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="ry-prose">
+                  <span class="ry-section-eyebrow"><i>//</i> From Alarm to Adaptation</span>
+                  <h2 class="ry-eyebrow-h">Why understanding the biological shift from stress to disease matters</h2>
+                  <p>Dr. Burke Harris maps the path from early exposures to the chronic activation of the nervous system, showing how repeated danger not only shapes behaviour, but rewires the brain, hormonal systems, and immune system.</p>
+                  <p>Even when the stress response has been running in high gear for years, there are evidence-based ways to recalibrate it. The practices she highlights, from mindfulness to healthy relationships to consistent regulation habits, are accessible and within reach.</p>
+                  <p>This is not only about childhood trauma. It is about understanding how hidden stress becomes <em>toxic</em>, how it can contribute to physical illness, and why recovery must include the nervous system.</p>
+                  <blockquote class="ry-pullquote">
+                    <p>High doses of adversity in children actually change the way their brains develop &hellip; their immune systems, their hormonal systems, and even the way their <a href="epigenetics">DNA is read and transcribed</a>.</p>
+                    <cite>Dr. Nadine Burke Harris</cite>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= THE ADDICTION LINK ======================= -->
+        <section class="ry-finalword" id="addiction-link">
+          <div class="ry-finalword__bg" style="background-image:url('images/webp/addiction-link-bg.webp');"></div>
+          <div class="ry-finalword__scrim"></div>
+          <div class="container sk__py-l position-relative">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose">
+                  <h2 class="ry-eyebrow-h">The Addiction Link: <strong>Why Substances Hit Harder</strong></h2>
+                  <p class="ry-lede">This is the missing piece: <strong>relief can feel categorically different when you live in survival mode.</strong></p>
+                  <ul>
+                    <li><strong>For someone with reliable access to regulation, a drink or drug may feel intensely pleasant.</strong></li>
+                    <li><strong>For someone living in chronic survival mode, <em class="ry-hl">it can feel like peace or safety arriving for the first time.</em></strong></li>
+                  </ul>
+                  <p>That contrast can be difficult to explain to someone who has always had some access to calm. For one person, the substance feels good. For another, it can feel like the sudden arrival of something that has been missing for years, perhaps for a lifetime. The brain does not simply record, <em>&ldquo;this feels good.&rdquo;</em> It can learn something far more powerful:</p>
+                  <blockquote class="ry-pullquote">
+                    <p><em>&ldquo;This isn't just pleasure. This is safety. This is peace. This is connection. This is acceptance. This is love. This is whatever I have been missing, even if I never had a name for it.&rdquo;</em></p>
+                  </blockquote>
+                  <p>When relief feels like all of those things at once, the fact that it is synthetic can seem almost irrelevant. You may not know exactly what has been missing. You only know that this, <em>whatever this is</em>, is the closest your body has come to quiet.</p>
+                  <div class="ry-callout">
+                    <p>Chronic stress can blunt dopamine sensitivity and diminish the capacity for joy, motivation, and connection. Substances can overwhelm that circuit with an artificial surge. That is why they may not feel like recreation. They can feel like <strong>relief.</strong> Sometimes like <strong>salvation.</strong> For a nervous system unfamiliar with calm, the distinction can become dangerously thin.</p>
+                  </div>
+                  <p>Substances do more than &ldquo;feel good.&rdquo; They can temporarily do what the autonomic nervous system is struggling to do: bring the body down from the ledge and provide a counterfeit form of regulation. Addiction becomes less about chasing a high and more about chasing a <strong>nervous-system reset.</strong> That is why trauma-born addiction can feel so biologically compelling. It becomes a <strong>learned solution to an unbearable allostatic load.</strong> It works, until the cost of the solution exceeds the cost of the problem.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SPLIT: REWIRING FOR PEACE ==================== -->
+        <section class="ry-split ry-split--reverse" id="rewiring">
+          <div class="ry-split__figure">
+            <figure class="ry-concept">
+              <img src="images/webp/rewiring-for-peace.webp" alt="A woman's profile in silhouette, her head opening into a luminous branching network of neurons that spreads upward like a tree against a dark sky" width="900" height="1125" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> The Hope</span>
+            <h2 class="ry-eyebrow-h">Rewiring for Peace</h2>
+            <p>This wiring is powerful, but it is not permanent. The brain can change when it receives what it lacked: <strong>safety, tools, and support.</strong> <a href="neuroplasticity">Neuroplasticity</a> means the same brain that learned survival can also learn to settle and build new patterns that support sobriety.</p>
+            <p>For many of us, myself included, recovery isn't about returning to some stable self that existed before the damage. <strong>There is no <em>before</em> to go back to.</strong> It's about building something that was never there. That's harder, stranger, and more disorienting than anyone tells you. It's also more real.</p>
+            <blockquote class="ry-pullquote">
+              <p>That's what makes healing confusing, frightening, disorienting, and profoundly courageous.</p>
+            </blockquote>
+            <p>So where do you begin? Not with perfection. Not by erasing the past. You begin with <strong>noticing.</strong> The next time you feel keyed up or shut down, pause long enough to name it: <em>&ldquo;This is my nervous system doing its job.&rdquo;</em> That simple act of awareness is the first step toward giving it a new one.</p>
+          </div>
+        </section>
+
+        <!-- ========================= STATEMENT BAND ========================= -->
+        <section class="ry-statement">
+          <div class="container sk__py-m">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8">
+                <div class="ry-statement__inner">
+                  <p>Does this page describe something you've felt but never had words for?<br>
+                  <strong>If so, you're not broken. You've adapted.</strong><br>
+                  And if you've adapted once, you can do it again.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================== FINAL WORD ========================== -->
+        <section class="ry-finalword" id="final-word">
+          <div class="ry-finalword__bg" style="background-image:url('images/webp/healthy-brain-bg.webp');"></div>
+          <div class="ry-finalword__scrim"></div>
+          <div class="container sk__py-l position-relative">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-9 col-xl-8">
+                <div class="ry-finalword__panel ry-prose">
+                  <h2 class="ry-eyebrow-h"><span class="ry-slash">//</span> Final Word</h2>
+                  <p>If this page brought something up, perhaps recognition, grief, or anger you could not name before, that does not mean you have gone somewhere wrong. It may be what happens when something that lived wordlessly in the body finally gets a name.</p>
+                  <p>Understanding toxic stress doesn't ask you to forgive the past, minimize it, or rush toward anything. It asks something quieter: that you consider the possibility that what happened to you was real, that your responses to it made sense, and that the version of you who survived was doing the only thing available.</p>
+                  <p>You were not broken. You were trained, biologically, relentlessly, without your consent, to survive in conditions where safety was scarce or absent. Substances worked not because you were weak, but because they solved a real problem your body couldn't solve on its own.</p>
+                  <p class="ry-hl"><em>That truth is not easy to sit with. But it is honest. And honest is where recovery actually starts.</em></p>
+                  <div class="ry-callout">
+                    <p><em>When survival is understood, it can be renegotiated.</em></p>
+                    <p><em>When the nervous system is seen clearly, it can be rewired deliberately.</em></p>
+                    <p><em>When the story finally makes sense, recovery stops being a mystery. It becomes a direction you can actually move in.</em></p>
+                  </div>
+                  <p>For many of us, there is no stable baseline waiting underneath the chaos. Peace isn't a place we return to. <strong>It's something we build</strong>, slowly, with evidence, in a nervous system that is learning for the first time that it's allowed to rest. The process is not linear. It is not fast. <em>But it is possible.</em></p>
+                  <p style="border-top:2px solid var(--ry-red); padding-top:24px; margin-top:30px;"><strong class="ry-hl">Recovery stops being a moral struggle the moment it becomes a biological negotiation you finally have the tools to act on.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================= WHERE TO NEXT ========================= -->
+        <section id="where-next">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center text-center">
+              <div class="col-12 col-lg-8">
+                <h2 class="ry-eyebrow-h" style="margin-bottom:12px;">Where to Next?</h2>
+                <p class="ry-lede" style="color:rgba(255,255,255,0.66) !important;">Follow the next step in order, or branch out into related topics.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <div class="ry-next-grid">
+                  <a class="ry-next-card ry-next-card--up" href="shame-grief-false-self">
+                    <span class="ry-next-card__label">Up Next</span>
+                    <div class="ry-next-card__title">The Mask You Wear</div>
+                    <p>How shame builds a false self, and why grief is the way through.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card" href="aces-high">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Your Invisible Score</div>
+                    <p>How childhood adversity leaves a measurable, lifelong imprint on behaviour.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card" href="epigenetics">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Trauma's Biological Fingerprint</div>
+                    <p>Adversity rewires gene expression, and recovery can change it back.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card" href="brain-on-fire">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Brain on Fire</div>
+                    <p>How trauma and addiction hijack the brain, and why willpower can't fix it.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================== SOURCES =========================== -->
+        <section id="sources">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-section-eyebrow"><i>//</i> Sources + Further Reading</span>
+                <ol class="ry-sources">
+                  <li id="ref-shonkoff-2012">Shonkoff, J. P., et al. (2012). <strong>The lifelong effects of early childhood adversity and toxic stress.</strong> <em>Pediatrics, 129</em>(1), e232&ndash;e246. Seminal American Academy of Pediatrics policy statement authored by the Harvard Center on the Developing Child. Distinguishes positive, tolerable, and toxic stress; documents how prolonged activation of stress response systems without an adequate adult buffer disrupts brain architecture, immune function, metabolic systems, and cardiovascular health in ways that persist across the lifespan. <a href="https://pubmed.ncbi.nlm.nih.gov/22201156/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-harvard-toxic-stress">Center on the Developing Child at Harvard University. (n.d.). <strong>Toxic Stress.</strong> The foundational public-facing resource defining toxic stress and the role of the adult buffering relationship in moderating its biological effects. <a href="https://developingchild.harvard.edu/science/key-concepts/toxic-stress/" rel="noopener" target="_blank">Access Harvard Resource</a></li>
+                  <li id="ref-mcewen-2007">McEwen, B. S. (2007). <strong>Physiology and neurobiology of stress and adaptation: Central role of the brain.</strong> <em>Physiological Reviews, 87</em>(3), 873&ndash;904. A widely cited review detailing how chronic stress alters hippocampal structure and function, including reduced neurogenesis, dendritic atrophy, and impaired memory consolidation, with glucocorticoids identified as a key mediating mechanism. Also highlights the brain's capacity for partial recovery under supportive conditions. <a href="https://pubmed.ncbi.nlm.nih.gov/17615391/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-mcewen-1998">McEwen, B. S. (1998). <strong>Stress, adaptation, and disease: Allostasis and allostatic load.</strong> <em>Annals of the New York Academy of Sciences, 840</em>, 33&ndash;44. The foundational paper that defined the concept of allostatic load, the cumulative physiological cost of chronic stress, and established the framework for understanding how sustained dysregulation damages body systems over time. <a href="https://doi.org/10.1111/j.1749-6632.1998.tb09546.x" rel="noopener" target="_blank">View via DOI</a></li>
+                  <li id="ref-mcewen-gianaros-2011">McEwen, B. S., &amp; Gianaros, P. J. (2011). <strong>Stress- and allostasis-induced brain plasticity.</strong> <em>Annual Review of Medicine, 62</em>, 431&ndash;445. Reviews the biological consequences of allostatic overload, elevated inflammatory markers, HPA dysregulation, hippocampal atrophy, cardiovascular strain, and immune suppression, and examines associations between chronic stress and increased risk of heart disease, metabolic disorders, and premature mortality. <a href="https://pubmed.ncbi.nlm.nih.gov/20707675/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-guidi-2021">Guidi, J., Lucente, M., Sonino, N., &amp; Fava, G. A. (2021). <strong>Allostatic load and its impact on health: A systematic review.</strong> <em>Psychotherapy and Psychosomatics, 90</em>(1), 11&ndash;27. A systematic review synthesizing evidence on allostatic load and its associations with poorer health outcomes across cardiovascular, immune, metabolic, and neurological systems. <a href="https://pubmed.ncbi.nlm.nih.gov/32799204/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-bremner-2006">Bremner, J. D. (2006). <strong>Traumatic stress: Effects on the brain.</strong> <em>Dialogues in Clinical Neuroscience, 8</em>(4), 445&ndash;461. A key review documenting how chronic HPA axis activation from traumatic stress produces measurable structural changes in the prefrontal cortex (reduced volume), amygdala (heightened reactivity), and hippocampus (glucocorticoid-driven atrophy), the three brain regions most directly implicated in toxic stress outcomes. <a href="https://pubmed.ncbi.nlm.nih.gov/17290802/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-koob-volkow-2016">Koob, G. F., &amp; Volkow, N. D. (2016). <strong>Neurobiology of addiction: A neurocircuitry analysis.</strong> <em>The Lancet Psychiatry, 3</em>(8), 760&ndash;773. Details how chronic stress dysregulates mesolimbic dopamine circuitry, reducing baseline reward sensitivity and increasing the salience of substance-related cues. Provides the neurobiological basis for understanding why trauma-exposed individuals experience blunted pleasure and heightened vulnerability to addiction. <a href="https://pubmed.ncbi.nlm.nih.gov/27475769/" rel="noopener" target="_blank">View PubMed Record</a></li>
+                  <li id="ref-burke-harris-2018">Burke Harris, N. (2018). <strong>The Deepest Well: Healing the Long-Term Effects of Childhood Adversity.</strong> Houghton Mifflin Harcourt. Connects ACE science, toxic stress biology, and long-term health outcomes, translating the clinical and neurobiological research into accessible clinical and community frameworks. <a href="https://www.goodreads.com/book/show/33413909-the-deepest-well" rel="noopener" target="_blank">View on Goodreads</a></li>
+                  <li id="ref-vdk-2014">Van der Kolk, B. A. (2014). <strong>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</strong> Viking. Seminal text on how trauma and chronic stress are stored in the body and autonomic nervous system, and why healing requires addressing these systems directly rather than through cognitive approaches alone. <a href="https://www.goodreads.com/book/show/18693771-the-body-keeps-the-score" rel="noopener" target="_blank">View on Goodreads</a></li>
+                  <li id="ref-mate-2008">Mat&eacute;, G. (2008). <strong>In the Realm of Hungry Ghosts: Close Encounters with Addiction.</strong> Knopf Canada. Argues that addiction is most accurately understood as a response to the unbearable pain of early adversity and developmental stress, directly linking the toxic stress framework to compulsive substance use. <a href="https://drgabormate.com/book/in-the-realm-of-hungry-ghosts/" rel="noopener" target="_blank">View on Dr. Mat&eacute;'s Site</a></li>
+                </ol>
+                <p class="ry-sources-note">These references support the scientific and clinical concepts of toxic stress, allostatic load, neurobiology, and the link between childhood adversity and addiction. They are for educational context, not medical advice.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ry-ticker-wrap" aria-label="Crisis support numbers">
+          <div class="ry-ticker">
+            <div class="ry-ticker-track">
+              <span class="ry-ticker-item">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+              <span class="ry-ticker-item" aria-hidden="true">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+            </div>
+          </div>
+        </section>
+
+        <script src="assets/js/ry-ash.js"></script>
+        <script src="assets/js/ry-compare.js"></script>
+
+        <!-- ============================= -->
+        <!-- FOOTER -->
+        <!-- ============================= -->
+        <footer class="dark-shade-2-bg position-relative ry-footer">
+          <div class="footer-tint sk__gradient-background-tint"></div>
+          <div class="container sk__py-m">
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                <a href="index"><img alt="Recover You" class="ry-footer-logo" src="images/recover-you-logo-white.png"></a>
+              </div>
+              <div class="col-lg-6 text-lg-end">
+                <span class="ry-footer-tagline">Trauma-aware. Science-backed. Forged inside Alberta's system.</span>
+              </div>
+            </div>
+
+            <span class="divider sk__subtle-divider d-block my-4"></span>
+
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-4 mb-3 mb-lg-0">
+                <a href="contact">Get In Touch</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="#" id="open-privacy-policy">Privacy Policy</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="sitemap">Site Map</a>
+              </div>
+              <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                <span class="ry-footer-copy">&copy; 2025 Recover-<span class="ry-red-letter">Y</span>ou. All rights reserved</span>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <span class="ry-footer-copy">Calgary, Alberta</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- /.ry-footer -->
       </div>
-    </footer><!-- end footer -->
-    <!-- start scroll to top -->
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
-     <!-- javascript -->
-     
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script> 
-    <script src="js/bootsnav.js" type="text/javascript">
-    </script> 
-    <script src="js/jquery.nav.js" type="text/javascript">
-    </script> 
-    <script src="js/hamburger-menu.js" type="text/javascript">
-    </script> 
-    <script src="js/theme-vendors.min.js" type="text/javascript">
-    </script> <!-- setting -->
-     
-    <script src="js/lenis.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript">
-    </script>
+      <!-- /#smooth-content -->
+    </div>
+    <!-- /#smooth-wrapper -->
 
+  </main>
+  <!-- /main#primary.site-main -->
 
-
-    
-    <script>
-    (function () {
-      const progress = document.getElementById('reading-progress');
-      const fill = document.getElementById('reading-progress-fill');
-
-      if (!progress || !fill) return;
-
-      /* 
-        Reusable rules:
-        1) If a section has id="page-hero", use that
-        2) otherwise use the first .parallax section
-        3) if no hero exists, start from top of page
-      */
-      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-
-      function getScrollTop() {
-        return window.pageYOffset || document.documentElement.scrollTop || 0;
-      }
-
-      function getDocHeight() {
-        return Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-
-      function updateReadingProgress() {
-        const scrollTop = getScrollTop();
-        const viewportHeight = window.innerHeight;
-        const docHeight = getDocHeight();
-
-        let startPoint = 0;
-
-        if (hero) {
-          startPoint = hero.offsetTop + hero.offsetHeight;
-        }
-
-        const totalReadableDistance = docHeight - viewportHeight - startPoint;
-        const distanceRead = scrollTop - startPoint;
-
-        if (scrollTop > startPoint) {
-          progress.classList.add('is-visible');
-
-          if (totalReadableDistance <= 0) {
-            fill.style.width = '100%';
-            return;
-          }
-
-          let percent = (distanceRead / totalReadableDistance) * 100;
-          percent = Math.max(0, Math.min(percent, 100));
-          fill.style.width = percent + '%';
-        } else {
-          progress.classList.remove('is-visible');
-          fill.style.width = '0%';
-        }
-      }
-
-      window.addEventListener('load', updateReadingProgress);
-      window.addEventListener('resize', updateReadingProgress);
-      window.addEventListener('scroll', function () {
-        if (updateReadingProgress.framePending) return;
-        updateReadingProgress.framePending = true;
-        window.requestAnimationFrame(function () {
-          updateReadingProgress();
-          updateReadingProgress.framePending = false;
-        });
-      }, { passive: true });
-    })();
-    </script>
-
-
-    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
-    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-      <div class="privacy-modal__backdrop" data-close-policy=""></div>
-
-      <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
-        <div class="privacy-modal__header">
-          <h3 id="privacy-modal-title">Privacy Policy</h3>
-          <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">
-            ×
-          </button>
-        </div>
-
-        <div class="privacy-modal__body">
-          <p><strong>Last updated:</strong> March 2026</p>
-
-          <p>
-            If you reach out through the contact form, I'll collect your name, email, and 
-            message, nothing more. That information is used only to get back to you. It's 
-            not shared, sold, or used for anything else.
-          </p>
-
-          <p>
-            This site uses two analytics tools to help me understand how people find and 
-            use it. Google Analytics is only active if you choose to allow analytics cookies. 
-            Netlify Web Analytics runs quietly in the background using general server data, 
-            no cookies, no individual tracking.
-          </p>
-
-          <p>
-            A few third-party services help keep the site running, things like hosting and 
-            the contact form. Some of these are based outside Canada, so your information 
-            may be processed there. I've chosen providers I trust, but I want you to know.
-          </p>
-
-          <p>
-            Please don't share anything urgent or crisis-related through the contact form, 
-            it's not monitored in real time. If you're in immediate distress, please reach 
-            out to a crisis line or emergency services.
-          </p>
-
-          <p>
-            Questions about this policy, or want to see or correct something I have about 
-            you? You can reach me through the contact page. I'm happy to help.
-          </p>
-        </div>
-
-        <div class="privacy-modal__footer">
-          <button type="button" class="privacy-modal__ok" data-close-policy="">OK</button>
-        </div>
+  <!-- Privacy Policy Modal -->
+  <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+    <div class="privacy-modal__backdrop" data-close-policy=""></div>
+    <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+      <div class="privacy-modal__header">
+        <h3 id="privacy-modal-title">Privacy Policy</h3>
+        <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">&times;</button>
+      </div>
+      <div class="privacy-modal__body">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>If you reach out through the contact form, I'll collect your name, email, and message &mdash; nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data &mdash; no cookies, no individual tracking.</p>
+        <p>A few third-party services help keep the site running &mdash; things like hosting and the contact form. Some of these are based outside Canada, so your information may be processed there. I've chosen providers I trust, but I want you to know.</p>
+        <p>Please don't share anything urgent or crisis-related through the contact form &mdash; it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+        <p>Questions about this policy, or want to see or correct something I have about you? You can reach me through the contact page &mdash; I'm happy to help.</p>
       </div>
     </div>
-    <script>
-      (function () {
-        const modal = document.getElementById('privacy-modal');
-        const openBtn = document.getElementById('open-privacy-policy');
-        const closeBtns = document.querySelectorAll('[data-close-policy]');
+  </div>
 
-        if (!modal || !openBtn) return;
-
-        function openPolicy(e) {
-          e.preventDefault();
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('policy-modal-open');
-        }
-
-        function closePolicy() {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('policy-modal-open');
-        }
-
-        openBtn.addEventListener('click', openPolicy);
-
-        closeBtns.forEach((btn) => {
-          btn.addEventListener('click', closePolicy);
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-            closePolicy();
-          }
-        });
-      })();
-    </script>
-      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
     <div class="cookie-banner-inner">
       <p class="cookie-banner-text">
         <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
@@ -1464,97 +907,245 @@
       </div>
     </div>
   </div>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/5.1.3/bootstrap.min.js"></script>
+  <script src="assets/vendor/offcanvas-nav/hc-offcanvas-nav.js"></script>
+  <script src="assets/vendor/greensock/gsap.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollToPlugin.min.js"></script>
+
+  <!-- Main Theme JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Local file:// preview only; no-op on a real server -->
+  <script src="assets/js/ry-local-preview.js"></script>
+
+  <!-- Keeps dropdowns from opening off the right edge of the viewport -->
+  <script src="assets/js/ry-nav-fit.js"></script>
+
+  <!-- Recover-You custom scripts -->
   <script>
+    /* Site-wide reading progress bar */
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+      if (!progress || !fill) return;
+
+      const hero = document.querySelector('.sk__hero-section');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+      }
+      function update() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+        let startPoint = 0;
+        if (hero) startPoint = hero.offsetTop + hero.offsetHeight;
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+          if (totalReadableDistance <= 0) { fill.style.width = '100%'; return; }
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', update);
+      window.addEventListener('resize', update);
+      window.addEventListener('scroll', function () {
+        if (update.framePending) return;
+        update.framePending = true;
+        window.requestAnimationFrame(function () { update(); update.framePending = false; });
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    /* Magnetic CTA hover */
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      const strength = 14;
+      document.querySelectorAll('.ry-magnetic').forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (x / rect.width * strength).toFixed(1) + 'px,' + (y / rect.height * strength).toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+      });
+    })();
+  </script>
+
+  <script>
+    /* Hero typewriter */
+    (function () {
+      const el = document.getElementById('ry-dynamic-word');
+      const cursor = document.getElementById('ry-cursor');
+      if (!el || !cursor) return;
+
+      const sequence = ['CONTROL', 'CLARITY', 'HOPE', 'YOU'];
+      let wordIndex = 0, charIndex = 0, isDeleting = false;
+      const typingSpeed = 105, deletingSpeed = 130, finalTypingSpeed = 300;
+      const pauseBetweenWords = 1600, pauseBeforeNextWord = 350;
+
+      function type() {
+        const currentWord = sequence[wordIndex];
+        const isFinalWord = wordIndex === sequence.length - 1;
+        const currentTypingSpeed = isFinalWord ? finalTypingSpeed : typingSpeed;
+
+        if (!isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            if (isFinalWord) {
+              setTimeout(function () { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 900);
+              return;
+            }
+            isDeleting = true;
+            setTimeout(type, pauseBetweenWords);
+            return;
+          }
+          setTimeout(type, currentTypingSpeed);
+        } else {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            setTimeout(type, pauseBeforeNextWord);
+            return;
+          }
+          setTimeout(type, deletingSpeed);
+        }
+      }
+      window.addEventListener('load', function () { setTimeout(type, 2600); });
+    })();
+  </script>
+
+  <script>
+    /* Checklist reveal-on-scroll */
+    (function () {
+      const items = document.querySelectorAll('#how-it-helps .ry-checklist li');
+      if (!items.length) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+
+  <script>
+    /* About strip — draw the route graphic in on scroll */
+    (function () {
+      const strip = document.getElementById('about-strip');
+      if (!strip) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-drawn');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+      observer.observe(strip);
+    })();
+  </script>
+
+  <script>
+    /* Privacy policy modal */
+    (function () {
+      const modal = document.getElementById('privacy-modal');
+      const dialog = modal ? modal.querySelector('.privacy-modal__dialog') : null;
+      const openBtn = document.getElementById('open-privacy-policy');
+      const closeBtns = document.querySelectorAll('[data-close-policy]');
+      if (!modal || !dialog || !openBtn) return;
+
+      let lastFocusedElement = null;
+
+      function openPolicy(e) {
+        e.preventDefault();
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('policy-modal-open');
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusable) firstFocusable.focus(); else { dialog.setAttribute('tabindex', '-1'); dialog.focus(); }
+      }
+      function closePolicy() {
+        if (document.activeElement && modal.contains(document.activeElement)) document.activeElement.blur();
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('policy-modal-open');
+        if (lastFocusedElement) lastFocusedElement.focus(); else openBtn.focus();
+      }
+      openBtn.addEventListener('click', openPolicy);
+      closeBtns.forEach(function (btn) { btn.addEventListener('click', closePolicy); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
+    })();
+  </script>
+
+  <script>
+    /* Cookie consent */
     (function () {
       const CONSENT_KEY = 'ry_cookie_consent';
       const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
       const DECLINE_DAYS = 180;
-
       const banner = document.getElementById('cookie-banner');
       const acceptBtn = document.getElementById('cookie-accept');
       const declineBtn = document.getElementById('cookie-decline');
 
-      function grantAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
-
-      function denyAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
-
-      function showBanner() {
-        if (banner) banner.style.display = 'block';
-      }
-
-      function hideBanner() {
-        if (banner) banner.style.display = 'none';
-      }
-
-      function setDeclineExpiry(days) {
-        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
-        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
-      }
-
-      function clearDeclineExpiry() {
-        localStorage.removeItem(CONSENT_EXPIRY_KEY);
-      }
-
+      function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+      function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+      function showBanner() { if (banner) banner.style.display = 'block'; }
+      function hideBanner() { if (banner) banner.style.display = 'none'; }
+      function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
+      function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
       function isDeclineExpired() {
         const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
         if (!expiry) return true;
         return Date.now() > Number(expiry);
       }
-
       function applyConsentState() {
         const consent = localStorage.getItem(CONSENT_KEY);
-
-        if (consent === 'accepted') {
-          grantAnalytics();
-          hideBanner();
-          return;
-        }
-
+        if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
         if (consent === 'declined') {
           denyAnalytics();
-
-          if (isDeclineExpired()) {
-            localStorage.removeItem(CONSENT_KEY);
-            localStorage.removeItem(CONSENT_EXPIRY_KEY);
-            showBanner();
-          } else {
-            hideBanner();
-          }
+          if (isDeclineExpired()) { localStorage.removeItem(CONSENT_KEY); localStorage.removeItem(CONSENT_EXPIRY_KEY); showBanner(); }
+          else hideBanner();
           return;
         }
-
         denyAnalytics();
         showBanner();
       }
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'accepted');
-          clearDeclineExpiry();
-          grantAnalytics();
-          hideBanner();
-        });
-      }
-
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'declined');
-          setDeclineExpiry(DECLINE_DAYS);
-          denyAnalytics();
-          hideBanner();
-        });
-      }
-
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
       applyConsentState();
     })();
   </script>
-  
-</body></html>
+
+</body>
+</html>

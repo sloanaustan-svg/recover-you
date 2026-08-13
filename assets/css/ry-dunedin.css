@@ -1,0 +1,496 @@
+/* ====================================================================
+   Recover-You — The Dunedin Study (page layer)
+   --------------------------------------------------------------------
+   The site's evidence page. Everything the study is famous for was
+   sitting in body copy: 1,037 children, five temperament types, fifty
+   years, retention above 90%. This layer's job is to make the numbers
+   visible without letting the design overclaim what they mean.
+
+   Requires ry-article.css for the :root tokens.
+   ==================================================================== */
+
+/* per-type colour. Deliberately one accent plus four greys rather than
+   five hues: the temperament types are not a rainbow of equal
+   categories, and colouring them like one would imply a taxonomy the
+   study does not support. The red is reserved for undercontrolled,
+   which is the type this site is actually about. */
+:root {
+  --dn-well:    rgba(255, 255, 255, 0.80);
+  --dn-conf:    rgba(255, 255, 255, 0.55);
+  --dn-res:     rgba(255, 255, 255, 0.38);
+  --dn-under:   #ff2f6e;
+  --dn-inhib:   rgba(255, 255, 255, 0.26);
+}
+
+/* ====================================================================
+   1. STAT STRIP
+   ==================================================================== */
+.ry-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--ry-hairline);
+  border: 1px solid var(--ry-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 38px 0;
+}
+.ry-stats__cell {
+  padding: 28px 22px 24px;
+  background: #060606;
+  text-align: center;
+}
+.ry-stats__num {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.ry-stats__num em {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.42em;
+  font-style: normal;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+  margin-left: 2px;
+}
+.ry-stats__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+@media (max-width: 767.98px) { .ry-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ====================================================================
+   2. THE COHORT
+   1,037 dots, one per child.
+   ==================================================================== */
+.ry-cohort {
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  margin: 40px 0;
+}
+.ry-cohort__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin: 0 0 22px;
+}
+.ry-cohort__field { line-height: 0; margin-bottom: 26px; }
+.ry-cohort__field svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.ry-cohort__group circle { transition: opacity .3s ease, fill .3s ease; }
+.ry-cohort__group[data-type="well"]   circle { fill: var(--dn-well); }
+.ry-cohort__group[data-type="conf"]   circle { fill: var(--dn-conf); }
+.ry-cohort__group[data-type="res"]    circle { fill: var(--dn-res); }
+.ry-cohort__group[data-type="under"]  circle { fill: var(--dn-under); }
+.ry-cohort__group[data-type="inhib"]  circle { fill: var(--dn-inhib); }
+.ry-cohort__group.is-dim circle { opacity: 0.1; }
+
+/* ---- legend ---- */
+.ry-cohort__legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.ry-cohort__key {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: default;
+  transition: border-color .2s ease, background .2s ease;
+}
+html.ry-js .ry-cohort__key { cursor: pointer; }
+html.ry-js .ry-cohort__key:hover { border-color: rgba(255, 255, 255, 0.22); }
+.ry-cohort__key.is-active { border-color: rgba(255, 47, 110, 0.5); background: rgba(255, 47, 110, 0.06); }
+.ry-cohort__key:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.ry-cohort__swatch {
+  flex: 0 0 auto;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  transform: translateY(1px);
+}
+.ry-cohort__key[data-type="well"]  .ry-cohort__swatch { background: var(--dn-well); }
+.ry-cohort__key[data-type="conf"]  .ry-cohort__swatch { background: var(--dn-conf); }
+.ry-cohort__key[data-type="res"]   .ry-cohort__swatch { background: var(--dn-res); }
+.ry-cohort__key[data-type="under"] .ry-cohort__swatch { background: var(--dn-under); }
+.ry-cohort__key[data-type="inhib"] .ry-cohort__swatch { background: var(--dn-inhib); }
+
+.ry-cohort__key-body { min-width: 0; }
+.ry-cohort__key-name {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+}
+.ry-cohort__key-num {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+  margin-top: 3px;
+}
+.ry-cohort__key-num b { color: rgba(255, 255, 255, 0.68); font-weight: 600; }
+
+/* the author's own aside, kept quiet — the reader finds it */
+.ry-cohort__mine {
+  display: block;
+  font-size: 10.5px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--dn-under);
+  margin-top: 4px;
+}
+
+.ry-cohort__foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-cohort__live {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-cohort__reset {
+  padding: 7px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: var(--ry-ink-dim);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, background .2s ease;
+}
+.ry-cohort.is-isolating .ry-cohort__reset { opacity: 1; pointer-events: auto; }
+.ry-cohort__reset:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+/* the apportionment note. This exists because the published shares
+   total 101%, and a data graphic that quietly rounds its way to the
+   wrong population is worse than no graphic. */
+.ry-cohort__note {
+  margin: 16px 0 0;
+  font-size: 11.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+/* ====================================================================
+   3. TEMPERAMENT TYPE CARDS
+   ==================================================================== */
+.ry-type {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 34px;
+  align-items: center;
+  padding: 34px 36px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.ry-type--mine { border-color: rgba(255, 47, 110, 0.34); }
+.ry-type--mine::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--ry-red);
+}
+@media (max-width: 767.98px) { .ry-type { grid-template-columns: 1fr; gap: 22px; padding: 26px 22px; } }
+
+.ry-type__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ry-hairline);
+  flex-wrap: wrap;
+}
+.ry-type__num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--ry-ink-faint);
+}
+.ry-type__name {
+  flex: 1 1 auto;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0;
+}
+.ry-type__share {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ry-ink-faint);
+  white-space: nowrap;
+}
+.ry-type__share b { color: #fff; font-weight: 600; }
+.ry-type--mine .ry-type__share b { color: var(--ry-red); }
+
+.ry-type__aside {
+  display: block;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ry-red);
+}
+.ry-type dt {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 6px;
+}
+.ry-type dd {
+  margin: 0 0 18px;
+  font-size: 14.5px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-type dd:last-child { margin-bottom: 0; }
+.ry-type__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid var(--ry-hairline);
+}
+.ry-type__figure img { display: block; width: 100%; height: auto; }
+
+/* ====================================================================
+   4. ANTITHESIS CARDS — "not lazy / patterned"
+   ==================================================================== */
+.ry-anti {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 991.98px) { .ry-anti { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 519.98px) { .ry-anti { grid-template-columns: 1fr; } }
+
+.ry-anti__card {
+  padding: 30px 26px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-anti__n {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ry-red);
+  margin-bottom: 16px;
+}
+/* the negation is struck through: the card's whole rhetorical move is
+   replacing one sentence with another, and the strike makes that
+   replacement visible rather than merely stated */
+.ry-anti__not {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 47, 110, 0.6);
+  margin-bottom: 6px;
+}
+.ry-anti__is {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(21px, 2.4vw, 27px);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.ry-anti__card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   5. CONVERGENCE — two studies, one conclusion
+   ==================================================================== */
+/* Named .ry-studies, not .ry-converge. ry-article.css already owns
+   .ry-converge for the diptych's SVG connector rule:
+
+       .ry-converge { display: block; width: 100%; height: 72px; }
+
+   That loads after Bootstrap and before this file, so the comparison
+   row silently inherited `display: block` (killing .row's flex, which
+   stacked the cards) and a fixed 44-72px height (which capped the
+   row, so its content overflowed and the next section drew through
+   it). One collision, both symptoms. Page layers must not reuse a
+   name the shared layer has already claimed. */
+.ry-studies { margin-top: 30px; }
+.ry-studies > [class*="col-"] { display: flex; }
+.ry-studies__card {
+  width: 100%;
+  padding: 30px 30px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-studies__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ry-red);
+}
+.ry-studies__card ul { list-style: none; margin: 0; padding: 0; }
+.ry-studies__card li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.66;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-studies__card li:last-child { margin-bottom: 0; }
+.ry-studies__card li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 10px; height: 2px;
+  background: var(--ry-red);
+}
+
+/* ====================================================================
+   6. FIGURE PAIR — the two standout numbers inside the running copy
+   --------------------------------------------------------------------
+   These arrive from the legacy page as .ry-stat blocks. The converter
+   strips presentational classes, so without a component of their own
+   they land in the flow as two orphan paragraphs reading "90%+" and
+   "~20%" — technically present, rhetorically gone.
+
+   Set side by side with the number doing the work, they read the way
+   they were meant to: the retention figure is why the study is
+   trusted, and the 20% figure is the finding the whole page turns on.
+   ==================================================================== */
+.ry-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 34px 0;
+}
+@media (max-width: 575.98px) { .ry-figures { grid-template-columns: 1fr; } }
+
+.ry-figure-stat {
+  position: relative;
+  padding: 30px 30px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+/* the accented one is the retention figure — the reason the findings
+   carry weight at all, and the one the copy singles out */
+.ry-figure-stat--accent { border-color: rgba(255, 47, 110, 0.32); }
+.ry-figure-stat--accent::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--ry-red);
+}
+.ry-figure-stat__num {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(46px, 7vw, 72px);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.ry-figure-stat--accent .ry-figure-stat__num { color: var(--ry-red); }
+.ry-figure-stat__label {
+  display: block;
+  font-size: 14px;
+  line-height: 1.62;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   7. SECTION STACKING
+   Sections on this page carry cards with their own backgrounds and
+   shadows. Making each one its own positioned block keeps paint order
+   and flow explicit rather than leaving it to chance, which is what
+   let the convergence cards bleed into the section beneath them.
+   ==================================================================== */
+/* display: flow-root makes each section establish its own block
+   formatting context. That is the standards-based answer to a child
+   escaping its parent's height: floats are contained and margins
+   cannot collapse through the boundary, which are the only two ways
+   normal flow lets content overrun its section. One property, no
+   !important, and it cannot break anything it is applied to.
+
+   `clear: both` on the following section is the belt to that braces:
+   even if something upstream floats, this section starts below it. */
+#converge, #power-of-knowing, #translating, #personality-types,
+#key-insights, #why-it-matters, #watch, #where-next {
+  position: relative;
+  z-index: 1;
+  display: flow-root;
+}
+#power-of-knowing { clear: both; }
+

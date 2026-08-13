@@ -1,0 +1,308 @@
+/* ====================================================================
+   Recover-You — Identity, Values & Beliefs (page layer)
+   --------------------------------------------------------------------
+   Five page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-askset, .ry-callout, .ry-pullquote,
+   .ry-split, .ry-statement, .ry-figure, .ry-cta, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* Alternate the second full-width split on desktop. The HTML keeps the
+   image first so mobile still presents image, then text. */
+@media (min-width: 992px) {
+  .ry-ivb-split--alternate .ry-split__body {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 86px 6vw 86px 8vw;
+  }
+
+  .ry-ivb-split--alternate .ry-split__media {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ry-ivb-split--alternate .ry-split__media::after {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 55%, rgba(5, 5, 5, .85) 100%);
+  }
+}
+
+/* ====================================================================
+   1. BELIEFS vs VALUES — head and hands
+   --------------------------------------------------------------------
+   The section states its own thesis in one line: "Beliefs are what I
+   think. Values are what I do." Everything under it is that same split
+   worked out — beliefs "live in my head", values "live in my hands".
+
+   So the two columns are drawn as an opposition rather than as two
+   unrelated lists, which is what the legacy's plain Bootstrap halves
+   read as. Nothing is claimed beyond the sentence the page opens with;
+   in particular the three bullets under each side are NOT presented as
+   three matched pairs, because the author didn't write them that way.
+   ==================================================================== */
+.ry-bv {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 30px 0;
+  background: var(--ry-hairline);
+  border: 1px solid var(--ry-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+}
+@media (max-width: 767.98px) { .ry-bv { grid-template-columns: 1fr; } }
+
+.ry-bv__col { padding: 28px 30px 24px; background: #0a0a0a; }
+@media (max-width: 575.98px) { .ry-bv__col { padding: 24px 22px 20px; } }
+
+.ry-bv__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 30px);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.ry-bv--head .ry-bv__name { color: rgba(255, 255, 255, 0.92); }
+.ry-bv--hands .ry-bv__name { color: var(--ry-red); }
+
+.ry-bv__list { margin: 16px 0 0; padding: 0; list-style: none; }
+.ry-bv__list li {
+  margin: 0;
+  padding: 13px 0;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-bv__list li:last-child { padding-bottom: 0; }
+.ry-bv__list li em { color: rgba(255, 255, 255, 0.88); }
+
+/* ====================================================================
+   2. THE SIGNALS — what each feeling is pointing at
+   --------------------------------------------------------------------
+   Regret, anger, guilt, each with what the page says it indicates.
+   The legacy set these as three rounded chips, which made three
+   claims about the inner life look like three tags on a blog post.
+
+   They read left to right — feeling, then what it points to — with the
+   author's own arrow kept between them, because the arrow is the whole
+   idea: "my emotions weren't random pain signals. They were
+   messengers."
+   ==================================================================== */
+.ry-signals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0;
+}
+@media (max-width: 767.98px) { .ry-signals { grid-template-columns: 1fr; } }
+
+.ry-signal {
+  padding: 24px 26px 22px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-signal__name {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-signal__arrow {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.28);
+  margin-bottom: 12px;
+}
+.ry-signal__means {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   3. THE FRAMEWORK — five steps, in order
+   --------------------------------------------------------------------
+   "This is the process that worked": write the memories down, ask what
+   each reveals, find what repeats, make it specific, build the daily
+   action. The legacy set it as five arrow-prefixed bullets, so a
+   sequence the author explicitly calls a process read as five loose
+   suggestions in no particular order.
+
+   Numbered, with a spine down the left, because the order is the
+   method. Step four only works on what step three surfaced.
+   ==================================================================== */
+.ry-method { margin: 30px 0; padding: 0; list-style: none; counter-reset: ry-step; }
+
+.ry-method__step {
+  position: relative;
+  margin: 0;
+  padding: 0 0 26px 54px;
+  border-left: 1px solid var(--ry-hairline);
+  font-size: 15px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-method__step:last-child { border-left-color: transparent; padding-bottom: 0; }
+.ry-method__step::before {
+  counter-increment: ry-step;
+  content: counter(ry-step);
+  position: absolute;
+  left: -16px;
+  top: -3px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 47, 110, 0.5);
+  background: #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--ry-red);
+}
+.ry-method__step em { color: rgba(255, 255, 255, 0.9); }
+.ry-method__step strong { color: #fff; font-weight: 600; }
+@media (max-width: 575.98px) { .ry-method__step { padding-left: 40px; } }
+
+/* ====================================================================
+   4. THE TWO EXAMPLES — same origin, different destination
+   --------------------------------------------------------------------
+   Safety and "I need no one" both started as survival. One became a
+   value the author kept; the other became a trap. The legacy buried
+   that in the card headings as parentheticals — "(Survival → Real
+   Value)", "(Survival → Trap)" — where it read as a footnote to a
+   title rather than as the point of the pair.
+
+   The parenthetical is lifted out into a badge, in the author's own
+   words, so the fork is visible before the paragraph is read. Two
+   examples only: the page offers no general taxonomy and none is
+   drawn here.
+   ==================================================================== */
+.ry-forks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+@media (max-width: 767.98px) { .ry-forks { grid-template-columns: 1fr; } }
+
+.ry-fork {
+  padding: 28px 30px 24px;
+  border-radius: 15px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 575.98px) { .ry-fork { padding: 24px 22px 20px; } }
+.ry-fork--kept { border-top: 3px solid #6fcf97; }
+.ry-fork--trap { border-top: 3px solid var(--ry-red); }
+
+.ry-fork__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 8px;
+}
+.ry-fork__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 3.2vw, 34px);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 12px;
+}
+.ry-fork__badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.ry-fork--kept .ry-fork__badge { color: #6fcf97; background: rgba(111, 207, 151, 0.13); }
+.ry-fork--trap .ry-fork__badge { color: var(--ry-red); background: rgba(255, 47, 110, 0.13); }
+
+.ry-fork__body {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-fork__body strong { color: #fff; font-weight: 600; }
+.ry-fork__body em { color: rgba(255, 255, 255, 0.88); }
+
+/* ====================================================================
+   5. THE CHAIN — beliefs, values, identity, recovery
+   --------------------------------------------------------------------
+   "My beliefs shape my values. My values shape my identity. My
+   identity shapes my recovery." The author wrote it as a chain, three
+   lines broken by <br>, and then the next sentence turns on it:
+   "when those three align".
+
+   Drawn as three links with the connection made visible. This adds no
+   term and reorders nothing — it only stops a chain from being set as
+   a paragraph with two line breaks in it, which is how the legacy had
+   it and why the structure was easy to read straight past.
+   ==================================================================== */
+.ry-chain { margin: 34px auto; padding: 0; list-style: none; max-width: 520px; }
+
+.ry-chain__link {
+  position: relative;
+  margin: 0;
+  padding: 18px 26px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+}
+.ry-chain__link + .ry-chain__link { margin-top: 26px; }
+
+/* the connector, drawn between links rather than after the last one */
+.ry-chain__link + .ry-chain__link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -21px;
+  width: 1px;
+  height: 16px;
+  background: var(--ry-red);
+}
+.ry-chain__link + .ry-chain__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  width: 5px;
+  height: 5px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--ry-red);
+}

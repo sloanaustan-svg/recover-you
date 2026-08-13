@@ -1,0 +1,295 @@
+/* ====================================================================
+   Recover-You — The Four Trauma Responses (page layer)
+   --------------------------------------------------------------------
+   The legacy page already had the right idea: each response as a card
+   with a huge ghost word set behind it. On white that watermark had to
+   sit at 3% opacity to stay tasteful, which made it nearly invisible.
+   On black it can carry real weight — it becomes the thing you see
+   before you read anything, which is exactly right for a page whose
+   whole question is "which one is me".
+
+   Requires ry-article.css for the :root tokens.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE RESPONSE CARD
+   ==================================================================== */
+.ry-response-card {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+/* the ghost word. Bebas is a display face with tight sidebearings, so it
+   can run enormous and still read as texture rather than as a heading */
+.ry-response-card__ghost {
+  position: absolute;
+  right: -0.06em;
+  bottom: -0.28em;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(110px, 20vw, 260px);
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  color: #fff;
+  opacity: 0.045;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.ry-response-card__head {
+  position: relative;
+  z-index: 1;
+  padding: 34px 36px 30px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-response-card__top {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.ry-response-card__badge {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 47, 110, 0.4);
+  background: rgba(255, 47, 110, 0.1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+/* the maxim is the single line that tells you whether this one is
+   yours, so it gets the weight the legacy version gave to a grey <em> */
+.ry-response-card__maxim {
+  flex: 1 1 300px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.42;
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+}
+.ry-response-card__body {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-response-card__body strong { color: #fff; font-weight: 600; }
+
+/* ---- the subtype strip ---- */
+.ry-subtypes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  /* hairline rules between cells instead of borders on each, so the
+     strip reads as one object divided rather than four things abutting */
+  gap: 1px;
+  background: var(--ry-hairline);
+}
+.ry-subtype {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 24px 22px;
+  background: #060606;
+}
+.ry-subtype__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-subtype__desc {
+  flex: 1 1 auto;
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+/* the cost line is the point of the whole taxonomy: every one of these
+   worked, and every one charged for it */
+.ry-subtype__cost {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+.ry-subtype__cost b {
+  color: rgba(255, 47, 110, 0.85);
+  font-weight: 600;
+}
+
+@media (max-width: 991.98px) { .ry-subtypes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) {
+  .ry-subtypes { grid-template-columns: 1fr; }
+  .ry-response-card__head { padding: 26px 22px 24px; }
+  .ry-subtype { padding: 22px; }
+}
+
+/* ====================================================================
+   2. THE FAWN SECTION
+   The copy argues fawn is different in kind, not degree — subcortical
+   reflex versus learned competency. So it gets set apart rather than
+   presented as the fourth item in a list: its own band, its own
+   watermark, a red rail down the side.
+   ==================================================================== */
+.ry-fawn {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--ry-hairline);
+  border-bottom: 1px solid var(--ry-hairline);
+  background:
+    radial-gradient(120% 90% at 100% 50%, rgba(255, 47, 110, 0.09) 0%, rgba(0,0,0,0) 62%),
+    #030303;
+}
+.ry-fawn__ghost {
+  position: absolute;
+  right: -0.05em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(150px, 26vw, 340px);
+  line-height: 0.8;
+  color: var(--ry-red);
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+.ry-fawn > .container { position: relative; z-index: 1; }
+
+.ry-fawn__maxim {
+  margin: 0 0 30px;
+  padding-left: 20px;
+  border-left: 3px solid var(--ry-red);
+  font-size: clamp(17px, 2.2vw, 22px);
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+}
+
+/* a set-aside block inside the fawn argument: the gender note, the
+   hostage passage, the Machiavellian endpoint */
+.ry-aside {
+  margin: 34px 0;
+  padding: 28px 30px;
+  border-radius: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+.ry-aside--red { border-left-color: var(--ry-red); }
+.ry-aside__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 14px;
+}
+/* the author's own caveat on the Machiavellian section — quieter than
+   the label it trails, because it is a qualifier, not a heading */
+.ry-aside__caveat {
+  font-size: 11px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ry-ink-faint);
+  margin-left: 6px;
+}
+.ry-aside p {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-aside p:last-child { margin-bottom: 0; }
+.ry-aside strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   3. ADDICTION CONTRAST CARDS
+   ==================================================================== */
+.ry-contrast {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 34px 0;
+}
+@media (max-width: 767.98px) { .ry-contrast { grid-template-columns: 1fr; } }
+.ry-contrast__card {
+  padding: 30px 30px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-top: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-contrast__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 14px;
+}
+.ry-contrast__card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   4. THE REFERENCE DIAGRAM
+   Light-background artwork, so it needs a plate. Wired to the shared
+   zoom lightbox — thirteen subtypes at column width is a thumbnail.
+   ==================================================================== */
+.ry-diagram {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f1efec;
+  line-height: 0;
+  box-shadow: 0 34px 66px -36px rgba(0, 0, 0, 0.95);
+}
+.ry-diagram img { display: block; width: 100%; height: auto; }
+.ry-diagram__caption {
+  margin: 14px 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--ry-ink-faint);
+}
+.ry-diagram__caption strong { color: rgba(255, 255, 255, 0.8); font-weight: 600; }

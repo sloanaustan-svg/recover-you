@@ -1,0 +1,711 @@
+/* ================================================================
+   Recover-You | Prominent Voices
+   An editorial directory connecting context, wiring, and healing.
+   ================================================================ */
+
+.ry-voices-page {
+  --voices-red: #ff2438;
+  --voices-cyan: #67d8df;
+  --voices-gold: #e6a64a;
+  --voices-ink: #050506;
+  --voices-panel: #101012;
+  --voices-panel-2: #151518;
+  --voices-line: rgba(255, 255, 255, .12);
+  --voices-muted: #aaaab0;
+}
+
+/* Hero */
+.ry-voices-page .ry-voices-hero {
+  min-height: clamp(650px, 86vh, 900px);
+}
+
+.ry-voices-page .ry-voices-hero .ry-page-hero__bg {
+  background-position: center 46%;
+  filter: saturate(.78) contrast(1.1);
+}
+
+.ry-voices-page .ry-voices-hero .ry-page-hero__scrim {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.66) 55%, rgba(0,0,0,.3) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.28) 48%, #050506 95%, #050506 100%);
+}
+
+.ry-voices-page .ry-voices-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 36%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, #050506 92%);
+}
+
+.ry-voices-page .ry-voices-hero .ry-page-hero__inner,
+.ry-voices-page .ry-voices-hero .ry-scroll-cue {
+  z-index: 3;
+}
+
+.ry-voices-page .ry-voices-hero .ry-page-hero__title {
+  max-width: 1120px;
+}
+
+.ry-voices-page .ry-voices-hero .ry-page-hero__sub {
+  max-width: 860px;
+}
+
+/* Shared eyebrow */
+.ry-voices-page .ry-section-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #d8d8dc;
+  font-family: "Syncopate", sans-serif;
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.ry-voices-page .ry-section-eyebrow i {
+  color: var(--voices-red);
+  font-style: normal;
+}
+
+/* Introduction */
+.ry-voices-intro {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(88px, 10vw, 150px) 0 clamp(95px, 10vw, 150px);
+  color: #d6d6da;
+  background:
+    radial-gradient(circle at 9% 13%, rgba(255,255,255,.055), transparent 27%),
+    radial-gradient(ellipse at 91% 64%, rgba(255,36,56,.05), transparent 34%),
+    #050506;
+}
+
+.ry-voices-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .2;
+  background-image:
+    radial-gradient(circle at 27% 39%, rgba(255,255,255,.14) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 74% 68%, rgba(255,255,255,.11) 0 1px, transparent 1.5px);
+  background-size: 165px 175px, 225px 215px;
+  mask-image: linear-gradient(90deg, transparent, #000 17%, #000 83%, transparent);
+}
+
+.ry-voices-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ry-voices-intro h2 {
+  max-width: 940px;
+  margin: 0 0 30px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.55rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -.06em;
+}
+
+.ry-voices-intro h2 em {
+  color: #fff;
+  font-weight: 600;
+}
+
+.ry-voices-intro__copy {
+  max-width: 930px;
+}
+
+.ry-voices-intro__copy p {
+  margin-bottom: 22px;
+  color: #bcbcc1;
+  font-family: "Lato", sans-serif;
+  font-size: 1.04rem;
+  line-height: 1.78;
+}
+
+.ry-voices-intro__copy strong {
+  color: #f4f4f5;
+}
+
+.ry-voices-intro__copy blockquote {
+  margin: 44px 0;
+  padding: 7px 0 7px 29px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.18rem, 2.2vw, 1.58rem);
+  font-weight: 300;
+  line-height: 1.57;
+  letter-spacing: -.025em;
+  border: 0;
+  border-left: 2px solid var(--voices-red);
+}
+
+/* Three-lens idea map */
+.ry-voices-map {
+  margin-top: clamp(58px, 8vw, 92px);
+  overflow: hidden;
+  border: 1px solid var(--voices-line);
+  border-radius: 21px;
+  background: linear-gradient(145deg, rgba(255,255,255,.052), rgba(255,255,255,.012));
+  box-shadow: 0 34px 90px rgba(0,0,0,.32);
+}
+
+.ry-voices-map__intro {
+  padding: clamp(31px, 5vw, 49px);
+  border-bottom: 1px solid var(--voices-line);
+}
+
+.ry-voices-map__intro > span,
+.ry-voices-lens__label {
+  display: block;
+  margin-bottom: 13px;
+  font-family: "Syncopate", sans-serif;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.ry-voices-map__intro > span {
+  color: var(--voices-red);
+}
+
+.ry-voices-map__intro h3 {
+  max-width: 770px;
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.045em;
+}
+
+.ry-voices-map__intro p {
+  max-width: 720px;
+  margin: 0;
+  color: #9d9da3;
+  line-height: 1.65;
+}
+
+.ry-voices-map__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ry-voices-lens {
+  position: relative;
+  min-height: 275px;
+  padding: clamp(30px, 4vw, 41px);
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid var(--voices-line);
+  transition: background .25s ease, transform .25s ease;
+}
+
+.ry-voices-lens:last-child {
+  border-right: 0;
+}
+
+.ry-voices-lens:hover,
+.ry-voices-lens:focus-visible {
+  color: #fff;
+  background: rgba(255,255,255,.035);
+}
+
+.ry-voices-lens__number {
+  position: absolute;
+  top: 27px;
+  right: 28px;
+  color: rgba(255,255,255,.14);
+  font-family: "Syncopate", sans-serif;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.ry-voices-lens__label {
+  max-width: 80%;
+}
+
+.ry-voices-lens--context .ry-voices-lens__label {
+  color: var(--voices-red);
+}
+
+.ry-voices-lens--neuro .ry-voices-lens__label {
+  color: var(--voices-cyan);
+}
+
+.ry-voices-lens--healing .ry-voices-lens__label {
+  color: var(--voices-gold);
+}
+
+.ry-voices-lens strong {
+  display: block;
+  margin: 40px 0 13px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.18rem, 2.1vw, 1.48rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.ry-voices-lens p {
+  margin: 0;
+  color: #a9a9ae;
+  font-size: .94rem;
+  line-height: 1.66;
+}
+
+/* Profile directory */
+.ry-voices-directory {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(95px, 11vw, 165px) 0;
+  background:
+    radial-gradient(ellipse at 85% 11%, rgba(103,216,223,.045), transparent 30%),
+    radial-gradient(ellipse at 12% 57%, rgba(255,36,56,.045), transparent 27%),
+    radial-gradient(ellipse at 88% 88%, rgba(230,166,74,.04), transparent 31%),
+    #09090b;
+}
+
+.ry-voices-directory__head {
+  width: 83.333333%;
+  max-width: 970px;
+  margin: 0 auto clamp(58px, 8vw, 92px);
+}
+
+.ry-voices-directory__head h2 {
+  max-width: 840px;
+  margin: 0 0 17px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.2rem, 4.6vw, 4.1rem);
+  font-weight: 300;
+  line-height: 1.07;
+  letter-spacing: -.058em;
+}
+
+.ry-voices-directory__head p {
+  max-width: 760px;
+  margin: 0;
+  color: #aaaab0;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.ry-voices-directory .row.margin-40px-bottom {
+  margin-bottom: 30px !important;
+}
+
+.ry-voices-directory .row.margin-40px-bottom > [class*="col-"] {
+  width: 83.333333%;
+  max-width: 970px;
+}
+
+.ry-voices-page .ry-profile-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 48px) !important;
+  color: #c9c9ce;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.052), rgba(255,255,255,.014)) !important;
+  box-shadow: 0 24px 65px rgba(0,0,0,.27) !important;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.ry-voices-page .ry-profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--profile-accent, var(--voices-red));
+  box-shadow: 0 0 24px color-mix(in srgb, var(--profile-accent, var(--voices-red)) 42%, transparent);
+}
+
+.ry-voices-page .ry-profile-card::after {
+  position: absolute;
+  top: 28px;
+  right: 31px;
+  color: var(--profile-accent, var(--voices-red));
+  font-family: "Syncopate", sans-serif;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .82;
+}
+
+.ry-voices-page .ry-border-context {
+  --profile-accent: var(--voices-red);
+}
+
+.ry-voices-page .ry-border-context::after {
+  content: "Context";
+}
+
+.ry-voices-page .ry-border-neuro {
+  --profile-accent: var(--voices-cyan);
+}
+
+.ry-voices-page .ry-border-neuro::after {
+  content: "Wiring";
+}
+
+.ry-voices-page .ry-border-healing {
+  --profile-accent: var(--voices-gold);
+}
+
+.ry-voices-page .ry-border-healing::after {
+  content: "Change";
+}
+
+.ry-voices-page .ry-profile-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.2);
+  box-shadow: 0 31px 80px rgba(0,0,0,.34) !important;
+}
+
+.ry-voices-page .ry-profile-card h5 {
+  max-width: calc(100% - 115px);
+  margin: 0 0 11px !important;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+
+.ry-voices-page .ry-profile-card h5 .text-deep-pink {
+  color: var(--profile-accent, var(--voices-red)) !important;
+}
+
+.ry-voices-page .ry-profile-card > p.text-extra-small {
+  max-width: calc(100% - 100px);
+  margin-bottom: 20px !important;
+  color: #828289 !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .57rem !important;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: .13em !important;
+}
+
+.ry-voices-page .ry-profile-card > p.text-small {
+  max-width: 770px;
+  margin-bottom: 25px !important;
+  color: #c2c2c7 !important;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem !important;
+  line-height: 1.7;
+}
+
+.ry-voices-page .ry-profile-card .collapse-toggle {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 8px 8px 16px;
+  color: #fff !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .56rem !important;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 999px;
+  background: rgba(255,255,255,.025) !important;
+  box-shadow: none;
+}
+
+.ry-voices-page .ry-profile-card .collapse-toggle:hover,
+.ry-voices-page .ry-profile-card .collapse-toggle:focus-visible {
+  color: #fff !important;
+  border-color: var(--profile-accent, var(--voices-red)) !important;
+}
+
+.ry-voices-page .ry-profile-card .toggle-icon {
+  position: relative;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--profile-accent, var(--voices-red)) 17%, transparent);
+  transition: transform .25s ease;
+}
+
+.ry-voices-page .ry-profile-card .toggle-icon::before,
+.ry-voices-page .ry-profile-card .toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 1.5px;
+  background: var(--profile-accent, var(--voices-red));
+}
+
+.ry-voices-page .ry-profile-card .toggle-icon::before {
+  transform: translateX(-2px) rotate(45deg);
+}
+
+.ry-voices-page .ry-profile-card .toggle-icon::after {
+  transform: translateX(2px) rotate(-45deg);
+}
+
+.ry-voices-page .ry-profile-card .toggle-icon i {
+  display: none;
+}
+
+.ry-voices-page .ry-profile-card .collapse-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.ry-voices-page .ry-profile-card-divider {
+  margin-top: 31px;
+  padding-top: 31px !important;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.ry-voices-page .ry-profile-card-divider p {
+  color: #b7b7bd !important;
+  font-family: "Lato", sans-serif;
+  font-size: .98rem !important;
+  line-height: 1.76;
+}
+
+.ry-voices-page .ry-profile-card-divider strong {
+  color: #f4f4f5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.ry-voices-page .ry-profile-card-divider em {
+  color: #dedee2;
+}
+
+.ry-voices-page .ry-profile-card-divider a {
+  color: var(--profile-accent, var(--voices-red));
+  text-decoration-color: color-mix(in srgb, var(--profile-accent, var(--voices-red)) 50%, transparent);
+  text-underline-offset: 3px;
+}
+
+.ry-voices-page .ry-profile-card-divider a:hover,
+.ry-voices-page .ry-profile-card-divider a:focus-visible {
+  color: #fff;
+}
+
+.ry-voices-page .ry-profile-card-divider p:has(> strong:first-child) {
+  padding-left: 16px;
+  border-left: 1px solid rgba(255,255,255,.12);
+}
+
+.ry-voices-page .ry-profile-card-divider p:has(> strong:first-child):has(strong:first-child) {
+  border-left-color: color-mix(in srgb, var(--profile-accent, var(--voices-red)) 42%, transparent);
+}
+
+/* Review notes */
+.ry-voices-sources {
+  padding: clamp(90px, 10vw, 145px) 0;
+  color: #c8c8cc;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #070708;
+}
+
+.ry-voices-sources__panel {
+  overflow: hidden;
+  padding: clamp(31px, 5vw, 52px);
+  border: 1px solid var(--voices-line);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.014));
+  box-shadow: 0 30px 80px rgba(0,0,0,.26);
+}
+
+.ry-voices-sources__panel h2 {
+  max-width: 800px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -.05em;
+}
+
+.ry-voices-sources__panel > p {
+  max-width: 900px;
+  color: #b4b4ba;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.ry-voices-sources__groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 36px 0;
+  border-top: 1px solid var(--voices-line);
+  border-bottom: 1px solid var(--voices-line);
+}
+
+.ry-voices-sources__groups > div {
+  padding: 28px 28px 28px 0;
+  border-right: 1px solid var(--voices-line);
+}
+
+.ry-voices-sources__groups > div + div {
+  padding-left: 28px;
+}
+
+.ry-voices-sources__groups > div:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.ry-voices-sources__groups span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--voices-red);
+  font-family: "Syncopate", sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.ry-voices-sources__groups > div:nth-child(2) span {
+  color: var(--voices-cyan);
+}
+
+.ry-voices-sources__groups > div:nth-child(3) span {
+  color: var(--voices-gold);
+}
+
+.ry-voices-sources__groups p {
+  margin: 0;
+  color: #aaaab0;
+  font-size: .93rem;
+  line-height: 1.72;
+}
+
+.ry-voices-sources__groups a {
+  color: #e7e7e9;
+  text-decoration-color: rgba(255,255,255,.28);
+  text-underline-offset: 3px;
+}
+
+.ry-voices-sources__groups a:hover,
+.ry-voices-sources__groups a:focus-visible {
+  color: var(--voices-red);
+}
+
+.ry-voices-sources__note {
+  margin: 0 !important;
+  padding-left: 18px;
+  color: #8d8d93 !important;
+  font-size: .88rem !important;
+  border-left: 2px solid var(--voices-red);
+}
+
+/* Keep the established ending treatment */
+.ry-voices-page #where-next {
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #050506;
+}
+
+@media (max-width: 991.98px) {
+  .ry-voices-map__grid,
+  .ry-voices-sources__groups {
+    grid-template-columns: 1fr;
+  }
+
+  .ry-voices-lens {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--voices-line);
+  }
+
+  .ry-voices-lens:last-child {
+    border-bottom: 0;
+  }
+
+  .ry-voices-sources__groups > div,
+  .ry-voices-sources__groups > div + div {
+    padding: 24px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--voices-line);
+  }
+
+  .ry-voices-sources__groups > div:last-child {
+    border-bottom: 0;
+  }
+
+  .ry-voices-directory__head,
+  .ry-voices-directory .row.margin-40px-bottom > [class*="col-"] {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ry-voices-page .ry-voices-hero {
+    min-height: 700px;
+  }
+
+  .ry-voices-map,
+  .ry-voices-page .ry-profile-card,
+  .ry-voices-sources__panel {
+    border-radius: 15px !important;
+  }
+
+  .ry-voices-lens {
+    padding: 29px 25px;
+  }
+
+  .ry-voices-lens strong {
+    margin-top: 31px;
+  }
+
+  .ry-voices-page .ry-profile-card {
+    padding: 29px 24px 28px !important;
+  }
+
+  .ry-voices-page .ry-profile-card::after {
+    position: static;
+    display: block;
+    margin-bottom: 15px;
+    font-size: .52rem;
+  }
+
+  .ry-voices-page .ry-profile-card h5,
+  .ry-voices-page .ry-profile-card > p.text-extra-small {
+    max-width: none;
+  }
+
+  .ry-voices-page .ry-profile-card h5 {
+    font-size: 1.42rem;
+  }
+
+  .ry-voices-page .ry-profile-card-divider p {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-voices-page .ry-profile-card,
+  .ry-voices-page .ry-profile-card .toggle-icon,
+  .ry-voices-lens {
+    transition: none;
+  }
+}

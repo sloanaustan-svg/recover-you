@@ -1,1243 +1,858 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-  <!-- Fathom - beautiful, simple website analytics -->
-  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer=""></script>
-  <!-- / Fathom -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-
     gtag('js', new Date());
-
-    // Default: deny analytics until user accepts
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied'
-    });
-
-    gtag('config', 'G-6968KR6JY9', {
-      'anonymize_ip': true
-    });
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    gtag('config', 'G-6968KR6JY9', { 'anonymize_ip': true });
   </script>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer></script>
+  <!-- / Fathom -->
+
   <title>Life Traps: Decoding the Hidden Blueprints of Survival | Recover-You</title>
   <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
-  <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="Life traps (schemas) are the survival-based beliefs that quietly run the show. Learn how they form in childhood and how to rewrite your internal blueprint. No more autopilot." name="description">
-  <meta content="life traps, schema therapy, schemas, maladaptive schemas, Reinventing Your Life, addiction recovery, CPTSD, childhood trauma, Recover-You, survivor-led recovery" name="keywords">
-  <meta content="Life Traps: Why You Keep Repeating the Same Patterns" property="og:title">
-  <meta content="Your current behavior isn't a defect. It's an old blueprint. Discover how 'Life Traps' shape your reality and how to start redrawing the map." property="og:description">
-  <meta content="images/webp/life-trap-hero.webp" property="og:image">
-  <meta content="article" property="og:type">
-  <meta content="https://recover-you.ca/life-traps" property="og:url">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="Life Traps &amp; Schema Therapy | Recover-You" name="twitter:title">
-  <meta content="A survivor-led guide to identifying the hidden schemas that fuel addiction and CPTSD patterns." name="twitter:description">
-  <meta content="images/webp/life-trap-hero.webp" name="twitter:image">
-  <link href="https://recover-you.ca/life-traps" rel="canonical">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <meta name="author" content="Austan Sloan | Recover-You">
+  <meta name="description" content="The eleven lifetraps, the three ways people cope with them, and why addiction is the last link in a chain that starts much earlier. Schema patterns for self-reflection, not diagnosis.">
+  <meta name="keywords" content="life traps, schemas, schema therapy, Young Klosko Reinventing Your Life, abandonment schema, defectiveness, coping styles, surrender avoidance overcompensation">
+
+  <meta property="og:title" content="Life Traps">
+  <meta property="og:description" content="Understanding your own blueprint.">
+  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://recover-you.ca/life-traps">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Life Traps | Recover-You">
+  <meta name="twitter:description" content="Addiction is rarely the first link in the chain.">
+  <meta name="twitter:image" content="images/og-home.jpg">
+
+  <link rel="canonical" href="https://recover-you.ca/life-traps">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
   <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
   <link href="apple-touch-icon.png" rel="apple-touch-icon">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="site.webmanifest" rel="manifest">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Lato:wght@100;300;400;700;900&amp;family=Poppins:wght@200;300;400;600;700;800&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet">
 
-  <link href="css/site.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ry-pdf-download.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap -->
+  <link href="assets/vendor/bootstrap/5.1.3/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts -->
+  <link href="assets/vendor/icomoon/icomoon.min.css" rel="stylesheet">
+  <!-- Off Canvas Menu -->
+  <link href="assets/vendor/offcanvas-nav/hc-offcanvas-nav.css" rel="stylesheet">
+  <!-- DarkStar Theme CSS -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <link href="assets/css/theme-colors.css" rel="stylesheet">
+  <!-- Recover-You homepage layer (red / black / grey / white brand) -->
+  <link href="assets/css/ry-home.css" rel="stylesheet">
+  <!-- Shared article component layer -->
+  <link href="assets/css/ry-article.css" rel="stylesheet">
+  <!-- Life-traps page layer (the chain, the eleven traps, the moves) -->
+  <link href="assets/css/ry-traps.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script type="application/ld+json">
-       {
-         "@context": "https://schema.org",
-         "@type": "Article",
-         "headline": "Life Traps: Decoding the Hidden Blueprints of Survival",
-         "description": "An exploration of Schema Therapy and how early maladaptive schemas fuel addiction and trauma patterns.",
-         "image": "images/webp/life-trap-hero.webp",
-         "author": {
-           "@type": "Person",
-           "name": "Austan Sloan"
-         },
-         "publisher": {
-           "@type": "Organization",
-           "name": "Recover-You",
-           "url": "https://recover-you.ca"
-         },
-         "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https://recover-you.ca/life-traps"
-         },
-         "inLanguage": "en",
-         "about": [
-           { "@type": "Thing", "name": "Schema Therapy" },
-           { "@type": "Thing", "name": "Maladaptive Schemas" },
-           { "@type": "Thing", "name": "Childhood Trauma" }
-         ]
-       }
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Life Traps",
+    "description": "Eleven schema patterns, the three coping styles they drive, and why addiction sits at the end of the chain rather than the start.",
+    "url": "https://recover-you.ca/life-traps",
+    "author": { "@type": "Person", "name": "Austan Sloan" },
+    "publisher": { "@type": "Organization", "name": "Recover-You" },
+    "isPartOf": { "@type": "WebSite", "name": "Recover-You", "url": "https://recover-you.ca" }
+  }
   </script>
-  <style>
-    /* Inline contextual links, legible on light and dark sections */
-    .ry-link{ color:#ff1463; text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px; transition:opacity .2s ease; }
-    .ry-link:hover, .ry-link:focus{ opacity:.78; }
-  </style>
-<link href="css/lenis.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  <div aria-hidden="true" id="reading-progress">
-    <div id="reading-progress-fill"></div>
-  </div><!-- start header -->
-  <header>
-    <!-- start navigation -->
-    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
-      <div class="container-fluid nav-header-container">
-        <div class="col-auto ps-0">
-          <a class="logo" href="index" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
+
+<body class="sk__article-page dark-shade-1-bg ry-article-page">
+
+  <main id="primary" class="site-main">
+
+    <!-- Site-wide reading progress bar -->
+    <div aria-hidden="true" id="reading-progress"><div id="reading-progress-fill"></div></div>
+
+    <!-- Master Curtain Effect -->
+    <!-- Built from real DOM rather than a background image so the optional
+         page title below the logo always sits a fixed distance beneath it,
+         at every viewport ratio. Builders inject .ry-curtain-title; the
+         home page deliberately has none. -->
+    <section class="sk__master-curtain">
+      <div class="mcurtain ry-mcurtain-single">
+        <div class="ry-curtain-inner">
+          <img class="ry-curtain-logo" src="images/webp/recover-you-logo-white.webp" alt="Recover-You" width="600" height="200">
+          <span class="ry-curtain-title">LIFE TRAPS</span>
         </div>
-        <div class="col accordion-menu pe-0 pe-md-3">
-          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
-            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
-              <li>
-                <a href="index" title="Home">Home</a>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-this-site-exists">Why This Site Exists</a>
+      </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="sk__back-to-top-wrap">
+      <a class="sk__back-to-top" href="#smooth-content"><span class="sk__back-to-top"></span></a>
+    </div>
+
+    <!-- Mobile menu bar -->
+    <div class="sk__mobile-menu-bar"></div>
+    <a class="sk__mobile-main-logo" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+    <!-- Navigation -->
+    <nav id="main-nav" style="opacity: 0;" class="sk__menu navbar sk__navbar navbar-expand-lg navbar-dark static-top">
+
+      <a class="navbar-brand" href="index"><img id="sk__main-logo" alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+      <ul class="navbar-nav ms-auto">
+
+        <li data-nav-custom-content class="custom-content sk__mobile-menu-logo">
+          <a class="sk__mobile-navbar-brand" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+
+        <!-- 1. Orientation -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Start Here</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-this-site-exists">Why This Site Exists</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-me">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="start-here">Start Here</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-coaches">For Frontline Workers</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-loved-ones">For Loved Ones</a></li>
+          </ul>
+        </li>
+
+        <!-- 2-4. Trauma Foundations -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Trauma Foundations</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Core Concepts</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="what-is-trauma">What Is Trauma</a></li>
+                <li class="nav-item"><a class="nav-link" href="what-is-cptsd">What Is C-PTSD</a></li>
+                <li class="nav-item"><a class="nav-link" href="attachment">Attachment Styles</a></li>
+                <li class="nav-item"><a class="nav-link" href="toxic-stress">Toxic Stress</a></li>
+                <li class="nav-item"><a class="nav-link" href="shame-grief-false-self">Shame, Grief &amp; The False Self</a></li>
+                <li class="nav-item"><a class="nav-link" href="cptsd-behaviours">CPTSD Patterns</a></li>
+                <li class="nav-item"><a class="nav-link" href="four-trauma-responses">Trauma Responses</a></li>
+                <li class="nav-item"><a class="nav-link" href="aces-high">ACEs &amp; Risk</a></li>
+                <li class="nav-item"><a class="nav-link" href="dunedin-study">The Dunedin Study</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Brain &amp; Body</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="brain-on-fire">Brain on Fire</a></li>
+                <li class="nav-item"><a class="nav-link" href="when-sobriety-feels-worse">When Sobriety Feels Worse</a></li>
+                <li class="nav-item"><a class="nav-link" href="neuroplasticity">Neuroplasticity</a></li>
+                <li class="nav-item"><a class="nav-link" href="critical-window">Critical Windows</a></li>
+                <li class="nav-item"><a class="nav-link" href="epigenetics">Epigenetics</a></li>
+                <li class="nav-item"><a class="nav-link" href="trauma-does-not-expire">Trauma Doesn't Expire</a></li>
+                <li class="nav-item"><a class="nav-link" href="dohad">DOHaD: Developmental Origins</a></li>
+                <li class="nav-item"><a class="nav-link" href="metabolism">Metabolism</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-hijacked-engine">The Hijacked Engine</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. A Critical Lens -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">A Critical Lens</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a></li>
+            <li class="nav-item"><a class="nav-link" href="problem-with-aa">Limits of the AA Model</a></li>
+            <li class="nav-item"><a class="nav-link" href="misdiagnosed">When Trauma Is Misdiagnosed</a></li>
+            <li class="nav-item"><a class="nav-link" href="disease-of-addiction">The &ldquo;Disease of Addiction&rdquo; Debate</a></li>
+            <li class="nav-item"><a class="nav-link" href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a></li>
+            <li class="nav-item"><a class="nav-link" href="better-model-of-care">What Better Care Requires</a></li>
+            <li class="nav-item"><a class="nav-link" href="trauma-avoidant">When Trauma Is Avoided</a></li>
+            <li class="nav-item"><a class="nav-link" href="compassionate-care">Compassionate Care: A Critique</a></li>
+          </ul>
+        </li>
+
+        <!-- 6-9. Healing & Tools -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Healing &amp; Tools</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Therapeutic Models</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="cbt">CBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="dbt">DBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="life-traps">Life Traps (Schema Therapy)</a></li>
+                <li class="nav-item"><a class="nav-link" href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a></li>
+                <li class="nav-item"><a class="nav-link" href="types-of-therapy">Therapy Types</a></li>
+                <li class="nav-item"><a class="nav-link" href="role-of-therapy">The Role of Therapy</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Practical Tools &amp; Skills</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="chart-your-life">Chart Your Life</a></li>
+                <li class="nav-item"><a class="nav-link" href="distorted-thinking">Distorted Thinking</a></li>
+                <li class="nav-item"><a class="nav-link" href="regulation-tools">Regulation Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="reality-test">Reality Testing</a></li>
+                <li class="nav-item"><a class="nav-link" href="relationships">Relationships in Recovery</a></li>
+                <li class="nav-item"><a class="nav-link" href="connection">Connection</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Identity &amp; Growth</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a></li>
+                <li class="nav-item"><a class="nav-link" href="spirituality">Spirituality</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-resilience-lie">The Resilience Lie</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- 9. Resources -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="resources">Resources</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="resources">All Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-detox">Detox &amp; Stabilization</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-treatment-centres">Treatment Centres</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-trauma-therapy">Trauma Therapy &amp; Mental Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-alberta-health">Navigating Alberta Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-books-tools">Books, Journals &amp; Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-prominent-voices">Prominent Voices</a></li>
+            <li class="nav-item"><a class="nav-link" href="tfr-model">The TFR Model</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+
+      </ul>
+    </nav>
+    <!-- /.sk__menu -->
+    <div id="smooth-wrapper" class="pushable-content">
+      <div id="smooth-content">
+
+        <!-- ============================= HERO ============================= -->
+        <section class="ry-page-hero" id="page-hero">
+          <div class="ry-page-hero__bg" style="background-image:url('images/webp/life-trap-hero.webp');"></div>
+          <div class="ry-page-hero__scrim"></div>
+          <div class="container ry-page-hero__inner">
+            <div class="row"><div class="col-12 col-lg-9">
+              <span class="ry-hero-eyebrow">The Blueprint</span>
+              <h1 class="ry-page-hero__title">Life Traps</h1>
+              <p class="ry-page-hero__sub">Understanding Your Own Blueprint</p>
+            </div></div>
+          </div>
+          <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+        </section>
+
+        <!-- ==================== UNEARTHING YOUR BLUEPRINT ==================== -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <section id="why">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-readtime">10 min read</span>
+                <a class="ry-pdf-card" href="assets/website-pdfs/Life-Traps.pdf" download="Life-Traps-Recover-You.pdf" data-fathom-event="download-pdf-life-traps" aria-label="Download the full Life Traps page as a printable PDF">
+                  <span class="ry-pdf-card__icon" aria-hidden="true">PDF</span>
+                  <span class="ry-pdf-card__body">
+                    <span class="ry-pdf-card__eyebrow">Prefer paper?</span>
+                    <span class="ry-pdf-card__title">Take this entire page with you</span>
+                    <span class="ry-pdf-card__sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</span>
+                    <span class="ry-pdf-card__meta"><span>PDF</span><span>7 pages</span><span>354 KB</span><span>Free</span></span>
+                  </span>
+                  <span class="ry-pdf-card__action">Download &darr;</span>
+                </a>
+                <span class="ry-section-eyebrow"><i>//</i> Schema Work</span>
+                <h2 class="ry-eyebrow-h">Unearthing Your Blueprint: Navigating Life Traps</h2>
+                <p class="ry-lede">The hidden beliefs that shaped your survival. And how to outgrow them.</p>
+                <div class="ry-prose">
+                  <p>During my most recent stay in treatment, my caseworker handed me a questionnaire and asked if I wanted to try it. I flipped through it, and the second I saw questions about childhood, I could feel my heartbeat in my jaw. I handed it back and said, "No. I'm not ready."</p><p> It wasn't the questionnaire I was avoiding. It was the border crossing it represented: from spending my entire adult life insisting my childhood didn't leave a mark, to sitting down and actually checking. That wasn't a small step. It felt like opening a door I'd kept barricaded for thirty years. The <em>final boss</em> was waiting on the other side.</p><p> If this feels heavy, that's the right response. Schema work isn't a gentle journaling prompt. Sometimes beginning is the whole act of courage. The questionnaire can wait. The decision to look can't.</p>
+                </div>
+                <div class="ry-note">
+                  <span class="ry-note__label">Who this is for</span>
+                  <p><strong>Schema work belongs to everyone.</strong> These patterns show up in families, workplaces, friendships, relationships, and leadership, not only in trauma or addiction. We all build blueprints early in life. Schema work gives you the tools to examine yours and decide which parts still deserve to be there.</p>
+                </div>
+                <blockquote class="ry-pullquote"><strong>What if those patterns weren't random?</strong> What if they were forged <a href="trauma-addiction-evidence">long before I ever picked up a drink or a drug</a>? What if every relapse was just me running a script I didn't know I had?</blockquote>
+                <div class="ry-prose">
+                  <p>For years I felt like I was living on autopilot. No matter how hard I tried, I couldn't override it. I was constantly reacting, never choosing. In addiction that meant cycling through the same outcomes on a loop: mornings loaded with regret, days in damage control, evenings convincing myself it would be different next time. I genuinely believed these reactions were just who I was. It never seriously occurred to me that these were patterns I had learned. And anything learned can be unlearned.</p>
+                  <p>This is where Life Traps, also called schemas, come in. They aren't passing thoughts or bad habits. <strong>They're deep, enduring beliefs about myself, others, and the world</strong>, formed when <a href="attachment">core emotional needs went unmet in childhood</a>: safety, affection, validation, guidance, the simple freedom to exist without having to earn it. Those early gaps became the blueprint for how I interpreted everything as an adult.</p><p> And until I understood them, I kept playing out the same script without realizing I was following one.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+        <!-- /.ry-ashfield -->
+
+        <!-- ==================== WHAT ARE SCHEMAS ==================== -->
+        <section class="ry-split ry-split--reverse" id="schemas-what">
+          <div class="ry-split__media" style="background-image:url('images/webp/schema-blueprint.webp');"></div>
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> Core Concept</span>
+            <h2 class="ry-eyebrow-h">What Are <strong>Schemas?</strong></h2>
+            <p>A schema isn't a thought you can catch and correct. It's deeper than that. A lens installed in childhood that filters everything you perceive afterward. Schemas form from <a href="what-is-trauma">trauma, neglect, overcontrol</a>, emotional inconsistency, or the quieter kinds of invalidation that erode a child's sense of safety and identity without ever leaving a visible mark.</p>
+            <p>Think of them as the <em>blueprint beneath the house.</em> You can renovate rooms, repaint walls, replace the furniture. But the foundation still dictates the structure. Until the blueprint changes, the house keeps getting rebuilt the same way: by the same hands, from the same plans, for the same reasons. Different relationships. Different jobs. Different substances. Same blueprint underneath.</p>
+            <div class="ry-note">
+              <span class="ry-note__label">On the different lists</span>
+              <p><strong>Different sources</strong> categorize schemas a little differently. <strong>Dr. Jeffrey Young</strong> (Schema Therapy) identifies <strong>18 maladaptive schemas</strong>. In <em>Reinventing Your Life</em>, <strong>Young &amp; Klosko</strong> group them into <strong>11 lifetraps</strong> for everyday use. The number differs. The meaning doesn't.</p>
+            </div>
+            <p>When core needs go unmet early enough, we adapt in the only ways available to us at the time. Those adaptations calcify. They stop feeling like responses to circumstance and start feeling like the truth about who you are. Less like survival strategies. More like personality. Less like trauma responses. More like "this is just how I am."</p><p> Schema work is the process of learning to tell the difference.</p>
+          </div>
+        </section>
+
+        <!-- ==================== THE 11 LIFETRAPS ==================== -->
+        <section id="lifetraps">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <h2 class="ry-band-title" style="font-size:clamp(30px,4.4vw,54px);">The <span class="ry-hl">11</span> Lifetraps</h2>
+                <div class="ry-note ry-callout--red" style="margin-top:0;">
+                  <span class="ry-note__label">Read this first</span>
+                  <p><strong>These descriptions are drawn from Young &amp; Klosko's <em>Reinventing Your Life</em> and are offered here for self-reflection only. Not as a diagnostic tool.</strong> If something resonates, that's a starting point for personal exploration, not a clinical conclusion. A schema-informed therapist can help you work with what surfaces.</p>
+                </div>
+                <div class="ry-prose">
+                  <p>Each lifetrap below includes a brief note on how it may show up in addiction or recovery. Some will hit immediately. Others won't land until later, or until something else shifts first. The point isn't to collect them all. It's to notice which ones have the strongest pull right now.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <ol class="ry-traps">
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">1</span>
+                      <h3 class="ry-trap__name">Abandonment</h3>
+                    </div>
+                    <p class="ry-trap__body">Fear that people I depend on will leave. In addiction, I might cling to unhealthy partners or sabotage closeness before they can hurt me.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Panic or anger when someone pulls away, cancels, or goes quiet</li>
+                        <li>Reading abandonment into small things: a short reply, a shift in tone</li>
+                        <li>Clinging tightly, or leaving first so you can't be left</li>
+                        <li>Finding it hard to be alone without sensing something is wrong</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="attachment">Related: Attachment Styles &rarr;</a>
                   </li>
-                  <li>
-                    <a href="about-me">About Me</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">2</span>
+                      <h3 class="ry-trap__name">Mistrust and Abuse</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that others will lie, betray, or exploit me. In addiction, I keep my guard up, isolate, or gravitate toward people who reinforce my mistrust.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Waiting for the catch, sure that kindness has a hidden cost</li>
+                        <li>Keeping your guard up even with people you want to trust</li>
+                        <li>Testing people, or bracing to be used, lied to, or betrayed</li>
+                        <li>Feeling safest when no one gets too close</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="four-trauma-responses">Related: Trauma Responses &rarr;</a>
                   </li>
-                  <li>
-                    <a href="start-here">Start Here</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">3</span>
+                      <h3 class="ry-trap__name">Emotional Deprivation</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that my need for love, care, and attunement will never really be met. In addiction, I may look stable on the outside while running on empty inside. Reaching for substances or chaos because nothing has ever felt like enough.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>A quiet sense that no one really understands you</li>
+                        <li>Rarely asking for comfort, sure it won't come anyway</li>
+                        <li>Feeling unseen or empty even inside relationships</li>
+                        <li>Drawn to people who can't fully show up for you</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="connection">Related: Connection &rarr;</a>
                   </li>
-                  <li>
-                    <a href="faq">FAQ</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">4</span>
+                      <h3 class="ry-trap__name">Social Exclusion</h3>
+                    </div>
+                    <p class="ry-trap__body">Feeling fundamentally different, or like I don't quite belong anywhere. In addiction, even recovery spaces don't fix it. I can be in a room full of people who've been through the same things and still feel like I'm watching from behind glass.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Feeling like an outsider even among people who care</li>
+                        <li>"Watching from behind glass" in groups and rooms</li>
+                        <li>Sensing you're fundamentally different or don't belong</li>
+                        <li>Holding back from belonging before you can be rejected</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="cptsd-behaviours">Related: CPTSD Patterns &rarr;</a>
                   </li>
-              <li><a href="for-coaches">For Frontline Workers</a></li>
-            <li><a href="for-loved-ones">For Loved Ones</a></li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="what-is-trauma">What Is Trauma</a>
-                      </li>
-                      <li>
-                        <a href="what-is-cptsd">What Is C-PTSD</a>
-                      </li>
-                      <li>
-                        <a href="attachment">Attachment Styles</a>
-                      </li>
-                      <li>
-                        <a href="toxic-stress">Toxic Stress</a>
-                      </li>
-                      <li>
-                        <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a>
-                      </li>
-                      <li>
-                        <a href="cptsd-behaviours">CPTSD Patterns</a>
-                      </li>
-                      <li><a href="four-trauma-responses">Trauma Responses</a></li>
-                      <li>
-                        <a href="aces-high">ACEs &amp; Risk</a>
-                      </li>
-                      <li>
-                        <a href="dunedin-study">The Dunedin Study</a>
-                      </li>
-                    </ul>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">5</span>
+                      <h3 class="ry-trap__name">Dependence</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that I cannot handle life without constant help or direction. In addiction, I hand my power to others, then resent them for it. Or I rebel, fall apart, and confirm what I already believed: that I can't manage on my own.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Second-guessing ordinary decisions; seeking reassurance</li>
+                        <li>Feeling overwhelmed by everyday demands and responsibilities</li>
+                        <li>Leaning heavily on others, then resenting the reliance</li>
+                        <li>A deep belief that you can't manage on your own</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="identity-values-and-beliefs">Related: Identity, Values & Beliefs &rarr;</a>
                   </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="brain-on-fire">Brain on Fire</a>
-                      </li>
-                      <li>
-                        <a href="when-sobriety-feels-worse">When Sobriety Feels Worse</a>
-                      </li>
-                      <li>
-                        <a href="neuroplasticity">Neuroplasticity</a>
-                      </li>
-                      <li>
-                        <a href="critical-window">Critical Windows</a>
-                      </li>
-                      <li>
-                        <a href="epigenetics">Epigenetics</a>
-                      </li>
-                      <li>
-                        <a href="trauma-does-not-expire">Trauma Doesn't Expire</a>
-                      </li>
-                      <li>
-                        <a href="dohad">DOHaD: Developmental Origins</a>
-                      </li>
-                      <li>
-                        <a href="metabolism">Metabolism</a>
-                      </li>
-                      <li>
-                        <a href="the-hijacked-engine">The Hijacked Engine</a>
-                      </li>
-                    </ul>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">6</span>
+                      <h3 class="ry-trap__name">Vulnerability</h3>
+                    </div>
+                    <p class="ry-trap__body">Conviction that something bad is always about to happen. Not a passing worry. A baseline. The threat doesn't have to be real to feel imminent. In addiction, substances become the only thing that reliably turns the alarm down.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>A constant low hum of "something bad is about to happen"</li>
+                        <li>Catastrophizing health, money, or safety</li>
+                        <li>Needing control to feel okay, and rattled when you lose it</li>
+                        <li>Calm only when the alarm is artificially turned down</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="toxic-stress">Related: Toxic Stress &rarr;</a>
                   </li>
-                  <li>
-                    <a href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">7</span>
+                      <h3 class="ry-trap__name">Defectiveness</h3>
+                    </div>
+                    <p class="ry-trap__body">Core shame that I am broken, unlovable, or fundamentally flawed. In addiction, I wear masks, hide, or sabotage success because deep down I don't believe I deserve it.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>A core sense of being broken, flawed, or unlovable</li>
+                        <li>Hiding the real you, certain you'd be rejected if seen</li>
+                        <li>Deflecting praise; sabotaging good things when they arrive</li>
+                        <li>A harsh, relentless inner critic</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="shame-grief-false-self">Related: Shame, Grief & The False Self &rarr;</a>
                   </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">8</span>
+                      <h3 class="ry-trap__name">Failure</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that I will never measure up or succeed. In addiction, I give up before trying, convinced I'll blow it anyway. The schema doesn't need to be right. It just needs to go unchallenged long enough to act like it is.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Assuming you'll fall short before you even begin</li>
+                        <li>Measuring yourself against others and coming up short</li>
+                        <li>Giving up early, or not trying, to avoid proving it true</li>
+                        <li>Feeling like a fraud on the occasions you do succeed</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="distorted-thinking">Related: Distorted Thinking &rarr;</a>
                   </li>
-                  <li>
-                    <a href="problem-with-aa">Limits of the AA Model</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">9</span>
+                      <h3 class="ry-trap__name">Subjugation</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that I must suppress my needs or face rejection or punishment. In addiction, I say yes when I mean no, let resentment build, then escape through substances.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Saying yes when you mean no</li>
+                        <li>Going quiet to keep the peace</li>
+                        <li>Resentment that builds silently, then leaks out sideways</li>
+                        <li>A sense that your needs don't matter or aren't safe to voice</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="relationships">Related: Relationships in Recovery &rarr;</a>
                   </li>
-                  <li>
-                    <a href="misdiagnosed">When Trauma Is Misdiagnosed</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">10</span>
+                      <h3 class="ry-trap__name">Unrelenting Standards</h3>
+                    </div>
+                    <p class="ry-trap__body">The belief that nothing I do is ever quite enough. In addiction, I overwork, push through, perform competence I don't feel, then use substances to survive the gap between who I'm pretending to be and how I actually feel.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Nothing you do ever feels like quite enough</li>
+                        <li>Driven by "should"; rarely satisfied by "done"</li>
+                        <li>Overworking, and struggling to rest without guilt</li>
+                        <li>Tying your worth to output and performance</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="the-resilience-lie">Related: The Resilience Lie &rarr;</a>
                   </li>
-                  <li>
-                    <a href="disease-of-addiction">The “Disease of Addiction” Debate</a>
+                  <li class="ry-trap ry-reveal" data-reveal="up">
+                    <div class="ry-trap__head">
+                      <span class="ry-trap__n">11</span>
+                      <h3 class="ry-trap__name">Entitlement</h3>
+                    </div>
+                    <p class="ry-trap__body">Belief that rules don't apply to me, paired with a genuine difficulty respecting limits. In addiction, I push boundaries, rationalize destructive choices, and feel strangely exempt from consequences. Right up until I'm not.</p>
+                    <div class="ry-trap__signs">
+                      <span class="ry-trap__signs-label">You might notice</span>
+                      <ul>
+                        <li>Chafing at rules, limits, or being told no</li>
+                        <li>Trouble with patience, boundaries, or delayed gratification</li>
+                        <li>Feeling exempt from consequences that apply to everyone else</li>
+                        <li>Pushing past limits, then rationalizing it afterward</li>
+                      </ul>
+                    </div>
+                    <a class="ry-trap__link" href="the-hijacked-engine">Related: The Hijacked Engine &rarr;</a>
                   </li>
-                  <li>
-                    <a href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a>
-                  </li>
-                  <li>
-                    <a href="better-model-of-care">What Better Care Requires</a>
-                  </li>
-                  <li>
-                    <a href="trauma-avoidant">When Trauma Is Avoided</a>
-                  </li>
-                  <li>
-                    <a href="compassionate-care">Compassionate Care: A Critique</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="cbt">CBT</a>
-                      </li>
-                      <li>
-                        <a href="dbt">DBT</a>
-                      </li>
-                      <li>
-                        <a href="life-traps">Life Traps (Schema Therapy)</a>
-                      </li>
-                      <li>
-                        <a href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a>
-                      </li>
-                      <li>
-                        <a href="types-of-therapy">Therapy Types</a>
-                      </li>
-                      <li>
-                        <a href="role-of-therapy">The Role of Therapy</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="chart-your-life">Chart Your Life</a>
-                      </li>
-                      <li>
-                        <a href="distorted-thinking">Distorted Thinking</a>
-                      </li>
-                      <li>
-                        <a href="regulation-tools">Regulation Tools</a>
-                      </li>
-                      <li>
-                        <a href="reality-test">Reality Testing</a>
-                      </li>
-                      <li>
-                        <a href="relationships">Relationships in Recovery</a>
-                      </li>
-                      <li>
-                        <a href="connection">Connection</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a>
-                      </li>
-                      <li>
-                        <a href="spirituality">Spirituality</a>
-                      </li>
-                      <li>
-                        <a href="the-resilience-lie">The Resilience Lie</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="resources">Resources</a>
-                      </li>
-                      <li>
-                        <a href="tfr-model">Trauma-Focused Recovery Model (TFR Model)</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact" title="Contact">Contact</a>
-              </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-note" style="margin-top:40px;">
+                  <span class="ry-note__label">When the list became personal</span>
+                  <h3 class="ry-band-title" style="font-size:clamp(22px,2.6vw,28px);margin:6px 0 16px;">What I Found Beneath the Labels</h3>
+                  <div class="ry-prose">
+                  <p>I did eventually go back to the questionnaire. Once I knew I would be tackling my trauma with trauma-specific therapy, my thinking was simple: if I was going in, I had to go all the way.</p>
+                  <p><strong>Abandonment was the loudest result, followed by mistrust and abuse.</strong> The questionnaire also suggested that unrelenting standards played a major role, and at first I believed it. It fit what I could see on the surface: the pressure, the performance, and the inability to ever feel like I had done enough. Only after some serious emotional excavation did I realize that defectiveness was closer to the root. The standards were not the wound itself. They were part of how I tried to outrun it.</p>
+                  <p>That changed what schema work meant for me. This was less about finding one hidden cause for everything and more about tracing the origins of shame. Shame had always felt like evidence about who I was. Schema work helped me see that it had been embodied through a harmful environment. It was something I had learned to carry, not proof of what I was.</p>
+                  <p>The recognition was painful first and liberating second. I could finally trace behaviours that had followed me for as long as I could remember, including lying, stealing, and manipulation. I had assumed addiction created them. Instead, I found earlier and more basic roots in survival. Those behaviours came easily to me because, at one time, they had been necessary. That did not excuse the terrible things I did or remove my responsibility for them. It made the truth easier to face without treating every failure as proof of moral corruption.</p>
+                  <p><strong>The list can initially feel like an inventory of poisons coursing through you. But it offers the antidotes at the same time.</strong> I had no hope of changing a psychological pattern I could not correctly identify. Recognition did not mean I was more damaged than I realized. It meant I finally had an accurate map of what needed care.</p>
+                  </div>
+                </div>
+                <div class="ry-prose">
+                  <p>Schemas do not operate in isolation. Working on one often loosens others. Sometimes starting with the one that feels most manageable, or even its "ugly cousin" when the biggest feels untouchable, is enough to shift the whole structure. <strong>You do not have to dismantle everything at once.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== COPING STYLES ==================== -->
+        <section class="ry-split" id="coping-styles">
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> Coping Styles</span>
+            <h2 class="ry-eyebrow-h">How We Respond <strong>to Life Traps</strong></h2>
+            <p>Once a lifetrap is installed, you do not just sit with it. You build an entire operating style around it. Young and Klosko describe three ways people adapt to schemas: coping styles that often mirror the nervous system's <a href="four-trauma-responses">trauma responses</a>. None of them resolve the underlying belief. Each makes sense in the short term, and each keeps the lifetrap in place.</p>
+            <ul class="ry-moves">
+            <li class="ry-move">
+              <div class="ry-move__head">
+                <span class="ry-move__n">1</span>
+                <h3 class="ry-move__name">Surrender</h3>
+              </div>
+              <p class="ry-move__body">Accepting the schema as if it's the truth and organizing your life around it. Someone with an abandonment schema stays in toxic relationships because being left feels more unbearable than the toxicity. In addiction, surrender looks like returning to the same destructive patterns because they're at least predictable. The schema tells you this is just how things go for you. And because you've never seriously challenged that, you keep proving it right.</p>
+            </li>
+            <li class="ry-move">
+              <div class="ry-move__head">
+                <span class="ry-move__n">2</span>
+                <h3 class="ry-move__name">Escape (Avoidance)</h3>
+              </div>
+              <p class="ry-move__body">Staying one step ahead of the schema so you never have to face it directly. Substances, busyness, distraction, dissociation: anything that buys enough distance from the feeling that you never have to register what it's actually about. In addiction, escape is the most efficient route available. Fast, reliable, immediately effective. The only problem is that the schema is still there every time the relief wears off, and slightly louder than before.</p>
+            </li>
+            <li class="ry-move">
+              <div class="ry-move__head">
+                <span class="ry-move__n">3</span>
+                <h3 class="ry-move__name">Counterattack (Overcompensation)</h3>
+              </div>
+              <p class="ry-move__body">Fighting the schema by performing its opposite with everything you have. Someone with a failure schema overworks compulsively, not because they enjoy it, but because stopping lets the fear catch up. In addiction, this can look like swinging from feeling worthless to performing invincibility: demanding control, chasing status, and insisting nothing is wrong. The performance is exhausting, and the wound underneath never gets touched. When the performance finally cracks, the fall can seem to confirm everything the schema said about you.</p>
+            </li>
             </ul>
           </div>
-        </div>
-        <div class="col-auto pe-0"></div>
-      </div>
-    </nav><!-- end navigation -->
-  </header><!-- end header -->
-  <!-- start page title section -->
-  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/life-trap-hero.webp');">
-    <div class="opacity-medium bg-extra-dark-gray"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
-          <!-- start page title -->
-          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">Life Traps</h1>
-          <h6 class="text-light-gray alt-font font-weight-600">Understanding Your Own Blueprint</h6>
-        </div>
-      </div>
-    </div>
-    <div class="down-section text-center">
-      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-white" id="why" style="--ry-accent:#ff1463;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-9 col-lg-10">
-          <div class="margin-20px-bottom">
-            <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
-              <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>10 min read</span>
-            </div><!-- ═══ PDF DOWNLOAD CARD ═══ -->
-          <a class="ry-pdf-card" href="assets/website-pdfs/Life-Traps.pdf" download="Life-Traps-Recover-You.pdf" aria-label="Download the full Life Traps page as a printable PDF, 7 pages, 354 KB" data-fathom-event="download-pdf-life-traps">
-            <div class="ry-pdf-icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
-            <div class="ry-pdf-body">
-              <span class="ry-pdf-eyebrow">Prefer paper?</span>
-              <div class="ry-pdf-title">Take this entire page with you</div>
-              <p class="ry-pdf-sub">The complete guide, formatted for print. Read it offline, annotate it, or hand it to someone who needs it.</p>
-              <ul class="ry-pdf-meta">
-                <li>PDF</li>
-                <li>7 pages</li>
-                <li>354 KB</li>
-                <li>Free</li>
-              </ul>
-            </div>
-            <div class="ry-pdf-action">Download <i class="fas fa-arrow-down" aria-hidden="true"></i></div>
-          </a><!-- ═══ /PDF DOWNLOAD CARD ═══ -->
-          
-            <div class="text-uppercase text-small letter-spacing-2 alt-font opacity-7 margin-10px-bottom text-deep-pink">
-              // Schema Work
-            </div>
-            <h2 class="alt-font text-extra-dark-gray font-weight-600 margin-5px-bottom"><span class="text-extra-dark-gray">Unearthing Your Blueprint:</span><br>
-            <span class="font-weight-500">Navigating Life Traps</span></h2>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-70 margin-15px-top margin-25px-bottom"></div>
-            <p class="lead text-extra-dark-gray opacity-8 margin-0">The hidden beliefs that shaped your survival. And how to outgrow them.</p>
-          </div>
-          <p class="text-medium line-height-28 sm-line-height-26 margin-25px-top">During my most recent stay in treatment, my caseworker handed me a questionnaire and asked if I wanted to try it. I flipped through it, and the second I saw questions about childhood, I could feel my heartbeat in my jaw. I handed it back and said, "No. I'm not ready."<br>
-          <br>
-          It wasn't the questionnaire I was avoiding. It was the border crossing it represented: from spending my entire adult life insisting my childhood didn't leave a mark, to sitting down and actually checking. That wasn't a small step. It felt like opening a door I'd kept barricaded for thirty years. The <em>final boss</em> was waiting on the other side.<br>
-          <br>
-          If this feels heavy, that's the right response. Schema work isn't a gentle journaling prompt. Sometimes beginning is the whole act of courage. The questionnaire can wait. The decision to look can't.</p>
-          <div class="ry-card-lite bg-light-gray border-radius-10 padding-25px margin-25px-top margin-25px-bottom box-shadow-small last-paragraph-no-margin">
-            <div class="d-flex align-items-start">
-              <div class="icon-small text-deep-pink margin-10px-right">
-                <i aria-hidden="true" class="fa-solid fa-circle-info"></i>
+          <div class="ry-split__media" style="background-image:url('images/webp/how-we-respond.webp');"></div>
+        </section>
+
+        <!-- ==================== THE LIFETRAP CHAIN ==================== -->
+        <!-- Both ends of the chain are marked: the page's argument is not
+             about the order, it is about which link anyone aims at. -->
+        <section class="ry-diptych-section" id="lifetrap-loop-band">
+          <div class="ry-diptych-section__bg" style="background-image:url('images/webp/healing-schemas.webp');"></div>
+          <div class="ry-diptych-section__scrim"></div>
+          <div class="container sk__py-l position-relative">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-section-eyebrow"><i>//</i> The Lifetrap Loop</span>
+                <h2 class="ry-band-title" style="margin-bottom:22px;">Addiction as the Last Link</h2>
+                <div class="ry-prose">
+                <p>Addiction rarely starts with the substance. It is usually the final link in a much longer internal chain: trigger, schema, coping style, and only then the behaviour. <a href="why-traditional-treatment-falls-short">Most treatment targets the last link.</a> Schema work asks what the first link was, because that is where the chain can begin to break.</p>
+                </div>
               </div>
-              <p class="text-small text-extra-dark-gray opacity-8 mb-0"><strong>Schema work belongs to everyone.</strong> These patterns show up in families, workplaces, friendships, relationships, and leadership, not only in trauma or addiction. We all build blueprints early in life. Schema work gives you the tools to examine yours and decide which parts still deserve to be there.</p>
             </div>
-          </div>
-          <blockquote class="border-left border-color-deep-pink padding-20px-left margin-25px-bottom">
-            <p class="mb-0 text-large alt-font text-extra-dark-gray"><strong>What if those patterns weren't random?</strong> What if they were forged <a class="ry-link" href="trauma-addiction-evidence">long before I ever picked up a drink or a drug</a>? What if every relapse was just me running a script I didn't know I had?</p>
-          </blockquote>
-          <p class="margin-20px-bottom">For years I felt like I was living on autopilot. No matter how hard I tried, I couldn't override it. I was constantly reacting, never choosing. In addiction that meant cycling through the same outcomes on a loop: mornings loaded with regret, days in damage control, evenings convincing myself it would be different next time. I genuinely believed these reactions were just who I was. It never seriously occurred to me that these were patterns I had learned. And anything learned can be unlearned.</p>
-          <p class="last-paragraph-no-margin">This is where Life Traps, also called schemas, come in. They aren't passing thoughts or bad habits. <strong>They're deep, enduring beliefs about myself, others, and the world</strong>, formed when <a class="ry-link" href="attachment">core emotional needs went unmet in childhood</a>: safety, affection, validation, guidance, the simple freedom to exist without having to earn it. Those early gaps became the blueprint for how I interpreted everything as an adult.<br>
-          <br>
-          And until I understood them, I kept playing out the same script without realizing I was following one.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray" id="schemas-what" style="--ry-accent:#ff1463;">
-    <div class="container-fluid p-0">
-      <div class="row row-cols-1 row-cols-lg-2 m-0">
-        <!-- Image side -->
-        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInLeft" data-wow-duration="900ms" style="background-image:url('images/webp/schema-blueprint.webp');">
-          <div class="position-absolute inset-0" style="background:linear-gradient(90deg, rgba(12,12,14,.65) 0%, rgba(12,12,14,.35) 30%, rgba(12,12,14,0) 60%);"></div>
-          <div class="position-absolute top-0 bottom-0 right-0 w-2px bg-deep-pink opacity-8 d-none d-lg-block"></div>
-        </div><!-- Copy side -->
-        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-20px-lr wow animate__slideInRight" data-wow-duration="900ms">
-          <div class="text-uppercase text-extra-small alt-font letter-spacing-2 text-deep-pink margin-10px-bottom">
-            // Core Concept
-          </div>
-          <h3 class="alt-font text-white margin-10px-bottom">What Are <span class="text-white-2"><strong>Schemas?</strong></span></h3>
-          <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-15px-bottom"></div>
-          <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8">A schema isn't a thought you can catch and correct. It's deeper than that. A lens installed in childhood that filters everything you perceive afterward. Schemas form from <a class="ry-link" href="what-is-trauma">trauma, neglect, overcontrol</a>, emotional inconsistency, or the quieter kinds of invalidation that erode a child's sense of safety and identity without ever leaving a visible mark.</p>
-          <p class="text-white-2 opacity-7">Think of them as the <em>blueprint beneath the house.</em> You can renovate rooms, repaint walls, replace the furniture. But the foundation still dictates the structure. Until the blueprint changes, the house keeps getting rebuilt the same way: by the same hands, from the same plans, for the same reasons. Different relationships. Different jobs. Different substances. Same blueprint underneath.</p>
-          <div class="position-relative border-radius-8 padding-25px margin-30px-top margin-25px-bottom" style="background:linear-gradient(90deg, rgba(255,20,99,0.08) 0%, rgba(255,20,99,0.02) 100%); border-left:4px solid #ff1463;">
-            <div class="d-flex align-items-start">
-              <div class="icon-small text-deep-pink margin-10px-right">
-                <i aria-hidden="true" class="fa-solid fa-book-open-reader"></i>
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <ol class="ry-chain">
+                  <li class="ry-chain__link ry-chain__link--origin">
+                    <span class="ry-chain__n">Link 01</span>
+                    <span class="ry-chain__name">Trigger</span>
+                    <p class="ry-chain__body">A friend doesn't text back.</p>
+                    <p class="ry-chain__mark">Where schema work starts</p>
+                  </li>
+                  <li class="ry-chain__link">
+                    <span class="ry-chain__n">Link 02</span>
+                    <span class="ry-chain__name">Schema Activated (Abandonment)</span>
+                    <p class="ry-chain__body"><em>"They're pulling away. I'm going to be left."</em></p>
+                  </li>
+                  <li class="ry-chain__link">
+                    <span class="ry-chain__n">Link 03</span>
+                    <span class="ry-chain__name">Coping Style (Escape)</span>
+                    <p class="ry-chain__body"><em>"I can't hold this feeling. I need to shut it down."</em></p>
+                  </li>
+                  <li class="ry-chain__link ry-chain__link--target">
+                    <span class="ry-chain__n">Link 04</span>
+                    <span class="ry-chain__name">Addictive Behaviour</span>
+                    <p class="ry-chain__body">Drinking to dull the panic, the loneliness, or the specific terror of being "too much" for someone to stay.</p>
+                    <p class="ry-chain__mark">Where most treatment aims</p>
+                  </li>
+                </ol>
               </div>
-              <p class="mb-0 text-white-2 opacity-9 text-small line-height-26"><strong>Different sources</strong> categorize schemas a little differently. <strong>Dr. Jeffrey Young</strong> (<span class="opacity-8">Schema Therapy</span>) identifies <strong>18 maladaptive schemas</strong>. In <em>Reinventing Your Life</em>, <strong>Young &amp; Klosko</strong> group them into <strong>11 lifetraps</strong> for everyday use. The number differs. The meaning doesn't.</p>
             </div>
-          </div>
-          <p class="margin-25px-top text-white-2 opacity-7">When core needs go unmet early enough, we adapt in the only ways available to us at the time. Those adaptations calcify. They stop feeling like responses to circumstance and start feeling like the truth about who you are. Less like survival strategies. More like personality. Less like trauma responses. More like "this is just how I am."<br>
-          <br>
-          Schema work is the process of learning to tell the difference.</p>
-        </div>
-      </div>
-    </div>
-  </section><!-- end section -->
-  <section class="wow animate__fadeIn bg-white" id="lifetraps">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h3 class="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom"><span class="text-deep-pink">//</span> The <span class="text-deep-pink">11</span> Lifetraps</h3>
-          <div class="ry-card-lite bg-light-gray border-radius-10 padding-20px margin-20px-bottom box-shadow-small">
-            <div class="d-flex align-items-start">
-              <div class="icon-small text-deep-pink margin-10px-right">
-                <i class="fa-solid fa-circle-info"></i>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <div class="ry-prose" style="margin-top:26px;">
+                <p>The substance wasn't the problem that started this. It was the solution that showed up at the end of a process that was already well underway.</p>
+                </div>
               </div>
-              <p class="text-small text-extra-dark-gray opacity-8 mb-0">
-                <strong>These descriptions are drawn from Young &amp; Klosko's
-                <em>Reinventing Your Life</em> and are offered here for self-reflection only.
-                Not as a diagnostic tool.</strong> If something resonates, that's a starting point
-                for personal exploration, not a clinical conclusion. A schema-informed therapist
-                can help you work with what surfaces.
-              </p>
             </div>
           </div>
+        </section>
 
-          <p class="text-medium line-height-28 sm-line-height-26 opacity-8">
-            Each lifetrap below includes a brief note on how it may show up in addiction or recovery.
-            Some will hit immediately. Others won't land until later, or until something else shifts first.
-            The point isn't to collect them all. It's to notice which ones have the strongest pull right now.
-          </p><!-- GRID -->
-          <div class="row g-3 margin-30px-top">
-            <!-- 1 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">1</span>
-                <p class="mb-0"><strong>Abandonment:</strong> Fear that people I depend on will leave. In addiction, I might cling to unhealthy partners or sabotage closeness before they can hurt me.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Panic or anger when someone pulls away, cancels, or goes quiet</li>
-                    <li>Reading abandonment into small things: a short reply, a shift in tone</li>
-                    <li>Clinging tightly, or leaving first so you can't be left</li>
-                    <li>Finding it hard to be alone without sensing something is wrong</li>
-                  </ul>
+        <!-- ==================== REWIRING THE PATTERN ==================== -->
+        <section id="rewiring">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-8">
+                <span class="ry-section-eyebrow"><i>//</i> Schema Healing</span>
+                <h2 class="ry-eyebrow-h">Rewiring the Pattern</h2>
+                <div class="ry-prose">
+                <p>Schemas formed for a reason, and that reason made sense given what was happening at the time. The work is not to erase them. It is to weaken their grip until they stop running the show automatically. <a href="neuroplasticity">The brain changes through repeated, intentional practice.</a> Not through insight alone. Not through willpower. Through repetition, over time, with enough support.</p>
                 </div>
-                <a class="lifetrap-link" href="attachment">Related: Attachment Styles <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 2 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">2</span>
-                <p class="mb-0"><strong>Mistrust and Abuse:</strong> Belief that others will lie, betray, or exploit me. In addiction, I keep my guard up, isolate, or gravitate toward people who reinforce my mistrust.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Waiting for the catch, sure that kindness has a hidden cost</li>
-                    <li>Keeping your guard up even with people you want to trust</li>
-                    <li>Testing people, or bracing to be used, lied to, or betrayed</li>
-                    <li>Feeling safest when no one gets too close</li>
-                  </ul>
+                <ul class="ry-moves">
+                <li class="ry-move">
+                  <div class="ry-move__head">
+                    <h3 class="ry-move__name">Recognize</h3>
+                  </div>
+                  <p class="ry-move__body">Catch the schema as it activates. Name the story, the sensation, the pull toward the old response. You can't interrupt what you haven't noticed.</p>
+                </li>
+                <li class="ry-move">
+                  <div class="ry-move__head">
+                    <h3 class="ry-move__name">Challenge</h3>
+                  </div>
+                  <p class="ry-move__body">Ask: "Is this actually happening right now, or is my past replaying itself through a present that just looks similar enough to trigger it?" This is <a href="reality-test">reality testing</a> in practice.</p>
+                </li>
+                <li class="ry-move">
+                  <div class="ry-move__head">
+                    <h3 class="ry-move__name">Replace</h3>
+                  </div>
+                  <p class="ry-move__body">Choose a response <a href="identity-values-and-beliefs">aligned with your values</a> and the person you are building toward, instead of one dictated by what you survived. Do it even when it feels wrong. Especially when it feels wrong.</p>
+                </li>
+                </ul>
+                <div class="ry-prose">
+                  <p>Repeat that cycle enough times and the schema loses its automatic authority. It doesn't disappear, but it stops being the only voice in the room. That's the shape of the work. The place to start is simpler than you think: pick the one schema from the list above that had the strongest pull. Not the most interesting one. The one that made you slightly uncomfortable to read. That's the thread worth pulling.</p>
                 </div>
-                <a class="lifetrap-link" href="four-trauma-responses">Related: Trauma Responses <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 3 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">3</span>
-                <p class="mb-0"><strong>Emotional Deprivation:</strong> Belief that my need for love, care, and attunement will never really be met. In addiction, I may look stable on the outside while running on empty inside. Reaching for substances or chaos because nothing has ever felt like enough.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>A quiet sense that no one really understands you</li>
-                    <li>Rarely asking for comfort, sure it won't come anyway</li>
-                    <li>Feeling unseen or empty even inside relationships</li>
-                    <li>Drawn to people who can't fully show up for you</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="connection">Related: Connection <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 4 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">4</span>
-                <p class="mb-0"><strong>Social Exclusion:</strong> Feeling fundamentally different, or like I don't quite belong anywhere. In addiction, even recovery spaces don't fix it. I can be in a room full of people who've been through the same things and still feel like I'm watching from behind glass.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Feeling like an outsider even among people who care</li>
-                    <li>"Watching from behind glass" in groups and rooms</li>
-                    <li>Sensing you're fundamentally different or don't belong</li>
-                    <li>Holding back from belonging before you can be rejected</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="cptsd-behaviours">Related: CPTSD Patterns <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 5 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">5</span>
-                <p class="mb-0"><strong>Dependence:</strong> Belief that I cannot handle life without constant help or direction. In addiction, I hand my power to others, then resent them for it. Or I rebel, fall apart, and confirm what I already believed: that I can't manage on my own.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Second-guessing ordinary decisions; seeking reassurance</li>
-                    <li>Feeling overwhelmed by everyday demands and responsibilities</li>
-                    <li>Leaning heavily on others, then resenting the reliance</li>
-                    <li>A deep belief that you can't manage on your own</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="identity-values-and-beliefs">Related: Identity, Values &amp; Beliefs <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 6 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">6</span>
-                <p class="mb-0"><strong>Vulnerability:</strong> Conviction that something bad is always about to happen. Not a passing worry. A baseline. The threat doesn't have to be real to feel imminent. In addiction, substances become the only thing that reliably turns the alarm down.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>A constant low hum of "something bad is about to happen"</li>
-                    <li>Catastrophizing health, money, or safety</li>
-                    <li>Needing control to feel okay, and rattled when you lose it</li>
-                    <li>Calm only when the alarm is artificially turned down</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="toxic-stress">Related: Toxic Stress <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 7 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">7</span>
-                <p class="mb-0"><strong>Defectiveness:</strong> Core shame that I am broken, unlovable, or fundamentally flawed. In addiction, I wear masks, hide, or sabotage success because deep down I don't believe I deserve it.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>A core sense of being broken, flawed, or unlovable</li>
-                    <li>Hiding the real you, certain you'd be rejected if seen</li>
-                    <li>Deflecting praise; sabotaging good things when they arrive</li>
-                    <li>A harsh, relentless inner critic</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="shame-grief-false-self">Related: Shame, Grief &amp; The False Self <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 8 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">8</span>
-                <p class="mb-0"><strong>Failure:</strong> Belief that I will never measure up or succeed. In addiction, I give up before trying, convinced I'll blow it anyway. The schema doesn't need to be right. It just needs to go unchallenged long enough to act like it is.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Assuming you'll fall short before you even begin</li>
-                    <li>Measuring yourself against others and coming up short</li>
-                    <li>Giving up early, or not trying, to avoid proving it true</li>
-                    <li>Feeling like a fraud on the occasions you do succeed</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="distorted-thinking">Related: Distorted Thinking <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 9 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">9</span>
-                <p class="mb-0"><strong>Subjugation:</strong> Belief that I must suppress my needs or face rejection or punishment. In addiction, I say yes when I mean no, let resentment build, then escape through substances.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Saying yes when you mean no</li>
-                    <li>Going quiet to keep the peace</li>
-                    <li>Resentment that builds silently, then leaks out sideways</li>
-                    <li>A sense that your needs don't matter or aren't safe to voice</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="relationships">Related: Relationships in Recovery <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 10 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">10</span>
-                <p class="mb-0"><strong>Unrelenting Standards:</strong> The belief that nothing I do is ever quite enough. In addiction, I overwork, push through, perform competence I don't feel, then use substances to survive the gap between who I'm pretending to be and how I actually feel.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Nothing you do ever feels like quite enough</li>
-                    <li>Driven by "should"; rarely satisfied by "done"</li>
-                    <li>Overworking, and struggling to rest without guilt</li>
-                    <li>Tying your worth to output and performance</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="the-resilience-lie">Related: The Resilience Lie <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div><!-- 11 -->
-            <div class="col-12 col-lg-6 position-relative">
-              <article class="lifetrap-card">
-                <span class="lifetrap-badge">11</span>
-                <p class="mb-0"><strong>Entitlement:</strong> Belief that rules don't apply to me, paired with a genuine difficulty respecting limits. In addiction, I push boundaries, rationalize destructive choices, and feel strangely exempt from consequences. Right up until I'm not.</p>
-                <div class="lifetrap-signs">
-                  <span class="lifetrap-signs-label">You might notice</span>
-                  <ul>
-                    <li>Chafing at rules, limits, or being told no</li>
-                    <li>Trouble with patience, boundaries, or delayed gratification</li>
-                    <li>Feeling exempt from consequences that apply to everyone else</li>
-                    <li>Pushing past limits, then rationalizing it afterward</li>
-                  </ul>
-                </div>
-                <a class="lifetrap-link" href="the-hijacked-engine">Related: The Hijacked Engine <i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
-              </article>
-            </div>
-          </div><!-- closing -->
-          <div class="ry-schema-personal margin-40px-top">
-            <div class="ry-schema-personal__eyebrow"><span>//</span> When the list became personal</div>
-            <h4 class="alt-font text-extra-dark-gray font-weight-600 margin-15px-bottom">What I Found Beneath the Labels</h4>
-            <p>I did eventually go back to the questionnaire. Once I knew I would be tackling my trauma with trauma-specific therapy, my thinking was simple: if I was going in, I had to go all the way.</p>
-            <p><strong>Abandonment was the loudest result, followed by mistrust and abuse.</strong> The questionnaire also suggested that unrelenting standards played a major role, and at first I believed it. It fit what I could see on the surface: the pressure, the performance, and the inability to ever feel like I had done enough. Only after some serious emotional excavation did I realize that defectiveness was closer to the root. The standards were not the wound itself. They were part of how I tried to outrun it.</p>
-            <p>That changed what schema work meant for me. This was less about finding one hidden cause for everything and more about tracing the origins of shame. Shame had always felt like evidence about who I was. Schema work helped me see that it had been embodied through a harmful environment. It was something I had learned to carry, not proof of what I was.</p>
-            <p>The recognition was painful first and liberating second. I could finally trace behaviours that had followed me for as long as I could remember, including lying, stealing, and manipulation. I had assumed addiction created them. Instead, I found earlier and more basic roots in survival. Those behaviours came easily to me because, at one time, they had been necessary. That did not excuse the terrible things I did or remove my responsibility for them. It made the truth easier to face without treating every failure as proof of moral corruption.</p>
-            <p class="mb-0"><strong>The list can initially feel like an inventory of poisons coursing through you. But it offers the antidotes at the same time.</strong> I had no hope of changing a psychological pattern I could not correctly identify. Recognition did not mean I was more damaged than I realized. It meant I finally had an accurate map of what needed care.</p>
-          </div>
-          <p class="margin-40px-top text-medium opacity-8">Schemas do not operate in isolation. Working on one often loosens others. Sometimes starting with the one that feels most manageable, or even its "ugly cousin" when the biggest feels untouchable, is enough to shift the whole structure. <strong>You do not have to dismantle everything at once.</strong></p>
-        </div>
-      </div>
-    </div>
-    <style>
-          #lifetraps .lifetrap-card {
-            background:#f5f7f8;
-            border-radius:12px;
-            padding:18px 18px 18px 42px;
-            border-left:3px solid #ff1463;
-            min-height:80px;
-          }
-
-          #lifetraps .lifetrap-badge {
-            position:absolute;
-            top:16px;
-            left:-12px;
-            width:30px;
-            height:30px;
-            border-radius:999px;
-            background:#ff1463;
-            color:#fff;
-            font-size:13px;
-            font-weight:700;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            box-shadow:0 6px 16px rgba(255,20,99,.35);
-          }
-
-          @media (max-width:991px) {
-            #lifetraps .lifetrap-badge {
-              left:-10px;
-            }
-          }
-
-          #lifetraps .lifetrap-card p { margin-bottom:0; }
-
-          #lifetraps .lifetrap-signs {
-            margin-top:14px;
-            padding-top:13px;
-            border-top:1px dashed rgba(255,20,99,.28);
-          }
-
-          #lifetraps .lifetrap-signs-label {
-            display:inline-block;
-            font-size:11px;
-            font-weight:700;
-            letter-spacing:.08em;
-            text-transform:uppercase;
-            color:#ff1463;
-            margin-bottom:9px;
-          }
-
-          #lifetraps .lifetrap-signs ul {
-            margin:0;
-            padding-left:18px;
-            list-style:none;
-          }
-
-          #lifetraps .lifetrap-signs li {
-            position:relative;
-            font-size:14px;
-            line-height:1.5;
-            color:#3c4450;
-            margin-bottom:6px;
-          }
-
-          #lifetraps .lifetrap-signs li::before {
-            content:"";
-            position:absolute;
-            left:-14px;
-            top:8px;
-            width:6px;
-            height:6px;
-            border-radius:50%;
-            background:#ff1463;
-            opacity:.55;
-          }
-
-          #lifetraps .lifetrap-link {
-            margin-top:15px;
-            display:inline-flex;
-            align-items:center;
-            gap:7px;
-            font-size:13px;
-            font-weight:600;
-            color:#ff1463;
-            text-decoration:none;
-            transition:gap .2s ease, opacity .2s ease;
-          }
-
-          #lifetraps .lifetrap-link:hover,
-          #lifetraps .lifetrap-link:focus {
-            opacity:.82;
-            gap:11px;
-          }
-
-          #lifetraps .ry-schema-personal {
-            position:relative;
-            overflow:hidden;
-            padding:34px 36px 34px 40px;
-            border:1px solid rgba(255,20,99,.18);
-            border-radius:14px;
-            background:linear-gradient(135deg, #fff 0%, #fff 62%, rgba(255,20,99,.055) 100%);
-            box-shadow:0 18px 45px rgba(24,28,34,.08);
-          }
-
-          #lifetraps .ry-schema-personal::before {
-            content:"";
-            position:absolute;
-            top:0;
-            bottom:0;
-            left:0;
-            width:5px;
-            background:#ff1463;
-          }
-
-          #lifetraps .ry-schema-personal__eyebrow {
-            color:#ff1463;
-            font-family:inherit;
-            font-size:12px;
-            font-weight:700;
-            letter-spacing:.12em;
-            text-transform:uppercase;
-          }
-
-          #lifetraps .ry-schema-personal__eyebrow span {
-            margin-right:6px;
-          }
-
-          #lifetraps .ry-schema-personal p {
-            color:#3c4450;
-            font-size:16px;
-            line-height:1.75;
-            margin-bottom:18px;
-          }
-
-          @media (max-width:767px) {
-            #lifetraps .ry-schema-personal {
-              padding:28px 23px 28px 27px;
-              border-radius:12px;
-            }
-          }
-    </style>
-  </section>
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray" id="coping-styles" style="--ry-accent:#ff1463;">
-    <div class="container-fluid p-0">
-      <div class="row row-cols-1 row-cols-lg-2 m-0">
-        <!-- Copy side -->
-        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-20px-lr wow animate__slideInLeft" data-wow-duration="900ms">
-          <div class="text-uppercase text-extra-small alt-font letter-spacing-2 text-deep-pink opacity-8 margin-5px-bottom">
-            // Coping Styles
-          </div>
-          <h3 class="alt-font text-white-2 margin-5px-bottom">How We <strong>Respond</strong> to Life Traps</h3>
-          <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-15px-bottom"></div>
-          <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-20px-bottom">Once a lifetrap is installed, you do not just sit with it. You build an entire operating style around it. Young and Klosko describe three ways people adapt to schemas: coping styles that often mirror the nervous system's <a class="ry-link" href="four-trauma-responses">trauma responses</a>. None of them resolve the underlying belief. Each makes sense in the short term, and each keeps the lifetrap in place.</p>
-          <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-40 margin-15px-bottom margin-15px-top"></div>
-          <div class="ry-coping-group">
-            <div class="ry-coping-item margin-20px-bottom">
-              <h6 class="alt-font text-white-2 margin-5px-bottom d-flex align-items-center"><span class="badge rounded-pill bg-deep-pink text-white-2 text-extra-small margin-10px-right">1</span> Surrender</h6>
-              <p class="text-small text-white-2 opacity-8 mb-0">Accepting the schema as if it's the truth and organizing your life around it. Someone with an abandonment schema stays in toxic relationships because being left feels more unbearable than the toxicity. In addiction, surrender looks like returning to the same destructive patterns because they're at least predictable. The schema tells you this is just how things go for you. And because you've never seriously challenged that, you keep proving it right.</p>
-            </div>
-            <div class="ry-coping-item margin-20px-bottom">
-              <h6 class="alt-font text-white-2 margin-5px-bottom d-flex align-items-center"><span class="badge rounded-pill bg-deep-pink text-white-2 text-extra-small margin-10px-right">2</span> Escape (Avoidance)</h6>
-              <p class="text-small text-white-2 opacity-8 mb-0">Staying one step ahead of the schema so you never have to face it directly. Substances, busyness, distraction, dissociation: anything that buys enough distance from the feeling that you never have to register what it's actually about. In addiction, escape is the most efficient route available. Fast, reliable, immediately effective. The only problem is that the schema is still there every time the relief wears off, and slightly louder than before.</p>
-            </div>
-            <div class="ry-coping-item">
-              <h6 class="alt-font text-white-2 margin-5px-bottom d-flex align-items-center"><span class="badge rounded-pill bg-deep-pink text-white-2 text-extra-small margin-10px-right">3</span> Counterattack (Overcompensation)</h6>
-              <p class="text-small text-white-2 opacity-8 mb-0">Fighting the schema by performing its opposite with everything you have. Someone with a failure schema overworks compulsively, not because they enjoy it, but because stopping lets the fear catch up. In addiction, this can look like swinging from feeling worthless to performing invincibility: demanding control, chasing status, and insisting nothing is wrong. The performance is exhausting, and the wound underneath never gets touched. When the performance finally cracks, the fall can seem to confirm everything the schema said about you.</p>
-            </div>
-          </div>
-        </div><!-- Image side -->
-        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInRight" style="background-image: url('images/webp/how-we-respond.webp');">
-          <div class="position-absolute inset-0" style="background:linear-gradient(120deg, rgba(12,12,14,.35) 0%, rgba(12,12,14,0) 60%);"></div>
-          <div class="position-absolute top-0 bottom-0 right-0 w-2px bg-deep-pink opacity-8 d-none d-lg-block"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="p-0 wow animate__fadeIn" id="lifetrap-loop-band">
-    <div class="container-fluid p-0">
-      <div class="row">
-        <!-- LEFT: Lifetrap Loop -->
-        <div class="col-xl-4 col-md-6 bg-white d-flex align-items-center wow animate__fadeIn">
-          <div class="padding-six-all md-padding-nine-all sm-padding-50px-tb sm-padding-15px-lr w-100">
-            <div class="text-uppercase alt-font letter-spacing-2 text-deep-pink opacity-8 margin-10px-bottom">
-              // The Lifetrap Loop
-            </div>
-            <h5 class="alt-font text-extra-dark-gray margin-10px-bottom">Addiction as the Last Link</h5>
-            <p class="text-medium line-height-28 sm-line-height-26 text-dark-gray margin-25px-bottom">Addiction rarely starts with the substance. It is usually the final link in a much longer internal chain: trigger, schema, coping style, and only then the behaviour. <a class="ry-link" href="why-traditional-treatment-falls-short">Most treatment targets the last link.</a> Schema work asks what the first link was, because that is where the chain can begin to break.</p>
-            <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong>Trigger:</strong> A friend doesn't text back.</p>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-100 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong>Schema Activated (Abandonment):</strong> <em>"They're pulling away. I'm going to be left."</em></p>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-100 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-extra-dark-gray margin-5px-bottom"><strong>Coping Style (Escape):</strong> <em>"I can't hold this feeling. I need to shut it down."</em></p>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-100 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-extra-dark-gray margin-15px-bottom"><strong>Addictive Behaviour:</strong> Drinking to dull the panic, the loneliness, or the specific terror of being "too much" for someone to stay.</p>
-            <p class="text-medium text-dark-gray opacity-7 mb-0">The substance wasn't the problem that started this. It was the solution that showed up at the end of a process that was already well underway.</p>
-          </div>
-        </div><!-- MIDDLE: image -->
-        <div class="col-xl-4 col-md-6 d-flex align-items-center wow animate__fadeIn" style="background:url('images/webp/healing-schemas.webp') center center / cover no-repeat; min-height:360px;"></div><!-- RIGHT: Schema Healing -->
-        <div class="col-xl-4 col-md-6 bg-extra-dark-gray d-flex align-items-center wow animate__fadeIn">
-          <div class="padding-six-all md-padding-nine-all sm-padding-50px-tb sm-padding-15px-lr w-100">
-            <div class="text-uppercase alt-font letter-spacing-2 text-deep-pink opacity-8 margin-10px-bottom">
-              // Schema Healing
-            </div>
-            <h5 class="alt-font text-white-2 margin-10px-bottom">Rewiring the Pattern</h5>
-            <p class="text-medium line-height-28 sm-line-height-26 text-white-2 opacity-8 margin-25px-bottom">Schemas formed for a reason, and that reason made sense given what was happening at the time. The work is not to erase them. It is to weaken their grip until they stop running the show automatically. <a class="ry-link" href="neuroplasticity">The brain changes through repeated, intentional practice.</a> Not through insight alone. Not through willpower. Through repetition, over time, with enough support.</p>
-            <p class="alt-font text-white-2 margin-10px-bottom"><strong>Recognize:</strong> Catch the schema as it activates. Name the story, the sensation, the pull toward the old response. You can't interrupt what you haven't noticed.</p>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-white-2 margin-10px-bottom"><strong>Challenge:</strong> Ask: "Is this actually happening right now, or is my past replaying itself through a present that just looks similar enough to trigger it?" This is <a class="ry-link" href="reality-test">reality testing</a> in practice.</p>
-            <div class="separator-line-horrizontal-full bg-deep-pink h-2px w-60 margin-10px-bottom" style="opacity:.35;"></div>
-            <p class="alt-font text-white-2 margin-10px-bottom"><strong>Replace:</strong> Choose a response <a class="ry-link" href="identity-values-and-beliefs">aligned with your values</a> and the person you are building toward, instead of one dictated by what you survived. Do it even when it feels wrong. Especially when it feels wrong.</p>
-            <p class="text-medium text-white-2 opacity-7 mb-0">
-              Repeat that cycle enough times
-              and the schema loses its automatic authority.
-              It doesn't disappear, but it stops being the only voice in the room.
-              That's the shape of the work.
-              The place to start is simpler than you think:
-              pick the one schema from the list above that had the strongest pull.
-              Not the most interesting one. The one that made you slightly uncomfortable to read.
-              That's the thread worth pulling.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="bg-light-gray">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <div class="col-lg-5 md-margin-30px-bottom wow animate__fadeInLeft">
-          <img alt="" class="w-100 border-radius-8" src="images/webp/schema-working.webp" style="box-shadow:0 12px 28px rgba(0,0,0,0.25);">
-        </div>
-
-        <div class="col-lg-6 offset-lg-1 wow animate__fadeInRight">
-          <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">// Schema Work</span>
-          <h5 class="alt-font text-extra-dark-gray font-weight-600">Taking It Off <strong>The Page</strong></h5>
-
-          <p>Reading about lifetraps and recognizing them in your own life are two very different
-          experiences. The first feels intellectual. The second tends to feel like someone turned on
-          a light in a room you've been navigating in the dark for years.</p>
-
-          <p>The descriptions above aren't a diagnostic tool. They're a mirror.
-          If something in that list resonated, that's not a label.
-          It's a signal that something worth exploring is closer to the surface than you may have realized.
-          You don't need a score or a questionnaire to confirm what you already felt reading it.</p>
-
-          <div class="ry-card-lite bg-white border-radius-10 padding-20px margin-25px-bottom box-shadow-small">
-            <div class="d-flex align-items-start">
-              <div class="icon-small text-deep-pink margin-10px-right">
-                <i class="fa-solid fa-magnifying-glass"></i>
               </div>
-              <div>
-                <p class="text-small text-extra-dark-gray margin-5px-bottom mb-0">
-                  <strong>A simple place to start:</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAKING IT OFF THE PAGE ==================== -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <section id="off-the-page">
+          <div class="container sk__py-l">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-12 col-lg-5 margin-30px-bottom">
+                <figure class="ry-figure" style="margin:0;">
+                  <img src="images/webp/schema-working.webp" alt="A figure pressing a hand against a lit grid of connections" width="1024" height="1536" loading="lazy" decoding="async">
+                </figure>
+              </div>
+              <div class="col-12 col-lg-6 offset-lg-1">
+                <div class="ry-prose">
+                  <span class="ry-section-eyebrow"><i>//</i> Schema Work</span>
+                  <h2 class="ry-eyebrow-h">Taking It <strong>Off The Page</strong></h2>
+                  <p>Reading about lifetraps and recognizing them in your own life are two very different experiences. The first feels intellectual. The second tends to feel like someone turned on a light in a room you've been navigating in the dark for years.</p>
+                  <p>The descriptions above aren't a diagnostic tool. They're a mirror. If something in that list resonated, that's not a label. It's a signal that something worth exploring is closer to the surface than you may have realized. You don't need a score or a questionnaire to confirm what you already felt reading it.</p>
+                </div>
+                <div class="ry-callout ry-callout--red">
+                  <span class="ry-callout__eyebrow">A simple place to start</span>
+                  <p>Go back to the list. Pick the one schema that didn't just <em>make sense</em>. Pick the one that made you slightly uncomfortable to read. Not the most relatable. The one with the faint pull of recognition you almost scrolled past.</p><p> Write it down. Then ask: <em>Where do I see this playing out right now, in a relationship, a pattern, a reaction I keep having?</em></p><p> That's the thread. You don't need to unravel the whole sweater today. Pulling one thread carefully is often enough to show you the shape of the rest.</p>
+                </div>
+                <div class="ry-prose">
+                  <p>The descriptions here are doorways, not destinations. If you want to go further, the book below is where this work actually lives. It was written for people doing this themselves, not clinicians reading about it from a distance. If the recognition hits hard, a schema-informed therapist can take you places a page never could.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+        <!-- /.ry-ashfield -->
+
+        <!-- ==================== THE BOOK ==================== -->
+        <section id="the-book">
+          <div class="container sk__py-l">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-12 col-lg-4 margin-30px-bottom text-center">
+                <figure class="ry-figure" style="margin:0;">
+                  <img src="images/webp/life-trap-cover.webp" alt="Reinventing Your Life by Jeffrey Young and Janet Klosko" width="1024" height="1536" loading="lazy" decoding="async" style="max-width:300px;">
+                </figure>
+              </div>
+              <div class="col-12 col-lg-6 offset-lg-1">
+                <div class="ry-prose">
+                  <span class="ry-section-eyebrow"><i>//</i> Where To Go Next</span>
+                  <h2 class="ry-eyebrow-h"><em>Reinventing Your Life</em>  by Jeffrey Young &amp; Janet Klosko</h2>
+                  <p>This is the book this page is built on. I was handed it in treatment and kept it. One of maybe three books from that period I still have. Reading it was the first time I saw my own patterns described clearly enough that I couldn't argue my way out of recognizing them. That's a specific kind of uncomfortable. It's also the kind that moves things.</p>
+                  <p>It was written for people doing this work in their own lives. Not a clinical manual, but a practical guide with enough grounding in the research to be taken seriously. If the schema descriptions above landed for you, this is where the actual work begins. A page can create recognition. The book can take you somewhere with it.</p>
+                </div>
+                <p style="margin-top:22px;">
+                  <a class="ry-btn" href="https://www.amazon.ca/s?k=Reinventing+Your+Life+Jeffrey+Young" rel="noopener" target="_blank">Find the Book &rarr;</a>
+                  <a class="ry-btn" href="resources-trauma-therapy#trauma-hub">Find a Schema Therapist &rarr;</a>
                 </p>
-                <p class="text-small text-extra-dark-gray opacity-8 mb-0">
-                  Go back to the list. Pick the one schema that didn't just
-                  <em>make sense</em>. Pick the one that made you slightly uncomfortable to read.
-                  Not the most relatable. The one with the faint pull of recognition you
-                  almost scrolled past.<br><br>
-                  Write it down. Then ask: <em>Where do I see this playing out right now,
-                  in a relationship, a pattern, a reaction I keep having?</em><br><br>
-                  That's the thread. You don't need to unravel the whole sweater today.
-                  Pulling one thread carefully is often enough to show you the shape of the rest.
-                </p>
+                <p class="ry-sources-note">Not an affiliate link. A resource that helped me, shared here in case it helps you too.</p>
               </div>
             </div>
           </div>
+        </section>
 
-          <p>The descriptions here are doorways, not destinations. If you want to go further,
-          the book below is where this work actually lives. It was written for people doing this themselves,
-          not clinicians reading about it from a distance. If the recognition hits hard,
-          a schema-informed therapist can take you places a page never could.</p>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="row align-items-center ry-card-lite border-radius-10 padding-30px-all box-shadow-small bg-light-gray">
-
-            <div class="col-md-4 md-margin-20px-bottom text-center">
-              <img alt="Reinventing Your Life by Jeffrey Young and Janet Klosko" class="border-radius-8 w-100 box-shadow-small" src="images/webp/life-trap-cover.webp">
-            </div>
-
-            <div class="col-md-8">
-              <span class="text-medium text-deep-pink alt-font margin-10px-bottom d-inline-block">// Where To Go Next</span>
-              <h5 class="alt-font text-extra-dark-gray font-weight-600 margin-10px-bottom">
-                <em>Reinventing Your Life</em>
-                <span class="font-weight-400"> by Jeffrey Young &amp; Janet Klosko</span>
-              </h5>
-
-              <p class="text-medium line-height-28 sm-line-height-26 text-dark-gray">
-                This is the book this page is built on. I was handed it in treatment and
-                kept it. One of maybe three books from that period I still have.
-                Reading it was the first time I saw my own patterns described clearly enough
-                that I couldn't argue my way out of recognizing them.
-                That's a specific kind of uncomfortable. It's also the kind that moves things.
-              </p>
-
-              <p class="text-medium line-height-28 sm-line-height-26 text-dark-gray opacity-8">
-                It was written for people doing this work in their own lives.
-                Not a clinical manual, but a practical guide with enough
-                grounding in the research to be taken seriously.
-                If the schema descriptions above landed for you,
-                this is where the actual work begins.
-                A page can create recognition. The book can take you somewhere with it.
-              </p>
-
-              <div class="d-flex align-items-center gap-3 margin-20px-top flex-wrap">
-                <a class="btn btn-small btn-deep-pink d-inline-flex align-items-center" href="https://www.amazon.ca/s?k=Reinventing+Your+Life+Jeffrey+Young" rel="noopener" target="_blank">
-                  Find the Book
-                  <i aria-hidden="true" class="fa-solid fa-arrow-right margin-5px-left text-white-2"></i>
-                </a>
-                <a class="btn btn-small btn-light-gray d-inline-flex align-items-center" href="resources-trauma-therapy.html#trauma-hub">
-                  Find a Schema Therapist
-                  <i aria-hidden="true" class="fa-solid fa-arrow-right margin-5px-left"></i>
-                </a>
+        <!-- ==================== WHERE TO NEXT ==================== -->
+        <section id="where-next">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 text-center">
+                <h2 class="ry-band-title">Where to Next?</h2>
+                <p class="ry-lede" style="text-align:center;">Follow the next step in order, or branch out into related topics.</p>
               </div>
-
-              <p class="text-extra-small text-dark-gray opacity-7 margin-15px-top mb-0">
-                Not an affiliate link. A resource that helped me,
-                shared here in case it helps you too.
-              </p>
             </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- start section -->
-  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
-    <video id="learnMoreBg" autoplay="" muted="" loop="" playsinline="" class="learn-more-bg">
-      <source src="video/learn-more-bg.mp4" type="video/mp4">
-    </video>
-
-    <div class="container position-relative z-index-2">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
-          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
-          <p class="learn-more-subtitle">
-            Follow the next step in order, or branch out into related topics.
-          </p>
-        </div>
-      </div>
-
-      <div class="learn-more-divider mx-auto"></div>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
-
-        <!-- Up Next -->
-        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
-          <a class="learn-card is-next category-tools" href="healing-trauma">
-            <span class="learn-card-label">Up Next</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Post-Traumatic Growth</div>
-            <p>What healing from trauma actually looks like, and why it is not a straight line.</p>
-          </a>
-        </div>
-
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-          <a class="learn-card" href="identity-values-and-beliefs">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Who Are You, Really?</div>
-            <p>Rebuilding identity, values, and beliefs trauma dismantled from inside out.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-          <a class="learn-card" href="shame-grief-false-self">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">The Mask You Wear</div>
-            <p>How shame builds a false self, and why grief is the way through.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-          <a class="learn-card" href="cptsd-behaviours">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Trauma in Plain Sight</div>
-            <p>How C-PTSD really appears in thoughts, habits, relationships, and daily life.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-<section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community &amp; mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <div class="ry-next-grid">
+                  <a class="ry-next-card ry-next-card--up ry-reveal" data-reveal="up" style="--i:0" href="healing-trauma">
+                    <span class="ry-next-card__label">Up Next</span>
+                    <div class="ry-next-card__title">Post-Traumatic Growth</div>
+                    <p>What healing from trauma actually looks like, and why it is not a straight line.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:1" href="identity-values-and-beliefs">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Who Are You, Really?</div>
+                    <p>Rebuilding identity, values, and beliefs trauma dismantled from inside out.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:2" href="shame-grief-false-self">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">The Mask You Wear</div>
+                    <p>How shame builds a false self, and why grief is the way through.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:3" href="cptsd-behaviours">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Trauma in Plain Sight</div>
+                    <p>How C-PTSD really appears in thoughts, habits, relationships, and daily life.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
                 </div>
+              </div>
             </div>
-        </div>
-    </section><!-- start services section -->
-
-    <!-- ========== NEW FOOTER & PRIVACY ========== -->
-    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
-      <div class="container">
-        <div class="site-footer__inner">
-
-          <div class="site-footer__left alt-font text-small font-weight-500">
-            <a href="contact">GET IN TOUCH</a>
-            <span class="footer-sep">|</span>
-            <a href="#" id="open-privacy-policy">Privacy Policy</a>
-          <span class="footer-sep">|</span>
-          <a href="sitemap">Site Map</a>
           </div>
+        </section>
 
-          <div class="site-footer__center">
-            <a href="index">
-              <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
-            </a>
+        <section class="ry-ticker-wrap" aria-label="Crisis support numbers">
+          <div class="ry-ticker"><div class="ry-ticker-track">
+            <span class="ry-ticker-item">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+            <span class="ry-ticker-item" aria-hidden="true">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+          </div></div>
+        </section>
+
+        <script src="assets/js/ry-ash.js"></script>
+        <script src="assets/js/ry-reveal.js"></script>
+
+        <!-- ============================= -->
+        <!-- FOOTER -->
+        <!-- ============================= -->
+        <footer class="dark-shade-2-bg position-relative ry-footer">
+          <div class="footer-tint sk__gradient-background-tint"></div>
+          <div class="container sk__py-m">
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                <a href="index"><img alt="Recover You" class="ry-footer-logo" src="images/recover-you-logo-white.png"></a>
+              </div>
+              <div class="col-lg-6 text-lg-end">
+                <span class="ry-footer-tagline">Trauma-aware. Science-backed. Forged inside Alberta's system.</span>
+              </div>
+            </div>
+
+            <span class="divider sk__subtle-divider d-block my-4"></span>
+
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-4 mb-3 mb-lg-0">
+                <a href="contact">Get In Touch</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="#" id="open-privacy-policy">Privacy Policy</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="sitemap">Site Map</a>
+              </div>
+              <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                <span class="ry-footer-copy">&copy; 2025 Recover-<span class="ry-red-letter">Y</span>ou. All rights reserved</span>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <span class="ry-footer-copy">Calgary, Alberta</span>
+              </div>
+            </div>
           </div>
-
-          <div class="site-footer__right alt-font text-small font-weight-500">
-            Not medical advice.<br>
-            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
-          </div>
-
-        </div>
+        </footer>
+        <!-- /.ry-footer -->
       </div>
-    </footer><!-- end footer -->
-    <!-- start scroll to top -->
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
-     <!-- javascript -->
+      <!-- /#smooth-content -->
+    </div>
+    <!-- /#smooth-wrapper -->
 
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script>
-    <script src="js/bootsnav.js" type="text/javascript">
-    </script>
-    <script src="js/jquery.nav.js" type="text/javascript">
-    </script>
-    <script src="js/hamburger-menu.js" type="text/javascript">
-    </script>
-    <script src="js/theme-vendors.min.js" type="text/javascript">
-    </script> <!-- setting -->
+  </main>
+  <!-- /main#primary.site-main -->
 
-    <script src="js/lenis.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript">
-    </script>
-
-
-
-
-    <script>
-    (function () {
-      const progress = document.getElementById('reading-progress');
-      const fill = document.getElementById('reading-progress-fill');
-
-      if (!progress || !fill) return;
-
-      /*
-        Reusable rules:
-        1) If a section has id="page-hero", use that
-        2) otherwise use the first .parallax section
-        3) if no hero exists, start from top of page
-      */
-      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-
-      function getScrollTop() {
-        return window.pageYOffset || document.documentElement.scrollTop || 0;
-      }
-
-      function getDocHeight() {
-        return Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-
-      function updateReadingProgress() {
-        const scrollTop = getScrollTop();
-        const viewportHeight = window.innerHeight;
-        const docHeight = getDocHeight();
-
-        let startPoint = 0;
-
-        if (hero) {
-          startPoint = hero.offsetTop + hero.offsetHeight;
-        }
-
-        const totalReadableDistance = docHeight - viewportHeight - startPoint;
-        const distanceRead = scrollTop - startPoint;
-
-        if (scrollTop > startPoint) {
-          progress.classList.add('is-visible');
-
-          if (totalReadableDistance <= 0) {
-            fill.style.width = '100%';
-            return;
-          }
-
-          let percent = (distanceRead / totalReadableDistance) * 100;
-          percent = Math.max(0, Math.min(percent, 100));
-          fill.style.width = percent + '%';
-        } else {
-          progress.classList.remove('is-visible');
-          fill.style.width = '0%';
-        }
-      }
-
-      window.addEventListener('load', updateReadingProgress);
-      window.addEventListener('resize', updateReadingProgress);
-      window.addEventListener('scroll', function () {
-        if (updateReadingProgress.framePending) return;
-        updateReadingProgress.framePending = true;
-        window.requestAnimationFrame(function () {
-          updateReadingProgress();
-          updateReadingProgress.framePending = false;
-        });
-      }, { passive: true });
-    })();
-    </script>
-
-
-    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
-    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-      <div class="privacy-modal__backdrop" data-close-policy=""></div>
-
-      <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
-        <div class="privacy-modal__header">
-          <h3 id="privacy-modal-title">Privacy Policy</h3>
-          <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">
-            ×
-          </button>
-        </div>
-
-        <div class="privacy-modal__body">
-          <p><strong>Last updated:</strong> March 2026</p>
-
-          <p>
-            If you reach out through the contact form, I'll collect your name, email, and
-            message, nothing more. That information is used only to get back to you. It's
-            not shared, sold, or used for anything else.
-          </p>
-
-          <p>
-            This site uses two analytics tools to help me understand how people find and
-            use it. Google Analytics is only active if you choose to allow analytics cookies.
-            Fathom runs quietly in the background using general server data:
-            no cookies, no individual tracking.
-          </p>
-
-          <p>
-            A few third-party services help keep the site running, including hosting and
-            the contact form. Some of these are based outside Canada, so your information
-            may be processed there. I've chosen providers I trust, but I want you to know.
-          </p>
-
-          <p>
-            Please don't share anything urgent or crisis-related through the contact form.
-            it's not monitored in real time. If you're in immediate distress, please reach
-            out to a crisis line or emergency services.
-          </p>
-
-          <p>
-            Questions about this policy, or want to see or correct something I have about
-            you? You can reach me through the contact page. I'm happy to help.
-          </p>
-        </div>
-
-        <div class="privacy-modal__footer">
-          <button type="button" class="privacy-modal__ok" data-close-policy="">OK</button>
-        </div>
+  <!-- Privacy Policy Modal -->
+  <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+    <div class="privacy-modal__backdrop" data-close-policy=""></div>
+    <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+      <div class="privacy-modal__header">
+        <h3 id="privacy-modal-title">Privacy Policy</h3>
+        <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">&times;</button>
+      </div>
+      <div class="privacy-modal__body">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>If you reach out through the contact form, I'll collect your name, email, and message &mdash; nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data &mdash; no cookies, no individual tracking.</p>
+        <p>A few third-party services help keep the site running &mdash; things like hosting and the contact form. Some of these are based outside Canada, so your information may be processed there. I've chosen providers I trust, but I want you to know.</p>
+        <p>Please don't share anything urgent or crisis-related through the contact form &mdash; it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+        <p>Questions about this policy, or want to see or correct something I have about you? You can reach me through the contact page &mdash; I'm happy to help.</p>
       </div>
     </div>
-    <script>
-      (function () {
-        const modal = document.getElementById('privacy-modal');
-        const openBtn = document.getElementById('open-privacy-policy');
-        const closeBtns = document.querySelectorAll('[data-close-policy]');
+  </div>
 
-        if (!modal || !openBtn) return;
-
-        function openPolicy(e) {
-          e.preventDefault();
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('policy-modal-open');
-        }
-
-        function closePolicy() {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('policy-modal-open');
-        }
-
-        openBtn.addEventListener('click', openPolicy);
-
-        closeBtns.forEach((btn) => {
-          btn.addEventListener('click', closePolicy);
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-            closePolicy();
-          }
-        });
-      })();
-    </script>
-      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
     <div class="cookie-banner-inner">
       <p class="cookie-banner-text">
         <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
@@ -1248,98 +863,245 @@
       </div>
     </div>
   </div>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/5.1.3/bootstrap.min.js"></script>
+  <script src="assets/vendor/offcanvas-nav/hc-offcanvas-nav.js"></script>
+  <script src="assets/vendor/greensock/gsap.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollToPlugin.min.js"></script>
+
+  <!-- Main Theme JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Local file:// preview only; no-op on a real server -->
+  <script src="assets/js/ry-local-preview.js"></script>
+
+  <!-- Keeps dropdowns from opening off the right edge of the viewport -->
+  <script src="assets/js/ry-nav-fit.js"></script>
+
+  <!-- Recover-You custom scripts -->
   <script>
+    /* Site-wide reading progress bar */
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+      if (!progress || !fill) return;
+
+      const hero = document.querySelector('.sk__hero-section');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+      }
+      function update() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+        let startPoint = 0;
+        if (hero) startPoint = hero.offsetTop + hero.offsetHeight;
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+          if (totalReadableDistance <= 0) { fill.style.width = '100%'; return; }
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', update);
+      window.addEventListener('resize', update);
+      window.addEventListener('scroll', function () {
+        if (update.framePending) return;
+        update.framePending = true;
+        window.requestAnimationFrame(function () { update(); update.framePending = false; });
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    /* Magnetic CTA hover */
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      const strength = 14;
+      document.querySelectorAll('.ry-magnetic').forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (x / rect.width * strength).toFixed(1) + 'px,' + (y / rect.height * strength).toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+      });
+    })();
+  </script>
+
+  <script>
+    /* Hero typewriter */
+    (function () {
+      const el = document.getElementById('ry-dynamic-word');
+      const cursor = document.getElementById('ry-cursor');
+      if (!el || !cursor) return;
+
+      const sequence = ['CONTROL', 'CLARITY', 'HOPE', 'YOU'];
+      let wordIndex = 0, charIndex = 0, isDeleting = false;
+      const typingSpeed = 105, deletingSpeed = 130, finalTypingSpeed = 300;
+      const pauseBetweenWords = 1600, pauseBeforeNextWord = 350;
+
+      function type() {
+        const currentWord = sequence[wordIndex];
+        const isFinalWord = wordIndex === sequence.length - 1;
+        const currentTypingSpeed = isFinalWord ? finalTypingSpeed : typingSpeed;
+
+        if (!isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            if (isFinalWord) {
+              setTimeout(function () { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 900);
+              return;
+            }
+            isDeleting = true;
+            setTimeout(type, pauseBetweenWords);
+            return;
+          }
+          setTimeout(type, currentTypingSpeed);
+        } else {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            setTimeout(type, pauseBeforeNextWord);
+            return;
+          }
+          setTimeout(type, deletingSpeed);
+        }
+      }
+      window.addEventListener('load', function () { setTimeout(type, 2600); });
+    })();
+  </script>
+
+  <script>
+    /* Checklist reveal-on-scroll */
+    (function () {
+      const items = document.querySelectorAll('#how-it-helps .ry-checklist li');
+      if (!items.length) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+
+  <script>
+    /* About strip — draw the route graphic in on scroll */
+    (function () {
+      const strip = document.getElementById('about-strip');
+      if (!strip) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-drawn');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+      observer.observe(strip);
+    })();
+  </script>
+
+  <script>
+    /* Privacy policy modal */
+    (function () {
+      const modal = document.getElementById('privacy-modal');
+      const dialog = modal ? modal.querySelector('.privacy-modal__dialog') : null;
+      const openBtn = document.getElementById('open-privacy-policy');
+      const closeBtns = document.querySelectorAll('[data-close-policy]');
+      if (!modal || !dialog || !openBtn) return;
+
+      let lastFocusedElement = null;
+
+      function openPolicy(e) {
+        e.preventDefault();
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('policy-modal-open');
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusable) firstFocusable.focus(); else { dialog.setAttribute('tabindex', '-1'); dialog.focus(); }
+      }
+      function closePolicy() {
+        if (document.activeElement && modal.contains(document.activeElement)) document.activeElement.blur();
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('policy-modal-open');
+        if (lastFocusedElement) lastFocusedElement.focus(); else openBtn.focus();
+      }
+      openBtn.addEventListener('click', openPolicy);
+      closeBtns.forEach(function (btn) { btn.addEventListener('click', closePolicy); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
+    })();
+  </script>
+
+  <script>
+    /* Cookie consent */
     (function () {
       const CONSENT_KEY = 'ry_cookie_consent';
       const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
       const DECLINE_DAYS = 180;
-
       const banner = document.getElementById('cookie-banner');
       const acceptBtn = document.getElementById('cookie-accept');
       const declineBtn = document.getElementById('cookie-decline');
 
-      function grantAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
-
-      function denyAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
-
-      function showBanner() {
-        if (banner) banner.style.display = 'block';
-      }
-
-      function hideBanner() {
-        if (banner) banner.style.display = 'none';
-      }
-
-      function setDeclineExpiry(days) {
-        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
-        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
-      }
-
-      function clearDeclineExpiry() {
-        localStorage.removeItem(CONSENT_EXPIRY_KEY);
-      }
-
+      function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+      function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+      function showBanner() { if (banner) banner.style.display = 'block'; }
+      function hideBanner() { if (banner) banner.style.display = 'none'; }
+      function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
+      function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
       function isDeclineExpired() {
         const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
         if (!expiry) return true;
         return Date.now() > Number(expiry);
       }
-
       function applyConsentState() {
         const consent = localStorage.getItem(CONSENT_KEY);
-
-        if (consent === 'accepted') {
-          grantAnalytics();
-          hideBanner();
-          return;
-        }
-
+        if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
         if (consent === 'declined') {
           denyAnalytics();
-
-          if (isDeclineExpired()) {
-            localStorage.removeItem(CONSENT_KEY);
-            localStorage.removeItem(CONSENT_EXPIRY_KEY);
-            showBanner();
-          } else {
-            hideBanner();
-          }
+          if (isDeclineExpired()) { localStorage.removeItem(CONSENT_KEY); localStorage.removeItem(CONSENT_EXPIRY_KEY); showBanner(); }
+          else hideBanner();
           return;
         }
-
         denyAnalytics();
         showBanner();
       }
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'accepted');
-          clearDeclineExpiry();
-          grantAnalytics();
-          hideBanner();
-        });
-      }
-
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'declined');
-          setDeclineExpiry(DECLINE_DAYS);
-          denyAnalytics();
-          hideBanner();
-        });
-      }
-
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
       applyConsentState();
     })();
   </script>
 
-
-</body></html>
+</body>
+</html>

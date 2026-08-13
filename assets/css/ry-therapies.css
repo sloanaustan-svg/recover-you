@@ -1,0 +1,302 @@
+/* ====================================================================
+   Recover-You — Which Therapy Does What? (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-faq,
+   .ry-diptych-section, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE INDEX
+   --------------------------------------------------------------------
+   Fifteen therapies, each tagged in the source with the same three
+   things: where in recovery it tends to fit, how much talking it asks
+   of you, and how much emotional load it carries. That is a decision
+   aid, and in the legacy it was fifteen sets of pill badges scattered
+   down a sixteen-minute page where no two could be compared.
+
+   So it is collected once at the top, GROUPED BY STAGE. The page's most
+   actionable claim is that these are not interchangeable and that
+   sequence matters — "some are gentler entry points, others are more
+   intensive" — so the reader should be able to see at a glance which
+   ones are meant for where they actually are.
+
+   HONESTY. Nothing here is measured. These are the page's own
+   descriptors on its own ordinal vocabulary — Very Low, Low,
+   Low–Moderate, Moderate, Moderate–High, High — and the note under the
+   index says so. Crucially the RANGES ARE DRAWN AS RANGES: "Low to
+   Moderate" fills two steps rather than being averaged to a point.
+   Collapsing a stated range to a single value would be inventing
+   precision the source deliberately did not claim.
+   ==================================================================== */
+.ry-matrix { margin: 34px 0 0; padding: 0; list-style: none; }
+
+.ry-matrix__group { margin: 0 0 26px; }
+.ry-matrix__group:last-child { margin-bottom: 0; }
+
+.ry-matrix__stage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+.ry-matrix__stage::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 47, 110, 0.28);
+}
+
+.ry-matrix__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px 132px;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-matrix__row:last-child { border-bottom: 1px solid var(--ry-hairline); }
+@media (max-width: 767.98px) {
+  .ry-matrix__row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.ry-matrix__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.ry-matrix__name:hover { color: var(--ry-red); border-bottom-color: rgba(255, 47, 110, 0.5); }
+
+.ry-matrix__load { display: flex; align-items: center; gap: 9px; }
+.ry-matrix__load-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  width: 26px;
+  flex: none;
+}
+/* four steps. A range spans the steps it names; it is not averaged. */
+.ry-matrix__steps { display: flex; gap: 3px; }
+.ry-matrix__step {
+  width: 15px;
+  height: 7px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.ry-matrix__step--on { background: var(--ry-red); border-color: var(--ry-red); }
+
+.ry-matrix-note {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-matrix-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   2. THE FAMILY HEADER
+   Six families of approach, each with a one-line explanation of what
+   the family has in common.
+   ==================================================================== */
+.ry-family { margin: 60px 0 26px; }
+.ry-family:first-child { margin-top: 0; }
+.ry-family__kicker {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 10px;
+}
+.ry-family__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.8vw, 42px);
+  letter-spacing: 0.03em;
+  line-height: 1.08;
+  color: #fff;
+  margin: 0 0 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.4);
+}
+.ry-family__sub {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   3. THE THERAPY CARD
+   --------------------------------------------------------------------
+   Name, the three tags, three fields, and the considerations — which
+   stay in a <details> because they are genuinely secondary and because
+   fifteen of them expanded at once would bury the page.
+
+   The considerations are NOT dressed as a warning panel. Several of
+   them are the most important sentences on the page ("requires adequate
+   stabilization before processing begins"), and a red alert box would
+   make the reader classify them as boilerplate and skip. A plain
+   disclosure that says what it holds does better.
+   ==================================================================== */
+.ry-therapies { margin: 0; padding: 0; list-style: none; }
+
+.ry-therapy {
+  margin: 0 0 18px;
+  padding: 30px 34px 26px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  scroll-margin-top: 90px;
+}
+.ry-therapy:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-therapy { padding: 24px 22px 22px; } }
+
+.ry-therapy__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 31px);
+  letter-spacing: 0.03em;
+  line-height: 1.12;
+  color: #fff;
+  margin: 0 0 14px;
+}
+
+.ry-therapy__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid var(--ry-hairline);
+  list-style: none;
+}
+.ry-therapy__tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ry-ink-dim);
+  padding: 5px 12px;
+  border: 1px solid var(--ry-hairline);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+/* the stage tag is the one that decides whether a therapy is for you
+   yet, so it is the one that is marked */
+.ry-therapy__tag--stage {
+  color: var(--ry-red);
+  border-color: rgba(255, 47, 110, 0.38);
+  background: rgba(255, 47, 110, 0.07);
+  font-weight: 600;
+}
+
+.ry-therapy__field { margin: 0 0 20px; }
+.ry-therapy__field:last-of-type { margin-bottom: 0; }
+.ry-therapy__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 9px;
+}
+.ry-therapy__text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-therapy__list { margin: 0; padding: 0; list-style: none; }
+.ry-therapy__list li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 10px 20px;
+  font-size: 14px;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-therapy__list li:last-child { padding-bottom: 0; }
+.ry-therapy__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.7;
+}
+
+/* ---- the considerations ---- */
+.ry-therapy__more {
+  margin: 22px 0 0;
+  border-top: 1px solid var(--ry-hairline);
+  padding-top: 18px;
+}
+.ry-therapy__more > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ry-therapy__more > summary::-webkit-details-marker { display: none; }
+/* the marker is drawn, so a missing icon font cannot leave a disclosure
+   with no affordance at all */
+.ry-therapy__more > summary::before {
+  content: "";
+  flex: none;
+  width: 16px; height: 16px;
+  border: 1px solid rgba(255, 47, 110, 0.55);
+  border-radius: 3px;
+  background:
+    linear-gradient(var(--ry-red), var(--ry-red)) center/8px 1.5px no-repeat,
+    linear-gradient(var(--ry-red), var(--ry-red)) center/1.5px 8px no-repeat;
+  transition: transform .2s ease;
+}
+.ry-therapy__more[open] > summary::before {
+  background: linear-gradient(var(--ry-red), var(--ry-red)) center/8px 1.5px no-repeat;
+}
+.ry-therapy__more > summary:hover { color: var(--ry-red); }
+.ry-therapy__more-body { padding-top: 16px; }

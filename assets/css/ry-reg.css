@@ -1,0 +1,184 @@
+/* ====================================================================
+   Recover-You — Regulation Tools (page layer)
+   --------------------------------------------------------------------
+   Two page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-said,
+   .ry-split, .ry-sheet, .ry-figure, .ry-quote-section, .ry-cta,
+   .ry-sources, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE QUICK INDEX
+   --------------------------------------------------------------------
+   Twenty-one named tools across five categories. This is the one page
+   on the site somebody may open while they are ALREADY dysregulated —
+   heart pounding, thoughts racing — and in that state nobody reads
+   twelve minutes of prose to find "4-7-8 Breathing". So the tools are
+   listed once, by name, with a jump to each.
+
+   ORDERING IS THE DESIGN. The first group is the under-five-minutes
+   set, because that is what someone in distress needs; the daily
+   practices follow. And the index sits BELOW the page's own note of
+   caution, never above it. An index that lets a reader skip the
+   sentence "if a technique spikes your anxiety or makes you feel
+   trapped, stop" would be actively worse for them than no index.
+   ==================================================================== */
+.ry-toolindex {
+  margin: 30px 0 0;
+  padding: 26px 28px 22px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  background:
+    linear-gradient(180deg, rgba(255, 47, 110, 0.06) 0%, rgba(255, 47, 110, 0.015) 100%),
+    var(--ry-glass-bg);
+}
+.ry-toolindex__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 6px;
+}
+.ry-toolindex__lead {
+  margin: 0 0 20px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+.ry-toolindex__group { margin: 0 0 18px; padding: 0; list-style: none; }
+.ry-toolindex__group:last-child { margin-bottom: 0; }
+.ry-toolindex__cat {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-toolindex__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-toolindex__list a {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ry-ink-dim);
+  text-decoration: none;
+  padding: 6px 13px;
+  border: 1px solid var(--ry-hairline);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: color .18s ease, border-color .18s ease;
+}
+.ry-toolindex__list a:hover {
+  color: #fff;
+  border-color: rgba(255, 47, 110, 0.55);
+}
+
+/* ====================================================================
+   2. THE TOOL CARDS
+   --------------------------------------------------------------------
+   Each card is a category: a lead, a set of named tools, and a closing
+   note on the mechanism they share.
+
+   The NAME of each tool is set on its own line above the instruction,
+   rather than run into it as a bolded lead. That is the difference
+   between a card someone can scan under pressure and a wall of
+   paragraphs that all begin the same way — and under pressure is
+   exactly when this page gets opened.
+   ==================================================================== */
+.ry-tools { margin: 0; padding: 0; list-style: none; }
+
+.ry-tool {
+  margin: 0 0 20px;
+  padding: 32px 36px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  scroll-margin-top: 90px;
+}
+.ry-tool:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-tool { padding: 24px 22px 22px; } }
+
+/* the caution reads as a caution; the rest do not shout */
+.ry-tool--caution {
+  border-color: rgba(255, 47, 110, 0.4);
+  background:
+    linear-gradient(180deg, rgba(255, 47, 110, 0.08) 0%, rgba(255, 47, 110, 0.02) 100%),
+    var(--ry-glass-bg);
+}
+
+.ry-tool__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(25px, 3.2vw, 33px);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.ry-tool__lead {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-tool__lead strong { color: #fff; font-weight: 600; }
+
+.ry-tool__items { margin: 22px 0; padding: 0; list-style: none; }
+.ry-tool__item {
+  margin: 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--ry-hairline);
+  scroll-margin-top: 90px;
+}
+.ry-tool__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-tool__item-name {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ry-red);
+  margin-bottom: 8px;
+}
+.ry-tool__item-body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-tool__item-body strong { color: #fff; font-weight: 600; }
+.ry-tool__item-body em { color: rgba(255, 255, 255, 0.88); }
+
+/* the shared mechanism, which is the reason the set hangs together */
+.ry-tool__why {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-tool__why em { color: rgba(255, 255, 255, 0.82); font-style: italic; }
+.ry-tool__why strong { color: #fff; font-weight: 600; }

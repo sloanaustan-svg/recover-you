@@ -1,0 +1,456 @@
+/* ====================================================================
+   Recover-You — Trauma "Avoidant" (page layer)
+   --------------------------------------------------------------------
+   Six page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-pullquote, .ry-said, .ry-split, .ry-sheet,
+   .ry-quote-section, .ry-statement, .ry-figure, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE OVERBAND — long-form text over a photograph
+   --------------------------------------------------------------------
+   Built for the Rat Park section, which runs to eleven paragraphs. The
+   legacy set it as a half-and-half split: image on the left, a very
+   tall column of text on the right. At that length the split stops
+   working — the picture is a stripe you scroll past while the words do
+   all the work in half the available width.
+
+   So the text runs over the image instead. Two things make that safe
+   at this length:
+
+   1. THE IMAGE IS NOT STRETCHED DOWN THE WHOLE BAND. rat-park.webp is
+      a 1024-square DIPTYCH — a barren cage on the left, the enriched
+      park on the right — and the contrast between those two halves is
+      the entire point of the picture. Covering a 2000px-tall band with
+      a square image would crop the sides away and take both rats with
+      it. Instead the image holds the top of the band at full width,
+      where the whole diptych is visible, and a gradient carries it
+      down into flat black underneath the body copy.
+
+   2. THE SCRIM IS GRADED, NOT UNIFORM. Light at the top where only the
+      eyebrow, the title and the opening paragraph sit, so the picture
+      is legible as a picture; heavy from the point where sustained
+      reading begins. A flat 60% overlay would have made both the image
+      muddy and the text hard work.
+
+   The result reads as one continuous band that starts on the
+   photograph and settles into the dark, rather than as an image with
+   a caption stuck to it.
+   ==================================================================== */
+.ry-overband {
+  position: relative;
+  isolation: isolate;
+  background: #000;
+  overflow: hidden;
+}
+
+/* the picture: top of the band only, full width, whole diptych visible */
+.ry-overband__bg,
+.ry-overband__scrim {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: min(94vh, 1000px);
+  pointer-events: none;
+}
+.ry-overband__bg {
+  z-index: 0;
+  background-size: cover;
+  background-position: center 22%;
+  background-repeat: no-repeat;
+}
+.ry-overband__scrim {
+  z-index: 1;
+  background:
+    /* graded top-to-bottom: readable over the picture, solid below it */
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.46) 16%,
+      rgba(0, 0, 0, 0.58) 34%,
+      rgba(0, 0, 0, 0.88) 58%,
+      #000 88%),
+    /* and inward from the edges, so the column never sits on busy detail */
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0) 24%,
+      rgba(0, 0, 0, 0) 76%,
+      rgba(0, 0, 0, 0.34) 100%);
+}
+.ry-overband__inner { position: relative; z-index: 2; }
+
+/* Where the body copy starts is pinned to the height of the PICTURE, not
+   to however many lines the opening paragraph happens to wrap onto. A
+   margin on the body would drift: a lead that wraps to five lines on a
+   narrow screen and two on a wide one would push the first paragraph to
+   a different point on the gradient each time, and on some widths it
+   would land on a still-bright part of the photograph.
+
+   min-height on the block above solves it deterministically. The picture
+   is min(94vh, 1000px); the lead block reserves 72vh of it, so the body
+   always begins around three-quarters of the way down, where the scrim
+   has reached roughly 95% and the text is on effectively flat black. */
+.ry-overband__top { min-height: min(72vh, 760px); }
+@media (max-width: 767.98px) { .ry-overband__top { min-height: min(64vh, 560px); } }
+
+/* the opening block, which sits on the visible part of the picture */
+.ry-overband__lead {
+  font-size: clamp(17px, 2.1vw, 21px);
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0 0 8px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
+}
+.ry-overband__lead a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ry-red);
+}
+.ry-overband__lead a:hover { color: var(--ry-red); }
+
+.ry-overband .ry-band-title,
+.ry-overband .ry-section-eyebrow { text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9); }
+
+/* body copy, which starts where the scrim has gone solid */
+.ry-overband__body p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+  margin: 0 0 22px;
+}
+.ry-overband__body > :last-child { margin-bottom: 0; }
+.ry-overband__body strong { color: #fff; font-weight: 600; }
+.ry-overband__body em { color: rgba(255, 255, 255, 0.88); }
+.ry-overband__body a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.35);
+}
+.ry-overband__body a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+/* the question the section turns on, set apart from the paragraphs
+   around it because the copy sets it apart too */
+.ry-overband__turn {
+  margin: 30px 0;
+  padding: 24px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  border-left: 3px solid var(--ry-red);
+  background: rgba(255, 47, 110, 0.06);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ====================================================================
+   2. VARIED / HELD CONSTANT / NEVER MEASURED
+   --------------------------------------------------------------------
+   The page's argument about Rat Park lands in one sentence: "You cannot
+   test a variable you've deliberately held constant, and you cannot
+   theorize about one you never measured." That is three distinct states
+   for three variables, and stating them as three makes the criticism
+   precise instead of merely sceptical.
+
+   This describes a study's DESIGN. It is not data and reports no
+   result, so it is set as three labelled columns rather than anything
+   resembling a chart, and the note under it says which study and where
+   the reading comes from.
+
+   The third column is deliberately drawn open — a dashed edge, no fill.
+   The whole point is that nothing was recorded there.
+   ==================================================================== */
+.ry-varied {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 767.98px) { .ry-varied { grid-template-columns: 1fr; } }
+
+.ry-varied__item {
+  margin: 0;
+  padding: 20px 22px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.035);
+}
+/* what the experiment actually manipulated */
+.ry-varied__item--varied { border-color: rgba(255, 47, 110, 0.4); }
+/* engineered out before the experiment began */
+.ry-varied__item--held { opacity: 0.9; }
+/* never recorded at all — drawn as an absence, not as a value */
+.ry-varied__item--unknown {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.24);
+  background: transparent;
+}
+
+.ry-varied__state {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-varied__item--held .ry-varied__state,
+.ry-varied__item--unknown .ry-varied__state { color: var(--ry-ink-faint); }
+
+.ry-varied__what {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.ry-varied__item--unknown .ry-varied__what { color: rgba(255, 255, 255, 0.72); }
+.ry-varied__note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+.ry-varied-note {
+  margin: 16px 0 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   3. WHAT "TRAUMA-INFORMED" USUALLY MEANS
+   --------------------------------------------------------------------
+   Three practices and then the gap. The fourth card is the argument —
+   the first three are all real, all decent, and all stop short — so it
+   is marked rather than left to look like a fourth practice.
+   ==================================================================== */
+.ry-practice {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-practice__item {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+/* the gap is not a fourth practice; it is what the three add up to */
+.ry-practice__item--gap {
+  border-color: rgba(255, 47, 110, 0.38);
+  background:
+    linear-gradient(180deg, rgba(255, 47, 110, 0.08) 0%, rgba(255, 47, 110, 0.02) 100%),
+    var(--ry-glass-bg);
+}
+.ry-practice__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 7px;
+}
+.ry-practice__item--gap .ry-practice__label { color: var(--ry-red); }
+.ry-practice__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0 0 14px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-practice__points { margin: 0; padding: 0; list-style: none; }
+.ry-practice__points li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 11px 20px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-practice__points li:last-child { padding-bottom: 0; }
+.ry-practice__points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.75;
+}
+
+/* ====================================================================
+   4. THE EXCHANGE — a line, and what actually comes back
+   --------------------------------------------------------------------
+   Used twice: "Are you going to talk to someone about it?" with the
+   answer people really give, and the caveat with what follows from it.
+   The claim and the response are set as two moves rather than one
+   paragraph, because the gap between them is the point.
+   ==================================================================== */
+.ry-exchange {
+  margin: 26px 0;
+  padding: 24px 26px 22px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.03);
+}
+.ry-exchange__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-exchange__claim {
+  margin: 0 0 14px;
+  font-size: clamp(16px, 1.9vw, 18.5px);
+  line-height: 1.5;
+  font-weight: 600;
+  color: #fff;
+}
+/* a container, not a paragraph: the legacy writes the second beat after
+   a <br><br>, which becomes a real paragraph on the way in */
+.ry-exchange__response {
+  padding-left: 20px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+.ry-exchange__response p {
+  margin: 0 0 12px;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-exchange__response > :last-child { margin-bottom: 0; }
+.ry-exchange__response strong { color: #fff; font-weight: 600; }
+.ry-exchange__response em { color: var(--ry-red); font-style: italic; }
+
+/* ====================================================================
+   5. THE UNANSWERED QUESTIONS
+   --------------------------------------------------------------------
+   Used twice on this page for two different kinds of question, so the
+   base carries no marker of its own and each use supplies one. That is
+   deliberate: a base that shipped one marker as a default would force
+   the other use to cancel it, which is how half-dead rules and orphan
+   classes get made.
+
+     .ry-asks--query   a "?" — things that should exist and don't
+     .ry-asks__n       a numeral — the three the page raises and openly
+                       does not answer
+   ==================================================================== */
+.ry-asks { margin: 26px 0; padding: 0; list-style: none; }
+.ry-asks__item {
+  position: relative;
+  margin: 0;
+  padding: 18px 0 18px 34px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 15px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-asks__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-asks__item strong { color: #fff; font-weight: 600; }
+
+.ry-asks--query .ry-asks__item::before {
+  content: "?";
+  position: absolute;
+  left: 2px; top: 17px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 23px;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-asks__n {
+  position: absolute;
+  left: 0; top: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--ry-red);
+}
+
+/* ====================================================================
+   6. THE STAT LINE
+   One figure with its sentence beside it. The number is large because
+   the page treats it as the headline fact, and the source sits with it
+   rather than three paragraphs away.
+   ==================================================================== */
+.ry-bignum {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0 10px;
+  padding: 22px 24px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+}
+@media (max-width: 575.98px) {
+  .ry-bignum { grid-template-columns: 1fr; gap: 10px; }
+}
+.ry-bignum__value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(34px, 5vw, 46px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ry-red);
+  white-space: nowrap;
+}
+.ry-bignum__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-bignum__body a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.35);
+}
+.ry-bignum__body a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+.ry-bignum-src {
+  margin: 0 0 24px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+.ry-bignum-src a {
+  color: var(--ry-ink-faint);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+.ry-bignum-src a:hover { color: #fff; }

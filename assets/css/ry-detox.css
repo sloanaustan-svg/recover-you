@@ -1,0 +1,743 @@
+/* ================================================================
+   Recover-You | Detox & Stabilization Resources
+   Page-specific presentation for the Alberta withdrawal directory.
+   ================================================================ */
+
+.ry-detox-page {
+  --detox-red: #ff2438;
+  --detox-red-soft: rgba(255, 36, 56, .14);
+  --detox-ink: #050506;
+  --detox-panel: #101012;
+  --detox-panel-2: #151518;
+  --detox-line: rgba(255, 255, 255, .12);
+  --detox-muted: #a9a9ae;
+}
+
+/* Hero */
+.ry-detox-page .ry-detox-hero {
+  min-height: clamp(650px, 86vh, 900px);
+}
+
+.ry-detox-page .ry-detox-hero .ry-page-hero__bg {
+  background-position: center 42%;
+  filter: saturate(.84) contrast(1.08);
+}
+
+.ry-detox-page .ry-detox-hero .ry-page-hero__scrim {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .58) 52%, rgba(0, 0, 0, .28) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, .22) 0%, rgba(0, 0, 0, .28) 48%, #050506 95%, #050506 100%);
+}
+
+.ry-detox-page .ry-detox-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 35%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, #050506 92%);
+}
+
+.ry-detox-page .ry-detox-hero .ry-page-hero__inner,
+.ry-detox-page .ry-detox-hero .ry-scroll-cue {
+  z-index: 3;
+}
+
+.ry-detox-page .ry-detox-hero .ry-page-hero__title {
+  max-width: 980px;
+}
+
+.ry-detox-page .ry-detox-hero .ry-page-hero__sub {
+  max-width: 780px;
+}
+
+/* Understanding detox */
+.ry-detox-page #why {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(88px, 10vw, 150px) 0 clamp(90px, 10vw, 145px);
+  color: #d9d9dc;
+  background:
+    radial-gradient(circle at 11% 18%, rgba(255, 255, 255, .055), transparent 26%),
+    radial-gradient(ellipse at 87% 68%, rgba(255, 36, 56, .045), transparent 34%),
+    #050506;
+}
+
+.ry-detox-page #why::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background-image:
+    radial-gradient(circle at 30% 44%, rgba(255,255,255,.16) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 63%, rgba(255,255,255,.12) 0 1px, transparent 1.5px);
+  background-size: 160px 170px, 220px 210px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+
+.ry-detox-page #why .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ry-detox-page #why h5 {
+  margin: 0 0 28px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.ry-detox-page #why h5 > span {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--detox-red) !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+}
+
+.ry-detox-page #why > .container > .row > div > p {
+  max-width: 900px;
+  color: #bebec3 !important;
+  font-family: "Lato", sans-serif;
+  font-size: 1.08rem !important;
+  line-height: 1.82 !important;
+}
+
+.ry-detox-page #why > .container > .row > div > p strong {
+  color: #fff;
+}
+
+.ry-detox-page #why > .container > .row > div > .list-style-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 30px 0 38px !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-detox-page #why > .container > .row > div > .list-style-2 li {
+  position: relative;
+  min-height: 84px;
+  margin: 0;
+  padding: 24px 24px 24px 56px;
+  color: #ececef;
+  border: 1px solid var(--detox-line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+}
+
+.ry-detox-page #why > .container > .row > div > .list-style-2 li::before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: 25px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--detox-red);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(255, 36, 56, .08);
+}
+
+.ry-detox-safety {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  margin: 38px 0 28px;
+  padding: 26px 28px;
+  border: 1px solid rgba(255, 74, 90, .42);
+  border-left: 3px solid var(--detox-red);
+  border-radius: 14px;
+  background: linear-gradient(110deg, rgba(255, 36, 56, .13), rgba(255, 36, 56, .035));
+}
+
+.ry-detox-safety__icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #fff;
+  font: 700 1.1rem/1 "Poppins", sans-serif;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  background: var(--detox-red);
+}
+
+.ry-detox-safety strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.ry-detox-safety p {
+  margin: 0;
+  color: #d2d2d5;
+  font-size: .98rem;
+  line-height: 1.65;
+}
+
+/* Knowledge accordion */
+.ry-detox-page #detox-accordion {
+  margin: 34px 0 54px !important;
+  border-top: 1px solid var(--detox-line);
+}
+
+.ry-detox-page #detox-accordion .panel {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--detox-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.ry-detox-page #detox-accordion .panel-heading {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.ry-detox-page #detox-accordion .accordion-toggle {
+  display: block;
+  padding: 26px 0;
+  text-decoration: none;
+}
+
+.ry-detox-page #detox-accordion .panel-title {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.ry-detox-page #detox-accordion .ry-detox-toggle-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255, 36, 56, .58);
+  border-radius: 50%;
+  background: rgba(255, 36, 56, .07);
+  transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.ry-detox-page #detox-accordion .ry-detox-toggle-icon > span {
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-right: 2px solid var(--detox-red);
+  border-bottom: 2px solid var(--detox-red);
+  transform: rotate(45deg);
+  transition: margin .25s ease, transform .25s ease;
+}
+
+.ry-detox-page #detox-accordion .accordion-toggle:hover .ry-detox-toggle-icon,
+.ry-detox-page #detox-accordion .accordion-toggle:focus-visible .ry-detox-toggle-icon {
+  border-color: var(--detox-red);
+  background: rgba(255, 36, 56, .16);
+}
+
+.ry-detox-page #detox-accordion .accordion-toggle[aria-expanded="true"] .ry-detox-toggle-icon {
+  border-color: var(--detox-red);
+  background: var(--detox-red);
+}
+
+.ry-detox-page #detox-accordion .accordion-toggle[aria-expanded="true"] .ry-detox-toggle-icon > span {
+  margin-top: 4px;
+  border-color: #fff;
+  transform: rotate(225deg);
+}
+
+.ry-detox-page #detox-accordion .panel-title i {
+  display: none;
+}
+
+.ry-detox-page #detox-accordion .panel-body {
+  padding: 0 64px 34px;
+  color: #bdbdc2;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.ry-detox-page #detox-accordion .panel-body strong {
+  color: #fff;
+}
+
+.ry-detox-page #detox-accordion .panel-body ul {
+  margin: 16px 0 !important;
+  padding-left: 22px;
+}
+
+.ry-detox-page #detox-accordion .panel-body li {
+  margin-bottom: 8px;
+}
+
+/* Directory */
+.ry-detox-page .ry-detox-directory {
+  position: relative;
+  overflow: clip;
+  padding: clamp(90px, 10vw, 150px) 0 clamp(100px, 11vw, 160px);
+  color: #d7d7da;
+  background:
+    radial-gradient(ellipse at 95% 8%, rgba(255, 36, 56, .07), transparent 26%),
+    linear-gradient(180deg, #0b0b0d, #060607 62%, #09090b) !important;
+}
+
+.ry-detox-page .ry-detox-directory > .container > .row:first-child > div > div {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ry-detox-page .ry-detox-directory > .container > .row:first-child {
+  margin-bottom: 70px !important;
+}
+
+.ry-detox-page .ry-detox-directory > .container > .row:first-child h3 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.03;
+  letter-spacing: -.06em;
+}
+
+.ry-detox-page .ry-detox-directory > .container > .row:first-child h3 strong {
+  color: var(--detox-red) !important;
+  font-weight: 600;
+}
+
+.ry-detox-page .ry-detox-directory > .container > .row:first-child p {
+  color: var(--detox-muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.ry-detox-page .ry-detox-directory .ry-detox-list-intro > div > div {
+  padding: clamp(28px, 4vw, 46px) !important;
+  color: #c6c6ca;
+  border: 1px solid var(--detox-line) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 70px rgba(0,0,0,.22) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)) !important;
+}
+
+.ry-detox-page .ry-detox-list-intro h5 {
+  margin-bottom: 20px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.45rem;
+}
+
+.ry-detox-page .ry-detox-list-intro p {
+  color: #b9b9be !important;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem !important;
+  line-height: 1.72;
+}
+
+.ry-detox-page .ry-detox-reviewed {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding-top: 22px;
+  color: #d7d7da;
+  border-top: 1px solid var(--detox-line);
+  font-size: .9rem;
+}
+
+.ry-detox-page .ry-detox-reviewed::before {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--detox-red);
+  box-shadow: 0 0 0 5px rgba(255,36,56,.1);
+}
+
+.ry-detox-page .ry-detox-directory .ry-detox-zone-nav {
+  position: sticky;
+  z-index: 20;
+  top: 14px;
+  margin-bottom: 66px !important;
+}
+
+.ry-detox-page .ry-detox-zone-nav > div > div {
+  padding: 14px 18px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 45px rgba(0,0,0,.42) !important;
+  background: rgba(12,12,14,.88) !important;
+  backdrop-filter: blur(16px);
+}
+
+.ry-detox-page .ry-detox-zone-nav h5 {
+  display: none;
+}
+
+.ry-detox-page .zone-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.ry-detox-page .zone-pill {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  color: #c7c7cb;
+  font-family: "Poppins", sans-serif;
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.ry-detox-page .zone-pill:hover,
+.ry-detox-page .zone-pill:focus-visible {
+  color: #fff;
+  border-color: rgba(255,36,56,.6);
+  background: rgba(255,36,56,.13);
+}
+
+.ry-detox-page .ry-detox-region {
+  scroll-margin-top: 105px;
+  margin-bottom: clamp(64px, 8vw, 105px) !important;
+}
+
+.ry-detox-page .ry-detox-region > div > div {
+  padding: 0 !important;
+  color: #c8c8cc;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ry-detox-page .ry-detox-region h5 {
+  position: relative;
+  margin: 0 0 34px;
+  padding: 0 0 19px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -.045em;
+  border-bottom: 1px solid var(--detox-line);
+}
+
+.ry-detox-page .ry-detox-region h5::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 74px;
+  height: 2px;
+  background: var(--detox-red);
+}
+
+.ry-detox-page .ry-detox-region .section-label {
+  margin: 36px 0 16px;
+  color: #8d8d94;
+  font-family: "Syncopate", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.ry-detox-page .ry-detox-region ul.list-style-1 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-detox-page .ry-detox-region ul.list-style-1 > li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  margin: 0 !important;
+  padding: clamp(25px, 3.2vw, 36px);
+  overflow: hidden;
+  color: #bdbdc2;
+  border: 1px solid var(--detox-line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.052), rgba(255,255,255,.014)),
+    var(--detox-panel);
+  box-shadow: 0 24px 55px rgba(0,0,0,.2);
+}
+
+.ry-detox-page .ry-detox-region ul.list-style-1 > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--detox-red), transparent 68%);
+}
+
+.ry-detox-page .ry-detox-region li > strong.text-large {
+  display: block;
+  margin: 0 0 9px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.22rem !important;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ry-detox-page .ry-detox-region li > strong.text-large .text-deep-pink {
+  display: none;
+}
+
+.ry-detox-page .ry-detox-region li > p:first-of-type {
+  margin: 0 0 22px !important;
+  color: var(--detox-red) !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .64rem !important;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.ry-detox-page .ry-detox-region li > p:first-of-type br {
+  display: none;
+}
+
+.ry-detox-page .ry-detox-region li > p:not(:first-of-type) {
+  margin: 0 !important;
+  padding: 11px 0;
+  color: #b7b7bc !important;
+  font-family: "Lato", sans-serif;
+  font-size: .94rem !important;
+  line-height: 1.62;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.ry-detox-page .ry-detox-region li > p:not(:first-of-type) strong {
+  color: #f3f3f5;
+  font-weight: 700;
+}
+
+.ry-detox-page .ry-detox-region li > p.text-small {
+  margin-top: 18px !important;
+  padding: 17px 0 0;
+  color: #909096 !important;
+  font-size: .84rem !important;
+  font-style: italic;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.ry-detox-page .ry-detox-region li > .d-flex {
+  margin-top: auto !important;
+  padding-top: 22px;
+}
+
+.ry-detox-page .ry-detox-region .btn {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,36,56,.72) !important;
+  border-radius: 999px;
+  background: rgba(255,36,56,.11) !important;
+}
+
+.ry-detox-page .ry-detox-region .btn.btn-deep-pink {
+  border-color: var(--detox-red) !important;
+  background: var(--detox-red) !important;
+}
+
+.ry-detox-page .ry-detox-region .btn:hover,
+.ry-detox-page .ry-detox-region .btn:focus-visible {
+  color: #fff !important;
+  border-color: #ff6472 !important;
+  background: rgba(255,36,56,.24) !important;
+}
+
+.ry-detox-page .ry-detox-region .btn.btn-deep-pink:hover,
+.ry-detox-page .ry-detox-region .btn.btn-deep-pink:focus-visible {
+  background: #d9162a !important;
+}
+
+/* Source notes and established resource footer band */
+.ry-detox-page .ry-detox-sources {
+  padding: clamp(85px, 9vw, 130px) 0;
+  color: #c6c6ca;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px),
+    #0d0d0f;
+  background-size: 80px 80px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.ry-detox-page .ry-detox-sources .ry-section-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: #d9d9dc;
+}
+
+.ry-detox-page .ry-detox-sources .ry-section-eyebrow i {
+  color: var(--detox-red);
+  font-style: normal;
+}
+
+.ry-detox-page .ry-detox-sources__panel {
+  padding: clamp(28px, 4vw, 46px);
+  border: 1px solid var(--detox-line);
+  border-radius: 18px;
+  background: rgba(5,5,6,.78);
+}
+
+.ry-detox-page .ry-detox-sources__panel p,
+.ry-detox-page .ry-detox-sources__panel li {
+  color: #b9b9be;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.ry-detox-page .ry-detox-sources__panel p {
+  margin-bottom: 22px;
+}
+
+.ry-detox-page .ry-detox-sources__panel ul {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--detox-line);
+}
+
+.ry-detox-page .ry-detox-sources__panel li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--detox-line);
+}
+
+.ry-detox-page .ry-detox-sources__panel strong {
+  color: #fff;
+}
+
+.ry-detox-page .ry-detox-sources__note {
+  margin: 0 !important;
+  color: #8f8f95 !important;
+  font-size: .9rem !important;
+}
+
+.ry-detox-page #where-next {
+  background:
+    radial-gradient(ellipse at 28% 10%, rgba(255,36,56,.08), transparent 34%),
+    #050506;
+}
+
+@media (max-width: 991px) {
+  .ry-detox-page .ry-detox-hero {
+    min-height: 720px;
+  }
+
+  .ry-detox-page .ry-detox-region ul.list-style-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .ry-detox-page .ry-detox-directory .ry-detox-zone-nav {
+    top: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ry-detox-page .ry-detox-hero {
+    min-height: 680px;
+  }
+
+  .ry-detox-page .ry-detox-hero .ry-page-hero__bg {
+    background-position: 64% center;
+  }
+
+  .ry-detox-page #why > .container > .row > div > .list-style-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ry-detox-safety {
+    grid-template-columns: 1fr;
+    padding: 23px;
+  }
+
+  .ry-detox-page #detox-accordion .panel-title {
+    grid-template-columns: 38px 1fr auto;
+    gap: 10px;
+    font-size: .98rem;
+  }
+
+  .ry-detox-page #detox-accordion .panel-body {
+    padding: 0 0 30px;
+  }
+
+  .ry-detox-page .ry-detox-directory .ry-detox-zone-nav {
+    position: relative;
+    top: auto;
+  }
+
+  .ry-detox-page .zone-jump {
+    justify-content: flex-start;
+  }
+
+  .ry-detox-page .zone-pill {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .ry-detox-page .ry-detox-region ul.list-style-1 > li {
+    padding: 25px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-detox-page .zone-pill,
+  .ry-detox-page #detox-accordion .ry-detox-toggle-icon,
+  .ry-detox-page #detox-accordion .ry-detox-toggle-icon > span {
+    transition: none;
+  }
+}

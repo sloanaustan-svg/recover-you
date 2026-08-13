@@ -1,1093 +1,761 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head>
-  <!-- Fathom - beautiful, simple website analytics -->
-  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer=""></script>
-  <!-- / Fathom -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6968KR6JY9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-
     gtag('js', new Date());
-
-    // Default: deny analytics until user accepts
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied'
-    });
-
-    gtag('config', 'G-6968KR6JY9', {
-      'anonymize_ip': true
-    });
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    gtag('config', 'G-6968KR6JY9', { 'anonymize_ip': true });
   </script>
+  <!-- Fathom - beautiful, simple website analytics -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer></script>
+  <!-- / Fathom -->
+
   <title>Regulation Tools: Training Your Nervous System for Safety | Recover-You</title>
   <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport">
-  <meta content="Austan Sloan | Recover-You" name="author">
-  <meta content="Stop fighting your biology. Access practical, science-backed tools to calm hyperarousal, interrupt the threat loop, and regulate your nervous system. No clichés." name="description">
-  <meta content="nervous system regulation, trauma tools, grounding exercises, breathwork for recovery, polyvagal theory, hyperarousal, co-regulation, Recover-You, Alberta mental health" name="keywords">
-  <meta content="Regulation Tools: Biological Safety for Trauma Recovery" property="og:title">
-  <meta content="Recovery isn't just a mental game—it's a biological one. Learn the tools to regulate your nervous system and interrupt the survival loops that keep you stuck." property="og:description">
-  <meta content="images/regulation-tools-hero.png" property="og:image">
-  <meta content="article" property="og:type">
-  <meta content="https://recover-you.ca/regulation-tools" property="og:url">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="Nervous System Regulation Tools | Recover-You" name="twitter:title">
-  <meta content="Practical, survivor-led tools for grounding, breathwork, and sensory regulation to calm the trauma-informed brain." name="twitter:description">
-  <meta content="images/regulation-tools-hero.png" name="twitter:image">
-  <link href="https://recover-you.ca/regulation-tools" rel="canonical">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <meta name="author" content="Austan Sloan | Recover-You">
+  <meta name="description" content="Twenty-one nervous-system regulation tools &mdash; in-the-moment resets, daily habits, sensory and co-regulation &mdash; with what each one does and why it works, plus Pete Walker&rsquo;s 13 steps for flashbacks.">
+  <meta name="keywords" content="nervous system regulation, 4-7-8 breathing, 5-4-3-2-1 grounding, vagus nerve, co-regulation, emotion tracking, Pete Walker 13 steps, flashback management">
+
+  <meta property="og:title" content="When Your Body Doesn&rsquo;t Know You&rsquo;re Safe">
+  <meta property="og:description" content="Relearning calm through science, practice, and compassion.">
+  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://recover-you.ca/regulation-tools">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regulation Tools | Recover-You">
+  <meta name="twitter:description" content="You are not thinking your way calm. You are physiologically inducing it.">
+  <meta name="twitter:image" content="images/og-home.jpg">
+
+  <link rel="canonical" href="https://recover-you.ca/regulation-tools">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
   <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
   <link href="web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png">
   <link href="web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png">
   <link href="apple-touch-icon.png" rel="apple-touch-icon">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="site.webmanifest" rel="manifest">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Lato:wght@100;300;400;700;900&amp;family=Poppins:wght@200;300;400;600;700;800&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet">
 
-  <link href="css/site.min.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap -->
+  <link href="assets/vendor/bootstrap/5.1.3/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts -->
+  <link href="assets/vendor/icomoon/icomoon.min.css" rel="stylesheet">
+  <!-- Off Canvas Menu -->
+  <link href="assets/vendor/offcanvas-nav/hc-offcanvas-nav.css" rel="stylesheet">
+  <!-- DarkStar Theme CSS -->
+  <link href="assets/css/theme.css" rel="stylesheet">
+  <link href="assets/css/theme-colors.css" rel="stylesheet">
+  <!-- Recover-You homepage layer (red / black / grey / white brand) -->
+  <link href="assets/css/ry-home.css" rel="stylesheet">
+  <!-- Shared article component layer -->
+  <link href="assets/css/ry-article.css" rel="stylesheet">
+  <!-- Regulation-tools page layer (the quick index, the tool cards) -->
+  <link href="assets/css/ry-reg.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script type="application/ld+json">
-       {
-         "@context": "https://schema.org",
-         "@type": "HowTo",
-         "name": "Nervous System Regulation Tools",
-         "description": "A set of practical, science-backed tools for calming the nervous system and managing hyperarousal in trauma recovery.",
-         "image": "images/regulation-tools-hero.png",
-         "author": {
-           "@type": "Person",
-           "name": "Austan Sloan"
-         },
-         "publisher": {
-           "@type": "Organization",
-           "name": "Recover-You",
-           "url": "https://recover-you.ca"
-         },
-         "step": [
-           { "@type": "HowToStep", "text": "Breathwork to engage the ventral vagal system." },
-           { "@type": "HowToStep", "text": "Grounding exercises to return to the present moment." },
-           { "@type": "HowToStep", "text": "Sensory regulation to manage overwhelming input." },
-           { "@type": "HowToStep", "text": "Co-regulation strategies for safe social connection." }
-         ]
-       }
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "When Your Body Doesn\u2019t Know You\u2019re Safe",
+    "description": "Nervous-system regulation tools for trauma and addiction recovery: what to do, and why each one works.",
+    "url": "https://recover-you.ca/regulation-tools",
+    "author": { "@type": "Person", "name": "Austan Sloan" },
+    "publisher": { "@type": "Organization", "name": "Recover-You" },
+    "isPartOf": { "@type": "WebSite", "name": "Recover-You", "url": "https://recover-you.ca" }
+  }
   </script>
-  <style>
-   .ry-regulation-cards .ry-tool-card {
-     position: relative;
-     border-radius: 16px !important;
-     border: 1px solid rgba(0,0,0,0.08);
-     box-shadow: 0 18px 45px rgba(0,0,0,0.18);
-     overflow: hidden;
-     transition: transform 0.25s ease, box-shadow 0.25s ease;
-   }
-
-   .ry-regulation-cards .ry-tool-card::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 6px;
-     height: 100%;
-     background: linear-gradient(to bottom, #ff2d55, rgba(255,45,85,0.45));
-   }
-
-   .ry-regulation-cards .ry-tool-card::after {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     height: 1px;
-     background: rgba(255,255,255,0.45);
-   }
-
-   .ry-regulation-cards .ry-tool-card:hover {
-     transform: translateY(-3px);
-     box-shadow: 0 24px 55px rgba(0,0,0,0.22);
-   }
-
-   .ry-regulation-cards .ry-tool-card-alt {
-     background: rgba(248,248,248,0.96) !important;
-   }
-
-   .ry-regulation-cards .ry-tool-card h5 {
-     position: relative;
-     margin-bottom: 18px;
-     padding-bottom: 14px;
-     font-size: 2rem;
-     line-height: 1.2;
-   }
-
-   .ry-regulation-cards .ry-tool-card h5::after {
-     content: "";
-     position: absolute;
-     left: 0;
-     bottom: 0;
-     width: 72px;
-     height: 3px;
-     border-radius: 999px;
-     background: linear-gradient(to right, #ff2d55, rgba(255,45,85,0.18));
-   }
-
-   .ry-regulation-cards .ry-tool-card p,
-   .ry-regulation-cards .ry-tool-card li {
-     color: #4d5562;
-   }
-
-   .ry-regulation-cards .ry-tool-card ul.list-style-01 > li,
-   .ry-regulation-cards .ry-tool-card ul.list-style-03 > li {
-     margin-bottom: 10px;
-   }
-
-   .ry-regulation-cards .ry-tool-card ul.list-style-03 {
-     margin-top: 10px;
-     padding-top: 6px;
-   }
-
-   .ry-regulation-cards .ry-inner-feature-card {
-     border-radius: 14px !important;
-     border: 1px solid rgba(255,45,85,0.14);
-     background: linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(248,248,248,0.98));
-     box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 12px 30px rgba(0,0,0,0.08);
-     padding: 28px !important;
-   }
-
-   .ry-regulation-cards .ry-inner-feature-card h6 {
-     font-size: 1.15rem;
-     line-height: 1.3;
-     margin-bottom: 16px;
-   }
-
-   .ry-regulation-cards .ry-mini-card {
-     border-radius: 12px !important;
-     border: 1px solid rgba(0,0,0,0.06);
-     background: rgba(245,245,245,0.95) !important;
-   }
-
-   .ry-regulation-cards .ry-inner-feature-card a {
-     font-weight: 600;
-     text-decoration: none;
-     border-bottom: 1px solid rgba(255,45,85,0.35);
-     transition: all 0.2s ease;
-   }
-
-   .ry-regulation-cards .ry-inner-feature-card a:hover {
-     border-bottom-color: rgba(255,45,85,0.85);
-   }
-
-   .ry-regulation-cards .ry-tool-card .text-small,
-   .ry-regulation-cards .ry-tool-card .text-very-small {
-     line-height: 1.65;
-   }
-
-   @media (max-width: 767px) {
-     .ry-regulation-cards .ry-tool-card h5 {
-       font-size: 1.55rem;
-       padding-bottom: 12px;
-     }
-
-     .ry-regulation-cards .ry-inner-feature-card {
-       padding: 22px !important;
-     }
-   }
-   .ry-pdf-cta {
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     padding: 14px 24px;
-     background: linear-gradient(to right, #ff2d55, #ff4b6e);
-     color: #fff !important;
-     font-size: 0.92rem;
-     font-weight: 700;
-     letter-spacing: 0.04em;
-     text-transform: uppercase;
-     border-radius: 999px;
-     text-decoration: none !important;
-     box-shadow: 0 14px 30px rgba(255,45,85,0.22);
-     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-   }
-
-   .ry-pdf-cta:hover {
-     transform: translateY(-2px);
-     box-shadow: 0 18px 36px rgba(255,45,85,0.28);
-     opacity: 1;
-   }
-
-   .ry-pdf-cta-note {
-     margin-top: 12px;
-     font-size: 0.92rem;
-     color: #6c757d;
-   }
-
-   @media (max-width: 767px) {
-     .ry-pdf-cta {
-       width: 100%;
-       padding: 13px 18px;
-       font-size: 0.84rem;
-       text-align: center;
-     }
-   }
-
-  </style>
-<link href="css/lenis.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  <div aria-hidden="true" id="reading-progress">
-    <div id="reading-progress-fill"></div>
-  </div><!-- start header -->
-  <header>
-    <!-- start navigation -->
-    <nav class="navbar navbar-default bootsnav navbar-top header-light background-transparent nav-box-width white-link navbar-expand-lg">
-      <div class="container-fluid nav-header-container">
-        <div class="col-auto ps-0">
-          <a class="logo" href="index" title="Recover You"><img alt="Recover You" class="logo-dark" data-at2x="images/logo@2x.png" src="images/logo.png"> <img alt="Recover You" class="logo-light default" data-at2x="images/logo-white@2x.png" src="images/logo-white.png"></a>
-        </div>
-        <div class="col accordion-menu pe-0 pe-md-3">
-          <button aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbar-collapse-toggle-1" data-bs-toggle="collapse" type="button"><span class="sr-only">toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-          <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
-            <ul class="nav navbar-nav no-margin alt-font text-normal" data-in="animate__fadeIn" data-out="animate__fadeOut" id="accordion">
-              <li>
-                <a href="index" title="Home">Home</a>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Start Here</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-this-site-exists">Why This Site Exists</a>
-                  </li>
-                  <li>
-                    <a href="about-me">About Me</a>
-                  </li>
-                  <li>
-                    <a href="start-here">Start Here</a>
-                  </li>
-                  <li>
-                    <a href="faq">FAQ</a>
-                  </li>
-              <li><a href="for-coaches">For Frontline Workers</a></li>
-            <li><a href="for-loved-ones">For Loved Ones</a></li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Trauma Foundations</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Core Concepts <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="what-is-trauma">What Is Trauma</a>
-                      </li>
-                      <li>
-                        <a href="what-is-cptsd">What Is C-PTSD</a>
-                      </li>
-                      <li>
-                        <a href="attachment">Attachment Styles</a>
-                      </li>
-                      <li>
-                        <a href="toxic-stress">Toxic Stress</a>
-                      </li>
-                      <li>
-                        <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a>
-                      </li>
-                      <li>
-                        <a href="cptsd-behaviours">CPTSD Patterns</a>
-                      </li>
-                      <li><a href="four-trauma-responses">Trauma Responses</a></li>
-                      <li>
-                        <a href="aces-high">ACEs &amp; Risk</a>
-                      </li>
-                      <li>
-                        <a href="dunedin-study">The Dunedin Study</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Brain &amp; Body <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="brain-on-fire">Brain on Fire</a>
-                      </li>
-                      <li>
-                        <a href="when-sobriety-feels-worse">When Sobriety Feels Worse</a>
-                      </li>
-                      <li>
-                        <a href="neuroplasticity">Neuroplasticity</a>
-                      </li>
-                      <li>
-                        <a href="critical-window">Critical Windows</a>
-                      </li>
-                      <li>
-                        <a href="epigenetics">Epigenetics</a>
-                      </li>
-                      <li>
-                        <a href="trauma-does-not-expire">Trauma Doesn't Expire</a>
-                      </li>
-                      <li>
-                        <a href="dohad">DOHaD: Developmental Origins</a>
-                      </li>
-                      <li>
-                        <a href="metabolism">Metabolism</a>
-                      </li>
-                      <li>
-                        <a href="the-hijacked-engine">The Hijacked Engine</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">A Critical Lens</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a>
-                  </li>
-                  <li>
-                    <a href="problem-with-aa">Limits of the AA Model</a>
-                  </li>
-                  <li>
-                    <a href="misdiagnosed">When Trauma Is Misdiagnosed</a>
-                  </li>
-                  <li>
-                    <a href="disease-of-addiction">The “Disease of Addiction” Debate</a>
-                  </li>
-                  <li>
-                    <a href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a>
-                  </li>
-                  <li>
-                    <a href="better-model-of-care">What Better Care Requires</a>
-                  </li>
-                  <li>
-                    <a href="trauma-avoidant">When Trauma Is Avoided</a>
-                  </li>
-                  <li>
-                    <a href="compassionate-care">Compassionate Care: A Critique</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Healing &amp; Tools</a> <i aria-hidden="true" class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown"></i>
-                <ul class="dropdown-menu" role="menu">
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Therapeutic Models <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="cbt">CBT</a>
-                      </li>
-                      <li>
-                        <a href="dbt">DBT</a>
-                      </li>
-                      <li>
-                        <a href="life-traps">Life Traps (Schema Therapy)</a>
-                      </li>
-                      <li>
-                        <a href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a>
-                      </li>
-                      <li>
-                        <a href="types-of-therapy">Therapy Types</a>
-                      </li>
-                      <li>
-                        <a href="role-of-therapy">The Role of Therapy</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Practical Tools &amp; Skills <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="chart-your-life">Chart Your Life</a>
-                      </li>
-                      <li>
-                        <a href="distorted-thinking">Distorted Thinking</a>
-                      </li>
-                      <li>
-                        <a href="regulation-tools">Regulation Tools</a>
-                      </li>
-                      <li>
-                        <a href="reality-test">Reality Testing</a>
-                      </li>
-                      <li>
-                        <a href="relationships">Relationships in Recovery</a>
-                      </li>
-                      <li>
-                        <a href="connection">Connection</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Identity &amp; Growth <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a>
-                      </li>
-                      <li>
-                        <a href="spirituality">Spirituality</a>
-                      </li>
-                      <li>
-                        <a href="the-resilience-lie">The Resilience Lie</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Resources <i class="fa-solid fa-angle-right"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="resources">Resources</a>
-                      </li>
-                      <li>
-                        <a href="tfr-model">Trauma-Focused Recovery Model (TFR Model)</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="contact" title="Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-auto pe-0"></div>
-      </div>
-    </nav><!-- end navigation -->
-  </header><!-- end header -->
-  <!-- start page title section -->
-  <section class="wow animate__fadeIn parallax" data-parallax-background-ratio="0.5" id="page-hero" style="background-image:url('images/webp/zen-amid-chaos.webp');">
-    <div class="opacity-medium bg-extra-dark-gray"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-12 d-flex flex-column justify-content-center text-center one-second-screen page-title-large">
-          <!-- start page title -->
-          <h1 class="text-white-2 alt-font font-weight-600 margin-10px-bottom">When Your Body Doesn’t Know You’re Safe</h1>
-          <h6 class="text-light-gray alt-font font-weight-600">Relearning calm through science, practice, and compassion</h6>
-        </div>
-      </div>
-    </div>
-    <div class="down-section text-center">
-      <a class="section-link up-down-ani" href="#why"><i class="ti-mouse icon-small bounce text-deep-pink"></i></a>
-    </div>
-  </section><!-- end page title section -->
-  <section class="wow animate__fadeIn bg-white position-relative" id="why">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="alt-font text-medium-gray d-inline-flex align-items-center gap-2 margin-20px-bottom" style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; opacity:0.75;">
-            <i class="far fa-clock text-deep-pink" style="font-size:14px; opacity:1;"></i> <span>12 min read</span>
-          </div>
-          <h5 class="alt-font text-extra-dark-gray margin-10px-bottom"><span class="text-deep-pink">//</span> Nervous System Regulation Tools:<br>
-          When My <strong>Body Didn't Know We Were Safe</strong></h5>
-          <p class="text-medium line-height-28 sm-line-height-26">In early sobriety, my body was still at war. Heart pounding like I was sprinting — while sitting completely still. I'd look around for the threat and find nothing. Once I started actually paying attention, the triggers were almost embarrassingly mundane:</p>
-          <div class="margin-25px-tb">
-            <ul class="p-0 list-style-3 text-medium alt-font">
-              <li>Riding public transit</li>
-              <li>Talking to strangers</li>
-              <li>Sitting in a busy Starbucks</li>
-              <li>Even lying in bed with no obvious trigger</li>
-              <li>Last-minute lunch with a client</li>
-            </ul>
-          </div>
-          <p class="text-medium line-height-28 sm-line-height-26">I bought a smartwatch. A few weeks in, the data was hard to ignore: resting heart rate spiking to <strong>140 BPM</strong> — not "a little on edge," but physiologically equivalent to jogging. My body was running emergency protocols around the clock, and I'd learned to call it normal.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">My nervous system had one setting: <em>threat</em>. Sometimes there was a reason. Often, there wasn't. In those moments, I started doing something that felt almost stupidly simple — pausing, checking in, and saying quietly: <strong>"I'm safe. I'm okay. I'm not in danger."</strong></p>
-          <div class="bg-light-gray border-radius-8 padding-30px-all margin-40px-tb wow animate__fadeInUp">
-            <h6 class="alt-font text-extra-dark-gray font-weight-700 margin-15px-bottom"><span class="text-deep-pink">//</span> I Used to Think This Stuff Was Ridiculous</h6>
-            <p>For years, I dismissed meditation, mindfulness, and grounding as <em>"hippy bullshit."</em> I was skeptical, guarded, and genuinely convinced that slow breathing wasn't going to fix a nervous system that had been running on adrenaline for decades.</p>
-            <p>In treatment the first time, I went through the motions. Eyes open during meditation, half-listening, internally checked out. The second time, I made a deliberate choice to stop performing compliance and actually try. That shift changed everything.</p>
-            <p>What broke through my resistance wasn't inspiration — it was mechanism. Once I understood that slow, controlled breathing directly activates the parasympathetic nervous system via the vagus nerve, that grounding interrupts the amygdala's threat response by redirecting sensory processing to the prefrontal cortex — it stopped feeling abstract. <strong class="text-deep-pink">This is neuroscience, <em>not wellness culture.</em></strong> And consistent practice doesn't just feel calmer; it produces measurable structural changes in the brain.</p>
-            <p>So I kept doing it. And slowly, my nervous system <strong>stood down.</strong></p>
-            <p class="text-extra-dark-gray margin-top-25px"><strong>That's why I built this page.</strong> The tools here are deliberately accessible — entry-level by design. But I've tried to ground each one in enough science that if you're the kind of person who needs to understand <em>why</em> before you'll commit to <em>how</em>, you'll find it here.</p>
-          </div>
-          <p class="text-medium line-height-28 sm-line-height-26">None of this erased the discomfort overnight. But naming what was happening — and what wasn't — kept things from spiralling. And over time, the sensations that once felt unbearable started to feel survivable. Then manageable. Then small.</p>
-          <p class="text-extra-dark-gray text-medium line-height-28 sm-line-height-26"><strong>This work is hard. It's also real.</strong> The more you understand <strong><em>why</em></strong> these tools work, the harder it becomes to talk yourself out of using them.</p>
-        </div>
-      </div>
-    </div>
-  </section><!-- start section -->
-  <section class="p-0 wow animate__fadeIn bg-extra-dark-gray">
-    <div class="container-fluid p-0">
-      <div class="row row-cols-1 row-cols-lg-2 m-0">
-        <!-- Left Image -->
-        <div class="col position-relative md-h-550px sm-h-350px cover-background wow animate__slideInLeft" data-wow-duration="900ms" style="background-image: url('images/webp/trauma-rewires-brain.webp');"></div><!-- Right Content -->
-        <div class="col last-paragraph-no-margin padding-eight-lr padding-seven-tb xl-padding-five-tb xl-padding-six-lr md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr wow animate__slideInRight" data-wow-duration="900ms">
-          <h5 class="alt-font text-light-gray"><span class="text-deep-pink">//</span> Trauma, Addiction, and the <strong>Nervous System</strong></h5>
-          <p>Trauma doesn't just leave emotional wounds — it recalibrates the nervous system. The result is a dysregulated baseline: cycling between hyperarousal <strong>(fight/flight)</strong> and hypoarousal <strong>(freeze/shutdown)</strong>, with very little stable ground between them. Addiction fills that gap. Alcohol to mute the volume. Stimulants to turn it back up. Substances become a <em>surrogate nervous system</em> — crude, costly, and borrowed. Learning to regulate without them isn't a coping strategy. It's reclaiming the controls.</p>
-          <h5 class="alt-font text-light-gray"><span class="text-deep-pink">//</span> How <strong>Regulation Rewires</strong> the Brain</h5>
-          <p>These tools work by interrupting the brain's threat detection loop — specifically, by shifting activity away from the amygdala (which flags danger) and toward the prefrontal cortex (which evaluates it). A dysregulated nervous system isn't broken. It's over-trained. It learned to stay ready because staying ready once kept you alive.</p>
-          <p>Regulation is the process of teaching it that the threat has passed. Each deliberate breath, each grounding moment, each time you track a feeling instead of reacting to it — you're not just coping. You're laying down new circuitry. Neuroscience calls this experience-dependent neuroplasticity. In practice, it means the brain can actually learn calm — if you repeat it enough times to make it the default.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="border-none p-0 wow animate__fadeIn bg-extra-dark-gray">
-    <div class="container-fluid">
-      <div class="row row-cols-1 row-cols-lg-2">
-        <!-- Content side -->
-        <div class="col padding-seven-lr padding-six-half-tb lg-padding-five-tb lg-padding-six-lr md-padding-six-all sm-padding-50px-tb sm-padding-15px-lr wow animate__fadeInLeft">
-          <h5 class="alt-font text-light-gray text-center text-lg-start margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom font-weight-600"><span class="font-weight-300 d-block sm-margin-15px-bottom"><span class="text-deep-pink">//</span> Aim Small, Miss Small <i class="fa-solid fa-crosshairs text-deep-pink margin-5px-right"></i></span> Learning to <em>Rate My Emotions</em></h5>
-          <blockquote class="border-color-deep-pink">
-            <p class="text-white-2">The moment I stopped treating emotions like emergencies and started treating them like data, I stopped being at their mercy.</p>
-          </blockquote>
-          <p class="text-medium line-height-28 sm-line-height-26">In treatment, every session started the same way: <em>what are you feeling, and how strong is it?</em> I hated it. It felt like busywork dressed up as therapy — a pointless ritual everyone performed to look like they were doing the work.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">So I kept going through the motions. Anxiety 8, sadness 4, guilt 7. Over and over, session after session. And then something quietly shifted. I'd spent most of my life treating emotions like binary switches: anger <strong>on/off</strong>, shame <strong>on/off</strong>, fear <strong>on/off</strong>. If something was "on," it was urgent. It demanded a response — or a way out. That's not emotional awareness. That's a hair trigger.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">Once I started rating intensity, the picture changed completely. The feeling that had seemed overwhelming might be a 3. The surge I'd have chased or drowned might just be a 5 — real, but not an emergency. That small act of precision created something I'd never had before: a gap. Enough space to ask: <strong>"Does this actually require a response right now?"</strong></p>
-          <p class="text-medium line-height-28 sm-line-height-26">Most of the time, the honest answer was no. <em class="text-deep-pink">Aim small, miss small.</em> Not every internal signal is a command. Some emotions need action. Most just need to be named, rated, and left alone.</p>
-          <p class="text-medium line-height-28 sm-line-height-26">That's what this practice does: it turns the noise into signal. And once you can read the signal clearly, you stop reacting to the noise.</p>
-        </div><!-- Image side -->
-        <div class="col cover-background md-h-500px sm-h-350px wow animate__fadeInRight" style="background:url('images/aim-small-miss-small.png') center center / cover no-repeat;"></div>
-      </div>
-    </div>
-  </section><!-- end section -->
-  <!-- start blog content section -->
-  <section class="wow animate__fadeIn parallax ry-regulation-cards" data-parallax-background-ratio="0.5" style="background-image: url('images/brain-construction.png')">
-    <div class="container">
-      <!-- Title Block -->
-      <div class="row mb-5 justify-content-center">
-        <div class="col-12 col-lg-7 text-center margin-100px-bottom sm-margin-40px-bottom">
-          <div class="position-relative overflow-hidden w-100 bg-light-gray box-shadow-large border-radius-6">
-            <div class="col text-center d-flex align-items-center last-paragraph-no-margin wow animate__fadeInRight p-0">
-              <div class="padding-fifteen-all md-padding-50px-all sm-padding-30px-all w-100">
-                <h3 class="text-extra-dark-gray alt-font letter-spacing-minus-3 mb-10"><strong class="text-deep-pink">Regulation</strong> in Action</h3>
-                <p class="mb-0 text-large alt-font">The tools. What to do. Why it works.</p>
-                <div class="margin-25px-top">
-                  <a href="assets/regulation-tools-worksheet.pdf" class="ry-pdf-cta alt-font" download="">
-                    <i class="fas fa-file-pdf margin-10px-right" aria-hidden="true"></i>
-                    Download the Regulation Tools PDF
-                  </a>
-                  <div class="ry-pdf-cta-note">Printable, quick-reference version for real-life use.</div>
-                </div>
-              </div>
 
-            </div>
-          </div>
-        </div>
-      </div><!-- Block 1: In-the-Moment Grounding Tools -->
-      <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-white padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card">
-            <h5 class="alt-font text-extra-dark-gray"><strong>In-the-Moment Tools (Under 5 Minutes)</strong></h5>
-            <p class="mb-20 text-medium">When your body is already in it — heart pounding, chest tight, thoughts racing — you need something that works on the body directly, not through thinking:</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>4-7-8 Breathing:</strong> Inhale through your nose for 4 counts → hold for 7 → exhale fully through your mouth for 8. Do this 3–4 cycles. The long exhale is the active ingredient — it directly stimulates the vagus nerve and signals your heart rate to slow.</li>
-              <li><strong>5-4-3-2-1 Grounding:</strong> Name 5 things you can see, 4 you can physically feel, 3 you can hear, 2 you can smell, 1 you can taste. Say them aloud if you can. This pulls sensory processing back online and interrupts the amygdala's threat loop by redirecting attention to the present environment.</li>
-              <li><strong>Cold Water Reset:</strong> Splash cold water on your face or hold an ice pack to your cheeks and forehead for 30–60 seconds. Cold on the face activates the mammalian dive reflex — a hard-wired physiological response that slows heart rate and reduces acute panic within seconds.</li>
-              <li><strong>Progressive Muscle Release:</strong> Work through one muscle group at a time — jaw, shoulders, hands, thighs. Tense deliberately for 5 seconds, then release completely. The release phase signals to your brain that your body is no longer bracing for impact.</li>
-            </ul>
-            <p class="text-medium mt-15"><i class="fas fa-lightbulb text-deep-pink margin-5px-right"></i> <em>The common mechanism:</em> Each of these tools works by sending a bottom-up signal — body to brain — that overrides the threat state. You are not thinking your way calm. You are physiologically inducing it.</p>
-          </div>
-        </div>
-      </div><!-- Block 2: Daily Habits That Build Regulation -->
-      <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card ry-tool-card-alt">
-            <h5 class="alt-font text-extra-dark-gray"><strong>Daily Habits That Build a Regulated Baseline</strong></h5>
-            <p class="mb-20 text-medium">These don't produce an immediate effect — that's not the point. Done consistently, they raise the floor of your nervous system so spikes happen less often and recovery happens faster:</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>Morning body scan</strong> → Before you check your phone, do a slow scan from head to toe. Notice tension, heaviness, or restlessness. Gently breathe into those areas or stretch them out. This trains early awareness — catching stress at a 3 instead of an 8.</li>
-              <li><strong>Gentle, rhythmic movement</strong> → Walking, tai chi, yoga, or slow dancing in your kitchen. Rhythmic, bilateral movement (left-right, left-right) is particularly effective at discharging stored stress and resetting the autonomic nervous system. Gentle and consistent beats intense every time.</li>
-              <li><strong>Consistent sleep and wake times</strong> → Pick a rough window and protect it most days. Irregular sleep disrupts cortisol rhythms and keeps the nervous system in a low-grade state of readiness — essentially primed for anxiety before the day even starts.</li>
-              <li><strong>Two minutes of breath practice</strong> → Set a timer. Do one simple exercise — box breathing, slow exhale, or just counting breaths. Even two minutes daily, done consistently, builds autonomic flexibility: the ability to shift states more easily when you need to.</li>
-            </ul>
-            <p class="text-medium mt-15"><i class="fas fa-lightbulb text-deep-pink margin-5px-right"></i> <em>Why it works:</em> A dysregulated nervous system is one that's lost its range — stuck high, stuck low, or oscillating wildly. These habits rebuild that range. Predictability and repetition are the inputs. A steadier baseline is the output.</p>
-          </div>
-        </div>
-      </div><!-- Block 3: Daily Emotion Tracking -->
-      <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-white padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card">
-            <h5 class="alt-font text-extra-dark-gray"><strong>Daily Emotion Tracking (Aim Small, Miss Small)</strong></h5>
-            <p class="mb-20 text-medium">Most people in early recovery have poor emotional granularity — they can feel that something is wrong, but can't tell how wrong, or why. This practice fixes that. And if you catch it <em>in real time</em> — a sudden spike of anger, sadness, or anxiety mid-situation — it can do something even more useful: expose the mismatch.</p>
-            <p class="mb-20 text-medium">I'd be in the middle of something completely mundane and clock that I was sitting at a 7. Then I'd look around — and nothing was actually wrong. That gap between what I was feeling and what was actually happening was the whole lesson. Once you can see the mismatch clearly, intense emotions lose a lot of their authority. <em>That little thing made me feel like this? Come on.</em> It doesn't make the feeling disappear, but it creates enough distance to stop treating it like a command.</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>Pause for 10–20 seconds</strong> and ask: <em>"What am I actually feeling right now?"</em></li>
-              <li><strong>Name it</strong> — even roughly. "Anxious," "flat," "irritated and tired." Approximate is fine. Naming an emotion reduces amygdala activation. The label doesn't need to be perfect to be useful.</li>
-              <li><strong>Rate the intensity</strong> on a 0–10 scale. This is the critical step. It transforms a vague internal state into a data point — and lets you hold it up against what's actually happening around you.</li>
-              <li><strong>Note three quick details:</strong> where you are, what you're doing, who you're with. Over time, these become the pattern.</li>
-              <li><strong>Log it</strong> — notebook, notes app, or the free app <em><a href="https://howwefeel.org/" target="_blank">How We Feel</a></em>, which is built specifically for this. It's my personal favorite, and it's totally free.</li>
-            </ul>
-            <p class="text-medium mt-15"><i class="fas fa-lightbulb text-deep-pink margin-5px-right"></i> <em>Why it works:</em> You stop operating on binary signals — on/off, calm/crisis — and start working with actual information. A 3 and an 8 stop getting the same response. When you catch the mismatch in real time — a disproportionate reaction to something small — naming and rating it can dissolve the intensity almost immediately. Patterns also emerge over time: times, places, people, situations. You stop being surprised by your own nervous system.</p>
-            <p class="text-medium mt-15"><i class="fas fa-flask text-deep-pink margin-5px-right"></i> <em>The science:</em> UCLA researcher Matthew Lieberman found that putting a feeling into words — affect labeling — measurably reduces amygdala activation and increases prefrontal cortex engagement. The rating step adds metacognitive distance: the ability to observe an emotion rather than be inside it. Psychologist Lisa Feldman Barrett's research on emotional granularity shows that people who can distinguish between closely related emotional states recover faster and make better decisions under stress. The log isn't journaling. It's training your brain to treat internal states as data rather than commands.</p>
-            <div class="bg-light-gray padding-20px-all border-radius-6 margin-25px-top">
-              <div class="d-flex align-items-start">
-                <i class="fas fa-mobile-alt text-deep-pink margin-10px-right"></i>
-                <p class="text-small text-extra-dark-gray mb-0"><strong>Recommended:</strong> The free app <em><a href="https://howwefeel.org/" target="_blank">How We Feel</a></em> was developed with input from emotion researchers and takes about 10 seconds per check-in. It tracks mood, context, and patterns over time — and it's genuinely good. Paper works too. The format matters less than the consistency.</p>
-              </div>
-            </div>
-            <blockquote class="border-color-deep-pink margin-30px-top">
-              <p class="mb-0">Tracking doesn't change what you feel. It changes your relationship to it — and that's where regulation actually starts.</p>
-            </blockquote>
-          </div>
-        </div>
-      </div><!-- Block 4: Regulation Through the Senses -->
-      <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card ry-tool-card-alt">
-            <h5 class="alt-font text-extra-dark-gray"><strong>Regulation Through the Senses</strong></h5>
-            <p class="mb-20 text-medium">When cognitive tools fail — when you're too activated to think clearly — the nervous system can still be reached through sensory input. This is not a workaround. It's a direct line:</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>Weighted blanket / deep pressure</strong> → Even pressure across the body activates the parasympathetic nervous system through mechanoreceptors in the skin. Use a weighted blanket or heavy comforter and let it settle around you for 5–10 minutes.</li>
-              <li><strong>Scent</strong> → Olfactory input bypasses the thalamus and connects directly to the limbic system — the emotional brain. This makes scent one of the fastest routes to a state shift. Lavender, chamomile, and citrus are commonly used; find what works for yours.</li>
-              <li><strong>Sound</strong> → Predictable, low-variability sound (rain, white noise, slow music) reduces the nervous system's urge to scan for threats. Erratic or loud audio has the opposite effect. Match the sound to the state you're trying to move toward.</li>
-              <li><strong>Soft visual focus</strong> → Fix your gaze gently on something slow and low-stakes — a candle, an aquarium, trees moving outside. Sustained soft focus activates the ventral vagal system and signals that active threat-scanning is no longer required.</li>
-            </ul>
-            <p class="text-medium mt-15"><i class="fas fa-lightbulb text-deep-pink margin-5px-right"></i> <em>Why it works:</em> Sensory input reaches the nervous system before conscious thought does. When arousal is high enough that cognition is impaired, this is often the only tier of regulation that's still accessible. Start here, then think.</p>
-          </div>
-        </div>
-      </div><!-- Block 5: The Power of Co-Regulation -->
-      <div class="row mb-5 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-white padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card">
-            <h5 class="alt-font text-extra-dark-gray"><strong>Co-Regulation: Using Other People's Nervous Systems</strong></h5>
-            <p class="mb-20 text-medium">Self-regulation gets most of the attention, but it's not where regulation starts developmentally — and for many trauma survivors, it's not where it's most accessible. We are wired to regulate <em>through</em> each other first:</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>Safe connection</strong> → Call someone you actually trust. Hug a pet. Have a brief, low-stakes conversation with someone who feels calm. Physical or vocal proximity to a regulated nervous system is often enough to begin shifting your own.</li>
-              <li><strong>Soft eye contact and warm expression</strong> → With safe people only: allow gentle eye contact and a relaxed face while breathing slowly. The polyvagal system reads facial cues and prosody (voice tone) as primary safety signals — faster than words.</li>
-              <li><strong>Pace your voice</strong> → Speak slower and softer than you feel like speaking. Your own voice tone feeds back into your nervous system. A calmer delivery can begin to produce a calmer state.</li>
-              <li><strong>Synchrony</strong> → Walk at the same pace, sit and breathe together, or simply be in the same room as someone calm. Physiological synchrony between people is measurable and real — nervous systems do entrain to each other.</li>
-            </ul>
-            <p class="text-medium mt-15"><i class="fas fa-lightbulb text-deep-pink margin-5px-right"></i> <em>Why it works:</em> The social engagement system — facial expression, eye contact, voice prosody, touch — is the nervous system's primary downregulation pathway. It evolved before self-regulation did. For trauma survivors who learned that people aren't safe, building even one or two genuinely safe relationships is not a luxury. It's a clinical priority.</p>
-            <div class="bg-white padding-25px-all border-radius-6 margin-25px-top box-shadow-large ry-inner-feature-card">
-              <h6 class="alt-font text-extra-dark-gray margin-10px-bottom"><i class="fas fa-headphones text-deep-pink margin-5px-right"></i> <strong>On Sound and Co-Regulation: A Personal Note</strong></h6>
-              <p class="text-medium line-height-28 sm-line-height-26">Music can function as a form of co-regulation — particularly tracks with slow tempo, smooth transitions, and minimal abrupt changes. The human voice, even recorded, activates the social engagement system. This is part of why certain music reliably shifts emotional states.</p>
-              <p class="text-medium line-height-28 sm-line-height-26"><em>Weightless</em> by Marconi Union is frequently cited in this context — it was designed in consultation with sound therapists and has been studied for its effects on anxiety. But the principle matters more than the specific track. Personally, <em>Ra Ma Da Sa</em> by Snatam Kaur works better for me. <strong>Find what reliably moves your system and use that.</strong></p>
-              <div class="bg-light-gray padding-20px-all border-radius-6 margin-20px-top ry-mini-card">
-                <p class="text-small text-extra-dark-gray mb-10"><strong>Two starting points:</strong></p>
-                <ul class="list-style-01 text-large alt-font text-extra-dark-gray mb-0">
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=UfcAVejslrU" rel="noopener" target="_blank">Marconi Union – Weightless</a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=1OGjZST8aRc" rel="noopener" target="_blank">Snatam Kaur – Ra Ma Da Sa</a>
-                  </li>
-                </ul>
-              </div>
-              <p class="text-small text-medium-gray margin-15px-top mb-0">The metric is simple: does it help your body soften? If yes, use it. The label doesn't matter.</p>
-            </div>
-          </div>
-        </div>
-      </div><!-- Note of Caution -->
-      <div class="row mb-5 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-light-gray padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card ry-tool-card-alt">
-            <h5 class="alt-font text-extra-dark-gray"><i class="fas fa-exclamation-triangle text-deep-pink margin-5px-right"></i> <strong>A Note of Caution</strong></h5>
-            <p class="text-medium line-height-28 sm-line-height-26">Not every tool works for every nervous system — and with a trauma history, some can backfire. Breath-holding, extended body scans, or certain physical sensations can feel destabilising or triggering rather than calming. If a technique spikes your anxiety or makes you feel trapped, stop. That's not failure. That's your system giving you accurate information.</p>
-            <p class="text-medium line-height-28 sm-line-height-26 mb-0">When in doubt, go simpler: look around the room and name five objects, feel both feet flat on the floor, or take a short walk outside. <strong>The goal is never to push through — it's to restore a felt sense of safety.</strong> Any tool that makes your body feel less safe is the wrong tool, at least right now. Work with a trauma-informed therapist to identify which approaches suit your specific system.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-4 justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="bg-white padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-large border-radius-6 ry-tool-card">
-            <h5 class="alt-font text-extra-dark-gray"><strong>When You're Already In It: Pete Walker's 13 Steps for Managing Flashbacks</strong></h5>
-            <p class="text-medium">This one is different from everything else on this page. The tools above are regulation tools — useful for building a calmer baseline, intercepting early arousal, and training your nervous system over time. This is for when that window has already closed. When you're already inside a flashback and you need something to hold onto.</p>
-            <p class="text-medium">Pete Walker's 13 Steps were developed specifically for <strong>Complex PTSD</strong> — not general anxiety, not everyday stress, and not the kind of trauma a single incident leaves behind. C-PTSD is what happens when the threat was relentless, ongoing, and usually came from the people who were supposed to keep you safe. The flashbacks it produces aren't always cinematic. Often they're emotional — a sudden, overwhelming return to the helplessness, shame, or terror of the original environment, with no obvious trigger you can name.</p>
-            <p class="text-medium">This resource likely hasn't been handed to you in most treatment settings. It isn't typically part of standard AHS programming or group curriculum — not as a criticism, but as a reflection of how rarely C-PTSD-specific tools make it into the room, even when they're needed most.</p>
-            <p class="text-medium">If you have a complex trauma history and you haven't come across this before, it's worth reading slowly. More than once.</p>
-            <hr class="margin-20px-top margin-30px-bottom opacity4">
-            <p class="text-small text-center opacity7 margin-20px-bottom">Reproduced with the kind permission of Pete Walker. Original source: <a class="text-deep-pink" href="http://pete-walker.com" target="_blank" rel="noopener">pete-walker.com</a>.</p>
-            <div class="text-center">
-              <img src="images/13StepsManageFlashbacks.png" alt="Pete Walker's 13 Steps for Managing Emotional Flashbacks" class="w-100 border-radius-6 box-shadow-large" style="max-width: 400px;">
-            </div>
-            <div class="text-center margin-25px-top">
-              <a href="assets/13StepsManageFlashbacks.pdf" class="ry-pdf-cta alt-font" download="">
-                <i class="fas fa-file-pdf margin-10px-right" aria-hidden="true"></i>
-                Download — 13 Steps for Managing Flashbacks (PDF)
-              </a>
-              <p class="ry-pdf-cta-note">Pete Walker — used with permission.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section aria-label="featured quote" class="ry-quote-break ry-dark wow animate__fadeIn">
-    <div class="ry-quote-wrap container text-center">
-      <span class="ry-quote-marks">“</span>
-      <p class="ry-quote alt-font">“Every time you choose calm over chaos,<br>
-      you are literally rewiring your nervous system.”</p>
-      <div class="ry-quote-rule"></div>
-      <p class="ry-quote-attrib text-small text-uppercase">— Dr. Nicole LePera</p>
-    </div>
-  </section><!-- end blog content section -->
-  <!-- start section -->
-  <!-- WHY THESE TOOLS WORK (Standalone Feature Block) -->
-  <!-- Content (right) -->
-  <!-- end section -->
-  <!-- start blog content section -->
+<body class="sk__article-page dark-shade-1-bg ry-article-page">
 
+  <main id="primary" class="site-main">
 
-  <section class="wow animate__fadeIn bg-light-gray">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="bg-white padding-50px-all sm-padding-30px-all box-shadow-large border-radius-6 position-relative overflow-hidden">
-            <!-- Section Title -->
-            <div class="text-center margin-20px-bottom">
-              <i class="fas fa-lightbulb text-deep-pink icon-small margin-10px-bottom"></i>
-              <h3 class="alt-font text-extra-dark-gray letter-spacing-minus-2 mb-10"><strong>Why This Actually Works</strong></h3>
-              <div class="separator-line-horizontal-full bg-deep-pink opacity6 width-100px center-col margin-15px-bottom"></div>
-            </div><!-- Main Content -->
-            <p class="text-medium line-height-28">These tools are not self-help filler. They work because they operate on the nervous system directly — beneath the level of thought, below the reach of willpower. That's the part that matters for trauma survivors and people in recovery: you cannot think your way out of a physiological threat response. But you can interrupt it. And if you interrupt it enough times, consistently enough, you begin to change it.</p>
-            <ul class="list-style-01 text-medium">
-              <li><strong>Breathwork:</strong> Slow, extended exhales increase heart-rate variability (HRV) — a direct measure of how flexibly your autonomic nervous system responds to stress. Higher HRV means faster recovery, better emotional regulation, and a lower resting threat state.</li>
-              <li><strong>Grounding and sensory input:</strong> These redirect the brain's processing away from internal alarm signals and toward stable, present-moment cues. They give the amygdala something real to evaluate — and it usually concludes the room is not, in fact, on fire.</li>
-              <li><strong>Repetition:</strong> Every time you regulate — even imperfectly — you reinforce a slightly different neural pathway. Neuroscience calls this experience-dependent neuroplasticity. In practice it means: the more often you choose regulation, the more available it becomes. Calm becomes a learned state, not a lucky one.</li>
-            </ul><!-- Research Card -->
-            <div class="margin-30px-top bg-light-gray padding-25px-all border-radius-4">
-              <div class="d-flex align-items-start">
-                <i aria-hidden="true" class="fas fa-book-open text-deep-pink margin-15px-right" style="margin-top: 4px;"></i>
-                <div>
-                  <p class="text-small mb-10 text-extra-dark-gray"><strong>Research snapshot:</strong> Controlled breathing and sensory grounding have been shown to reduce hyperarousal and interrupt the trauma defence cascade — shifting the autonomic nervous system toward homeostatic regulation and measurably reducing symptom severity in trauma and anxiety populations.</p>
-                  <p class="text-very-small opacity7 mb-0">(Streeter et&nbsp;al., 2012; Schauer &amp; Elbert, 2010)</p>
-                </div>
-              </div>
-            </div><!-- Closing -->
-            <div class="margin-40px-top">
-              <p class="text-medium line-height-28">If you've spent years feeling like your body was working against you — like calm was something other people had access to and you didn't — that's not a character flaw. It's a trained response. And trained responses can be retrained.</p>
-              <p class="text-medium line-height-28">That's the whole point of this page. Not to convince you that breathing exercises will fix everything. But to make the case — backed by mechanism, not just optimism — that your nervous system is not fixed. It's plastic. It's responsive. And every time you interrupt the old pattern and choose something different, you are doing the actual work of recovery.</p>
-              <blockquote class="border-color-deep-pink margin-30px-top">
-                <p class="mb-0">You don't need to believe it will work. You just need to do it enough times to find out that it does.</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- end blog content section -->
-  <!-- start section -->
-    
+    <!-- Site-wide reading progress bar -->
+    <div aria-hidden="true" id="reading-progress"><div id="reading-progress-fill"></div></div>
 
-  <section class="extra-big-section learn-more-section wow animate__fadeIn position-relative overflow-hidden">
-    <video id="learnMoreBg" autoplay="" muted="" loop="" playsinline="" class="learn-more-bg">
-      <source src="video/learn-more-bg.mp4" type="video/mp4">
-    </video>
-
-    <div class="container position-relative z-index-2">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center margin-10px-bottom sm-margin-30px-bottom">
-          <h2 class="alt-font text-extra-dark-gray learn-more-title">Where to Next?</h2>
-          <p class="learn-more-subtitle">
-            Follow the next step in order, or branch out into related topics.
-          </p>
-        </div>
-      </div>
-
-      <div class="learn-more-divider mx-auto"></div>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 learn-more-cards">
-
-        <!-- Up Next -->
-        <div class="col margin-25px-top xs-margin-15px-bottom xs-no-margin-top wow animate__fadeIn" data-wow-delay="0.1s">
-          <a class="learn-card is-next category-tools" href="reality-test">
-            <span class="learn-card-label">Up Next</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Run the Experiment</div>
-            <p>A gold-standard exercise for testing whether your fears are facts.</p>
-          </a>
-        </div>
-
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
-          <a class="learn-card" href="distorted-thinking">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Your Mental Crystal Ball</div>
-            <p>The cognitive distortions keeping you stuck — and how to catch them.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.3s">
-          <a class="learn-card" href="when-sobriety-feels-worse">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">When Sober Feels Worse</div>
-            <p>Why early recovery often feels darker than using — and what's happening.</p>
-          </a>
-        </div>
-        <div class="col margin-25px-top xs-margin-15px-bottom wow animate__fadeIn" data-wow-delay="0.4s">
-          <a class="learn-card" href="neuroplasticity">
-            <span class="learn-card-label learn-card-label--explore">Explore</span>
-            <i class="icon-book-open learn-card-icon" aria-hidden="true"></i>
-            <div class="learn-card-title alt-font">Rewire the Brain</div>
-            <p>Your brain can change — here's the science behind how recovery does it.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="wow animate__fadeIn bg-light-gray" id="sources">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h5 class="alt-font text-extra-dark-gray font-weight-600">Sources + Further Reading</h5>
-            <div class="separator-line-horrizontal-full bg-deep-pink margin-20px-tb w-60 mx-auto h-2px"></div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <ol class="list-style-9 text-small text-medium-gray">
-
-              <!-- NEW from spreadsheet: Zaccaro et al. (2018) — slow breathing activates PNS via vagus -->
-              <li id="ref-zaccaro-2018">
-                Zaccaro, A., et al. (2018). <strong>How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing.</strong>
-                <em>Frontiers in Human Neuroscience, 12</em>, 353. Systematic review of 15 studies on voluntary slow breathing (&lt;10 breaths/min) — finding consistent evidence that slow breathing increases vagal tone, reduces blood pressure and cortisol, and activates the parasympathetic nervous system. Effects occur within minutes and build with sustained practice, establishing breath control as a physiologically grounded intervention rather than wellness folklore.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/30245619/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <!-- NEW from spreadsheet: Hölzel et al. (2011) + Lazar et al. (2005) — mindfulness and brain structure -->
-              <li id="ref-holzel-2011">
-                Hölzel, B. K., et al. (2011). <strong>Mindfulness practice leads to increases in regional brain gray matter density.</strong>
-                <em>Psychiatry Research: Neuroimaging, 191</em>(1), 36–43. Also: Lazar, S. W., et al. (2005). <strong>Meditation experience is associated with increased cortical thickness.</strong> <em>NeuroReport, 16</em>(17), 1893–1897. Hölzel et al. documented MRI-measured gray matter increases after an 8-week MBSR program, with corresponding reductions in amygdala density correlated with reduced stress. Lazar et al. showed meditators had measurably thicker cortex in attention and interoception regions. Together they establish that mindfulness produces structural brain changes — not metaphor, measurable neurology.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/21071182/" rel="noopener" target="_blank">View Hölzel et al. on PubMed</a>
-                &nbsp;·&nbsp;
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/16272874/" rel="noopener" target="_blank">View Lazar et al. on PubMed</a>
-              </li>
-
-              <!-- NEW from spreadsheet: Rauch, Shin & Phelps (2006) — grounding interrupts amygdala via PFC -->
-              <li id="ref-rauch-2006">
-                Rauch, S. L., Shin, L. M., &amp; Phelps, E. A. (2006). <strong>Neurocircuitry models of posttraumatic stress disorder and extinction: human neuroimaging research — past, present, and future.</strong>
-                <em>Biological Psychiatry, 60</em>(4), 376–382. Reviews the neurocircuitry of threat processing — documenting the amygdala-PFC inhibitory relationship and how sensory grounding techniques work by recruiting alternative inputs that activate PFC appraisal processes, interrupting the amygdala's threat loop. Establishes grounding as a neurophysiological intervention, not a distraction technique.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/16919525/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-              <!-- Cross-pollination: confirmed Goodreads link from sources file -->
-              <li id="ref-porges-2011">
-                Porges, S. W. (2011). <strong>The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation.</strong>
-                Norton. The foundational framework for understanding why safe social engagement, breath, and sensory input regulate the autonomic nervous system — explaining the neurophysiological basis for every tool on this page and why the body, not just the mind, must be engaged in recovery.
-                <a class="text-deep-pink" href="https://www.goodreads.com/book/show/9939396-the-polyvagal-theory" rel="noopener" target="_blank">View on Goodreads</a>
-              </li>
-
-              <li id="ref-gerbarg-brown-2016">
-                Brown, R. P., &amp; Gerbarg, P. L. (2005). <strong>Sudarshan Kriya yogic breathing in the treatment of stress, anxiety, and depression: Part II — clinical applications and guidelines.</strong>
-                <em>Journal of Alternative and Complementary Medicine, 11</em>(4), 711–717. Clinical applications of yogic breathing techniques — documenting their utility in anxiety, depression, and post-trauma stabilization, providing a clinical complement to the physiological evidence in Zaccaro et al.
-                <a class="text-deep-pink" href="https://pubmed.ncbi.nlm.nih.gov/16131297/" rel="noopener" target="_blank">View on PubMed</a>
-              </li>
-
-            </ol>
-            <p class="text-extra-small text-uppercase text-medium-gray margin-20px-top">These sources explain how slow breathing, mindfulness, and sensory grounding regulate the autonomic nervous system, reduce hyperarousal, and produce measurable brain changes in trauma recovery. Educational only — not medical advice.</p>
-          </div>
+    <!-- Master Curtain Effect -->
+    <!-- Built from real DOM rather than a background image so the optional
+         page title below the logo always sits a fixed distance beneath it,
+         at every viewport ratio. Builders inject .ry-curtain-title; the
+         home page deliberately has none. -->
+    <section class="sk__master-curtain">
+      <div class="mcurtain ry-mcurtain-single">
+        <div class="ry-curtain-inner">
+          <img class="ry-curtain-logo" src="images/webp/recover-you-logo-white.webp" alt="Recover-You" width="600" height="200">
+          <span class="ry-curtain-title">REGULATION TOOLS</span>
         </div>
       </div>
     </section>
-  <section class="wow animate__fadeIn bg-light-gray ticker-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="ticker">
-                        <span class="alt-font text-medium">Feeling overwhelmed by what you’ve read? Support is here • Call 988 Anywhere in Canada 24/7 Suicide Crisis Line • In Alberta call 211 (community &amp; mental health referrals) • Distress Line 780-482-HELP • 911 in emergencies</span>
-                    </div>
+
+    <!-- Back to top button -->
+    <div class="sk__back-to-top-wrap">
+      <a class="sk__back-to-top" href="#smooth-content"><span class="sk__back-to-top"></span></a>
+    </div>
+
+    <!-- Mobile menu bar -->
+    <div class="sk__mobile-menu-bar"></div>
+    <a class="sk__mobile-main-logo" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+    <!-- Navigation -->
+    <nav id="main-nav" style="opacity: 0;" class="sk__menu navbar sk__navbar navbar-expand-lg navbar-dark static-top">
+
+      <a class="navbar-brand" href="index"><img id="sk__main-logo" alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+
+      <ul class="navbar-nav ms-auto">
+
+        <li data-nav-custom-content class="custom-content sk__mobile-menu-logo">
+          <a class="sk__mobile-navbar-brand" href="index"><img alt="Recover-You" src="images/recover-you-logo-white.png"></a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+
+        <!-- 1. Orientation -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Start Here</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-this-site-exists">Why This Site Exists</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-me">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="start-here">Start Here</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-coaches">For Frontline Workers</a></li>
+            <li class="nav-item"><a class="nav-link" href="for-loved-ones">For Loved Ones</a></li>
+          </ul>
+        </li>
+
+        <!-- 2-4. Trauma Foundations -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Trauma Foundations</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Core Concepts</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="what-is-trauma">What Is Trauma</a></li>
+                <li class="nav-item"><a class="nav-link" href="what-is-cptsd">What Is C-PTSD</a></li>
+                <li class="nav-item"><a class="nav-link" href="attachment">Attachment Styles</a></li>
+                <li class="nav-item"><a class="nav-link" href="toxic-stress">Toxic Stress</a></li>
+                <li class="nav-item"><a class="nav-link" href="shame-grief-false-self">Shame, Grief &amp; The False Self</a></li>
+                <li class="nav-item"><a class="nav-link" href="cptsd-behaviours">CPTSD Patterns</a></li>
+                <li class="nav-item"><a class="nav-link" href="four-trauma-responses">Trauma Responses</a></li>
+                <li class="nav-item"><a class="nav-link" href="aces-high">ACEs &amp; Risk</a></li>
+                <li class="nav-item"><a class="nav-link" href="dunedin-study">The Dunedin Study</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Brain &amp; Body</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="brain-on-fire">Brain on Fire</a></li>
+                <li class="nav-item"><a class="nav-link" href="when-sobriety-feels-worse">When Sobriety Feels Worse</a></li>
+                <li class="nav-item"><a class="nav-link" href="neuroplasticity">Neuroplasticity</a></li>
+                <li class="nav-item"><a class="nav-link" href="critical-window">Critical Windows</a></li>
+                <li class="nav-item"><a class="nav-link" href="epigenetics">Epigenetics</a></li>
+                <li class="nav-item"><a class="nav-link" href="trauma-does-not-expire">Trauma Doesn't Expire</a></li>
+                <li class="nav-item"><a class="nav-link" href="dohad">DOHaD: Developmental Origins</a></li>
+                <li class="nav-item"><a class="nav-link" href="metabolism">Metabolism</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-hijacked-engine">The Hijacked Engine</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="trauma-addiction-evidence">When Trauma and Addiction Overlap</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. A Critical Lens -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">A Critical Lens</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="why-traditional-treatment-falls-short">Why Traditional Treatment Falls Short</a></li>
+            <li class="nav-item"><a class="nav-link" href="problem-with-aa">Limits of the AA Model</a></li>
+            <li class="nav-item"><a class="nav-link" href="misdiagnosed">When Trauma Is Misdiagnosed</a></li>
+            <li class="nav-item"><a class="nav-link" href="disease-of-addiction">The &ldquo;Disease of Addiction&rdquo; Debate</a></li>
+            <li class="nav-item"><a class="nav-link" href="dsm-explained">DSM vs ICD (Diagnosis Explained)</a></li>
+            <li class="nav-item"><a class="nav-link" href="better-model-of-care">What Better Care Requires</a></li>
+            <li class="nav-item"><a class="nav-link" href="trauma-avoidant">When Trauma Is Avoided</a></li>
+            <li class="nav-item"><a class="nav-link" href="compassionate-care">Compassionate Care: A Critique</a></li>
+          </ul>
+        </li>
+
+        <!-- 6-9. Healing & Tools -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="#">Healing &amp; Tools</a>
+          <ul class="sk__submenu-ul">
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Therapeutic Models</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="cbt">CBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="dbt">DBT</a></li>
+                <li class="nav-item"><a class="nav-link" href="life-traps">Life Traps (Schema Therapy)</a></li>
+                <li class="nav-item"><a class="nav-link" href="healing-trauma">Healing Trauma (Post-Traumatic Growth)</a></li>
+                <li class="nav-item"><a class="nav-link" href="types-of-therapy">Therapy Types</a></li>
+                <li class="nav-item"><a class="nav-link" href="role-of-therapy">The Role of Therapy</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Practical Tools &amp; Skills</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="chart-your-life">Chart Your Life</a></li>
+                <li class="nav-item"><a class="nav-link" href="distorted-thinking">Distorted Thinking</a></li>
+                <li class="nav-item"><a class="nav-link" href="regulation-tools">Regulation Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="reality-test">Reality Testing</a></li>
+                <li class="nav-item"><a class="nav-link" href="relationships">Relationships in Recovery</a></li>
+                <li class="nav-item"><a class="nav-link" href="connection">Connection</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-item-has-children">
+              <a class="nav-link" href="#">Identity &amp; Growth</a>
+              <ul class="sk__sub-submenu-ul">
+                <li class="nav-item"><a class="nav-link" href="identity-values-and-beliefs">Identity, Values &amp; Beliefs</a></li>
+                <li class="nav-item"><a class="nav-link" href="spirituality">Spirituality</a></li>
+                <li class="nav-item"><a class="nav-link" href="the-resilience-lie">The Resilience Lie</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+
+        <!-- 9. Resources -->
+        <li class="nav-item menu-item-has-children">
+          <a class="nav-link" href="resources">Resources</a>
+          <ul class="sk__submenu-ul">
+            <li class="nav-item"><a class="nav-link" href="resources">All Resources</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-detox">Detox &amp; Stabilization</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-treatment-centres">Treatment Centres</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-trauma-therapy">Trauma Therapy &amp; Mental Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-alberta-health">Navigating Alberta Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-books-tools">Books, Journals &amp; Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="resources-prominent-voices">Prominent Voices</a></li>
+            <li class="nav-item"><a class="nav-link" href="tfr-model">The TFR Model</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+
+      </ul>
+    </nav>
+    <!-- /.sk__menu -->
+    <div id="smooth-wrapper" class="pushable-content">
+      <div id="smooth-content">
+
+        <!-- ============================= HERO ============================= -->
+        <section class="ry-page-hero" id="page-hero">
+          <div class="ry-page-hero__bg" style="background-image:url('images/webp/zen-amid-chaos.webp');"></div>
+          <div class="ry-page-hero__scrim"></div>
+          <div class="container ry-page-hero__inner">
+            <div class="row"><div class="col-12 col-lg-9">
+              <span class="ry-hero-eyebrow">The Toolkit</span>
+              <h1 class="ry-page-hero__title">When Your Body Doesn&rsquo;t Know You&rsquo;re Safe</h1>
+              <p class="ry-page-hero__sub">Relearning calm through science, practice, and compassion</p>
+            </div></div>
+          </div>
+          <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+        </section>
+
+        <!-- ==================== WHEN MY BODY DIDN'T KNOW ==================== -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <section id="why">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-8">
+                <span class="ry-readtime">12 min read</span>
+                <span class="ry-section-eyebrow"><i>//</i> Lived Experience</span>
+                <h2 class="ry-eyebrow-h">Nervous System Regulation Tools:<br/> When My <strong>Body Didn't Know We Were Safe</strong></h2>
+                <div class="ry-prose">
+                  <p>In early sobriety, my body was still at war. Heart pounding like I was sprinting — while sitting completely still. I'd look around for the threat and find nothing. Once I started actually paying attention, the triggers were almost embarrassingly mundane:</p>
                 </div>
+                <ul class="ry-said">
+                    <li>Riding public transit</li>
+                    <li>Talking to strangers</li>
+                    <li>Sitting in a busy Starbucks</li>
+                    <li>Even lying in bed with no obvious trigger</li>
+                    <li>Last-minute lunch with a client</li>
+                </ul>
+                <div class="ry-prose">
+                  <p>I bought a smartwatch. A few weeks in, the data was hard to ignore: resting heart rate spiking to <strong>140 BPM</strong> — not "a little on edge," but physiologically equivalent to jogging. My body was running emergency protocols around the clock, and I'd learned to call it normal.</p>
+                  <p>My nervous system had one setting: <em>threat</em>. Sometimes there was a reason. Often, there wasn't. In those moments, I started doing something that felt almost stupidly simple — pausing, checking in, and saying quietly: <strong>"I'm safe. I'm okay. I'm not in danger."</strong></p>
+                </div>
+                <div class="ry-note">
+                  <span class="ry-note__label">I Used to Think This Stuff Was Ridiculous</span>
+                  <div class="ry-prose">
+                  <p>For years, I dismissed meditation, mindfulness, and grounding as <em>"hippy bullshit."</em> I was skeptical, guarded, and genuinely convinced that slow breathing wasn't going to fix a nervous system that had been running on adrenaline for decades.</p>
+                  <p>In treatment the first time, I went through the motions. Eyes open during meditation, half-listening, internally checked out. The second time, I made a deliberate choice to stop performing compliance and actually try. That shift changed everything.</p>
+                  <p>What broke through my resistance wasn't inspiration — it was mechanism. Once I understood that slow, controlled breathing directly activates the parasympathetic nervous system via the vagus nerve, that grounding interrupts the amygdala's threat response by redirecting sensory processing to the prefrontal cortex — it stopped feeling abstract. <strong class="ry-hl">This is neuroscience, <em>not wellness culture.</em></strong> And consistent practice doesn't just feel calmer; it produces measurable structural changes in the brain.</p>
+                  <p>So I kept doing it. And slowly, my nervous system <strong>stood down.</strong></p>
+                  <p><strong>That's why I built this page.</strong> The tools here are deliberately accessible — entry-level by design. But I've tried to ground each one in enough science that if you're the kind of person who needs to understand <em>why</em> before you'll commit to <em>how</em>, you'll find it here.</p>
+                  </div>
+                </div>
+                <div class="ry-prose">
+                  <p>None of this erased the discomfort overnight. But naming what was happening — and what wasn't — kept things from spiralling. And over time, the sensations that once felt unbearable started to feel survivable. Then manageable. Then small.</p>
+                  <p><strong>This work is hard. It's also real.</strong> The more you understand <strong><em>why</em></strong> these tools work, the harder it becomes to talk yourself out of using them.</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
         </div>
-    </section><!-- start services section -->
+        <!-- /.ry-ashfield -->
 
-    <!-- ========== NEW FOOTER & PRIVACY ========== -->
-    <footer class="site-footer footer-center-logo2-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
-      <div class="container">
-        <div class="site-footer__inner">
-
-          <div class="site-footer__left alt-font text-small font-weight-500">
-            <a href="contact">GET IN TOUCH</a>
-            <span class="footer-sep">|</span>
-            <a href="#" id="open-privacy-policy">Privacy Policy</a>
-          <span class="footer-sep">|</span>
-          <a href="sitemap">Site Map</a>
+        <!-- ==================== TRAUMA AND THE NERVOUS SYSTEM ==================== -->
+        <section class="ry-split ry-split--reverse" id="nervous-system">
+          <div class="ry-split__media" style="background-image:url('images/webp/trauma-rewires-brain.webp');"></div>
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> The Mechanism</span>
+            <h2 class="ry-eyebrow-h">Trauma, Addiction, and the <strong>Nervous System</strong></h2>
+            <p>Trauma doesn't just leave emotional wounds — it recalibrates the nervous system. The result is a dysregulated baseline: cycling between hyperarousal <strong>(fight/flight)</strong> and hypoarousal <strong>(freeze/shutdown)</strong>, with very little stable ground between them. Addiction fills that gap. Alcohol to mute the volume. Stimulants to turn it back up. Substances become a <em>surrogate nervous system</em> — crude, costly, and borrowed. Learning to regulate without them isn't a coping strategy. It's reclaiming the controls.</p>
+            <h2 class="ry-eyebrow-h" style="margin-top:44px;">How <strong>Regulation Rewires</strong> the Brain</h2>
+            <p>These tools work by interrupting the brain's threat detection loop — specifically, by shifting activity away from the amygdala (which flags danger) and toward the prefrontal cortex (which evaluates it). A dysregulated nervous system isn't broken. It's over-trained. It learned to stay ready because staying ready once kept you alive.</p>
+            <p>Regulation is the process of teaching it that the threat has passed. Each deliberate breath, each grounding moment, each time you track a feeling instead of reacting to it — you're not just coping. You're laying down new circuitry. Neuroscience calls this experience-dependent neuroplasticity. In practice, it means the brain can actually learn calm — if you repeat it enough times to make it the default.</p>
           </div>
+        </section>
 
-          <div class="site-footer__center">
-            <a href="index">
-              <img alt="Recover You logo white" class="footer-logo" data-at2x="images/logo-white@2x.png" src="images/logo-white.png">
-            </a>
+        <!-- ==================== AIM SMALL, MISS SMALL ==================== -->
+        <section class="ry-split" id="aim-small">
+          <div class="ry-split__body ry-prose">
+            <span class="ry-section-eyebrow"><i>//</i> Rating the Intensity</span>
+            <h2 class="ry-eyebrow-h">Aim Small, Miss Small  Learning to <em>Rate My Emotions</em></h2>
+            <blockquote class="ry-pullquote">
+            <p>The moment I stopped treating emotions like emergencies and started treating them like data, I stopped being at their mercy.</p>
+            </blockquote>
+            <p>In treatment, every session started the same way: <em>what are you feeling, and how strong is it?</em> I hated it. It felt like busywork dressed up as therapy — a pointless ritual everyone performed to look like they were doing the work.</p>
+            <p>So I kept going through the motions. Anxiety 8, sadness 4, guilt 7. Over and over, session after session. And then something quietly shifted. I'd spent most of my life treating emotions like binary switches: anger <strong>on/off</strong>, shame <strong>on/off</strong>, fear <strong>on/off</strong>. If something was "on," it was urgent. It demanded a response — or a way out. That's not emotional awareness. That's a hair trigger.</p>
+            <p>Once I started rating intensity, the picture changed completely. The feeling that had seemed overwhelming might be a 3. The surge I'd have chased or drowned might just be a 5 — real, but not an emergency. That small act of precision created something I'd never had before: a gap. Enough space to ask: <strong>"Does this actually require a response right now?"</strong></p>
+            <p>Most of the time, the honest answer was no. <em class="ry-hl">Aim small, miss small.</em> Not every internal signal is a command. Some emotions need action. Most just need to be named, rated, and left alone.</p>
+            <p>That's what this practice does: it turns the noise into signal. And once you can read the signal clearly, you stop reacting to the noise.</p>
           </div>
+          <div class="ry-split__media" style="background-image:url('images/webp/aim-small-miss-small.webp');"></div>
+        </section>
 
-          <div class="site-footer__right alt-font text-small font-weight-500">
-            Not medical advice.<br>
-            See <a href="about-me.html#content-disclaimer">"Disclaimer &amp; How Content Is Made"</a> for details.
+        <!-- ==================== REGULATION IN ACTION ==================== -->
+        <section id="tools">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 text-center">
+                <h2 class="ry-band-title" style="margin-bottom:12px;"><strong class="ry-hl">Regulation</strong> in Action</h2>
+                <p class="ry-lede" style="text-align:center;">The tools. What to do. Why it works.</p>
+                <p style="margin-top:24px;"><a class="ry-cta" href="assets/regulation-tools-worksheet.pdf" download>Download the Regulation Tools PDF &darr;</a></p>
+                <p class="ry-sources-note" style="text-align:center;">Printable, quick-reference version for real-life use.</p>
+              </div>
+            </div>
+
+            <!-- The caution comes BEFORE the index, deliberately. See the
+                 note in build_reg.py: an index that lets someone skip
+                 "if a technique spikes your anxiety, stop" is worse than
+                 no index. -->
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <ul class="ry-tools" style="margin-top:34px;">
+                  <li class="ry-tool ry-tool--caution ry-reveal" data-reveal="up" id="rt-a-note-of-caution">
+                    <h3 class="ry-tool__name">A Note of Caution</h3>
+                    <p class="ry-tool__lead">Not every tool works for every nervous system — and with a trauma history, some can backfire. Breath-holding, extended body scans, or certain physical sensations can feel destabilising or triggering rather than calming. If a technique spikes your anxiety or makes you feel trapped, stop. That's not failure. That's your system giving you accurate information.</p>
+                    <p class="ry-tool__lead">When in doubt, go simpler: look around the room and name five objects, feel both feet flat on the floor, or take a short walk outside. <strong>The goal is never to push through — it's to restore a felt sense of safety.</strong> Any tool that makes your body feel less safe is the wrong tool, at least right now. Work with a trauma-informed therapist to identify which approaches suit your specific system.</p>
+                  </li>
+                </ul>
+
+                <div class="ry-toolindex">
+                  <span class="ry-toolindex__label">Jump to a tool</span>
+                  <p class="ry-toolindex__lead">Twenty-one of them, grouped. If you&rsquo;re in it right now, start with the first row.</p>
+                  <ul style="margin:0;padding:0;list-style:none;">
+                    <li class="ry-toolindex__group">
+                      <span class="ry-toolindex__cat">In-the-Moment Tools (Under 5 Minutes)</span>
+                      <ul class="ry-toolindex__list">
+                        <li><a href="#rt-4-7-8-breathing">4-7-8 Breathing</a></li>
+                        <li><a href="#rt-5-4-3-2-1-grounding">5-4-3-2-1 Grounding</a></li>
+                        <li><a href="#rt-cold-water-reset">Cold Water Reset</a></li>
+                        <li><a href="#rt-progressive-muscle-release">Progressive Muscle Release</a></li>
+                      </ul>
+                    </li>
+                    <li class="ry-toolindex__group">
+                      <span class="ry-toolindex__cat">Daily Habits That Build a Regulated Baseline</span>
+                      <ul class="ry-toolindex__list">
+                        <li><a href="#rt-morning-body-scan">Morning body scan</a></li>
+                        <li><a href="#rt-gentle-rhythmic-movement">Gentle, rhythmic movement</a></li>
+                        <li><a href="#rt-consistent-sleep-and-wake-times">Consistent sleep and wake times</a></li>
+                        <li><a href="#rt-two-minutes-of-breath-practice">Two minutes of breath practice</a></li>
+                      </ul>
+                    </li>
+                    <li class="ry-toolindex__group">
+                      <span class="ry-toolindex__cat">Daily Emotion Tracking (Aim Small, Miss Small)</span>
+                      <ul class="ry-toolindex__list">
+                        <li><a href="#rt-pause-for-10-20-seconds">Pause for 10–20 seconds</a></li>
+                        <li><a href="#rt-name-it">Name it</a></li>
+                        <li><a href="#rt-rate-the-intensity">Rate the intensity</a></li>
+                        <li><a href="#rt-note-three-quick-details">Note three quick details</a></li>
+                        <li><a href="#rt-log-it">Log it</a></li>
+                      </ul>
+                    </li>
+                    <li class="ry-toolindex__group">
+                      <span class="ry-toolindex__cat">Regulation Through the Senses</span>
+                      <ul class="ry-toolindex__list">
+                        <li><a href="#rt-weighted-blanket-deep-pressure">Weighted blanket / deep pressure</a></li>
+                        <li><a href="#rt-scent">Scent</a></li>
+                        <li><a href="#rt-sound">Sound</a></li>
+                        <li><a href="#rt-soft-visual-focus">Soft visual focus</a></li>
+                      </ul>
+                    </li>
+                    <li class="ry-toolindex__group">
+                      <span class="ry-toolindex__cat">Co-Regulation: Using Other People's Nervous Systems</span>
+                      <ul class="ry-toolindex__list">
+                        <li><a href="#rt-safe-connection">Safe connection</a></li>
+                        <li><a href="#rt-soft-eye-contact-and-warm-expression">Soft eye contact and warm expression</a></li>
+                        <li><a href="#rt-pace-your-voice">Pace your voice</a></li>
+                        <li><a href="#rt-synchrony">Synchrony</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <ul class="ry-tools" style="margin-top:34px;">
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-in-the-moment-tools-under-5-minutes">
+                    <h3 class="ry-tool__name">In-the-Moment Tools (Under 5 Minutes)</h3>
+                    <ul class="ry-tool__items">
+                      <li class="ry-tool__item" id="rt-4-7-8-breathing">
+                        <span class="ry-tool__item-name">4-7-8 Breathing</span>
+                        <p class="ry-tool__item-body">Inhale through your nose for 4 counts → hold for 7 → exhale fully through your mouth for 8. Do this 3–4 cycles. The long exhale is the active ingredient — it directly stimulates the vagus nerve and signals your heart rate to slow.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-5-4-3-2-1-grounding">
+                        <span class="ry-tool__item-name">5-4-3-2-1 Grounding</span>
+                        <p class="ry-tool__item-body">Name 5 things you can see, 4 you can physically feel, 3 you can hear, 2 you can smell, 1 you can taste. Say them aloud if you can. This pulls sensory processing back online and interrupts the amygdala's threat loop by redirecting attention to the present environment.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-cold-water-reset">
+                        <span class="ry-tool__item-name">Cold Water Reset</span>
+                        <p class="ry-tool__item-body">Splash cold water on your face or hold an ice pack to your cheeks and forehead for 30–60 seconds. Cold on the face activates the mammalian dive reflex — a hard-wired physiological response that slows heart rate and reduces acute panic within seconds.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-progressive-muscle-release">
+                        <span class="ry-tool__item-name">Progressive Muscle Release</span>
+                        <p class="ry-tool__item-body">Work through one muscle group at a time — jaw, shoulders, hands, thighs. Tense deliberately for 5 seconds, then release completely. The release phase signals to your brain that your body is no longer bracing for impact.</p>
+                      </li>
+                    </ul>
+                    <p class="ry-tool__lead">When your body is already in it — heart pounding, chest tight, thoughts racing — you need something that works on the body directly, not through thinking:</p>
+                    <p class="ry-tool__lead"><em>The common mechanism:</em> Each of these tools works by sending a bottom-up signal — body to brain — that overrides the threat state. You are not thinking your way calm. You are physiologically inducing it.</p>
+                  </li>
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-daily-habits-that-build-a-regulated-baseline">
+                    <h3 class="ry-tool__name">Daily Habits That Build a Regulated Baseline</h3>
+                    <ul class="ry-tool__items">
+                      <li class="ry-tool__item" id="rt-morning-body-scan">
+                        <span class="ry-tool__item-name">Morning body scan</span>
+                        <p class="ry-tool__item-body">→ Before you check your phone, do a slow scan from head to toe. Notice tension, heaviness, or restlessness. Gently breathe into those areas or stretch them out. This trains early awareness — catching stress at a 3 instead of an 8.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-gentle-rhythmic-movement">
+                        <span class="ry-tool__item-name">Gentle, rhythmic movement</span>
+                        <p class="ry-tool__item-body">→ Walking, tai chi, yoga, or slow dancing in your kitchen. Rhythmic, bilateral movement (left-right, left-right) is particularly effective at discharging stored stress and resetting the autonomic nervous system. Gentle and consistent beats intense every time.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-consistent-sleep-and-wake-times">
+                        <span class="ry-tool__item-name">Consistent sleep and wake times</span>
+                        <p class="ry-tool__item-body">→ Pick a rough window and protect it most days. Irregular sleep disrupts cortisol rhythms and keeps the nervous system in a low-grade state of readiness — essentially primed for anxiety before the day even starts.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-two-minutes-of-breath-practice">
+                        <span class="ry-tool__item-name">Two minutes of breath practice</span>
+                        <p class="ry-tool__item-body">→ Set a timer. Do one simple exercise — box breathing, slow exhale, or just counting breaths. Even two minutes daily, done consistently, builds autonomic flexibility: the ability to shift states more easily when you need to.</p>
+                      </li>
+                    </ul>
+                    <p class="ry-tool__lead">These don't produce an immediate effect — that's not the point. Done consistently, they raise the floor of your nervous system so spikes happen less often and recovery happens faster:</p>
+                    <p class="ry-tool__lead"><em>Why it works:</em> A dysregulated nervous system is one that's lost its range — stuck high, stuck low, or oscillating wildly. These habits rebuild that range. Predictability and repetition are the inputs. A steadier baseline is the output.</p>
+                  </li>
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-daily-emotion-tracking-aim-small-miss-small">
+                    <h3 class="ry-tool__name">Daily Emotion Tracking (Aim Small, Miss Small)</h3>
+                    <ul class="ry-tool__items">
+                      <li class="ry-tool__item" id="rt-pause-for-10-20-seconds">
+                        <span class="ry-tool__item-name">Pause for 10–20 seconds</span>
+                        <p class="ry-tool__item-body">and ask: <em>"What am I actually feeling right now?"</em></p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-name-it">
+                        <span class="ry-tool__item-name">Name it</span>
+                        <p class="ry-tool__item-body">— even roughly. "Anxious," "flat," "irritated and tired." Approximate is fine. Naming an emotion reduces amygdala activation. The label doesn't need to be perfect to be useful.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-rate-the-intensity">
+                        <span class="ry-tool__item-name">Rate the intensity</span>
+                        <p class="ry-tool__item-body">on a 0–10 scale. This is the critical step. It transforms a vague internal state into a data point — and lets you hold it up against what's actually happening around you.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-note-three-quick-details">
+                        <span class="ry-tool__item-name">Note three quick details</span>
+                        <p class="ry-tool__item-body">where you are, what you're doing, who you're with. Over time, these become the pattern.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-log-it">
+                        <span class="ry-tool__item-name">Log it</span>
+                        <p class="ry-tool__item-body">— notebook, notes app, or the free app <em><a href="https://howwefeel.org/" target="_blank">How We Feel</a></em>, which is built specifically for this. It's my personal favorite, and it's totally free.</p>
+                      </li>
+                    </ul>
+                    <p class="ry-tool__lead">Most people in early recovery have poor emotional granularity — they can feel that something is wrong, but can't tell how wrong, or why. This practice fixes that. And if you catch it <em>in real time</em> — a sudden spike of anger, sadness, or anxiety mid-situation — it can do something even more useful: expose the mismatch.</p>
+                    <p class="ry-tool__lead">I'd be in the middle of something completely mundane and clock that I was sitting at a 7. Then I'd look around — and nothing was actually wrong. That gap between what I was feeling and what was actually happening was the whole lesson. Once you can see the mismatch clearly, intense emotions lose a lot of their authority. <em>That little thing made me feel like this? Come on.</em> It doesn't make the feeling disappear, but it creates enough distance to stop treating it like a command.</p>
+                    <p class="ry-tool__lead"><em>Why it works:</em> You stop operating on binary signals — on/off, calm/crisis — and start working with actual information. A 3 and an 8 stop getting the same response. When you catch the mismatch in real time — a disproportionate reaction to something small — naming and rating it can dissolve the intensity almost immediately. Patterns also emerge over time: times, places, people, situations. You stop being surprised by your own nervous system.</p>
+                    <p class="ry-tool__lead"><em>The science:</em> UCLA researcher Matthew Lieberman found that putting a feeling into words — affect labeling — measurably reduces amygdala activation and increases prefrontal cortex engagement. The rating step adds metacognitive distance: the ability to observe an emotion rather than be inside it. Psychologist Lisa Feldman Barrett's research on emotional granularity shows that people who can distinguish between closely related emotional states recover faster and make better decisions under stress. The log isn't journaling. It's training your brain to treat internal states as data rather than commands.</p>
+                    <div class="ry-note">
+                      <p><strong>Recommended:</strong> The free app <em><a href="https://howwefeel.org/" target="_blank">How We Feel</a></em> was developed with input from emotion researchers and takes about 10 seconds per check-in. It tracks mood, context, and patterns over time — and it's genuinely good. Paper works too. The format matters less than the consistency.</p>
+                    </div>
+                    <div class="ry-note">
+                      <p>Tracking doesn't change what you feel. It changes your relationship to it — and that's where regulation actually starts.</p>
+                    </div>
+                  </li>
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-regulation-through-the-senses">
+                    <h3 class="ry-tool__name">Regulation Through the Senses</h3>
+                    <ul class="ry-tool__items">
+                      <li class="ry-tool__item" id="rt-weighted-blanket-deep-pressure">
+                        <span class="ry-tool__item-name">Weighted blanket / deep pressure</span>
+                        <p class="ry-tool__item-body">→ Even pressure across the body activates the parasympathetic nervous system through mechanoreceptors in the skin. Use a weighted blanket or heavy comforter and let it settle around you for 5–10 minutes.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-scent">
+                        <span class="ry-tool__item-name">Scent</span>
+                        <p class="ry-tool__item-body">→ Olfactory input bypasses the thalamus and connects directly to the limbic system — the emotional brain. This makes scent one of the fastest routes to a state shift. Lavender, chamomile, and citrus are commonly used; find what works for yours.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-sound">
+                        <span class="ry-tool__item-name">Sound</span>
+                        <p class="ry-tool__item-body">→ Predictable, low-variability sound (rain, white noise, slow music) reduces the nervous system's urge to scan for threats. Erratic or loud audio has the opposite effect. Match the sound to the state you're trying to move toward.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-soft-visual-focus">
+                        <span class="ry-tool__item-name">Soft visual focus</span>
+                        <p class="ry-tool__item-body">→ Fix your gaze gently on something slow and low-stakes — a candle, an aquarium, trees moving outside. Sustained soft focus activates the ventral vagal system and signals that active threat-scanning is no longer required.</p>
+                      </li>
+                    </ul>
+                    <p class="ry-tool__lead">When cognitive tools fail — when you're too activated to think clearly — the nervous system can still be reached through sensory input. This is not a workaround. It's a direct line:</p>
+                    <p class="ry-tool__lead"><em>Why it works:</em> Sensory input reaches the nervous system before conscious thought does. When arousal is high enough that cognition is impaired, this is often the only tier of regulation that's still accessible. Start here, then think.</p>
+                  </li>
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-co-regulation-using-other-people-s-nervous-systems">
+                    <h3 class="ry-tool__name">Co-Regulation: Using Other People's Nervous Systems</h3>
+                    <ul class="ry-tool__items">
+                      <li class="ry-tool__item" id="rt-safe-connection">
+                        <span class="ry-tool__item-name">Safe connection</span>
+                        <p class="ry-tool__item-body">→ Call someone you actually trust. Hug a pet. Have a brief, low-stakes conversation with someone who feels calm. Physical or vocal proximity to a regulated nervous system is often enough to begin shifting your own.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-soft-eye-contact-and-warm-expression">
+                        <span class="ry-tool__item-name">Soft eye contact and warm expression</span>
+                        <p class="ry-tool__item-body">→ With safe people only: allow gentle eye contact and a relaxed face while breathing slowly. The polyvagal system reads facial cues and prosody (voice tone) as primary safety signals — faster than words.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-pace-your-voice">
+                        <span class="ry-tool__item-name">Pace your voice</span>
+                        <p class="ry-tool__item-body">→ Speak slower and softer than you feel like speaking. Your own voice tone feeds back into your nervous system. A calmer delivery can begin to produce a calmer state.</p>
+                      </li>
+                      <li class="ry-tool__item" id="rt-synchrony">
+                        <span class="ry-tool__item-name">Synchrony</span>
+                        <p class="ry-tool__item-body">→ Walk at the same pace, sit and breathe together, or simply be in the same room as someone calm. Physiological synchrony between people is measurable and real — nervous systems do entrain to each other.</p>
+                      </li>
+                    </ul>
+                    <p class="ry-tool__lead">Self-regulation gets most of the attention, but it's not where regulation starts developmentally — and for many trauma survivors, it's not where it's most accessible. We are wired to regulate <em>through</em> each other first:</p>
+                    <p class="ry-tool__lead"><em>Why it works:</em> The social engagement system — facial expression, eye contact, voice prosody, touch — is the nervous system's primary downregulation pathway. It evolved before self-regulation did. For trauma survivors who learned that people aren't safe, building even one or two genuinely safe relationships is not a luxury. It's a clinical priority.</p>
+                    <div class="ry-note">
+                      <h3> <strong>On Sound and Co-Regulation: A Personal Note</strong></h3> <p>Music can function as a form of co-regulation — particularly tracks with slow tempo, smooth transitions, and minimal abrupt changes. The human voice, even recorded, activates the social engagement system. This is part of why certain music reliably shifts emotional states.</p> <p><em>Weightless</em> by Marconi Union is frequently cited in this context — it was designed in consultation with sound therapists and has been studied for its effects on anxiety. But the principle matters more than the specific track. Personally, <em>Ra Ma Da Sa</em> by Snatam Kaur works better for me. <strong>Find what reliably moves your system and use that.</strong></p>  <p><strong>Two starting points:</strong></p> <ul> <li> <a href="https://www.youtube.com/watch?v=UfcAVejslrU" rel="noopener" target="_blank">Marconi Union – Weightless</a> </li> <li> <a href="https://www.youtube.com/watch?v=1OGjZST8aRc" rel="noopener" target="_blank">Snatam Kaur – Ra Ma Da Sa</a> </li> </ul>  <p>The metric is simple: does it help your body soften? If yes, use it. The label doesn't matter.</p>
+                    </div>
+                  </li>
+                  <li class="ry-tool ry-reveal" data-reveal="up" id="rt-when-you-re-already-in-it-pete-walker-s-13-steps-for-managing-flashbacks">
+                    <h3 class="ry-tool__name">When You're Already In It: Pete Walker's 13 Steps for Managing Flashbacks</h3>
+                    <p class="ry-tool__lead">This one is different from everything else on this page. The tools above are regulation tools — useful for building a calmer baseline, intercepting early arousal, and training your nervous system over time. This is for when that window has already closed. When you're already inside a flashback and you need something to hold onto.</p>
+                    <p class="ry-tool__lead">Pete Walker's 13 Steps were developed specifically for <strong>Complex PTSD</strong> — not general anxiety, not everyday stress, and not the kind of trauma a single incident leaves behind. C-PTSD is what happens when the threat was relentless, ongoing, and usually came from the people who were supposed to keep you safe. The flashbacks it produces aren't always cinematic. Often they're emotional — a sudden, overwhelming return to the helplessness, shame, or terror of the original environment, with no obvious trigger you can name.</p>
+                    <p class="ry-tool__lead">This resource likely hasn't been handed to you in most treatment settings. It isn't typically part of standard AHS programming or group curriculum — not as a criticism, but as a reflection of how rarely C-PTSD-specific tools make it into the room, even when they're needed most.</p>
+                    <p class="ry-tool__lead">If you have a complex trauma history and you haven't come across this before, it's worth reading slowly. More than once.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <figure class="ry-figure" data-ry-zoom="images/webp/13-steps-flashbacks.webp" data-ry-zoom-alt="Pete Walker's 13 Steps for Managing Emotional Flashbacks" data-ry-zoom-label="Read the full sheet">
+                  <div class="ry-sheet ry-sheet--plate">
+                    <img src="images/webp/13-steps-flashbacks.webp" alt="Pete Walker's 13 Steps for Managing Emotional Flashbacks" width="1545" height="2000" loading="lazy" decoding="async">
+                  </div>
+                  <figcaption>Reproduced with the kind permission of Pete Walker. Original source: <a class="ry-hl" href="http://pete-walker.com" rel="noopener" target="_blank">pete-walker.com</a>.</figcaption>
+                </figure>
+                <p class="text-center" style="margin-top:24px;"><a class="ry-cta" href="assets/13StepsManageFlashbacks.pdf" download>Download — 13 Steps for Managing Flashbacks (PDF) &darr;</a></p>
+                <p class="ry-sources-note" style="text-align:center;">Pete Walker — used with permission.</p>
+              </div>
+            </div>
           </div>
+        </section>
 
+        <!-- ==================== LEPERA ==================== -->
+        <section class="ry-quote-section ry-sh-quote" id="rewiring" aria-label="featured quote">
+          <div class="container sk__py-l text-center">
+            <blockquote class="ry-pullquote ry-pullquote--center" style="font-size:clamp(20px,2.8vw,30px);">“Every time you choose calm over chaos,<br/> you are literally rewiring your nervous system.”</blockquote>
+            <p class="ry-quote-cite">— Dr. Nicole LePera</p>
+          </div>
+        </section>
+
+        <!-- ==================== WHY THIS ACTUALLY WORKS ==================== -->
+        <div class="ry-ashfield">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
+
+        <section id="why-works">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-8">
+                <span class="ry-section-eyebrow"><i>//</i> The Evidence</span>
+                <h2 class="ry-eyebrow-h"><strong>Why This Actually Works</strong></h2>
+                <div class="ry-prose">
+                  <p class="ry-tool__lead">These tools are not self-help filler. They work because they operate on the nervous system directly — beneath the level of thought, below the reach of willpower. That's the part that matters for trauma survivors and people in recovery: you cannot think your way out of a physiological threat response. But you can interrupt it. And if you interrupt it enough times, consistently enough, you begin to change it.</p>
+                  <ul class="ry-tool__items">
+                    <li class="ry-tool__item"><p class="ry-tool__item-body"><strong>Breathwork:</strong> Slow, extended exhales increase heart-rate variability (HRV) — a direct measure of how flexibly your autonomic nervous system responds to stress. Higher HRV means faster recovery, better emotional regulation, and a lower resting threat state.</p></li>
+                    <li class="ry-tool__item"><p class="ry-tool__item-body"><strong>Grounding and sensory input:</strong> These redirect the brain's processing away from internal alarm signals and toward stable, present-moment cues. They give the amygdala something real to evaluate — and it usually concludes the room is not, in fact, on fire.</p></li>
+                    <li class="ry-tool__item"><p class="ry-tool__item-body"><strong>Repetition:</strong> Every time you regulate — even imperfectly — you reinforce a slightly different neural pathway. Neuroscience calls this experience-dependent neuroplasticity. In practice it means: the more often you choose regulation, the more available it becomes. Calm becomes a learned state, not a lucky one.</p></li>
+                  </ul>
+                  <div class="ry-note">
+                    <p><strong>Research snapshot:</strong> Controlled breathing and sensory grounding have been shown to reduce hyperarousal and interrupt the trauma defence cascade — shifting the autonomic nervous system toward homeostatic regulation and measurably reducing symptom severity in trauma and anxiety populations.</p> <p class="text-very-small opacity7">(Streeter et al., 2012; Schauer &amp; Elbert, 2010)</p>
+                  </div>
+                  <div class="ry-note">
+                    <p>If you've spent years feeling like your body was working against you — like calm was something other people had access to and you didn't — that's not a character flaw. It's a trained response. And trained responses can be retrained.</p> <p>That's the whole point of this page. Not to convince you that breathing exercises will fix everything. But to make the case — backed by mechanism, not just optimism — that your nervous system is not fixed. It's plastic. It's responsive. And every time you interrupt the old pattern and choose something different, you are doing the actual work of recovery.</p> <blockquote class="ry-pullquote"> <p>You don't need to believe it will work. You just need to do it enough times to find out that it does.</p> </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         </div>
+        <!-- /.ry-ashfield -->
+
+        <!-- ==================== WHERE TO NEXT ==================== -->
+        <section id="where-next">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 text-center">
+                <h2 class="ry-band-title">Where to Next?</h2>
+                <p class="ry-lede" style="text-align:center;">Follow the next step in order, or branch out into related topics.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-xl-11">
+                <div class="ry-next-grid">
+                  <a class="ry-next-card ry-next-card--up ry-reveal" data-reveal="up" style="--i:0" href="reality-test">
+                    <span class="ry-next-card__label">Up Next</span>
+                    <div class="ry-next-card__title">Run the Experiment</div>
+                    <p>A gold-standard exercise for testing whether your fears are facts.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:1" href="distorted-thinking">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Your Mental Crystal Ball</div>
+                    <p>The cognitive distortions keeping you stuck — and how to catch them.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:2" href="when-sobriety-feels-worse">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">When Sober Feels Worse</div>
+                    <p>Why early recovery often feels darker than using — and what's happening.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                  <a class="ry-next-card ry-reveal" data-reveal="up" style="--i:3" href="neuroplasticity">
+                    <span class="ry-next-card__label">Explore</span>
+                    <div class="ry-next-card__title">Rewire the Brain</div>
+                    <p>Your brain can change — here's the science behind how recovery does it.</p>
+                    <span class="ry-next-card__arrow">Read &rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SOURCES ==================== -->
+        <section id="sources">
+          <div class="container sk__py-l">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-xl-9">
+                <span class="ry-section-eyebrow"><i>//</i> Sources + Further Reading</span>
+                <ol class="ry-sources">
+                  <li id="ref-zaccaro-2018">Zaccaro, A., et al. (2018). <strong>How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing.</strong> <em>Frontiers in Human Neuroscience, 12</em>, 353. Systematic review of 15 studies on voluntary slow breathing (&lt;10 breaths/min) — finding consistent evidence that slow breathing increases vagal tone, reduces blood pressure and cortisol, and activates the parasympathetic nervous system. Effects occur within minutes and build with sustained practice, establishing breath control as a physiologically grounded intervention rather than wellness folklore. <a href="https://pubmed.ncbi.nlm.nih.gov/30245619/" rel="noopener" target="_blank">View on PubMed</a></li>
+                  <li id="ref-holzel-2011">Hölzel, B. K., et al. (2011). <strong>Mindfulness practice leads to increases in regional brain gray matter density.</strong> <em>Psychiatry Research: Neuroimaging, 191</em>(1), 36–43. Also: Lazar, S. W., et al. (2005). <strong>Meditation experience is associated with increased cortical thickness.</strong> <em>NeuroReport, 16</em>(17), 1893–1897. Hölzel et al. documented MRI-measured gray matter increases after an 8-week MBSR program, with corresponding reductions in amygdala density correlated with reduced stress. Lazar et al. showed meditators had measurably thicker cortex in attention and interoception regions. Together they establish that mindfulness produces structural brain changes — not metaphor, measurable neurology. <a href="https://pubmed.ncbi.nlm.nih.gov/21071182/" rel="noopener" target="_blank">View Hölzel et al. on PubMed</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16272874/" rel="noopener" target="_blank">View Lazar et al. on PubMed</a></li>
+                  <li id="ref-rauch-2006">Rauch, S. L., Shin, L. M., &amp; Phelps, E. A. (2006). <strong>Neurocircuitry models of posttraumatic stress disorder and extinction: human neuroimaging research — past, present, and future.</strong> <em>Biological Psychiatry, 60</em>(4), 376–382. Reviews the neurocircuitry of threat processing — documenting the amygdala-PFC inhibitory relationship and how sensory grounding techniques work by recruiting alternative inputs that activate PFC appraisal processes, interrupting the amygdala's threat loop. Establishes grounding as a neurophysiological intervention, not a distraction technique. <a href="https://pubmed.ncbi.nlm.nih.gov/16919525/" rel="noopener" target="_blank">View on PubMed</a></li>
+                  <li id="ref-porges-2011">Porges, S. W. (2011). <strong>The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation.</strong> Norton. The foundational framework for understanding why safe social engagement, breath, and sensory input regulate the autonomic nervous system — explaining the neurophysiological basis for every tool on this page and why the body, not just the mind, must be engaged in recovery. <a href="https://www.goodreads.com/book/show/9939396-the-polyvagal-theory" rel="noopener" target="_blank">View on Goodreads</a></li>
+                  <li id="ref-gerbarg-brown-2016">Brown, R. P., &amp; Gerbarg, P. L. (2005). <strong>Sudarshan Kriya yogic breathing in the treatment of stress, anxiety, and depression: Part II — clinical applications and guidelines.</strong> <em>Journal of Alternative and Complementary Medicine, 11</em>(4), 711–717. Clinical applications of yogic breathing techniques — documenting their utility in anxiety, depression, and post-trauma stabilization, providing a clinical complement to the physiological evidence in Zaccaro et al. <a href="https://pubmed.ncbi.nlm.nih.gov/16131297/" rel="noopener" target="_blank">View on PubMed</a></li>
+                </ol>
+                <p class="ry-sources-note">These sources explain how slow breathing, mindfulness, and sensory grounding regulate the autonomic nervous system, reduce hyperarousal, and produce measurable brain changes in trauma recovery. Educational only — not medical advice.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ry-ticker-wrap" aria-label="Crisis support numbers">
+          <div class="ry-ticker"><div class="ry-ticker-track">
+            <span class="ry-ticker-item">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+            <span class="ry-ticker-item" aria-hidden="true">Feeling overwhelmed by what you&rsquo;ve read? Support is here <i>&bull;</i> Call <strong>988</strong> anywhere in Canada, 24/7 Suicide Crisis Line <i>&bull;</i> In Alberta call <strong>211</strong> for community &amp; mental health referrals <i>&bull;</i> Distress Line <strong>780-482-HELP</strong> <i>&bull;</i> <strong>911</strong> in emergencies <i>&bull;</i></span>
+          </div></div>
+        </section>
+
+        <script src="assets/js/ry-ash.js"></script>
+        <script src="assets/js/ry-zoom.js"></script>
+        <script src="assets/js/ry-reveal.js"></script>
+
+        <!-- ============================= -->
+        <!-- FOOTER -->
+        <!-- ============================= -->
+        <footer class="dark-shade-2-bg position-relative ry-footer">
+          <div class="footer-tint sk__gradient-background-tint"></div>
+          <div class="container sk__py-m">
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-6 mb-3 mb-lg-0">
+                <a href="index"><img alt="Recover You" class="ry-footer-logo" src="images/recover-you-logo-white.png"></a>
+              </div>
+              <div class="col-lg-6 text-lg-end">
+                <span class="ry-footer-tagline">Trauma-aware. Science-backed. Forged inside Alberta's system.</span>
+              </div>
+            </div>
+
+            <span class="divider sk__subtle-divider d-block my-4"></span>
+
+            <div class="row align-items-center text-center text-lg-start">
+              <div class="col-lg-4 mb-3 mb-lg-0">
+                <a href="contact">Get In Touch</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="#" id="open-privacy-policy">Privacy Policy</a>
+                <span class="ry-footer-sep">|</span>
+                <a href="sitemap">Site Map</a>
+              </div>
+              <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                <span class="ry-footer-copy">&copy; 2025 Recover-<span class="ry-red-letter">Y</span>ou. All rights reserved</span>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <span class="ry-footer-copy">Calgary, Alberta</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- /.ry-footer -->
       </div>
-    </footer><!-- end footer -->
-    <!-- start scroll to top -->
-    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> <!-- end scroll to top  -->
-     <!-- javascript -->
-     
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script> 
-    <script src="js/bootsnav.js" type="text/javascript">
-    </script> 
-    <script src="js/jquery.nav.js" type="text/javascript">
-    </script> 
-    <script src="js/hamburger-menu.js" type="text/javascript">
-    </script> 
-    <script src="js/theme-vendors.min.js" type="text/javascript">
-    </script> <!-- setting -->
-     
-    <script src="js/lenis.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript">
-    </script>
+      <!-- /#smooth-content -->
+    </div>
+    <!-- /#smooth-wrapper -->
 
+  </main>
+  <!-- /main#primary.site-main -->
 
-
-    
-    <script>
-    (function () {
-      const progress = document.getElementById('reading-progress');
-      const fill = document.getElementById('reading-progress-fill');
-
-      if (!progress || !fill) return;
-
-      /* 
-        Reusable rules:
-        1) If a section has id="page-hero", use that
-        2) otherwise use the first .parallax section
-        3) if no hero exists, start from top of page
-      */
-      const hero = document.getElementById('page-hero') || document.querySelector('section.parallax');
-
-      function getScrollTop() {
-        return window.pageYOffset || document.documentElement.scrollTop || 0;
-      }
-
-      function getDocHeight() {
-        return Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.offsetHeight,
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-
-      function updateReadingProgress() {
-        const scrollTop = getScrollTop();
-        const viewportHeight = window.innerHeight;
-        const docHeight = getDocHeight();
-
-        let startPoint = 0;
-
-        if (hero) {
-          startPoint = hero.offsetTop + hero.offsetHeight;
-        }
-
-        const totalReadableDistance = docHeight - viewportHeight - startPoint;
-        const distanceRead = scrollTop - startPoint;
-
-        if (scrollTop > startPoint) {
-          progress.classList.add('is-visible');
-
-          if (totalReadableDistance <= 0) {
-            fill.style.width = '100%';
-            return;
-          }
-
-          let percent = (distanceRead / totalReadableDistance) * 100;
-          percent = Math.max(0, Math.min(percent, 100));
-          fill.style.width = percent + '%';
-        } else {
-          progress.classList.remove('is-visible');
-          fill.style.width = '0%';
-        }
-      }
-
-      window.addEventListener('load', updateReadingProgress);
-      window.addEventListener('resize', updateReadingProgress);
-      window.addEventListener('scroll', function () {
-        if (updateReadingProgress.framePending) return;
-        updateReadingProgress.framePending = true;
-        window.requestAnimationFrame(function () {
-          updateReadingProgress();
-          updateReadingProgress.framePending = false;
-        });
-      }, { passive: true });
-    })();
-    </script>
-
-
-    <!-- ========== PRIVACY MODAL SCRIPT & CONTENT ========== -->
-    <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
-      <div class="privacy-modal__backdrop" data-close-policy=""></div>
-
-      <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
-        <div class="privacy-modal__header">
-          <h3 id="privacy-modal-title">Privacy Policy</h3>
-          <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">
-            ×
-          </button>
-        </div>
-
-        <div class="privacy-modal__body">
-          <p><strong>Last updated:</strong> March 2026</p>
-
-          <p>
-            If you reach out through the contact form, I'll collect your name, email, and 
-            message — nothing more. That information is used only to get back to you. It's 
-            not shared, sold, or used for anything else.
-          </p>
-
-          <p>
-            This site uses two analytics tools to help me understand how people find and 
-            use it. Google Analytics is only active if you choose to allow analytics cookies. 
-            Netlify Web Analytics runs quietly in the background using general server data — 
-            no cookies, no individual tracking.
-          </p>
-
-          <p>
-            A few third-party services help keep the site running — things like hosting and 
-            the contact form. Some of these are based outside Canada, so your information 
-            may be processed there. I've chosen providers I trust, but I want you to know.
-          </p>
-
-          <p>
-            Please don't share anything urgent or crisis-related through the contact form — 
-            it's not monitored in real time. If you're in immediate distress, please reach 
-            out to a crisis line or emergency services.
-          </p>
-
-          <p>
-            Questions about this policy, or want to see or correct something I have about 
-            you? You can reach me through the contact page — I'm happy to help.
-          </p>
-        </div>
-
-        <div class="privacy-modal__footer">
-          <button type="button" class="privacy-modal__ok" data-close-policy="">OK</button>
-        </div>
+  <!-- Privacy Policy Modal -->
+  <div class="privacy-modal" id="privacy-modal" aria-hidden="true">
+    <div class="privacy-modal__backdrop" data-close-policy=""></div>
+    <div class="privacy-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+      <div class="privacy-modal__header">
+        <h3 id="privacy-modal-title">Privacy Policy</h3>
+        <button type="button" class="privacy-modal__close" aria-label="Close privacy policy" data-close-policy="">&times;</button>
+      </div>
+      <div class="privacy-modal__body">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>If you reach out through the contact form, I'll collect your name, email, and message &mdash; nothing more. That information is used only to get back to you. It's not shared, sold, or used for anything else.</p>
+        <p>This site uses two analytics tools to help me understand how people find and use it. Google Analytics is only active if you choose to allow analytics cookies. Netlify Web Analytics runs quietly in the background using general server data &mdash; no cookies, no individual tracking.</p>
+        <p>A few third-party services help keep the site running &mdash; things like hosting and the contact form. Some of these are based outside Canada, so your information may be processed there. I've chosen providers I trust, but I want you to know.</p>
+        <p>Please don't share anything urgent or crisis-related through the contact form &mdash; it's not monitored in real time. If you're in immediate distress, please reach out to a crisis line or emergency services.</p>
+        <p>Questions about this policy, or want to see or correct something I have about you? You can reach me through the contact page &mdash; I'm happy to help.</p>
       </div>
     </div>
-    <script>
-      (function () {
-        const modal = document.getElementById('privacy-modal');
-        const openBtn = document.getElementById('open-privacy-policy');
-        const closeBtns = document.querySelectorAll('[data-close-policy]');
+  </div>
 
-        if (!modal || !openBtn) return;
-
-        function openPolicy(e) {
-          e.preventDefault();
-          modal.classList.add('is-open');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('policy-modal-open');
-        }
-
-        function closePolicy() {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('policy-modal-open');
-        }
-
-        openBtn.addEventListener('click', openPolicy);
-
-        closeBtns.forEach((btn) => {
-          btn.addEventListener('click', closePolicy);
-        });
-
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-            closePolicy();
-          }
-        });
-      })();
-    </script>
-      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent banner" aria-live="polite">
     <div class="cookie-banner-inner">
       <p class="cookie-banner-text">
         <strong>Optional analytics:</strong> I use optional analytics to understand how people use the site, where pages lose people, and what needs improvement. You can decline and still use the site normally. If you decline, I may ask again later in case your preferences change.
@@ -1098,98 +766,245 @@
       </div>
     </div>
   </div>
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/bootstrap/5.1.3/bootstrap.min.js"></script>
+  <script src="assets/vendor/offcanvas-nav/hc-offcanvas-nav.js"></script>
+  <script src="assets/vendor/greensock/gsap.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/greensock/ScrollToPlugin.min.js"></script>
+
+  <!-- Main Theme JS -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Local file:// preview only; no-op on a real server -->
+  <script src="assets/js/ry-local-preview.js"></script>
+
+  <!-- Keeps dropdowns from opening off the right edge of the viewport -->
+  <script src="assets/js/ry-nav-fit.js"></script>
+
+  <!-- Recover-You custom scripts -->
   <script>
+    /* Site-wide reading progress bar */
+    (function () {
+      const progress = document.getElementById('reading-progress');
+      const fill = document.getElementById('reading-progress-fill');
+      if (!progress || !fill) return;
+
+      const hero = document.querySelector('.sk__hero-section');
+
+      function getScrollTop() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function getDocHeight() {
+        return Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+      }
+      function update() {
+        const scrollTop = getScrollTop();
+        const viewportHeight = window.innerHeight;
+        const docHeight = getDocHeight();
+        let startPoint = 0;
+        if (hero) startPoint = hero.offsetTop + hero.offsetHeight;
+
+        const totalReadableDistance = docHeight - viewportHeight - startPoint;
+        const distanceRead = scrollTop - startPoint;
+
+        if (scrollTop > startPoint) {
+          progress.classList.add('is-visible');
+          if (totalReadableDistance <= 0) { fill.style.width = '100%'; return; }
+          let percent = (distanceRead / totalReadableDistance) * 100;
+          percent = Math.max(0, Math.min(percent, 100));
+          fill.style.width = percent + '%';
+        } else {
+          progress.classList.remove('is-visible');
+          fill.style.width = '0%';
+        }
+      }
+
+      window.addEventListener('load', update);
+      window.addEventListener('resize', update);
+      window.addEventListener('scroll', function () {
+        if (update.framePending) return;
+        update.framePending = true;
+        window.requestAnimationFrame(function () { update(); update.framePending = false; });
+      }, { passive: true });
+    })();
+  </script>
+
+  <script>
+    /* Magnetic CTA hover */
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+      const strength = 14;
+      document.querySelectorAll('.ry-magnetic').forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = 'translate(' + (x / rect.width * strength).toFixed(1) + 'px,' + (y / rect.height * strength).toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+      });
+    })();
+  </script>
+
+  <script>
+    /* Hero typewriter */
+    (function () {
+      const el = document.getElementById('ry-dynamic-word');
+      const cursor = document.getElementById('ry-cursor');
+      if (!el || !cursor) return;
+
+      const sequence = ['CONTROL', 'CLARITY', 'HOPE', 'YOU'];
+      let wordIndex = 0, charIndex = 0, isDeleting = false;
+      const typingSpeed = 105, deletingSpeed = 130, finalTypingSpeed = 300;
+      const pauseBetweenWords = 1600, pauseBeforeNextWord = 350;
+
+      function type() {
+        const currentWord = sequence[wordIndex];
+        const isFinalWord = wordIndex === sequence.length - 1;
+        const currentTypingSpeed = isFinalWord ? finalTypingSpeed : typingSpeed;
+
+        if (!isDeleting) {
+          el.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === currentWord.length) {
+            if (isFinalWord) {
+              setTimeout(function () { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 900);
+              return;
+            }
+            isDeleting = true;
+            setTimeout(type, pauseBetweenWords);
+            return;
+          }
+          setTimeout(type, currentTypingSpeed);
+        } else {
+          el.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            setTimeout(type, pauseBeforeNextWord);
+            return;
+          }
+          setTimeout(type, deletingSpeed);
+        }
+      }
+      window.addEventListener('load', function () { setTimeout(type, 2600); });
+    })();
+  </script>
+
+  <script>
+    /* Checklist reveal-on-scroll */
+    (function () {
+      const items = document.querySelectorAll('#how-it-helps .ry-checklist li');
+      if (!items.length) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+
+  <script>
+    /* About strip — draw the route graphic in on scroll */
+    (function () {
+      const strip = document.getElementById('about-strip');
+      if (!strip) return;
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-drawn');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+      observer.observe(strip);
+    })();
+  </script>
+
+  <script>
+    /* Privacy policy modal */
+    (function () {
+      const modal = document.getElementById('privacy-modal');
+      const dialog = modal ? modal.querySelector('.privacy-modal__dialog') : null;
+      const openBtn = document.getElementById('open-privacy-policy');
+      const closeBtns = document.querySelectorAll('[data-close-policy]');
+      if (!modal || !dialog || !openBtn) return;
+
+      let lastFocusedElement = null;
+
+      function openPolicy(e) {
+        e.preventDefault();
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('policy-modal-open');
+        const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusable) firstFocusable.focus(); else { dialog.setAttribute('tabindex', '-1'); dialog.focus(); }
+      }
+      function closePolicy() {
+        if (document.activeElement && modal.contains(document.activeElement)) document.activeElement.blur();
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('policy-modal-open');
+        if (lastFocusedElement) lastFocusedElement.focus(); else openBtn.focus();
+      }
+      openBtn.addEventListener('click', openPolicy);
+      closeBtns.forEach(function (btn) { btn.addEventListener('click', closePolicy); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closePolicy(); });
+    })();
+  </script>
+
+  <script>
+    /* Cookie consent */
     (function () {
       const CONSENT_KEY = 'ry_cookie_consent';
       const CONSENT_EXPIRY_KEY = 'ry_cookie_consent_expiry';
       const DECLINE_DAYS = 180;
-
       const banner = document.getElementById('cookie-banner');
       const acceptBtn = document.getElementById('cookie-accept');
       const declineBtn = document.getElementById('cookie-decline');
 
-      function grantAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
-
-      function denyAnalytics() {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
-
-      function showBanner() {
-        if (banner) banner.style.display = 'block';
-      }
-
-      function hideBanner() {
-        if (banner) banner.style.display = 'none';
-      }
-
-      function setDeclineExpiry(days) {
-        const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
-        localStorage.setItem(CONSENT_EXPIRY_KEY, String(expiresAt));
-      }
-
-      function clearDeclineExpiry() {
-        localStorage.removeItem(CONSENT_EXPIRY_KEY);
-      }
-
+      function grantAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+      function denyAnalytics() { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+      function showBanner() { if (banner) banner.style.display = 'block'; }
+      function hideBanner() { if (banner) banner.style.display = 'none'; }
+      function setDeclineExpiry(days) { localStorage.setItem(CONSENT_EXPIRY_KEY, String(Date.now() + days * 86400000)); }
+      function clearDeclineExpiry() { localStorage.removeItem(CONSENT_EXPIRY_KEY); }
       function isDeclineExpired() {
         const expiry = localStorage.getItem(CONSENT_EXPIRY_KEY);
         if (!expiry) return true;
         return Date.now() > Number(expiry);
       }
-
       function applyConsentState() {
         const consent = localStorage.getItem(CONSENT_KEY);
-
-        if (consent === 'accepted') {
-          grantAnalytics();
-          hideBanner();
-          return;
-        }
-
+        if (consent === 'accepted') { grantAnalytics(); hideBanner(); return; }
         if (consent === 'declined') {
           denyAnalytics();
-
-          if (isDeclineExpired()) {
-            localStorage.removeItem(CONSENT_KEY);
-            localStorage.removeItem(CONSENT_EXPIRY_KEY);
-            showBanner();
-          } else {
-            hideBanner();
-          }
+          if (isDeclineExpired()) { localStorage.removeItem(CONSENT_KEY); localStorage.removeItem(CONSENT_EXPIRY_KEY); showBanner(); }
+          else hideBanner();
           return;
         }
-
         denyAnalytics();
         showBanner();
       }
-
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'accepted');
-          clearDeclineExpiry();
-          grantAnalytics();
-          hideBanner();
-        });
-      }
-
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function () {
-          localStorage.setItem(CONSENT_KEY, 'declined');
-          setDeclineExpiry(DECLINE_DAYS);
-          denyAnalytics();
-          hideBanner();
-        });
-      }
-
+      if (acceptBtn) acceptBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'accepted'); clearDeclineExpiry(); grantAnalytics(); hideBanner(); });
+      if (declineBtn) declineBtn.addEventListener('click', function () { localStorage.setItem(CONSENT_KEY, 'declined'); setDeclineExpiry(DECLINE_DAYS); denyAnalytics(); hideBanner(); });
       applyConsentState();
     })();
   </script>
-  
 
-</body></html>
+</body>
+</html>

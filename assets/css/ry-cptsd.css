@@ -1,0 +1,615 @@
+/* ====================================================================
+   Recover-You — What Is Complex PTSD (page layer)
+   --------------------------------------------------------------------
+   Everything here is specific to this page: the six-domain grid, the
+   "who it applies to" grid, and the ITQ self-reflection tool with its
+   radar map. Shared components stay in ry-article.css.
+
+   Colour tokens (--ry-glass-bg, --ry-hairline, --ry-ink-dim, --ry-red)
+   are inherited from ry-article.css, which must load first.
+   ==================================================================== */
+
+/* ====================================================================
+   1. WHO IT APPLIES TO
+   Six categories, no ranking. Deliberately not numbered — numbering
+   would imply an order of severity, and the whole point of the section
+   is that no one's entry is more legitimate than anyone else's.
+   ==================================================================== */
+.ry-who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 36px 0 8px;
+}
+.ry-who-card {
+  position: relative;
+  padding: 26px 24px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.ry-who-card:hover {
+  border-color: rgba(255, 47, 110, 0.35);
+  transform: translateY(-2px);
+}
+.ry-who-card__mark {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--ry-red);
+  margin-bottom: 16px;
+}
+.ry-who-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-who-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+@media (max-width: 991.98px) { .ry-who-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { .ry-who-grid { grid-template-columns: 1fr; } }
+
+/* ====================================================================
+   2. THE SIX DOMAINS
+   These *are* ordered — 01–03 are the PTSD core, 04–06 the
+   self-organization domains — so the number is part of the content,
+   not decoration. The tag carries the grouping; the accent bar changes
+   colour with it so the two halves read apart at a glance without
+   needing to read the tags.
+   ==================================================================== */
+.ry-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 36px 0 8px;
+}
+.ry-domain-card {
+  position: relative;
+  padding: 30px 26px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ry-domain-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.28);
+}
+.ry-domain-card--dso::before { background: var(--ry-red); }
+
+.ry-domain-card__num {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--ry-ink-faint);
+  margin-bottom: 10px;
+}
+.ry-domain-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-domain-card p {
+  margin: 0 0 20px;
+  font-size: 13.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+  flex: 1 1 auto;
+}
+.ry-domain-card__tag {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.ry-domain-card--dso .ry-domain-card__tag {
+  border-color: rgba(255, 47, 110, 0.45);
+  color: #ff8fb0;
+}
+
+@media (max-width: 991.98px) { .ry-domain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { .ry-domain-grid { grid-template-columns: 1fr; } }
+
+/* ====================================================================
+   3. THE ITQ SELF-REFLECTION
+   ==================================================================== */
+.ry-itq {
+  margin-top: 36px;
+  padding: clamp(26px, 4vw, 44px);
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+
+/* the "read this first" preamble carries real weight, so it gets a
+   left rule rather than being just another paragraph */
+.ry-itq__preamble {
+  padding: 24px 26px;
+  border-left: 3px solid var(--ry-red);
+  background: rgba(255, 255, 255, 0.026);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 24px;
+}
+.ry-itq__preamble h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-itq__preamble p {
+  margin: 0 0 13px;
+  font-size: 14px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-itq__preamble p:last-child { margin-bottom: 0; }
+.ry-itq__em { color: #ff5f8d; font-weight: 500; }
+
+/* the official-questionnaire pointer: an outbound offer, styled as one */
+.ry-itq__official {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding: 22px 24px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.17);
+  background: rgba(255, 255, 255, 0.018);
+  margin-bottom: 30px;
+}
+.ry-itq__official-body { flex: 1 1 340px; }
+.ry-itq__official-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-itq__official-body p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-itq__dl {
+  flex: 0 0 auto;
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+  transition: background .22s ease, border-color .22s ease;
+}
+.ry-itq__dl:hover, .ry-itq__dl:focus-visible {
+  background: var(--ry-red);
+  border-color: var(--ry-red);
+  color: #fff;
+}
+
+/* ---- question groups ---- */
+.ry-itq__group {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--ry-ink-faint);
+  padding-bottom: 12px;
+  margin: 34px 0 20px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-itq__group:first-of-type { margin-top: 8px; }
+
+.ry-itq__q {
+  padding: 20px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  background: rgba(255, 255, 255, 0.016);
+  margin-bottom: 12px;
+  transition: border-color .25s ease, background .25s ease;
+}
+/* answered items dim slightly rather than lighting up: the reward for
+   answering is progress, not a highlight on the sentence you just
+   agreed described you */
+.ry-itq__q.is-answered {
+  border-color: rgba(255, 47, 110, 0.28);
+  background: rgba(255, 47, 110, 0.028);
+}
+.ry-itq__q-text {
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---- the 0–4 scale ---- */
+.ry-itq__scale {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+.ry-itq__scale label { margin: 0; cursor: pointer; }
+.ry-itq__scale input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+  pointer-events: none;
+}
+.ry-itq__scale label > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ry-ink-dim);
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+.ry-itq__scale label:hover > span { border-color: rgba(255, 255, 255, 0.25); color: #fff; }
+.ry-itq__scale input:checked + span {
+  border-color: var(--ry-red);
+  background: rgba(255, 47, 110, 0.12);
+  color: #fff;
+}
+/* keyboard users must be able to see where they are */
+.ry-itq__scale input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
+.ry-itq__num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+}
+.ry-itq__scale input:checked + span .ry-itq__num { color: var(--ry-red); }
+
+/* ---- actions ---- */
+.ry-itq__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.ry-itq__progress {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-itq__progress strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   4. THE MAP (results)
+   ==================================================================== */
+.ry-map__empty {
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-map { display: none; }
+.ry-map.is-shown { display: block; }
+
+.ry-map__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+@media (max-width: 991.98px) { .ry-map__grid { grid-template-columns: 1fr; gap: 26px; } }
+
+.ry-radar {
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-radar svg { display: block; width: 100%; height: auto; overflow: visible; }
+.ry-radar__web  { fill: none; stroke: rgba(255, 255, 255, 0.11); stroke-width: 1; }
+.ry-radar__axis { stroke: rgba(255, 255, 255, 0.11); stroke-width: 1; }
+.ry-radar__area {
+  fill: rgba(255, 47, 110, 0.18);
+  stroke: var(--ry-red);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  /* grows from the centre on reveal; see ry-itq.js */
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .9s cubic-bezier(.22, 1, .36, 1), opacity .5s ease;
+}
+.ry-radar__area.is-collapsed { transform: scale(0.02); opacity: 0; }
+.ry-radar__dot { fill: var(--ry-red); stroke: #fff; stroke-width: 1.5; }
+.ry-radar__label {
+  fill: rgba(255, 255, 255, 0.82);
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+}
+.ry-radar__tick {
+  fill: rgba(255, 255, 255, 0.34);
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+}
+
+/* ---- per-domain readout bars ---- */
+.ry-readout__row { margin-bottom: 20px; }
+.ry-readout__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+.ry-readout__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-readout__band {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  white-space: nowrap;
+}
+.ry-readout__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.ry-readout__bar > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 47, 110, 0.55), var(--ry-red));
+  transition: width .85s cubic-bezier(.22, 1, .36, 1);
+}
+.ry-readout__desc {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ---- narrative summary ---- */
+.ry-map__summary {
+  padding: 28px 30px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.022);
+  margin-bottom: 34px;
+}
+.ry-map__summary p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-map__summary p:last-child { margin-bottom: 0; }
+.ry-map__summary strong { color: #fff; font-weight: 600; }
+
+/* ---- the plan ---- */
+.ry-plan__head {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.ry-plan__sub {
+  font-size: 14.5px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+  margin: 0 0 26px;
+  max-width: 760px;
+}
+.ry-plan__card {
+  padding: 26px 28px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  margin-bottom: 16px;
+}
+.ry-plan__card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-plan__card-head .ry-readout__name { font-size: 16px; font-weight: 600; }
+.ry-plan__card ul { list-style: none; margin: 0; padding: 0; }
+.ry-plan__card li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-plan__card li:last-child { margin-bottom: 0; }
+.ry-plan__card li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 8px; height: 1px;
+  background: var(--ry-red);
+}
+/* a cross-reference: this suggestion also helps a domain it isn't filed under */
+.ry-alsoeases {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ry-ink-faint);
+  white-space: nowrap;
+}
+
+.ry-plan__rest {
+  margin-top: 8px;
+  border-top: 1px solid var(--ry-hairline);
+  padding-top: 20px;
+}
+.ry-plan__rest > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 12px 0;
+  transition: color .2s ease;
+}
+.ry-plan__rest > summary::-webkit-details-marker { display: none; }
+.ry-plan__rest > summary:hover { color: var(--ry-red); }
+.ry-plan__rest[open] > summary { margin-bottom: 18px; }
+
+/* ---- when you want a human in this ---- */
+.ry-map__help {
+  margin-top: 34px;
+  padding: 28px 30px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  background: rgba(255, 47, 110, 0.045);
+}
+.ry-map__help h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-map__help p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+
+/* ====================================================================
+   5. HERMAN'S THREE STAGES
+   ==================================================================== */
+.ry-stage {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-stage:last-child { border-bottom: 0; }
+.ry-stage__num {
+  flex: 0 0 auto;
+  width: 54px; height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 47, 110, 0.4);
+  background: rgba(255, 47, 110, 0.07);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-stage__body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-stage__body p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+@media (max-width: 575.98px) {
+  .ry-stage { gap: 16px; }
+  .ry-stage__num { width: 42px; height: 42px; font-size: 20px; }
+}
+
+/* links inside generated result markup inherit the page link colour */
+.ry-map a, .ry-itq a, .ry-who-card a, .ry-domain-card a { color: var(--ry-red); }
+.ry-map a:hover, .ry-itq a:hover { color: #fff; }
+
+.ry-stages { margin: 34px 0 30px; }

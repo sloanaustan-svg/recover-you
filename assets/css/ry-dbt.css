@@ -1,0 +1,202 @@
+/* ====================================================================
+   Recover-You — DBT (page layer)
+   --------------------------------------------------------------------
+   Two page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-spec-grid,
+   .ry-split, .ry-figure, .ry-diptych-section, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE DIALECTIC — two truths, joined
+   --------------------------------------------------------------------
+   The page's entire thesis in one component: two statements that look
+   like opposites, held at the same time. It appears three times — the
+   worked examples, the four real-world dialectics, and CBT-and-DBT —
+   and the legacy drew all three as ordinary cards with the word "and"
+   buried mid-sentence in bold.
+
+   THE DESIGN RULE HERE IS THE ARGUMENT. Both sides get identical
+   weight: same size, same border, same background, same colour. There
+   is no primary half and no secondary half. Any styling that made one
+   side look like the real answer and the other like a concession would
+   be arguing against the page on every card.
+
+   The hinge between them is set as "AND", never as a slash, a versus,
+   or an arrow. A slash means pick one. An arrow means one leads to the
+   other. Neither is what a dialectic is.
+   ==================================================================== */
+.ry-dialectics { margin: 32px 0; padding: 0; list-style: none; }
+
+.ry-dialectic {
+  margin: 0 0 16px;
+  padding: 24px 26px 22px;
+  border-radius: 15px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-dialectic:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-dialectic { padding: 20px 20px 18px; } }
+
+.ry-dialectic__topic {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 16px;
+}
+
+/* three columns: statement, hinge, statement. The centre track is sized
+   to the word, so the two outer tracks stay equal to each other however
+   long the sentences are. */
+.ry-dialectic__pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+}
+@media (max-width: 767.98px) {
+  .ry-dialectic__pair { grid-template-columns: 1fr; gap: 12px; }
+}
+
+.ry-dialectic__side {
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 11px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-dialectic__side em { color: #fff; font-style: italic; }
+.ry-dialectic__side strong { color: #fff; font-weight: 600; }
+
+.ry-dialectic__and {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--ry-red);
+  text-align: center;
+  white-space: nowrap;
+}
+/* on a narrow screen the hinge stops being between two columns and
+   becomes a rule between two stacked blocks — still a join, not a step */
+@media (max-width: 767.98px) {
+  .ry-dialectic__and {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+  }
+  .ry-dialectic__and::before,
+  .ry-dialectic__and::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 47, 110, 0.35);
+  }
+}
+
+/* ====================================================================
+   2. THE FOUR CORE SKILLS
+   --------------------------------------------------------------------
+   Mindfulness, distress tolerance, emotion regulation, interpersonal
+   effectiveness. Each card carries a definition, three practices and
+   the benefit the page claims for it — four parts, so it gets its own
+   component rather than being forced into a spec card that only has
+   room for two.
+
+   The benefit line is set apart at the foot of the card because it is
+   a different KIND of statement from the three above it: those are
+   things you do, this is what the page says doing them produces.
+   ==================================================================== */
+.ry-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 38px 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 991.98px) { .ry-skills { grid-template-columns: 1fr; } }
+
+.ry-skill {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 30px 32px 26px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 575.98px) { .ry-skill { padding: 24px 22px 22px; } }
+
+.ry-skill__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 27px;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 14px;
+}
+.ry-skill__body {
+  margin: 0 0 18px;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-skill__points {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.ry-skill__points li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 11px 20px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-skill__points li:last-child { padding-bottom: 0; }
+.ry-skill__points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.7;
+}
+/* pushed to the foot of the card so the four line up across the grid
+   regardless of how long the definitions above them run */
+.ry-skill__benefit {
+  margin: auto 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-skill__benefit strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 6px;
+}

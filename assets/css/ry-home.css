@@ -1,0 +1,1712 @@
+/* ==========================================================================
+   Recover-You — homepage custom layer
+   Sits on top of DarkStar's theme.css + theme-colors.css (red palette).
+   Brand accent everywhere here is red — never pink/purple/orange.
+   ========================================================================== */
+
+:root {
+  --ry-red: #ff0000;         /* brand / logo red */
+  --ry-red-deep: #b30000;    /* pressed / hover-darker red */
+  --ry-red-soft: rgba(255,0,0,0.35);
+  --ry-red-faint: rgba(255,0,0,0.08);
+  --ry-grey-text: rgba(255,255,255,0.72);
+  --ry-grey-text-soft: rgba(255,255,255,0.55);
+}
+
+/* Film grain texture (subtle, whole page) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0.05;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
+}
+
+/* --------------------------------------------------------------------
+   Preloader curtain — single full-width panel, built from real DOM
+   --------------------------------------------------------------------
+   DarkStar's default splits its "DarkStar" wordmark across 3 separate
+   panels (left/center/right, each 34vw) using background-size:cover so
+   the seams line up. That falls apart on narrow screens: each panel's
+   aspect ratio swings wildly and "cover" crops hard to compensate,
+   which is what was chopping the logo. We reduced it to ONE panel long
+   ago (with a single element there is nothing left for theme.js's
+   stagger to stagger, so that resolves itself).
+
+   Now the panel holds real elements instead of a background image. A
+   background can't reliably anchor a caption beneath it — where the
+   logo lands depends on how `contain` scales the image against the
+   viewport, so a fixed text offset would drift or collide. With a
+   flex column the title is always the same distance below the mark, at
+   any ratio, and we reuse the already-cached logo instead of shipping
+   a separate 1920x1080 backdrop.
+   -------------------------------------------------------------------- */
+.ry-mcurtain-single {
+  left: 0;
+  width: 100% !important;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ry-curtain-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+}
+.ry-curtain-logo {
+  display: block;
+  width: min(46vw, 480px);
+  height: auto;
+}
+
+/* Optional page title. Present on interior pages, absent on the home
+   page. Fades up slightly after the logo settles, well before the
+   curtain lifts at 1.7s. */
+.ry-curtain-title {
+  margin-top: 26px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, 1.9vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: #ffffff;
+  /* nudge right to offset the trailing letter-space so it stays
+     optically centred under the logo */
+  text-indent: 0.34em;
+  line-height: 1.3;
+  max-width: 90vw;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.mcurtain-visible .ry-curtain-title {
+  animation: ryCurtainTitleIn 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) 0.45s forwards;
+}
+@keyframes ryCurtainTitleIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 575px) {
+  .ry-curtain-logo { width: 62vw; }
+  .ry-curtain-title { margin-top: 18px; letter-spacing: 0.26em; text-indent: 0.26em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-curtain-title { opacity: 1; transform: none; }
+  .mcurtain-visible .ry-curtain-title { animation: none; }
+}
+
+/* --------------------------------------------------------------------
+   Nav — logo sizing + density fixes
+   DarkStar's theme.css sizes the logo by HEIGHT only (100px / 60px on
+   scroll), which assumes a roughly square/icon-style mark. Our logo is
+   a wide ~4:1 wordmark, so that default blows up to ~400px wide and
+   crowds out the menu, forcing items to wrap. Constrain it explicitly.
+   -------------------------------------------------------------------- */
+.sk__navbar .navbar-brand img,
+#sk__main-logo {
+  height: 40px !important;
+  width: auto !important;
+  max-width: 140px;
+}
+body.sk__scrolling-started .sk__navbar .navbar-brand img {
+  height: 32px !important;
+}
+.sk__mobile-main-logo img,
+.sk__mobile-navbar-brand img {
+  height: 28px !important;
+  width: auto !important;
+  max-width: 100px;
+}
+
+/* Give the logo breathing room instead of sitting flush against the
+   viewport edge (theme.css zeroes out .navbar-brand's own padding/margin) */
+.sk__navbar .navbar-brand {
+  margin-left: 36px !important;
+}
+@media (max-width: 991px) {
+  .sk__navbar .navbar-brand {
+    margin-left: 20px !important;
+  }
+}
+.sk__mobile-main-logo {
+  margin-left: 0;
+}
+
+/* Vertically centre the wordmark inside every responsive menu bar.
+   The theme previously pinned the link to top: 0 and only sized the
+   image, which made the logo ride against the upper edge. */
+@media (max-width: 1899px) {
+  .sk__mobile-main-logo {
+    top: 0 !important;
+    left: 0 !important;
+    height: 100px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .sk__mobile-main-logo img,
+  .sk__mobile-navbar-brand img {
+    display: block;
+    height: 38px !important;
+    width: auto !important;
+    max-width: 116px;
+  }
+
+  body.sk__scrolling-started .sk__mobile-main-logo {
+    height: 72px;
+  }
+
+  body.sk__scrolling-started .sk__mobile-main-logo img {
+    height: 34px !important;
+    max-width: 104px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  body.sk__scrolling-started .sk__mobile-main-logo {
+    height: 60px;
+  }
+
+  body.sk__scrolling-started .sk__mobile-main-logo img {
+    height: 32px !important;
+    max-width: 98px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .sk__mobile-main-logo {
+    height: 60px;
+  }
+
+  .sk__mobile-main-logo img,
+  .sk__mobile-navbar-brand img {
+    height: 34px !important;
+    max-width: 104px;
+  }
+
+  body.sk__scrolling-started .sk__mobile-main-logo {
+    height: 44px;
+  }
+
+  body.sk__scrolling-started .sk__mobile-main-logo img {
+    height: 28px !important;
+    max-width: 88px;
+  }
+}
+
+/* Keep the navigation typography identical on every page. Declaring
+   this here prevents page-level heading styles or a font fallback from
+   changing the menu's weight and apparent size. */
+.sk__navbar .navbar-nav > li > a.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.hc-offcanvas-nav {
+  font-family: 'Poppins', sans-serif;
+}
+.hc-offcanvas-nav .nav-item-link,
+.hc-offcanvas-nav li.nav-close a,
+.hc-offcanvas-nav .nav-back a,
+.hc-offcanvas-nav .nav-content > .nav-close a {
+  font-size: 13px;
+}
+
+/* Soft legibility scrim behind the nav before scrolling starts.
+   DarkStar's nav is fully transparent until body.sk__scrolling-started
+   flips it to a near-opaque black bar. That's fine once scrolled, but on
+   first load white nav text sits directly on the hero image with no
+   separation. This fades a light shadow in behind just the nav band
+   (not the whole hero) so text stays legible without darkening the
+   splash image itself. Fades out once the solid scrolled bar takes over. */
+.sk__navbar {
+  position: relative;
+}
+.sk__navbar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 150%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.30) 55%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+body.sk__scrolling-started .sk__navbar::before {
+  opacity: 0;
+}
+
+/* Tighten an 8-item menu so it fits without wrapping on laptop widths */
+@media (min-width: 992px) {
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > a.nav-link {
+    padding: 36px 14px 34px 14px !important;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  body.sk__scrolling-started .sk__navbar.navbar-expand-lg .navbar-nav > li > a.nav-link {
+    padding: 15px 14px !important;
+  }
+  .sk__navbar.navbar-expand-lg .navbar-nav > li.menu-item-has-children > a.nav-link {
+    padding: 36px 30px 34px 14px !important;
+  }
+  body.sk__scrolling-started .sk__navbar.navbar-expand-lg .navbar-nav > li.menu-item-has-children > a.nav-link {
+    padding: 15px 30px 15px 14px !important;
+  }
+
+  /* Give top-level dropdown indicators a clear, dedicated pocket after
+     the label. DarkStar positions the glyph with a negative translate,
+     which otherwise presses it directly against the final letter. */
+  .sk__navbar .navbar-nav > li.menu-item-has-children {
+    position: relative;
+  }
+  .sk__navbar .navbar-nav > li.menu-item-has-children::before {
+    float: none;
+    position: absolute;
+    top: 0;
+    right: 13px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    transform: none;
+    color: rgba(255, 255, 255, .92);
+    font-size: 13px;
+    line-height: 1;
+    text-shadow: 0 0 8px rgba(255, 255, 255, .24);
+    pointer-events: none;
+    transition: color .2s ease, transform .2s ease;
+    z-index: 2;
+  }
+  .sk__navbar .navbar-nav > li.menu-item-has-children:hover::before,
+  .sk__navbar .navbar-nav > li.menu-item-has-children:focus-within::before {
+    color: var(--ry-red);
+    transform: translateY(2px);
+    text-shadow: 0 0 10px rgba(255, 0, 0, .36);
+  }
+  .sk__navbar.navbar-dark .navbar-nav {
+    margin-right: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------
+   Hero — typewriter word + magnetic CTA
+   -------------------------------------------------------------------- */
+.ry-hero-eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+}
+
+.ry-hero-dynamic {
+  color: var(--ry-red);
+}
+
+#ry-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--ry-red);
+  animation: ryBlink 1.35s steps(1, end) infinite;
+  opacity: 0.9;
+}
+
+@keyframes ryBlink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+/* Homepage hero: the footage is painted only through the wordmark by
+   the lightweight canvas routine in index.html. */
+.ry-home-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #020202;
+}
+
+.ry-home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: .14;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(97deg, transparent 0 17px, rgba(255,255,255,.025) 18px, transparent 19px 31px),
+    repeating-linear-gradient(7deg, transparent 0 23px, rgba(255,255,255,.018) 24px, transparent 25px 42px);
+  mix-blend-mode: screen;
+}
+
+.ry-home-hero__texture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(255,255,255,.045), transparent 45%),
+    radial-gradient(circle at 14% 22%, rgba(255,255,255,.022) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 67%, rgba(255,255,255,.018) 0 1px, transparent 1.5px),
+    linear-gradient(118deg, #000 0%, #090909 47%, #010101 100%);
+  background-size: auto, 89px 83px, 121px 109px, auto;
+}
+
+.ry-home-hero__source {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  opacity: .001;
+  pointer-events: none;
+}
+
+.ry-home-hero__inner {
+  position: relative;
+  z-index: 3;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 92px 0 70px;
+  text-align: center;
+}
+
+.ry-home-hero__eyebrow {
+  display: block;
+  margin-bottom: clamp(24px, 4vh, 42px);
+  color: rgba(255,255,255,.52);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(.62rem, 1vw, .78rem);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+.ry-home-wordmark {
+  position: relative;
+  width: 108vw;
+  height: clamp(290px, 42vw, 570px);
+  margin-left: -4vw;
+}
+
+.ry-home-wordmark canvas,
+.ry-home-wordmark__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ry-home-wordmark canvas {
+  z-index: 2;
+  display: block;
+}
+
+.ry-home-wordmark__fallback {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.025);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(4rem, 15.6vw, 18.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px rgba(255,255,255,.17);
+}
+
+.ry-home-wordmark__fallback strong {
+  color: #ff2438;
+  font: inherit;
+  -webkit-text-stroke-color: rgba(255,36,56,.85);
+  text-shadow: 0 0 28px rgba(255,36,56,.25);
+}
+
+.ry-home-hero__subtitle {
+  max-width: 720px;
+  margin: clamp(18px, 2.5vh, 28px) auto 28px;
+  color: rgba(255,255,255,.67);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(.9rem, 1.25vw, 1.08rem);
+  font-weight: 300;
+  line-height: 1.68;
+  letter-spacing: .01em;
+}
+
+.ry-home-hero__cta {
+  margin-top: 4px;
+}
+
+@media (max-width: 767.98px) {
+  .ry-home-hero,
+  .ry-home-hero__inner {
+    min-height: 100svh;
+  }
+  .ry-home-hero__inner {
+    padding: 70px 0 58px;
+  }
+  .ry-home-wordmark {
+    width: 112vw;
+    height: clamp(150px, 48vw, 250px);
+    margin-left: -6vw;
+  }
+  .ry-home-wordmark__fallback {
+    font-size: clamp(2.45rem, 15.2vw, 7rem);
+    -webkit-text-stroke-width: .7px;
+  }
+  .ry-home-hero__subtitle {
+    max-width: 34rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-home-hero__source,
+  .ry-home-wordmark canvas {
+    display: none;
+  }
+  .ry-home-wordmark__fallback {
+    color: rgba(255,255,255,.09);
+  }
+}
+
+/* Native DarkStar mega-text-video treatment. This intentionally uses
+   the same multiply construction and Poppins proportions as the
+   supplied home-mega-text-video reference. */
+section.ry-home-hero.sk__mega-video-text-section.sk__parallax-fixer-section {
+  width: 100%;
+  height: calc(100vh - 90px) !important;
+  height: calc(100dvh - 90px) !important;
+  min-height: calc(100vh - 90px) !important;
+  min-height: calc(100dvh - 90px) !important;
+  background: #000;
+}
+
+.ry-home-hero.ry-ashfield > .ry-ash-canvas {
+  z-index: 4;
+  opacity: .46;
+  mix-blend-mode: screen;
+}
+
+.ry-home-mega-video {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ry-home-mega-video .sk__pattern-overlay {
+  z-index: 1;
+  opacity: .37;
+}
+
+.ry-home-mega-video video {
+  object-position: center center;
+  filter: grayscale(1) contrast(1.18) brightness(.74);
+}
+
+.ry-home-mega-fusion {
+  z-index: 2;
+  overflow: hidden;
+  background: #000 !important;
+  mix-blend-mode: multiply;
+}
+
+.ry-home-mega-red-layer {
+  z-index: 3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+h1.ry-home-mega-word {
+  margin: -6vh 0 0;
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5vw;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.05vw;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  text-transform: inherit;
+  white-space: nowrap;
+}
+
+h1.ry-home-mega-red-word {
+  color: transparent !important;
+  mix-blend-mode: normal;
+}
+
+.ry-home-mega-red-word span {
+  color: transparent;
+}
+
+.ry-home-mega-red-word strong {
+  color: #ff2438;
+  font: inherit;
+  text-shadow: 0 0 28px rgba(255,36,56,.2);
+}
+
+.ry-home-hero-copy {
+  position: absolute;
+  left: clamp(24px, 4.8vw, 92px);
+  bottom: clamp(36px, 5.8vh, 68px);
+  z-index: 6;
+  max-width: 390px;
+  color: #fff;
+}
+
+.ry-home-hero-copy p {
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.92);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: .01em;
+}
+
+.ry-home-hero-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 23px;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.72);
+  font-family: 'Poppins', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .25s ease, background-color .25s ease, border-color .25s ease;
+}
+
+.ry-home-hero-button:hover,
+.ry-home-hero-button:focus-visible {
+  color: #fff !important;
+  border-color: #ff2438;
+  background: #ff2438;
+}
+
+.ry-home-vertical-note {
+  position: absolute;
+  right: clamp(22px, 3.8vw, 72px);
+  bottom: clamp(34px, 5.5vh, 66px);
+  z-index: 6;
+  width: 190px;
+  height: 350px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.ry-home-vertical-note__mark,
+.ry-home-vertical-note p,
+.ry-home-vertical-note strong {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.ry-home-vertical-note__mark {
+  right: 0;
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(3.7rem, 5vw, 5.6rem);
+  font-weight: 900;
+  line-height: .86;
+  letter-spacing: -.09em;
+}
+
+.ry-home-vertical-note p {
+  right: clamp(69px, 5.2vw, 98px);
+  color: rgba(255,255,255,.72);
+  font-family: 'Lato', sans-serif;
+  font-size: .7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+
+.ry-home-vertical-note strong {
+  right: clamp(91px, 7vw, 132px);
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.42rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .015em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199.98px) {
+  .ry-home-vertical-note {
+    right: 22px;
+    width: 150px;
+    height: 290px;
+  }
+
+  .ry-home-vertical-note__mark {
+    font-size: 3.6rem;
+  }
+
+  .ry-home-vertical-note p {
+    right: 66px;
+    font-size: .64rem;
+  }
+
+  .ry-home-vertical-note strong {
+    right: 87px;
+    font-size: .88rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ry-home-vertical-note {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  section.ry-home-hero.sk__mega-video-text-section.sk__parallax-fixer-section {
+    height: calc(100vh - 60px) !important;
+    height: calc(100dvh - 60px) !important;
+    min-height: calc(100vh - 60px) !important;
+    min-height: calc(100dvh - 60px) !important;
+  }
+
+  h1.ry-home-mega-word {
+    margin-top: -2vh;
+    font-size: 14.7vw;
+    letter-spacing: -1.08vw;
+  }
+
+  .ry-home-hero-copy {
+    left: 20px;
+    bottom: 25px;
+    max-width: 270px;
+  }
+
+  .ry-home-hero-copy p {
+    margin-bottom: 15px;
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+
+  .ry-home-hero-button {
+    min-height: 40px;
+    padding: 10px 18px;
+    font-size: .66rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1.ry-home-mega-word,
+  h1.ry-home-mega-word.unspaced {
+    opacity: 1;
+    letter-spacing: -1.05vw;
+    transform: none;
+    transition: none;
+  }
+}
+
+.ry-magnetic {
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.ry-hero-subtitle {
+  display: block;
+  max-width: 540px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.94);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.65);
+  margin: 22px 0 30px;
+}
+
+@media (max-width: 575px) {
+  .ry-hero-subtitle {
+    font-size: 16px;
+    max-width: 100%;
+  }
+}
+
+/* .sk__hero-section has no position of its own in theme.css, so without
+   this, .ry-scroll-cue's position:absolute has no positioned ancestor to
+   anchor to and falls back to the whole document — landing near the
+   bottom of the entire page instead of the bottom of the hero. */
+.sk__hero-section {
+  position: relative;
+}
+.ry-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  text-decoration: none;
+  animation: ryScrollCueBounce 2.2s ease-in-out infinite;
+}
+.ry-scroll-cue:hover { color: var(--ry-red); border-color: var(--ry-red-soft); }
+@keyframes ryScrollCueBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ry-scroll-cue { animation: none; }
+}
+
+/* --------------------------------------------------------------------
+   "How Recover-You Helps" — native DarkStar background parallax
+   (.sk__parallax-background-section / -element, same mechanism as the
+   hero and the Mission section further down the page)
+   -------------------------------------------------------------------- */
+.ry-how-it-helps {
+  /* same fix as .ry-mission below: needs its own stacking context or the
+     z-index:-1 background element escapes and hides behind the page */
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.ry-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.62);
+  pointer-events: none;
+  z-index: 0;
+}
+.ry-z2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------
+   Trauma / Recovery warning card
+   -------------------------------------------------------------------- */
+.ry-warning {
+  background: linear-gradient(to bottom, #0a0a0a, #000);
+  padding: 96px 0 104px;
+}
+
+.ry-warning .ry-card {
+  background: rgba(22,22,22,0.85);
+  backdrop-filter: blur(6px) saturate(140%);
+  border: 1px solid rgba(255,0,0,.22);
+  border-top: 2px solid var(--ry-red);
+  border-radius: 18px;
+  padding: 42px 40px;
+  box-shadow:
+    0 18px 48px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 20px 50px rgba(255,0,0,.05);
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+.ry-warning .ry-card--pulse {
+  animation: ryWarningPulse 3.2s ease-in-out infinite;
+}
+
+@keyframes ryWarningPulse {
+  0%, 100% {
+    border-color: rgba(255, 0, 0, .27);
+    box-shadow:
+      0 18px 48px rgba(0,0,0,.55),
+      0 0 0 1px rgba(255,255,255,.04) inset,
+      0 0 24px rgba(255,0,0,.08),
+      0 20px 50px rgba(255,0,0,.05);
+  }
+  50% {
+    border-color: rgba(255, 35, 49, .68);
+    box-shadow:
+      0 22px 54px rgba(0,0,0,.58),
+      0 0 0 1px rgba(255,255,255,.045) inset,
+      0 0 42px rgba(255,0,0,.28),
+      0 0 86px rgba(255,0,0,.12),
+      0 24px 62px rgba(255,0,0,.09);
+  }
+}
+
+.ry-warning .ry-eyebrow {
+  font-size: .9rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.ry-warning h3 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.ry-warning .ry-rule {
+  width: 112px;
+  height: 2px;
+  background: var(--ry-red);
+  margin: 12px 0 26px;
+}
+
+.ry-warning p {
+  color: rgba(255,255,255,.88);
+  line-height: 1.82;
+  font-size: .97rem;
+  font-weight: 300;
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+}
+
+.ry-warning .ry-highlight { color: var(--ry-red); font-weight: 500; }
+.ry-warning .ry-spacer { height: 44px; }
+
+@media (hover:hover) {
+  .ry-warning .ry-card:hover {
+    box-shadow:
+      0 24px 56px rgba(0,0,0,.6),
+      0 0 0 1px rgba(255,255,255,.04) inset,
+      0 24px 60px rgba(255,0,0,.07);
+  }
+}
+
+@media (max-width: 991px) {
+  .ry-warning { padding: 80px 0 90px; }
+  .ry-warning .ry-card { padding: 34px 28px; border-radius: 16px; }
+  .ry-warning .ry-rule { width: 96px; margin: 10px 0 22px; }
+}
+
+/* --------------------------------------------------------------------
+   "What is Recover-You?" 3-column intro
+   -------------------------------------------------------------------- */
+.ry-intro-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,.55);
+  display: block;
+  margin-bottom: 20px;
+}
+.ry-intro-label .ry-red-letter { color: var(--ry-red); }
+
+.ry-intro p { color: rgba(255,255,255,.78); line-height: 1.8; }
+
+/* Shared particle canvas treatment used selectively on the homepage. */
+.ry-ashfield {
+  position: relative;
+  overflow: hidden;
+}
+.ry-ashfield > .ry-ash-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .72;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 90%, transparent 100%);
+}
+.ry-ashfield > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Plain static image, no parallax (kept simple per request) */
+.ry-intro-image-static {
+  border-radius: 6px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+/* --------------------------------------------------------------------
+   How Recover-You Helps — checklist card
+   -------------------------------------------------------------------- */
+#how-it-helps .ry-warningcard {
+  background: rgba(10, 10, 14, 0.88);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.03) inset;
+  overflow: hidden;
+}
+
+#how-it-helps .ry-cardhead {
+  text-align: center;
+  padding: 48px 42px 28px;
+}
+
+#how-it-helps .ry-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+
+#how-it-helps .ry-cardhead h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+#how-it-helps .ry-accent { color: var(--ry-red); }
+
+#how-it-helps .ry-underline {
+  width: 78px;
+  height: 3px;
+  background: var(--ry-red);
+  margin: 18px auto 18px;
+}
+
+#how-it-helps .ry-sub {
+  margin: 0;
+  color: rgba(255,255,255,.78);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+#how-it-helps .ry-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+#how-it-helps .ry-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  color: rgba(255,255,255,.95);
+  font-size: 1.08rem;
+  line-height: 1.5;
+
+  opacity: 0;
+  transform: translateX(-90px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.7s cubic-bezier(.22,1,.36,1),
+    background .2s ease;
+  will-change: transform, opacity;
+}
+
+#how-it-helps .ry-checklist li.is-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#how-it-helps .ry-checklist li:nth-child(1) { transition-delay: 0.00s; }
+#how-it-helps .ry-checklist li:nth-child(2) { transition-delay: 0.08s; }
+#how-it-helps .ry-checklist li:nth-child(3) { transition-delay: 0.16s; }
+#how-it-helps .ry-checklist li:nth-child(4) { transition-delay: 0.24s; }
+#how-it-helps .ry-checklist li:nth-child(5) { transition-delay: 0.32s; }
+#how-it-helps .ry-checklist li:nth-child(6) { transition-delay: 0.40s; }
+#how-it-helps .ry-checklist li:nth-child(7) { transition-delay: 0.48s; }
+
+/* Featured bullet — pinned to the top to surface direct treatment/detox
+   access right away, since this is the item most likely to keep a
+   worried visitor from bouncing before they find it. */
+#how-it-helps .ry-checklist li.ry-checklist-featured {
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255,0,0,0.14), rgba(255,0,0,0.02));
+  border-left: 3px solid var(--ry-red);
+  border-bottom: 1px solid rgba(255,0,0,0.25);
+  padding: 26px 28px 26px 25px;
+}
+
+#how-it-helps .ry-checklist li.ry-checklist-featured .ry-bullet {
+  color: var(--ry-red);
+}
+
+#how-it-helps .ry-featured-tag {
+  display: inline-block;
+  margin: 0 8px 4px 0;
+  padding: 2px 9px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--ry-red);
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+#how-it-helps .ry-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 4px;
+  color: var(--ry-red);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#how-it-helps .ry-inline-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 575.98px) {
+  #how-it-helps .ry-checklist li.ry-checklist-featured {
+    align-items: flex-start;
+  }
+
+  #how-it-helps .ry-checklist li.ry-checklist-featured > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #how-it-helps .ry-inline-link {
+    display: inline;
+    margin-left: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #how-it-helps .ry-inline-link .icon-arrow-right {
+    display: inline-block;
+    margin-left: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-warning .ry-card--pulse {
+    animation: none;
+    border-color: rgba(255, 35, 49, .48);
+    box-shadow:
+      0 18px 48px rgba(0,0,0,.55),
+      0 0 0 1px rgba(255,255,255,.04) inset,
+      0 0 34px rgba(255,0,0,.18);
+  }
+  #how-it-helps .ry-checklist li { opacity: 1; transform: none; transition: none; }
+}
+
+#how-it-helps .ry-checklist li:hover { background: rgba(255,255,255,.03); }
+
+#how-it-helps .ry-bullet {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: var(--ry-red);
+  transform: scale(1.05);
+}
+
+#how-it-helps .ry-checklist li:last-child { border-bottom: 0; }
+
+/* --------------------------------------------------------------------
+   "What Is Complex PTSD?" feature box
+   -------------------------------------------------------------------- */
+#cptsd-feature { background: linear-gradient(to bottom,#111,#000); }
+#cptsd-feature .ry-feature-box {
+  position: relative;
+  border: 1px solid rgba(255,0,0,0.35);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  padding: clamp(32px,4.5vw,56px);
+  text-align: center;
+  overflow: hidden;
+}
+#cptsd-feature .ry-feature-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--ry-red), transparent);
+}
+#cptsd-feature .ry-feature-eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ry-red); margin-bottom: 16px;
+}
+#cptsd-feature h3 { color: #fff; font-weight: 600; margin-bottom: 16px; }
+#cptsd-feature p { color: rgba(230,230,230,0.82); max-width: 660px; margin: 0 auto 12px; line-height: 1.85; }
+#cptsd-feature .ry-feature-meta {
+  font-size: 12.5px; color: rgba(200,200,200,0.55); letter-spacing: 0.05em;
+  text-transform: uppercase; margin: 20px auto 28px;
+}
+#cptsd-feature .ry-feature-actions a { margin: 6px 8px; }
+#cptsd-feature a.ry-feature-btn {
+  display: inline-block; background: var(--ry-red); color: #fff; border-radius: 999px;
+  padding: 14px 32px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; text-decoration: none;
+  box-shadow: 0 8px 22px rgba(255,0,0,0.3); transition: all .2s ease;
+}
+#cptsd-feature a.ry-feature-btn:hover { background: var(--ry-red-deep); color: #fff; transform: translateY(-2px); }
+
+/* --------------------------------------------------------------------
+   Brand quote — "The Absence of Contrast"
+   -------------------------------------------------------------------- */
+.ry-contrast-pulse {
+  display: inline-block;
+  animation: ryContrastColor 3.5s ease-in-out infinite;
+}
+@keyframes ryContrastColor {
+  0%   { color: #ffffff; }
+  30%  { color: var(--ry-red); }
+  60%  { color: #ffffff; }
+  100% { color: #ffffff; }
+}
+.ry-contrast-divider {
+  width: 72px;
+  height: 2px;
+  margin: 0 auto;
+  background: rgba(255,0,0,0.4);
+  border-radius: 999px;
+}
+.ry-quote-slash { color: var(--ry-red); }
+
+/* --------------------------------------------------------------------
+   Brand quote — faint geometric "fracture lines" backdrop
+   Custom-generated SVG (assets/images/ry-fracture-lines.svg): sparse
+   hairline cracks + a handful of red lines converging to one point,
+   plus a few hollow rectangle accents echoing the theme's own
+   rectangle-deco motif from the rings section. Very low opacity —
+   meant to break up flat black, not compete with the text.
+   -------------------------------------------------------------------- */
+.ry-quote-section {
+  position: relative;
+  overflow: hidden;
+}
+.ry-quote-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url(../images/ry-fracture-lines.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------
+   About strip
+   -------------------------------------------------------------------- */
+/* --------------------------------------------------------------------
+   About strip — "the route" backdrop
+   Custom inline SVG (see index.html #about-strip): a dotted path that
+   starts tangled and doubling back, then straightens into a clean run
+   to a crosshair marker sitting just under the CTA. Replaces the old
+   red asterisk graphic. Draws itself in on scroll via .is-drawn, which
+   is added by the observer script at the bottom of index.html.
+   -------------------------------------------------------------------- */
+.ry-about-strip {
+  position: relative;
+  overflow: hidden;
+}
+.ry-route-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ry-route-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Opacity of the line art overall — tune here */
+.ry-route-line   { opacity: 0.55; }
+.ry-route-glow   { opacity: 0.05; }
+.ry-route-start  { opacity: 0.45; }
+.ry-route-marker { opacity: 0; }
+
+/* Draw-on-scroll: the mask path wipes the artwork in from start to marker */
+.ry-route-mask-path {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+}
+.ry-about-strip.is-drawn .ry-route-mask-path {
+  transition: stroke-dashoffset 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  stroke-dashoffset: 0;
+}
+.ry-about-strip.is-drawn .ry-route-marker {
+  transition: opacity 0.7s ease 1.7s;
+  opacity: 0.8;
+}
+
+/* Layout stacks on small screens and the art no longer sits behind
+   empty space — drop it rather than let it run under the copy. */
+@media (max-width: 767.98px) {
+  .ry-route-art { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-route-mask-path { stroke-dashoffset: 0; }
+  .ry-route-marker { opacity: 0.8; }
+  .ry-about-strip.is-drawn .ry-route-mask-path,
+  .ry-about-strip.is-drawn .ry-route-marker { transition: none; }
+}
+.ry-inner-link {
+  color: var(--ry-red);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.ry-inner-link:hover { color: #fff; }
+
+/* --------------------------------------------------------------------
+   Coach banner
+   -------------------------------------------------------------------- */
+#coach-banner {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,0,0,0.18);
+  padding: 26px 0;
+}
+#coach-banner .coach-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+#coach-banner .coach-text {
+  color: rgba(255,255,255,0.55);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  flex: 1;
+  min-width: 260px;
+}
+#coach-banner .coach-text strong { color: rgba(255,255,255,0.85); }
+#coach-banner .coach-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  border: 1px solid rgba(255,0,0,0.35);
+  padding: 9px 20px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+  border-radius: 999px;
+}
+#coach-banner .coach-link:hover { background: rgba(255,0,0,0.08); color: #ff4444; }
+
+@media (max-width: 767px) {
+  #coach-banner .coach-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  #coach-banner .coach-link { align-self: flex-start; }
+}
+
+/* --------------------------------------------------------------------
+   Mission section
+   -------------------------------------------------------------------- */
+.ry-mission {
+  /* position + an explicit z-index (not just relative) is required here:
+     .sk__parallax-background-element carries z-index:-1 from theme.css,
+     and without this section establishing its OWN stacking context, that
+     -1 escapes upward past .ry-mission entirely and paints behind the
+     whole page instead of just behind this section's own content —
+     which is what made the background image disappear. */
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.ry-mission-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  pointer-events: none;
+  z-index: 0;
+}
+.ry-mission > .container {
+  position: relative;
+  z-index: 1;
+}
+.ry-mission blockquote {
+  margin-top: 40px;
+  padding-left: 25px;
+  border-left: 3px solid var(--ry-red);
+}
+.ry-mission-slash { color: var(--ry-red); }
+.ry-mission-sub { color: var(--ry-red); }
+.ry-mission strong.ry-emph {
+  animation: ryPulseGlow 4s ease-in-out infinite;
+}
+@keyframes ryPulseGlow {
+  0%, 100% { text-shadow: 0 0 4px rgba(255,0,0,0.4); }
+  50% { text-shadow: 0 0 12px rgba(255,0,0,0.7); }
+}
+
+/* --------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------- */
+.ry-footer { position: relative; }
+.ry-footer .footer-tint {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.ry-footer .container { position: relative; z-index: 1; }
+.ry-footer a { color: rgba(255,255,255,0.72); text-decoration: none; }
+.ry-footer a:hover { color: var(--ry-red); }
+.ry-footer .ry-footer-logo { max-height: 40px; width: auto; }
+.ry-footer .ry-footer-tagline {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.ry-footer .ry-footer-sep { display: inline-block; margin: 0 10px; opacity: 0.4; }
+.ry-footer .ry-footer-copy { color: rgba(255,255,255,0.55); font-size: 13px; }
+.ry-footer .ry-footer-copy .ry-red-letter { color: var(--ry-red); }
+
+/* --------------------------------------------------------------------
+   Reading progress bar
+   -------------------------------------------------------------------- */
+#reading-progress {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.10);
+  z-index: 9990;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+#reading-progress.is-visible { opacity: 1; transform: translateY(0); }
+#reading-progress-fill {
+  width: 0%; height: 100%;
+  background: var(--ry-red);
+  transition: width .08s linear;
+}
+@media (max-width: 767px) { #reading-progress { height: 3px; } }
+
+/* --------------------------------------------------------------------
+   Privacy modal (greyscale, no accent needed)
+   -------------------------------------------------------------------- */
+body.policy-modal-open { overflow: hidden; }
+.privacy-modal {
+  position: fixed; inset: 0; z-index: 100020;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.privacy-modal.is-open {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity 0.25s ease;
+}
+.privacy-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(10,10,10,0.78);
+  backdrop-filter: blur(2px);
+}
+.privacy-modal__dialog {
+  position: relative;
+  width: min(720px, calc(100vw - 32px));
+  max-height: 82vh;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(calc(-50% + 42px));
+  opacity: 0;
+  background: #141414;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 28px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transition: transform 0.38s cubic-bezier(0.22,1,0.36,1), opacity 0.38s ease;
+}
+.privacy-modal.is-open .privacy-modal__dialog { transform: translateY(-50%); opacity: 1; }
+.privacy-modal__header {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 22px 26px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.privacy-modal__header h3 { margin: 0; color: #fff; font-size: 1.5rem; line-height: 1.2; }
+.privacy-modal__close { background: transparent; border: 0; color: #fff; font-size: 1.7rem; line-height: 1; cursor: pointer; padding: 0; }
+.privacy-modal__body { padding: 22px 26px; max-height: calc(82vh - 100px); overflow-y: auto; }
+.privacy-modal__body p { margin: 0 0 16px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+@media (max-width: 575px) {
+  .privacy-modal__dialog { width: calc(100vw - 20px); border-radius: 16px; }
+  .privacy-modal__header, .privacy-modal__body { padding-left: 18px; padding-right: 18px; }
+  .privacy-modal__header h3 { font-size: 1.25rem; }
+}
+
+/* --------------------------------------------------------------------
+   Cookie consent banner
+   -------------------------------------------------------------------- */
+.cookie-banner {
+  position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 9995;
+  max-width: 900px; margin: 0 auto;
+  background: rgba(12,12,12,0.96);
+  color: #fff;
+  border: 1px solid rgba(255,0,0,0.32);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  padding: 18px 20px;
+  border-radius: 12px;
+  display: none;
+}
+.cookie-banner-inner { display: flex; gap: 18px; align-items: center; justify-content: space-between; }
+.cookie-banner-text { font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin: 0; }
+.cookie-banner-text strong { color: var(--ry-red); }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn { border: 1px solid transparent; padding: 10px 18px; font-size: 0.9rem; line-height: 1; border-radius: 999px; cursor: pointer; transition: all 0.2s ease; font-family: 'Poppins', sans-serif; }
+.cookie-btn-accept { background: var(--ry-red); color: #fff; border-color: var(--ry-red); }
+.cookie-btn-accept:hover { background: var(--ry-red-deep); border-color: var(--ry-red-deep); }
+.cookie-btn-decline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.28); }
+.cookie-btn-decline:hover { background: rgba(255,255,255,0.08); }
+@media (max-width: 768px) {
+  .cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 16px; }
+  .cookie-banner-inner { flex-direction: column; align-items: flex-start; }
+  .cookie-banner-actions { width: 100%; display: flex; flex-wrap: wrap; }
+  .cookie-btn { flex: 1 1 auto; }
+}
+
+/* --------------------------------------------------------------------
+   Nav dropdown edge fitting
+   Paired with assets/js/ry-nav-fit.js, which adds .ry-nav-flip to any
+   top-level item whose dropdown would run past the right edge of the
+   viewport. Only flipped items are affected — everything else keeps
+   the theme's default static positioning untouched.
+
+   Setting position:relative on the parent does NOT move the panel on
+   its own: an absolutely positioned box with left AND right both auto
+   resolves to its static position regardless of containing block. It
+   only becomes the reference once we set right:0 below.
+   -------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .sk__navbar .navbar-nav > li.menu-item-has-children {
+    position: relative;
+  }
+  .sk__navbar .navbar-nav > li.ry-nav-flip > .sk__submenu-ul {
+    left: auto;
+    right: 0;
+  }
+  /* the theme's dropdown panels have a hard min-width; make sure a
+     flipped panel can still shrink rather than push off the left */
+  .sk__navbar .navbar-nav > li.ry-nav-flip > .sk__submenu-ul .nav-subwrap {
+    max-width: calc(100vw - 32px);
+  }
+}
+
+/* --------------------------------------------------------------------
+   Nested dropdown (third level) spacing
+   --------------------------------------------------------------------
+   theme.css collapses third-level menus by shrinking the individual
+   <li> elements (max-height:0; opacity:0) but never collapses the <ul>
+   that holds them. Two things then leak through:
+
+     1. line 1437  ul.sk__sub-submenu-ul { margin-top: 10px }
+        applies whether the menu is open or shut.
+     2. theme.css has an EMPTY `ul {}` rule — no global list reset — so
+        a collapsed nested <ul> keeps the browser default
+        margin-block: 1em and padding-inline-start: 40px. The theme only
+        sets `padding: 10px 0 8px` once .sk__expand-children is present.
+
+   Net effect: every nested parent (Core Concepts, Brain & Body,
+   Therapeutic Models, Practical Tools, Identity & Growth) carries a
+   ~42px phantom gap beneath it while closed, and the padding jumps
+   abruptly when it opens. That's the wonky spacing.
+
+   Fix: give the nested <ul> itself a proper collapsed state — zero box,
+   zero height — and let the expanded state own all the spacing.
+   -------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li > ul.sk__sub-submenu-ul {
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease, padding 0.32s ease;
+  }
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.sk__expand-children > ul.sk__sub-submenu-ul {
+    /* generous ceiling: the longest nested list is 9 items @ 38px */
+    max-height: 420px;
+    padding: 6px 0 10px;
+  }
+
+  /* even row rhythm for the nested items themselves */
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > ul > .nav-subwrap > li > ul > li > a.nav-link {
+    padding: 6px 12px 6px 40px;
+    line-height: 1.35;
+  }
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.sk__expand-children li,
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.sk__expand-children a {
+    max-height: 34px;
+  }
+
+  /* keep the indent rail aligned to the new padding */
+  ul.sk__sub-submenu-ul:before {
+    top: 6px;
+    height: calc(100% - 16px);
+  }
+
+  /* a little air above a nested parent so the groups read as groups */
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children + li.menu-item-has-children {
+    margin-top: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li > ul.sk__sub-submenu-ul {
+    transition: none;
+  }
+}
+
+/* --------------------------------------------------------------------
+   Nested dropdown chevron placement
+   --------------------------------------------------------------------
+   theme.css draws the "has children" chevron as a pseudo-element on the
+   <li> using float:right (line ~1810). But the submenu <a> is
+   display:flex, and a flex container establishes its own formatting
+   context — it will not flow around a preceding float. So the chevron
+   claims its own line and the label drops beneath it.
+
+   At top level the theme hides this with padding-top:36px +
+   translateX(-20px), which happens to drag the glyph back onto the line
+   because top-level links are ~36px tall. Nested rows only get
+   padding-top:8px, so there the chevron stays stranded above its label.
+
+   Fix: take the nested chevron out of float entirely and position it
+   absolutely against the row, vertically centred. Specificity here has
+   to beat theme.css's .sk__expand-children rule (0,4,5), hence the
+   .sk__navbar prefix on both states.
+   -------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children {
+    position: relative;
+  }
+
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children:before {
+    float: none;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 13px;
+    opacity: 0.75;
+    transition: transform 0.28s ease, opacity 0.2s ease;
+    z-index: 2;
+  }
+
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children:hover:before {
+    opacity: 1;
+  }
+
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children.sk__expand-children:before {
+    padding: 0;
+    transform: rotate(180deg);
+    color: var(--ry-red);
+    opacity: 1;
+  }
+
+  /* the theme bounces the glyph on hover via translateY, which would
+     stomp on the rotate above — not needed now that it's positioned */
+  .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children:not(.sk__expand-children):hover:before {
+    animation-name: none;
+  }
+
+  /* keep long labels from running under the chevron */
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > ul > .nav-subwrap > li.menu-item-has-children > a.nav-link {
+    padding-right: 40px;
+    line-height: 1.35;
+  }
+
+  /* even row height for every second-level row, parent or not */
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > ul > .nav-subwrap > li > a.nav-link {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+}
+
+/* --------------------------------------------------------------------
+   Dropdown panel legibility
+   --------------------------------------------------------------------
+   theme.css gives the panel background: rgba(0,0,0,0.87), so 13% of
+   whatever sits behind it bleeds through. Over a dark patch of the hero
+   that's invisible; over the bright wordmark it turns the menu mottled
+   and hard to read.
+
+   Going nearly opaque rather than adding backdrop-filter, for the same
+   reason the article cards fake their glass: at 96% there is almost
+   nothing left to blur, so a filter would cost GPU time on every open
+   for an effect nobody can see. A hairline border and a real drop
+   shadow do the "floating above the page" work instead.
+
+   Link colours are lifted at the same time — the theme's #a6aaaf on
+   near-black is fine on paper but sat on top of a translucent panel it
+   was doing worse than its contrast ratio suggested.
+   -------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .sk__navbar .navbar-nav > li > ul > .nav-subwrap {
+    background: rgba(6, 6, 6, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(255, 0, 0, 0.45);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 26px 54px -18px rgba(0, 0, 0, 0.85);
+    padding: 12px 10px 14px 6px;
+  }
+
+  /* second-level rows */
+  .sk__navbar.navbar-dark .navbar-nav > li > ul > .nav-subwrap > li > a.nav-link {
+    color: rgba(255, 255, 255, 0.86);
+  }
+  .sk__navbar.navbar-dark .navbar-nav > li > ul > .nav-subwrap > li > a.nav-link:hover {
+    color: #fff;
+  }
+
+  /* third-level rows — dimmer than their parent, still comfortably legible */
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > ul > .nav-subwrap > li > ul > li > a.nav-link {
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .sk__navbar.navbar-expand-lg .navbar-nav > li > ul > .nav-subwrap > li > ul > li:hover > a.nav-link {
+    color: #fff;
+  }
+
+  /* brighten the indent rail against the now-solid panel */
+  ul.sk__sub-submenu-ul:before {
+    background: rgba(255, 255, 255, 0.22);
+  }
+}

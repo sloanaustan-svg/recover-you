@@ -1,0 +1,132 @@
+/* ====================================================================
+   Recover-You — Coercion Isn't Compassion (page layer)
+   --------------------------------------------------------------------
+   One page-specific piece. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-pullquote, .ry-verdict, .ry-testimony,
+   .ry-btn, .ry-sources, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+
+   A NOTE ON THIS PAGE. It is a signed opinion piece about a live piece
+   of provincial legislation, and the legacy says so in a small H6 under
+   the title. The v2 build promotes that to the hero eyebrow, where the
+   label is read before the argument rather than after it. Making the
+   framing MORE visible is the right direction for a page like this, not
+   less.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE MISSING COMPARISON
+   --------------------------------------------------------------------
+   The page's hinge is a distinction that is easy to read straight past:
+   the systematic review it cites compared forced treatment to VOLUNTARY
+   treatment, while the question that actually decides the policy is
+   forced treatment against NO treatment — because forced treatment only
+   ever applies once someone has already declined the voluntary kind.
+   The review's own authors flagged this, and on that second question
+   the literature was essentially silent.
+
+   Two panels, therefore: one populated, one empty. The empty one is
+   drawn open — dashed, unfilled, no figures — because the whole point
+   is that there is nothing in it. Filling it with a grey box would
+   suggest a small result where there is no result at all.
+
+   This is a description of what a published review did and didn't
+   cover. It reports no finding of its own and the note under it says
+   so, with the citation attached.
+   ==================================================================== */
+.ry-gap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 767.98px) { .ry-gap { grid-template-columns: 1fr; } }
+
+.ry-gap__item {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+/* what the review actually covered */
+.ry-gap__item--asked { border-color: rgba(255, 47, 110, 0.36); }
+/* the comparison that decides the policy, and was never made */
+.ry-gap__item--unasked {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.26);
+  background: transparent;
+  box-shadow: none;
+}
+
+.ry-gap__state {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-gap__item--unasked .ry-gap__state { color: var(--ry-ink-faint); }
+
+.ry-gap__q {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  line-height: 1.12;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.ry-gap__item--unasked .ry-gap__q { color: rgba(255, 255, 255, 0.7); }
+
+.ry-gap__body {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-gap__body:last-child { margin-bottom: 0; }
+
+/* the size of the evidence base on each side — a figure on one, and
+   deliberately no figure at all on the other */
+.ry-gap__scale {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #fff;
+  padding-top: 13px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-gap__item--unasked .ry-gap__scale {
+  color: var(--ry-ink-faint);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.ry-gap-note {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-gap-note a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.35);
+}
+.ry-gap-note a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }

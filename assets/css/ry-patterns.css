@@ -1,0 +1,381 @@
+/* ====================================================================
+   Recover-You — C-PTSD Patterns (page layer)
+   --------------------------------------------------------------------
+   This page is a taxonomy, not an essay: 7 domains, 57 patterns, 228
+   worked examples. The reader's job is recognition, not reading, so
+   everything here is built for scanning and for stopping — finding the
+   one line that lands, and being able to keep it.
+
+   Requires ry-article.css for the :root tokens.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE TOOLBAR
+   Search plus a live count of what has been marked. Sticks below the
+   nav so it stays reachable through 228 examples without the reader
+   having to scroll back for it.
+   ==================================================================== */
+.ry-tools {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 14px 0;
+  background: rgba(0, 0, 0, 0.88);
+  border-bottom: 1px solid var(--ry-hairline);
+  /* the page behind this is black, so a blur has something to do here
+     only where cards scroll under it — cheap enough to keep */
+  backdrop-filter: blur(10px);
+}
+.ry-tools__inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.ry-tools__search {
+  position: relative;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.ry-tools__search input {
+  width: 100%;
+  padding: 12px 44px 12px 44px;
+  border-radius: 999px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  transition: border-color .2s ease, background .2s ease;
+}
+.ry-tools__search input::placeholder { color: var(--ry-ink-faint); }
+.ry-tools__search input:focus {
+  outline: none;
+  border-color: rgba(255, 47, 110, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+}
+.ry-tools__icon {
+  position: absolute;
+  left: 17px; top: 50%;
+  transform: translateY(-50%);
+  width: 13px; height: 13px;
+  border: 1.5px solid var(--ry-ink-faint);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ry-tools__icon::after {
+  content: "";
+  position: absolute;
+  right: -6px; bottom: -4px;
+  width: 7px; height: 1.5px;
+  background: var(--ry-ink-faint);
+  transform: rotate(45deg);
+}
+.ry-tools__clear {
+  position: absolute;
+  right: 10px; top: 50%;
+  transform: translateY(-50%);
+  width: 26px; height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+.ry-tools__clear.is-shown { display: block; }
+.ry-tools__clear:hover { background: var(--ry-red); }
+
+.ry-tools__count {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+  white-space: nowrap;
+}
+.ry-tools__count strong { color: #fff; font-weight: 600; }
+.ry-tools__count b { color: var(--ry-red); font-weight: 600; }
+
+.ry-tools__jump {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 47, 110, 0.4);
+  background: rgba(255, 47, 110, 0.08);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease;
+  visibility: hidden;
+}
+.ry-tools__jump.is-shown { visibility: visible; }
+.ry-tools__jump:hover { background: var(--ry-red); color: #fff; }
+
+/* nothing matched the current search */
+.ry-tools__empty {
+  display: none;
+  text-align: center;
+  padding: 70px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-tools__empty.is-shown { display: block; }
+.ry-tools__empty strong { color: #fff; }
+
+@media (max-width: 575.98px) {
+  .ry-tools { padding: 10px 0; }
+  .ry-tools__count { order: 3; width: 100%; text-align: center; }
+}
+
+/* ====================================================================
+   2. DOMAIN BANDS
+   Each of the seven domains gets its photograph as texture under a
+   heavy scrim. Same treatment as the other image bands on the site:
+   enough to change the surface, not enough to fight the copy.
+   ==================================================================== */
+.ry-domain { position: relative; overflow: hidden; }
+.ry-domain.is-empty { display: none; }
+.ry-domain__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.13;
+}
+.ry-domain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.62) 26%, rgba(0,0,0,0.62) 74%, #000 100%);
+  pointer-events: none;
+}
+.ry-domain > .container { position: relative; z-index: 2; }
+
+.ry-domain__head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-domain__num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: var(--ry-red);
+}
+.ry-domain__title {
+  flex: 1 1 300px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height: 1.04;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 0;
+}
+.ry-domain__meta {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  white-space: nowrap;
+}
+
+/* ====================================================================
+   3. PATTERN CARDS
+   Three up on desktop. The label is the thing people scan; the four
+   examples underneath are what make it land, so they are quieter but
+   still full sentences rather than fragments.
+   ==================================================================== */
+.ry-pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+@media (max-width: 991.98px) { .ry-pattern-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 639.98px) { .ry-pattern-grid { grid-template-columns: 1fr; } }
+
+.ry-pattern {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  transition: border-color .22s ease, transform .22s ease, background .22s ease;
+}
+.ry-pattern.is-hidden { display: none; }
+.ry-pattern:hover { border-color: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+
+.ry-pattern__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 16px;
+  padding-right: 38px;   /* room for the mark control */
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-pattern__rule {
+  width: 34px;
+  height: 2px;
+  background: var(--ry-red);
+  margin-bottom: 18px;
+}
+.ry-pattern ul { list-style: none; margin: 0; padding: 0; }
+.ry-pattern li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 13px;
+  font-size: 13.5px;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-pattern li:last-child { margin-bottom: 0; }
+.ry-pattern li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 7px; height: 1px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* a search hit, highlighted in place */
+.ry-hit {
+  background: rgba(255, 47, 110, 0.24);
+  border-radius: 3px;
+  color: #fff;
+  padding: 0 2px;
+}
+
+/* ---- the mark control ----
+   Injected by ry-patterns.js, so it never appears without a handler.
+   A hollow square, not a tick: the reader is deciding, not completing
+   a task, and nothing here is a correct answer. */
+.ry-mark {
+  position: absolute;
+  top: 24px; right: 22px;
+  width: 26px; height: 26px;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.26);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease;
+}
+.ry-mark:hover { border-color: var(--ry-red); }
+.ry-mark:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.ry-mark::after {
+  content: "";
+  position: absolute;
+  left: 7px; top: 3px;
+  width: 8px; height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform .2s cubic-bezier(.22, 1, .36, 1);
+}
+.ry-pattern.is-marked { border-color: rgba(255, 47, 110, 0.5); background: rgba(255, 47, 110, 0.05); }
+.ry-pattern.is-marked .ry-mark { background: var(--ry-red); border-color: var(--ry-red); }
+.ry-pattern.is-marked .ry-mark::after { transform: rotate(45deg) scale(1); }
+
+/* ====================================================================
+   4. YOUR LIST
+   What the closing copy actually asks for: "pick one pattern that hit
+   closest to home and sit with it". Marking builds the list; this is
+   where it becomes something you can carry out of the page.
+   ==================================================================== */
+.ry-yourlist { display: none; }
+.ry-yourlist.is-shown { display: block; }
+
+.ry-yourlist__panel {
+  padding: clamp(28px, 4vw, 46px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  background: linear-gradient(180deg, rgba(255, 47, 110, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-yourlist__group { margin-bottom: 26px; }
+.ry-yourlist__group:last-of-type { margin-bottom: 0; }
+.ry-yourlist__domain {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--ry-red);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-yourlist ul { list-style: none; margin: 0; padding: 0; }
+.ry-yourlist li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 9px;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-yourlist li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 11px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+}
+.ry-yourlist__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-yourlist__note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   5. PRINT
+   Someone marking patterns is usually doing it to take them somewhere.
+   Printing gives them the list on paper and nothing else.
+   ==================================================================== */
+@media print {
+  body * { visibility: hidden; }
+  .ry-yourlist, .ry-yourlist * { visibility: visible; }
+  .ry-yourlist {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+    display: block !important;
+  }
+  .ry-yourlist__actions, .ry-yourlist__note { display: none; }
+  .ry-yourlist__panel { border: 0; background: none; padding: 0; }
+  .ry-yourlist__domain { color: #000; }
+  .ry-yourlist li { color: #000; }
+  .ry-yourlist li::before { background: #000; }
+}

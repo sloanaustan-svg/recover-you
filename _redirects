@@ -1,4 +1,5 @@
-http://recoveryou.ca/* https://recover-you.ca/:splat 301!
-https://recoveryou.ca/* https://recover-you.ca/:splat 301!
-http://recover-you.ca/* https://recover-you.ca/:splat 301!
-https://www.recover-you.ca/* https://recover-you.ca/:splat 301!
+# Preserve any previously shared or indexed obsolete routes.
+/the-reckoning           /trauma-addiction-evidence   301
+/the-reckoning.html      /trauma-addiction-evidence   301
+/cptsd-behaviors         /cptsd-behaviours            301
+/cptsd-behaviors.html    /cptsd-behaviours            301

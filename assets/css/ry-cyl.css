@@ -1,0 +1,140 @@
+/* ====================================================================
+   Recover-You — Chart Your Life (page layer)
+   --------------------------------------------------------------------
+   One page-specific piece. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-split,
+   .ry-sheet, .ry-figure, .ry-quote-section, .ry-cta, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   THE SIX LAYERS — a legend, drawn as one
+   --------------------------------------------------------------------
+   The page asks the reader to plot six things on one chart, and for
+   each one it names a specific MARK: a line for addictions, a dot for
+   life events, a shaded band across a period of trauma. In the legacy
+   those instructions were six bullets — the reader had to hold "draw a
+   shaded or continuous line across the duration" in their head and
+   picture it.
+
+   So each layer shows its own mark beside it. The instruction stops
+   being a description of a drawing and becomes the drawing.
+
+   WHAT THE MARKS DO NOT DO IS PICK COLOURS. The copy says "in one
+   colour", "in different colours", "in another colour" — it never says
+   which, deliberately, because it is the reader's chart and the point
+   is that the layers are distinguishable from each other, not that
+   they match a palette on a website. So every mark here is drawn in the
+   site accent and varies only in FORM: line, dashed line, dot, band.
+   Assigning six specific hues would be inventing an instruction the
+   page declined to give.
+   ==================================================================== */
+.ry-layers { margin: 34px 0; padding: 0; list-style: none; }
+
+.ry-layer {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-layer:last-child { border-bottom: 1px solid var(--ry-hairline); }
+@media (max-width: 575.98px) {
+  .ry-layer { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* the mark itself, in a fixed-size box so the six line up */
+.ry-layer__mark {
+  grid-row: 1 / span 2;
+  position: relative;
+  width: 74px;
+  height: 26px;
+  margin-top: 3px;
+}
+@media (max-width: 575.98px) { .ry-layer__mark { grid-row: auto; } }
+
+/* a continuous plotted line */
+.ry-layer__mark--line::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 12px;
+  height: 2px;
+  background: var(--ry-red);
+}
+/* several lines layered over each other */
+.ry-layer__mark--lines::before,
+.ry-layer__mark--lines::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--ry-red);
+}
+.ry-layer__mark--lines::before { top: 7px; opacity: 0.95; }
+.ry-layer__mark--lines::after  { top: 17px; opacity: 0.5; }
+
+/* a single point in time */
+.ry-layer__mark--dot::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 12px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.ry-layer__mark--dot::after {
+  content: "";
+  position: absolute;
+  left: 31px; top: 7px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--ry-red);
+}
+/* a duration, not a moment */
+.ry-layer__mark--band::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  height: 18px;
+  border-radius: 3px;
+  background: rgba(255, 47, 110, 0.22);
+  border-left: 2px solid var(--ry-red);
+  border-right: 2px solid var(--ry-red);
+}
+/* a run that breaks and resumes */
+.ry-layer__mark--broken::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 12px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg,
+              var(--ry-red) 0 14px, transparent 14px 22px);
+}
+
+.ry-layer__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fff;
+}
+.ry-layer__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-layer__body em { color: rgba(255, 255, 255, 0.88); }
+.ry-layer__body strong { color: #fff; font-weight: 600; }
+
+.ry-layers-note {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}

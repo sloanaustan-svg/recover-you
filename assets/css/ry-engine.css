@@ -1,0 +1,209 @@
+/* ====================================================================
+   Recover-You — The Hijacked Engine (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces. Everything else reuses the shared layer
+   (.ry-split, .ry-prose, .ry-note, .ry-pullquote, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE DOPAMINE SURGE
+   --------------------------------------------------------------------
+   The copy states a real magnitude — addictive substances produce a
+   dopamine response "two to ten times greater than any natural reward",
+   with methamphetamine higher still. That is a range and an open end,
+   not three tidy numbers, so it is drawn as a range and an open end.
+
+   Bars that start away from zero, not bars that grow from it: the claim
+   is a span, and a single-value bar would have to invent a point inside
+   that span to draw. The methamphetamine row runs off the axis under an
+   arrow because the copy does not quantify it and neither will this.
+   ==================================================================== */
+.ry-surge {
+  margin: 34px 0 30px;
+  padding: 26px 26px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-surge__chart { display: block; width: 100%; height: auto; }
+
+.ry-surge__axis { stroke: var(--ry-hairline); stroke-width: 1; }
+.ry-surge__grid { stroke: rgba(255, 255, 255, 0.06); stroke-width: 1; }
+
+.ry-surge__bar { fill: rgba(255, 47, 110, 0.32); stroke: var(--ry-red); stroke-width: 1.5; }
+/* the baseline is a reference, not a finding */
+.ry-surge__bar--base { fill: rgba(255, 255, 255, 0.14); stroke: rgba(255, 255, 255, 0.45); }
+/* open-ended: the copy says "higher" and stops there */
+.ry-surge__bar--open { fill: rgba(255, 47, 110, 0.18); stroke: var(--ry-red); stroke-dasharray: 5 4; }
+.ry-surge__cap { stroke: var(--ry-red); stroke-width: 2; stroke-linecap: round; }
+.ry-surge__arrow { fill: var(--ry-red); }
+
+.ry-surge__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  fill: #fff;
+}
+.ry-surge__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+.ry-surge__value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  fill: var(--ry-red);
+}
+.ry-surge__value--base { fill: var(--ry-ink-dim); }
+.ry-surge__tick {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: var(--ry-ink-faint);
+}
+.ry-surge__caption {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   2. GO / STOP
+   --------------------------------------------------------------------
+   The copy's central image: a gas pedal welded to the floor while the
+   brakes still work but cannot compete. Two panels, deliberately
+   unequal — the Go side gets the accent and the full-weight border, the
+   Stop side is visibly dimmer. The asymmetry is the argument.
+   ==================================================================== */
+.ry-conflict {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 767.98px) { .ry-conflict { grid-template-columns: 1fr; } }
+
+.ry-conflict__item {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+}
+.ry-conflict__item--go {
+  border-color: rgba(255, 47, 110, 0.42);
+  box-shadow: var(--ry-glass-shadow);
+}
+/* the stop system is being drowned out, so it reads quieter */
+.ry-conflict__item--stop { opacity: 0.82; }
+
+.ry-conflict__label {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+.ry-conflict__item--go .ry-conflict__label { color: var(--ry-red); }
+.ry-conflict__item--stop .ry-conflict__label { color: var(--ry-ink-faint); }
+
+.ry-conflict__part {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  padding-bottom: 13px;
+  margin-bottom: 13px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-conflict__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   3. THE FACET CARDS
+   --------------------------------------------------------------------
+   The legacy .sc-grid, used twice on this page — once for how the brain
+   encodes cues, once for the four vulnerability factors. One component
+   serves both because they are the same shape: a small label, a title,
+   and a short list of points.
+
+   The legacy cards led with a FontAwesome glyph. Dropped: an icon font
+   that fails to load takes the only visual marker with it, and the
+   label above the title already does that job in words.
+   ==================================================================== */
+.ry-facets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-facet {
+  margin: 0;
+  padding: 26px 28px 24px;
+  border-radius: 15px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-facet__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 8px;
+}
+.ry-facet__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+  line-height: 1.12;
+  color: #fff;
+  margin: 0 0 16px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-facet__points { margin: 0; padding: 0; list-style: none; }
+.ry-facet__points li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 12px 20px;
+  font-size: 13.5px;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-facet__points li:last-child { padding-bottom: 0; }
+.ry-facet__points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.75;
+}
+.ry-facet__points li strong { color: #fff; font-weight: 600; }

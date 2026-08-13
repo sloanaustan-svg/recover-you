@@ -1,0 +1,350 @@
+/* ====================================================================
+   Recover-You — Relationships in Recovery (page layer)
+   --------------------------------------------------------------------
+   Four page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-askset, .ry-callout, .ry-pullquote, .ry-split,
+   .ry-figure, .ry-interstitial, .ry-cta, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE TWO MAXIMS — and where each one gets answered
+   --------------------------------------------------------------------
+   "Wait at least one year before dating." / "Do not date someone else
+   in recovery." The page is structured as a reply to exactly these two
+   sentences: one section takes apart the first, a later section takes
+   apart the second.
+
+   The legacy drew them as two decorative speech bubbles and left the
+   reader to notice the correspondence on their own, several thousand
+   words apart. Each one now carries a quiet link to its own rebuttal.
+   That asserts nothing the page doesn't already do — it just makes the
+   page's own shape usable.
+   ==================================================================== */
+.ry-maxims {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 34px 0 30px;
+}
+@media (max-width: 767.98px) { .ry-maxims { grid-template-columns: 1fr; } }
+
+.ry-maxim {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 32px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-maxim__n {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 14px;
+}
+.ry-maxim__quote {
+  flex: 1 1 auto;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(17px, 2.1vw, 20px);
+  line-height: 1.5;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+}
+.ry-maxim__link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ry-ink-faint);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 2px;
+  transition: color .18s ease, border-color .18s ease;
+}
+.ry-maxim__link:hover { color: #fff; border-bottom-color: var(--ry-red); }
+
+/* ====================================================================
+   2. THE RELATIONSHIP READINESS INVENTORY
+   --------------------------------------------------------------------
+   Five markers, each with a reflection prompt underneath.
+
+   NO SCORE, AND NO VERDICT IN EITHER DIRECTION. This page exists to
+   argue that readiness is not a number — "Readiness isn't measured in
+   months" — so a tool that answered "4 out of 5, you're ready" would
+   reproduce the exact error the page spends three thousand words
+   dismantling. It would also be the single most harmful thing on the
+   site: a stranger's checkbox telling someone it's safe to date.
+
+   So the marking here does one thing only. You mark a question to sit
+   with, and the marks come back at the bottom as your own list, in
+   your own reading. No count, no threshold, no interpretation. Same
+   contract as the pattern finder on cptsd-behaviours: nothing stored,
+   nothing transmitted, gone on reload.
+
+   The mark button is injected by ry-rel.js, not written into the
+   markup, so the page is complete and readable without JavaScript.
+   ==================================================================== */
+.ry-inv { margin: 30px 0 8px; padding: 0; list-style: none; }
+
+.ry-inv__item {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 26px 30px 24px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid rgba(255, 47, 110, 0.55);
+  background: var(--ry-glass-bg);
+  transition: border-color .22s ease, background .22s ease;
+}
+.ry-inv__item:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-inv__item { padding: 22px 20px 20px; } }
+
+.ry-inv__n {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+}
+.ry-inv__q {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 600;
+  line-height: 1.42;
+  color: #fff;
+  margin: 0 0 14px;
+}
+.ry-inv__r {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-inv__rlabel {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-right: 10px;
+}
+
+/* --- the marking affordance, injected by ry-rel.js ----------------- */
+.ry-inv__mark {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ry-ink-faint);
+  background: transparent;
+  border: 1px solid var(--ry-hairline);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease;
+}
+.ry-inv__mark:hover { color: #fff; border-color: rgba(255, 47, 110, 0.6); }
+.ry-inv__mark::before {
+  content: "";
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  flex: none;
+}
+.ry-inv__item.is-marked { border-left-color: var(--ry-red); background: rgba(255, 47, 110, 0.05); }
+.ry-inv__item.is-marked .ry-inv__mark { color: var(--ry-red); border-color: rgba(255, 47, 110, 0.6); }
+.ry-inv__item.is-marked .ry-inv__mark::before { background: currentColor; }
+
+@media (max-width: 767.98px) {
+  .ry-inv__mark { position: static; margin-bottom: 14px; }
+  .ry-inv__n { display: inline-block; margin-right: 14px; }
+}
+
+/* the recap: the reader's own marks, restated. Never a score. */
+.ry-inv__recap {
+  margin: 26px 0 0;
+  padding: 24px 28px 22px;
+  border-radius: 13px;
+  border: 1px dashed rgba(255, 255, 255, 0.24);
+}
+.ry-inv__recap[hidden] { display: none; }
+.ry-inv__recap-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 14px;
+}
+.ry-inv__recap ol { margin: 0 0 16px; padding: 0 0 0 20px; }
+.ry-inv__recap li {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.88);
+}
+.ry-inv__recap-note {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   3. GREEN FLAGS / RED FLAGS
+   --------------------------------------------------------------------
+   Two sets of five, as the page wrote them.
+
+   COLOUR IS NOT DOING THE WORK. On this site red is the brand accent —
+   it marks section eyebrows, pull-quote rules and links on every page —
+   so a "red flag" drawn in red alone would read as emphasis rather than
+   as warning, and a reader who can't separate the two hues would get
+   nothing at all. Each list therefore carries its own mark shape: a
+   check drawn in two strokes for the green set, a cross for the red.
+   The pill above each column names it in words as well.
+
+   The green is #6fcf97, already used site-wide for the "helps" column
+   on the editorial page, rather than a second green invented here.
+   ==================================================================== */
+.ry-flags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 767.98px) { .ry-flags { grid-template-columns: 1fr; } }
+
+.ry-flag {
+  padding: 30px 32px 24px;
+  border-radius: 15px;
+  border: 1px solid var(--ry-hairline);
+  border-top: 3px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 575.98px) { .ry-flag { padding: 24px 22px 20px; } }
+.ry-flag--green { border-top-color: #6fcf97; }
+.ry-flag--red   { border-top-color: var(--ry-red); }
+
+.ry-flag__pill {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.ry-flag--green .ry-flag__pill { color: #6fcf97; background: rgba(111, 207, 151, 0.13); }
+.ry-flag--red   .ry-flag__pill { color: var(--ry-red); background: rgba(255, 47, 110, 0.13); }
+
+.ry-flag__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.ry-flag__list { margin: 12px 0 0; padding: 0; list-style: none; }
+.ry-flag__list li {
+  position: relative;
+  margin: 0;
+  padding: 14px 0 14px 34px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-flag__list li:last-child { padding-bottom: 0; }
+
+/* the marks are drawn, not iconographed — no font dependency, and the
+   two shapes stay distinguishable with colour removed entirely */
+.ry-flag__list li::before,
+.ry-flag__list li::after {
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+}
+.ry-flag--green .ry-flag__list li::before {
+  left: 4px; top: 24px;
+  width: 6px; height: 2px;
+  background: #6fcf97;
+  transform: rotate(45deg);
+}
+.ry-flag--green .ry-flag__list li::after {
+  left: 8px; top: 21px;
+  width: 12px; height: 2px;
+  background: #6fcf97;
+  transform: rotate(-50deg);
+}
+.ry-flag--red .ry-flag__list li::before,
+.ry-flag--red .ry-flag__list li::after {
+  left: 3px; top: 22px;
+  width: 14px; height: 2px;
+  background: var(--ry-red);
+}
+.ry-flag--red .ry-flag__list li::before { transform: rotate(45deg); }
+.ry-flag--red .ry-flag__list li::after  { transform: rotate(-45deg); }
+
+/* ====================================================================
+   4. THE TURN — Independence to Interdependence
+   --------------------------------------------------------------------
+   The essay pivots here, and the legacy marked the pivot with a rule
+   across the column. Kept, because it is doing real work: everything
+   above is the author's account of what went wrong, everything below
+   is where he has landed.
+
+   The arrow is the author's own; nothing is added to it. In particular
+   no third term is introduced — the familiar dependence → independence
+   → interdependence progression is NOT what this page says, and
+   drawing it would put a claim in the author's mouth.
+   ==================================================================== */
+.ry-turn {
+  margin: 64px 0 34px;
+  padding-top: 46px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-turn__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: 0.03em;
+  line-height: 1.06;
+  color: #fff;
+  margin: 0;
+}
+.ry-turn__arrow { color: var(--ry-red); padding: 0 4px; }

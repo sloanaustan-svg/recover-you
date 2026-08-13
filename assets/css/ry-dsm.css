@@ -1,0 +1,301 @@
+/* ====================================================================
+   Recover-You — The Diagnostic Divide, DSM vs ICD (page layer)
+   --------------------------------------------------------------------
+   Four page-specific pieces. Everything else reuses the shared layer
+   (.ry-split, .ry-prose, .ry-note, .ry-pullquote, .ry-spec-grid,
+   .ry-callout, .ry-statement, .ry-figure, .ry-diptych-section).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE TWO MANUALS
+   --------------------------------------------------------------------
+   DSM and ICD, side by side. The badge is not decoration: the page's
+   whole argument turns on WHOSE system each one governs. The DSM
+   controls North American billing, which is why what it declines to
+   recognise decides who gets treated for what. Putting the scope on
+   the card means a reader who skims still gets that.
+   ==================================================================== */
+.ry-manuals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 767.98px) { .ry-manuals { grid-template-columns: 1fr; } }
+
+.ry-manual {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-manual__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-manual__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.ry-manual__scope {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 47, 110, 0.34);
+  border-radius: 999px;
+}
+.ry-manual__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-manual__body strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   2. THE RULINGS
+   --------------------------------------------------------------------
+   Two rejections, thirty years apart, by the same body. The page makes
+   a point of this — "It was proposed. It was reviewed. It was
+   rejected. Twice." — so they are set as a record of decisions rather
+   than as bullet points: year, what was proposed, and the verdict,
+   stamped.
+
+   The stamp is deliberately plain type and not a fake rubber-stamp
+   graphic. The legacy already carries a DENIED illustration beside
+   this block; a second one competing with it would be a joke told
+   twice.
+   ==================================================================== */
+.ry-rulings { margin: 30px 0; padding: 0; list-style: none; }
+
+.ry-ruling {
+  margin: 0 0 14px;
+  padding: 22px 24px 20px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid rgba(255, 47, 110, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+}
+.ry-ruling:last-child { margin-bottom: 0; }
+
+.ry-ruling__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 11px;
+}
+.ry-ruling__when {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ry-ruling__verdict {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 47, 110, 0.4);
+  border-radius: 3px;
+}
+.ry-ruling__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-ruling__body em { color: rgba(255, 255, 255, 0.9); font-style: italic; }
+.ry-ruling__body strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   3. THE CRITERIA DIAGRAM
+   --------------------------------------------------------------------
+   Frame for the native SVG that draws what the copy argues in words:
+   the DSM added a cluster and made all four mandatory, so the gate
+   narrowed; the ICD left the original three alone and stacked a second
+   diagnosis on top of them.
+
+   This is a structural comparison of published criteria, not data, and
+   the note under it says so. Drawing an argument and drawing a
+   measurement should not look the same.
+   ==================================================================== */
+.ry-criteria {
+  margin: 36px 0 0;
+  padding: 26px 24px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-criteria svg { display: block; width: 100%; height: auto; }
+
+.ry-crit__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 27px;
+  letter-spacing: 0.05em;
+  fill: #fff;
+}
+.ry-crit__issuer {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  fill: rgba(255, 255, 255, 0.5);
+}
+.ry-crit__rule { stroke: rgba(255, 255, 255, 0.14); stroke-width: 1; }
+.ry-crit__stage {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  fill: var(--ry-red);
+}
+
+.ry-crit__block { stroke-width: 1; }
+/* a criterion carried over unchanged from the previous edition */
+.ry-crit__block--carried {
+  fill: rgba(255, 255, 255, 0.055);
+  stroke: rgba(255, 255, 255, 0.13);
+}
+/* a criterion this edition introduced */
+.ry-crit__block--new {
+  fill: rgba(255, 47, 110, 0.13);
+  stroke: rgba(255, 47, 110, 0.5);
+}
+.ry-crit__blocktext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  fill: rgba(255, 255, 255, 0.88);
+}
+
+/* the threshold — the number that actually decides who gets diagnosed */
+.ry-crit__gate { fill: none; stroke: rgba(255, 255, 255, 0.34); stroke-width: 1; }
+.ry-crit__gatetext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  fill: #fff;
+  text-anchor: middle;
+}
+.ry-crit__arrowline { stroke: rgba(255, 255, 255, 0.3); stroke-width: 1; }
+.ry-crit__arrowhead { fill: rgba(255, 255, 255, 0.42); }
+.ry-crit__year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  fill: rgba(255, 255, 255, 0.62);
+}
+.ry-crit__caption {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  fill: rgba(255, 255, 255, 0.78);
+}
+.ry-criteria__note {
+  margin: 18px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-criteria__note a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.35);
+}
+.ry-criteria__note a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+/* ====================================================================
+   4. HOW TO USE THIS
+   --------------------------------------------------------------------
+   Four situations. Three of them hand the reader an actual sentence to
+   say out loud, which the legacy set in italics inside the paragraph
+   where it was easy to read straight past. Here the script is pulled
+   out and quoted, because a line you can borrow is the most useful
+   thing on this page and it should look like one.
+   ==================================================================== */
+.ry-use { margin: 30px 0; padding: 0; list-style: none; }
+
+.ry-use__item {
+  margin: 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-use__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+
+.ry-use__when {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 11px;
+}
+.ry-use__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-use__body strong { color: #fff; font-weight: 600; }
+.ry-use__body em { color: rgba(255, 255, 255, 0.88); }
+
+/* the borrowable line */
+.ry-use__script {
+  position: relative;
+  margin: 14px 0 0;
+  padding: 16px 20px 15px 40px;
+  border-radius: 10px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+}
+.ry-use__script::before {
+  content: "\201C";
+  position: absolute;
+  left: 15px; top: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--ry-red);
+  opacity: 0.85;
+}

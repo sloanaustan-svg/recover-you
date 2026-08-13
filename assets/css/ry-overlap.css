@@ -1,0 +1,172 @@
+/* ====================================================================
+   Recover-You — When Trauma and Addiction Overlap (page layer)
+   --------------------------------------------------------------------
+   Four page-specific pieces. Everything else reuses the shared layer
+   (.ry-split, .ry-prose, .ry-note, .ry-statgrid, .ry-quote-section,
+   .ry-diptych-section, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE PREVALENCE RANGES
+   --------------------------------------------------------------------
+   Three figures, and the page is careful to rank them by how much
+   weight they can carry: two come from epidemiology and reviews, the
+   third is explicitly described as an informal clinical estimate that
+   is "not peer-reviewed" and "should not be presented as if" it were.
+
+   A chart that drew all three the same way would quietly undo that
+   sentence. So the informal band is dashed, unfilled, and carries its
+   own status label inside the drawing — not just in the caption, which
+   a reader can skip.
+   ==================================================================== */
+.ry-prev {
+  margin: 34px 0 30px;
+  padding: 26px 26px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-prev__chart { display: block; width: 100%; height: auto; }
+
+.ry-prev__axis { stroke: var(--ry-hairline); stroke-width: 1; }
+.ry-prev__grid { stroke: rgba(255, 255, 255, 0.06); stroke-width: 1; }
+
+.ry-prev__band { fill: rgba(255, 47, 110, 0.3); stroke: var(--ry-red); stroke-width: 1.5; }
+/* the informal estimate: outline only, dashed, no fill weight */
+.ry-prev__band--soft {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(255, 255, 255, 0.44);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+.ry-prev__cap { stroke: var(--ry-red); stroke-width: 2; stroke-linecap: round; }
+.ry-prev__cap--soft { stroke: rgba(255, 255, 255, 0.44); }
+.ry-prev__range-start {
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+}
+.ry-prev__range-start--soft { stroke: rgba(255, 255, 255, 0.62); }
+
+.ry-prev__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  fill: #fff;
+}
+.ry-prev__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+/* the status line on the informal row, set apart from an ordinary
+   sub-label so it does not read as more description */
+.ry-prev__flag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: rgba(255, 255, 255, 0.55);
+}
+.ry-prev__value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  fill: var(--ry-red);
+}
+.ry-prev__value--soft { fill: var(--ry-ink-dim); }
+.ry-prev__tick {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: var(--ry-ink-faint);
+}
+.ry-prev__caption {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   2. WHAT PROJECT HARMONY CLARIFIES — the findings
+   Three findings, each carrying its own citation link. Numbered,
+   because the page is making a cumulative argument and the order is
+   the argument.
+   ==================================================================== */
+.ry-finding { margin: 26px 0; padding: 0; list-style: none; counter-reset: ry-find; }
+.ry-finding__item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-finding__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-finding__item::before {
+  counter-increment: ry-find;
+  content: counter(ry-find, decimal-leading-zero);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: var(--ry-red);
+  line-height: 1.5;
+}
+.ry-finding__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-finding__body strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   4. TO BE CLEAR — the paired caveat
+   The one place the page states its two guardrails side by side: do not
+   rush, and do not disappear the trauma. They only mean anything as a
+   pair, so they are set as one.
+   ==================================================================== */
+.ry-tobe {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 26px 0 0;
+  background: var(--ry-hairline);
+  border: 1px solid var(--ry-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+}
+@media (max-width: 767.98px) { .ry-tobe { grid-template-columns: 1fr; } }
+
+.ry-tobe__side { padding: 24px 26px 22px; background: #070707; }
+.ry-tobe__title {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.ry-tobe__side--rush .ry-tobe__title { color: var(--ry-ink); }
+.ry-tobe__side--vanish .ry-tobe__title { color: var(--ry-red); }
+.ry-tobe__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}

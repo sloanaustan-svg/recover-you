@@ -1,0 +1,169 @@
+/* ====================================================================
+   Recover-You — Why Trauma Doesn't Expire (page layer)
+   --------------------------------------------------------------------
+   This page is almost entirely prose, and nearly every block it needs
+   already exists in the shared layer (.ry-cw, .ry-video-card, .ry-note,
+   .ry-interstitial, .ry-alertcard, .ry-split, .ry-diptych-section,
+   .ry-finalword, .ry-statement). Only one thing is page-specific: the
+   diagram that draws the page's closing sentence.
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   PAGE QUOTES
+   --------------------------------------------------------------------
+   The shared interstitial is intentionally oversized. These two longer
+   statements need a quieter editorial treatment so they punctuate the
+   argument without overpowering the sections around them.
+   ==================================================================== */
+.ry-expire-quote {
+  position: relative;
+  padding: clamp(52px, 6vw, 76px) 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .035), transparent 48%),
+    #0d0d0d;
+}
+
+.ry-expire-quote::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 0 auto 20px;
+  background: var(--ry-red);
+  box-shadow: 0 0 15px rgba(255, 0, 0, .25);
+}
+
+.ry-expire-quote .ry-interstitial__label {
+  margin-bottom: 18px;
+  font-size: 9px;
+  letter-spacing: .24em;
+}
+
+.ry-expire-quote .ry-interstitial__quote {
+  max-width: 890px;
+  padding: 0 clamp(0px, 3vw, 34px);
+  font-size: clamp(23px, 2.5vw, 35px);
+  font-weight: 500;
+  line-height: 1.42;
+  letter-spacing: -.018em;
+}
+
+@media (max-width: 575.98px) {
+  .ry-expire-quote {
+    padding: 44px 20px;
+  }
+
+  .ry-expire-quote .ry-interstitial__quote {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+}
+
+/* ====================================================================
+   THE WOUND AND THE DEFENCE
+   --------------------------------------------------------------------
+   The page ends on "Sometimes what fades is not the wound. Sometimes
+   what fades is the defense." That sentence is a shape, and the shape
+   is easier to hold than the sentence: one line that does not move, and
+   one that rises through the working years and comes down again.
+
+   This is the only figure on the site that plots nothing. Every other
+   chart in this build is drawn from stated figures; this one is an
+   argument diagram, and the caption says so in the first sentence
+   rather than in a footnote. No tick values, no percentages, no
+   numbers of any kind — because there are none, and implying otherwise
+   would be the exact dishonesty the rest of the build avoids.
+   ==================================================================== */
+.ry-fade {
+  margin: 36px 0 30px;
+  padding: 26px 26px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-fade__chart { display: block; width: 100%; height: auto; }
+
+.ry-fade__axis { stroke: var(--ry-hairline); stroke-width: 1; }
+.ry-fade__grid { stroke: rgba(255, 255, 255, 0.06); stroke-width: 1; }
+
+/* the stretch where the defence has dropped back below the wound */
+.ry-fade__surface { fill: rgba(255, 47, 110, 0.11); }
+.ry-fade__mark { stroke: rgba(255, 47, 110, 0.45); stroke-width: 1; stroke-dasharray: 4 5; }
+
+.ry-fade__wound {
+  fill: none;
+  stroke: var(--ry-red);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+/* dashed, because it is the line that is doing the temporary work */
+.ry-fade__defence {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.62);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 7 5;
+}
+.ry-fade__dot { fill: var(--ry-red); }
+
+.ry-fade__key {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.ry-fade__key--wound { fill: var(--ry-red); }
+.ry-fade__key--defence { fill: #fff; }
+.ry-fade__keysub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+.ry-fade__stage {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--ry-ink-dim);
+}
+.ry-fade__cross {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--ry-red);
+}
+.ry-fade__crosssub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+.ry-fade__arrow { fill: var(--ry-ink-faint); }
+.ry-fade__axlabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--ry-ink-faint);
+}
+
+.ry-fade__caption {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-fade__caption em { color: rgba(255, 255, 255, 0.8); font-style: italic; }

@@ -1,0 +1,125 @@
+/* ====================================================================
+   Recover-You — The Role of Therapy (page layer)
+   --------------------------------------------------------------------
+   Two page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-vignette,
+   .ry-split, .ry-sheet, .ry-figure, .ry-quote-section, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. LINES YOU CAN BORROW
+   --------------------------------------------------------------------
+   Four questions the page hands the reader to ask out loud in a
+   session, and four intentions to arrive with. In the legacy both sets
+   were ordinary bullet lists, indistinguishable from the lists of
+   explanation around them.
+
+   They are the most immediately usable thing on the page — this is a
+   client's guide, and these are the only sentences in it that can be
+   carried into a room and said — so they are set as speech: quoted,
+   in the reader's voice, one per line, spaced so a person could
+   screenshot the block and take it with them.
+
+   The quotation mark is drawn from the font at a size that reads as
+   punctuation rather than decoration. It sits OUTSIDE the text column
+   so the lines themselves stay left-aligned with each other and can be
+   scanned as a set.
+   ==================================================================== */
+.ry-say { margin: 26px 0; padding: 0; list-style: none; }
+
+.ry-say__item {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 18px 22px 16px 46px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+}
+.ry-say__item:last-child { margin-bottom: 0; }
+.ry-say__item::before {
+  content: "\201C";
+  position: absolute;
+  left: 17px; top: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--ry-red);
+  opacity: 0.85;
+}
+.ry-say__item strong { color: #fff; font-weight: 600; font-style: normal; }
+/* the intention set writes the prompt plainly and the words to use in
+   brackets after it; the bracketed part is the borrowable half */
+.ry-say__item em { color: #fff; font-style: italic; }
+
+/* ====================================================================
+   2. THE THREE MOVES
+   --------------------------------------------------------------------
+   Stabilise first, shape the session, expect freedom rather than
+   erasure. Numbered because the page numbers them and because the
+   order is load-bearing: you cannot shape a session usefully from a
+   body that has not found its footing.
+   ==================================================================== */
+.ry-worksteps { margin: 40px 0 0; padding: 0; list-style: none; }
+
+.ry-workstep {
+  margin: 0 0 14px;
+  padding: 30px 34px 26px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-workstep:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-workstep { padding: 24px 22px 22px; } }
+
+.ry-workstep__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-workstep__n {
+  flex: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-workstep__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 2.1vw, 19px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0;
+}
+.ry-workstep__body { font-size: 15px; line-height: 1.8; font-weight: 300; color: var(--ry-ink-dim); }
+.ry-workstep__body > :last-child { margin-bottom: 0; }
+.ry-workstep__body strong { color: #fff; font-weight: 600; }
+.ry-workstep__body em { color: rgba(255, 255, 255, 0.88); }
+
+/* a labelled sub-list inside a step — Focus, Pacing, Method, Homework */
+.ry-workstep__shape { margin: 22px 0; padding: 0; list-style: none; }
+.ry-workstep__shape li {
+  margin: 0;
+  padding: 13px 0;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-workstep__shape li:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-workstep__shape strong { color: var(--ry-red); font-weight: 600; }

@@ -1,0 +1,195 @@
+/* ====================================================================
+   Recover-You — DOHaD (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces: the numbered domain cards, the F-generation
+   nesting diagram, and the small triad that opens the stack. Everything
+   else reuses the shared layer (.ry-split, .ry-prose, .ry-note,
+   .ry-jumpnav, .ry-spec-grid, .ry-finalword, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE SIX DOMAINS
+   --------------------------------------------------------------------
+   The legacy page stacked six cards over a fixed parallax background.
+   Same idea, but the cards carry their own number as a display figure
+   rather than an inline "// 3" in the heading — with six of them in a
+   row the number is how a reader keeps their place, so it should be
+   findable at a glance rather than buried in a sentence.
+   ==================================================================== */
+.ry-domains { position: relative; }
+
+.ry-domain {
+  position: relative;
+  padding: 40px 44px 36px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-domain + .ry-domain { margin-top: 22px; }
+@media (max-width: 767.98px) { .ry-domain { padding: 30px 24px 26px; } }
+
+.ry-domain__n {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+}
+.ry-domain__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.ry-domain__title strong { font-weight: 400; color: var(--ry-red); }
+.ry-domain__rule {
+  height: 1px;
+  background: var(--ry-hairline);
+  margin: 0 0 24px;
+  border: 0;
+}
+
+/* the opening card states the whole model in three moves */
+.ry-domain--intro { border-color: rgba(255, 47, 110, 0.3); }
+
+/* ====================================================================
+   2. SIGNAL / CALIBRATION / TRADE-OFFS
+   The three moves the whole framework reduces to. Numbered and set in
+   a row so the sequence is visible, because it is a sequence.
+   ==================================================================== */
+.ry-moves {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ry-move;
+}
+@media (max-width: 767.98px) { .ry-moves { grid-template-columns: 1fr; } }
+
+.ry-moves__item {
+  margin: 0;
+  padding: 22px 22px 20px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.03);
+}
+.ry-moves__item::before {
+  counter-increment: ry-move;
+  content: counter(ry-move);
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  color: var(--ry-red);
+  margin-bottom: 8px;
+}
+.ry-moves__term {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.ry-moves__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* the four long-term outcome domains sit in shared .ry-spec-card frames;
+   only their body type needs tuning for the narrower column */
+
+/* ====================================================================
+   3. THE F-GENERATION NESTING
+   --------------------------------------------------------------------
+   The hardest sentence on this page: a grandchild's egg cells are
+   already forming inside the fetus during the pregnancy, so an exposure
+   reaches three generations at one moment. In prose that needs
+   re-reading; nested, it is one look.
+
+   The rings carry the structure and nothing else. Every word — what
+   each generation is, and the fact that F3 is where the claim gets
+   genuinely contested — lives in the HTML list beside them, so the
+   meaning does not depend on the drawing rendering at all.
+   ==================================================================== */
+.ry-gen {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 34px;
+  align-items: center;
+  margin: 30px 0;
+}
+@media (max-width: 767.98px) { .ry-gen { grid-template-columns: 1fr; gap: 24px; } }
+
+.ry-gen__chart { display: block; width: 100%; height: auto; }
+
+/* rings tighten inward: the outermost is context, the innermost is the
+   point being made */
+.ry-gen__ring { fill: none; stroke-width: 1.5; }
+.ry-gen__ring--f0 { stroke: rgba(255, 255, 255, 0.28); fill: rgba(255, 255, 255, 0.03); }
+.ry-gen__ring--f1 { stroke: rgba(255, 255, 255, 0.45); fill: rgba(255, 255, 255, 0.04); }
+.ry-gen__ring--f2 { stroke: var(--ry-red); fill: rgba(255, 47, 110, 0.14); stroke-width: 2; }
+/* dashed because F3 is the threshold where the human evidence thins */
+.ry-gen__ring--f3 {
+  stroke: rgba(255, 255, 255, 0.34);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+.ry-gen__link { stroke: rgba(255, 255, 255, 0.3); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ry-gen__arrow { fill: rgba(255, 255, 255, 0.3); }
+
+.ry-gen__tag {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.1em;
+  fill: #fff;
+}
+.ry-gen__tag--f2 { fill: var(--ry-red); }
+.ry-gen__tag--f3 { fill: var(--ry-ink-faint); }
+
+.ry-gen__key { margin: 0; padding: 0; list-style: none; }
+.ry-gen__item {
+  margin: 0;
+  padding: 13px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-gen__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-gen__label {
+  display: inline-block;
+  min-width: 34px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  color: var(--ry-red);
+}
+.ry-gen__text {
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-gen__text strong { color: #fff; font-weight: 600; }
+
+.ry-gen__caption {
+  margin: 18px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}

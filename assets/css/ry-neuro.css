@@ -1,0 +1,274 @@
+/* ====================================================================
+   Recover-You — Neuroplasticity (page layer)
+   --------------------------------------------------------------------
+   Four page-specific pieces. Everything else on this page reuses the
+   shared layer (.ry-split, .ry-video-card, .ry-prose, .ry-pullquote,
+   .ry-finalword, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE TWO MECHANISMS
+   --------------------------------------------------------------------
+   Synaptic pruning and long-term potentiation are the same process
+   pointed in opposite directions: one weakens what goes unused, the
+   other strengthens what gets repeated. The legacy page had them as
+   two bullets in a list, which buried the symmetry. Set as a pair,
+   the opposition is the point.
+   ==================================================================== */
+.ry-mech {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px 0;
+}
+@media (max-width: 575.98px) { .ry-mech { grid-template-columns: 1fr; } }
+
+.ry-mech__item {
+  position: relative;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+/* a hairline at the top edge, drawn in the direction the mechanism
+   moves: the pruning card thins out, the LTP card thickens */
+.ry-mech__item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.ry-mech__item--weakens::before {
+  background: linear-gradient(90deg, rgba(255, 47, 110, 0.75), rgba(255, 47, 110, 0));
+}
+.ry-mech__item--strengthens::before {
+  background: linear-gradient(90deg, rgba(255, 47, 110, 0), rgba(255, 47, 110, 0.75));
+}
+
+.ry-mech__dir {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+}
+.ry-mech__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.ry-mech__abbr {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ry-ink-faint);
+  margin-bottom: 12px;
+  display: block;
+}
+.ry-mech__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   2. THE EXTINCTION BURST
+   --------------------------------------------------------------------
+   The legacy page illustrated this with a symmetrical waveform, which
+   is decorative and — read as a chart — says the wrong thing: it rises
+   and falls by equal amounts and returns to where it began. The actual
+   claim in the copy is asymmetric. Distress is steady, spikes when
+   reinforcement stops, then settles LOWER than it started.
+
+   Drawn natively so the four moments can be labelled. The curve is
+   schematic and the caption says so out loud — this is an illustration
+   of a described pattern, not a plot of anyone's data.
+   ==================================================================== */
+.ry-burst {
+  margin: 34px 0 30px;
+  padding: 26px 26px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-burst__chart { display: block; width: 100%; height: auto; }
+
+.ry-burst__axis { stroke: var(--ry-hairline); stroke-width: 1; }
+.ry-burst__grid { stroke: rgba(255, 255, 255, 0.05); stroke-width: 1; }
+
+/* the "you stop" moment: a vertical divider through the whole plot */
+.ry-burst__stop { stroke: rgba(255, 47, 110, 0.45); stroke-width: 1; stroke-dasharray: 4 5; }
+
+.ry-burst__fill { fill: url(#ryBurstFade); }
+.ry-burst__line {
+  fill: none;
+  stroke: var(--ry-red);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* the stretch before anything changes is drawn dimmer — it is context,
+   not the finding */
+.ry-burst__line--before { stroke: rgba(255, 255, 255, 0.34); stroke-width: 2; }
+
+.ry-burst__dot { fill: var(--ry-red); }
+.ry-burst__tick {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: #fff;
+}
+.ry-burst__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+.ry-burst__region {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  fill: var(--ry-ink-faint);
+}
+.ry-burst__axlabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--ry-ink-faint);
+}
+.ry-burst__arrow { fill: var(--ry-ink-faint); }
+.ry-burst__caption {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   3. THE MENTAL GYM
+   --------------------------------------------------------------------
+   Five recovery practices. The copy calls them "mental gym equipment,
+   each one strengthening specific neural muscles", so they are set as
+   equipment: numbered, uniform, unglamorous.
+   ==================================================================== */
+.ry-gym {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-gym__item {
+  padding: 22px 22px 20px;
+  border-radius: 13px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-gym__n {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  color: var(--ry-red);
+  margin-bottom: 9px;
+}
+.ry-gym__name {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.ry-gym__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   4. THE READING LIST
+   --------------------------------------------------------------------
+   Three books, then a fourth the copy explicitly sets apart ("which
+   operates on a different level entirely"). The fourth gets its own
+   treatment rather than being a fourth identical row, because the
+   sentence introducing it does the same thing.
+   ==================================================================== */
+.ry-books { margin: 26px 0; padding: 0; list-style: none; }
+
+.ry-books__item {
+  display: grid;
+  grid-template-columns: 3px minmax(0, 1fr);
+  gap: 0 20px;
+  padding: 0 0 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-books__item:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.ry-books__item::before {
+  content: "";
+  border-radius: 2px;
+  background: var(--ry-hairline);
+}
+.ry-books__item--apart {
+  padding: 24px 24px 22px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  border-radius: 14px;
+  background: var(--ry-glass-bg);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+.ry-books__item--apart::before { display: none; }
+
+.ry-books__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 3px;
+}
+.ry-books__author {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 11px;
+}
+.ry-books__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}

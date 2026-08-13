@@ -1,0 +1,481 @@
+/* ========================================================================
+   THE RESILIENCE LIE
+   The body distinguishes visible adaptation from genuine repair. The hero,
+   Where to Next, Sources, ticker, and footer remain shared site components.
+   ======================================================================== */
+
+.ry-resilience-page {
+  --rl-red: #ff3030;
+  --rl-warm: #c5965b;
+  --rl-line: rgba(255, 255, 255, .1);
+  --rl-panel: rgba(255, 255, 255, .035);
+  background: #050505;
+}
+
+.ry-resilience-page #smooth-content { background: #050505; }
+
+/* Bright source art needs the longer established dissolve. */
+.ry-resilience-page .ry-page-hero__scrim {
+  background:
+    linear-gradient(180deg,
+      rgba(0, 0, 0, .5) 0%,
+      rgba(0, 0, 0, .35) 31%,
+      rgba(0, 0, 0, .6) 57%,
+      rgba(0, 0, 0, .91) 79%,
+      #000 100%),
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .78) 0%,
+      rgba(0, 0, 0, .2) 64%,
+      transparent 100%);
+}
+
+.ry-resilience-page .ry-page-hero__bg { background-position: center 43%; }
+
+.ry-resilience-page #smooth-content > section:not(.ry-page-hero):not(.ry-rl-cost):not(.ry-rl-well):not(.ry-ticker-wrap) {
+  background-color: #050505;
+}
+
+.ry-resilience-page h3,
+.ry-resilience-page h4,
+.ry-resilience-page h5,
+.ry-resilience-page h6,
+.ry-resilience-page p,
+.ry-resilience-page li { color: rgba(255, 255, 255, .7); }
+
+.ry-resilience-page h5 {
+  margin: 0 0 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(30px, 3.3vw, 48px);
+  font-weight: 300 !important;
+  line-height: 1.14;
+  letter-spacing: -.035em;
+  color: #fff !important;
+}
+
+.ry-resilience-page h5 strong { font-weight: 700; color: #fff; }
+.ry-resilience-page p strong,
+.ry-resilience-page li strong { color: rgba(255, 255, 255, .94); }
+.ry-resilience-page .text-deep-pink { color: var(--rl-red) !important; }
+
+.ry-rl-intro,
+.ry-rl-repair,
+.ry-rl-temperament,
+.ry-rl-armor {
+  position: relative;
+  padding: clamp(76px, 8vw, 112px) 0;
+}
+
+.ry-rl-intro > .container,
+.ry-rl-repair > .container,
+.ry-rl-temperament > .container,
+.ry-rl-armor > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.ry-rl-intro > .container > .row > div > p,
+.ry-rl-repair > .container > .row > div > p,
+.ry-rl-temperament > .container > .row > div > p,
+.ry-rl-armor p {
+  margin-bottom: 22px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.82 !important;
+  color: rgba(255, 255, 255, .67) !important;
+}
+
+/* Admission and misconception */
+.ry-rl-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 84% 19%, rgba(197, 150, 91, .075), transparent 28%),
+    linear-gradient(180deg, transparent 72%, rgba(255, 48, 48, .025));
+}
+
+.ry-rl-intro h5:nth-of-type(2) {
+  margin-top: clamp(58px, 7vw, 88px) !important;
+  padding-top: clamp(48px, 6vw, 72px);
+  border-top: 1px solid var(--rl-line);
+}
+
+.ry-rl-intro blockquote,
+.ry-rl-repair blockquote,
+.ry-rl-temperament blockquote,
+.ry-rl-armor blockquote {
+  position: relative;
+  margin: 38px 0 !important;
+  padding: 31px 36px 31px 42px !important;
+  border: 1px solid rgba(255, 255, 255, .1) !important;
+  border-left: 3px solid var(--rl-red) !important;
+  background: linear-gradient(105deg, rgba(255, 48, 48, .08), rgba(255, 255, 255, .02));
+}
+
+.ry-rl-intro blockquote p,
+.ry-rl-repair blockquote p,
+.ry-rl-temperament blockquote p,
+.ry-rl-armor blockquote p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 300;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, .88) !important;
+}
+
+/* Adaptation versus resilience */
+.ry-rl-contrast {
+  position: relative;
+  padding: clamp(74px, 8vw, 110px) 0;
+  overflow: hidden;
+  border-block: 1px solid var(--rl-line);
+  background:
+    linear-gradient(110deg, rgba(197, 150, 91, .065), transparent 40%),
+    #090909 !important;
+}
+
+.ry-rl-contrast::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .22;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.ry-rl-contrast > .container { position: relative; z-index: 1; }
+.ry-rl-contrast > .container > .row { align-items: stretch !important; }
+
+.ry-rl-contrast__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: clamp(82px, 9vw, 126px);
+  padding-right: clamp(26px, 4vw, 58px);
+}
+
+.ry-rl-contrast__title h3 {
+  width: auto !important;
+  margin: 0 !important;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 7vw, 104px);
+  font-weight: 400 !important;
+  line-height: .9;
+  letter-spacing: -.01em !important;
+  color: var(--rl-red) !important;
+}
+
+.ry-rl-contrast__title h5 {
+  width: auto !important;
+  margin-top: 17px !important;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  text-transform: none !important;
+}
+
+.ry-rl-contrast__visual {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(197, 150, 91, .22);
+  background: #050505;
+}
+
+.ry-rl-contrast__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 54%, rgba(0, 0, 0, .42));
+  pointer-events: none;
+}
+
+.ry-rl-contrast__visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  padding: 0 !important;
+  object-fit: cover;
+  filter: saturate(.72) contrast(1.04) brightness(.8);
+}
+
+.ry-rl-contrast__copy {
+  padding: 20px 0 20px clamp(28px, 4vw, 58px) !important;
+  text-align: left !important;
+}
+
+.ry-rl-contrast__copy p {
+  margin-bottom: 17px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, .59);
+}
+
+.ry-rl-contrast__copy > p:first-child {
+  padding: 23px 24px;
+  border: 1px solid rgba(255, 48, 48, .18);
+  background: rgba(255, 48, 48, .055);
+  font-size: 15px;
+}
+
+.ry-rl-contrast__copy ul {
+  margin: 21px 0 24px;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-rl-contrast__copy li {
+  position: relative;
+  margin: 0;
+  padding: 13px 0 13px 27px;
+  border-top: 1px solid rgba(255, 255, 255, .075);
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .56);
+}
+
+.ry-rl-contrast__copy li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 21px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--rl-red);
+  border-radius: 50%;
+}
+
+/* Cost of saying I'm fine */
+.ry-rl-cost {
+  position: relative;
+  padding: clamp(88px, 9vw, 132px) 0;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.ry-rl-cost > .opacity-full-dark {
+  position: absolute;
+  inset: 0;
+  opacity: 1 !important;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .95) 0%, rgba(0, 0, 0, .86) 52%, rgba(0, 0, 0, .7) 100%),
+    linear-gradient(180deg, #050505 0%, transparent 15%, transparent 84%, #050505 100%) !important;
+}
+
+.ry-rl-cost .container { position: relative; z-index: 1; }
+.ry-rl-cost h5 { max-width: 760px; }
+.ry-rl-cost .separator-line-horrizontal-medium-light { width: 72px; height: 2px; margin: 0 0 38px !important; background: var(--rl-red) !important; }
+.ry-rl-cost p { font-size: 16px; font-weight: 300 !important; line-height: 1.82 !important; color: rgba(255, 255, 255, .7) !important; }
+
+.ry-rl-script {
+  margin: 35px 0 !important;
+  padding: 27px 31px !important;
+  border: 1px solid rgba(255, 255, 255, .09) !important;
+  border-left: 2px solid var(--rl-red) !important;
+  background: rgba(0, 0, 0, .5) !important;
+}
+
+.ry-rl-script p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  font-size: 15px;
+  line-height: 1.55 !important;
+}
+
+.ry-rl-script p:last-child { border-bottom: 0; color: #fff !important; }
+
+.ry-rl-cost blockquote {
+  margin: 45px 0 !important;
+  padding: 32px 38px !important;
+  border: 1px solid rgba(255, 255, 255, .11) !important;
+  border-left: 3px solid var(--rl-red) !important;
+  background: rgba(0, 0, 0, .48);
+}
+
+.ry-rl-cost blockquote p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 300 !important;
+  line-height: 1.55 !important;
+  color: rgba(255, 255, 255, .9) !important;
+}
+
+/* Repair */
+.ry-rl-repair::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 10% 18%, rgba(255, 48, 48, .06), transparent 28%);
+}
+
+/* Temperament: turn the two examples into a clear paired comparison. */
+.ry-rl-temperament {
+  border-block: 1px solid var(--rl-line);
+  background:
+    radial-gradient(circle at 86% 15%, rgba(197, 150, 91, .07), transparent 28%),
+    #090909 !important;
+}
+
+.ry-rl-temperament blockquote {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent;
+}
+
+.ry-rl-temperament blockquote p {
+  position: relative;
+  min-height: 170px;
+  padding: 31px 29px 28px 72px;
+  border: 1px solid var(--rl-line);
+  background: rgba(255, 255, 255, .026);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.72 !important;
+  color: rgba(255, 255, 255, .65) !important;
+}
+
+.ry-rl-temperament blockquote p::before {
+  position: absolute;
+  left: 27px;
+  top: 27px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 31px;
+  color: var(--rl-warm);
+}
+
+.ry-rl-temperament blockquote p:first-child::before { content: "A"; }
+.ry-rl-temperament blockquote p:last-child::before { content: "B"; }
+
+/* Poisoned well */
+.ry-rl-well {
+  overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, .08);
+  background: #080706;
+}
+
+.ry-rl-well > .container-fluid > .row { align-items: flex-start; }
+
+.ry-rl-well__copy {
+  padding: clamp(64px, 7vw, 104px) clamp(42px, 7vw, 102px) !important;
+}
+
+.ry-rl-well__copy h5 { max-width: 620px; }
+.ry-rl-well__copy .separator-line-horrizontal-medium-light { width: 64px; height: 2px; margin: 0 0 34px !important; background: var(--rl-red) !important; }
+.ry-rl-well__copy p { font-size: 15px; font-weight: 300; line-height: 1.8 !important; color: rgba(255, 255, 255, .64) !important; }
+
+.ry-rl-well__copy blockquote {
+  margin: 32px 0 !important;
+  padding: 27px 29px !important;
+  border: 1px solid rgba(197, 150, 91, .19) !important;
+  border-left: 2px solid var(--rl-red) !important;
+  background: rgba(197, 150, 91, .045);
+}
+
+.ry-rl-well__copy blockquote p { margin: 0; color: rgba(255, 255, 255, .82) !important; }
+
+.ry-rl-well__visual {
+  position: sticky !important;
+  top: 0;
+  height: 100vh;
+  min-height: 720px;
+  background-position: center;
+  background-size: cover;
+}
+
+.ry-rl-well__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #080706 0%, transparent 20%), linear-gradient(0deg, rgba(8, 7, 6, .34), transparent 45%);
+}
+
+/* Conclusion */
+.ry-rl-armor > .container > .row { align-items: flex-start; }
+.ry-rl-armor .col-lg-5 { position: sticky; top: 76px; padding-right: clamp(34px, 5vw, 74px); }
+.ry-rl-armor .col-lg-5 > .alt-font { margin-bottom: 16px !important; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--rl-red) !important; }
+.ry-rl-armor h4 { margin: 0; font-family: 'Poppins', sans-serif; font-size: clamp(38px, 4.5vw, 65px) !important; font-weight: 300 !important; line-height: 1.05; letter-spacing: -.045em !important; color: #fff !important; }
+.ry-rl-armor h4 .text-deep-pink { font-weight: 700; }
+.ry-rl-armor .separator-line-horrizontal-medium-light { width: 66px; height: 2px; margin-top: 26px !important; background: var(--rl-red) !important; }
+.ry-rl-armor .col-xl-6 { padding-top: 0 !important; }
+.ry-rl-armor .text-large { font-family: 'Poppins', sans-serif; font-size: 20px !important; color: #fff !important; }
+
+/* Shared ending components need only page-level separation. */
+.ry-resilience-page #where-next { border-top: 1px solid var(--rl-line); }
+.ry-resilience-page #sources { border-top: 1px solid var(--rl-line); background: #080808 !important; }
+.ry-resilience-page #sources .row:first-child { margin-bottom: 22px; }
+.ry-resilience-page #sources ol + p {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  font-size: 11px;
+  line-height: 1.65;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .4);
+}
+
+@media (max-width: 1199.98px) {
+  .ry-rl-contrast__visual img { min-height: 720px; }
+  .ry-rl-well__copy { padding-inline: 56px !important; }
+}
+
+@media (max-width: 991.98px) {
+  .ry-rl-contrast__title { padding-top: 70px; padding-right: 12px; }
+  .ry-rl-contrast__visual img { min-height: 610px; }
+  .ry-rl-contrast__copy { padding-left: 35px !important; }
+  .ry-rl-cost { background-attachment: scroll; }
+  .ry-rl-well__visual {
+    position: relative !important;
+    height: auto;
+    min-height: 570px;
+  }
+  .ry-rl-well__visual::after { background: linear-gradient(0deg, #080706, transparent 32%); }
+  .ry-rl-armor .col-lg-5 { position: static; margin-bottom: 46px; }
+}
+
+@media (max-width: 767.98px) {
+  .ry-resilience-page .ry-page-hero__bg { background-position: 58% center; }
+  .ry-rl-contrast__title { margin-bottom: 36px; padding-top: 0; text-align: left !important; }
+  .ry-rl-contrast__visual { max-width: 420px; margin-inline: auto; }
+  .ry-rl-contrast__visual img { min-height: 660px; }
+  .ry-rl-contrast__copy { padding: 38px 12px 0 !important; }
+  .ry-rl-temperament blockquote { grid-template-columns: 1fr; }
+  .ry-rl-temperament blockquote p { min-height: auto; }
+  .ry-rl-cost blockquote,
+  .ry-rl-intro blockquote,
+  .ry-rl-repair blockquote,
+  .ry-rl-armor blockquote { padding: 28px 25px 28px 29px !important; }
+  .ry-rl-well__visual { min-height: 440px; }
+}
+
+@media (max-width: 575.98px) {
+  .ry-rl-intro,
+  .ry-rl-repair,
+  .ry-rl-temperament,
+  .ry-rl-armor { padding-block: 62px; }
+  .ry-rl-contrast { padding-block: 62px; }
+  .ry-rl-contrast__visual img { min-height: 560px; }
+  .ry-rl-cost { padding-block: 72px; }
+  .ry-rl-script { padding: 22px 21px !important; }
+  .ry-rl-well__copy { padding: 54px 24px 64px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-rl-cost { background-attachment: scroll; }
+}

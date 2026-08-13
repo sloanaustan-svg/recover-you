@@ -1,0 +1,217 @@
+/* ====================================================================
+   Recover-You — CBT (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-said,
+   .ry-spec-grid, .ry-split, .ry-sheet, .ry-video-card,
+   .ry-diptych-section, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE LOOP DIAGRAM
+   --------------------------------------------------------------------
+   Frame and type for the native SVG in cbt_loop_svg.py, which draws
+   the mechanic the whole page is built on: situation, thought, emotion,
+   behaviour, and back into thought.
+
+   Note that the situation sits OUTSIDE the loop — the page's arrow
+   returns to Thought, not to Situation — so the return arc is drawn
+   passing under it without connecting. A generic four-node ring would
+   assert something the page does not say.
+   ==================================================================== */
+.ry-loopbox {
+  margin: 34px 0 0;
+  padding: 30px 26px 22px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-loopbox svg { display: block; width: 100%; height: auto; }
+.ry-loopbox__note {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+.ry-loop__box { stroke-width: 1; }
+/* the three that actually cycle */
+.ry-loop__box--loop {
+  fill: rgba(255, 47, 110, 0.1);
+  stroke: rgba(255, 47, 110, 0.45);
+}
+/* the trigger, which happens once and does not recur */
+.ry-loop__box--entry {
+  fill: rgba(255, 255, 255, 0.05);
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-dasharray: 4 3;
+}
+.ry-loop__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  fill: #fff;
+}
+.ry-loop__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  fill: rgba(255, 255, 255, 0.62);
+}
+.ry-loop__arrow { stroke: rgba(255, 255, 255, 0.4); stroke-width: 1.4; }
+.ry-loop__head { fill: rgba(255, 255, 255, 0.55); }
+.ry-loop__return {
+  fill: none;
+  stroke: rgba(255, 47, 110, 0.55);
+  stroke-width: 1.4;
+}
+.ry-loop__returnlabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  fill: rgba(255, 47, 110, 0.9);
+}
+.ry-loop__brace { fill: none; stroke: rgba(255, 255, 255, 0.18); stroke-width: 1; }
+.ry-loop__bracelabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  fill: rgba(255, 255, 255, 0.45);
+}
+.ry-loop__tick { stroke: rgba(255, 255, 255, 0.26); stroke-width: 1; }
+.ry-loop__entry {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: #fff;
+}
+
+/* ====================================================================
+   2. RELIEF AND RETRAINING
+   --------------------------------------------------------------------
+   Medication and CBT, set as a pair. The section is titled "Not
+   Either/Or" and the copy is emphatic that these are two parts of the
+   same repair, so neither panel is styled as the winner: same weight,
+   same border, same background. The only difference between them is
+   the word on the badge.
+
+   That restraint is the design doing what the copy says. A layout that
+   gave CBT the accent colour and medication the grey would contradict
+   four paragraphs of text arguing they belong together.
+   ==================================================================== */
+.ry-versus {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 991.98px) { .ry-versus { grid-template-columns: 1fr; } }
+
+.ry-versus__item {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.04);
+}
+.ry-versus__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 15px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-versus__what {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.ry-versus__is {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-versus__points { margin: 0; padding: 0; list-style: none; }
+.ry-versus__points li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 11px 20px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-versus__points li:last-child { padding-bottom: 0; }
+.ry-versus__points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.75;
+}
+
+/* ====================================================================
+   3. CATCHING THE LOOP — the body-first steps
+   --------------------------------------------------------------------
+   Five moves, in order, each one a thing to actually do. Numbered
+   because the sequence is the method: you cannot test the thought
+   before you have noticed the feeling that announced it.
+   ==================================================================== */
+.ry-catch { margin: 30px 0; padding: 0; list-style: none; counter-reset: ry-catch; }
+
+.ry-catch__item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 6px 18px;
+  margin: 0;
+  padding: 22px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-catch__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-catch__item::before {
+  counter-increment: ry-catch;
+  content: counter(ry-catch, decimal-leading-zero);
+  grid-row: 1 / span 2;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  color: var(--ry-red);
+}
+.ry-catch__do {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+/* the body is a real element: this is a grid container, and every
+   in-flow child element becomes its own grid item — bare inline content
+   would be split across cells instead of flowing as one paragraph */
+.ry-catch__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-catch__body strong { color: #fff; font-weight: 600; }
+.ry-catch__body em { color: rgba(255, 255, 255, 0.88); font-style: italic; }

@@ -1,0 +1,213 @@
+/* ====================================================================
+   Recover-You — Misdiagnosed & Misunderstood (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-pullquote, .ry-sheet, .ry-jumpnav,
+   .ry-diptych-section, .ry-finalword, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE DIAGNOSIS CARDS
+   --------------------------------------------------------------------
+   Seven of them: ADHD, anxiety, depression, SUD, BPD, ODD, OCD. Each
+   sets a trauma reading of the symptoms against the actual clinical
+   definition.
+
+   The clinical block is the load-bearing piece of the design, and it is
+   easy to get wrong. This page states plainly that these are "real,
+   valid, clinically distinct conditions" with "their own diagnostic
+   criteria, neurobiological basis, and evidence-based treatment path",
+   and that the point is not to swap one label for another. A layout
+   that ran the trauma reframe in confident body type and dropped the
+   DSM definition into grey 12px small-print would contradict that
+   paragraph on every single card.
+
+   So the clinical block gets its own panel, its own label, and the same
+   type size as the reframe above it. A reader skimming sees two claims
+   of equal weight, which is what the page actually argues.
+   ==================================================================== */
+.ry-dx { margin: 0; padding: 0; list-style: none; }
+
+.ry-dx__item {
+  margin: 0 0 22px;
+  padding: 34px 36px 30px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-dx__item:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-dx__item { padding: 26px 22px 24px; } }
+
+.ry-dx__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  letter-spacing: 0.03em;
+  line-height: 1.08;
+  color: #fff;
+  margin: 0 0 18px;
+}
+/* the page frames every one of these as a question, so the mark carries
+   the accent rather than the whole heading */
+.ry-dx__q { color: var(--ry-red); }
+
+.ry-dx__body { font-size: 14.5px; line-height: 1.78; font-weight: 300; color: var(--ry-ink); }
+.ry-dx__body strong { color: #fff; font-weight: 600; }
+.ry-dx__body em { color: rgba(255, 255, 255, 0.86); }
+.ry-dx__body > :last-child { margin-bottom: 0; }
+
+/* the "what this looks like" list — the trauma reading, itemised */
+.ry-dx__lens {
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-dx__lens li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 13px 22px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-dx__lens li:last-child { padding-bottom: 0; }
+.ry-dx__lens li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 11px;
+  width: 10px; height: 1px;
+  background: var(--ry-red);
+  opacity: 0.8;
+}
+.ry-dx__lens li strong { color: #fff; font-weight: 600; }
+
+/* ---- the clinical panel ----
+   Same type size as the reframe. Not small print. See the note above. */
+.ry-dx__clinical {
+  margin: 24px 0 0;
+  padding: 22px 24px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.035);
+}
+.ry-dx__clinical-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 9px;
+}
+.ry-dx__clinical p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-dx__clinical strong { color: #fff; font-weight: 600; }
+
+/* ---- the note, where a card carries one ---- */
+.ry-dx__note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ry-ink-faint);
+}
+
+/* ---- related reading ---- */
+.ry-dx__reading {
+  margin: 24px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-dx__reading-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 12px;
+}
+.ry-dx__reading ul { margin: 0; padding: 0; list-style: none; }
+.ry-dx__reading li {
+  margin: 0;
+  padding: 0 0 11px 0;
+  font-size: 13px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-dx__reading li:last-child { padding-bottom: 0; }
+.ry-dx__reading a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.35);
+}
+.ry-dx__reading a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+/* ====================================================================
+   2. WHEN TO SCREEN
+   Five triggers. A list, not a grid: the page presents them as a
+   checklist a clinician runs down, and two ragged columns of five is
+   just a grid that ran out.
+   ==================================================================== */
+.ry-screen { margin: 26px 0 0; padding: 0; list-style: none; }
+.ry-screen__item {
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-screen__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-screen__item strong { color: var(--ry-red); font-weight: 600; }
+
+/* ====================================================================
+   3. THE COST OF SURFACE-LEVEL CARE
+   Four consequences, the last of which turns. Numbered, because the
+   page builds them in order and ends on the turn.
+   ==================================================================== */
+.ry-cost { margin: 28px 0; padding: 0; list-style: none; counter-reset: ry-cost; }
+/* the number and the body are the two grid items; the body must be a real
+   element, because a grid container turns every in-flow child element into
+   its own grid item and would otherwise split the text at each <strong> */
+.ry-cost__item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-cost__body {
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-cost__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-cost__item::before {
+  counter-increment: ry-cost;
+  content: counter(ry-cost, decimal-leading-zero);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 19px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  color: var(--ry-red);
+}
+.ry-cost__body strong { color: #fff; font-weight: 600; }
+.ry-cost__body em { color: rgba(255, 255, 255, 0.86); }

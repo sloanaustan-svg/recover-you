@@ -1,0 +1,205 @@
+/* ====================================================================
+   Recover-You — ACEs High page layer
+   Loads AFTER ry-article.css. Only genuinely page-specific things live
+   here: the interactive ACE self-test. Everything else on the page uses
+   shared components from ry-article.css.
+   ==================================================================== */
+
+/* --------------------------------------------------------------------
+   The self-test
+   -------------------------------------------------------------------- */
+.ry-ace {
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  padding: 30px 32px;
+}
+.ry-ace__warning {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  background: rgba(255, 0, 0, 0.07);
+}
+.ry-ace__warning-label {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ry-red);
+  padding: 3px 9px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 0, 0, 0.45);
+  flex: none;
+}
+.ry-ace__warning-text {
+  font-size: 13.5px; line-height: 1.6; font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1 1 240px;
+}
+
+.ry-ace__list { list-style: none; counter-reset: ace; margin: 0 0 26px; padding: 0; }
+.ry-ace__list li {
+  counter-increment: ace;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.ry-ace__list li:first-child { border-top: 0; padding-top: 0; }
+.ry-ace__q {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-ace__q::before {
+  content: counter(ace);
+  display: inline-block;
+  min-width: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ry-red);
+  vertical-align: 1px;
+}
+
+/* toggle. The native checkbox stays in the DOM and keeps focus and
+   keyboard behaviour; only its appearance is replaced. */
+.ry-ace__toggle { flex: none; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; }
+.ry-ace__toggle input {
+  position: absolute;
+  width: 1px; height: 1px;
+  opacity: 0;
+  margin: 0;
+}
+.ry-ace__track {
+  position: relative;
+  width: 52px; height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background .22s ease, border-color .22s ease;
+  flex: none;
+}
+.ry-ace__track::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 3px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-50%);
+  transition: transform .22s cubic-bezier(0.3, 0.7, 0.3, 1), background .22s ease;
+}
+.ry-ace__toggle input:checked + .ry-ace__track {
+  background: rgba(255, 0, 0, 0.3);
+  border-color: rgba(255, 0, 0, 0.7);
+}
+.ry-ace__toggle input:checked + .ry-ace__track::after {
+  transform: translateY(-50%) translateX(22px);
+  background: #fff;
+}
+.ry-ace__toggle input:focus-visible + .ry-ace__track {
+  outline: 2px solid var(--ry-red);
+  outline-offset: 3px;
+}
+.ry-ace__state {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  min-width: 30px;
+  transition: color .2s ease;
+}
+.ry-ace__toggle input:checked ~ .ry-ace__state { color: var(--ry-red); }
+
+/* score + actions */
+.ry-ace__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+.ry-ace__score { flex: 1 1 240px; min-width: 0; }
+.ry-ace__badge {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ry-ink-dim);
+  margin-bottom: 9px;
+}
+.ry-ace__badge strong {
+  font-size: 22px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  vertical-align: -2px;
+}
+.ry-ace__meter {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.ry-ace__meter span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.55) 0%, var(--ry-red) 100%);
+  transition: width .35s cubic-bezier(0.3, 0.7, 0.3, 1);
+}
+.ry-ace__btn {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 13px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .22s ease, border-color .22s ease, color .22s ease;
+}
+.ry-ace__btn--primary {
+  color: #fff;
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  background: rgba(255, 0, 0, 0.18);
+}
+.ry-ace__btn--primary:hover { background: rgba(255, 0, 0, 0.34); }
+.ry-ace__btn--ghost {
+  color: var(--ry-ink-dim);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+}
+.ry-ace__btn--ghost:hover { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.ry-ace__btn:focus-visible { outline: 2px solid var(--ry-red); outline-offset: 3px; }
+
+/* result panel */
+.ry-ace__result {
+  margin-top: 34px;
+  padding: 34px 36px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 0, 0.26);
+  border-left: 3px solid var(--ry-red);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.06) 0%, rgba(255,0,0,0.015) 100%),
+    var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-ace__result-tier {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-ace__result h3 { font-size: 21px; font-weight: 600; color: #fff; margin: 0 0 16px; }
+
+@media (max-width: 767.98px) {
+  .ry-ace { padding: 24px 20px; }
+  .ry-ace__list li { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .ry-ace__toggle { align-self: flex-start; }
+  .ry-ace__result { padding: 26px 22px; }
+  .ry-ace__actions { flex-direction: column; align-items: stretch; }
+  .ry-ace__btn { width: 100%; }
+}

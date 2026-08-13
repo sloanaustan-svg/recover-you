@@ -1,0 +1,195 @@
+/* ====================================================================
+   Recover-You — Know Your Machinery (page layer)
+   --------------------------------------------------------------------
+   This page's whole problem is tables. The legacy version carries three
+   of them, the widest being eight rows of three columns where the last
+   column runs to forty words. On a phone that is a horizontal scrollbar
+   over unreadable type; in a dark theme it is also a slab of borders.
+
+   All three become components that reflow. Nothing is lost: every cell
+   of every table is still on the page, in the same order, with the same
+   words. The difference is that a card can wrap and a table cell cannot.
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE ENZYME CARDS
+   --------------------------------------------------------------------
+   Was: Enzyme | What It Does | Why It Matters, eight rows.
+   Now: the enzyme name as the card's handle, what it does as a
+   strapline, why it matters as body copy. That is the same three fields
+   in the same order — a table row turned on its side.
+   ==================================================================== */
+.ry-enzymes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+.ry-enzyme {
+  margin: 0;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-enzyme__name {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  color: var(--ry-red);
+  margin-bottom: 8px;
+}
+/* "what it does" is the definition; it earns the divider */
+.ry-enzyme__does {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-enzyme__why {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-enzyme__why strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   2. FAST vs SLOW
+   --------------------------------------------------------------------
+   Was: Enzyme | Fast (High Activity) | Slow (Low Activity), three rows.
+   Now: one block per enzyme with the two states facing each other. The
+   copy's point is that neither end is the good end, so the two panels
+   are weighted identically and only their labels differ.
+   ==================================================================== */
+.ry-speed { margin: 30px 0; padding: 0; list-style: none; }
+
+.ry-speed__row {
+  margin: 0;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-speed__row + .ry-speed__row { margin-top: 14px; }
+
+.ry-speed__name {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  padding: 16px 24px 14px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-speed__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--ry-hairline);
+}
+@media (max-width: 575.98px) { .ry-speed__pair { grid-template-columns: 1fr; } }
+
+.ry-speed__side { padding: 20px 24px 18px; background: #070707; }
+.ry-speed__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.ry-speed__side--fast .ry-speed__label { color: var(--ry-red); }
+.ry-speed__side--slow .ry-speed__label { color: var(--ry-ink-faint); }
+.ry-speed__body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   3. CONSEQUENCES FOR FUTURE TREATMENT
+   Was: Consequence | Why It Matters, four rows. Now a definition list,
+   which is what a two-column table of terms and explanations always was.
+   ==================================================================== */
+.ry-conseq { margin: 26px 0; padding: 0; list-style: none; }
+.ry-conseq__item {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: 6px 24px;
+  margin: 0;
+  padding: 17px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-conseq__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+@media (max-width: 767.98px) {
+  .ry-conseq__item { grid-template-columns: 1fr; gap: 5px; }
+}
+.ry-conseq__term {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ry-red);
+}
+.ry-conseq__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* ====================================================================
+   4. THE CRITIQUE PANEL
+   A recurring editorial device on the site — the author stepping out to
+   argue with the field rather than explain it. Framed so it reads as a
+   different voice from the surrounding explanation.
+   ==================================================================== */
+.ry-critique {
+  padding: 38px 42px 34px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 575.98px) { .ry-critique { padding: 28px 24px 26px; } }
+
+.ry-critique__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-critique__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 22px;
+}
+.ry-critique > .ry-prose > :last-child { margin-bottom: 0; }

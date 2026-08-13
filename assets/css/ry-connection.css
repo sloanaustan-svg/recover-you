@@ -1,0 +1,368 @@
+/* ====================================================================
+   Recover-You — Connection Is Medicine (page layer)
+   --------------------------------------------------------------------
+   Page-specific treatments for the Harvard finding, the balance between
+   solitude and belonging, the five-part recovery structure, and the
+   four study findings. Shared article components remain in ry-article.css.
+   ==================================================================== */
+
+/* The hero photograph is intentionally intimate. Keep both faces visible
+   while preserving room for the title on the left. */
+.ry-connection-page .ry-page-hero__bg {
+  background-position: center 42%;
+}
+
+/* --------------------------------------------------------------------
+   1. THE CENTRAL HARVARD FINDING
+   -------------------------------------------------------------------- */
+.ry-cn-finding {
+  position: relative;
+  margin: 34px 0 38px;
+  padding: clamp(30px, 5vw, 52px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 0, 0, 0.13), transparent 34%),
+    var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-cn-finding::before {
+  content: "85+";
+  position: absolute;
+  right: clamp(18px, 4vw, 42px);
+  top: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(76px, 14vw, 150px);
+  line-height: 1;
+  letter-spacing: .02em;
+  color: rgba(255, 255, 255, 0.035);
+  pointer-events: none;
+}
+.ry-cn-finding__label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+.ry-cn-finding__quote {
+  position: relative;
+  max-width: 30ch;
+  margin: 0 0 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(23px, 3.6vw, 39px);
+  line-height: 1.28;
+  font-weight: 300;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+.ry-cn-finding__quote strong { font-weight: 650; }
+.ry-cn-finding__contrast {
+  position: relative;
+  max-width: 64ch;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* --------------------------------------------------------------------
+   2. SOLITUDE / BELONGING BALANCE
+   -------------------------------------------------------------------- */
+.ry-cn-balance-wrap {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(38px, 6vw, 84px) clamp(24px, 5vw, 70px);
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 0, 0, 0.1), transparent 35%),
+    linear-gradient(145deg, #111 0%, #050505 100%);
+}
+.ry-cn-balance {
+  width: min(100%, 540px);
+  margin: 0;
+}
+.ry-cn-balance__stage {
+  position: relative;
+  height: 250px;
+}
+.ry-cn-balance__beam {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 102px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,.34), #fff 48%, rgba(255,255,255,.34));
+  box-shadow: 0 0 24px rgba(255,255,255,.1);
+  transform: rotate(-4deg);
+  transform-origin: center;
+}
+.ry-cn-balance__pivot {
+  position: absolute;
+  left: 50%;
+  top: 105px;
+  width: 0;
+  height: 0;
+  border-left: 46px solid transparent;
+  border-right: 46px solid transparent;
+  border-bottom: 96px solid rgba(255, 0, 0, 0.68);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 18px 24px rgba(0,0,0,.65));
+}
+.ry-cn-balance__pivot::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 82px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 7px rgba(255,255,255,.08);
+}
+.ry-cn-balance__end {
+  position: absolute;
+  top: 42px;
+  width: 43%;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+.ry-cn-balance__end span {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+.ry-cn-balance__end--left { left: 0; text-align: left; }
+.ry-cn-balance__end--right { right: 0; top: 15px; text-align: right; }
+.ry-cn-balance figcaption {
+  margin: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--ry-hairline);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(17px, 2.5vw, 21px);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* --------------------------------------------------------------------
+   3. THE RECOVERY STRUCTURE
+   -------------------------------------------------------------------- */
+.ry-cn-structure {
+  position: relative;
+  margin: 38px 0 34px;
+  padding-top: 20px;
+}
+.ry-cn-structure__beam {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 68px;
+  padding: 15px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-bottom: 3px solid rgba(255, 0, 0, 0.72);
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.025));
+  box-shadow: 0 18px 34px -24px rgba(0,0,0,.95);
+}
+.ry-cn-structure__beam strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(18px, 2.6vw, 25px);
+  font-weight: 600;
+  color: #fff;
+}
+.ry-cn-structure__beam span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+.ry-cn-supports {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 18px;
+}
+.ry-cn-support {
+  position: relative;
+  min-width: 0;
+  padding: 26px 18px 22px;
+  border: 1px solid var(--ry-hairline);
+  border-top: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.012));
+}
+.ry-cn-support::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -8px;
+  height: 8px;
+  border-radius: 0 0 3px 3px;
+  background: rgba(255, 255, 255, 0.09);
+}
+.ry-cn-support__n {
+  display: block;
+  margin-bottom: 14px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 23px;
+  letter-spacing: .08em;
+  color: var(--ry-red);
+}
+.ry-cn-support h3 {
+  margin: 0 0 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.35;
+  color: #fff;
+}
+.ry-cn-support p {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ry-ink-dim);
+}
+
+/* --------------------------------------------------------------------
+   4. FOUR FINDINGS FROM THE HARVARD STUDY
+   -------------------------------------------------------------------- */
+.ry-cn-findings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 38px;
+}
+.ry-cn-study-card {
+  position: relative;
+  padding: 30px 30px 28px;
+  overflow: hidden;
+  border: 1px solid var(--ry-hairline);
+  border-radius: 14px;
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-cn-study-card::before {
+  content: attr(data-number);
+  position: absolute;
+  right: 18px;
+  top: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  line-height: 1;
+  color: rgba(255,255,255,.035);
+}
+.ry-cn-study-card__n {
+  display: block;
+  margin-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: .1em;
+  color: var(--ry-red);
+}
+.ry-cn-study-card h3 {
+  position: relative;
+  margin: 0 0 18px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--ry-hairline);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+.ry-cn-study-card p {
+  margin: 0 0 13px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ry-ink-dim);
+}
+.ry-cn-study-card p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------
+   5. VIDEO / BOTTOM LINE DETAILS
+   -------------------------------------------------------------------- */
+.ry-cn-video-caption {
+  margin: 14px 0 0;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ry-ink-faint);
+}
+.ry-cn-video-heading {
+  margin: 0 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.78);
+}
+.ry-cn-bottomline .ry-finalword__panel {
+  max-width: 870px;
+}
+.ry-cn-bottomline .ry-finalword__bg {
+  background-position: center 38%;
+}
+
+/* --------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .ry-cn-supports { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 10px; }
+  .ry-cn-support:last-child { grid-column: 1 / -1; }
+  .ry-cn-structure__beam { align-items: flex-start; flex-direction: column; gap: 5px; }
+}
+
+@media (max-width: 767.98px) {
+  .ry-connection-page .ry-page-hero__bg { background-position: 59% center; }
+  .ry-cn-findings { grid-template-columns: 1fr; }
+  .ry-cn-balance__stage { height: 220px; }
+  .ry-cn-balance__beam { top: 92px; }
+  .ry-cn-balance__pivot { top: 95px; }
+  .ry-cn-balance__end { width: 46%; font-size: 16px; }
+  .ry-cn-balance__end--right { top: 24px; }
+}
+
+@media (max-width: 575.98px) {
+  .ry-cn-finding { padding: 28px 22px; }
+  .ry-cn-supports { grid-template-columns: 1fr; padding: 0 8px; }
+  .ry-cn-support:last-child { grid-column: auto; }
+  .ry-cn-study-card { padding: 25px 22px 23px; }
+  .ry-cn-balance-wrap { padding-inline: 18px; }
+  .ry-cn-balance__end { font-size: 14px; }
+  .ry-cn-balance__end span { font-size: 8.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-cn-balance__beam { transform: none; }
+}
+.ry-cn-ash-section > .container {
+  position: relative;
+  z-index: 1;
+}

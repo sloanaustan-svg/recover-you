@@ -1,0 +1,3054 @@
+/* ====================================================================
+   Recover-You — SHARED ARTICLE LAYER
+   --------------------------------------------------------------------
+   This is the reusable component library for every content page on the
+   site. Load order on an article page is:
+
+       theme.css  →  theme-colors.css  →  ry-home.css  →  ry-article.css
+       (→ optional per-page file last, for genuine one-offs only)
+
+   Everything here is page-agnostic. If you find yourself writing a
+   style for one specific page, it belongs in that page's own file, not
+   in here. Conversely, when a second page needs something, promote it
+   up into this file rather than copying it.
+
+   COMPONENT INDEX
+   ---------------
+     .ry-page-hero       compact interior hero, photo dissolving to black
+     .ry-readtime        "18 min read" meta line
+     .ry-pdf-card        the big "take this page with you" download block
+     .ry-prose           the reading column — sets all body typography
+     .ry-eyebrow-h       "// Section Heading" pattern
+     .ry-note            bordered aside (author's note, disclaimers)
+     .ry-pullquote       large offset quotation
+     .ry-callout         neutral glass callout
+     .ry-callout--red    critique / warning variant
+     .ry-figure          contained image + optional caption
+     .ry-figure--side    image floated beside prose at desktop widths
+     .ry-split           full-bleed 50/50 text + image band
+     .ry-split--reverse  ...with the image on the left
+     .ry-split__media    full-bleed photo panel (background-cover)
+     .ry-split__figure   floating artwork inside the half, never cropped
+     .ry-sheet           light frame for diagrams on the dark page
+     .ry-sheet--diagram  ...capped for square/portrait diagrams
+     .ry-compare         in-place switcher for near-identical diagrams
+     .ry-spec-grid       responsive grid of .ry-spec-card
+     .ry-spec-card       labelled definition card (genes, models, terms)
+     .ry-video-card      external video thumbnail with play affordance
+     .ry-faq             native <details> accordion, no JS
+     .ry-finalword       closing statement over a parallax image
+     .ry-next            "where to next" navigation cards
+     .ry-sources         numbered reference list
+     .ry-ticker-wrap     crisis support ticker
+     .ry-ashfield        drifting ash particle backdrop (needs the JS)
+
+   Shared tokens live in :root below so both this file and any page
+   layer can reach them.
+   ==================================================================== */
+
+:root {
+  --ry-glass-top: rgba(255, 255, 255, 0.055);
+  --ry-glass-mid: rgba(255, 255, 255, 0.022);
+  --ry-glass-bot: rgba(255, 255, 255, 0.012);
+  --ry-hairline:  rgba(255, 255, 255, 0.09);
+  --ry-sheen:     rgba(255, 255, 255, 0.14);
+  --ry-ink:       rgba(255, 255, 255, 0.76);
+  --ry-ink-dim:   rgba(255, 255, 255, 0.60);
+  --ry-ink-faint: rgba(255, 255, 255, 0.44);
+
+  /* The faked-glass surface, used everywhere. No backdrop-filter: on a
+     flat black page a blur has nothing to sample, so it costs GPU time
+     for no visible result. The top-edge highlight is what actually
+     reads as "glass" to the eye. */
+  --ry-glass-bg: linear-gradient(180deg,
+      var(--ry-glass-top) 0%, var(--ry-glass-mid) 45%, var(--ry-glass-bot) 100%);
+  --ry-glass-shadow:
+      inset 0 1px 0 var(--ry-sheen),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+      0 24px 50px -32px rgba(0, 0, 0, 0.92);
+}
+
+.ry-article-page { background-color: #000; }
+
+/* ====================================================================
+   1. PAGE HERO
+   ==================================================================== */
+.ry-page-hero {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: #000;
+}
+.ry-page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+}
+/* Two-part scrim: knocks the photo back overall, then fades hard to
+   solid black at the bottom so the hero dissolves into the page
+   instead of ending on a visible seam. */
+.ry-page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 38%, rgba(0,0,0,0.92) 82%, #000 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 100%);
+}
+.ry-page-hero__inner { position: relative; z-index: 2; padding-bottom: 108px; }
+.ry-page-hero__title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(38px, 5.6vw, 76px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 6px 0 16px;
+}
+.ry-page-hero__sub {
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 52ch;
+  margin: 0;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 767.98px) {
+  .ry-page-hero { min-height: 54vh; }
+  .ry-page-hero__inner { padding-bottom: 78px; }
+  .ry-page-hero__sub { font-size: 16px; }
+}
+
+/* ====================================================================
+   2. READ TIME + PDF DOWNLOAD CARD
+   ==================================================================== */
+.ry-readtime {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 26px;
+}
+.ry-readtime::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--ry-red);
+}
+
+.ry-pdf-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 26px;
+  padding: 26px 30px;
+  margin-bottom: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  text-decoration: none;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.ry-pdf-card:hover { border-color: rgba(255, 0, 0, 0.45); transform: translateY(-2px); }
+.ry-pdf-card__icon {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  background: rgba(255, 0, 0, 0.10);
+  color: var(--ry-red);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+}
+.ry-pdf-card__body { display: block; }
+.ry-pdf-card__eyebrow {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 6px;
+}
+.ry-pdf-card__title { display: block; font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.ry-pdf-card__sub { display: block; font-size: 14.5px; line-height: 1.6; font-weight: 300; color: var(--ry-ink-dim); margin: 0 0 12px; }
+.ry-pdf-card__meta { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.ry-pdf-card__meta > * {
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  padding: 3px 10px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.ry-pdf-card__action {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  background: rgba(255, 0, 0, 0.14);
+  transition: background .25s ease;
+}
+.ry-pdf-card:hover .ry-pdf-card__action { background: rgba(255, 0, 0, 0.3); }
+@media (max-width: 767.98px) {
+  .ry-pdf-card { grid-template-columns: 1fr; gap: 16px; padding: 24px 22px; }
+  .ry-pdf-card__action { justify-self: start; }
+}
+
+/* ====================================================================
+   3. PROSE — the reading column
+   Every long-form passage on every page goes inside .ry-prose. It sets
+   measure, rhythm and link styling once so pages stay consistent.
+   ==================================================================== */
+.ry-prose {
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+/* Descendant, not child. The converter leaves plenty of paragraphs one
+   level down inside a wrapper div, and with `> p` every one of those got
+   no bottom margin at all — 110 of them across the site — which read as
+   randomly cramped copy. Every component that sets its own paragraph
+   spacing (.ry-note, .ry-faq__body, .ry-pullquote, the page layers) is
+   declared below this line and has equal specificity, so source order
+   keeps them in control. */
+.ry-prose p { margin: 0 0 26px; }
+.ry-prose > p:last-child { margin-bottom: 0; }
+.ry-prose strong { color: #fff; font-weight: 600; }
+.ry-prose em { color: rgba(255, 255, 255, 0.85); }
+.ry-prose a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.35);
+  transition: color .2s ease, border-color .2s ease;
+}
+.ry-prose a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+.ry-prose .ry-hl { color: var(--ry-red) !important; }
+
+/* lists
+   -------------------------------------------------------------------
+   Wrapped in :where() so these are DEFAULTS rather than winners. Plain
+   `.ry-prose ul > li::before` scores one class plus two elements, which
+   beats any single-class component rule — so a BEM list dropped inside
+   prose (.ry-serve, .ry-harm, .ry-health-list) silently lost its own
+   marker and got the prose dash instead, at the wrong size and offset.
+   :where() contributes zero specificity, so a component that styles its
+   own markers now wins by default, and unclassed lists are unaffected. */
+:where(.ry-prose ul, .ry-prose ol) { margin: 0 0 24px; padding: 0; list-style: none; }
+:where(.ry-prose ul) > li {
+  position: relative;
+  padding: 0 0 14px 26px;
+  margin: 0;
+}
+:where(.ry-prose ul) > li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 13px;
+  width: 11px; height: 1px;
+  background: var(--ry-red);
+  opacity: .75;
+}
+:where(.ry-prose ol) { counter-reset: ry-ol; }
+:where(.ry-prose ol) > li {
+  position: relative;
+  counter-increment: ry-ol;
+  padding: 0 0 14px 34px;
+}
+:where(.ry-prose ol) > li::before {
+  content: counter(ry-ol);
+  position: absolute;
+  left: 0; top: 0;
+  font-size: 12px; font-weight: 700;
+  color: var(--ry-red);
+}
+
+/* headings inside prose */
+.ry-prose h3, .ry-prose h4 { color: #fff; font-weight: 600; margin: 38px 0 14px; }
+.ry-prose h3 { font-size: 24px; line-height: 1.3; }
+.ry-prose h4 { font-size: 19px; line-height: 1.35; }
+
+/* the "// Section Heading" pattern used across the whole site */
+/* The band display heading — "Where to Next?", the title of a full-bleed
+   diptych band, the line a section is named after.
+
+   This rule lived in ry-attachment.css until now, which meant that of the
+   thirteen pages using .ry-band-title, exactly one had it styled. On the
+   other twelve the class matched nothing and the heading fell back to the
+   theme's bare h2: Poppins 24px, where a Bebas display line was intended.
+   It is in the shared layer because the class was always a shared idea;
+   it was only ever written down in the wrong file. */
+.ry-band-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 0 0 48px;
+}
+/* Where-to-Next puts a lede immediately under the heading, so the 48px
+   that suits a heading sitting straight on top of a card grid opens a
+   hole here. Scoped rather than changed at source: the wide gap is right
+   everywhere else. */
+#where-next .ry-band-title { margin-bottom: 14px; }
+
+/* Attribution and permission lines — the small print under a borrowed
+   image or quotation. Small, but not hidden: this is the basis on which
+   the thing above it is allowed to be on the page. */
+.ry-credit {
+  margin: 0 0 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 12.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+.ry-credit + .ry-credit { padding-top: 0; border-top: 0; }
+
+/* ====================================================================
+   VERDICT LIST — a set of claims, each marked present or absent
+   --------------------------------------------------------------------
+   A mixed list where the mark carries the meaning: this one holds, this
+   one doesn't. First built for the evidence page; its second use is the
+   research-ethics protections on the compassionate-care page, so it
+   lives here rather than being copied into a second page layer.
+
+   The mark is DRAWN, not typed. The legacy used a FontAwesome cross or
+   check, which means an icon font that fails to load silently inverts
+   the meaning of every row — the worst possible failure for a component
+   whose entire job is to say yes or no.
+
+   Both states set their own colour and geometry rather than one
+   overriding the other's default, so neither reads as the special case.
+   ==================================================================== */
+.ry-verdict { margin: 26px 0; padding: 0; list-style: none; }
+
+.ry-verdict__item {
+  position: relative;
+  margin: 0;
+  padding: 15px 0 15px 40px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-verdict__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-verdict__item strong { color: #fff; font-weight: 600; }
+
+.ry-verdict__mark {
+  position: absolute;
+  left: 0; top: 17px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--ry-hairline);
+}
+.ry-verdict__mark::before,
+.ry-verdict__mark::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+.ry-verdict__item--no .ry-verdict__mark { color: rgba(255, 255, 255, 0.5); }
+.ry-verdict__item--no .ry-verdict__mark::before,
+.ry-verdict__item--no .ry-verdict__mark::after {
+  left: 5px; top: 10px; width: 10px; height: 1.5px;
+}
+.ry-verdict__item--no .ry-verdict__mark::before { transform: rotate(45deg); }
+.ry-verdict__item--no .ry-verdict__mark::after { transform: rotate(-45deg); }
+
+.ry-verdict__item--yes .ry-verdict__mark {
+  color: var(--ry-red);
+  border-color: rgba(255, 47, 110, 0.5);
+}
+.ry-verdict__item--yes .ry-verdict__mark::before {
+  left: 6px; top: 11px; width: 5px; height: 1.5px;
+  transform: rotate(45deg); transform-origin: left center;
+}
+.ry-verdict__item--yes .ry-verdict__mark::after {
+  left: 9px; top: 13px; width: 9px; height: 1.5px;
+  transform: rotate(-50deg); transform-origin: left center;
+}
+.ry-verdict__item--yes { color: var(--ry-ink); }
+
+
+.ry-eyebrow-h {
+  font-size: clamp(25px, 3.1vw, 36px);
+  line-height: 1.24;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+.ry-eyebrow-h strong { font-weight: 700; }
+.ry-eyebrow-h .ry-slash { color: var(--ry-red); font-weight: 700; margin-right: 8px; }
+.ry-prose > .ry-eyebrow-h { margin-top: 8px; }
+
+.ry-lede {
+  font-size: 19px !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 300;
+}
+.ry-section-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  margin-bottom: 14px;
+}
+.ry-section-eyebrow i { color: var(--ry-red); font-style: normal; margin-right: 7px; }
+
+/* ====================================================================
+   4. NOTE / PULLQUOTE / CALLOUT
+   ==================================================================== */
+.ry-note {
+  margin: 0;
+  padding: 32px 36px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-note__label {
+  display: block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 14px;
+}
+/* The last paragraph's own bottom margin lands inside the box and stacks
+   on top of the padding, so the note reads tight at the top and gappy at
+   the bottom. Trim it. */
+.ry-note > :last-child,
+.ry-note > .ry-prose > :last-child { margin-bottom: 0; }
+/* In a half-width split panel 36px of side padding eats the measure */
+.ry-split__body .ry-note { padding: 26px 28px; }
+.ry-note p:last-child { margin-bottom: 0; }
+
+/* A pullquote gets emitted two ways across this build: with <p> children
+   — which is what convert() produces when the source had more than one
+   paragraph — and as bare text, when the builder placed a single line
+   straight into the element. Only the first shape was ever styled, so
+   62 pullquotes across 18 pages fell through to the theme's bare
+   `blockquote` rule and rendered ITALIC at 125% instead of upright at
+   20px. Two visibly different pullquotes, from the same component.
+
+   The type now lives on the element itself, where both shapes inherit
+   it, and the paragraph rule below only handles multi-paragraph
+   margins. font-style is stated explicitly because the theme's rule is
+   what has to be beaten. */
+.ry-pullquote {
+  margin: 34px 0;
+  padding: 4px 0 4px 28px;
+  border-left: 2px solid var(--ry-red);
+  font-size: 20px;
+  line-height: 1.62;
+  font-weight: 300;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 767.98px) { .ry-pullquote { font-size: 18px; } }
+.ry-pullquote p {
+  font-size: 20px !important;
+  line-height: 1.62 !important;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0 0 12px !important;
+}
+.ry-pullquote p:last-child { margin-bottom: 0 !important; }
+.ry-pullquote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px; font-style: normal; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+.ry-pullquote cite::before { content: "— "; color: var(--ry-red); }
+
+.ry-callout {
+  margin: 40px 0;
+  padding: 32px 36px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-callout--red {
+  border-color: rgba(255, 0, 0, 0.34);
+  border-left: 3px solid var(--ry-red);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.075) 0%, rgba(255,0,0,0.02) 100%),
+    var(--ry-glass-bg);
+}
+.ry-callout__eyebrow {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-callout__title { font-size: 22px; font-weight: 600; color: #fff; margin: 0 0 16px; }
+.ry-callout p:last-child { margin-bottom: 0; }
+.ry-callout__inner {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid var(--ry-red);
+}
+.ry-callout__inner p { font-size: 15.5px !important; margin: 0 !important; }
+@media (max-width: 575.98px) {
+  .ry-note, .ry-callout { padding: 26px 22px; }
+  .ry-pullquote { padding-left: 20px; }
+  .ry-pullquote p { font-size: 18px !important; }
+}
+
+/* ====================================================================
+   5. FIGURES
+   ==================================================================== */
+.ry-figure { margin: 40px 0; }
+.ry-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px -34px rgba(0, 0, 0, 0.95);
+}
+.ry-figure figcaption {
+  margin-top: 13px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+  padding-left: 16px;
+  border-left: 2px solid rgba(255, 0, 0, 0.4);
+}
+
+/* image sitting beside prose — collapses to full width on small screens */
+/* ry-zoom appends its button INTO the element it is told to watch, and the
+   button is absolutely positioned. Without this the button escapes to the
+   nearest positioned ancestor, which on a plain article page is the
+   viewport. Every other zoom host (.ry-split__media, .ry-diagram,
+   .ry-framework__figure) is already positioned; a bare figure is not. */
+.ry-figure[data-ry-zoom] { position: relative; }
+
+.ry-figure--side { margin: 8px 0 28px; }
+@media (min-width: 992px) {
+  .ry-figure--side {
+    float: right;
+    width: 40%;
+    margin: 6px 0 26px 34px;
+  }
+  .ry-figure--side.is-left { float: left; margin: 6px 34px 26px 0; }
+}
+.ry-clear { clear: both; }
+
+/* ====================================================================
+   6. SPLIT BANDS — full-bleed text + image
+   The workhorse layout for content pages. Image is a background-cover
+   panel so it always fills its half cleanly regardless of aspect ratio.
+   Add .ry-split--reverse to put the image on the left.
+   ==================================================================== */
+.ry-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ry-split__media {
+  position: relative;
+  min-height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* feathered inside edge so the photo melts into the text panel rather
+   than butting against it with a hard vertical line */
+.ry-split__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 55%, rgba(5,5,5,0.85) 100%);
+}
+.ry-split--reverse .ry-split__media::after {
+  background: linear-gradient(270deg, rgba(0,0,0,0) 55%, rgba(5,5,5,0.85) 100%);
+}
+.ry-split--reverse .ry-split__media { order: -1; }
+.ry-split__body {
+  padding: 86px 8vw 86px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ry-split--reverse .ry-split__body { padding: 86px 6vw 86px 8vw; }
+/* -------------------------------------------------------------------
+   Inset media — for artwork that is meant to FLOAT inside its half
+   rather than bleed edge to edge.
+
+   Two kinds of image live on this site and they need opposite
+   treatment. Photographs and full-bleed textures should fill the panel
+   (.ry-split__media, a background-cover panel). Composed illustrations
+   — especially transparent PNGs with their own framing, angles or drop
+   shadows baked in — get destroyed by cover: it crops the composition
+   and squares off the transparency. Those use .ry-split__figure, which
+   contains a real <img>, scales it to fit, and never crops.
+
+   The shadow here is drop-shadow rather than box-shadow deliberately:
+   drop-shadow follows the actual transparent silhouette, so angled
+   cards cast an angled shadow instead of a rectangle around them.
+   ------------------------------------------------------------------- */
+.ry-split__figure {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 76px 5vw;
+}
+/* soft pool of light so the artwork isn't floating in a void */
+.ry-split__figure::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 78%; height: 72%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+.ry-split__figure img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 26px 44px rgba(0, 0, 0, 0.7));
+}
+.ry-split--reverse .ry-split__figure { order: -1; }
+
+@media (max-width: 991.98px) {
+  .ry-split { grid-template-columns: 1fr; }
+  .ry-split__media { min-height: 320px; order: -1; }
+  .ry-split__figure { order: -1; padding: 48px 24px 8px; }
+  .ry-split__figure img { max-height: 400px; }
+  .ry-split__media::after {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(5,5,5,0.9) 100%) !important;
+  }
+  .ry-split__body,
+  .ry-split--reverse .ry-split__body { padding: 54px 26px; }
+}
+
+/* ====================================================================
+   7. SPEC CARDS — labelled definition cards
+   ==================================================================== */
+.ry-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+/* Fixed 4-up. auto-fit will happily leave a single orphan card stranded
+   on its own row; this steps 4 -> 2 -> 1 so every row stays full. */
+.ry-spec-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1399.98px) { .ry-spec-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px)  { .ry-spec-grid--4 { grid-template-columns: 1fr; } }
+.ry-spec-grid--4 .ry-spec-card { padding: 24px 22px 22px; }
+.ry-spec-grid--4 .ry-spec-card__name { font-size: 19px; }
+.ry-spec-card {
+  position: relative;
+  padding: 28px 28px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-spec-card::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 3px;
+  background: var(--ry-red);
+}
+.ry-spec-card__name {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ry-red);
+  margin-bottom: 2px;
+}
+.ry-spec-card__role {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 18px;
+}
+/* The card's prose. This rule lived in ry-dohad.css, which meant a card
+   body only looked right on the one page that happened to load that
+   stylesheet. It belongs to .ry-spec-card, so it lives with it.
+   Pair with .ry-prose on the same element for paragraph rhythm. */
+.ry-spec-card__body { margin-top: 12px; }
+.ry-spec-card__body p { font-size: 14px; }
+.ry-spec-card__body > :last-child { margin-bottom: 0; }
+
+.ry-spec-card dl { margin: 0; }
+.ry-spec-card dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 4px;
+}
+.ry-spec-card dd {
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-spec-card dd:last-child { margin-bottom: 0; }
+.ry-spec-card dd strong { color: rgba(255, 255, 255, 0.88); font-weight: 600; }
+.ry-spec-card dd em { color: rgba(255, 255, 255, 0.78); }
+
+/* ====================================================================
+   8. VIDEO CARD
+   ==================================================================== */
+.ry-video-card { display: block; position: relative; border-radius: 14px; overflow: hidden; text-decoration: none;
+  border: 1px solid var(--ry-hairline); box-shadow: var(--ry-glass-shadow); }
+.ry-video-card img { width: 100%; height: auto; display: block; opacity: .82; transition: opacity .3s ease, transform .5s ease; }
+.ry-video-card:hover img { opacity: 1; transform: scale(1.03); }
+.ry-video-card__play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 0, 0, 0.85);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  transition: transform .25s ease;
+}
+.ry-video-card__play::before {
+  content: "";
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 4px;
+}
+.ry-video-card:hover .ry-video-card__play { transform: translate(-50%, -50%) scale(1.09); }
+.ry-video-card__bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 11px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+  color: #fff; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.ry-video-lead {
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #fff;
+}
+.ry-video-caption {
+  margin-top: 14px;
+  font-size: 13.5px; line-height: 1.65; font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   9. FAQ — native <details>, no JavaScript required
+   ==================================================================== */
+.ry-faq { display: grid; gap: 12px; }
+.ry-faq details {
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: inset 0 1px 0 var(--ry-sheen);
+  overflow: hidden;
+}
+.ry-faq summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 26px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  transition: color .2s ease;
+}
+.ry-faq summary::-webkit-details-marker { display: none; }
+.ry-faq summary:hover { color: var(--ry-red); }
+.ry-faq summary .ry-faq__n {
+  font-size: 12px; font-weight: 700; color: var(--ry-red);
+  padding-top: 5px; min-width: 20px;
+}
+.ry-faq summary .ry-faq__q { flex: 1; }
+.ry-faq summary::after {
+  content: "";
+  width: 9px; height: 9px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+  margin-top: 7px;
+  flex: none;
+  transition: transform .25s ease;
+}
+.ry-faq details[open] summary::after { transform: rotate(-135deg); margin-top: 11px; }
+.ry-faq__body {
+  padding: 0 26px 24px 62px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-faq__body strong { color: #fff; font-weight: 600; }
+@media (max-width: 575.98px) {
+  .ry-faq summary { padding: 18px 20px; font-size: 15.5px; }
+  .ry-faq__body { padding: 0 20px 20px 20px; }
+}
+
+/* ====================================================================
+   10. FINAL WORD — closing statement over a parallax image
+   ==================================================================== */
+.ry-finalword { position: relative; overflow: hidden; background: #000; }
+.ry-finalword__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  background-attachment: fixed;
+}
+.ry-finalword__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.72) 30%, rgba(0,0,0,0.72) 70%, #000 100%);
+}
+.ry-finalword__panel {
+  position: relative; z-index: 2;
+  padding: 52px 54px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 991.98px) {
+  .ry-finalword__bg { background-attachment: scroll; }
+  .ry-finalword__panel { padding: 36px 26px; }
+}
+
+/* ====================================================================
+   11. WHERE TO NEXT
+   ==================================================================== */
+.ry-next-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 44px;
+}
+.ry-next-card {
+  display: block;
+  padding: 26px 24px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  text-decoration: none;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.ry-next-card:hover { border-color: rgba(255, 0, 0, 0.45); transform: translateY(-3px); }
+.ry-next-card__label {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  padding: 3px 9px 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 16px;
+}
+.ry-next-card--up .ry-next-card__label {
+  color: #fff;
+  background: rgba(255, 0, 0, 0.2);
+  border-color: rgba(255, 0, 0, 0.5);
+}
+.ry-next-card__title { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.ry-next-card p {
+  font-size: 14px; line-height: 1.6; font-weight: 300;
+  color: var(--ry-ink-dim); margin: 0;
+}
+.ry-next-card__arrow {
+  display: inline-block; margin-top: 14px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ry-red);
+}
+
+/* ====================================================================
+   12. SOURCES
+   ==================================================================== */
+.ry-sources { counter-reset: ry-src; list-style: none; margin: 0; padding: 0; }
+.ry-sources > li {
+  counter-increment: ry-src;
+  position: relative;
+  padding: 20px 0 20px 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-sources > li:first-child { border-top: 0; }
+.ry-sources > li::before {
+  content: counter(ry-src);
+  position: absolute; left: 0; top: 21px;
+  font-size: 12px; font-weight: 700;
+  color: var(--ry-red);
+  width: 30px;
+}
+.ry-sources strong { color: rgba(255, 255, 255, 0.9); font-weight: 600; }
+.ry-sources em { color: rgba(255, 255, 255, 0.72); }
+.ry-sources a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+  white-space: nowrap;
+}
+.ry-sources a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.5); }
+.ry-sources-note {
+  margin-top: 28px; padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 12.5px; line-height: 1.7; font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* ====================================================================
+   13. CRISIS TICKER
+   ==================================================================== */
+.ry-ticker-wrap {
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 0;
+  overflow: hidden;
+}
+.ry-ticker { position: relative; overflow: hidden; }
+.ry-ticker-track { display: flex; width: max-content; animation: ry-ticker-scroll 46s linear infinite; }
+.ry-ticker-item {
+  white-space: nowrap; padding-right: 48px;
+  font-size: 14px; font-weight: 300; letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.66);
+}
+.ry-ticker-item strong { color: #fff; font-weight: 700; }
+.ry-ticker-item i { color: var(--ry-red); font-style: normal; padding: 0 10px; }
+.ry-ticker:hover .ry-ticker-track { animation-play-state: paused; }
+@keyframes ry-ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ====================================================================
+   14. ASH FIELD
+   Wrap one or more sections in .ry-ashfield and drop in the canvas.
+   The black lives on the wrapper; wrapped sections must be transparent
+   or they'll paint over the particles.
+   ==================================================================== */
+.ry-ashfield { position: relative; background: #000; overflow: hidden; }
+.ry-ash-canvas {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 9%, #000 90%, transparent 100%);
+}
+.ry-ashfield > section { position: relative; z-index: 1; background: transparent; }
+
+/* ====================================================================
+   15. MOTION PREFERENCES
+   ==================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .ry-ticker-track { animation: none; }
+  .ry-ticker { overflow-x: auto; }
+  .ry-pdf-card,
+  .ry-next-card,
+  .ry-video-card img,
+  .ry-video-card__play { transition: none; }
+  .ry-pdf-card:hover,
+  .ry-next-card:hover { transform: none; }
+  .ry-video-card:hover img { transform: none; }
+  .ry-finalword__bg { background-attachment: scroll; }
+}
+
+/* ====================================================================
+   16. DIAGRAM SHEET + COMPARE
+   --------------------------------------------------------------------
+   For light-background diagrams on a dark page. Two problems solved:
+
+   1. A white infographic dropped straight onto black reads as a glare
+      rectangle — an accident rather than a choice. Framing it as a
+      "sheet" with its own padding, rounded corners and a shadow makes
+      it read as a printed diagram pinned to the page.
+
+   2. When two diagrams are near-identical and the DIFFERENCES are the
+      point, side-by-side is the wrong tool: at half width the labels
+      shrink past legibility and the reader has to hunt for what moved.
+      .ry-compare stacks the frames and swaps between them in place at
+      full width, so the changes flicker exactly where the eye already
+      is — and the labels stay twice the size.
+   ==================================================================== */
+.ry-sheet {
+  background: #f4f4f2;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 34px 70px -30px rgba(0, 0, 0, 0.95);
+}
+.ry-sheet img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+/* A plate for transparent PNG line art. Same light ground as .ry-sheet,
+   but softened at the edges rather than a hard white rectangle: the
+   artwork on these is a cut-out with no border of its own, so a crisp
+   edge reads as a box the illustration happens to sit in. The tint keeps
+   it off pure white so it does not glare against the page. */
+.ry-sheet--plate {
+  background:
+    radial-gradient(120% 120% at 50% 40%, #ffffff 0%, #f2f2ef 62%, #dedcd6 100%);
+  padding: 26px;
+}
+.ry-sheet--plate img { border-radius: 0; }
+
+/* Square or portrait diagrams need a ceiling. At full column width a
+   1:1 diagram is over 1000px tall — taller than most browser viewports,
+   so the reader has to scroll to see one image, which defeats the point
+   of an at-a-glance comparison. Capped and centred instead. */
+.ry-sheet--diagram { max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* -------- switcher --------
+   The control has to announce itself. In testing the first reaction to
+   a single visible diagram was "where's the other one?", so: an explicit
+   instruction line, radio-style indicators, a numbered count, and a
+   resting nudge animation on load that stops as soon as it's touched. */
+
+.ry-compare__hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+.ry-compare__hint::before {
+  content: "";
+  flex: none;
+  width: 26px; height: 1px;
+  background: var(--ry-red);
+}
+
+.ry-compare__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.ry-compare__tab {
+  position: relative;
+  flex: 1 1 240px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  text-align: left;
+  padding: 16px 18px 16px 16px;
+  border-radius: 11px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: var(--ry-glass-bg);
+  box-shadow: inset 0 1px 0 var(--ry-sheen);
+  color: var(--ry-ink-dim);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .22s ease, color .22s ease,
+              background .22s ease, transform .22s ease;
+}
+.ry-compare__tab:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+.ry-compare__tab:focus-visible {
+  outline: 2px solid var(--ry-red);
+  outline-offset: 3px;
+}
+
+/* radio-style indicator — the strongest "pick one" signal there is */
+.ry-compare__tab::before {
+  content: "";
+  flex: none;
+  width: 17px; height: 17px;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: transparent;
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+.ry-compare__tab[aria-selected="true"]::before {
+  border-color: var(--ry-red);
+  box-shadow: inset 0 0 0 4px var(--ry-red);
+}
+
+.ry-compare__tab-body { display: block; }
+.ry-compare__tab strong {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.ry-compare__tab span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 300;
+}
+.ry-compare__tab-n {
+  position: absolute;
+  top: 12px; right: 14px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ry-ink-faint);
+}
+.ry-compare__tab[aria-selected="true"] {
+  border-color: rgba(255, 0, 0, 0.65);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.13) 0%, rgba(255,0,0,0.04) 100%),
+    var(--ry-glass-bg);
+}
+.ry-compare__tab[aria-selected="true"] .ry-compare__tab-n { color: var(--ry-red); }
+
+/* Until the reader touches the control, breathe the unselected option so
+   it's obvious something else is behind it. .is-touched kills it for good. */
+.ry-compare.is-enhanced:not(.is-touched) .ry-compare__tab[aria-selected="false"] {
+  animation: ryComparePulse 2.6s ease-in-out 1.2s infinite;
+}
+@keyframes ryComparePulse {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.18); }
+  50%      { border-color: rgba(255, 0, 0, 0.6); }
+}
+
+/* Fail-safe default: every panel visible, stacked, full width. The
+   switcher only engages once the script confirms it ran and added
+   .is-enhanced — so a JS error can never leave the diagrams hidden
+   behind a control that does nothing. */
+.ry-compare__stage { display: block; }
+.ry-compare__panel { margin-bottom: 26px; }
+.ry-compare__tabs { display: none; }
+
+.ry-compare.is-enhanced .ry-compare__tabs { display: flex; }
+.ry-compare.is-enhanced .ry-compare__stage { display: grid; }
+.ry-compare.is-enhanced .ry-compare__panel {
+  grid-area: 1 / 1;
+  margin-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease;
+}
+.ry-compare.is-enhanced .ry-compare__panel[data-active="true"] { opacity: 1; visibility: visible; }
+
+.ry-compare__cap {
+  margin-top: 14px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-compare.is-enhanced .ry-compare__panel { transition: none; }
+  .ry-compare__tab { transition: none; }
+  .ry-compare__tab:hover { transform: none; }
+  .ry-compare.is-enhanced:not(.is-touched) .ry-compare__tab[aria-selected="false"] { animation: none; }
+}
+
+/* ====================================================================
+   17. DIPTYCH — two parallel accounts resolving into one conclusion
+   --------------------------------------------------------------------
+   Used where two different paths are shown to arrive at the same
+   destination. The converging rule between the panes and the joint
+   panel is the whole point: it makes the argument structural rather
+   than something the reader has to be told.
+   ==================================================================== */
+.ry-diptych-section { position: relative; overflow: hidden; background: #000; }
+.ry-diptych-section__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.22;
+}
+.ry-diptych-section__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.72) 22%, rgba(0,0,0,0.82) 70%, #000 100%);
+}
+
+.ry-diptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.ry-diptych__pane {
+  padding: 34px 34px 30px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 55%, rgba(255,255,255,0.012) 100%);
+  box-shadow: var(--ry-glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.ry-diptych__pane::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ry-red), rgba(255,0,0,0));
+}
+.ry-diptych__pane:nth-child(2)::before {
+  background: linear-gradient(270deg, var(--ry-red), rgba(255,0,0,0));
+}
+.ry-diptych__kicker {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255, 120, 120, 0.9);
+  margin-bottom: 10px;
+}
+.ry-diptych__title {
+  font-size: 24px; line-height: 1.28; font-weight: 600;
+  color: #fff; margin: 0 0 20px;
+}
+
+/* the quoted commands */
+.ry-said {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 18px 22px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.42);
+  border-left: 2px solid rgba(255, 0, 0, 0.5);
+}
+.ry-said li {
+  font-size: 15.5px; line-height: 1.75; font-weight: 300;
+  color: rgba(255, 255, 255, 0.82);
+  font-style: italic;
+  padding: 0 !important;
+}
+.ry-said li::before { display: none !important; }
+.ry-said li strong { color: #fff; }
+
+/* "the rule the body writes" — the takeaway inside each account */
+.ry-rulewrit {
+  margin: 22px 0;
+  padding: 18px 22px;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.06);
+  border: 1px solid rgba(255, 0, 0, 0.22);
+}
+.ry-rulewrit p {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+.ry-rulewrit__label {
+  display: block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 8px;
+  font-style: normal;
+}
+
+/* the converging rule that ties both panes into the joint panel */
+.ry-converge { display: block; width: 100%; height: 72px; margin-top: -2px; }
+.ry-converge line, .ry-converge path { stroke: rgba(255, 0, 0, 0.5); fill: none; }
+
+.ry-diptych__joint {
+  padding: 40px 44px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 0, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.07) 0%, rgba(255,0,0,0.015) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 100%);
+  box-shadow: var(--ry-glass-shadow);
+}
+
+@media (max-width: 991.98px) {
+  .ry-diptych { grid-template-columns: 1fr; gap: 18px; }
+  .ry-diptych__pane { padding: 28px 24px 24px; }
+  .ry-diptych__pane:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--ry-red), rgba(255,0,0,0));
+  }
+  .ry-converge { height: 44px; }
+  .ry-diptych__joint { padding: 30px 24px; }
+}
+
+/* ====================================================================
+   18. STATEMENT BAND — a single short line given its own breathing room
+   ==================================================================== */
+.ry-statement { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.ry-statement__inner { border-left: 3px solid var(--ry-red); padding-left: 28px; }
+.ry-statement p {
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+.ry-statement strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   19. ESCALATION CARDS — an ordered progression, weight rising with it
+   ==================================================================== */
+.ry-escalate { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 34px; }
+.ry-escalate__card {
+  position: relative;
+  padding: 26px 26px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-escalate__card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ry-escalate__card--mid::before { background: rgba(255, 255, 255, 0.55); }
+.ry-escalate__card--high::before { background: var(--ry-red); }
+.ry-escalate__n {
+  display: block;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+  color: var(--ry-ink-faint); margin-bottom: 10px;
+}
+.ry-escalate__card--high .ry-escalate__n { color: var(--ry-red); }
+.ry-escalate__title { font-size: 19px; font-weight: 600; color: #fff; margin: 0 0 12px; }
+.ry-escalate__card p {
+  font-size: 14.5px; line-height: 1.7; font-weight: 300;
+  color: var(--ry-ink-dim); margin: 0;
+}
+.ry-escalate__card p strong { color: #fff; font-weight: 600; }
+
+/* skip link inside a content-warning note */
+.ry-skip-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.85) !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.ry-skip-link:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ====================================================================
+   20. CONCEPT FRAME — the house treatment for conceptual artwork
+   --------------------------------------------------------------------
+   Two opposite corners are cut away on the diagonal (top-left and
+   bottom-right), with an accent rule drawn along each cut. It gives
+   atmospheric, edge-to-edge concept images a deliberate frame so they
+   read as designed elements rather than pasted-in stock, and it ties
+   back to the angular "//" motif used throughout the site.
+
+   Usage:
+     <figure class="ry-concept">
+       <img src="…" alt="…">
+     </figure>
+
+   Modifiers:
+     .ry-concept--flip   cut the OTHER two corners (top-right/bottom-left)
+     .ry-concept--sm     smaller notch, for images under ~300px
+     .ry-concept--bare   no accent rules, cut only
+
+   Notch size is a custom property, so a one-off can override it inline:
+     <figure class="ry-concept" style="--ry-notch:40px">
+
+   The accent rules are positioned by maths rather than eyeballed: each
+   cut runs corner to corner across a square of --ry-notch, so its
+   length is notch × √2 and its midpoint sits at notch/2 from the
+   corner. Change the notch and everything follows.
+   ==================================================================== */
+.ry-concept {
+  --ry-notch: 56px;
+  --ry-concept-accent: var(--ry-red);
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  line-height: 0;
+  /* drop-shadow (not box-shadow) so the shadow follows the cut corners
+     instead of drawing a rectangle around them */
+  filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.72));
+}
+.ry-concept img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: none;
+  clip-path: polygon(
+    var(--ry-notch) 0,
+    100% 0,
+    100% calc(100% - var(--ry-notch)),
+    calc(100% - var(--ry-notch)) 100%,
+    0 100%,
+    0 var(--ry-notch)
+  );
+}
+.ry-concept--flip img {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--ry-notch)) 0,
+    100% var(--ry-notch),
+    100% 100%,
+    var(--ry-notch) 100%,
+    0 calc(100% - var(--ry-notch))
+  );
+}
+
+/* accent rules laid along the two cuts */
+.ry-concept::before,
+.ry-concept::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--ry-notch) * 1.41421356);
+  height: 2px;
+  background: var(--ry-concept-accent);
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.45);
+  pointer-events: none;
+}
+.ry-concept::before {
+  top: calc(var(--ry-notch) / 2);
+  left: calc(var(--ry-notch) / 2);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.ry-concept::after {
+  top: calc(100% - var(--ry-notch) / 2);
+  left: calc(100% - var(--ry-notch) / 2);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* flipped: cuts run the other way, so do the rules */
+.ry-concept--flip::before {
+  top: calc(var(--ry-notch) / 2);
+  left: calc(100% - var(--ry-notch) / 2);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ry-concept--flip::after {
+  top: calc(100% - var(--ry-notch) / 2);
+  left: calc(var(--ry-notch) / 2);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ry-concept--sm { --ry-notch: 34px; }
+.ry-concept--bare::before,
+.ry-concept--bare::after { display: none; }
+
+/* inside a split half, inherit the sizing rules already set there */
+.ry-split__figure .ry-concept img { max-height: 600px; width: auto; }
+
+@media (max-width: 991.98px) {
+  .ry-concept { --ry-notch: 38px; }
+  .ry-split__figure .ry-concept img { max-height: 400px; }
+}
+@media (max-width: 575.98px) {
+  .ry-concept { --ry-notch: 28px; }
+}
+
+/* ====================================================================
+   21. SCROLL REVEAL — directional entrances
+   --------------------------------------------------------------------
+   Replaces the old theme's WOW.js + animate.css pairing (which v2 does
+   not load) with a single IntersectionObserver utility. Set the
+   direction with data-reveal and, optionally, a stagger index.
+
+     <div class="ry-reveal" data-reveal="left">…
+     <div class="ry-reveal" data-reveal="up" style="--i:1">…
+
+   Elements start hidden ONLY once the script confirms it is running
+   (html.ry-js). Without JS everything is simply visible — content is
+   never left invisible behind an animation that failed to fire.
+   ==================================================================== */
+.ry-js .ry-reveal {
+  opacity: 0;
+  transform: translate3d(var(--rx, 0), var(--ry, 0), 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.7, 0.28, 1) calc(var(--i, 0) * 110ms),
+    transform 0.75s cubic-bezier(0.22, 0.7, 0.28, 1) calc(var(--i, 0) * 110ms);
+  will-change: opacity, transform;
+}
+.ry-js .ry-reveal[data-reveal="left"]  { --rx: -46px; }
+.ry-js .ry-reveal[data-reveal="right"] { --rx:  46px; }
+.ry-js .ry-reveal[data-reveal="up"]    { --ry:  46px; }
+.ry-js .ry-reveal[data-reveal="down"]  { --ry: -46px; }
+.ry-js .ry-reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-js .ry-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ====================================================================
+   22. HORIZONTAL BAR CHART
+   --------------------------------------------------------------------
+   Built from markup rather than a charting library. For 16 labelled
+   rows this is the better tool: every condition gets its own line with
+   a full-width readable label instead of text rotated 45-65 degrees,
+   the values are real text (so they are selectable, searchable and read
+   aloud by screen readers), it themes with the rest of the site, and it
+   costs nothing on top of the page.
+
+   Scale is linear and honest. One value here is an extreme outlier
+   (37.5 against a floor of 2.1), so short bars stay genuinely short —
+   but each sits on its own row with the number printed beside it, so
+   nothing becomes unreadable.
+
+   Data comes in through custom properties:
+     <li style="--v:37.5">   value
+     .ry-barchart { --max: 40 }   axis ceiling
+   ==================================================================== */
+.ry-barchart {
+  --max: 40;
+  --bar-mental:    #ff6b6b;
+  --bar-substance: #ff1414;
+  --bar-violence:  #a11414;
+  --bar-physical:  #7d848c;
+  margin: 0;
+}
+.ry-barchart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 26px;
+  font-size: 12.5px;
+  color: var(--ry-ink-dim);
+}
+.ry-barchart__legend span { display: inline-flex; align-items: center; gap: 8px; }
+.ry-barchart__dot { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+
+.ry-barchart__rows { list-style: none; margin: 0; padding: 0; position: relative; }
+
+/* gridlines behind the bars, aligned to the axis ticks below */
+.ry-barchart__grid {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: var(--label-col) 1fr var(--value-col);
+}
+.ry-barchart__grid i {
+  grid-column: 2;
+  grid-row: 1;
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
+  justify-self: start;
+  width: 1px;
+  height: 100%;
+  margin-left: calc(var(--at) / var(--max) * 100%);
+}
+
+.ry-barchart {
+  --label-col: minmax(120px, 210px);
+  --value-col: 58px;
+}
+.ry-barchart__row {
+  display: grid;
+  grid-template-columns: var(--label-col) 1fr var(--value-col);
+  align-items: center;
+  gap: 14px;
+  padding: 7px 0;
+  position: relative;
+}
+.ry-barchart__label {
+  font-size: 13.5px;
+  line-height: 1.35;
+  font-weight: 300;
+  color: var(--ry-ink);
+  text-align: right;
+}
+.ry-barchart__track {
+  position: relative;
+  height: 17px;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ry-barchart__bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v) / var(--max) * 100%);
+  border-radius: 3px;
+  background: var(--bar-physical);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.ry-barchart__bar[data-group="mental"]    { background: var(--bar-mental); }
+.ry-barchart__bar[data-group="substance"] { background: var(--bar-substance); }
+.ry-barchart__bar[data-group="violence"]  { background: var(--bar-violence); }
+.ry-barchart__bar[data-group="physical"]  { background: var(--bar-physical); }
+
+.ry-js .ry-barchart.is-in .ry-barchart__bar {
+  transform: scaleX(1);
+  transition: transform 0.85s cubic-bezier(0.2, 0.75, 0.3, 1) calc(var(--i, 0) * 45ms);
+}
+/* no JS, or reduced motion: bars are simply already drawn */
+html:not(.ry-js) .ry-barchart__bar { transform: scaleX(1); }
+
+.ry-barchart__value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ry-barchart__axis {
+  display: grid;
+  grid-template-columns: var(--label-col) 1fr var(--value-col);
+  gap: 14px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+.ry-barchart__ticks { grid-column: 2; position: relative; height: 16px; }
+.ry-barchart__ticks b {
+  position: absolute;
+  top: 0;
+  left: calc(var(--at) / var(--max) * 100%);
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ry-ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+.ry-barchart__caption {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--ry-ink-faint);
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .ry-barchart { --label-col: 1fr; --value-col: 48px; }
+  .ry-barchart__row {
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+    padding: 9px 0;
+  }
+  .ry-barchart__label { text-align: left; grid-column: 1; }
+  .ry-barchart__value { grid-column: 2; grid-row: 1; text-align: right; }
+  .ry-barchart__track { grid-column: 1 / -1; grid-row: 2; }
+  .ry-barchart__grid, .ry-barchart__axis { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-barchart__bar { transform: scaleX(1) !important; transition: none !important; }
+}
+
+/* ====================================================================
+   23. TIER CARDS — a graded set entering from different directions
+   ==================================================================== */
+.ry-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 44px;
+}
+.ry-tier {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-tier__head {
+  padding: 34px 28px 28px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+.ry-tier__head::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ry-tier--mid  .ry-tier__head::before { background: rgba(255, 120, 120, 0.75); }
+.ry-tier--high .ry-tier__head::before { background: var(--ry-red); }
+
+.ry-tier__mark {
+  width: 62px; height: 62px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.ry-tier--high .ry-tier__mark {
+  border-color: rgba(255, 0, 0, 0.5);
+  background: rgba(255, 0, 0, 0.1);
+  color: var(--ry-red);
+}
+.ry-tier__eyebrow {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin-bottom: 6px;
+}
+.ry-tier__range {
+  font-size: 40px; font-weight: 700; line-height: 1;
+  color: #fff; margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.ry-tier--high .ry-tier__range { color: var(--ry-red); }
+.ry-tier__risk {
+  display: block;
+  font-size: 12.5px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+}
+.ry-tier__body { padding: 26px 28px 30px; flex: 1; }
+.ry-tier__body ul { list-style: none; margin: 0; padding: 0; }
+.ry-tier__body li {
+  position: relative;
+  padding: 0 0 15px 18px;
+  font-size: 14px; line-height: 1.65; font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-tier__body li:last-child { padding-bottom: 0; }
+.ry-tier__body li::before {
+  content: "";
+  position: absolute; left: 0; top: 10px;
+  width: 8px; height: 1px;
+  background: var(--ry-red);
+}
+.ry-tier__body li strong { color: #fff; font-weight: 600; }
+
+@media (max-width: 991.98px) {
+  .ry-tiers { grid-template-columns: 1fr; gap: 18px; }
+  .ry-tier__head { padding: 28px 24px 24px; }
+  .ry-tier__body { padding: 22px 24px 26px; }
+}
+
+/* ====================================================================
+   24. STAT CARDS + CHART CALLOUTS
+   Namespaced away from .ry-note / .ry-callout so the two never collide.
+   ==================================================================== */
+.ry-statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
+.ry-statcard {
+  padding: 20px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.028);
+}
+.ry-statcard__label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  margin: 0 0 8px;
+}
+.ry-statcard__value {
+  font-size: 30px; font-weight: 700; line-height: 1;
+  color: var(--ry-red); margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.ry-statcard__desc { font-size: 12.5px; line-height: 1.6; font-weight: 300; color: var(--ry-ink-dim); margin: 0; }
+
+.ry-chartnote {
+  margin: 18px 0 0;
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid rgba(255, 255, 255, 0.22);
+}
+.ry-chartnote p { margin: 0; font-size: 12.5px; line-height: 1.65; font-weight: 300; color: var(--ry-ink-dim); }
+.ry-chartnote strong { color: #fff; font-weight: 600; }
+
+.ry-alertcard {
+  margin-top: 16px;
+  padding: 18px 22px;
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, rgba(255,0,0,0.12) 0%, rgba(255,0,0,0.03) 100%);
+  border-left: 3px solid var(--ry-red);
+}
+.ry-alertcard__label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ry-red); margin: 0 0 6px;
+}
+.ry-alertcard p { margin: 0; font-size: 13.5px; line-height: 1.65; font-weight: 300; color: rgba(255,255,255,0.8); }
+.ry-alertcard strong { color: #fff; font-weight: 600; }
+
+.ry-footnotes { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.09); }
+.ry-footnotes p { font-size: 11.5px; line-height: 1.65; color: var(--ry-ink-faint); margin: 0 0 6px; font-weight: 300; }
+.ry-footnotes p:last-child { margin-bottom: 0; }
+
+/* ====================================================================
+   25. ANCHOR NAV — sticky section bar for very long pages
+   ==================================================================== */
+.ry-anchornav {
+  position: fixed;
+  left: 0; right: 0; top: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px 0 20px;
+  background: rgba(6, 6, 6, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.9);
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+}
+.ry-anchornav.is-visible { transform: translateY(0); }
+.ry-anchornav__logo { flex: none; display: flex; align-items: center; padding: 10px 0; }
+.ry-anchornav__logo img { height: 22px; width: auto; display: block; }
+.ry-anchornav__scroll { position: relative; flex: 1; min-width: 0; }
+.ry-anchornav ul {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ry-anchornav ul::-webkit-scrollbar { display: none; }
+.ry-anchornav a {
+  display: block;
+  white-space: nowrap;
+  padding: 15px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.ry-anchornav a:hover { color: #fff; }
+.ry-anchornav a.is-active { color: #fff; border-bottom-color: var(--ry-red); }
+/* fade at the right edge, signalling more to scroll */
+.ry-anchornav__fade {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 46px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(6,6,6,0) 0%, rgba(6,6,6,0.96) 100%);
+  transition: opacity .25s ease;
+}
+.ry-anchornav__fade.is-hidden { opacity: 0; }
+@media (max-width: 767.98px) {
+  .ry-anchornav { padding-left: 12px; }
+  .ry-anchornav__logo img { height: 18px; }
+  .ry-anchornav a { padding: 13px 10px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ry-anchornav { transition: none; }
+}
+
+/* ====================================================================
+   26. QUOTE BREAK
+   Promoted here from the Start Here page layer so any article can use
+   it. The fracture-lines backdrop is shared with the home page.
+   ==================================================================== */
+.ry-quote-section { position: relative; overflow: hidden; }
+.ry-sh-quote {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ry-quote-cite {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 600;
+}
+.ry-quote-cite::before { content: "\2014\00a0"; color: var(--ry-red); }
+
+/* ====================================================================
+   27. INLINE BUTTON — legacy .btn links land here after conversion
+   ==================================================================== */
+.ry-btn {
+  display: inline-block;
+  margin: 6px 0;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+  transition: border-color .22s ease, background .22s ease;
+}
+.ry-btn:hover {
+  border-color: rgba(255, 0, 0, 0.6) !important;
+  background: rgba(255, 0, 0, 0.16);
+  color: #fff !important;
+}
+
+/* ====================================================================
+   28. PATHWAY LIST — grouped cause/effect items under running headers
+   Used where a long list is broken into labelled pathways rather than
+   one undifferentiated run of bullets.
+   ==================================================================== */
+.ry-health-list { list-style: none; margin: 0 0 26px; padding: 0; }
+.ry-health-list li {
+  position: relative;
+  padding: 0 0 18px 22px;
+}
+.ry-health-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 11px;
+  width: 10px; height: 1px;
+  background: var(--ry-red);
+}
+.ry-health-title {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.ry-health-body {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-health-divider {
+  display: block;
+  margin: 34px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.ry-health-divider::before { content: "// "; color: var(--ry-red); }
+
+/* the "one testable implication" callout — this is the block that was
+   showing as a white band before; it now inherits the dark card system */
+.ry-implication {
+  margin: 34px 0;
+  padding: 28px 32px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-implication p { margin-bottom: 0 !important; }
+.ry-implication-kicker {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+
+/* legacy decorative asterisk / image wrapper from the old ACE section */
+.ry-ace-image-wrap { position: relative; }
+.ry-ace-asterisk {
+  color: var(--ry-red);
+  font-size: 42px;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------------------------
+   .ry-concept--plate — a light backing for transparent artwork
+   --------------------------------------------------------------------
+   Some illustrations are dark line art or halftone on a transparent
+   field. Dropped straight onto black they partly disappear: you see
+   the light elements and lose everything else.
+
+   This sets a soft off-white plate behind the image, clipped to the
+   same notched silhouette so the corner cuts still read. Off-white
+   rather than pure white, and a hair inset, so it reads as a mounted
+   plate rather than a glaring rectangle.
+
+   Only for artwork that needs it — measure first. Anything already
+   light, or opaque, should stay unplated.
+   -------------------------------------------------------------------- */
+.ry-concept--plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 50% 40%, #ffffff 0%, #eceae6 65%, #dedbd5 100%);
+  clip-path: polygon(
+    var(--ry-notch) 0,
+    100% 0,
+    100% calc(100% - var(--ry-notch)),
+    calc(100% - var(--ry-notch)) 100%,
+    0 100%,
+    0 var(--ry-notch)
+  );
+}
+.ry-concept--plate.ry-concept--flip::after {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--ry-notch)) 0,
+    100% var(--ry-notch),
+    100% 100%,
+    var(--ry-notch) 100%,
+    0 calc(100% - var(--ry-notch))
+  );
+}
+/* the plate sits behind, so the wrapper needs its own stacking context */
+.ry-concept--plate { isolation: isolate; z-index: 0; }
+/* breathing room so the art doesn't touch the plate edges */
+.ry-concept--plate img {
+  position: relative;
+  z-index: 1;
+  padding: 6%;
+  box-sizing: border-box;
+}
+.ry-concept--plate::before { z-index: 2; }
+
+/* ====================================================================
+   29. CONTENT WARNING
+   --------------------------------------------------------------------
+   For pages carrying a first-person account of self-harm, suicide or
+   acute crisis. Named .ry-cw rather than .ry-warning to avoid the
+   existing home-page component.
+
+   Design intent, in order of priority:
+   1. It must be genuinely hard to scroll past without registering. It
+      gets a red rail, real weight and its own space — this is not a
+      polite grey aside.
+   2. Crisis numbers appear BEFORE the material, not only after it.
+      Someone who is already struggling should not have to read the
+      account to reach the help.
+   3. The skip link is a real control, sized like a button, not a
+      hyperlink buried in a sentence.
+   ==================================================================== */
+.ry-cw {
+  margin: 44px 0;
+  padding: 30px 34px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  border-left: 4px solid var(--ry-red);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.11) 0%, rgba(255,0,0,0.03) 100%),
+    var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-cw__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 14px;
+}
+.ry-cw__label::before {
+  content: "";
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 7px 12px 7px;
+  border-color: transparent transparent var(--ry-red) transparent;
+}
+.ry-cw p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0 0 16px;
+}
+.ry-cw__help {
+  margin: 20px 0 0 !important;
+  padding: 15px 18px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 0, 0, 0.28);
+  font-size: 14.5px !important;
+  color: #fff !important;
+}
+.ry-cw__help strong { color: var(--ry-red); font-weight: 700; }
+.ry-cw__skip {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #fff !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  transition: background .22s ease, border-color .22s ease;
+}
+.ry-cw__skip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* ====================================================================
+   30. VIGNETTE — a first-person account, set apart from the argument
+   --------------------------------------------------------------------
+   Visually quieter and narrower than the surrounding page: this is
+   testimony, not analysis, and it should read as a different register.
+   The left rail runs the full height so it stays clearly bounded — the
+   reader can always see where it starts and where it ends.
+   ==================================================================== */
+.ry-vignette {
+  position: relative;
+  margin: 40px 0;
+  padding: 36px 40px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid rgba(255, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.022);
+}
+.ry-vignette__title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin: 0 0 22px;
+}
+.ry-vignette p {
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 20px;
+}
+.ry-vignette em { color: rgba(255, 255, 255, 0.9); }
+.ry-vignette__close {
+  margin: 30px 0 0 !important;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: #fff !important;
+  font-weight: 400;
+}
+/* a quiet reminder that help exists, placed where the account ends —
+   the point a reader is most likely to be affected */
+.ry-vignette__after {
+  margin: 22px 0 0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.07);
+  border: 1px solid rgba(255, 0, 0, 0.22);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+}
+.ry-vignette__after strong { color: var(--ry-red); }
+
+@media (max-width: 767.98px) {
+  .ry-cw { padding: 24px 20px; }
+  .ry-vignette { padding: 26px 22px; }
+  .ry-cw__skip { width: 100%; text-align: center; }
+}
+
+/* ====================================================================
+   31. SPEECH BUBBLE — a line of dialogue given the floor
+   ==================================================================== */
+.ry-bubble-wrap { display: flex; justify-content: center; margin: 50px 0 60px; }
+.ry-bubble {
+  position: relative;
+  max-width: 640px;
+  padding: 32px 38px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  text-align: center;
+  font-size: clamp(18px, 2.2vw, 23px);
+  line-height: 1.55;
+  font-weight: 500;
+  color: #fff;
+}
+/* the tail: two stacked triangles so the 1px border reads on the point */
+.ry-bubble::before,
+.ry-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-style: solid;
+  border-color: transparent;
+  transform: translateX(-50%);
+}
+.ry-bubble::before {
+  bottom: -15px;
+  border-width: 15px 15px 0 15px;
+  border-top-color: rgba(255, 255, 255, 0.09);
+}
+.ry-bubble::after {
+  bottom: -13px;
+  border-width: 14px 14px 0 14px;
+  border-top-color: #0a0a0a;
+}
+
+/* ====================================================================
+   32. CLOSING STATEMENT + ATTRIBUTION
+   ==================================================================== */
+.ry-close {
+  margin-top: 40px !important;
+  padding: 30px 34px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-top: 2px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+.ry-attrib {
+  display: block;
+  margin-top: 26px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+.ry-cta-wrap { text-align: center; margin-top: 52px; }
+.ry-cta {
+  display: inline-block;
+  padding: 17px 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  background: rgba(255, 0, 0, 0.14);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.6) !important;
+  transition: background .22s ease, transform .22s ease;
+}
+.ry-cta:hover { background: rgba(255, 0, 0, 0.3); transform: translateY(-2px); }
+.ry-cta-note { margin-top: 18px; font-size: 14px; font-weight: 300; color: var(--ry-ink-dim); }
+@media (prefers-reduced-motion: reduce) { .ry-cta:hover { transform: none; } }
+
+/* ====================================================================
+   33. PHOTO CAPTION BADGE
+   For dated or archival photographs that need identifying in place —
+   sits on the image rather than below it, so it reads as a print
+   annotation rather than a figure caption competing with body text.
+   ==================================================================== */
+.ry-photo { position: relative; }
+.ry-photo__badge {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #fff;
+  max-width: calc(100% - 40px);
+}
+.ry-photo__badge--center { left: 50%; right: auto; transform: translateX(-50%); text-align: center; }
+/* on a full-bleed split panel the badge anchors to the panel itself */
+.ry-split__media.ry-photo .ry-photo__badge { z-index: 2; }
+@media (max-width: 575.98px) {
+  .ry-photo__badge { font-size: 11.5px; padding: 6px 11px; bottom: 12px; right: 12px; }
+}
+
+/* ====================================================================
+   34. INLINE PILL — a short assertion given emphasis mid-passage
+   ==================================================================== */
+.ry-pill-statement {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 26px 0;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 0, 0, 0.45);
+  background: rgba(255, 0, 0, 0.09);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+.ry-pill-statement i { color: var(--ry-red); font-style: normal; font-size: 1.15em; }
+
+/* ====================================================================
+   35. COMMITMENT PANEL — a direct address to the reader
+   Wider and warmer than a standard callout; this is the author
+   speaking to the reader rather than explaining something to them.
+   ==================================================================== */
+.ry-commitment {
+  position: relative;
+  margin-top: 56px;
+  padding: 48px 52px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background:
+    linear-gradient(180deg, rgba(255,0,0,0.05) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.012) 100%);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-commitment::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ry-red), rgba(255, 0, 0, 0));
+}
+.ry-commitment__title {
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+.ry-commitment p { font-size: 16.5px; line-height: 1.8; font-weight: 300; color: var(--ry-ink); }
+.ry-commitment p strong { color: #fff; font-weight: 600; }
+
+.ry-signoff {
+  margin-top: 44px;
+  padding: 30px 34px;
+  border-radius: 14px;
+  border-left: 3px solid var(--ry-red);
+  background: rgba(0, 0, 0, 0.35);
+}
+.ry-signoff blockquote {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+.ry-signoff figcaption {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+}
+@media (max-width: 767.98px) {
+  .ry-commitment { padding: 32px 24px; }
+  .ry-signoff { padding: 24px 22px; }
+}
+
+/* ====================================================================
+   36. JUMP NAV — category chips for a long single-page index
+   --------------------------------------------------------------------
+   For pages with many grouped items (an FAQ, a glossary) where the
+   reader almost always arrives looking for one specific thing. Plain
+   anchors, so it works with no JavaScript at all.
+   ==================================================================== */
+.ry-jumpnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 34px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.ry-jumpnav a {
+  display: block;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ry-ink-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ry-hairline) !important;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.ry-jumpnav a:hover {
+  color: #fff;
+  border-color: rgba(255, 0, 0, 0.5) !important;
+  background: rgba(255, 0, 0, 0.1);
+}
+.ry-jumpnav a span { color: var(--ry-red); margin-left: 7px; font-weight: 700; }
+
+/* group heading within a long index */
+.ry-faq-group { margin-top: 58px; }
+.ry-faq-group:first-of-type { margin-top: 34px; }
+.ry-faq-group__title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
+  scroll-margin-top: 90px;
+}
+.ry-faq-group__title::before { content: "//"; color: var(--ry-red); font-weight: 700; }
+.ry-faq-group__count {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+/* answers on this page carry inline links and lists */
+.ry-faq__body a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.35);
+}
+.ry-faq__body a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+.ry-faq__body em { color: rgba(255, 255, 255, 0.82); }
+.ry-faq__body p { margin: 0 0 14px; }
+.ry-faq__body p:last-child { margin-bottom: 0; }
+.ry-faq__body ul { margin: 0 0 14px; padding: 0; list-style: none; }
+.ry-faq__body li { position: relative; padding: 0 0 9px 010px; padding-left: 20px; }
+.ry-faq__body li::before {
+  content: ""; position: absolute; left: 0; top: 11px;
+  width: 9px; height: 1px; background: var(--ry-red); opacity: .75;
+}
+
+/* ====================================================================
+   37. EDITORIAL PAGES — text-only, no hero image
+   --------------------------------------------------------------------
+   For the direct-address pages (For Frontline Workers, For Loved Ones).
+   These are letters, not articles: one voice speaking to one reader,
+   with no photography to hide behind. The hero is plain black and the
+   typography does all the work — condensed uppercase display type
+   against a single red accent phrase.
+   ==================================================================== */
+.ry-hero--plain {
+  min-height: 0;
+  background: #000;
+  display: block;
+}
+.ry-hero--plain .ry-page-hero__inner { padding: 130px 0 70px; }
+@media (max-width: 767.98px) {
+  .ry-hero--plain .ry-page-hero__inner { padding: 100px 0 50px; }
+}
+
+.ry-ed-eyebrow {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 20px;
+}
+.ry-ed-title {
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(38px, 5.6vw, 76px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 26px;
+}
+.ry-ed-title span { color: var(--ry-red); }
+.ry-ed-lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 58ch;
+  margin: 0;
+}
+
+/* section label + rule, the recurring beat down these pages */
+.ry-ed-label {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+.ry-ed-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--ry-red);
+  margin: 0 0 30px;
+}
+
+/* the running body copy: slightly larger and airier than article prose,
+   because these read as correspondence rather than reference */
+.ry-ed-body { font-size: 1.05rem; line-height: 1.85; font-weight: 300; color: var(--ry-ink); }
+.ry-ed-body p { margin: 0 0 22px; }
+.ry-ed-body p:last-child { margin-bottom: 0; }
+.ry-ed-body strong { color: #fff; font-weight: 600; }
+.ry-ed-body em { color: rgba(255, 255, 255, 0.88); }
+.ry-ed-body a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.35);
+}
+.ry-ed-body a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+/* a signed statement set apart from the running copy */
+.ry-testimony { margin: 0; }
+.ry-testimony blockquote {
+  margin: 0;
+  padding-left: 28px;
+  border-left: 3px solid var(--ry-red);
+}
+.ry-testimony blockquote p {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.65;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+}
+.ry-testimony__attrib {
+  margin: 20px 0 0 31px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+
+/* what-you'll-find grid */
+.ry-ed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 38px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+.ry-ed-grid__item { padding: 28px 30px; background: #0a0a0a; }
+.ry-ed-grid__item strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 9px;
+}
+.ry-ed-grid__item strong::before { content: "// "; color: var(--ry-red); }
+.ry-ed-grid__item p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+@media (max-width: 767.98px) { .ry-ed-grid { grid-template-columns: 1fr; } }
+
+/* a bounded "what this is not" statement */
+.ry-scope-box {
+  margin-top: 8px;
+  padding: 32px 36px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-scope-box p {
+  font-size: 15.5px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink);
+  margin: 0 0 18px;
+}
+.ry-scope-box p:last-child { margin-bottom: 0; }
+.ry-scope-box strong { color: #fff; font-weight: 600; }
+
+/* closing call to action on the editorial pages */
+.ry-ed-cta {
+  text-align: center;
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  background: #050505;
+}
+.ry-ed-cta h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.ry-ed-cta p { color: var(--ry-ink-faint); font-size: 1rem; margin: 0 0 34px; }
+.ry-ed-cta__link {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.14em;
+  color: var(--ry-red) !important;
+  text-decoration: none;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.4) !important;
+  padding: 15px 36px;
+  transition: background .22s ease, color .22s ease;
+}
+.ry-ed-cta__link:hover { background: rgba(255, 0, 0, 0.12); color: #ff4444 !important; }
+
+@media (max-width: 767.98px) {
+  .ry-scope-box { padding: 24px 22px; }
+  .ry-testimony blockquote { padding-left: 20px; }
+  .ry-testimony blockquote p { font-size: 1.15rem; }
+  .ry-testimony__attrib { margin-left: 23px; }
+}
+
+/* helps / hurts variant of the editorial grid — the marker carries the
+   meaning, so the two sets read as opposites at a glance */
+.ry-ed-grid__item--helps strong::before { content: "+ "; color: #6fcf97; }
+.ry-ed-grid__item--hurts strong::before { content: "\2212 "; color: var(--ry-red); }
+.ry-ed-subhead {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 48px 0 4px;
+}
+.ry-ed-subhead--helps { color: #6fcf97; }
+.ry-ed-subhead--hurts { color: var(--ry-red); }
+.ry-ed-aside {
+  margin-top: 36px;
+  padding-left: 22px;
+  border-left: 2px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--ry-ink-faint);
+}
+.ry-ed-cta__link + .ry-ed-cta__link { margin-left: 14px; }
+.ry-ed-cta__link--ghost {
+  color: rgba(255,255,255,0.75) !important;
+  border-color: rgba(255,255,255,0.28);
+  border-bottom-color: rgba(255,255,255,0.28) !important;
+}
+.ry-ed-cta__link--ghost:hover { background: rgba(255,255,255,0.08); color: #fff !important; }
+@media (max-width: 575.98px) {
+  .ry-ed-cta__link { display: block; margin: 0 auto 14px; max-width: 320px; }
+  .ry-ed-cta__link + .ry-ed-cta__link { margin-left: auto; }
+}
+
+/* ====================================================================
+   38. SECTION RHYTHM ON A CONTINUOUS BLACK PAGE
+   --------------------------------------------------------------------
+   The DarkStar theme pads sections at 170px top AND bottom (sk__py-l),
+   which stacks to 340px of empty space between any two adjacent
+   sections. That was tuned for a template that alternates light and
+   dark bands, where the generous padding reads as deliberate breathing
+   room inside a visible block.
+
+   On a continuous black page there is no band, no colour change, and no
+   edge — so the same padding reads as a hole in the page rather than a
+   pause between ideas. Separation here has to come from typographic
+   rhythm, not raw distance.
+
+   Roughly halved, and scoped to the article pages so the home page
+   keeps the theme's original proportions.
+   ==================================================================== */
+.ry-article-page .sk__py-l,
+.start-here-page .sk__py-l { padding-top: 88px; padding-bottom: 88px; }
+.ry-article-page .sk__py-m,
+.start-here-page .sk__py-m { padding-top: 72px; padding-bottom: 72px; }
+.ry-article-page .sk__py-s,
+.start-here-page .sk__py-s { padding-top: 56px; padding-bottom: 56px; }
+
+/* full-bleed bands carry their own internal padding; bring it in line */
+.ry-article-page .ry-split__body,
+.ry-article-page .ry-split--reverse .ry-split__body { padding-top: 72px; padding-bottom: 72px; }
+.ry-article-page .ry-ed-cta { padding: 64px 0; }
+
+/* A section that opens with its own titled block (a note, callout or
+   scope box) already has a visible top edge, so it needs less air above
+   it than a section opening on bare prose. */
+.ry-article-page .sk__py-l > .row:first-child .ry-note:first-child,
+.ry-article-page .sk__py-l > .row:first-child .ry-callout:first-child { margin-top: 0; }
+
+@media (max-width: 991.98px) {
+  .ry-article-page .sk__py-l,
+.start-here-page .sk__py-l { padding-top: 64px; padding-bottom: 64px; }
+  .ry-article-page .sk__py-m,
+.start-here-page .sk__py-m { padding-top: 54px; padding-bottom: 54px; }
+  .ry-article-page .ry-split__body,
+  .ry-article-page .ry-split--reverse .ry-split__body { padding-top: 54px; padding-bottom: 54px; }
+}
+
+/* ====================================================================
+   39. INTERSTITIAL — a single line given the whole screen
+   --------------------------------------------------------------------
+   For the moment a page stops explaining and just says one thing. Large,
+   centred, its own band. Distinct from .ry-pullquote (which sits inside
+   running copy) and from .ry-statement (which is a bordered aside).
+   ==================================================================== */
+.ry-interstitial {
+  background: #0d0d0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: clamp(56px, 7vw, 90px) 24px;
+  text-align: center;
+}
+.ry-interstitial__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin: 0 0 22px;
+}
+.ry-interstitial__quote {
+  font-size: clamp(28px, 4.5vw, 50px);
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0 auto;
+  max-width: 800px;
+  border: 0;
+  padding: 0;
+}
+
+/* The band was built for one shape — a label over a single large quote.
+   A heading with a paragraph or two under it is the other thing these
+   interstitials are asked to do, so it gets the same treatment rather
+   than a second component that looks almost the same. */
+.ry-interstitial__inner { max-width: 780px; margin: 0 auto; }
+.ry-interstitial__title {
+  font-size: clamp(26px, 3.6vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0 0 22px;
+}
+.ry-interstitial__body p {
+  font-size: clamp(15px, 1.8vw, 17.5px);
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 18px;
+}
+.ry-interstitial__body > :last-child { margin-bottom: 0; }
+.ry-interstitial__body strong { color: #fff; font-weight: 600; }
+
+/* --------------------------------------------------------------------
+   .ry-split__media--contain — never crop an informational image
+   --------------------------------------------------------------------
+   The default split panel fills its half with background-size: cover,
+   which is right for photographic texture but destructive for anything
+   carrying information. A labelled diagram loses its labels; a
+   documentary photograph loses the thing it was taken to show.
+
+   This switches to `contain` so the whole frame is always visible,
+   centred, with padding and a matte behind it. The image sits smaller
+   than a cover panel would — that is the trade, and it is the correct
+   one when the content of the picture is the point.
+   -------------------------------------------------------------------- */
+.ry-split__media--contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #070707;
+  min-height: 420px;
+  padding: 40px;
+}
+.ry-split__media--contain::after { display: none; }   /* no feathered edge over a contained image */
+
+/* light diagrams need a plate behind them, same reasoning as .ry-concept--plate */
+.ry-split__media--sheet {
+  background-color: #f1efec;
+  border-radius: 0;
+}
+@media (min-width: 992px) {
+  .ry-split__media--contain { padding: 56px 48px; }
+}
+@media (max-width: 991.98px) {
+  .ry-split__media--contain { min-height: 300px; padding: 32px 24px; }
+}
+
+/* --------------------------------------------------------------------
+   40. RESPONSE CARDS — a small fixed set of named states
+   Four survival responses, four cards. Reads as a set rather than a
+   run of headed paragraphs, and pairs with a four-panel illustration.
+   -------------------------------------------------------------------- */
+.ry-responses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+.ry-response {
+  position: relative;
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  overflow: hidden;
+}
+.ry-response::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--ry-red);
+  opacity: .75;
+}
+.ry-response__name {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+}
+.ry-response p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-response p strong { color: #fff; font-weight: 600; }
+@media (max-width: 767.98px) { .ry-responses { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------
+   41. ZOOM — full-size view of a diagram
+   The button is injected by ry-zoom.js, so these styles only ever
+   describe an element that already has a working handler behind it.
+   -------------------------------------------------------------------- */
+.ry-zoom-btn {
+  position: absolute;
+  top: 18px; right: 18px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  background: rgba(10,10,10,0.72);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background .22s ease, border-color .22s ease, transform .22s ease;
+}
+.ry-zoom-btn:hover,
+.ry-zoom-btn:focus-visible {
+  background: var(--ry-red);
+  border-color: var(--ry-red);
+  transform: translateY(-1px);
+}
+.ry-zoom-btn span { font-size: 14px; line-height: 1; }
+
+.ry-zoom-dialog {
+  border: 0;
+  padding: 0;
+  max-width: min(1200px, 94vw);
+  max-height: 94vh;
+  background: transparent;
+  overflow: visible;
+}
+.ry-zoom-dialog::backdrop { background: rgba(0,0,0,0.88); }
+.ry-zoom-dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: 92vh;
+  width: auto;
+  border-radius: 8px;
+  background: #f1efec;
+}
+.ry-zoom-close {
+  position: absolute;
+  top: -14px; right: -14px;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.ry-zoom-close:hover { background: var(--ry-red); border-color: var(--ry-red); }
+@media (max-width: 767.98px) {
+  .ry-zoom-btn { top: 12px; right: 12px; font-size: 11px; padding: 6px 11px; }
+  .ry-zoom-close { top: 6px; right: 6px; }
+}
+
+/* --------------------------------------------------------------------
+   .ry-btn--ghost — the secondary action beside a primary one
+   Destructive-adjacent actions (Clear, Cancel, Reset) should be
+   reachable without being invited, so this is outline-only until hover.
+   -------------------------------------------------------------------- */
+.ry-btn--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.7);
+}
+.ry-btn--ghost:hover,
+.ry-btn--ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.ry-btn:disabled,
+.ry-btn[disabled] { opacity: .38; cursor: not-allowed; }
+.ry-btn:disabled:hover,
+.ry-btn[disabled]:hover { background: transparent; }
+
+/* --------------------------------------------------------------------
+   .ry-faq--credit — the same disclosure list, arguing the other way
+   --------------------------------------------------------------------
+   A page that runs two accordions back to back — one listing where
+   something falls short, one listing what it gets right — needs the
+   reader to know which list they are in without re-reading the
+   heading above it. Identical styling would make the second set look
+   like more of the first.
+
+   The number badge carries it: red for the critique, white for the
+   credit. Everything else stays the same, because they are the same
+   component doing the same job.
+   -------------------------------------------------------------------- */
+.ry-faq--credit summary .ry-faq__n { color: rgba(255, 255, 255, 0.72); }
+.ry-faq--credit details {
+  border-left: 2px solid rgba(255, 255, 255, 0.18);
+}
+.ry-faq--credit details[open] {
+  border-left-color: rgba(255, 255, 255, 0.4);
+}
+.ry-faq:not(.ry-faq--credit) details {
+  border-left: 2px solid rgba(255, 47, 110, 0.32);
+}
+.ry-faq:not(.ry-faq--credit) details[open] {
+  border-left-color: var(--ry-red);
+}
+
+/* --------------------------------------------------------------------
+   .ry-pullquote--center — a statement addressed straight at the reader
+   A left rule implies "quoted from somewhere". These three lines are
+   not a quotation, they are the page speaking directly, so they get
+   rules above and below and sit centred in the column instead.
+   -------------------------------------------------------------------- */
+.ry-pullquote--center {
+  border-left: 0;
+  padding: 30px 20px;
+  margin: 34px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 47, 110, 0.4);
+  border-bottom: 1px solid rgba(255, 47, 110, 0.4);
+}
+.ry-pullquote--center p {
+  font-size: clamp(19px, 2.4vw, 25px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ====================================================================
+   45. ASK SET — a labelled panel of questions the page wants answered
+   --------------------------------------------------------------------
+   A short set of questions, set apart from the prose that introduces
+   them, so a reader can see at a glance that these are meant to be
+   sat with rather than skimmed past. Two pages use it: the look-back
+   questions on relationships, and the questions that force clarity on
+   a vague value on identity-values-and-beliefs.
+
+   DELIBERATELY UNNUMBERED. On relationships the legacy numbered these
+   01-03 and then numbered the readiness inventory 01-05 immediately
+   underneath, so the page ran two numbered sequences back to back and
+   neither read as its own thing. A rule between each question does
+   the same work without the collision, and the numerals stay where
+   they mean something.
+   ==================================================================== */
+.ry-askset {
+  margin: 32px 0 34px;
+  padding: 28px 32px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  border-left: 3px solid var(--ry-red);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-askset__label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 14px;
+}
+.ry-askset__list { margin: 0; padding: 0; list-style: none; }
+.ry-askset__list li {
+  margin: 0;
+  padding: 14px 0;
+  border-top: 1px solid var(--ry-hairline);
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+.ry-askset__list li:first-child { border-top: 0; padding-top: 0; }
+.ry-askset__list li:last-child { padding-bottom: 0; }

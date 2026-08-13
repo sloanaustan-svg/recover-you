@@ -1,0 +1,1145 @@
+/* ================================================================
+   Recover-You | Alberta Treatment Centres
+   Interactive province map and long-form treatment directory.
+   ================================================================ */
+
+.ry-treatment-page {
+  --treat-red: #ff2438;
+  --treat-line: rgba(255, 255, 255, .12);
+  --treat-muted: #aaaab0;
+  --treat-panel: #101012;
+}
+
+/* Hero */
+.ry-treatment-page .ry-treatment-hero {
+  min-height: clamp(680px, 88vh, 930px);
+}
+
+.ry-treatment-page .ry-treatment-hero .ry-page-hero__bg {
+  background-position: center 34%;
+  filter: contrast(1.1) saturate(.75);
+}
+
+.ry-treatment-page .ry-treatment-hero .ry-page-hero__scrim {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.91), rgba(0,0,0,.58) 57%, rgba(0,0,0,.28)),
+    linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.24) 48%, #050506 95%, #050506);
+}
+
+.ry-treatment-page .ry-treatment-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 38%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, #050506 92%);
+}
+
+.ry-treatment-page .ry-treatment-hero .ry-page-hero__inner,
+.ry-treatment-page .ry-treatment-hero .ry-scroll-cue {
+  z-index: 3;
+}
+
+.ry-treatment-page .ry-treatment-hero .ry-page-hero__title {
+  max-width: 1100px;
+}
+
+.ry-treatment-page .ry-treatment-hero .ry-page-hero__sub {
+  max-width: 860px;
+}
+
+/* Opening guidance */
+.ry-treatment-page #why {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(90px, 10vw, 150px) 0 clamp(95px, 10vw, 150px);
+  color: #d5d5d8;
+  background:
+    radial-gradient(circle at 10% 14%, rgba(255,255,255,.05), transparent 27%),
+    radial-gradient(ellipse at 92% 60%, rgba(255,36,56,.045), transparent 31%),
+    #050506;
+}
+
+.ry-treatment-page #why::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    radial-gradient(circle at 22% 42%, rgba(255,255,255,.2) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 65%, rgba(255,255,255,.13) 0 1px, transparent 1.5px);
+  background-size: 175px 185px, 235px 225px;
+}
+
+.ry-treatment-page #why .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ry-treatment-page #why h5 {
+  margin: 0 0 30px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.65rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.ry-treatment-page #why h5 > span {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--treat-red) !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.ry-treatment-page #why p,
+.ry-treatment-page #why > .container > .row > div > ul > li {
+  color: #bdbdc2 !important;
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem !important;
+  line-height: 1.78 !important;
+}
+
+.ry-treatment-page #why p strong,
+.ry-treatment-page #why li strong {
+  color: #fff;
+}
+
+.ry-treatment-page #why > .container > .row > div > ul {
+  margin: 30px 0 40px !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-treatment-page #why > .container > .row > div > ul > li {
+  position: relative;
+  margin: 0;
+  padding: 13px 0 13px 30px;
+  border-bottom: 1px solid rgba(255,255,255,.075);
+}
+
+.ry-treatment-page #why > .container > .row > div > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--treat-red);
+  border-radius: 50%;
+}
+
+.ry-treatment-page .treatment-card-wrapper {
+  margin: 35px 0 45px;
+}
+
+.ry-treatment-page .treatment-card {
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid var(--treat-line);
+  border-left: 3px solid var(--treat-red);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.014));
+}
+
+.ry-treatment-page .treatment-card > li p {
+  margin-bottom: 20px !important;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem !important;
+}
+
+.ry-treatment-page .treatment-card ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-treatment-page .treatment-card ul li {
+  padding: 12px 0;
+  color: #bcbcc1;
+  font-family: "Lato", sans-serif;
+  line-height: 1.68;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+/* Accordion */
+.ry-treatment-page #treatment-accordion {
+  margin: 40px 0 55px !important;
+  border-top: 1px solid var(--treat-line);
+}
+
+.ry-treatment-page #treatment-accordion .panel {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--treat-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.ry-treatment-page #treatment-accordion .panel-heading {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.ry-treatment-page #treatment-accordion .accordion-toggle {
+  display: block;
+  padding: 25px 0;
+  text-decoration: none;
+}
+
+.ry-treatment-page #treatment-accordion .panel-title {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  color: #fff;
+  font-size: 1.04rem;
+  line-height: 1.42;
+}
+
+.ry-treatment-page #treatment-accordion .panel-title > i {
+  display: none;
+}
+
+.ry-treatment-page .ry-treatment-toggle-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255,36,56,.58);
+  border-radius: 50%;
+  background: rgba(255,36,56,.07);
+  transition: border-color .25s ease, background .25s ease;
+}
+
+.ry-treatment-page .ry-treatment-toggle-icon > span {
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-right: 2px solid var(--treat-red);
+  border-bottom: 2px solid var(--treat-red);
+  transform: rotate(45deg);
+  transition: margin .25s ease, transform .25s ease;
+}
+
+.ry-treatment-page .accordion-toggle:hover .ry-treatment-toggle-icon,
+.ry-treatment-page .accordion-toggle:focus-visible .ry-treatment-toggle-icon {
+  border-color: var(--treat-red);
+  background: rgba(255,36,56,.16);
+}
+
+.ry-treatment-page .accordion-toggle[aria-expanded="true"] .ry-treatment-toggle-icon {
+  border-color: var(--treat-red);
+  background: var(--treat-red);
+}
+
+.ry-treatment-page .accordion-toggle[aria-expanded="true"] .ry-treatment-toggle-icon > span {
+  margin-top: 4px;
+  border-color: #fff;
+  transform: rotate(225deg);
+}
+
+.ry-treatment-page #treatment-accordion .panel-body {
+  padding: 0 60px 35px;
+  color: #bdbdc2;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.ry-treatment-page #treatment-accordion .panel-body strong {
+  color: #fff;
+}
+
+.ry-treatment-page #treatment-accordion .panel-body ul {
+  margin: 15px 0 !important;
+  padding-left: 20px !important;
+}
+
+/* Directory shell */
+.ry-treatment-page .ry-treatment-directory {
+  position: relative;
+  overflow: clip;
+  padding: clamp(90px, 10vw, 150px) 0 clamp(105px, 11vw, 165px);
+  color: #d7d7da;
+  background:
+    radial-gradient(ellipse at 96% 5%, rgba(255,36,56,.075), transparent 26%),
+    linear-gradient(180deg, #0b0b0d, #060607 65%, #09090b) !important;
+}
+
+.ry-treatment-page .ry-treatment-directory > .container > .row:first-child > div > div {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ry-treatment-page .ry-treatment-directory > .container > .row:first-child {
+  margin-bottom: 70px !important;
+}
+
+.ry-treatment-page .ry-treatment-directory > .container > .row:first-child h3 {
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.15rem, 4.6vw, 4.1rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -.06em;
+}
+
+.ry-treatment-page .ry-treatment-directory > .container > .row:first-child h3 strong {
+  color: var(--treat-red) !important;
+  font-weight: 600;
+}
+
+.ry-treatment-page .ry-treatment-directory > .container > .row:first-child p {
+  color: var(--treat-muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.ry-treatment-page .ry-treatment-list-intro > div > div {
+  padding: clamp(28px, 4vw, 46px) !important;
+  color: #c6c6ca;
+  border: 1px solid var(--treat-line) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 70px rgba(0,0,0,.22) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)) !important;
+}
+
+.ry-treatment-page .ry-treatment-list-intro h5 {
+  margin-bottom: 20px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.45rem;
+}
+
+.ry-treatment-page .ry-treatment-list-intro p {
+  color: #b9b9be !important;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem !important;
+  line-height: 1.72;
+}
+
+.ry-treatment-page .ry-treatment-list-intro a {
+  color: #ff5b6a;
+}
+
+.ry-treatment-page .ry-treatment-list-intro hr {
+  border-color: var(--treat-line);
+  opacity: 1;
+}
+
+.ry-treatment-page .ry-treatment-reviewed {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 25px !important;
+  padding-top: 22px;
+  border-top: 1px solid var(--treat-line);
+}
+
+.ry-treatment-page .ry-treatment-reviewed::before {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--treat-red);
+  box-shadow: 0 0 0 5px rgba(255,36,56,.1);
+}
+
+/* Alberta map */
+.ry-treatment-map-section {
+  margin: clamp(80px, 10vw, 135px) 0 54px;
+  padding: clamp(28px, 5vw, 60px);
+  border: 1px solid var(--treat-line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 22% 15%, rgba(255,255,255,.055), transparent 30%),
+    linear-gradient(145deg, #111114, #09090b);
+  box-shadow: 0 36px 100px rgba(0,0,0,.28);
+}
+
+.ry-treatment-map-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(270px, .9fr);
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--treat-line);
+}
+
+.ry-map-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--treat-red);
+  font-family: "Syncopate", sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.ry-treatment-map-heading h3 {
+  margin: 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -.055em;
+}
+
+.ry-treatment-map-heading > p {
+  margin: 0;
+  color: #a9a9af;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.ry-treatment-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: clamp(25px, 4vw, 52px);
+  align-items: center;
+}
+
+.ry-alberta-map {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 2 / 3;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.ry-alberta-shape {
+  position: absolute;
+  z-index: 0;
+  inset: 1% 4%;
+  opacity: .52;
+  background: url("../../images/alberta-outline.png") center / contain no-repeat;
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.ry-alberta-shape::before {
+  content: none;
+}
+
+.ry-alberta-map__terrain {
+  position: absolute;
+  z-index: 1;
+  inset: 1% 4%;
+  pointer-events: none;
+  background: url("../../images/alberta-outline.png") center / contain no-repeat;
+  mix-blend-mode: screen;
+}
+
+.ry-map-marker {
+  position: absolute;
+  z-index: 4;
+  top: var(--y);
+  left: var(--x);
+  display: flex;
+  align-items: center;
+  color: #c9c9ce;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  outline: none;
+}
+
+.ry-map-marker__dot {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #080809;
+  border-radius: 50%;
+  background: var(--treat-red);
+  box-shadow: 0 0 0 1px rgba(255,36,56,.85), 0 0 0 7px rgba(255,36,56,.1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.ry-map-marker__dot::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(255,36,56,.38);
+  border-radius: 50%;
+  animation: ry-map-pulse 2.8s ease-out infinite;
+}
+
+.ry-map-marker__label {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  padding: 3px 6px;
+  color: #a4a4aa;
+  font-family: "Poppins", sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  background: rgba(8,8,9,.74);
+  border-radius: 4px;
+}
+
+.ry-map-marker:hover,
+.ry-map-marker:focus-visible,
+.ry-map-marker.is-active {
+  z-index: 7;
+  color: #fff;
+}
+
+.ry-map-marker:hover .ry-map-marker__dot,
+.ry-map-marker:focus-visible .ry-map-marker__dot,
+.ry-map-marker.is-active .ry-map-marker__dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 1px #ff5b6a, 0 0 0 10px rgba(255,36,56,.18), 0 0 26px rgba(255,36,56,.55);
+}
+
+.ry-map-marker:hover .ry-map-marker__label,
+.ry-map-marker:focus-visible .ry-map-marker__label,
+.ry-map-marker.is-active .ry-map-marker__label {
+  color: #fff;
+}
+
+.ry-map-popover {
+  position: absolute;
+  z-index: 10;
+  top: var(--popover-y);
+  left: var(--popover-x);
+  width: min(310px, 48%);
+  padding: 21px 22px;
+  pointer-events: none;
+  opacity: 0;
+  border: 1px solid rgba(255,255,255,.16);
+  border-left: 2px solid var(--treat-red);
+  border-radius: 13px;
+  background: rgba(7,7,8,.96);
+  box-shadow: 0 22px 55px rgba(0,0,0,.52);
+  transform: translate(24px, -50%) scale(.96);
+  transition: opacity .18s ease, transform .18s ease;
+  backdrop-filter: blur(14px);
+}
+
+.ry-map-popover.is-left {
+  transform: translate(calc(-100% - 24px), -50%) scale(.96);
+}
+
+.ry-map-popover.is-visible {
+  opacity: 1;
+  transform: translate(24px, -50%) scale(1);
+}
+
+.ry-map-popover.is-visible.is-left {
+  transform: translate(calc(-100% - 24px), -50%) scale(1);
+}
+
+.ry-map-popover__city {
+  display: block;
+  margin-bottom: 3px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ry-map-popover__count {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--treat-red);
+  font-family: "Syncopate", sans-serif;
+  font-size: .59rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.ry-map-popover ul {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  list-style: none;
+}
+
+.ry-map-popover li {
+  padding: 5px 0 5px 12px;
+  color: #c1c1c6;
+  font-family: "Lato", sans-serif;
+  font-size: .78rem;
+  line-height: 1.35;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.ry-map-popover li::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  margin: 8px 0 0 -12px;
+  border-radius: 50%;
+  background: var(--treat-red);
+}
+
+.ry-map-popover__action {
+  display: block;
+  margin-top: 13px;
+  color: #898990;
+  font-family: "Poppins", sans-serif;
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.ry-map-key {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 26px;
+  border-left: 1px solid var(--treat-line);
+}
+
+.ry-map-key__label {
+  color: #85858c;
+  font-family: "Syncopate", sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.ry-map-key strong {
+  display: block;
+  margin: 14px 0 5px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 300;
+  letter-spacing: -.05em;
+}
+
+.ry-map-key p,
+.ry-map-key__legend {
+  color: #9d9da3;
+  font-family: "Lato", sans-serif;
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.ry-map-key__legend {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--treat-line);
+}
+
+.ry-map-key__legend span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--treat-red);
+  box-shadow: 0 0 0 5px rgba(255,36,56,.1);
+}
+
+@keyframes ry-map-pulse {
+  0% { opacity: .8; transform: scale(.65); }
+  75%, 100% { opacity: 0; transform: scale(1.35); }
+}
+
+/* Zone navigator */
+.ry-treatment-page .ry-treatment-zone-nav {
+  position: sticky;
+  z-index: 20;
+  top: 14px;
+  margin-bottom: 75px !important;
+}
+
+.ry-treatment-page .ry-treatment-zone-nav > div > div {
+  padding: 14px 18px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 45px rgba(0,0,0,.42) !important;
+  background: rgba(12,12,14,.88) !important;
+  backdrop-filter: blur(16px);
+}
+
+.ry-treatment-page .ry-treatment-zone-nav h5 {
+  display: none;
+}
+
+.ry-treatment-page .zone-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.ry-treatment-page .zone-pill {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  color: #c7c7cb;
+  font-family: "Poppins", sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.ry-treatment-page .zone-pill:hover,
+.ry-treatment-page .zone-pill:focus-visible {
+  color: #fff;
+  border-color: rgba(255,36,56,.6);
+  background: rgba(255,36,56,.13);
+}
+
+/* Featured concurrent-disorder card */
+.ry-treatment-page .featured-card {
+  position: relative;
+  margin-bottom: 70px;
+  padding: clamp(28px, 4vw, 48px) !important;
+  color: #c6c6ca;
+  border: 1px solid rgba(255,36,56,.34) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 26px 70px rgba(0,0,0,.25) !important;
+  background:
+    radial-gradient(circle at 94% 7%, rgba(255,36,56,.13), transparent 24%),
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.018)) !important;
+  scroll-margin-top: 105px;
+}
+
+.ry-treatment-page .featured-badge {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  background: var(--treat-red);
+}
+
+.ry-treatment-page .featured-card h5,
+.ry-treatment-page .featured-card h6,
+.ry-treatment-page .featured-card strong {
+  color: #fff !important;
+}
+
+.ry-treatment-page .featured-card h5 {
+  font-size: clamp(1.7rem, 3.5vw, 2.65rem);
+}
+
+.ry-treatment-page .featured-card h6 {
+  font-size: 1.2rem;
+}
+
+.ry-treatment-page .featured-card p,
+.ry-treatment-page .featured-card li {
+  color: #b9b9be !important;
+  font-family: "Lato", sans-serif;
+  line-height: 1.68;
+}
+
+.ry-treatment-page .featured-card .bg-light-gray {
+  color: #d7d7da !important;
+  border: 1px solid var(--treat-line);
+  background: rgba(0,0,0,.24) !important;
+}
+
+/* Regional listing cards */
+.ry-treatment-page .ry-treatment-region {
+  scroll-margin-top: 110px;
+  margin-bottom: clamp(70px, 8vw, 110px) !important;
+}
+
+.ry-treatment-page .ry-treatment-region > div > div {
+  padding: 0 !important;
+  color: #c8c8cc;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ry-treatment-page .ry-treatment-region > div > div > h5 {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 0 0 20px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.85rem);
+  font-weight: 300;
+  letter-spacing: -.045em;
+  border-bottom: 1px solid var(--treat-line);
+}
+
+.ry-treatment-page .ry-treatment-region > div > div > h5::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 74px;
+  height: 2px;
+  background: var(--treat-red);
+}
+
+.ry-treatment-page .ry-treatment-region > div > div > h6 {
+  margin: 0 0 30px !important;
+  color: #88888f !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .67rem;
+  letter-spacing: .17em;
+}
+
+.ry-treatment-page .facility-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.ry-treatment-page .facility-list > li {
+  position: relative;
+  margin: 0 !important;
+  padding: clamp(26px, 3.5vw, 42px);
+  overflow: hidden;
+  color: #bdbdc2;
+  border: 1px solid var(--treat-line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.052), rgba(255,255,255,.014)),
+    var(--treat-panel);
+  box-shadow: 0 24px 55px rgba(0,0,0,.2);
+}
+
+.ry-treatment-page .facility-list > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--treat-red), transparent 55%);
+}
+
+.ry-treatment-page .facility-list > li > strong.text-large {
+  display: block;
+  max-width: 88%;
+  margin: 0 0 9px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.42rem) !important;
+  font-weight: 600;
+  line-height: 1.35;
+  scroll-margin-top: 115px;
+}
+
+.ry-treatment-page .facility-list > li > strong.text-large .text-deep-pink {
+  display: none;
+}
+
+.ry-treatment-page .facility-list > li > p:first-of-type {
+  margin: 0 0 20px !important;
+  color: var(--treat-red) !important;
+  font-family: "Syncopate", sans-serif;
+  font-size: .62rem !important;
+  font-weight: 700;
+  letter-spacing: .14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.ry-treatment-page .facility-list > li > p:first-of-type br {
+  display: none;
+}
+
+.ry-treatment-page .facility-list > li > p:not(:first-of-type) {
+  margin: 0 !important;
+  padding: 11px 0;
+  color: #b7b7bc !important;
+  font-family: "Lato", sans-serif;
+  font-size: .96rem !important;
+  line-height: 1.66;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.ry-treatment-page .facility-list > li > p:not(:first-of-type) strong,
+.ry-treatment-page .facility-list > li ul strong {
+  color: #f2f2f4;
+}
+
+.ry-treatment-page .facility-list > li > ul {
+  margin: 0 0 10px !important;
+  padding: 12px 0 12px 21px !important;
+  color: #b7b7bc;
+  border-top: 1px solid rgba(255,255,255,.075);
+}
+
+.ry-treatment-page .facility-list > li > ul li {
+  margin-bottom: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: .94rem;
+  line-height: 1.55;
+}
+
+.ry-treatment-page .facility-list > li > p.text-small {
+  color: #929299 !important;
+  font-size: .86rem !important;
+  font-style: italic;
+}
+
+.ry-treatment-page .btn {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: .69rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,36,56,.72) !important;
+  border-radius: 999px;
+  background: rgba(255,36,56,.11) !important;
+}
+
+.ry-treatment-page .btn.btn-deep-pink {
+  border-color: var(--treat-red) !important;
+  background: var(--treat-red) !important;
+}
+
+.ry-treatment-page .btn:hover,
+.ry-treatment-page .btn:focus-visible {
+  color: #fff !important;
+  border-color: #ff6876 !important;
+  background: rgba(255,36,56,.24) !important;
+}
+
+.ry-treatment-page .ry-treatment-sources {
+  padding: clamp(85px, 9vw, 130px) 0;
+  color: #c6c6ca;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px),
+    #0d0d0f;
+  background-size: 80px 80px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.ry-treatment-page .ry-treatment-sources .ry-section-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: #d9d9dc;
+}
+
+.ry-treatment-page .ry-treatment-sources .ry-section-eyebrow i {
+  color: var(--treat-red);
+  font-style: normal;
+}
+
+.ry-treatment-page .ry-treatment-sources__panel {
+  padding: clamp(28px, 4vw, 46px);
+  border: 1px solid var(--treat-line);
+  border-radius: 18px;
+  background: rgba(5,5,6,.78);
+}
+
+.ry-treatment-page .ry-treatment-sources__panel p,
+.ry-treatment-page .ry-treatment-sources__panel li {
+  color: #b9b9be;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.ry-treatment-page .ry-treatment-sources__panel p {
+  margin-bottom: 22px;
+}
+
+.ry-treatment-page .ry-treatment-sources__panel ul {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--treat-line);
+}
+
+.ry-treatment-page .ry-treatment-sources__panel li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--treat-line);
+}
+
+.ry-treatment-page .ry-treatment-sources__panel strong {
+  color: #fff;
+}
+
+.ry-treatment-page .ry-treatment-sources__note {
+  margin: 0 !important;
+  color: #8f8f95 !important;
+  font-size: .9rem !important;
+}
+
+.ry-treatment-page #where-next {
+  background:
+    radial-gradient(ellipse at 28% 10%, rgba(255,36,56,.08), transparent 34%),
+    #050506;
+}
+
+@media (max-width: 991px) {
+  .ry-treatment-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ry-map-key {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 25px;
+    align-items: center;
+    border-top: 1px solid var(--treat-line);
+    border-left: 0;
+  }
+
+  .ry-map-key strong {
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+
+  .ry-map-key__legend {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .ry-treatment-page .ry-treatment-hero {
+    min-height: 740px;
+  }
+
+  .ry-treatment-page .ry-treatment-hero .ry-page-hero__bg {
+    background-position: 55% center;
+  }
+
+  .ry-treatment-page #treatment-accordion .panel-title {
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+    font-size: .96rem;
+  }
+
+  .ry-treatment-page #treatment-accordion .panel-body {
+    padding: 0 0 30px;
+  }
+
+  .ry-treatment-map-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ry-treatment-map-section {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .ry-treatment-map-layout {
+    gap: 18px;
+  }
+
+  .ry-alberta-map {
+    width: 100%;
+  }
+
+  .ry-map-marker__label {
+    display: none;
+  }
+
+  .ry-map-popover {
+    position: absolute;
+    top: auto !important;
+    right: 9%;
+    bottom: 3%;
+    left: 9% !important;
+    width: auto;
+    transform: translateY(8px) scale(.98) !important;
+  }
+
+  .ry-map-popover.is-visible {
+    transform: translateY(0) scale(1) !important;
+  }
+
+  .ry-map-key {
+    display: block;
+    padding: 22px 8px 5px;
+  }
+
+  .ry-map-key strong {
+    margin: 10px 0 2px;
+  }
+
+  .ry-treatment-page .ry-treatment-zone-nav {
+    position: relative;
+    top: auto;
+  }
+
+  .ry-treatment-page .zone-pill {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .ry-treatment-page .featured-card {
+    padding: 26px 22px !important;
+  }
+
+  .ry-treatment-page .featured-badge {
+    top: 20px;
+    right: 20px;
+  }
+
+  .ry-treatment-page .facility-list > li {
+    padding: 26px 22px;
+  }
+
+  .ry-treatment-page .facility-list > li > strong.text-large {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-treatment-page .ry-map-marker__dot::after {
+    animation: none;
+  }
+
+  .ry-treatment-page .ry-map-marker__dot,
+  .ry-treatment-page .ry-map-popover,
+  .ry-treatment-page .ry-treatment-toggle-icon,
+  .ry-treatment-page .ry-treatment-toggle-icon > span,
+  .ry-treatment-page .zone-pill {
+    transition: none;
+  }
+}

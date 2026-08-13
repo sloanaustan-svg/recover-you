@@ -1,0 +1,451 @@
+/* ====================================================================
+   Recover-You — Start Here page layer
+   Loads AFTER ry-home.css. Inherits --ry-red and the shared brand
+   tokens from that file.
+
+   Design notes
+   ------------
+   * Background stays pure black. The "glass" on the phase cards is
+     FAKED with layered gradients + a hairline top highlight + inset
+     shadow. No backdrop-filter anywhere on this page: on a flat black
+     backdrop a blur has nothing to sample (blurred black is just
+     black), so it would cost real GPU time for zero visible effect —
+     and ten of them would risk scroll jank on mid-range phones.
+   * The ten phases run as a single column joined by a vertical spine
+     through the numbered badges, echoing the route graphic on the
+     landing page.
+   * Family colour is greyscale + brand red only, in three tiers:
+       .ry-phase--orient  grey  — get your bearings / wrap up
+       .ry-phase--core    red   — understand the damage
+       .ry-phase--build   white — build something back
+   ==================================================================== */
+
+:root {
+  --sh-glass-top: rgba(255, 255, 255, 0.055);
+  --sh-glass-mid: rgba(255, 255, 255, 0.022);
+  --sh-glass-bot: rgba(255, 255, 255, 0.012);
+  --sh-hairline:  rgba(255, 255, 255, 0.09);
+  --sh-sheen:     rgba(255, 255, 255, 0.14);
+  --sh-text:      rgba(255, 255, 255, 0.72);
+  --sh-text-dim:  rgba(255, 255, 255, 0.60);
+}
+
+.start-here-page {
+  background-color: #000;
+}
+
+/* The Start Here hero inherits the shared interior-page title scale. */
+.start-here-page .ry-page-hero__title {
+  text-transform: uppercase;
+}
+
+.ry-why,
+.ry-layers {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+.ry-phases-section {
+  position: relative;
+  background: #000;
+}
+.ry-why p,
+.ry-layers p {
+  font-size: 16.5px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--sh-text);
+  margin-bottom: 20px;
+}
+.ry-why strong,
+.ry-layers strong { color: #fff; font-weight: 600; }
+.ry-why a,
+.ry-layers a {
+  color: var(--ry-red);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.35);
+  transition: color .2s ease, border-color .2s ease;
+}
+.ry-why a:hover,
+.ry-layers a:hover { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+
+.ry-why-head,
+.ry-layers-head {
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+}
+.ry-why-head strong,
+.ry-layers-head strong { font-weight: 700; }
+
+/* scoped: this is a deliberate override of the shared .ry-lede for this
+   page only, not a second component sharing the name */
+.start-here-page .ry-lede {
+  font-size: 18.5px !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-weight: 300;
+}
+
+.ry-why-personal {
+  color: rgba(255, 255, 255, 0.62) !important;
+  border-left: 2px solid rgba(255, 0, 0, 0.4);
+  padding-left: 20px;
+}
+
+/* --------------------------------------------------------------------
+   Crisis callout — deliberately the loudest thing in the section
+   -------------------------------------------------------------------- */
+.ry-crisis-note {
+  position: relative;
+  margin: 30px 0 34px;
+  padding: 24px 26px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.32);
+  border-left: 3px solid var(--ry-red);
+  background:
+    linear-gradient(180deg, rgba(255, 0, 0, 0.09) 0%, rgba(255, 0, 0, 0.03) 100%),
+    linear-gradient(180deg, var(--sh-glass-top) 0%, var(--sh-glass-bot) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+.ry-crisis-note__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 9px;
+}
+.ry-crisis-note p { margin: 0 !important; color: rgba(255,255,255,0.82) !important; }
+
+/* --------------------------------------------------------------------
+   "If this is not your first attempt" — quieter glass aside
+   -------------------------------------------------------------------- */
+.ry-start-note {
+  margin-top: 40px;
+  padding: 30px 32px;
+  border-radius: 14px;
+  border: 1px solid var(--sh-hairline);
+  background: linear-gradient(180deg, var(--sh-glass-top) 0%, var(--sh-glass-mid) 45%, var(--sh-glass-bot) 100%);
+  box-shadow:
+    inset 0 1px 0 var(--sh-sheen),
+    0 22px 46px -30px rgba(0, 0, 0, 0.9);
+}
+.ry-start-note__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 14px;
+}
+.ry-start-note__label i { color: var(--ry-red); font-style: normal; margin-right: 7px; }
+.ry-start-note p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------
+   Three layers
+   -------------------------------------------------------------------- */
+.ry-layer-stack {
+  margin-top: 40px;
+  display: grid;
+  gap: 18px;
+}
+.ry-layer {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: start;
+  padding: 28px 30px;
+  border-radius: 14px;
+  border: 1px solid var(--sh-hairline);
+  background: linear-gradient(180deg, var(--sh-glass-top) 0%, var(--sh-glass-mid) 45%, var(--sh-glass-bot) 100%);
+  box-shadow:
+    inset 0 1px 0 var(--sh-sheen),
+    0 22px 46px -30px rgba(0, 0, 0, 0.9);
+}
+.ry-layer-num {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.34);
+}
+.ry-layer:nth-child(2) .ry-layer-num { -webkit-text-stroke-color: rgba(255, 0, 0, 0.55); }
+.ry-layer-body h3 {
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.ry-layer-body p { margin: 0 !important; }
+.ry-emph { color: var(--ry-red) !important; }
+
+.ry-layers-foot {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 575.98px) {
+  .ry-layer { grid-template-columns: 1fr; gap: 12px; padding: 24px 22px; }
+  .ry-layer-num { font-size: 34px; }
+}
+
+/* ====================================================================
+   THE ROADMAP — phase cards + spine
+   ==================================================================== */
+.ry-phases {
+  position: relative;
+  margin-top: 52px;
+  display: grid;
+  gap: 26px;
+}
+
+/* The spine: one hairline running the height of the stack, centred on
+   the badge column. Fades out at both ends so it doesn't stop dead. */
+.ry-phases::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  bottom: 26px;
+  left: 27px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.16) 6%,
+    rgba(255, 255, 255, 0.16) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.ry-phase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* -------- numbered badge sitting on the spine -------- */
+.ry-phase-rail {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  padding-top: 26px;
+}
+.ry-phase-badge {
+  position: relative;
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  /* solid fill so the spine appears to pass behind, not through */
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 7px #000, inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+/* -------- the faked-glass card -------- */
+.ry-phase-card {
+  position: relative;
+  padding: 30px 34px 26px;
+  border-radius: 16px;
+  border: 1px solid var(--sh-hairline);
+  background: linear-gradient(180deg, var(--sh-glass-top) 0%, var(--sh-glass-mid) 42%, var(--sh-glass-bot) 100%);
+  box-shadow:
+    inset 0 1px 0 var(--sh-sheen),          /* top edge highlight = the "glass" tell */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.55),
+    0 28px 56px -34px rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease;
+}
+/* left accent edge, tinted per tier */
+.ry-phase-card::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.28);
+}
+/* soft corner sheen — sells the glass without a blur */
+.ry-phase-card::after {
+  content: "";
+  position: absolute;
+  top: -60%; right: -20%;
+  width: 60%; height: 160%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+.ry-phase-card:hover { border-color: rgba(255, 255, 255, 0.16); }
+
+/* -------- tier tints -------- */
+.ry-phase--core  .ry-phase-card::before { background: var(--ry-red); }
+.ry-phase--core  .ry-phase-badge { border-color: rgba(255, 0, 0, 0.55); color: #fff; }
+.ry-phase--build .ry-phase-card::before { background: rgba(255, 255, 255, 0.75); }
+.ry-phase--build .ry-phase-badge { border-color: rgba(255, 255, 255, 0.42); }
+.ry-phase--orient .ry-phase-card::before { background: rgba(255, 255, 255, 0.22); }
+
+/* -------- card contents -------- */
+.ry-phase-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  margin-bottom: 12px;
+}
+.ry-phase--core .ry-phase-label { color: rgba(255, 80, 80, 0.85); }
+
+.ry-phase-title {
+  font-size: 23px;
+  line-height: 1.28;
+  margin: 0 0 10px;
+  font-weight: 300;
+  color: #fff;
+}
+.ry-phase-name { font-weight: 700; display: block; }
+.ry-phase-tag {
+  display: block;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 300;
+  margin-top: 3px;
+}
+
+.ry-phase-sub {
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--sh-text);
+  margin: 0 0 16px;
+}
+.ry-phase-why {
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--sh-text-dim);
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.028);
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
+}
+.ry-phase-why strong { color: rgba(255, 255, 255, 0.82); font-weight: 600; }
+.ry-phase--core .ry-phase-why { border-left-color: rgba(255, 0, 0, 0.4); }
+
+/* -------- page list -------- */
+.ry-page-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.ry-page-list li {
+  position: relative;
+  padding: 13px 0 13px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ry-page-list li:first-child { border-top: 0; }
+.ry-page-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 9px;
+  height: 1px;
+  background: var(--ry-red);
+  opacity: .7;
+}
+.ry-page-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.ry-page-link:hover { color: var(--ry-red); border-bottom-color: rgba(255, 0, 0, 0.5); }
+.ry-page-desc {
+  display: block;
+  margin-top: 5px;
+  font-size: 14.5px;
+  line-height: 1.62;
+  font-weight: 300;
+  color: var(--sh-text-dim);
+}
+.ry-page-desc em { color: rgba(255, 255, 255, 0.7); }
+
+/* -------- PDF pill -------- */
+.ry-pdf-pill {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 9px;
+  padding: 2px 8px 3px;
+  border-radius: 4px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  transition: all .2s ease;
+}
+.ry-pdf-pill:hover {
+  color: #fff;
+  background: rgba(255, 0, 0, 0.22);
+  border-color: rgba(255, 0, 0, 0.55);
+}
+.ry-pdf-pill--demo { cursor: default; }
+
+/* -------- tag pills -------- */
+.ry-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.ry-pill {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.56);
+  padding: 4px 11px 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ry-pill i { color: var(--ry-red); font-style: normal; margin-right: 5px; opacity: .8; }
+
+/* -------- responsive -------- */
+@media (max-width: 991.98px) {
+  .ry-phase-rail { position: static; padding-top: 0; }
+}
+@media (max-width: 767.98px) {
+  .ry-phases::before { display: none; }
+  .ry-phase { grid-template-columns: 1fr; gap: 0; }
+  .ry-phase-rail { justify-content: flex-start; margin-bottom: -22px; padding-left: 22px; }
+  .ry-phase-badge { width: 44px; height: 44px; font-size: 16px; box-shadow: none; }
+  .ry-phase-card { padding: 26px 22px 22px; }
+  .ry-phase-title { font-size: 20px; }
+  .ry-phase-tag { font-size: 15.5px; }
+}

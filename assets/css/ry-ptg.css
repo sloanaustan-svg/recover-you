@@ -1,0 +1,173 @@
+/* ====================================================================
+   Recover-You — Post-Traumatic Growth (page layer)
+   --------------------------------------------------------------------
+   Two page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-pullquote, .ry-split, .ry-figure,
+   .ry-video-card, .ry-diptych-section, .ry-sources, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE FIVE DOMAINS
+   --------------------------------------------------------------------
+   Each domain carries four parts: a name, two paragraphs on what growth
+   looks like there, four markers you might recognise, and one thing to
+   actually try.
+
+   THE PAGE SAYS WHY IT EXISTS IN ITS OWN SECOND SECTION: to give
+   "meaningful markers of progress beyond 'days sober'". So the markers
+   get a panel of their own rather than trailing the prose as bullets —
+   a reader scanning for evidence of their own movement should be able
+   to find twenty concrete signs without reading three thousand words
+   first.
+
+   And "A place to start" is pulled out at the foot of each card. It is
+   the only instruction on the page — the one sentence that asks the
+   reader to do something rather than recognise something — and in the
+   legacy it was the fifth paragraph of a long card, styled exactly like
+   the four above it. Pinned with auto margin so the five line up.
+   ==================================================================== */
+.ry-domains { margin: 40px 0 0; padding: 0; list-style: none; }
+
+.ry-domain {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px;
+  padding: 34px 38px 30px;
+  border-radius: 18px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-domain:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) { .ry-domain { padding: 26px 22px 24px; } }
+
+.ry-domain__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.ry-domain__n {
+  flex: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-domain__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(27px, 3.4vw, 36px);
+  letter-spacing: 0.03em;
+  line-height: 1.08;
+  color: #fff;
+  margin: 0;
+}
+
+.ry-domain__body { font-size: 15px; line-height: 1.8; font-weight: 300; color: var(--ry-ink-dim); }
+.ry-domain__body p { margin: 0 0 20px; }
+.ry-domain__body strong { color: #fff; font-weight: 600; }
+.ry-domain__body em { color: rgba(255, 255, 255, 0.88); }
+
+/* the markers — the reason the page says it exists */
+.ry-domain__markers {
+  margin: 4px 0 0;
+  padding: 22px 24px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: rgba(255, 255, 255, 0.03);
+}
+.ry-domain__markers-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 13px;
+}
+.ry-domain__markers ul { margin: 0; padding: 0; list-style: none; }
+.ry-domain__markers li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 11px 22px;
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-domain__markers li:last-child { padding-bottom: 0; }
+/* a small open square rather than a tick: these are things a reader may
+   or may not recognise yet, and a tick would imply they are complete */
+.ry-domain__markers li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 7px;
+  width: 9px; height: 9px;
+  border: 1px solid rgba(255, 47, 110, 0.65);
+  border-radius: 2px;
+}
+
+/* the one instruction on the page */
+.ry-domain__start {
+  margin: 22px 0 0;
+  padding: 20px 24px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 47, 110, 0.32);
+  border-left: 3px solid var(--ry-red);
+  background:
+    linear-gradient(180deg, rgba(255, 47, 110, 0.08) 0%, rgba(255, 47, 110, 0.02) 100%),
+    rgba(255, 255, 255, 0.02);
+}
+.ry-domain__start-label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 9px;
+}
+.ry-domain__start p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-domain__start em { color: #fff; font-style: italic; }
+.ry-domain__start strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   2. WHAT IT LOOKS LIKE IN REAL LIFE
+   --------------------------------------------------------------------
+   Seven signs, set as a list a reader can run down rather than as a
+   paragraph they read past. Same open-square marker as the domain
+   markers, for the same reason and so the two read as the same kind of
+   thing in two places.
+   ==================================================================== */
+.ry-signs { margin: 28px 0; padding: 0; list-style: none; }
+.ry-signs li {
+  position: relative;
+  margin: 0;
+  padding: 13px 0 13px 26px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-signs li:last-child { border-bottom: 1px solid var(--ry-hairline); }
+.ry-signs li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 20px;
+  width: 10px; height: 10px;
+  border: 1px solid rgba(255, 47, 110, 0.65);
+  border-radius: 2px;
+}

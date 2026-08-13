@@ -1,0 +1,256 @@
+/* ====================================================================
+   Recover-You — Brain on Fire (page layer)
+   --------------------------------------------------------------------
+   Two page-specific pieces: the loop that gives the section its name,
+   and the framing for the four brain-region panels (which reuse the
+   shared .ry-compare switcher rather than redefining it).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE CYCLE
+   --------------------------------------------------------------------
+   The section is called "One Feeds the Other" and the copy describes a
+   closed loop, so the loop is drawn as one: four steps at the compass
+   points of a 3x3 grid with an SVG ring behind them.
+
+   The steps are real HTML in reading order. The ring is decoration in
+   a layer behind, hidden from assistive tech and dropped entirely on
+   narrow screens, where the same four steps become a vertical sequence
+   with a return arrow at the bottom. Nothing depends on JavaScript and
+   nothing depends on the ring rendering.
+   ==================================================================== */
+.ry-cycle {
+  position: relative;
+  margin: 44px 0 0;
+}
+
+/* The ring lives inside a plain <div> rather than being positioned
+   directly. An <svg> is a replaced element, and `inset: 0` does not
+   stretch replaced elements the way it stretches a normal box — it
+   falls back to intrinsic size, which is how a square viewBox rendered
+   a thousand pixels wide became a thousand pixels tall and swept down
+   through the three sections below it. A div does stretch, and its
+   overflow:hidden is a hard guarantee the ring stays in its own box. */
+.ry-cycle__ringbox {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ry-cycle__ring {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* the ellipse is sized in percentages of the element rather than through
+   a viewBox, so it follows the grid's proportions directly */
+.ry-cycle__ring ellipse {
+  fill: none;
+  stroke: rgba(255, 47, 110, 0.32);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 8;
+}
+
+.ry-cycle__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+}
+
+.ry-cycle__step {
+  padding: 24px 26px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-cycle__n {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  color: var(--ry-red);
+  margin-bottom: 10px;
+}
+.ry-cycle__head {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.42;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.ry-cycle__sub {
+  display: block;
+  font-size: 13.5px;
+  line-height: 1.66;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* the centre of the ring — the line the whole loop is building toward */
+.ry-cycle__hub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+}
+.ry-cycle__hub p { margin: 0; }
+.ry-cycle__hub em {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ry-ink-faint);
+}
+.ry-cycle__hub b {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--ry-red);
+  margin-bottom: 12px;
+}
+
+/* ---- narrow: a vertical sequence with a return ---- */
+.ry-cycle__return {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 47, 110, 0.4);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-cycle__return b { color: var(--ry-red); font-weight: 600; }
+
+/* ---- wide: lay the four steps out around the ring ---- */
+@media (min-width: 992px) {
+  .ry-cycle { padding: 8px 0 0; }
+  .ry-cycle__ringbox { display: block; }
+  .ry-cycle__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 22px 30px;
+    align-items: center;
+  }
+  .ry-cycle__step:nth-of-type(1) { grid-area: 1 / 2; }   /* top    */
+  .ry-cycle__step:nth-of-type(2) { grid-area: 2 / 3; }   /* right  */
+  .ry-cycle__step:nth-of-type(3) { grid-area: 3 / 2; }   /* bottom */
+  .ry-cycle__step:nth-of-type(4) { grid-area: 2 / 1; }   /* left   */
+  .ry-cycle__hub { grid-area: 2 / 2; }
+  .ry-cycle__return { display: none; }
+}
+
+/* ====================================================================
+   2. BRAIN REGION PANELS
+   The switcher itself is the shared .ry-compare. This only styles what
+   goes inside a panel: image beside the region's name, its strapline,
+   and the body copy.
+   ==================================================================== */
+.ry-region {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 32px;
+  align-items: center;
+  padding: 32px 34px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (max-width: 767.98px) { .ry-region { grid-template-columns: 1fr; gap: 22px; padding: 24px 22px; } }
+
+.ry-region__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid var(--ry-hairline);
+}
+.ry-region__figure img { display: block; width: 100%; height: auto; }
+
+.ry-region__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.05;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin: 0 0 8px;
+}
+/* the strapline is the finding in five words — it carries the panel */
+.ry-region__strap {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ry-red);
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-region__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-region__body strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   3. THE LIE / THE TRUTH
+   A two-line antithesis in the copy. Set as a pair so the correction
+   reads as a correction rather than as two more sentences.
+   ==================================================================== */
+.ry-swap {
+  display: grid;
+  gap: 1px;
+  background: var(--ry-hairline);
+  border: 1px solid var(--ry-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+.ry-swap__row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+  padding: 20px 24px;
+  background: #060606;
+}
+@media (max-width: 575.98px) {
+  .ry-swap__row { grid-template-columns: 1fr; gap: 6px; }
+}
+.ry-swap__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+}
+.ry-swap__row--truth .ry-swap__label { color: var(--ry-red); }
+.ry-swap__text {
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ry-ink-dim);
+}
+.ry-swap__row--truth .ry-swap__text { color: #fff; font-style: normal; }

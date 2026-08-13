@@ -1,0 +1,192 @@
+/* ====================================================================
+   Recover-You — Shame, Grief & The False Self (page layer)
+   --------------------------------------------------------------------
+   Two components the legacy page built by hand and nothing else on the
+   site reuses yet: the self-recognition checklist and the reconnect
+   card pair. Shared components stay in ry-article.css, which must load
+   first (this file uses its :root tokens).
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE SELF-RECOGNITION BAND
+   Intro copy on one side, the "is this you?" checklist on the other.
+   The legacy version sat on a photographic background; kept here as
+   faint texture under a scrim, the same treatment as the attachment
+   styles band, so the two read as the same kind of moment.
+   ==================================================================== */
+.ry-recognise {
+  position: relative;
+  overflow: hidden;
+}
+.ry-recognise__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+}
+.ry-recognise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.6) 28%, rgba(0,0,0,0.6) 72%, #000 100%);
+  pointer-events: none;
+}
+.ry-recognise > .container { position: relative; z-index: 2; }
+
+.ry-recognise__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 26px;
+  align-items: start;
+}
+@media (max-width: 991.98px) { .ry-recognise__grid { grid-template-columns: 1fr; } }
+
+.ry-recognise__intro,
+.ry-checklist {
+  padding: 36px 38px 32px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-recognise__intro p {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-recognise__intro p:last-child { margin-bottom: 0; }
+.ry-recognise__intro strong { color: #fff; font-weight: 600; }
+
+/* ---- the checklist itself ----
+   Each item is a sentence the reader is being asked to test against
+   themselves, so they are spaced apart and separated by hairlines
+   rather than run together as a tight list. The point is to slow the
+   reading down, not to fit five bullets in the smallest space. */
+.ry-checklist { border-left: 3px solid var(--ry-red); }
+.ry-checklist__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 22px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-checklist ul { list-style: none; margin: 0 0 22px; padding: 0; }
+.ry-checklist li {
+  position: relative;
+  padding: 0 0 16px 34px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-checklist li:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+/* a hollow marker rather than a tick: nothing here has been confirmed,
+   the reader is the one deciding whether it applies */
+.ry-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--ry-red);
+  border-radius: 3px;
+}
+.ry-checklist__note {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--ry-hairline);
+  font-size: 14.5px;
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-checklist__note strong { color: #fff; font-weight: 600; }
+
+@media (max-width: 767.98px) {
+  .ry-recognise__intro, .ry-checklist { padding: 28px 24px 26px; }
+}
+
+/* ====================================================================
+   2. RECONNECT CARDS
+   Two short practice lists beside the main copy. Offsetting the second
+   card on wide screens keeps the pair from reading as a table of two
+   equal options — the first is genuinely meant to come first.
+   ==================================================================== */
+.ry-reconnect {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 34px;
+  align-items: start;
+}
+@media (max-width: 991.98px) { .ry-reconnect { grid-template-columns: 1fr; gap: 26px; } }
+
+.ry-reconnect__side { display: grid; gap: 18px; }
+
+.ry-reconnect__card {
+  padding: 30px 32px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (min-width: 1200px) {
+  .ry-reconnect__card--offset { margin-left: 34px; }
+}
+.ry-reconnect__card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 18px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-reconnect__card ul { list-style: none; margin: 0; padding: 0; }
+.ry-reconnect__card li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-reconnect__card li:last-child { margin-bottom: 0; }
+.ry-reconnect__card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 9px;
+  height: 1px;
+  background: var(--ry-red);
+}
+.ry-reconnect__card li strong { color: #fff; font-weight: 600; }
+
+/* ====================================================================
+   3. ATTRIBUTION NOTE
+   The meme image carries a fair-use / non-endorsement disclaimer. It is
+   legal text, not caption text, so it is deliberately quieter than a
+   normal figcaption and does not get the red rule.
+   ==================================================================== */
+.ry-attribution {
+  margin: 12px 0 0;
+  font-size: 11.5px;
+  line-height: 1.62;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.34);
+}
+/* the disclaimer arrives as converted prose, so it is a <div> wrapping a
+   <p> rather than a bare <p> — style the child too */
+.ry-attribution p { font: inherit; color: inherit; margin: 0; }
+.ry-attribution p + p { margin-top: 8px; }
+.ry-attribution + .ry-attribution { margin-top: 8px; }
+.ry-attribution em { font-style: italic; }

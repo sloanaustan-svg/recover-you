@@ -1,0 +1,182 @@
+/* ====================================================================
+   Recover-You — The Reality Test (page layer)
+   --------------------------------------------------------------------
+   Three page-specific pieces. Everything else reuses the shared layer
+   (.ry-prose, .ry-note, .ry-callout, .ry-pullquote, .ry-split,
+   .ry-sheet, .ry-figure, .ry-cta, .ry-next-grid).
+
+   Requires ry-article.css for the :root tokens. Nothing here reuses a
+   class name that ry-article.css already owns — see check_collisions.py.
+   ==================================================================== */
+
+/* ====================================================================
+   1. THE PROTOCOL — three steps, and they are steps
+   --------------------------------------------------------------------
+   Predict, run it, record what happened. The page is a worksheet you
+   execute rather than an essay you read, so the steps carry a number
+   and a rule that makes the sequence unmistakable.
+   ==================================================================== */
+.ry-protocol__step { margin: 0; }
+
+.ry-protocol__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 47, 110, 0.4);
+}
+.ry-protocol__n {
+  flex: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--ry-red);
+}
+.ry-protocol__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  letter-spacing: 0.03em;
+  line-height: 1.08;
+  color: #fff;
+  margin: 0;
+}
+
+/* ====================================================================
+   2. THE FIELDS — the parts you actually fill in
+   --------------------------------------------------------------------
+   Each step asks for specific things: the avoided action, the story,
+   the feelings, the body's vote. Those are the worksheet. The legacy
+   ran them as bullets inside the surrounding prose, which made them
+   look like more explanation rather than like prompts waiting for an
+   answer.
+
+   Numbered down the left with a rule between each, so the block reads
+   as a form — something with blanks in it — rather than as a list of
+   points the author is making.
+   ==================================================================== */
+.ry-fields { margin: 24px 0; padding: 0; list-style: none; counter-reset: ry-field; }
+
+.ry-fields__item {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 6px 16px;
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-fields__item:last-child { border-bottom: 1px solid var(--ry-hairline); }
+/* The number owns column one, row one, and nothing else. Every other
+   child is pinned to column two explicitly — otherwise a field that
+   carries worked examples flows a third item back under the number,
+   which is the marker column and far too narrow for it. Caught by
+   check_spacing.py; the wrap only appears on the two fields that have
+   examples, which is exactly the kind of thing an eyeball misses. */
+.ry-fields__item::before {
+  counter-increment: ry-field;
+  content: counter(ry-field);
+  grid-column: 1;
+  grid-row: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: var(--ry-ink-faint);
+}
+.ry-fields__name,
+.ry-fields__body,
+.ry-fields__eg { grid-column: 2; }
+
+.ry-fields__name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ry-red);
+}
+/* a real element, because this is a grid container and every in-flow
+   child element becomes its own grid item */
+.ry-fields__body p {
+  margin: 0 0 12px;
+  font-size: 14.5px;
+  line-height: 1.75;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-fields__body > :last-child { margin-bottom: 0; }
+.ry-fields__body strong { color: #fff; font-weight: 600; }
+.ry-fields__body em { color: rgba(255, 255, 255, 0.88); }
+
+/* a set of worked examples nested under one field */
+.ry-fields__eg { margin: 12px 0 0; padding: 0; list-style: none; }
+.ry-fields__eg li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 9px 18px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ry-ink-faint);
+}
+.ry-fields__eg li:last-child { padding-bottom: 0; }
+.ry-fields__eg li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10px;
+  width: 8px; height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ====================================================================
+   3. THE NEURAL AMPLIFIERS — marked as optional, because they are
+   --------------------------------------------------------------------
+   The page states this in its own introduction: "Optional add-ons are
+   listed below each step." But the legacy drew them as pink-bordered
+   blockquotes — visually identical to the required content around them
+   — so nothing told the reader which parts were the exercise and which
+   were extra credit.
+
+   Somebody working through a protocol needs to know what they can skip
+   without breaking it. So these are set apart and carry the word
+   OPTIONAL: dashed edge, no fill, quieter than the steps they sit
+   under. Being visibly secondary is the entire point of the component.
+   ==================================================================== */
+.ry-amp {
+  margin: 22px 0;
+  padding: 20px 24px 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.26);
+  border-radius: 12px;
+  background: transparent;
+}
+.ry-amp__tag {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ry-ink-faint);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  padding: 3px 8px;
+  margin-bottom: 12px;
+}
+.ry-amp__name {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 8px;
+}
+.ry-amp__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-amp__body em { color: rgba(255, 255, 255, 0.85); }
+.ry-amp__body strong { color: #fff; font-weight: 600; }

@@ -1,0 +1,214 @@
+/* Recover-You sitemap */
+
+.ry-sitemap-page {
+  background: #050506;
+}
+
+.ry-sitemap-page .ry-page-hero {
+  min-height: 62vh;
+}
+
+.ry-sitemap-page .ry-page-hero__bg {
+  filter: grayscale(1) contrast(1.08);
+  opacity: .48;
+}
+
+.ry-sitemap-page .ry-page-hero__scrim {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .56) 58%, rgba(0, 0, 0, .72) 100%),
+    linear-gradient(0deg, #050506 0%, rgba(5, 5, 6, .18) 42%, rgba(5, 5, 6, .28) 100%);
+}
+
+.ry-sitemap-intro {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.ry-sitemap-intro::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 25%, rgba(255, 31, 48, .09), transparent 25%),
+    radial-gradient(circle at 82% 72%, rgba(255, 255, 255, .035), transparent 28%);
+}
+
+.ry-sitemap-intro .container,
+.ry-sitemap-directory .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ry-sitemap-directory {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .018), transparent 22%),
+    #050506;
+}
+
+.ry-sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ry-sitemap-card {
+  grid-column: span 6;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: clamp(28px, 4vw, 46px);
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 4px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .052), rgba(255, 255, 255, .015));
+  transition: border-color .25s ease, transform .25s ease, background .25s ease;
+}
+
+.ry-sitemap-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 54px;
+  content: "";
+  background: #ff1f30;
+}
+
+.ry-sitemap-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 31, 48, .42);
+  background: linear-gradient(145deg, rgba(255, 31, 48, .055), rgba(255, 255, 255, .018));
+}
+
+.ry-sitemap-card--wide {
+  grid-column: span 12;
+}
+
+.ry-sitemap-card__eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #ff1f30;
+  font-family: "Syncopate", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.ry-sitemap-card h2 {
+  margin: 0 0 25px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(27px, 3vw, 40px);
+  font-weight: 300;
+  letter-spacing: -.035em;
+  line-height: 1.05;
+}
+
+.ry-sitemap-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 42px;
+}
+
+.ry-sitemap-group + .ry-sitemap-group {
+  margin-top: 28px;
+}
+
+.ry-sitemap-columns .ry-sitemap-group + .ry-sitemap-group {
+  margin-top: 0;
+}
+
+.ry-sitemap-group h3 {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, .52);
+  font-family: "Syncopate", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+
+.ry-sitemap-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ry-sitemap-list li {
+  border-top: 1px solid rgba(255, 255, 255, .075);
+}
+
+.ry-sitemap-list li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, .075);
+}
+
+.ry-sitemap-list a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 2px;
+  color: rgba(255, 255, 255, .82);
+  font-size: 14px;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.ry-sitemap-list a::after {
+  flex: 0 0 auto;
+  color: #ff1f30;
+  content: "\2192";
+  font-size: 15px;
+  opacity: .7;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.ry-sitemap-list a:hover,
+.ry-sitemap-list a:focus-visible {
+  padding-left: 7px;
+  color: #fff;
+}
+
+.ry-sitemap-list a:hover::after,
+.ry-sitemap-list a:focus-visible::after {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+  .ry-sitemap-card,
+  .ry-sitemap-card--wide {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ry-sitemap-page .ry-page-hero {
+    min-height: 560px;
+  }
+
+  .ry-sitemap-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .ry-sitemap-columns .ry-sitemap-group + .ry-sitemap-group {
+    margin-top: 26px;
+  }
+
+  .ry-sitemap-card {
+    padding: 27px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ry-sitemap-card,
+  .ry-sitemap-list a,
+  .ry-sitemap-list a::after {
+    transition: none;
+  }
+}
