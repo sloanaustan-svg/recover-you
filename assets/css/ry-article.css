@@ -2008,50 +2008,18 @@ html:not(.ry-js) .ry-barchart__bar { transform: scaleX(1); }
    field. Dropped straight onto black they partly disappear: you see
    the light elements and lose everything else.
 
-   This sets a soft off-white plate behind the image, clipped to the
-   same notched silhouette so the corner cuts still read. Off-white
-   rather than pure white, and a hair inset, so it reads as a mounted
-   plate rather than a glaring rectangle.
+   This sets a white plate directly on the image box. Because the image
+   already carries the notched clip-path, the plate follows the same
+   silhouette while leaving both corner accent rules available.
 
    Only for artwork that needs it — measure first. Anything already
    light, or opaque, should stay unplated.
    -------------------------------------------------------------------- */
-.ry-concept--plate::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse at 50% 40%, #ffffff 0%, #eceae6 65%, #dedbd5 100%);
-  clip-path: polygon(
-    var(--ry-notch) 0,
-    100% 0,
-    100% calc(100% - var(--ry-notch)),
-    calc(100% - var(--ry-notch)) 100%,
-    0 100%,
-    0 var(--ry-notch)
-  );
-}
-.ry-concept--plate.ry-concept--flip::after {
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--ry-notch)) 0,
-    100% var(--ry-notch),
-    100% 100%,
-    var(--ry-notch) 100%,
-    0 calc(100% - var(--ry-notch))
-  );
-}
-/* the plate sits behind, so the wrapper needs its own stacking context */
-.ry-concept--plate { isolation: isolate; z-index: 0; }
-/* breathing room so the art doesn't touch the plate edges */
 .ry-concept--plate img {
-  position: relative;
-  z-index: 1;
+  background: #fff;
   padding: 6%;
   box-sizing: border-box;
 }
-.ry-concept--plate::before { z-index: 2; }
 
 /* ====================================================================
    29. CONTENT WARNING
