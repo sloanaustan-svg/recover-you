@@ -563,6 +563,9 @@ h1.ry-home-mega-red-word {
 .ry-home-mega-red-word strong {
   color: #ff2438;
   font: inherit;
+  display: inline-block;
+  transform: translateY(-.01em) scale(1.24);
+  transform-origin: center center;
   text-shadow: 0 0 28px rgba(255,36,56,.2);
 }
 
