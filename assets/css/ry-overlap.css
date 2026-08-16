@@ -1,7 +1,7 @@
 /* ====================================================================
-   Recover-You — When Trauma and Addiction Overlap (page layer)
+   Recover-You — Treating Trauma and Addiction Together (page layer)
    --------------------------------------------------------------------
-   Four page-specific pieces. Everything else reuses the shared layer
+   Five page-specific pieces. Everything else reuses the shared layer
    (.ry-split, .ry-prose, .ry-note, .ry-statgrid, .ry-quote-section,
    .ry-diptych-section, .ry-next-grid).
 
@@ -150,6 +150,18 @@
   overflow: hidden;
 }
 @media (max-width: 767.98px) { .ry-tobe { grid-template-columns: 1fr; } }
+
+/* Keep the longer evidence label clear of the fixed mobile logo. */
+@media (max-width: 575.98px) {
+  .ry-page-hero .ry-hero-eyebrow {
+    max-width: calc(100% - 112px);
+    margin-left: 112px;
+    margin-bottom: 24px;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+  }
+}
 
 .ry-tobe__side { padding: 24px 26px 22px; background: #070707; }
 .ry-tobe__title {
