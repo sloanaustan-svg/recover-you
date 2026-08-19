@@ -3,3 +3,12 @@
 /the-reckoning.html      /trauma-addiction-evidence   301
 /cptsd-behaviors         /cptsd-behaviours            301
 /cptsd-behaviors.html    /cptsd-behaviours            301
+
+# Redirect old .html URLs to canonical clean URLs.
+/resources-alberta-health.html              /resources-alberta-health              301!
+/trauma-avoidant.html                       /trauma-avoidant                       301!
+/why-traditional-treatment-falls-short.html /why-traditional-treatment-falls-short 301!
+/toxic-stress.html                          /toxic-stress                          301!
+/resources-trauma-therapy.html              /resources-trauma-therapy              301!
+/resources-treatment-centres.html           /resources-treatment-centres           301!
+/better-model-of-care.html                   /better-model-of-care                  301!
