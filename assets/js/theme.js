@@ -2497,7 +2497,13 @@ $(document).ready(function(){
 		}
 
 		// If a link's href is within the current page, scroll to it instead
-		document.querySelectorAll( 'a[href]:not([href="#"])' ).forEach( a => { // added :not([href="#"]) to avoid hrefs that ONLY contain the # sign and nothing else
+		// :not([href="#"]) avoids hrefs that ONLY contain the # sign and nothing else.
+		// :not([data-bs-toggle]) keeps Bootstrap controls out of this handler. An
+		// accordion toggle uses href="#panel-id" to name the panel it controls, not to
+		// navigate to it. Without this exclusion, opening a panel also called
+		// smoother.scrollTo(panel), which (with smooth:0) teleported the page to that
+		// panel and threw the heading you had just clicked off the top of the screen.
+		document.querySelectorAll( 'a[href]:not([href="#"]):not([data-bs-toggle])' ).forEach( a => {
 			a.addEventListener( 'click', e => {
 				scrollToHash( getSamePageAnchor( a ), e );
 			});

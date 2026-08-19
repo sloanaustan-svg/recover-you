@@ -1713,3 +1713,13 @@ body.policy-modal-open { overflow: hidden; }
     background: rgba(255, 255, 255, 0.22);
   }
 }
+
+/* ==========================================================================
+   Icon spacing utilities
+   These class names were already in use across the site (156 occurrences)
+   but were never defined in any stylesheet, so inline icons sat flush
+   against their label text. Defining them here, in the layer loaded on
+   every page.
+   ========================================================================== */
+.margin-5px-right { margin-right: 5px; }
+.margin-10px-right { margin-right: 10px; }
