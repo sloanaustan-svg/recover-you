@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Voice Review — Batch 1</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1b1b1b; --muted:#6b6b6b; --line:#dee2e6;
+    --panel:#f8f9fa; --old:#fdf2f2; --oldline:#c0392b; --new:#f1f8f3; --newline:#2b7a4b;
+    --accent:#1b1b1b;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#141414; --fg:#ececec; --muted:#9a9a9a; --line:#2e2e2e;
+      --panel:#1c1c1c; --old:#2a1717; --oldline:#e07a6e; --new:#152318; --newline:#6bbd88;
+      --accent:#ececec;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 24px 96px}
+  h1{font-size:30px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 36px;font-size:15px}
+  h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+     margin:52px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-weight:600}
+  h3{font-size:19px;margin:44px 0 4px;letter-spacing:-.01em}
+  h3 .fn{font:13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);
+        display:block;margin-top:6px;letter-spacing:0;text-transform:none}
+  .summary{background:var(--panel);border:1px solid var(--line);padding:20px 22px;margin:0 0 8px}
+  .summary ul{margin:8px 0 0;padding-left:20px}
+  .summary li{margin:6px 0}
+  .stats{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 0}
+  .stat{flex:1 1 150px;background:var(--bg);padding:14px 16px}
+  .stat b{display:block;font-size:24px;line-height:1.1}
+  .stat span{font-size:12px;color:var(--muted)}
+  .item{border:1px solid var(--line);margin:14px 0;background:var(--bg)}
+  .item > .hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+    padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line)}
+  .num{font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    border:1px solid var(--line);padding:4px 7px;background:var(--bg)}
+  .tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tier{font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line)}
+  .t1{color:var(--oldline);border-color:var(--oldline)}
+  .row{padding:14px 16px;border-left:3px solid transparent}
+  .row.old{background:var(--old);border-left-color:var(--oldline)}
+  .row.new{background:var(--new);border-left-color:var(--newline)}
+  .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+       display:block;margin-bottom:5px}
+  .why{padding:10px 16px;font-size:14px;color:var(--muted);border-top:1px dashed var(--line)}
+  mark{background:rgba(224,122,110,.28);color:inherit;padding:0 2px}
+  .note{border:1px solid var(--line);border-left:3px solid var(--accent);
+        padding:14px 16px;margin:14px 0;background:var(--panel);font-size:15px}
+  .note b{display:block;margin-bottom:4px}
+  code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--panel);
+       padding:2px 5px;border:1px solid var(--line)}
+  .foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+        color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>AI-Voice Review — Batch 1</h1>
+<p class="sub">Trauma Foundations · what-is-trauma.html · what-is-cptsd.html · attachment.html · nothing edited yet</p>
+
+<div class="summary">
+  <b>Four structural findings before the line items:</b>
+  <ul>
+    <li><b>what-is-trauma.html was missed by your em dash pass.</b> 137 em dashes still in the visible copy. The other two pages have 7 and 6. That page is the loudest tell in this batch and it is a find-and-replace job, not a rewrite job.</li>
+    <li><b>Negation-flip density.</b> "It isn't X. It's Y." fires 31 times on what-is-trauma, 19 on attachment, 9 on what-is-cptsd. This is a real part of how you write (it's all over About Me), so the fix is not elimination. It's thinning. At 31 in one page it stops reading as a voice and starts reading as a template.</li>
+    <li><b>Comma splices left behind by the dash removal.</b> On attachment.html the em dashes were mostly replaced with commas, which produced run-on sentences: "attachment isn't about love, it's about safety." Grammatically wrong, and the uniformity of it looks machine-processed. A period or semicolon fixes each one.</li>
+    <li><b>Repeated devices across pages.</b> Same closer or same metaphor used twice in two different files. Readers who move through the site in order will notice. Listed at the bottom.</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>137</b><span>em dashes, what-is-trauma</span></div>
+    <div class="stat"><b>31</b><span>negation flips, what-is-trauma</span></div>
+    <div class="stat"><b>44</b><span>line items proposed</span></div>
+    <div class="stat"><b>0</b><span>files changed so far</span></div>
+  </div>
+</div>
+
+<h2>How to reply</h2>
+<div class="note">
+  Reply with numbers only. <code>T3 yes, T7 no, C2 reword</code>. Anything you don't mention, I leave alone.
+  <b style="margin-top:8px">Tier 1</b> items are the ones I'd bet money a reader would clock as AI. Everything else is judgment.
+</div>
+
+<h2>what-is-trauma.html</h2>
+
+<h3>The colon-reveal openers<span class="fn">your primary target</span></h3>
+
+<div class="item">
+  <div class="hd"><span class="num">T1</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span>And <mark>here's the question that almost never gets asked:</mark> if pain feels like home to a child, what does that child grow into?</div>
+  <div class="row new"><span class="lbl">Proposed</span>Nobody ever asked me the question that mattered. If pain feels like home to a child, what does that child grow into?</div>
+  <div class="why">This is the exact construction you flagged. Swapping the passive "gets asked" for your own experience also puts you back in the sentence.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T2</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>That's one of the most insidious parts of childhood trauma:</mark> you don't always realize it happened.</div>
+  <div class="row new"><span class="lbl">Proposed</span>That is what makes childhood trauma so hard to catch. You do not always realize it happened.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T3</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>The outcome is predictable:</mark> misdiagnosis, mismatched treatment, and survivors left without the care they truly need.</div>
+  <div class="row new"><span class="lbl">Proposed</span>So people get misdiagnosed, handed the wrong treatment, and left without the care they actually need.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T4</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>The cycle compounds itself:</mark> trauma sets the stage, addiction writes new chapters, and the chapters become harder to distinguish from the original story.</div>
+  <div class="row new"><span class="lbl">Proposed</span>The cycle compounds itself. Trauma sets the stage, addiction writes new chapters, and the chapters get harder to tell apart from the original story.</div>
+  <div class="why">Same sentence, colon becomes a period. Cheapest fix on the page.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T5</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span>The physical injuries eventually closed. <mark>The invisible ones had different plans:</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>The physical injuries eventually closed. The invisible ones stayed.</div>
+  <div class="why">"Had different plans" personifies the injuries for a beat of drama. The list underneath already does that work.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T6</span><span class="tier t1">Tier 1</span><span class="tag">heading</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Here's the key difference.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Why That One Was Different</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T7</span><span class="tier">Tier 2</span><span class="tag">label + typo</span></div>
+  <div class="row old"><span class="lbl">Current</span>Why It's Normal Not to Know<mark> : </mark>Recognizing Childhood Trauma</div>
+  <div class="row new"><span class="lbl">Proposed</span>Why You Might Not Know It Happened</div>
+  <div class="why">There is also a stray space before that colon in the source. Worth fixing regardless of whether you take the rewrite.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T8</span><span class="tier">Tier 2</span><span class="tag">label</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>A Critical Note on "Nothing":</mark> Trauma isn't only what happened to you, it's also what didn't.</div>
+  <div class="row new"><span class="lbl">Proposed</span>The "Nothing" Counts Too. Trauma is not only what happened to you. It is also what didn't.</div>
+  <div class="why">"A Critical Note on" is the AI register. The colon itself is fine as a label, it's the phrase in front of it that isn't yours.</div>
+</div>
+
+<h3>Clichés and flourishes</h3>
+
+<div class="item">
+  <div class="hd"><span class="num">T9</span><span class="tier t1">Tier 1</span><span class="tag">dead cliché · factually wrong</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Think of the old analogy: a frog in slowly heating water.</mark> The temperature rises so gradually it never registers as danger. It just keeps adapting, until it can't. That's what growing up inside trauma often feels like.</div>
+  <div class="row new"><span class="lbl">Proposed</span>That's what growing up inside trauma feels like. Pain doesn't make you wince when pain is all you've known.</div>
+  <div class="why">Two problems. It's a colon setup, and the boiling frog story is false: frogs jump out. You cite real research everywhere else on this site, so a debunked folk analogy is a credibility leak as well as an AI tell. Your own next line already carries the point.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T10</span><span class="tier t1">Tier 1</span><span class="tag">tricolon flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>This is how toxic shame takes root. <mark>It doesn't knock. It doesn't announce itself. It simply moves in, quietly, thoroughly, and begins rearranging the furniture.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>This is how toxic shame takes root. It doesn't announce itself. It moves in quietly and starts rearranging the furniture.</div>
+  <div class="why">Three-beat build into an extended metaphor is the most recognizable AI paragraph shape there is. Cutting one beat and one adverb pair keeps the image and kills the rhythm.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T11</span><span class="tier t1">Tier 1</span><span class="tag">abstract-noun metaphor</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>This is the silent architecture of internalized shame.</mark> It doesn't need words to run the show.</div>
+  <div class="row new"><span class="lbl">Proposed</span>That is internalized shame. It doesn't need words to run the show.</div>
+  <div class="why">"The silent architecture of" is a phrase no one says out loud. Compare it to how you write in About Me: "I just called it Tuesday."</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T12</span><span class="tier t1">Tier 1</span><span class="tag">inspirational closer</span></div>
+  <div class="row old"><span class="lbl">Current</span>Not fixed. Not finished. But different from before you started reading. <mark>That difference is where everything else begins.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Not fixed. Not finished. But different from before you started reading.</div>
+  <div class="why">Delete the last sentence. "X is where everything begins" is a stock AI landing. The three fragments before it are stronger without a bow on top.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T13</span><span class="tier">Tier 2</span><span class="tag">flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>They are among the primary mechanisms through which healing actually occurs. <mark>The research on this is not ambiguous.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>They are among the primary mechanisms through which healing actually occurs.</div>
+  <div class="why">Delete. Asserting that your evidence is unambiguous is something writers do when they're padding. You already cited Harvard in the sentence before.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T14</span><span class="tier">Tier 2</span><span class="tag">"what matters is"</span></div>
+  <div class="row old"><span class="lbl">Current</span>The entry point doesn't matter. <mark>What matters is that</mark> the body encounters a new pattern and registers it as real rather than as a temporary exception.</div>
+  <div class="row new"><span class="lbl">Proposed</span>The entry point doesn't matter. The body just has to encounter a new pattern and register it as real rather than a temporary exception.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T15</span><span class="tier">Tier 2</span><span class="tag">intensifier</span></div>
+  <div class="row old"><span class="lbl">Current</span>Most people never learn that trauma follows recognizable patterns, and that understanding those patterns <mark>changes everything about how you interpret</mark> your own history.</div>
+  <div class="row new"><span class="lbl">Proposed</span>Most people never learn that trauma follows recognizable patterns, and that understanding those patterns changes how you read your own history.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T16</span><span class="tier">Tier 2</span><span class="tag">hedged superlative</span></div>
+  <div class="row old"><span class="lbl">Current</span>That experience of being accurately described is <mark>one of the most underrated moments</mark> in recovery.</div>
+  <div class="row new"><span class="lbl">Proposed</span>Being described accurately is an underrated moment in recovery.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T17</span><span class="tier">Tier 3</span><span class="tag">filler</span></div>
+  <div class="row old"><span class="lbl">Current</span>I adapted<mark>, plain and simple,</mark> to the environment I was handed</div>
+  <div class="row new"><span class="lbl">Proposed</span>I adapted to the environment I was handed</div>
+</div>
+
+<h3>Your "landed" word swap</h3>
+
+<div class="item">
+  <div class="hd"><span class="num">T18</span><span class="tier t1">Tier 1</span><span class="tag">word swap</span></div>
+  <div class="row old"><span class="lbl">Current</span>Why this video <mark>landed</mark> when others didn't</div>
+  <div class="row new"><span class="lbl">Proposed</span>Why this video connected when others didn't</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T19</span><span class="tier">Tier 2</span><span class="tag">word swap</span></div>
+  <div class="row old"><span class="lbl">Current</span>just named, precisely, with every example <mark>landing</mark> somewhere familiar</div>
+  <div class="row new"><span class="lbl">Proposed</span>just named, precisely, with every example hitting somewhere familiar</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T20</span><span class="tier">Tier 2</span><span class="tag">word swap</span></div>
+  <div class="row old"><span class="lbl">Current</span>If any part of this has <mark>landed</mark>, if something named what you've been carrying</div>
+  <div class="row new"><span class="lbl">Proposed</span>If any part of this connected, if something named what you've been carrying</div>
+</div>
+
+<h3>Mechanical, whole-file</h3>
+
+<div class="item">
+  <div class="hd"><span class="num">T21</span><span class="tier t1">Tier 1</span><span class="tag">137 instances</span></div>
+  <div class="row old"><span class="lbl">Current</span>Em dashes throughout: "too big, too fast, or too much<mark>&mdash;</mark>and your brain had no other move"</div>
+  <div class="row new"><span class="lbl">Proposed</span>Run the same pass you ran on the other files. I can do it and hand you the diff, but I want your call on whether commas, periods, or parentheses win in each case rather than defaulting to commas, which is what created the run-ons on attachment.html.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">T22</span><span class="tier t1">Tier 1</span><span class="tag">31 instances</span></div>
+  <div class="row old"><span class="lbl">Current</span>"Symptoms aren't malfunction. They're communication." · "This isn't damage. It's adaptation." · "That's not irrationality. That's the nervous system doing its job." · "That's not forgetting. That's integration." · "This isn't denial. It's the absence of contrast." · and 26 more</div>
+  <div class="row new"><span class="lbl">Proposed</span>Keep roughly eight, the ones that carry real weight. Convert the rest into plain statements. Give me a yes and I'll pick the eight and show you the list before touching anything.</div>
+  <div class="why">Worth being clear: this construction is genuinely yours. It's in About Me repeatedly. The problem is only the count. Thirty-one in one page turns a signature into a tic, and a tic is what a reader pattern-matches to AI.</div>
+</div>
+
+<h2>what-is-cptsd.html</h2>
+
+<div class="item">
+  <div class="hd"><span class="num">C1</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span>And <mark>here's the cruel trick:</mark> when it's all you've ever known, the bad becomes normal and the normal becomes strange. <mark>You can't see the water you grew up drowning in</mark>, and that's how people carry this for decades without a name for it.</div>
+  <div class="row new"><span class="lbl">Proposed</span>When it's all you've ever known, the bad becomes normal and the normal becomes strange. That's how people carry this for decades without a name for it.</div>
+  <div class="why">Two tells in one sentence. The colon reveal, and the fish-can't-see-the-water line, which is a David Foster Wallace image that AI reaches for constantly.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C2</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Here is something that trips up almost everyone who reads about Complex PTSD:</mark> the formal diagnosis is built on thresholds.</div>
+  <div class="row new"><span class="lbl">Proposed</span>This trips up almost everyone. The formal diagnosis is built on thresholds.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C3</span><span class="tier t1">Tier 1</span><span class="tag">colon setup</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>The thing to hold onto:</mark><br>"You are not broken. You adapted to something that should never have happened."</div>
+  <div class="row new"><span class="lbl">Proposed</span>Delete the setup line. Let the quote stand on its own.</div>
+  <div class="why">The pull quote is already visually set apart. The line above it is telling the reader how to feel before they've read it.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C4</span><span class="tier">Tier 2</span><span class="tag">colon setup</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>One more honest thing, because it belongs on this page:</mark> if you've been numbing all of this with alcohol, drugs, food, work, or anything else...</div>
+  <div class="row new"><span class="lbl">Proposed</span>One more thing, because it belongs on this page. If you've been numbing all of this with alcohol, drugs, food, work, or anything else...</div>
+  <div class="why">Dropping "honest" too. Announcing that you're being honest is what people do when they aren't.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C5</span><span class="tier t1">Tier 1</span><span class="tag">metaphor cliché</span></div>
+  <div class="row old"><span class="lbl">Current</span>It's usually <mark>the same injury wearing a different coat.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>It's usually the same injury with a different name.</div>
+  <div class="why">You use the same "wearing a face / wearing a coat" device on attachment.html too. Killing it here removes both the cliché and the repetition.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C6</span><span class="tier">Tier 2</span><span class="tag">stacked negation + colon</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>This isn't a score, and it isn't a verdict. It's a landscape:</mark> a picture of how strongly each of the six domains shows up for you right now.</div>
+  <div class="row new"><span class="lbl">Proposed</span>This isn't a score or a verdict. It's a picture of how strongly each of the six domains shows up for you right now.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C7</span><span class="tier">Tier 2</span><span class="tag">"not just" cliché</span></div>
+  <div class="row old"><span class="lbl">Current</span>This is where the work becomes about <mark>living, not just surviving.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>This is the part where the work becomes about living instead of surviving.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C8</span><span class="tier">Tier 2</span><span class="tag">flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>Most people don't lack the capacity to begin. They lack a starting point and permission. <mark>Consider this page both.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Most people aren't short on capacity. They're short on a starting point and permission. This page is both.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C9</span><span class="tier">Tier 3</span><span class="tag">fragment flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>The point here is simply to help you see the shape of your own experience across the six domains. <mark>To make the invisible a little more visible.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Delete the second sentence, or fold it in: "...to help you see the shape of your own experience, and make some of it visible."</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">C10</span><span class="tier">Tier 3</span><span class="tag">flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>If any of these feel familiar, <mark>you are not on the outside of this conversation. You may be at the centre of it.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>If any of these feel familiar, you're not on the outside of this. You might be at the centre of it.</div>
+  <div class="why">Mild. Mostly just cutting "conversation," which is a word AI reaches for when it means "topic."</div>
+</div>
+
+<h2>attachment.html</h2>
+
+<div class="item">
+  <div class="hd"><span class="num">A1</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal + "worth mentioning"</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>There is one additional dynamic that is absolutely worth mentioning here:</mark> sometimes the deepest wound is not only the trauma itself, but the relationship it happens inside of.</div>
+  <div class="row new"><span class="lbl">Proposed</span>There's one more dynamic here. Sometimes the deepest wound isn't the trauma itself. It's the relationship it happened inside of.</div>
+  <div class="why">"Absolutely worth mentioning" is doubly hedged filler. If it's worth mentioning, mention it.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A2</span><span class="tier t1">Tier 1</span><span class="tag">colon setup</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>The most important takeaway:</mark> a secure relationship can feel boring at first, not because it lacks depth, but because it lacks danger.</div>
+  <div class="row new"><span class="lbl">Proposed</span>The part that stuck with me. A secure relationship can feel boring at first, not because it lacks depth but because it lacks danger.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A3</span><span class="tier t1">Tier 1</span><span class="tag">colon reveal + tricolon</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Do this enough times and something shifts:</mark> closeness stops feeling like annihilation, distance stops feeling like death, and your relationships stop being run by reflexes you never chose.</div>
+  <div class="row new"><span class="lbl">Proposed</span>Do this enough times and something shifts. Closeness stops feeling like annihilation. Distance stops feeling like death. Your relationships stop being run by reflexes you never chose and were never asked to keep.</div>
+  <div class="why">Same three ideas. Breaking the comma-chain into separate sentences turns a smooth AI cadence into speech.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A4</span><span class="tier t1">Tier 1</span><span class="tag">dead cliché</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Security isn't a destination. It's a practice</mark> built through repetition, honesty, held boundaries, and repair.</div>
+  <div class="row new"><span class="lbl">Proposed</span>Security is a practice. Repetition, honesty, boundaries you actually hold, and repair.</div>
+  <div class="why">"It's not a destination, it's a journey/practice" is close to the single most recognizable AI-and-LinkedIn sentence in existence. This one I'd push hard on.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A5</span><span class="tier t1">Tier 1</span><span class="tag">"isn't about X, it's about Y"</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>Healing isn't about becoming fearless. It's about becoming</mark> safe enough inside yourself that fear doesn't get to make the decisions anymore.</div>
+  <div class="row new"><span class="lbl">Proposed</span>Healing doesn't make you fearless. It makes you safe enough inside yourself that fear stops making the decisions.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A6</span><span class="tier t1">Tier 1</span><span class="tag">paired adjectives</span></div>
+  <div class="row old"><span class="lbl">Current</span>most programs I attended were missing something: <mark>clear, actionable steps</mark> for people whose attachment system runs both hot and cold</div>
+  <div class="row new"><span class="lbl">Proposed</span>most programs I attended were missing something. Concrete steps for people whose attachment system runs both hot and cold</div>
+  <div class="why">"Clear and actionable" is near the top of every AI-tell list published anywhere.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A7</span><span class="tier t1">Tier 1</span><span class="tag">word swap</span></div>
+  <div class="row old"><span class="lbl">Current</span>Not sure where you fit? Notice which of these <mark>land</mark>:</div>
+  <div class="row new"><span class="lbl">Proposed</span>Not sure where you fit? Notice which of these connect.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A8</span><span class="tier t1">Tier 1</span><span class="tag">repeated metaphor, 4 blocks apart</span></div>
+  <div class="row old"><span class="lbl">Current</span><b>First:</b> "The nervous system tries to solve an equation that has no solution."<br><b>Then:</b> "It's a nervous system trying to solve an impossible equation: the person I run to is also the person I have to run from."</div>
+  <div class="row new"><span class="lbl">Proposed</span>Keep the first. Change the second to: "It's not confusion for the sake of drama. It's two survival systems running at once. The person I run to is also the person I have to run from."</div>
+  <div class="why">Same metaphor twice inside one section. Repetition at close range is one of the clearest signals of generated text.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A9</span><span class="tier">Tier 2</span><span class="tag">"worth noting"</span></div>
+  <div class="row old"><span class="lbl">Current</span>If you are reading this and the whole concept feels new, <mark>that is worth noting:</mark> it may be just as unfamiliar to you as it was to me.</div>
+  <div class="row new"><span class="lbl">Proposed</span>If you are reading this and the whole concept feels new, that makes sense. It may be just as unfamiliar to you as it was to me.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A10</span><span class="tier">Tier 2</span><span class="tag">extended metaphor</span></div>
+  <div class="row old"><span class="lbl">Current</span>Intimacy gets treated like <mark>a slow leak: contained, monitored, and never quite allowed to flood the room.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Intimacy gets contained and monitored, never quite allowed into the room.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A11</span><span class="tier">Tier 2</span><span class="tag">"this is where"</span></div>
+  <div class="row old"><span class="lbl">Current</span><mark>This is where attachment becomes brutally complicated.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>Attachment gets brutally complicated here.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A12</span><span class="tier">Tier 2</span><span class="tag">flourish</span></div>
+  <div class="row old"><span class="lbl">Current</span>It teaches the child that <mark>love, danger, comfort, and betrayal can all wear the same face.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>It teaches the child that love and danger can come from the same person.</div>
+  <div class="why">Four-item list resolving into a metaphor. The plain version is harder to read past, which is the point.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A13</span><span class="tier">Tier 2</span><span class="tag">personification cliché</span></div>
+  <div class="row old"><span class="lbl">Current</span>addiction will always <mark>whisper the same lie:</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>addiction keeps telling you the same lie.</div>
+  <div class="why">"The addiction whispers" is recovery-poster language. You spend the rest of this site arguing against exactly that kind of framing.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A14</span><span class="tier">Tier 2</span><span class="tag">closer</span></div>
+  <div class="row old"><span class="lbl">Current</span>I can see the pattern now instead of being swallowed by it. <mark>That's not nothing. That's actually where everything else starts.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>I can see the pattern now instead of being swallowed by it. That's not nothing.</div>
+  <div class="why">Delete the last sentence. Same "where everything begins" landing as T12 on what-is-trauma. Two pages, one stock ending.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A15</span><span class="tier">Tier 2</span><span class="tag">tricolon</span></div>
+  <div class="row old"><span class="lbl">Current</span>These patterns are <mark>common, well-documented, and, despite how permanent they can feel, highly responsive to the right work.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>These patterns are common and well-documented, and they respond to the right work no matter how permanent they feel.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A16</span><span class="tier">Tier 3</span><span class="tag">"is the heart of"</span></div>
+  <div class="row old"><span class="lbl">Current</span>That shift, from survival to genuine connection, <mark>is the heart of recovery.</mark></div>
+  <div class="row new"><span class="lbl">Proposed</span>That shift, from survival to genuine connection, is the whole point.</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">A17</span><span class="tier t1">Tier 1</span><span class="tag">grammar, ~15 instances</span></div>
+  <div class="row old"><span class="lbl">Current</span>"attachment isn't about love<mark>,</mark> it's about safety" · "That's not weakness<mark>,</mark> that's a logical substitution" · "these aren't character flaws<mark>,</mark> they're survival strategies" · "Attachment styles aren't personality defects<mark>,</mark> they're survival strategies your nervous system designed" · "codependency isn't a character flaw<mark>,</mark> it's an adaptation"</div>
+  <div class="row new"><span class="lbl">Proposed</span>Replace each comma with a period. "Attachment isn't about love. It's about safety."</div>
+  <div class="why">These are comma splices, left behind when em dashes got swapped for commas. Two independent clauses joined by a comma is a grammar error, and the fact that it happens the same way fifteen times is itself a tell. Fixing it also breaks up the negation-flip cadence, so it does double duty.</div>
+</div>
+
+<h2>Cross-page repetitions</h2>
+
+<div class="item">
+  <div class="hd"><span class="num">X1</span><span class="tier">Tier 2</span><span class="tag">duplicate closer</span></div>
+  <div class="row old"><span class="lbl">Current</span><b>what-is-trauma:</b> "The body doesn't distinguish between types of harm. <mark>It just keeps score.</mark>"<br><b>what-is-cptsd:</b> "The nervous system registers chronic neglect as danger too. <mark>It just keeps score.</mark>"</div>
+  <div class="row new"><span class="lbl">Proposed</span>Keep it on what-is-trauma. On what-is-cptsd: "The nervous system registers chronic neglect as danger too. It counts all of it."</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">X2</span><span class="tier">Tier 2</span><span class="tag">duplicate construction</span></div>
+  <div class="row old"><span class="lbl">Current</span><b>what-is-trauma:</b> "<mark>Not a fear. A conclusion.</mark>"<br><b>attachment:</b> "<mark>Not a choice. A conclusion.</mark>"</div>
+  <div class="row new"><span class="lbl">Proposed</span>Keep "Not a fear. A conclusion." on what-is-trauma, it's the stronger of the two. On attachment: "That wasn't a choice. It was a conclusion drawn in childhood that nobody ever helped you revise."</div>
+</div>
+
+<div class="item">
+  <div class="hd"><span class="num">X3</span><span class="tier">Tier 3</span><span class="tag">duplicate device</span></div>
+  <div class="row old"><span class="lbl">Current</span><b>what-is-trauma:</b> "learning to read a door opening the way other kids learned to read a traffic light"<br><b>what-is-cptsd:</b> "Where you learned to read a room before you could read a book."</div>
+  <div class="row new"><span class="lbl">Proposed</span>Both are good lines. But it's the same "learned to read X instead of Y" move twice, and the cptsd one is the more common phrasing. Consider replacing it with something plainer: "Where you learned to read the room before you walked into it."</div>
+</div>
+
+<h2>What I deliberately did not flag</h2>
+
+<div class="note">
+  <b>Your negation flips, as a technique.</b> "My addiction wasn't a moral failing. It was survival gone sideways." That's from About Me and it's you. I'm only flagging density, not the move itself.
+</div>
+<div class="note">
+  <b>Label colons.</b> "Note:", "The Impact:", "Anxious Attachment:", "Tools:", "Amygdala hyperactivation:". These read as formatting, not as reveals. All staying.
+</div>
+<div class="note">
+  <b>The comedic register in the four attachment styles.</b> "A three-day guilt hangover." "Treating a three-hour delayed text as actionable evidence of impending abandonment." "Sabotaging safety because it feels unfamiliar (my personal favorite)." This section sounds nothing like AI and it's the liveliest writing in the batch. If anything, more of this.
+</div>
+<div class="note">
+  <b>Your own reflection sections.</b> Blocks marked as personal reflection on all three pages read clean. The AI residue is concentrated in the transitional and explanatory copy between the reflections, which makes sense: that's the connective tissue that gets drafted rather than remembered.
+</div>
+
+<p class="foot">Batch 1 of the Trauma Foundations section. Remaining in this section: toxic-stress.html, shame-grief-false-self.html, cptsd-behaviours.html, four-trauma-responses.html, aces-high.html, dunedin-study.html. Nothing has been written to disk.</p>
+
+</div>
+</body>
+</html>
