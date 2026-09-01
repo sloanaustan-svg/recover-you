@@ -80,6 +80,7 @@
   align-items: flex-end;
   overflow: hidden;
   background-color: #000;
+  padding-top: 116px;
 }
 .ry-page-hero__bg {
   position: absolute;
