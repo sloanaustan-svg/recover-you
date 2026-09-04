@@ -2352,9 +2352,101 @@ html:not(.ry-js) .ry-barchart__bar { transform: scaleX(1); }
   text-transform: uppercase;
   color: var(--ry-red);
 }
+
+.ry-commitment--portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(250px, .78fr);
+  align-items: stretch;
+  gap: clamp(36px, 5vw, 76px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.ry-commitment--portrait::before { display: none; }
+
+.ry-commitment__copy {
+  position: relative;
+  align-self: center;
+  padding: 34px 0;
+}
+
+.ry-commitment__copy::before {
+  content: "";
+  display: block;
+  width: 92px;
+  height: 2px;
+  margin-bottom: 28px;
+  background: linear-gradient(90deg, var(--ry-red), transparent);
+}
+
+.ry-commitment--portrait .ry-cta-wrap { text-align: left; }
+.ry-commitment--portrait .ry-cta-note { margin: 18px 0 0; }
+
+.ry-commitment__portrait {
+  position: relative;
+  align-self: stretch;
+  min-height: 680px;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.ry-commitment__portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(.68) brightness(.76) contrast(1.06);
+}
+
+.ry-commitment__portrait::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      #000 0%,
+      rgba(0,0,0,.56) 12%,
+      transparent 31%,
+      transparent 82%,
+      rgba(0,0,0,.78) 100%),
+    linear-gradient(180deg,
+      #000 0%,
+      transparent 14%,
+      transparent 74%,
+      #000 100%);
+}
+
+@media (max-width: 991.98px) {
+  .ry-commitment--portrait {
+    grid-template-columns: minmax(0, 1.6fr) minmax(230px, .8fr);
+    gap: 32px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .ry-commitment { padding: 32px 24px; }
   .ry-signoff { padding: 24px 22px; }
+  .ry-commitment--portrait {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0;
+  }
+  .ry-commitment__portrait {
+    order: -1;
+    width: min(100%, 430px);
+    min-height: 0;
+    height: clamp(420px, 125vw, 560px);
+    margin: 0 auto;
+  }
+  .ry-commitment__copy { padding: 26px 0 0; }
+  .ry-commitment--portrait .ry-cta-wrap { text-align: center; }
 }
 
 /* ====================================================================

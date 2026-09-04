@@ -1228,74 +1228,6 @@ h1.ry-home-mega-red-word {
 }
 
 /* --------------------------------------------------------------------
-   About strip
-   -------------------------------------------------------------------- */
-/* --------------------------------------------------------------------
-   About strip — "the route" backdrop
-   Custom inline SVG (see index.html #about-strip): a dotted path that
-   starts tangled and doubling back, then straightens into a clean run
-   to a crosshair marker sitting just under the CTA. Replaces the old
-   red asterisk graphic. Draws itself in on scroll via .is-drawn, which
-   is added by the observer script at the bottom of index.html.
-   -------------------------------------------------------------------- */
-.ry-about-strip {
-  position: relative;
-  overflow: hidden;
-}
-.ry-route-art {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-.ry-route-art svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Opacity of the line art overall — tune here */
-.ry-route-line   { opacity: 0.55; }
-.ry-route-glow   { opacity: 0.05; }
-.ry-route-start  { opacity: 0.45; }
-.ry-route-marker { opacity: 0; }
-
-/* Draw-on-scroll: the mask path wipes the artwork in from start to marker */
-.ry-route-mask-path {
-  stroke-dasharray: 1 1;
-  stroke-dashoffset: 1;
-}
-.ry-about-strip.is-drawn .ry-route-mask-path {
-  transition: stroke-dashoffset 2s cubic-bezier(0.22, 0.61, 0.36, 1);
-  stroke-dashoffset: 0;
-}
-.ry-about-strip.is-drawn .ry-route-marker {
-  transition: opacity 0.7s ease 1.7s;
-  opacity: 0.8;
-}
-
-/* Layout stacks on small screens and the art no longer sits behind
-   empty space — drop it rather than let it run under the copy. */
-@media (max-width: 767.98px) {
-  .ry-route-art { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ry-route-mask-path { stroke-dashoffset: 0; }
-  .ry-route-marker { opacity: 0.8; }
-  .ry-about-strip.is-drawn .ry-route-mask-path,
-  .ry-about-strip.is-drawn .ry-route-marker { transition: none; }
-}
-.ry-inner-link {
-  color: var(--ry-red);
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-.ry-inner-link:hover { color: #fff; }
-
-/* --------------------------------------------------------------------
    Coach banner
    -------------------------------------------------------------------- */
 #coach-banner {
@@ -1356,17 +1288,48 @@ h1.ry-home-mega-red-word {
   position: relative;
   z-index: 0;
   overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+.ry-mission-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-position: 34% center;
+  filter: saturate(.72) brightness(.82) contrast(1.06);
+  transform: scale(1.015);
 }
 .ry-mission-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.75);
+  background:
+    linear-gradient(180deg,
+      #000 0%,
+      rgba(0,0,0,.18) 13%,
+      rgba(0,0,0,.14) 73%,
+      #000 100%),
+    linear-gradient(90deg,
+      rgba(0,0,0,.10) 0%,
+      rgba(0,0,0,.20) 29%,
+      rgba(0,0,0,.76) 57%,
+      rgba(0,0,0,.96) 76%,
+      #000 100%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 .ry-mission > .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+.ry-mission__content {
+  padding-left: clamp(28px, 4vw, 68px);
+  text-shadow: 0 2px 18px rgba(0,0,0,.72);
+}
+.ry-mission__content > p {
+  max-width: 60ch;
 }
 .ry-mission blockquote {
   margin-top: 40px;
@@ -1381,6 +1344,47 @@ h1.ry-home-mega-red-word {
 @keyframes ryPulseGlow {
   0%, 100% { text-shadow: 0 0 4px rgba(255,0,0,0.4); }
   50% { text-shadow: 0 0 12px rgba(255,0,0,0.7); }
+}
+
+@media (max-width: 991.98px) {
+  .ry-mission-photo {
+    min-height: 0;
+    height: clamp(300px, 70vw, 520px);
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: scroll;
+    filter: saturate(.68) brightness(.72) contrast(1.06);
+    transform: none;
+  }
+  .ry-mission-overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(0,0,0,.20) 0%,
+        rgba(0,0,0,.18) 22%,
+        rgba(0,0,0,.64) 40%,
+        #000 58%,
+        #000 100%),
+      linear-gradient(90deg, rgba(0,0,0,.18), rgba(0,0,0,.08));
+  }
+  .ry-mission > .container {
+    padding-top: clamp(280px, 64vw, 475px) !important;
+  }
+  .ry-mission__content {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-shadow: 0 2px 15px rgba(0,0,0,.9);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ry-mission-photo {
+    height: 310px;
+    background-size: auto 310px;
+    background-position: 46% top;
+  }
+  .ry-mission > .container {
+    padding-top: 270px !important;
+  }
 }
 
 /* --------------------------------------------------------------------

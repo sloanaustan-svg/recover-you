@@ -439,55 +439,6 @@
         </section>
 
         <!-- ============================= -->
-        <!-- ABOUT STRIP -->
-        <!-- ============================= -->
-        <section class="ry-about-strip" id="about-strip">
-          <!-- Custom SVG route graphic: a dotted path that begins tangled and
-               doubling back, then straightens into a clean run toward a
-               crosshair marker. Draws itself in on scroll. See ry-home.css. -->
-          <div class="ry-route-art" aria-hidden="true">
-            <svg viewBox="0 0 1120 340" preserveAspectRatio="xMidYMid meet" focusable="false">
-              <defs>
-                <mask id="ry-route-mask">
-                  <rect width="1120" height="340" fill="black"/>
-                  <path class="ry-route-mask-path"
-                        d="M60,300 C120,258 78,182 158,196 C238,210 176,300 256,290 C336,280 272,180 352,204 C432,228 396,300 486,282 C566,266 610,258 700,254"
-                        pathLength="1" fill="none" stroke="white" stroke-width="34" stroke-linecap="round"/>
-                </mask>
-              </defs>
-              <g mask="url(#ry-route-mask)">
-                <path class="ry-route-glow"
-                      d="M60,300 C120,258 78,182 158,196 C238,210 176,300 256,290 C336,280 272,180 352,204 C432,228 396,300 486,282 C566,266 610,258 700,254"
-                      fill="none" stroke="var(--ry-red)" stroke-width="7" stroke-linecap="round"/>
-                <path class="ry-route-line"
-                      d="M60,300 C120,258 78,182 158,196 C238,210 176,300 256,290 C336,280 272,180 352,204 C432,228 396,300 486,282 C566,266 610,258 700,254"
-                      fill="none" stroke="var(--ry-red)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1.5 9"/>
-                <circle class="ry-route-start" cx="60" cy="300" r="3.5" fill="none" stroke="var(--ry-red)" stroke-width="1.4"/>
-              </g>
-              <g class="ry-route-marker" fill="none" stroke="var(--ry-red)">
-                <circle cx="700" cy="254" r="9" stroke-width="1.6"/>
-                <circle cx="700" cy="254" r="19" stroke-width="1" opacity=".45"/>
-                <path d="M700,228 L700,238 M700,270 L700,280 M674,254 L684,254 M716,254 L726,254" stroke-width="1.2" opacity=".65"/>
-                <circle cx="700" cy="254" r="2.6" fill="var(--ry-red)" stroke="none"/>
-              </g>
-            </svg>
-          </div>
-          <div class="container sk__py-l ry-z2">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="position-relative sk__reveal-all-wrapped-text">
-                  <div class="cover-text-wrapper"><h5 class="fw-light">I built what I needed twenty years ago &mdash; a path that didn't exist when I was lost.</h5></div>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-5 offset-lg-1 offset-xl-0 col-md-6">
-                <p class="fw-light">Two decades of chaos became a framework for healing, grounded in neuroscience, psychology, and lived truth. Recover-You exists so others don't have to spend years trying to rebuild in isolation.</p>
-                <a class="ry-inner-link" href="start-here">Start Your Journey <span class="icon-arrow-right"></span></a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================= -->
         <!-- COACH BANNER -->
         <!-- ============================= -->
         <section id="coach-banner">
@@ -505,12 +456,12 @@
         <!-- ============================= -->
         <!-- MISSION -->
         <!-- ============================= -->
-        <section class="ry-mission dark-shade-2-bg sk__parallax-background-section">
-          <div class="sk__parallax-background-element sk__absolute sk__image-back-cover" style="background-image: url('images/webp/trauma-bg2.webp');"></div>
+        <section class="ry-mission dark-shade-2-bg">
+          <div class="sk__absolute sk__image-back-cover ry-mission-photo" style="background-image: url('images/webp/austan-walking.webp');" aria-hidden="true"></div>
           <div class="ry-mission-overlay"></div>
           <div class="container sk__py-l position-relative">
-            <div class="row justify-content-center">
-              <div class="col-lg-10">
+            <div class="row justify-content-end">
+              <div class="col-lg-7 col-xl-6 ry-mission__content">
                 <div class="sk__reveal-all-wrapped-text">
                   <div class="cover-text-wrapper"><h5 class="text-white mb-3"><span class="ry-mission-slash">//</span> My Mission:</h5></div>
                   <div class="cover-text-wrapper"><h6 class="ry-mission-sub mb-3">Education, Not Coercion</h6></div>
@@ -734,23 +685,6 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
       items.forEach(function (item) { observer.observe(item); });
-    })();
-  </script>
-
-  <script>
-    /* About strip — draw the route graphic in on scroll */
-    (function () {
-      const strip = document.getElementById('about-strip');
-      if (!strip) return;
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-drawn');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
-      observer.observe(strip);
     })();
   </script>
 

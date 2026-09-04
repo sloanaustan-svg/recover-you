@@ -97,10 +97,13 @@
   color: #fff;
 }
 
+.ry-contact-intro__opening {
+  padding-bottom: clamp(50px, 6vw, 78px);
+  border-bottom: 1px solid var(--contact-line);
+}
+
 .ry-contact-intro__lead {
   max-width: 970px;
-  padding-bottom: clamp(44px, 5vw, 68px);
-  border-bottom: 1px solid var(--contact-line);
 }
 
 .ry-contact-intro__lead > p {
@@ -112,12 +115,57 @@
   color: var(--contact-copy);
 }
 
+.ry-contact-story-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 86px);
+  margin-top: clamp(54px, 7vw, 88px);
+}
+
+.ry-contact-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: .70;
+  margin: 0;
+  overflow: hidden;
+  background: #040404;
+}
+
+.ry-contact-portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(.70) brightness(.78) contrast(1.06);
+}
+
+.ry-contact-portrait::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      #040404 0%,
+      rgba(4,4,4,.62) 10%,
+      transparent 29%,
+      transparent 82%,
+      rgba(4,4,4,.76) 100%),
+    linear-gradient(180deg,
+      #040404 0%,
+      transparent 15%,
+      transparent 72%,
+      #040404 100%);
+}
+
 .ry-contact-story {
   display: grid;
   grid-template-columns: 1px minmax(0, 1fr);
   gap: clamp(28px, 4vw, 52px);
   max-width: 910px;
-  margin: clamp(48px, 6vw, 76px) 0 0 clamp(0px, 5vw, 76px);
+  margin: 0;
 }
 
 .ry-contact-story__line {
@@ -435,6 +483,16 @@
 }
 
 @media (max-width: 991.98px) {
+  .ry-contact-story-stage {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ry-contact-intro__lead { max-width: 760px; }
+  .ry-contact-portrait {
+    width: min(100%, 430px);
+    margin: 38px auto 0;
+    aspect-ratio: .74;
+  }
   .ry-contact-form-copy { position: static; max-width: 680px; padding-top: 0; }
   .ry-contact-form-copy > p { max-width: 54ch; }
   .ry-contact-form-copy__signal { margin-top: 28px; }
