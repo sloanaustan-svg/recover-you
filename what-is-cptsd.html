@@ -308,6 +308,7 @@
               <span class="ry-hero-eyebrow">Trauma Foundations</span>
               <h1 class="ry-page-hero__title">What Is Complex PTSD (C-PTSD)?</h1>
               <p class="ry-page-hero__sub">When harm is repeated, prolonged, and inescapable, it doesn&rsquo;t just leave a memory. It reshapes how you relate to yourself, to others, and to safety itself.</p>
+              <a class="ry-itq-jump" href="#reflect">Jump to ITQ assessment <span aria-hidden="true">&darr;</span></a>
             </div></div>
           </div>
           <a class="ry-scroll-cue" href="#definition" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
@@ -477,41 +478,50 @@
         </section>
 
         <!-- ============ THE ITQ SELF-REFLECTION ============ -->
+        <div class="ry-ashfield ry-reflection-field">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
         <section id="reflect">
           <div class="container sk__py-l">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-10 col-xl-9">
-                <div class="ry-prose text-center">
-                  <h2 class="ry-eyebrow-h" style="justify-content:center;">A Private Self-Reflection Based on the ITQ</h2>
+                <div class="ry-reflect-heading">
+                  <p class="ry-itq__eyebrow">The six domains of complex PTSD</p>
+                  <h2>Map yourself across<br><span>the six domains.</span></h2>
+                  <p class="ry-reflect-heading__intro">You know what it feels like to live inside it. This is a way to see where it shows up, and find a place to begin.</p>
+                  <ul class="ry-itq__facts" aria-label="About this reflection">
+                    <li>12 questions</li><li>Private to this page</li><li>Go at your own pace</li>
+                  </ul>
                 </div>
 
                 <div class="ry-itq">
                   <div class="ry-itq__preamble">
-                    <h3>Before you begin, please read this</h3>
-                    <p>This is a <span class="ry-itq__em">reflection, not a test, and not a diagnosis.</span> It is adapted for education from the <em>International Trauma Questionnaire (ITQ)</em>, the measure clinicians use to explore the six domains of Complex PTSD. Only a qualified professional can diagnose anything, and this tool is not a substitute for that conversation.</p>
-                    <p>The point here is simply to help you <span class="ry-itq__em">see the shape of your own experience</span> across the six domains. To make the invisible a little more visible. Nothing you enter is saved, sent, or tracked. It stays in your browser and disappears when you close the page.</p>
-                    <p>As you answer, hold in mind a distressing or traumatic experience, or a period of your life when you didn&rsquo;t feel safe. There are no right answers. Go gently. If it starts to feel like too much, it&rsquo;s completely okay to stop.</p>
+                    <h3>A little context before you begin</h3>
+                    <p>This reflection adapts the 12 symptom questions from the <em>International Trauma Questionnaire (ITQ)</em>. It leaves out the formal assessment of how symptoms affect daily life, so <span class="ry-itq__em">it cannot tell you whether you have PTSD or CPTSD.</span> What it can do is help you put words to what you&rsquo;ve been carrying.</p>
+                    <p>Your answers stay on this page. They aren&rsquo;t saved or sent anywhere, and refreshing or closing the page clears them.</p>
+                    <p>Keep a distressing experience or period of your life in mind. You don&rsquo;t need to write down what happened. If answering starts to feel overwhelming, pause. You have nothing to prove by pushing through.</p>
                   </div>
 
                   <div class="ry-itq__official">
                     <div class="ry-itq__official-body">
-                      <h3>Prefer it on paper? Get the official questionnaire</h3>
-                      <p>The full <strong>International Trauma Questionnaire (ITQ)</strong>, including the formal scoring guide and translations in many languages, is freely available in the public domain from its authors at the International Trauma Consortium. A printable, authoritative copy you can keep or bring to a clinician.</p>
+                      <h3>Want the full questionnaire?</h3>
+                      <p>The official ITQ includes the daily-life impact questions, scoring guide, and translations. It&rsquo;s free, and you can bring a copy to a clinician.</p>
                     </div>
                     <a class="ry-itq__dl" href="https://www.traumameasuresglobal.com/ptsd" rel="noopener" target="_blank">Download the ITQ &nearr;</a>
                   </div>
 
                   <form id="ry-itq-form" novalidate>
-                    <p class="ry-itq__group">Domains 1&ndash;3 &middot; How the past lives in the present</p>
+                    <h3 class="ry-itq__group"><span>01 &ndash; 03</span> How the past lives in the present</h3>
+                    <p class="ry-itq__group-note">How much have these experiences bothered you <strong>in the past month</strong>?</p>
                     <div id="ry-itq-ptsd"><!-- questions injected by ry-itq.js --></div>
 
-                    <p class="ry-itq__group">Domains 4&ndash;6 &middot; How you typically feel, see yourself, and relate</p>
+                    <h3 class="ry-itq__group"><span>04 &ndash; 06</span> How you feel, see yourself, and relate</h3>
+                    <p class="ry-itq__group-note">How true are these statements of <strong>how you typically feel, think about yourself, and relate to others</strong>?</p>
                     <div id="ry-itq-dso"><!-- questions injected by ry-itq.js --></div>
 
                     <div class="ry-itq__actions">
                       <button class="ry-btn" type="button" id="ry-itq-submit" disabled>Show my map</button>
                       <button class="ry-btn ry-btn--ghost" type="button" id="ry-itq-reset">Clear</button>
-                      <span class="ry-itq__progress" id="ry-itq-progress"><strong>0</strong> of 12 answered</span>
+                      <span class="ry-itq__progress" id="ry-itq-progress" role="status"><strong>0</strong> of 12 answered</span>
                     </div>
                   </form>
                 </div>
@@ -521,6 +531,9 @@
         </section>
 
         <!-- ==================== YOUR MAP ==================== -->
+        </div>
+        <div class="ry-ashfield ry-reflection-field">
+          <canvas class="ry-ash-canvas" aria-hidden="true"></canvas>
         <section id="map">
           <div class="container sk__py-l">
             <div class="row justify-content-center">
@@ -529,22 +542,36 @@
                 <p class="ry-map__empty" id="ry-map-empty">Your map will appear here once you complete the reflection above.</p>
 
                 <div class="ry-map" id="ry-map">
-                  <div class="ry-prose text-center">
-                    <h2 class="ry-eyebrow-h" style="justify-content:center;">Your Map Across the Six Domains</h2>
-                    <p class="ry-lede" style="max-width:720px;margin:0 auto 30px;">This isn&rsquo;t a score, and it isn&rsquo;t a verdict. It&rsquo;s a <strong>landscape</strong>: a picture of how strongly each of the six domains shows up for you right now. Every domain matters, whether it&rsquo;s lit up or quiet.</p>
+                  <div class="ry-map__portrait">
+                  <div class="ry-map__heading">
+                    <p class="ry-itq__eyebrow">Recover-You &middot; Your personal reflection</p>
+                    <h2 id="ry-map-title" tabindex="-1">Your experience.<br><span>Across six domains.</span></h2>
+                    <p>A picture of what you&rsquo;re carrying, based on your answers. The shape can help you find a starting point. It doesn&rsquo;t define you.</p>
                   </div>
 
                   <div class="ry-map__grid">
-                    <div class="ry-radar" id="ry-radar"><!-- SVG radar injected by ry-itq.js --></div>
+                    <figure class="ry-radar-frame">
+                      <div class="ry-radar-frame__label"><span>Your response pattern</span><span>6 domains</span></div>
+                      <div class="ry-radar" id="ry-radar"><!-- SVG radar injected by ry-itq.js --></div>
+                      <figcaption>Further from the centre means stronger responses in that area.</figcaption>
+                    </figure>
                     <div class="ry-readout" id="ry-readout"><!-- per-domain bars injected by ry-itq.js --></div>
+                  </div>
+                  <p class="ry-map__legend">Each domain combines two answers on the 0&ndash;4 scale. The shape and descriptions are reflection aids, not clinical cutoffs or a likelihood of CPTSD.</p>
                   </div>
 
                   <div class="ry-map__summary" id="ry-map-summary"><!-- narrative injected by ry-itq.js --></div>
                   <div id="ry-plan"><!-- tailored suggestions injected by ry-itq.js --></div>
 
                   <div class="ry-map__help">
-                    <h3>When you want a human in this with you</h3>
-                    <p>Self-directed work is real work, but it has a ceiling, and hitting that ceiling is not failure. If your map is loud, or you&rsquo;re just tired of carrying this alone, two pages on this site were built for exactly that moment: <a href="resources-alberta-health">the correct intake doors for Recovery Alberta &amp; AHS</a> (the public system, and how to actually get through it) and <a href="resources-trauma-therapy">how to find a trauma therapist in Alberta</a> (a survivor&rsquo;s guide, including what to ask for and when to walk away).</p>
+                    <h3>You don&rsquo;t have to carry the next part alone</h3>
+                    <p>If this is affecting sleep, work, relationships, or getting through the day, that is enough reason to ask for help. Bring one everyday example to a clinician. You can say, &ldquo;This is what happens, this is what it costs me, and I want help understanding it.&rdquo;</p>
+                    <p>In Alberta, start with <a href="resources-alberta-health">public mental health services</a> or my guide to <a href="resources-trauma-therapy">finding a trauma therapist</a>. Elsewhere, a primary care provider or local mental health service can help you explore options. Ask about trauma experience, fees, wait times, and how you&rsquo;ll decide the pace together.</p>
+                  </div>
+
+                  <div class="ry-map__resources">
+                    <h3>Useful beyond this page</h3>
+                    <p>The free <a href="https://www.ptsd.va.gov/appvid/mobile/ptsdcoach_app.asp" rel="noopener" target="_blank">PTSD Coach app &nearr;</a> offers tools for managing trauma-related stress. The National Center for PTSD also has a <a href="https://www.ptsd.va.gov/gethelp/coping_stress_reactions.asp" rel="noopener" target="_blank">practical coping guide &nearr;</a> for reminders, sleep difficulties, anger, and other reactions. Try what fits. If an exercise makes things worse, stop and choose something else.</p>
                   </div>
 
                   <p class="ry-sources-note">Adapted for educational reflection from Cloitre, M., Shevlin, M., Brewin, C. R., Bisson, J. I., Roberts, N. P., Maercker, A., Karatzias, T., &amp; Hyland, P. (2018). <em>The International Trauma Questionnaire (ITQ).</em> The ITQ is freely available in the public domain; the official version can be downloaded from the <a href="https://www.traumameasuresglobal.com/ptsd" rel="noopener" target="_blank">International Trauma Consortium</a>. This adaptation simplifies the instrument for self-understanding and is <strong>not</strong> a validated administration, a score, or a diagnosis.</p>
@@ -556,6 +583,7 @@
         </section>
 
         <!-- ============ DIAGNOSIS IS NOT THE FINISH LINE ============ -->
+        </div>
         <section id="beyond">
           <div class="container sk__py-l">
             <div class="row justify-content-center">
@@ -826,6 +854,8 @@
   <script src="assets/vendor/greensock/ScrollTrigger.min.js"></script>
   <script src="assets/vendor/greensock/ScrollSmoother.min.js"></script>
   <script src="assets/vendor/greensock/ScrollToPlugin.min.js"></script>
+  <!-- Required by the shared theme's carousel initialization. -->
+  <script src="assets/vendor/slick/1.8.1/slick.min.js"></script>
 
   <!-- Main Theme JS -->
   <script src="assets/js/theme.js"></script>

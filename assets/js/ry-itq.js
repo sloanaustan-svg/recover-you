@@ -10,7 +10,7 @@
      event carrying an answer, no query string. The reflection exists
      only in this page and vanishes on reload. Given what is being
      asked, that matters more than any convenience saved state buys.
-   * No score, no threshold, no pass/fail. The output is a landscape.
+   * No diagnostic score, cutoff, or pass/fail. The output is a landscape.
      The page argues at length that falling one domain short of a
      diagnostic cutoff changes a checkbox and nothing else, so the tool
      must not contradict that by producing a number to clear.
@@ -29,7 +29,7 @@
   var DOMAINS = [
     { key: 'reexp', label: 'Re-experiencing', group: 'ptsd',
       axis: ['Re-experiencing'],
-      desc: 'The past breaking into the present: dreams and memories that feel current rather than past.',
+      desc: 'Dreams or memories that make the past feel as though it is happening again.',
       items: ['Having upsetting dreams that replay part of the experience, or that are clearly related to it.',
               'Powerful images or memories that come into your mind in which it feels like the experience is happening again, here and now.'] },
     { key: 'avoid', label: 'Avoidance', group: 'ptsd',
@@ -39,7 +39,7 @@
               'Avoiding external reminders of the experience (for example, people, places, conversations, objects, activities, or situations).'] },
     { key: 'threat', label: 'Sense of Current Threat', group: 'ptsd',
       axis: ['Sense of', 'Current Threat'],
-      desc: 'A nervous system braced for danger: watchful, on guard, easily startled.',
+      desc: 'Feeling on guard or easily startled, even when the danger may have passed.',
       items: ['Being "super-alert", watchful, or on guard.',
               'Feeling jumpy or easily startled.'] },
     { key: 'affect', label: 'Affect Dysregulation', group: 'dso',
@@ -64,42 +64,42 @@
 
   var PLAN = {
     reexp: [
-      'When a flashback or intrusive memory hits, ground before you analyze: feet on the floor, name five things you can see, and say out loud where you are and what year it is. The full skill set is in <a href="regulation-tools">Regulation Tools</a>. <span class="ry-alsoeases">also eases: current threat</span>',
-      'Build a "that was then" anchor: one phrase or one object that reminds your body the danger already happened and already ended. Reach for it the moment the past shows up.',
-      'This is the domain where trauma-focused therapy (EMDR and other processing work) earns its reputation. <a href="types-of-therapy">Therapy Types</a> breaks down what actually fits. <span class="ry-alsoeases">also eases: avoidance</span>'
+      '<strong>Come back to the room.</strong> Try naming where you are, today’s date, and three things you can see. Notice the surface beneath your feet. You don’t have to unpack the memory while you’re inside it.',
+      '<strong>Keep one reminder within reach.</strong> A familiar object or a note with your location and someone you can call may help you reconnect with the present. Choose something that actually feels grounding to you.',
+      '<strong>Get support with the memories.</strong> If they keep interrupting your life, ask a clinician about trauma-focused treatment. My <a href="types-of-therapy">guide to therapy approaches</a> can help you prepare for that conversation.'
     ],
     avoid: [
-      'Name the thing you’re avoiding, out loud or on paper. Avoidance runs on vagueness, and it starts shrinking the moment it has a name. <a href="chart-your-life">Chart Your Life</a> was built for that kind of honest inventory.',
-      'Try opposite action in miniature: shrink the avoided thing to a step so small you’d actually do it this week. One street, one song, one sentence of the conversation. The skill lives in <a href="dbt">DBT</a>. <span class="ry-alsoeases">also eases: re-experiencing</span>',
-      'Notice the trade: avoidance buys short-term relief and quietly bills you your life back. When you’re ready to face things with support, <a href="types-of-therapy">Therapy Types</a> shows the paced ways to do it.'
+      '<strong>Notice what your life is getting smaller around.</strong> Write down one thing you avoid, the relief it gives you, and what you miss because of it. This is information. You don’t need to turn it into another reason to attack yourself.',
+      '<strong>Choose a small return to something you value.</strong> If the situation is safe, that might be replying to a trusted friend or spending a few minutes on a hobby. You don’t need to confront traumatic memories or unsafe people to make progress.',
+      '<strong>Bring the stuck point to someone who can help.</strong> If reminders feel overwhelming, a trauma-trained clinician can help you work at a manageable pace. <a href="chart-your-life">Chart Your Life</a> can help you notice patterns without forcing the whole story at once.'
     ],
     threat: [
-      'Go body first. A vigilant nervous system doesn’t answer to logic, it answers to signals: long slow exhales, cold water on the face, a walk where your eyes get to scan the horizon. Start with <a href="regulation-tools">Regulation Tools</a>. <span class="ry-alsoeases">also eases: affect</span>',
-      'Orient on purpose: a few times a day, stop and slowly look around until your body registers that nothing in the room is a threat. It feels silly. It works.',
-      'Reality-test the alarm instead of obeying it: "Am I in danger right now, or does it just feel that way?" That exact skill is <a href="reality-test">Reality Testing</a>. <span class="ry-alsoeases">also eases: re-experiencing</span>'
+      '<strong>Check what is happening around you.</strong> Is there a current danger, a reminder, or something you’re unsure about? If there is danger, focus on getting safer and reaching support. You don’t owe an unsafe situation a calmer response.',
+      '<strong>Give yourself a moment to orient.</strong> When you are safe enough, look around slowly and notice a few ordinary details. Try gentle movement or comfortable, unforced breathing. If either ramps up the alarm, leave it.',
+      '<strong>Separate the alarm from the evidence.</strong> Write down what you fear and what you can observe right now. <a href="reality-test">Reality Testing</a> walks through that distinction, and <a href="regulation-tools">Regulation Tools</a> offers ways to practise settling.'
     ],
     affect: [
-      'Learn two or three distress-tolerance skills now, while you’re calm, so they exist when you’re not. TIPP and paced breathing in <a href="dbt">DBT</a> are the workhorses. <span class="ry-alsoeases">also eases: current threat</span>',
-      'Name the feeling precisely. "I’m angry that I wasn’t protected" moves through you differently than a wall of bad. Naming it turns the volume down.',
-      'If you swing to numb, don’t force feeling. Build safety first with <a href="regulation-tools">Regulation Tools</a>. Feelings come back when your body trusts it can survive them.'
+      '<strong>Notice which direction you go.</strong> Overwhelmed and shut down can sit under the same heading. Name what is happening now, even if all you have is “too much” or “nothing.” The next step may be different for each.',
+      '<strong>Try one small adjustment.</strong> If you’re flooded, reduce noise or pause a difficult conversation. If you’re numb, try a familiar texture or a little gentle movement. Notice whether it helps, does nothing, or makes things harder.',
+      '<strong>Practise before the next hard moment.</strong> Pick one skill from <a href="dbt">DBT</a> or <a href="regulation-tools">Regulation Tools</a> while things are manageable. If shutting down or losing control keeps disrupting your life, bring that pattern to a clinician.'
     ],
     self: [
-      'Start treating the inner critic as evidence, not truth. That voice has a history and a handwriting, and it’s usually someone else’s. I take it apart in <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a>. <span class="ry-alsoeases">also eases: relationships</span>',
-      '"I’m worthless" is a thought, not a fact, and thoughts can be audited. <a href="distorted-thinking">Distorted Thinking</a> gives you the checklist.',
-      'Find the blueprint underneath the belief. If the same self-story keeps repeating, <a href="life-traps">Life Traps</a> will probably show you where it was drawn. <span class="ry-alsoeases">also eases: affect</span>'
+      '<strong>Put a little space around the verdict.</strong> Try “I’m having the thought that I’m worthless.” You don’t have to leap from self-hatred to self-love. Start by noticing the thought without treating it as a settled fact.',
+      '<strong>Write a fairer sentence.</strong> What happened? What did you need? What would you say to someone you care about in the same position? “I’m struggling and I still deserve help” is a place to start if it fits.',
+      '<strong>Look at where the belief came from.</strong> <a href="shame-grief-false-self">Shame, Grief &amp; The False Self</a> explores how survival can shape identity. <a href="distorted-thinking">Distorted Thinking</a> offers a way to examine the conclusions you keep reaching about yourself.'
     ],
     relate: [
-      'Dose connection instead of demanding it of yourself: one safe, low-stakes interaction, then retreat and recover. That still counts. Why it matters is in <a href="connection">Connection</a>. <span class="ry-alsoeases">also eases: self-concept</span>',
-      'Learn your attachment pattern. Most relationship "flaws" are old survival strategies still running. Start with <a href="attachment">Attachment Styles</a>.',
-      'Practice saying one true thing to one safe person. Closeness after complex trauma is rebuilt in centimetres, and <a href="relationships">Relationships in Recovery</a> maps the terrain.'
+      '<strong>Make connection small enough to try.</strong> Send a short message to someone who respects your boundaries, or share a quiet activity. You don’t have to tell your trauma story to spend time with someone.',
+      '<strong>Practise one honest boundary.</strong> “I’d like to see you, but I only have half an hour.” Notice how the person responds. Being able to say no matters as much as being able to get close.',
+      '<strong>Notice what happens around closeness.</strong> Do you pull away, over-give, or expect rejection? <a href="attachment">Attachment Styles</a> can help you explore the pattern. <a href="relationships">Relationships in Recovery</a> looks at rebuilding trust without abandoning yourself.'
     ]
   };
 
   function band(pct) {
-    if (pct >= 75) return 'High resonance';
-    if (pct >= 50) return 'Notable resonance';
-    if (pct >= 25) return 'Some resonance';
-    return 'Minimal resonance';
+    if (pct >= 75) return 'Strongly present';
+    if (pct >= 50) return 'Moderately present';
+    if (pct >= 25) return 'A little present';
+    return 'Little or none';
   }
 
   var SVGNS = 'http://www.w3.org/2000/svg';
@@ -110,18 +110,24 @@
   }
 
   /* ---- the radar ----------------------------------------------------
-     Six axes at 60° apart, first axis pointing straight up. Rings at
-     25/50/75/100 give the reader something to read the shape against;
+     Six axes at 60° apart, first axis pointing straight up. Rings show
+     average responses of 1/2/3/4 on the original answer scale;
      without them a polygon is just a shape.
      ------------------------------------------------------------------ */
   function drawRadar(host, perDomain) {
-    var SIZE = 460, C = SIZE / 2, R = 150, N = perDomain.length;
+    var SIZE = 460, C = SIZE / 2, R = 144, N = perDomain.length;
 
     var s = svg('svg', {
       viewBox: '0 0 ' + SIZE + ' ' + SIZE,
       role: 'img',
-      'aria-label': 'Radar chart showing intensity across the six domains of Complex PTSD'
+      'aria-label': 'Your six-domain reflection. ' + perDomain.map(function (d) { return d.label + ', ' + band(d.pct); }).join('. ')
     });
+    var defs = svg('defs');
+    var gradient = svg('linearGradient', { id: 'ry-radar-fill', x1: '0%', y1: '0%', x2: '100%', y2: '100%' });
+    gradient.appendChild(svg('stop', { offset: '0%', 'stop-color': '#ff2020', 'stop-opacity': '.34' }));
+    gradient.appendChild(svg('stop', { offset: '100%', 'stop-color': '#9c0000', 'stop-opacity': '.08' }));
+    defs.appendChild(gradient);
+    s.appendChild(defs);
 
     function pt(i, r) {
       var a = (Math.PI * 2 * i / N) - Math.PI / 2;
@@ -136,7 +142,7 @@
     [25, 50, 75, 100].forEach(function (lvl) {
       s.appendChild(svg('polygon', { points: poly(R * lvl / 100), 'class': 'ry-radar__web' }));
       var t = svg('text', { x: C + 5, y: C - R * lvl / 100 + 3, 'class': 'ry-radar__tick' });
-      t.textContent = lvl;
+      t.textContent = lvl / 25;
       s.appendChild(t);
     });
 
@@ -148,7 +154,7 @@
     // axis labels, pushed outside the outer ring and anchored by side so
     // long two-word labels never cross the shape
     perDomain.forEach(function (d, i) {
-      var p = pt(i, R + 26), x = p[0], y = p[1];
+      var p = pt(i, R + 15), x = p[0], y = p[1];
       var anchor = 'middle';
       if (x > C + 6) anchor = 'start';
       else if (x < C - 6) anchor = 'end';
@@ -175,7 +181,7 @@
       var q = pt(k, R * d.pct / 100);
       var dot = svg('circle', { cx: q[0].toFixed(1), cy: q[1].toFixed(1), r: 4, 'class': 'ry-radar__dot' });
       var title = svg('title');
-      title.textContent = d.label + ': ' + d.pct + '% · ' + band(d.pct);
+      title.textContent = d.label + ' · Average response ' + (d.raw / 2) + ' of 4 · ' + band(d.pct);
       dot.appendChild(title);
       s.appendChild(dot);
     });
@@ -209,8 +215,8 @@
                  '<span><span class="ry-itq__num">' + n + '</span>' + lbl + '</span></label>';
         }).join('');
         target.insertAdjacentHTML('beforeend',
-          '<div class="ry-itq__q" data-q="' + id + '"><p class="ry-itq__q-text">' + text + '</p>' +
-          '<div class="ry-itq__scale" role="radiogroup" aria-label="' + SCALE[0] + ' to ' + SCALE[4] + '">' +
+          '<div class="ry-itq__q" data-q="' + id + '"><p class="ry-itq__q-text" id="' + id + '-label"><span class="ry-itq__q-index" aria-hidden="true">' + (qIndex < 10 ? '0' : '') + qIndex + '</span>' + text + '</p>' +
+          '<div class="ry-itq__scale" role="radiogroup" aria-labelledby="' + id + '-label">' +
           scale + '</div></div>');
       });
     });
@@ -233,6 +239,11 @@
       var card = e.target.closest('.ry-itq__q');
       if (card) card.classList.add('is-answered');
       setProgress();
+      if (mapEl.classList.contains('is-shown')) {
+        mapEl.classList.remove('is-shown');
+        emptyEl.style.display = '';
+        emptyEl.textContent = 'Your answers have changed. Select “Show my map” to update your reflection.';
+      }
     });
 
     resetBtn.addEventListener('click', function () {
@@ -243,19 +254,23 @@
       setProgress();
       mapEl.classList.remove('is-shown');
       emptyEl.style.display = '';
+      emptyEl.textContent = 'Your map will appear here once you complete the reflection above.';
+      ['ry-radar', 'ry-readout', 'ry-map-summary', 'ry-plan'].forEach(function (id) {
+        document.getElementById(id).innerHTML = '';
+      });
     });
 
     submitBtn.addEventListener('click', function () {
+      if (Object.keys(answers).length < TOTAL) return;
       var perDomain = DOMAINS.map(function (d) {
-        var raw = 0, endorsed = false;
+        var raw = 0;
         Object.keys(answers).forEach(function (id) {
           if (id.indexOf(d.key + '_') !== 0) return;
           var v = answers[id] || 0;
           raw += v;
-          if (v >= 2) endorsed = true;          // ITQ endorsement threshold
         });
         return { key: d.key, label: d.label, axis: d.axis, desc: d.desc, group: d.group,
-                 raw: raw, pct: Math.round((raw / 8) * 100), endorsed: endorsed };
+                 raw: raw, pct: Math.round((raw / 8) * 100) };
       });
 
       // reveal first, so the radar host has real dimensions to draw into
@@ -275,27 +290,20 @@
       }).join('');
 
       // ---- narrative summary (dimensional; no diagnosis language) ----
-      var lit = perDomain.filter(function (d) { return d.endorsed; });
-      var quiet = perDomain.filter(function (d) { return !d.endorsed; });
-      var litNames = lit.map(function (d) { return d.label; });
-      var quietNames = quiet.map(function (d) { return d.label; });
-
+      var sorted = perDomain.slice().sort(function (a, b) { return b.pct - a.pct; });
+      var strongest = sorted.filter(function (d) { return d.raw === sorted[0].raw; });
       var html = '';
-      if (lit.length === 0) {
-        html = '<p>Across these six domains, nothing is showing up strongly for you right now, and that is worth noting. Whatever brought you to this page, this reflection is one small data point, not the whole story of your inner life. If something still feels off, trust that, and consider talking it through with someone you trust or a professional.</p>';
+      if (sorted[0].pct < 25) {
+        html = '<p>Your answers sit toward the lower end of this reflection. That doesn’t erase what happened to you or explain everything you may be dealing with. If something is making daily life hard, it deserves attention even if this map doesn’t capture it.</p>';
+      } else if (strongest.length === 6) {
+        html = '<p>Your responses are at the same level across all six domains. There isn’t one obvious starting point in the shape alone. Start with what is costing you the most in daily life, or what feels manageable to work on.</p>';
       } else {
-        html = '<p>Reading this as a landscape rather than a label: <strong>' + lit.length + ' of the six domains</strong> are showing up meaningfully for you' +
-               (litNames.length ? ': ' + litNames.join(', ') : '') + '. ' +
-               (quietNames.length ? 'The quieter areas right now are ' + quietNames.join(', ') + '.' : 'All six are lit up to some degree.') + '</p>';
-        if (lit.length >= 4 && quiet.length >= 1) {
-          html += '<p>Notice the pull to focus on what <em>doesn’t</em> reach the top of the scale and conclude "so it doesn’t apply to me." Many people land exactly here, recognizing themselves in most domains but one, and quietly close the door. Try resisting that. ' + lit.length + ' meaningful areas is ' + lit.length + ' real places where healing work is available to you, starting now.</p>';
-        }
+        html = '<p>Your strongest responses are in <strong>' + strongest.map(function (d) { return d.label; }).join(', ') + '</strong>. Notice where that meets your actual life. Lost sleep? Plans cancelled? Feeling far away from people you care about? That everyday cost matters more than the shape on the screen.</p>';
       }
-      html += '<p>Remember: this is not a score and not a diagnosis. It’s a mirror. Wherever your map sits today, the approaches that help (regulation, safe relationships, trauma-focused support) are available to you regardless of whether any threshold is met. The section below on <a href="#beyond">why diagnosis isn’t the finish line</a> picks this up, and <a href="#healing">where healing begins</a> shows you where to take a first step.</p>';
+      html += '<p><strong>Pick one thing you want a little more room around.</strong> Write down when it happens, what it interrupts, and what helps even slightly. Keep that note for yourself or bring it to someone who can help. You don’t have to wait for a label to take your experience seriously.</p>';
       document.getElementById('ry-map-summary').innerHTML = html;
 
       // ---- where to start ----
-      var sorted = perDomain.slice().sort(function (a, b) { return b.pct - a.pct; });
       function planCard(d) {
         return '<div class="ry-plan__card"><p class="ry-plan__card-head">' +
                '<span class="ry-readout__name">' + d.label + '</span>' +
@@ -305,19 +313,17 @@
       }
       var planEl = document.getElementById('ry-plan');
       if (sorted[0].pct < 25) {
-        planEl.innerHTML = '<p class="ry-plan__head">The toolkit, by domain</p>' +
-          '<p class="ry-plan__sub">Nothing on your map is especially loud right now, so instead of a targeted starting point, here’s the whole toolkit. None of it requires a diagnosis, a referral, or anyone’s permission. Take what’s useful.</p>' +
-          sorted.map(planCard).join('');
+        planEl.innerHTML = '<h3 class="ry-plan__head">Take what is useful to you</h3>' +
+          '<p class="ry-plan__sub">There’s no need to make a project out of every domain. If something here fits your experience, open the ideas and choose one small step.</p>' +
+          '<details class="ry-plan__rest"><summary>Explore ideas for the six domains</summary>' + sorted.map(planCard).join('') + '</details>';
       } else {
-        var featured = sorted.filter(function (d) { return d.pct >= 50; });
-        if (featured.length < 2) featured = sorted.slice(0, 2);
-        if (featured.length > 3) featured = featured.slice(0, 3);
+        var featured = sorted.filter(function (d) { return d.pct >= 25; }).slice(0, 2);
         var rest = sorted.filter(function (d) { return featured.indexOf(d) === -1; });
-        planEl.innerHTML = '<p class="ry-plan__head">Where to start, based on your map</p>' +
-          '<p class="ry-plan__sub">These aren’t prescriptions. They’re the practices people with complex trauma most consistently find helpful, matched to the domains that are loudest for you right now. None of them require a diagnosis, a referral, or anyone’s permission. Pick one. Small and done beats perfect and postponed.</p>' +
+        var tied = rest.some(function (d) { return d.raw === featured[featured.length - 1].raw; });
+        planEl.innerHTML = '<h3 class="ry-plan__head">A place to begin</h3>' +
+          '<p class="ry-plan__sub">' + (tied ? 'Several areas are tied, so the first ideas follow domain order. All the others are below. ' : 'These ideas start with your stronger responses. ') + 'Choose what fits your life. Try one small step and notice what changes. You can leave the rest for another day.</p>' +
           featured.map(planCard).join('') +
-          (rest.length ? '<details class="ry-plan__rest"><summary>+ Show ideas for your quieter domains (' +
-            rest.map(function (d) { return d.label; }).join(' · ') + ')</summary>' +
+          (rest.length ? '<details class="ry-plan__rest"><summary>Explore the other ' + rest.length + ' domains</summary>' +
             rest.map(planCard).join('') + '</details>' : '');
       }
 
@@ -329,7 +335,8 @@
         }, 60);
       });
 
-      mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('ry-map-title').focus({ preventScroll: true });
+      mapEl.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     });
 
     setProgress();

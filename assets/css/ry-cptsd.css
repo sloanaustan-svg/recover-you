@@ -149,10 +149,12 @@
 .ry-itq {
   margin-top: 36px;
   padding: clamp(26px, 4vw, 44px);
-  border-radius: 18px;
-  border: 1px solid var(--ry-hairline);
-  background: var(--ry-glass-bg);
-  box-shadow: var(--ry-glass-shadow);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: linear-gradient(145deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025) 65%);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .32), inset 0 1px rgba(255, 255, 255, .07);
 }
 
 /* the "read this first" preamble carries real weight, so it gets a
@@ -234,15 +236,22 @@
 
 /* ---- question groups ---- */
 .ry-itq__group {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.14em;
-  color: var(--ry-ink-faint);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: -.02em;
+  color: #f5eeee;
   padding-bottom: 12px;
-  margin: 34px 0 20px;
+  margin: 40px 0 12px;
   border-bottom: 1px solid var(--ry-hairline);
 }
 .ry-itq__group:first-of-type { margin-top: 8px; }
+.ry-itq__group > span { display: block; margin-bottom: 8px; color: #bdbdbd; font-size: 11px; letter-spacing: .15em; }
+.ry-itq__group-note { margin: 0 0 22px; font-size: 14px; line-height: 1.7; color: #bfbfbf; }
+.ry-itq__group-note strong { color: #e5e5e5; font-weight: 400; }
+.ry-itq__q-index { display: block; margin-bottom: 10px; font-size: 11px; letter-spacing: .1em; color: #aaa; }
 
 .ry-itq__q {
   padding: 20px 22px;
@@ -256,8 +265,8 @@
    answering is progress, not a highlight on the sentence you just
    agreed described you */
 .ry-itq__q.is-answered {
-  border-color: rgba(255, 47, 110, 0.28);
-  background: rgba(255, 47, 110, 0.028);
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .035);
 }
 .ry-itq__q-text {
   margin: 0 0 16px;
@@ -300,7 +309,7 @@
 .ry-itq__scale label:hover > span { border-color: rgba(255, 255, 255, 0.25); color: #fff; }
 .ry-itq__scale input:checked + span {
   border-color: var(--ry-red);
-  background: rgba(255, 47, 110, 0.12);
+  background: rgba(255, 0, 0, .09);
   color: #fff;
 }
 /* keyboard users must be able to see where they are */
@@ -340,32 +349,28 @@
   font-weight: 300;
   color: var(--ry-ink-faint);
 }
-.ry-map { display: none; }
+.ry-map { display: none; scroll-margin-top: 100px; }
 .ry-map.is-shown { display: block; }
 
 .ry-map__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 34px;
+  gap: 30px;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 @media (max-width: 991.98px) { .ry-map__grid { grid-template-columns: 1fr; gap: 26px; } }
 
 .ry-radar {
-  padding: 18px;
-  border-radius: 16px;
-  border: 1px solid var(--ry-hairline);
-  background: var(--ry-glass-bg);
-  box-shadow: var(--ry-glass-shadow);
+  padding: 0;
 }
 .ry-radar svg { display: block; width: 100%; height: auto; overflow: visible; }
 .ry-radar__web  { fill: none; stroke: rgba(255, 255, 255, 0.11); stroke-width: 1; }
 .ry-radar__axis { stroke: rgba(255, 255, 255, 0.11); stroke-width: 1; }
 .ry-radar__area {
-  fill: rgba(255, 47, 110, 0.18);
-  stroke: var(--ry-red);
-  stroke-width: 2;
+  fill: url(#ry-radar-fill);
+  stroke: #ff2424;
+  stroke-width: 2.5;
   stroke-linejoin: round;
   /* grows from the centre on reveal; see ry-itq.js */
   transform-box: fill-box;
@@ -373,15 +378,15 @@
   transition: transform .9s cubic-bezier(.22, 1, .36, 1), opacity .5s ease;
 }
 .ry-radar__area.is-collapsed { transform: scale(0.02); opacity: 0; }
-.ry-radar__dot { fill: var(--ry-red); stroke: #fff; stroke-width: 1.5; }
+.ry-radar__dot { fill: #ff2424; stroke: #fff; stroke-width: 1.5; }
 .ry-radar__label {
   fill: rgba(255, 255, 255, 0.82);
   font-family: 'Poppins', sans-serif;
-  font-size: 10.5px;
-  font-weight: 300;
+  font-size: 11px;
+  font-weight: 400;
 }
 .ry-radar__tick {
-  fill: rgba(255, 255, 255, 0.34);
+  fill: #aaa;
   font-family: 'Poppins', sans-serif;
   font-size: 9px;
 }
@@ -405,11 +410,11 @@
 }
 .ry-readout__band {
   font-family: 'Poppins', sans-serif;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ry-ink-faint);
+  color: #bdbdbd;
   white-space: nowrap;
 }
 .ry-readout__bar {
@@ -423,15 +428,15 @@
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 47, 110, 0.55), var(--ry-red));
+  background: linear-gradient(90deg, #8c1010, #e00000 65%, #ff2424);
   transition: width .85s cubic-bezier(.22, 1, .36, 1);
 }
 .ry-readout__desc {
   margin: 8px 0 0;
   font-size: 12.5px;
   line-height: 1.65;
-  font-weight: 300;
-  color: var(--ry-ink-faint);
+  font-weight: 400;
+  color: #bcbcbc;
 }
 
 /* ---- narrative summary ---- */
@@ -454,9 +459,11 @@
 
 /* ---- the plan ---- */
 .ry-plan__head {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(24px, 3vw, 32px);
-  letter-spacing: 0.04em;
+  letter-spacing: -.035em;
+  font-weight: 600;
+  text-transform: none;
   color: #fff;
   margin: 0 0 10px;
 }
@@ -525,7 +532,7 @@
 }
 .ry-plan__rest > summary {
   cursor: pointer;
-  list-style: none;
+  list-style: disclosure-closed inside;
   font-family: 'Poppins', sans-serif;
   font-size: 13.5px;
   font-weight: 500;
@@ -533,7 +540,7 @@
   padding: 12px 0;
   transition: color .2s ease;
 }
-.ry-plan__rest > summary::-webkit-details-marker { display: none; }
+.ry-plan__rest[open] > summary { list-style-type: disclosure-open; }
 .ry-plan__rest > summary:hover { color: var(--ry-red); }
 .ry-plan__rest[open] > summary { margin-bottom: 18px; }
 
@@ -542,8 +549,8 @@
   margin-top: 34px;
   padding: 28px 30px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 47, 110, 0.3);
-  background: rgba(255, 47, 110, 0.045);
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .04);
 }
 .ry-map__help h3 {
   font-family: 'Poppins', sans-serif;
@@ -613,3 +620,130 @@
 .ry-map a:hover, .ry-itq a:hover { color: #fff; }
 
 .ry-stages { margin: 34px 0 30px; }
+
+/* A focused visual identity for the reflection and its personal map. */
+.ry-itq-jump {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding: 16px 26px;
+  max-width: 100%;
+  border: 1px solid #e00000;
+  border-radius: 999px;
+  background: #ce0000;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .3);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: center;
+}
+.ry-itq-jump > span { font-size: 21px; line-height: 1; }
+.ry-itq-jump:hover { background: #ec0000; color: #fff; }
+.ry-itq-jump:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.ry-reflection-field { background: #000; }
+#reflect, #map { background: transparent; }
+#reflect { border-top: 1px solid rgba(255, 255, 255, .1); }
+.ry-reflect-heading { text-align: center; max-width: 780px; margin: 0 auto 40px; }
+.ry-itq__eyebrow {
+  margin: 0 0 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #bdbdbd;
+}
+.ry-reflect-heading h2, .ry-map__heading h2 {
+  margin: 0 0 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(34px, 4.4vw, 60px);
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: -.045em;
+  text-transform: none;
+  color: #fff;
+}
+.ry-reflect-heading h2 > span, .ry-map__heading h2 > span {
+  color: #bcbcbc;
+}
+.ry-reflect-heading__intro, .ry-map__heading > p:last-child {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #c9c9c9;
+}
+.ry-itq__facts { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; margin: 26px 0 0; padding: 0; list-style: none; }
+.ry-itq__facts li { font-size: 12px; color: #bdbdbd; }
+.ry-itq__facts li::before { content: ''; display: inline-block; width: 4px; height: 4px; margin: 0 8px 3px 0; border-radius: 50%; background: var(--ry-red); }
+.ry-itq__preamble { border-color: var(--ry-red); background: linear-gradient(120deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .02)); }
+.ry-itq__em { color: #f2f2f2; }
+.ry-itq__preamble p, .ry-itq__official-body p, .ry-plan__card li, .ry-plan__sub, .ry-map__summary p, .ry-map__help p { font-weight: 400; }
+.ry-itq__scale label > span { min-height: 72px; font-weight: 400; color: #cbcbcb; }
+.ry-itq__progress { color: #bcbcbc; }
+.ry-itq__official { border-style: solid; }
+.ry-map__portrait {
+  position: relative;
+  padding: clamp(22px, 3.5vw, 44px);
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 24px;
+  background: linear-gradient(130deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .02) 70%);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, .25), inset 0 1px rgba(255, 255, 255, .06);
+}
+.ry-map__heading { text-align: center; margin-bottom: 38px; }
+.ry-map__heading h2 { font-size: clamp(32px, 3.5vw, 48px); }
+.ry-radar-frame {
+  margin: 0;
+  min-width: 0;
+  padding: 18px 12px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .025), rgba(0, 0, 0, .25));
+}
+.ry-radar-frame__label { display: flex; justify-content: space-between; gap: 10px; padding: 0 4px; font-size: 10px; letter-spacing: .06em; color: #bcbcbc; }
+.ry-radar-frame figcaption { max-width: 270px; margin: 0 auto; text-align: center; font-size: 11px; line-height: 1.7; color: #bfbfbf; }
+.ry-readout__head { flex-wrap: wrap; gap: 3px 12px; }
+.ry-readout__row { margin-bottom: 19px; }
+.ry-readout__row:last-child { margin-bottom: 0; }
+.ry-map__legend { margin: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .1); color: #b8b8b8; font-size: 12px; line-height: 1.7; }
+.ry-plan__card, .ry-map__summary, .ry-map__help {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025));
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .06), 0 16px 40px rgba(0, 0, 0, .2);
+}
+.ry-map__help p + p { margin-top: 14px; }
+.ry-map__resources { padding: 28px 0 6px; }
+.ry-map__resources h3 { font-family: 'Poppins', sans-serif; color: #eee; font-size: 16px; font-weight: 600; text-transform: none; letter-spacing: 0; }
+.ry-map__resources p { color: #bfbfbf; font-size: 14px; line-height: 1.8; }
+.ry-plan__card li strong { color: #f5f5f5; font-weight: 600; }
+.ry-map a, .ry-itq a { color: #e0e0e0; text-decoration: underline; text-decoration-color: #e00000; text-underline-offset: 3px; }
+.ry-itq a.ry-itq__dl { text-decoration: none; }
+.ry-map a:focus-visible, .ry-itq a:focus-visible, .ry-plan__rest > summary:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+@media (max-width: 575.98px) {
+  .ry-itq { padding: 22px 14px; border-radius: 18px; }
+  .ry-itq__preamble, .ry-itq__official { padding: 18px 16px; }
+  .ry-itq__q { padding: 18px 12px; }
+  .ry-itq__scale { gap: 5px; }
+  .ry-itq__scale label > span { padding: 12px 2px 10px; font-size: 10px; }
+  .ry-itq__group { font-size: 17px; }
+  .ry-map__portrait { padding: 26px 16px; border-radius: 18px; }
+  .ry-radar-frame { padding: 16px 0; }
+  .ry-radar-frame__label { padding: 0 12px; }
+  .ry-map__heading > p:last-child { font-size: 14px; }
+  .ry-plan__card, .ry-map__summary, .ry-map__help { padding: 22px 20px; }
+  .ry-plan__card-head { flex-wrap: wrap; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ry-radar__area, .ry-readout__bar > i, .ry-itq__q, .ry-itq__scale label > span { transition: none; }
+}
