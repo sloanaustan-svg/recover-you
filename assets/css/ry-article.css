@@ -1,3 +1,39 @@
+/* Optional article summary. Native disclosure keeps the short version out of the
+   reading flow until the reader requests it. */
+.ry-summary {
+  position: relative;
+  border: 1px solid rgba(233,175,100,.36);
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 100% 0, rgba(233,175,100,.09), transparent 65%), linear-gradient(145deg, #151414, #080808);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 22px 50px -30px rgba(0,0,0,.9);
+  overflow: hidden;
+  scroll-margin-top: 110px;
+}
+.ry-summary::before { content: ''; position: absolute; inset: 0 24px auto; height: 1px; background: linear-gradient(90deg, transparent, #e9af64, transparent); }
+.ry-summary > summary { display: flex; gap: 24px; justify-content: space-between; align-items: center; cursor: pointer; padding: 32px 38px; list-style: none; }
+.ry-summary > summary::-webkit-details-marker { display: none; }
+.ry-summary > summary:hover { background: rgba(233,175,100,.035); }
+.ry-summary > summary:focus-visible { outline: 2px solid #e9af64; outline-offset: -6px; border-radius: 15px; }
+.ry-summary__intro { display: grid; gap: 9px; }
+.ry-summary__eyebrow { color: #c9b49c; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; }
+.ry-summary__title { color: #fff; font-family: Syncopate, sans-serif; font-size: 30px; font-weight: 700; line-height: 1.25; }
+.ry-summary__action { display: inline-flex; flex-shrink: 0; align-items: center; gap: 16px; color: #f4d5ab; font-size: 12px; font-weight: 600; }
+.ry-summary__arrow { width: 42px; height: 42px; padding: 11px; border: 1px solid rgba(233,175,100,.4); border-radius: 50%; fill: none; stroke: currentColor; stroke-width: 1.5; transition: transform .2s ease; }
+.ry-summary__collapse { display: none; }
+.ry-summary[open] .ry-summary__expand { display: none; }
+.ry-summary[open] .ry-summary__collapse { display: inline; }
+.ry-summary[open] .ry-summary__arrow { transform: rotate(180deg); }
+.ry-summary .ry-summary__body { margin: 0 38px; padding: 26px 0 32px; border-top: 1px solid rgba(233,175,100,.2); }
+.ry-summary .ry-summary__takeaway { color: #fff; margin: 24px 0; }
+.ry-summary .ry-summary__top { display: inline-flex; color: #f4d5ab; font-size: 13px; }
+@media (max-width: 575.98px) {
+  .ry-summary > summary { padding: 25px 22px; gap: 22px; align-items: flex-start; flex-direction: column; }
+  .ry-summary__action { width: 100%; justify-content: space-between; }
+  .ry-summary .ry-summary__body { margin: 0 22px; padding: 24px 0; }
+  .ry-summary__eyebrow { letter-spacing: .1em; }
+}
+@media (prefers-reduced-motion: reduce) { .ry-summary__arrow { transition: none; } }
+
 /* ====================================================================
    Recover-You — SHARED ARTICLE LAYER
    --------------------------------------------------------------------

@@ -1,0 +1,51 @@
+/* Genetic Predisposition — page artwork, pacing, and reading navigation. */
+.ry-genetics-page { --ry-gen-amber: #e9af64; }
+/* Use the shared article hero layout; only the artwork crop is page-specific. */
+.ry-gen-hero__image { background-position: right top; }
+.ry-gen-not-equal { color: var(--ry-gen-amber); font-size: 1.4em; padding: 0 .25em; }
+.ry-genetics-page .ry-gen-section { scroll-margin-top: 100px; }
+.ry-gen-reading { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin: 0 0 34px; }
+.ry-gen-reading .ry-readtime { margin: 0; color: #aaa; }
+.ry-prose a.ry-gen-jump {
+  display: inline-flex; gap: 16px; align-items: center; padding: 10px 17px;
+  border: 1px solid rgba(233,175,100,.4); border-radius: 30px;
+  color: #f3d4ac; font-size: 13px; line-height: 1.4; font-weight: 500;
+  background: rgba(233,175,100,.06);
+}
+.ry-prose a.ry-gen-jump:hover { color: #fff; border-color: #e9af64; }
+.ry-gen-jump span { font-size: 22px; }
+.ry-gen-statement { padding: 45px 0; border-block: 1px solid rgba(233,175,100,.2); background: radial-gradient(ellipse at center, rgba(233,175,100,.09), transparent 75%); text-align: center; }
+.ry-gen-statement__label { display: block; color: #aaa; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 20px; }
+.ry-gen-statement p { display: flex; flex-wrap: wrap; gap: 12px 26px; justify-content: center; align-items: center; margin: 0; color: #fff; font-family: Poppins, sans-serif; font-size: clamp(20px, 3vw, 40px); font-weight: 300; }
+.ry-gen-statement__symbol { color: var(--ry-gen-amber); font-size: 1.7em; line-height: 1; }
+.ry-gen-ref { font-size: 10px; white-space: nowrap; }
+.ry-prose .ry-gen-ref a { color: #d5af82; border: 0; padding: 3px; }
+.ry-gen-related { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 28px; }
+.ry-gen-related a { font-size: 13px; font-weight: 600; }
+.ry-gen-related a span { margin-left: 7px; }
+.ry-gen-split { max-width: 1600px; margin-inline: auto; }
+.ry-gen-split:not(.ry-split--reverse) .ry-split__figure { order: 1; }
+.ry-gen-split .ry-split__figure { padding: 48px 4vw; }
+.ry-gen-split .ry-split__figure img { border-radius: 3px; max-height: 650px; }
+.ry-gen-panel { border-block: 1px solid rgba(255,255,255,.08); background: linear-gradient(135deg, #101012, #060607 70%); }
+.ry-gen-closing { background: radial-gradient(ellipse at 50% 90%, rgba(233,175,100,.06), transparent 70%); }
+.ry-gen-closing .ry-pullquote { border-left-color: var(--ry-gen-amber); }
+.ry-gen-summary-section { padding: 8px 0 28px; }
+.ry-genetics-page #smooth-content :is(a,summary):focus-visible { outline: 2px solid var(--ry-gen-amber); outline-offset: 5px; }
+.ry-genetics-page .ry-faq summary:focus-visible { outline-offset: -5px; border-radius: 10px; }
+.ry-genetics-page .ry-faq__body { color: rgba(255,255,255,.8); }
+.ry-genetics-page #where-next .ry-next-grid { margin-top: 30px; }
+.ry-genetics-page .ry-sources li { scroll-margin-top: 110px; }
+.ry-genetics-page .ry-sources li:target { background: rgba(233,175,100,.06); }
+@media (max-width: 991.98px) {
+  .ry-gen-split .ry-split__figure { padding: 38px 24px 0; }
+  .ry-gen-split:not(.ry-split--reverse) .ry-split__figure { order: -1; }
+  .ry-gen-split .ry-split__figure img { max-height: 420px; width: auto; max-width: 100%; }
+}
+@media (max-width: 575.98px) {
+  .ry-gen-hero .ry-page-hero__title { font-size: clamp(32px, 10vw, 38px); }
+  .ry-gen-statement p { flex-direction: column; gap: 8px; }
+  .ry-gen-statement__label { font-size: 9px; letter-spacing: .1em; }
+  .ry-genetics-page .ry-faq summary { gap: 10px; }
+  .ry-genetics-page .ry-faq summary .ry-faq__q { min-width: 0; }
+}

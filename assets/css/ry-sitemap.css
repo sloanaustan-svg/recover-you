@@ -1,5 +1,14 @@
 /* Recover-You sitemap */
 
+.ry-sitemap-desc {
+  display: block;
+  max-width: 48ch;
+  margin: 5px 0 13px;
+  color: rgba(255,255,255,.68);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .ry-sitemap-page {
   background: #050506;
 }

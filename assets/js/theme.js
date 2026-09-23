@@ -2378,7 +2378,10 @@ $(document).ready(function(){
 	/**
 	 * Slick carousel - Initiate portfolio thumbnails carousel
 	 */
-	$( '.sk__portfolio-wrapper:not(.not-slick)' ).slick({
+	// Article pages have no portfolio carousel and do not load Slick.
+	let slickPortfolio = $( '.sk__portfolio-wrapper:not(.not-slick)' );
+	if ( slickPortfolio.length && typeof $.fn.slick === 'function' ) {
+	slickPortfolio.slick({
 		dots: true,
 		infinite: false,
 		speed: 1200,
@@ -2438,10 +2441,8 @@ $(document).ready(function(){
 
 	// Play slick carousel when portfolio becomes visible
 	function playSlickPortfolio() {
-		$('.sk__portfolio-wrapper:not(.not-slick)').slick('slickPlay')
+		slickPortfolio.slick('slickPlay');
 	}
-	let slickPortfolio = $( '.sk__portfolio-wrapper:not(.not-slick)' );
-	if ( slickPortfolio.length ) {
 		ScrollTrigger.create({
 			trigger: slickPortfolio,
 			onEnter: playSlickPortfolio
