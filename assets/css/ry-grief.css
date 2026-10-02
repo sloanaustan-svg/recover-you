@@ -1,0 +1,387 @@
+/* ====================================================================
+   Recover-You: Grief & the Unlived Life (page layer)
+   --------------------------------------------------------------------
+   Loads after ry-article.css and uses its :root tokens. Everything
+   shared (split bands, diptych, spec cards, callouts, notes, next
+   cards, sources, ticker) already lives there; this file only adds
+   what the grief page needs that nothing else on the site has yet:
+
+     1. Reconnect cards     (same pattern as the Shame page, copied
+                             here so the two pages don't depend on
+                             each other's stylesheets)
+     2. Loss cards          the "Name what you've lost" tool
+     3. Your list           the marked losses, ready to copy or print
+     4. Draft notes         review-only flags; delete before launch
+   ==================================================================== */
+
+/* ====================================================================
+   1. RECONNECT CARDS
+   ==================================================================== */
+.ry-reconnect {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 34px;
+  align-items: start;
+}
+@media (max-width: 991.98px) { .ry-reconnect { grid-template-columns: 1fr; gap: 26px; } }
+
+.ry-reconnect__side { display: grid; gap: 18px; }
+
+.ry-reconnect__card {
+  padding: 30px 32px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+}
+@media (min-width: 1200px) {
+  .ry-reconnect__card--offset { margin-left: 34px; }
+}
+.ry-reconnect__card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 18px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-reconnect__card ul { list-style: none; margin: 0; padding: 0; }
+.ry-reconnect__card li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+.ry-reconnect__card li:last-child { margin-bottom: 0; }
+.ry-reconnect__card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 9px;
+  height: 1px;
+  background: var(--ry-red);
+}
+.ry-reconnect__card li strong { color: #fff; font-weight: 600; }
+.ry-reconnect__card a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ====================================================================
+   2. LOSS CARDS
+   Smaller than the C-PTSD pattern cards on purpose: each one is a
+   single loss, not a pattern with examples, and the reader should be
+   able to take in a whole group at a glance before deciding.
+   ==================================================================== */
+.ry-losses-band {
+  position: relative;
+  overflow: hidden;
+}
+.ry-losses-band__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+}
+.ry-losses-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.62) 24%, rgba(0,0,0,0.62) 76%, #000 100%);
+  pointer-events: none;
+}
+.ry-losses-band > .container { position: relative; z-index: 2; }
+
+.ry-losses__intro { margin-bottom: 34px; }
+.ry-loss-count {
+  min-height: 22px;
+  margin: 14px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ry-ink-faint);
+}
+.ry-loss-count strong { color: var(--ry-red); font-weight: 700; }
+.ry-loss-count a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+.ry-lossgroup { margin-bottom: 40px; }
+.ry-lossgroup:last-child { margin-bottom: 0; }
+.ry-lossgroup .ry-lossgroup__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.ry-lossgroup__sub {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+.ry-loss-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 991.98px) { .ry-loss-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { .ry-loss-grid { grid-template-columns: 1fr; } }
+
+.ry-loss {
+  position: relative;
+  padding: 20px 58px 18px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--ry-hairline);
+  background: var(--ry-glass-bg);
+  box-shadow: var(--ry-glass-shadow);
+  transition: border-color .22s ease, transform .22s ease, background .22s ease;
+}
+.ry-js .ry-loss { cursor: pointer; }
+.ry-loss:hover { border-color: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+.ry-loss .ry-loss__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #fff;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ry-loss__hint {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink-dim);
+}
+
+/* the mark control: same hollow square as the C-PTSD page, nothing
+   here is a right answer, the reader is the one deciding */
+.ry-mark {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 26px; height: 26px;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.26);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease;
+}
+.ry-mark:hover { border-color: var(--ry-red); }
+.ry-mark:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.ry-mark::after {
+  content: "";
+  position: absolute;
+  left: 7px; top: 3px;
+  width: 8px; height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform .2s cubic-bezier(.22, 1, .36, 1);
+}
+.ry-loss.is-marked { border-color: rgba(255, 47, 110, 0.5); background: rgba(255, 47, 110, 0.05); }
+.ry-loss.is-marked .ry-mark { background: var(--ry-red); border-color: var(--ry-red); }
+.ry-loss.is-marked .ry-mark::after { transform: rotate(45deg) scale(1); }
+
+/* ====================================================================
+   3. YOUR LIST
+   ==================================================================== */
+.ry-yourlist { display: none; }
+.ry-yourlist.is-shown { display: block; }
+
+.ry-yourlist__panel {
+  padding: clamp(28px, 4vw, 46px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 47, 110, 0.3);
+  background: linear-gradient(180deg, rgba(255, 47, 110, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: var(--ry-glass-shadow);
+}
+.ry-yourlist__group { margin-bottom: 26px; }
+.ry-yourlist__group:last-of-type { margin-bottom: 0; }
+.ry-yourlist .ry-yourlist__domain {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--ry-red);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ry-hairline);
+}
+.ry-yourlist ul { list-style: none; margin: 0; padding: 0; }
+.ry-yourlist li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 9px;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-yourlist li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 11px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+}
+.ry-yourlist__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ry-hairline);
+}
+.ry-yourlist__note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink-faint);
+}
+
+/* support list inside the closing callout */
+.ry-support-list { list-style: none; margin: 14px 0 0; padding: 0; }
+.ry-support-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--ry-ink);
+}
+.ry-support-list li:last-child { margin-bottom: 0; }
+.ry-support-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 12px;
+  width: 9px; height: 1px;
+  background: var(--ry-red);
+}
+.ry-support-list strong { color: #fff; font-weight: 600; }
+.ry-support-list a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ====================================================================
+   4. DRAFT NOTES (review only)
+   Flags for the author on passages that need his confirmation. They
+   are meant to be deleted before the page goes into the nav.
+   ==================================================================== */
+.ry-draft-note {
+  margin: 22px 0;
+  padding: 16px 20px;
+  border: 1px dashed #f5c542;
+  border-radius: 10px;
+  background: rgba(245, 197, 66, 0.08);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #f5d77a;
+}
+.ry-draft-note strong { color: #f5c542; }
+
+/* ====================================================================
+   5. PRINT: the list of losses on paper, and nothing else
+   ==================================================================== */
+@media print {
+  body * { visibility: hidden; }
+  .ry-yourlist, .ry-yourlist * { visibility: visible; }
+  .ry-yourlist {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+    display: block !important;
+  }
+  .ry-yourlist__actions, .ry-yourlist__note { display: none; }
+  .ry-yourlist__panel { border: 0; background: none; padding: 0; box-shadow: none; }
+  .ry-yourlist .ry-yourlist__domain { color: #000; }
+  .ry-yourlist li { color: #000; }
+  .ry-yourlist li::before { background: #000; }
+  .ry-yourlist .ry-eyebrow-h, .ry-yourlist .ry-lede, .ry-yourlist .ry-section-eyebrow { color: #000 !important; }
+}
+
+/* ====================================================================
+   6. STORY PANEL (frosted glass)
+   The one first-person story on the page gets its own band so it
+   reads as testimony, not as another subsection. The background photo
+   is blurred well past recognition and only shows through as colour
+   and light; the panel frosts whatever sits behind it.
+   ==================================================================== */
+.ry-story-band {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.ry-story-band__bg {
+  position: absolute;
+  inset: -60px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(26px) saturate(0.7);
+  opacity: 0.42;
+}
+.ry-story-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.25) 26%, rgba(0,0,0,0.25) 74%, #000 100%);
+  pointer-events: none;
+}
+.ry-story-band > .container { position: relative; z-index: 2; }
+
+.ry-story {
+  position: relative;
+  padding: clamp(30px, 5vw, 58px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.04) 55%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 30px 70px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+/* a thin red rule down the left edge ties it back to the site's callouts */
+.ry-story::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 34px; bottom: 34px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--ry-red);
+}
+.ry-story p { color: rgba(255, 255, 255, 0.86); }
+.ry-story p:last-child { margin-bottom: 0; }
+@media (max-width: 575.98px) {
+  .ry-story { padding: 28px 22px 26px; border-radius: 16px; }
+  .ry-story::before { top: 24px; bottom: 24px; }
+}
+/* brand red loses contrast over the warm blur; lift it inside the panel */
+.ry-story .ry-hl { color: #ff5c5c !important; }
+
+/* ====================================================================
+   7. TWO-LINE INTERSTITIAL
+   Each sentence gets its own line, and the browser balances any wrap
+   so a single word is never left stranded on a line by itself.
+   ==================================================================== */
+.ry-interstitial--lines .ry-interstitial__quote {
+  max-width: 1000px;
+  font-size: clamp(24px, 3.4vw, 44px);
+  line-height: 1.28;
+}
+.ry-interstitial--lines .ry-interstitial__quote span {
+  display: block;
+  text-wrap: balance;
+}
+.ry-interstitial--lines .ry-interstitial__quote span + span {
+  margin-top: 6px;
+  color: var(--ry-red);
+}
+
+/* breathing room between the "two truths" intro and the two panels */
+#anav-both .row:first-of-type .ry-prose { margin-bottom: 44px; }
+@media (max-width: 767.98px) { #anav-both .row:first-of-type .ry-prose { margin-bottom: 30px; } }
