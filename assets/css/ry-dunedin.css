@@ -486,11 +486,26 @@ html.ry-js .ry-cohort__key:hover { border-color: rgba(255, 255, 255, 0.22); }
 
    `clear: both` on the following section is the belt to that braces:
    even if something upstream floats, this section starts below it. */
-#converge, #power-of-knowing, #translating, #personality-types,
+#converge, #power-of-knowing, #translating, #reading-the-evidence,
 #key-insights, #why-it-matters, #watch, #where-next {
   position: relative;
   z-index: 1;
   display: flow-root;
 }
 #power-of-knowing { clear: both; }
+
+/* Keep the new inline research references legible on the dark page. */
+.ry-prose a[href^="#ref-"],
+.ry-lede a[href^="#ref-"],
+.ry-figure-stat__label a[href^="#ref-"] {
+  color: #ff617a;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.ry-prose a[href^="#ref-"]:hover,
+.ry-lede a[href^="#ref-"]:hover,
+.ry-figure-stat__label a[href^="#ref-"]:hover {
+  color: #fff;
+}
+.ry-quote-cite::before { content: none; }
 
