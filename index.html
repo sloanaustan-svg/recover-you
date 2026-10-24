@@ -22,15 +22,16 @@
   <meta name="keywords" content="trauma recovery, addiction neuroscience, TFR Model, Austan Sloan, trauma-informed care Alberta, C-PTSD recovery, brain-based healing, Recover-You Calgary">
 
   <meta property="og:title" content="Recover-You: The Science of Survival &amp; Reconstruction">
+  <meta property="og:site_name" content="Recover-You">
   <meta property="og:description" content="Move beyond oversimplified clichés. Discover a structured, neuroscience-informed path to healing trauma and rebuilding an identity beyond addiction.">
-  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:image" content="https://recover-you.ca/images/og-home.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://recover-you.ca/">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Recover-You | Trauma-Focused Recovery">
   <meta name="twitter:description" content="A survivor-led mission to bridge the gap between brain science and the lived experience of recovery.">
-  <meta name="twitter:image" content="images/og-home.jpg">
+  <meta name="twitter:image" content="https://recover-you.ca/images/og-home.jpg">
 
   <link rel="canonical" href="https://recover-you.ca/">
 
@@ -65,19 +66,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Recover-You",
-    "url": "https://recover-you.ca",
-    "description": "Neuroscience-informed trauma and addiction recovery resources and frameworks.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Recover-You",
-      "logo": "https://recover-you.ca/images/logo.png"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Austan Sloan"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://recover-you.ca/#organization",
+        "name": "Recover-You",
+        "url": "https://recover-you.ca/",
+        "logo": "https://recover-you.ca/images/recover-you-logo-black.png",
+        "description": "An independent educational resource focused on trauma, addiction, recovery, and evidence-based approaches to healing.",
+        "founder": { "@id": "https://recover-you.ca/about-me#person" },
+        "location": {
+          "@type": "Place",
+          "name": "Calgary, Alberta, Canada"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://recover-you.ca/#website",
+        "name": "Recover-You",
+        "alternateName": "recover-you.ca",
+        "url": "https://recover-you.ca/",
+        "description": "Neuroscience-informed trauma and addiction recovery resources and frameworks.",
+        "publisher": { "@id": "https://recover-you.ca/#organization" },
+        "author": { "@id": "https://recover-you.ca/about-me#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://recover-you.ca/about-me#person",
+        "name": "Austan Sloan",
+        "url": "https://recover-you.ca/about-me",
+        "description": "Founder of Recover-You."
+      }
+    ]
   }
   </script>
 </head>

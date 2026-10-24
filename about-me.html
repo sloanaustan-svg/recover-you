@@ -13,7 +13,7 @@
   <script src="https://cdn.usefathom.com/script.js" data-site="RLTMTAUT" data-included-domains="recover-you.ca,www.recover-you.ca" defer></script>
   <!-- / Fathom -->
 
-  <title>About Me | From Chaos to Clarity</title>
+  <title>About Austan Sloan | Recover-You</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
@@ -21,16 +21,17 @@
   <meta name="description" content="Twenty years of addiction and what it actually took to understand why. A survivor's account of the trauma underneath, and why sobriety is not the same as peace.">
   <meta name="keywords" content="Austan Sloan, recovery story, addiction and trauma, lived experience, concurrent disorders, Alberta recovery">
 
-  <meta property="og:title" content="About Me | From Chaos to Clarity">
+  <meta property="og:title" content="About Austan Sloan | Recover-You">
+  <meta property="og:site_name" content="Recover-You">
   <meta property="og:description" content="My brain wasn't built for balance. It was built for survival. I didn't wire my nervous system for peace. I wired it for war.">
-  <meta property="og:image" content="images/og-home.jpg">
+  <meta property="og:image" content="https://recover-you.ca/images/og-home.jpg">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://recover-you.ca/about-me">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Me | Recover-You">
+  <meta name="twitter:title" content="About Austan Sloan | Recover-You">
   <meta name="twitter:description" content="Twenty years of addiction. What it actually took to understand why.">
-  <meta name="twitter:image" content="images/og-home.jpg">
+  <meta name="twitter:image" content="https://recover-you.ca/images/og-home.jpg">
 
   <link rel="canonical" href="https://recover-you.ca/about-me">
   <link href="favicon.ico" rel="icon" type="image/x-icon">
@@ -64,13 +65,49 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Me: From Chaos to Clarity",
-    "description": "Twenty years of addiction, and what it took to understand the trauma underneath it.",
-    "url": "https://recover-you.ca/about-me",
-    "about": { "@type": "Person", "name": "Austan Sloan" },
-    "publisher": { "@type": "Organization", "name": "Recover-You" },
-    "isPartOf": { "@type": "WebSite", "name": "Recover-You", "url": "https://recover-you.ca" }
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://recover-you.ca/about-me#webpage",
+        "name": "About Austan Sloan: From Chaos to Clarity",
+        "description": "Twenty years of addiction, and what it took to understand the trauma underneath it.",
+        "url": "https://recover-you.ca/about-me",
+        "about": { "@id": "https://recover-you.ca/about-me#person" },
+        "mainEntity": { "@id": "https://recover-you.ca/about-me#person" },
+        "publisher": { "@id": "https://recover-you.ca/#organization" },
+        "isPartOf": { "@id": "https://recover-you.ca/#website" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://recover-you.ca/#organization",
+        "name": "Recover-You",
+        "url": "https://recover-you.ca/",
+        "logo": "https://recover-you.ca/images/recover-you-logo-black.png",
+        "description": "An independent educational resource focused on trauma, addiction, recovery, and evidence-based approaches to healing.",
+        "founder": { "@id": "https://recover-you.ca/about-me#person" },
+        "location": {
+          "@type": "Place",
+          "name": "Calgary, Alberta, Canada"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://recover-you.ca/#website",
+        "name": "Recover-You",
+        "alternateName": "recover-you.ca",
+        "url": "https://recover-you.ca/",
+        "description": "Neuroscience-informed trauma and addiction recovery resources and frameworks.",
+        "publisher": { "@id": "https://recover-you.ca/#organization" },
+        "author": { "@id": "https://recover-you.ca/about-me#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://recover-you.ca/about-me#person",
+        "name": "Austan Sloan",
+        "url": "https://recover-you.ca/about-me",
+        "description": "Founder of Recover-You."
+      }
+    ]
   }
   </script>
 </head>
