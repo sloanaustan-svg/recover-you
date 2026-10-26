@@ -24,14 +24,19 @@
   <meta property="og:title" content="Recover-You: The Science of Survival &amp; Reconstruction">
   <meta property="og:site_name" content="Recover-You">
   <meta property="og:description" content="Move beyond oversimplified clichés. Discover a structured, neuroscience-informed path to healing trauma and rebuilding an identity beyond addiction.">
-  <meta property="og:image" content="https://recover-you.ca/images/og-home.jpg">
+  <meta property="og:image" content="https://recover-you.ca/images/webp/austan-walking.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1459">
+  <meta property="og:image:height" content="1078">
+  <meta property="og:image:alt" content="Austan Sloan, founder of Recover-You, outdoors with a city skyline">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://recover-you.ca/">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Recover-You | Trauma-Focused Recovery">
   <meta name="twitter:description" content="A survivor-led mission to bridge the gap between brain science and the lived experience of recovery.">
-  <meta name="twitter:image" content="https://recover-you.ca/images/og-home.jpg">
+  <meta name="twitter:image" content="https://recover-you.ca/images/webp/austan-walking.webp">
+  <meta name="twitter:image:alt" content="Austan Sloan, founder of Recover-You, outdoors with a city skyline">
 
   <link rel="canonical" href="https://recover-you.ca/">
 
@@ -68,6 +73,15 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://recover-you.ca/#webpage",
+        "url": "https://recover-you.ca/",
+        "name": "Recover-You | Neuroscience-Informed Trauma & Addiction Recovery",
+        "isPartOf": { "@id": "https://recover-you.ca/#website" },
+        "about": { "@id": "https://recover-you.ca/#organization" },
+        "primaryImageOfPage": { "@id": "https://recover-you.ca/#austan-sloan-portrait" }
+      },
+      {
         "@type": "Organization",
         "@id": "https://recover-you.ca/#organization",
         "name": "Recover-You",
@@ -95,7 +109,17 @@
         "@id": "https://recover-you.ca/about-me#person",
         "name": "Austan Sloan",
         "url": "https://recover-you.ca/about-me",
-        "description": "Founder of Recover-You."
+        "description": "Founder of Recover-You.",
+        "image": { "@id": "https://recover-you.ca/#austan-sloan-portrait" }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://recover-you.ca/#austan-sloan-portrait",
+        "url": "https://recover-you.ca/images/webp/austan-walking.webp",
+        "contentUrl": "https://recover-you.ca/images/webp/austan-walking.webp",
+        "width": 1459,
+        "height": 1078,
+        "caption": "Austan Sloan, founder of Recover-You, outdoors with a city skyline"
       }
     ]
   }
@@ -479,7 +503,9 @@
         <!-- MISSION -->
         <!-- ============================= -->
         <section class="ry-mission dark-shade-2-bg">
-          <div class="sk__absolute sk__image-back-cover ry-mission-photo" style="background-image: url('images/webp/austan-walking.webp');" aria-hidden="true"></div>
+          <div class="sk__absolute ry-mission-photo">
+            <img class="ry-mission-portrait" src="images/webp/austan-walking.webp" alt="Austan Sloan, founder of Recover-You, outdoors with a city skyline" width="1459" height="1078" loading="lazy" decoding="async">
+          </div>
           <div class="ry-mission-overlay"></div>
           <div class="container sk__py-l position-relative">
             <div class="row justify-content-end">
