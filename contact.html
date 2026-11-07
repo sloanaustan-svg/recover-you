@@ -339,7 +339,10 @@
             <iframe name="hidden-iframe" title="Contact form submission" hidden></iframe>
             <form data-netlify="true" netlify-honeypot="bot-field" id="contact-form" method="post" name="Recover-You-Contact-Form" action="/contact.html" target="hidden-iframe">
               <input name="form-name" type="hidden" value="Recover-You-Contact-Form">
-              <p class="d-none"><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+              <!-- Netlify rejects submissions with a filled honeypot; keep it out of autofill and keyboard navigation. -->
+              <p class="d-none" hidden aria-hidden="true">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" type="text" autocomplete="off" tabindex="-1"></label>
+              </p>
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="visually-hidden" for="name">Name</label>
