@@ -50,6 +50,7 @@
   <link href="assets/css/theme-colors.css" rel="stylesheet">
   <link href="assets/css/ry-home.css" rel="stylesheet">
   <link href="assets/css/ry-article.css" rel="stylesheet">
+  <link href="assets/css/ry-hero-particles.css" rel="stylesheet">
   <link href="assets/css/ry-sobriety.css" rel="stylesheet">
   <script src="assets/vendor/jquery/jquery.min.js"></script>
 
@@ -237,9 +238,10 @@
           </div>
         </nav>
 
-        <section class="ry-page-hero" id="page-hero">
+        <section class="ry-page-hero" id="page-hero" data-hero-particles="windowlight">
           <div class="ry-page-hero__bg" style="background-image:url('images/webp/when-sobriety-feels-worse.webp');"></div>
           <div class="ry-page-hero__scrim"></div>
+          <canvas class="ry-hero-particles" aria-hidden="true"></canvas>
           <div class="container ry-page-hero__inner">
             <div class="row"><div class="col-12 col-lg-9">
               <span class="ry-hero-eyebrow">Brain &amp; Body</span>
@@ -248,6 +250,7 @@
             </div></div>
           </div>
           <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+          <button class="ry-hero-particles-toggle" type="button" hidden>Pause animation</button>
         </section>
 
         <section class="ry-sobriety-section ry-ashfield ry-sobriety-ash" id="why">
@@ -828,6 +831,7 @@
   <script src="assets/js/ry-local-preview.js"></script>
   <script src="assets/js/ry-nav-fit.js"></script>
   <script src="assets/js/ry-ash.js"></script>
+  <script src="assets/js/ry-hero-particles.js"></script>
   <script src="assets/js/ry-reveal.js"></script>
 
   <script>

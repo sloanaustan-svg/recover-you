@@ -64,6 +64,7 @@
   <link href="assets/css/theme-colors.css" rel="stylesheet">
   <!-- Recover-You homepage layer (red / black / grey / white brand) -->
   <link href="assets/css/ry-home.css" rel="stylesheet">
+  <link href="assets/css/ry-hero-particles.css" rel="stylesheet">
 
   <!-- jQuery -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -405,9 +406,10 @@
         <!-- ============================= -->
         <!-- HOW IT HELPS SECTION -->
         <!-- ============================= -->
-        <section class="ry-how-it-helps sk__parallax-background-section" id="how-it-helps">
+        <section class="ry-how-it-helps sk__parallax-background-section" id="how-it-helps" data-hero-particles="balance">
           <div class="sk__parallax-background-element sk__absolute sk__image-back-cover" style="background-image:url('images/webp/index-brain.webp');"></div>
           <div class="ry-parallax-overlay"></div>
+          <canvas class="ry-hero-particles" aria-hidden="true"></canvas>
           <div class="container sk__py-l text-center ry-z2">
             <div class="row justify-content-center">
               <div class="col-xl-8 col-lg-9">
@@ -437,6 +439,7 @@
               </div>
             </div>
           </div>
+          <button class="ry-hero-particles-toggle" type="button" hidden>Pause animation</button>
         </section>
 
         <!-- ============================= -->
@@ -622,6 +625,7 @@
 
   <!-- Subtle particle atmosphere for selected homepage sections -->
   <script src="assets/js/ry-ash.js"></script>
+  <script src="assets/js/ry-hero-particles.js"></script>
 
   <!-- Recover-You custom scripts -->
   <script>

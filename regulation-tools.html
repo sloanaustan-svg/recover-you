@@ -59,6 +59,7 @@
   <link href="assets/css/ry-home.css" rel="stylesheet">
   <!-- Shared article component layer -->
   <link href="assets/css/ry-article.css" rel="stylesheet">
+  <link href="assets/css/ry-hero-particles.css" rel="stylesheet">
   <!-- Regulation-tools page layer (the quick index, the tool cards) -->
   <link href="assets/css/ry-reg.css" rel="stylesheet">
   <!-- jQuery -->
@@ -254,9 +255,10 @@
       <div id="smooth-content">
 
         <!-- ============================= HERO ============================= -->
-        <section class="ry-page-hero" id="page-hero">
+        <section class="ry-page-hero" id="page-hero" data-hero-particles="calm">
           <div class="ry-page-hero__bg" style="background-image:url('images/webp/zen-amid-chaos.webp');"></div>
           <div class="ry-page-hero__scrim"></div>
+          <canvas class="ry-hero-particles" aria-hidden="true"></canvas>
           <div class="container ry-page-hero__inner">
             <div class="row"><div class="col-12 col-lg-9">
               <span class="ry-hero-eyebrow">The Toolkit</span>
@@ -265,6 +267,7 @@
             </div></div>
           </div>
           <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+          <button class="ry-hero-particles-toggle" type="button" hidden>Pause animation</button>
         </section>
 
         <!-- ==================== WHEN MY BODY DIDN'T KNOW ==================== -->
@@ -691,6 +694,7 @@
         </section>
 
         <script src="assets/js/ry-ash.js"></script>
+        <script src="assets/js/ry-hero-particles.js"></script>
         <script src="assets/js/ry-zoom.js"></script>
         <script src="assets/js/ry-reveal.js"></script>
 

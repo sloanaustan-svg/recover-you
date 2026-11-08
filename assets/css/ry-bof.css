@@ -9,6 +9,43 @@
    class name that ry-article.css already owns — see check_collisions.py.
    ==================================================================== */
 
+/* Hero-only ember overlay. Keep the shared article heroes untouched. */
+.ry-bof-hero { isolation: isolate; }
+.ry-bof-hero .ry-page-hero__bg,
+.ry-bof-hero .ry-page-hero__scrim { z-index: 0; }
+.ry-bof-embers {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.ry-bof-embers-toggle {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  z-index: 3;
+  padding: 7px 12px;
+  border: 1px solid rgba(233, 175, 100, .28);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .55);
+  color: #d5bda2;
+  font: 11px/1.4 'Lato', sans-serif;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.ry-bof-embers-toggle[hidden] { display: none; }
+.ry-bof-embers-toggle:hover { color: #fff; border-color: #e9af64; }
+.ry-bof-embers-toggle:focus-visible { outline: 2px solid #e9af64; outline-offset: 4px; }
+@media (max-width: 767.98px) {
+  .ry-bof-embers-toggle { right: 16px; bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ry-bof-embers,
+  .ry-bof-embers-toggle { display: none; }
+}
+
 /* ====================================================================
    1. THE CYCLE
    --------------------------------------------------------------------

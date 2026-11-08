@@ -1,0 +1,46 @@
+/* Opt-in heroes: image, scrim, particles, then readable HTML copy. */
+[data-hero-particles] { isolation: isolate; }
+[data-hero-particles] .ry-page-hero__bg,
+[data-hero-particles] .ry-page-hero__scrim { z-index: 0; }
+.ry-hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.ry-hero-particles-toggle {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  z-index: 3;
+  padding: 8px 13px;
+  border: 1px solid rgba(233, 175, 100, .28);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .65);
+  color: #dfcbb3;
+  font: 11px/1.4 'Lato', sans-serif;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.ry-hero-particles-toggle[hidden] { display: none; }
+.ry-hero-particles-toggle:hover { color: #fff; border-color: #e9af64; }
+.ry-hero-particles-toggle:focus-visible { outline: 2px solid #e9af64; outline-offset: 4px; }
+/* Keep the homepage's native scrolling background, with its canvas following
+   the same image coordinates. The checklist remains above both effects. */
+[data-hero-particles="balance"] > .sk__parallax-background-element { background-attachment: scroll; }
+[data-hero-particles="balance"] > .ry-z2 { z-index: 2; }
+[data-hero-particles="balance"] > .ry-hero-particles-toggle { top: 96px; bottom: auto; }
+@media (max-width: 767.98px) {
+  .ry-hero-particles-toggle { right: 16px; bottom: 20px; }
+  [data-hero-particles="balance"] > .ry-hero-particles-toggle { top: 76px; }
+  /* The long, unbroken heading otherwise clips on phone-sized screens. */
+  [data-hero-particles="neural"] .ry-page-hero__title { font-size: clamp(21px, 6.6vw, 38px); }
+  [data-hero-particles="morning"] .ry-page-hero__title { font-size: clamp(23px, 7.6vw, 38px); }
+  [data-hero-particles="connection"] .ry-page-hero__title { font-size: clamp(25px, 8.1vw, 38px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ry-hero-particles,
+  .ry-hero-particles-toggle { display: none; }
+}

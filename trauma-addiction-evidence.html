@@ -61,6 +61,7 @@
   <link href="assets/css/ry-article.css" rel="stylesheet">
   <!-- Overlap page layer (prevalence chart, verdict list, findings) -->
   <link href="assets/css/ry-overlap.css" rel="stylesheet">
+  <link href="assets/css/ry-hero-particles.css" rel="stylesheet">
   <!-- jQuery -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script type="application/ld+json">
@@ -254,9 +255,10 @@
       <div id="smooth-content">
 
         <!-- ============================= HERO ============================= -->
-        <section class="ry-page-hero" id="page-hero">
+        <section class="ry-page-hero" id="page-hero" data-hero-particles="fissure">
           <div class="ry-page-hero__bg" style="background-image:url('images/webp/overlap-hero.webp');"></div>
           <div class="ry-page-hero__scrim"></div>
+          <canvas class="ry-hero-particles" aria-hidden="true"></canvas>
           <div class="container ry-page-hero__inner">
             <div class="row"><div class="col-12 col-lg-9">
               <span class="ry-hero-eyebrow">The Evidence for Integrated Care</span>
@@ -265,6 +267,7 @@
             </div></div>
           </div>
           <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+          <button class="ry-hero-particles-toggle" type="button" hidden>Pause animation</button>
         </section>
 
         <!-- ==================== BEFORE WE GET INTO IT ==================== -->
@@ -705,6 +708,7 @@
 
         <script src="assets/js/ry-ash.js"></script>
         <script src="assets/js/ry-reveal.js"></script>
+        <script src="assets/js/ry-hero-particles.js"></script>
 
         <!-- ============================= -->
         <!-- FOOTER -->

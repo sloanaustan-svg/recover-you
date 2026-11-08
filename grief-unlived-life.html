@@ -59,6 +59,7 @@
   <link href="assets/css/ry-home.css" rel="stylesheet">
   <!-- Shared article component layer -->
   <link href="assets/css/ry-article.css" rel="stylesheet">
+  <link href="assets/css/ry-hero-particles.css" rel="stylesheet">
   <!-- Grief page layer (loss cards, your list, reconnect cards) -->
   <link href="assets/css/ry-grief.css" rel="stylesheet">
   <!-- jQuery -->
@@ -277,9 +278,10 @@
         </nav>
 
         <!-- ============================= HERO ============================= -->
-        <section class="ry-page-hero" id="page-hero">
+        <section class="ry-page-hero" id="page-hero" data-hero-particles="lamplight">
           <div class="ry-page-hero__bg" style="background-image:url('images/webp/safety-gone.webp');"></div>
           <div class="ry-page-hero__scrim"></div>
+          <canvas class="ry-hero-particles" aria-hidden="true"></canvas>
           <div class="container ry-page-hero__inner">
             <div class="row"><div class="col-12 col-lg-9">
               <span class="ry-hero-eyebrow">Trauma Foundations</span>
@@ -288,6 +290,7 @@
             </div></div>
           </div>
           <a class="ry-scroll-cue" href="#why" aria-label="Scroll to begin"><span class="icon-chevron-down"></span></a>
+          <button class="ry-hero-particles-toggle" type="button" hidden>Pause animation</button>
         </section>
 
         <!-- ==================== ASH FIELD + OPENING ==================== -->
@@ -876,6 +879,7 @@
         </section>
 
         <script src="assets/js/ry-ash.js"></script>
+        <script src="assets/js/ry-hero-particles.js"></script>
         <script src="assets/js/ry-reveal.js"></script>
         <script src="assets/js/ry-losses.js"></script>
 
